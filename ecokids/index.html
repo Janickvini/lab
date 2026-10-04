@@ -1,0 +1,4197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>EcoKids Ribeirão - O Caminho do Resíduo e a Logística Reversa</title>
+  
+  <!-- Fontes Infantis e Pixel Art Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700;800&family=Nunito:wght@400;700;800;900&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            fredoka: ['Fredoka', 'cursive', 'sans-serif'],
+            nunito: ['Nunito', 'sans-serif'],
+            pixel: ['Silkscreen', 'monospace'],
+          },
+          colors: {
+            ecogreen: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+            },
+            aquablue: {
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html, body {
+      font-family: 'Nunito', sans-serif;
+      background: radial-gradient(circle at 50% 10%, #E8F5E9 0%, #D0F0FD 100%);
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      overscroll-behavior: contain;
+    }
+    
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Fredoka', cursive, sans-serif;
+    }
+
+    .pop-in {
+      animation: popIn 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.6); opacity: 0; }
+      80% { transform: scale(1.05); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .game-canvas-container {
+      position: relative;
+      width: 100%;
+      max-width: 830px;
+      height: 642px;
+      min-height: 642px;
+      max-height: 642px;
+      margin: 0 auto;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      background-color: #0f172a;
+      box-shadow: 0 8px 0 rgba(15, 23, 42, 0.28);
+      flex-shrink: 0;
+    }
+
+    @media (min-width: 880px) {
+      .game-canvas-container {
+        width: 830px !important;
+        min-width: 830px !important;
+        max-width: 830px !important;
+        height: 642px !important;
+        min-height: 642px !important;
+        max-height: 642px !important;
+      }
+    }
+
+    @media (max-width: 879px) {
+      .game-canvas-container {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        aspect-ratio: 800 / 620;
+      }
+    }
+
+    .game-canvas-container canvas {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    /* Botões táteis estilo arcade */
+    .arcade-btn {
+      transition: all 0.1s ease;
+      box-shadow: 0 6px 0 rgba(0, 0, 0, 0.25);
+    }
+    .arcade-btn:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    /* Diploma para impressão */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #printableDiploma, #printableDiploma * {
+        visibility: visible;
+      }
+      #printableDiploma {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        border: 12px double #15803d;
+      }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col justify-between text-slate-800 antialiased selection:bg-emerald-200 overflow-x-hidden">
+
+  <!-- ========================================== -->
+  <!-- BARRA SUPERIOR / HUD                       -->
+  <!-- ========================================== -->
+  <header class="bg-gradient-to-r from-emerald-600 via-emerald-700 to-teal-700 text-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-2.5 sm:px-3.5 py-1.5 md:py-2 flex items-center justify-between gap-2">
+      
+      <!-- LOGO & CIDADE -->
+      <div class="flex items-center gap-2 sm:gap-2.5 min-w-0">
+        <div class="bg-amber-400 text-emerald-950 w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center font-black text-xl sm:text-2xl shadow-sm transform hover:rotate-6 transition shrink-0">
+          🌱
+        </div>
+        <div class="min-w-0">
+          <div class="flex items-center gap-1.5 sm:gap-2">
+            <h1 class="text-base sm:text-lg md:text-xl font-black tracking-wide leading-none truncate">EcoKids Ribeirão</h1>
+            <span class="hidden sm:inline-block bg-emerald-500/90 text-[10px] font-black px-2 py-0.5 rounded-full border border-emerald-300/40 shrink-0">v1.0.0</span>
+          </div>
+          <p class="text-[11px] text-emerald-100 font-bold leading-tight mt-0.5 hidden sm:block truncate">Missão Resíduo Zero • Ribeirão Preto/SP</p>
+        </div>
+      </div>
+
+      <!-- PONTUAÇÃO, FASE E SOM -->
+      <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        
+        <!-- Score -->
+        <div class="bg-emerald-900/90 border border-emerald-400/50 px-2 sm:px-2.5 py-1 rounded-xl flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm md:text-base font-black shadow-inner">
+          <span class="text-amber-300 text-base sm:text-lg">⭐</span>
+          <span id="hudScore" class="text-amber-200 text-sm sm:text-base md:text-lg">0</span>
+          <span class="text-[10px] text-emerald-300 font-extrabold uppercase">pts</span>
+        </div>
+
+        <!-- Indicador de Fase -->
+        <div class="hidden md:block bg-emerald-900/90 border border-emerald-400/50 px-2.5 py-1 rounded-xl text-xs font-black text-cyan-200 shadow-inner whitespace-nowrap">
+          <span id="hudPhaseLabel">Início</span>
+        </div>
+
+        <!-- Botão Início (Voltar com Confirmação) -->
+        <button id="btnHome" onclick="confirmExitToHome()" title="Voltar para a Página Inicial" aria-label="Voltar para a Página Inicial" class="bg-emerald-900/90 hover:bg-amber-400 hover:text-emerald-950 border border-emerald-400/50 px-2 sm:px-2.5 py-1 rounded-xl text-xs md:text-sm font-black flex items-center gap-1.5 transition text-amber-200 shadow-inner shrink-0 cursor-pointer active:scale-95">
+          <span>🏠</span>
+          <span class="hidden sm:inline">Início</span>
+        </button>
+
+        <!-- Botão Mudo/Som -->
+        <button id="btnSoundToggle" onclick="toggleAudio()" title="Ligar/Desligar Som" aria-label="Ligar ou Desligar Som" aria-pressed="true" class="bg-emerald-800 hover:bg-emerald-700 w-8 h-8 rounded-xl flex items-center justify-center border border-emerald-400/60 text-base transition shrink-0 cursor-pointer">
+          🔊
+        </button>
+
+      </div>
+    </div>
+
+    <!-- BARRA DE PROGRESSO GLOBAL -->
+    <div class="bg-emerald-950/60 h-1.5 w-full overflow-hidden">
+      <div id="globalProgressBar" class="bg-gradient-to-r from-amber-400 to-yellow-300 h-full w-0 transition-all duration-500 ease-out"></div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- CONTEÚDO PRINCIPAL / TELAS                 -->
+  <!-- ========================================== -->
+  <main class="max-w-[1300px] mx-auto px-2 md:px-4 py-1.5 md:py-2.5 flex-1 w-full flex flex-col justify-start">
+
+    <!-- ---------------------------------------- -->
+    <!-- TELA 1: INTRODUÇÃO & ESCOLHA DO AVATAR   -->
+    <!-- ---------------------------------------- -->
+    <section id="screenIntro" class="bg-white rounded-3xl p-6 md:p-10 shadow-2xl border-4 border-emerald-300 text-center max-w-3xl mx-auto pop-in">
+      
+      <div class="inline-flex items-center justify-center gap-2 bg-emerald-100 text-emerald-900 font-black text-xs uppercase px-4 py-1.5 rounded-full mb-3">
+        <span>🏙️ Desafio Ecológico Escolar</span>
+      </div>
+
+      <h2 class="text-3xl md:text-5xl font-black text-emerald-800 tracking-tight leading-tight">
+        Seja o Guardião Ambiental de Ribeirão Preto!
+      </h2>
+
+      <p class="text-slate-600 mt-3 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+        Você sabia que nossa cidade gera <b>650 toneladas de lixo por dia</b>, mas menos de 1% é reciclado? Ajude a salvar o <b>Aquífero Guarani</b> e apoie a <b>Cooperativa Mãos Dadas</b>!
+      </p>
+
+      <!-- ESCOLHA DO AVATAR (4 PERSONAGENS REPRESENTATIVOS) -->
+      <div class="mt-8 bg-slate-50 p-6 rounded-3xl border-2 border-emerald-200 max-w-3xl mx-auto">
+        <h3 class="font-extrabold text-emerald-900 text-lg md:text-xl">Escolha seu Personagem:</h3>
+        <p class="text-xs text-slate-500 mt-0.5">Selecione quem vai caminhar, pilotar a bike e coletar os recicláveis:</p>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3.5 mt-4">
+          
+          <!-- 1. Gabi (Menina) -->
+          <button onclick="selectAvatar('gabi')" id="optAvatarGabi" class="p-3.5 rounded-2xl border-4 border-emerald-500 bg-emerald-50 flex flex-col items-center justify-center gap-1.5 shadow-md ring-4 ring-emerald-200 cursor-pointer transition transform scale-105">
+            <div class="w-14 h-14 rounded-full bg-emerald-200 border-2 border-emerald-400 flex items-center justify-center text-3xl shadow-inner">
+              👧
+            </div>
+            <div class="font-black text-emerald-900 text-base">Gabi</div>
+            <div class="text-[11px] text-emerald-700 font-bold leading-tight text-center">Guardiã dos Rios</div>
+          </button>
+
+          <!-- 2. Leo (Menino) -->
+          <button onclick="selectAvatar('leo')" id="optAvatarLeo" class="p-3.5 rounded-2xl border-4 border-slate-200 bg-white hover:bg-slate-50 flex flex-col items-center justify-center gap-1.5 shadow-sm cursor-pointer transition">
+            <div class="w-14 h-14 rounded-full bg-amber-100 border-2 border-amber-300 flex items-center justify-center text-3xl shadow-inner">
+              👦
+            </div>
+            <div class="font-black text-slate-800 text-base">Leo</div>
+            <div class="text-[11px] text-slate-500 font-bold leading-tight text-center">Guardião da Terra</div>
+          </button>
+
+          <!-- 3. Dandara (Menina Negra) -->
+          <button onclick="selectAvatar('dandara')" id="optAvatarDandara" class="p-3.5 rounded-2xl border-4 border-slate-200 bg-white hover:bg-slate-50 flex flex-col items-center justify-center gap-1.5 shadow-sm cursor-pointer transition">
+            <div class="w-14 h-14 rounded-full bg-purple-100 border-2 border-purple-300 flex items-center justify-center text-3xl shadow-inner">
+              👧🏾
+            </div>
+            <div class="font-black text-slate-800 text-base">Dandara</div>
+            <div class="text-[11px] text-slate-500 font-bold leading-tight text-center">Guardiã da Fauna</div>
+          </button>
+
+          <!-- 4. Davi (Menino Negro) -->
+          <button onclick="selectAvatar('davi')" id="optAvatarDavi" class="p-3.5 rounded-2xl border-4 border-slate-200 bg-white hover:bg-slate-50 flex flex-col items-center justify-center gap-1.5 shadow-sm cursor-pointer transition">
+            <div class="w-14 h-14 rounded-full bg-orange-100 border-2 border-orange-300 flex items-center justify-center text-3xl shadow-inner">
+              👦🏾
+            </div>
+            <div class="font-black text-slate-800 text-base">Davi</div>
+            <div class="text-[11px] text-slate-500 font-bold leading-tight text-center">Guardião da Floresta</div>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- INSTRUÇÕES RÁPIDAS ALINHADAS EM GRADE -->
+      <div class="mt-6 grid sm:grid-cols-3 gap-3 max-w-xl mx-auto text-xs font-bold text-slate-600">
+        <div class="flex items-center justify-center gap-2 bg-slate-100 px-3 py-2.5 rounded-2xl border border-slate-200 text-center">
+          <span>⌨️ <b>Setas</b> ou <b>WASD</b></span>
+        </div>
+        <div class="flex items-center justify-center gap-2 bg-slate-100 px-3 py-2.5 rounded-2xl border border-slate-200 text-center">
+          <span>📱 <b>Botões Virtuais</b> na Tela</span>
+        </div>
+        <div class="flex items-center justify-center gap-2 bg-slate-100 px-3 py-2.5 rounded-2xl border border-slate-200 text-center">
+          <span>👆 Ou <b>Toque</b> no Destino</span>
+        </div>
+      </div>
+
+      <!-- BOTÃO INICIAR -->
+      <button onclick="startMission()" class="arcade-btn mt-8 bg-amber-400 hover:bg-amber-300 text-emerald-950 font-black text-xl md:text-2xl px-10 py-5 rounded-3xl inline-flex items-center gap-3 transition transform hover:scale-105 active:scale-95 shadow-xl border-2 border-amber-500">
+        <span>🚀 COMEÇAR AVENTURA!</span>
+      </button>
+
+    </section>
+
+
+    <!-- ---------------------------------------- -->
+    <!-- TELA 2: FASE 1 - O QUINTAL LIMPO         -->
+    <!-- ---------------------------------------- -->
+    <section id="screenPhase1" class="hidden w-full max-w-[1260px] mx-auto flex flex-col items-center pop-in">
+      
+      <!-- CABEÇALHO DA FASE 1 COMPACTO -->
+      <div class="w-full mb-2 flex items-center justify-between gap-2.5 bg-white/95 backdrop-blur px-3.5 py-1.5 md:py-2 rounded-xl shadow-sm border border-emerald-300">
+        <div class="flex items-center gap-2 flex-wrap min-w-0">
+          <span class="bg-emerald-100 text-emerald-900 text-[11px] font-black uppercase px-2.5 py-0.5 rounded-full border border-emerald-200 shrink-0">Fase 1 • Quintal</span>
+          <h2 class="text-sm md:text-base font-black text-emerald-950 leading-tight truncate">O Quintal Limpo: Coleta e Separação</h2>
+          <span class="hidden lg:inline text-xs text-slate-500 font-semibold">• Leve cada resíduo até a lixeira correta</span>
+        </div>
+        <div class="flex items-center gap-1.5 bg-emerald-50 px-2.5 py-0.5 rounded-lg border border-emerald-200 shrink-0">
+          <span class="text-[11px] text-slate-500 font-black uppercase hidden sm:inline">Separados:</span>
+          <span class="text-base md:text-lg font-black text-emerald-700"><span id="p1ItemCount">0</span>/6</span>
+        </div>
+      </div>
+
+      <!-- CONTAINER PRINCIPAL: JOGO NA ESQUERDA + VOCÊ SABIA NA DIREITA -->
+      <div class="w-full flex flex-col xl:flex-row items-start justify-center gap-4 md:gap-5">
+        
+        <!-- COLUNA DO JOGO (CANVAS + DICA + CONTROLES) -->
+        <div class="w-full max-w-[830px] xl:w-[830px] xl:min-w-[830px] shrink-0 flex flex-col items-center mx-auto xl:mx-0">
+          
+          <!-- CANVAS GAME 1 -->
+          <div class="w-full game-canvas-container border-[3px] border-emerald-500">
+            <canvas id="canvasPhase1" width="800" height="620"></canvas>
+          </div>
+
+          <!-- BALÃO DE DICA PEDAGÓGICA (ALTURA FIXA ESTÁVEL PARA 2 LINHAS) -->
+          <div id="p1TipBox" class="w-full mt-2 bg-white px-3 sm:px-4 py-2 rounded-2xl border-2 border-emerald-300 shadow-sm flex items-center justify-between gap-2.5 sm:gap-3 text-xs md:text-sm font-extrabold text-slate-800 min-h-[58px] sm:h-[58px] sm:max-h-[58px] overflow-hidden">
+            <div class="flex items-center gap-2 sm:gap-2.5 min-w-0">
+              <span class="text-2xl shrink-0">💡</span>
+              <span id="p1TipText" class="leading-snug">Caminhe com o avatar até o resíduo para pegá-lo com as mãos!</span>
+            </div>
+            <div id="p1CarryingBadge" class="hidden bg-amber-100 text-amber-950 px-2.5 sm:px-3 py-1 rounded-xl text-xs font-black border border-amber-400 shrink-0 shadow-sm">
+              Carregando item!
+            </div>
+          </div>
+
+          <!-- CONTROLES MÓVEIS COMPACTOS -->
+          <div class="w-full mt-2 flex items-stretch justify-between px-0.5 gap-2.5">
+            
+            <!-- D-PAD VIRTUAL ERGONÔMICO -->
+            <div class="grid grid-cols-3 gap-1.5 w-36 h-20 shrink-0">
+              <div></div>
+              <button onpointerdown="startMove('up')" onpointerup="stopMove('up')" onpointerleave="stopMove('up')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-emerald-600">⬆️</button>
+              <div></div>
+              <button onpointerdown="startMove('left')" onpointerup="stopMove('left')" onpointerleave="stopMove('left')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-emerald-600">⬅️</button>
+              <button onpointerdown="startMove('down')" onpointerup="stopMove('down')" onpointerleave="stopMove('down')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-emerald-600">⬇️</button>
+              <button onpointerdown="startMove('right')" onpointerup="stopMove('right')" onpointerleave="stopMove('right')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-emerald-600">➡️</button>
+            </div>
+
+            <!-- BOTÃO DE AÇÃO COMPACTO -->
+            <button id="p1ActionBtn" onclick="triggerP1Action()" class="arcade-btn flex-1 h-20 bg-emerald-500 hover:bg-emerald-400 text-emerald-950 font-black rounded-2xl flex flex-row sm:flex-col items-center justify-center gap-2 sm:gap-0.5 shadow-md border-2 border-emerald-600 px-3">
+              <span class="text-3xl">🖐️</span>
+              <div class="flex flex-col items-center">
+                <span id="p1ActionLabel" class="text-sm md:text-base font-black tracking-wide leading-tight">PEGAR / SOLTAR</span>
+                <span class="text-[10px] text-emerald-950 font-bold uppercase opacity-80">(Ou barra de Espaço)</span>
+              </div>
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- COLUNA DA DIREITA: PAINEL EDUCATIVO 'VOCÊ SABIA?' DESTACADO E LEGÍVEL -->
+        <aside class="w-full max-w-[830px] xl:w-[410px] xl:min-w-[410px] xl:max-w-[410px] xl:h-[796px] xl:min-h-[796px] xl:max-h-[796px] shrink-0 bg-white rounded-3xl p-4 md:p-5 border-4 border-amber-400 shadow-xl flex flex-col justify-between gap-2 text-left mx-auto xl:mx-0">
+          
+          <div class="flex items-center justify-between border-b-2 border-amber-200 pb-2">
+            <div class="flex items-center gap-2.5">
+              <span class="text-3xl">💡</span>
+              <div>
+                <span class="bg-amber-100 text-amber-950 text-xs font-black uppercase px-2.5 py-0.5 rounded-full border border-amber-300">
+                  Educação Ambiental
+                </span>
+                <h3 class="text-lg md:text-xl font-black text-slate-900 leading-tight mt-0.5">
+                  Você Sabia?
+                </h3>
+              </div>
+            </div>
+            <span class="text-xs font-extrabold text-amber-800 bg-amber-50 px-2 py-1 rounded-lg border border-amber-200">CONAMA 275</span>
+          </div>
+
+          <p class="text-xs md:text-sm text-slate-700 font-semibold leading-relaxed">
+            No Brasil, <b>cada lixeira tem uma cor oficial específica</b> para que qualquer pessoa identifique o material na hora de reciclar:
+          </p>
+
+          <!-- Grade dos 6 Cards Coloridos de Lixeira Bem Legíveis -->
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:flex xl:flex-col gap-2">
+            
+            <!-- 1. Azul: Papel -->
+            <div id="vsCard-papel" onclick="onVsCardClick('papel')" class="vs-bin-card cursor-pointer transition-all duration-300 bg-blue-50/90 hover:scale-[1.02] border-2 border-blue-400 rounded-2xl p-2.5 flex items-start gap-2.5 relative">
+              <span class="text-2xl shrink-0">📦</span>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-1 h-5">
+                  <span class="font-black text-xs md:text-sm text-blue-900 truncate">Azul • Papel & Papelão</span>
+                  <span class="vs-match-badge invisible opacity-0 bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-full animate-pulse shadow-sm shrink-0">👉 DESCARTE AQUI!</span>
+                </div>
+                <p class="text-xs text-slate-700 font-medium leading-snug mt-0.5">
+                  Jornais, caixas limpas e cadernos. <i>(Molhados vão no rejeito!)</i>
+                </p>
+              </div>
+            </div>
+
+            <!-- 2. Vermelho: Plástico -->
+            <div id="vsCard-plastico" onclick="onVsCardClick('plastico')" class="vs-bin-card cursor-pointer transition-all duration-300 bg-red-50/90 hover:scale-[1.02] border-2 border-red-400 rounded-2xl p-2.5 flex items-start gap-2.5 relative">
+              <span class="text-2xl shrink-0">🧴</span>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-1 h-5">
+                  <span class="font-black text-xs md:text-sm text-red-900 truncate">Vermelho • Plástico</span>
+                  <span class="vs-match-badge invisible opacity-0 bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-full animate-pulse shadow-sm shrink-0">👉 DESCARTE AQUI!</span>
+                </div>
+                <p class="text-xs text-slate-700 font-medium leading-snug mt-0.5">
+                  Garrafas PET, embalagens e sacolas. <i>(Demora +400 anos no solo!)</i>
+                </p>
+              </div>
+            </div>
+
+            <!-- 3. Verde: Vidro -->
+            <div id="vsCard-vidro" onclick="onVsCardClick('vidro')" class="vs-bin-card cursor-pointer transition-all duration-300 bg-emerald-50/90 hover:scale-[1.02] border-2 border-emerald-400 rounded-2xl p-2.5 flex items-start gap-2.5 relative">
+              <span class="text-2xl shrink-0">🫙</span>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-1 h-5">
+                  <span class="font-black text-xs md:text-sm text-emerald-900 truncate">Verde • Vidro</span>
+                  <span class="vs-match-badge invisible opacity-0 bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-full animate-pulse shadow-sm shrink-0">👉 DESCARTE AQUI!</span>
+                </div>
+                <p class="text-xs text-slate-700 font-medium leading-snug mt-0.5">
+                  Potes de geleia, garrafas e frascos. <i>(100% reciclável infinitas vezes!)</i>
+                </p>
+              </div>
+            </div>
+
+            <!-- 4. Amarelo: Metal -->
+            <div id="vsCard-metal" onclick="onVsCardClick('metal')" class="vs-bin-card cursor-pointer transition-all duration-300 bg-amber-50/90 hover:scale-[1.02] border-2 border-amber-400 rounded-2xl p-2.5 flex items-start gap-2.5 relative">
+              <span class="text-2xl shrink-0">🥫</span>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-1 h-5">
+                  <span class="font-black text-xs md:text-sm text-amber-950 truncate">Amarelo • Metal</span>
+                  <span class="vs-match-badge invisible opacity-0 bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-full animate-pulse shadow-sm shrink-0">👉 DESCARTE AQUI!</span>
+                </div>
+                <p class="text-xs text-slate-700 font-medium leading-snug mt-0.5">
+                  Latinhas de suco/refri e latas de milho. <i>(Volta às lojas em 60 dias!)</i>
+                </p>
+              </div>
+            </div>
+
+            <!-- 5. Marrom: Orgânico -->
+            <div id="vsCard-organico" onclick="onVsCardClick('organico')" class="vs-bin-card cursor-pointer transition-all duration-300 bg-amber-950/10 hover:scale-[1.02] border-2 border-amber-800 rounded-2xl p-2.5 flex items-start gap-2.5 relative">
+              <span class="text-2xl shrink-0">🍎</span>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-1 h-5">
+                  <span class="font-black text-xs md:text-sm text-amber-950 truncate">Marrom • Orgânico</span>
+                  <span class="vs-match-badge invisible opacity-0 bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-full animate-pulse shadow-sm shrink-0">👉 DESCARTE AQUI!</span>
+                </div>
+                <p class="text-xs text-slate-700 font-medium leading-snug mt-0.5">
+                  Cascas de frutas, legumes e café. <i>(Vira adubo fértil na compostagem!)</i>
+                </p>
+              </div>
+            </div>
+
+            <!-- 6. Cinza: Rejeito -->
+            <div id="vsCard-rejeito" onclick="onVsCardClick('rejeito')" class="vs-bin-card cursor-pointer transition-all duration-300 bg-slate-100 hover:scale-[1.02] border-2 border-slate-400 rounded-2xl p-2.5 flex items-start gap-2.5 relative">
+              <span class="text-2xl shrink-0">🗑️</span>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-1 h-5">
+                  <span class="font-black text-xs md:text-sm text-slate-800 truncate">Cinza • Rejeito</span>
+                  <span class="vs-match-badge invisible opacity-0 bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-full animate-pulse shadow-sm shrink-0">👉 DESCARTE AQUI!</span>
+                </div>
+                <p class="text-xs text-slate-700 font-medium leading-snug mt-0.5">
+                  Fraldas usadas, papel higiênico e curativos. <i>(Não recicla! Vai ao aterro.)</i>
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Dica Local Ribeirão Preto -->
+          <div class="mt-1 bg-emerald-50 p-3 rounded-2xl border border-emerald-300 text-xs font-bold text-emerald-900 flex items-center gap-2.5">
+            <span class="text-2xl shrink-0">🏙️</span>
+            <span class="leading-snug">Em Ribeirão Preto, a reciclagem abastece a <b>Cooperativa Mãos Dadas</b> e protege as águas puras do <b>Aquífero Guarani</b>!</span>
+          </div>
+        </aside>
+
+      </div>
+
+      <!-- MODAL EDUCATIVO DO ACERTO (QUADRINHO DA CRIANÇA FELIZ) -->
+      <div id="p1SuccessModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 pop-in">
+        <div class="bg-white rounded-3xl p-6 md:p-8 max-w-lg w-full border-4 border-amber-400 shadow-2xl text-center relative overflow-hidden">
+          
+          <!-- Efeito de topo com avatar feliz -->
+          <div class="flex items-center justify-center gap-4 mb-3">
+            <div id="modalKidAvatar" class="w-20 h-20 rounded-full bg-emerald-100 border-3 border-emerald-400 flex items-center justify-center text-5xl shadow-md animate-bounce shrink-0">
+              👧
+            </div>
+            <div class="text-left">
+              <span class="bg-amber-100 text-amber-950 text-xs md:text-sm font-black uppercase px-3.5 py-1 rounded-full border border-amber-300">
+                ⭐ Parabéns! +50 Pontos! ⭐
+              </span>
+              <h3 id="modalTitle" class="text-2xl md:text-3xl font-black text-slate-900 leading-tight mt-1">
+                Descarte Perfeito!
+              </h3>
+            </div>
+          </div>
+
+          <!-- Card de Detalhe do Resíduo -->
+          <div class="my-4 bg-slate-50 p-4 md:p-5 rounded-2xl border-2 border-slate-200 text-left">
+            <div class="flex items-center gap-3.5 border-b border-slate-200 pb-3 mb-3">
+              <span id="modalItemIcon" class="text-4xl md:text-5xl shrink-0">📦</span>
+              <div class="flex-1">
+                <div id="modalItemName" class="font-black text-lg md:text-xl text-slate-900 leading-snug">Caixa de Papelão Limpa</div>
+                <div id="modalBinBadge" class="text-sm font-black text-blue-600 mt-0.5">Destino: Lixeira Papel (Azul)</div>
+              </div>
+            </div>
+            <p id="modalExplanation" class="text-sm md:text-base text-slate-700 leading-relaxed font-semibold">
+              Explicação detalhada...
+            </p>
+          </div>
+
+          <!-- Outros Exemplos da Categoria -->
+          <div class="bg-emerald-50/80 p-4 rounded-2xl border border-emerald-200 text-left">
+            <div class="text-xs md:text-sm font-black text-emerald-950 uppercase tracking-wide mb-2.5 flex items-center gap-2">
+              <span class="text-base">✨</span>
+              <span>Outros exemplos que também vão nesta lixeira:</span>
+            </div>
+            <div id="modalExamplesGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <!-- Injetado dinamicamente via JS -->
+            </div>
+          </div>
+
+          <!-- Botão Continuar -->
+          <button id="modalBtnContinue" onclick="closeP1Modal()" class="arcade-btn mt-5 w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xl py-4 rounded-2xl shadow-lg transition transform active:scale-95 flex items-center justify-center gap-2 border-2 border-emerald-700">
+            <span id="modalBtnText">Continuar Separando o Quintal! 🌿</span>
+          </button>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ---------------------------------------- -->
+    <!-- ---------------------------------------- -->
+    <!-- TELA 3: FASE 2 - EXPEDIÇÃO ECO-BIKE      -->
+    <!-- ---------------------------------------- -->
+    <section id="screenPhase2" class="hidden w-full max-w-[1260px] mx-auto flex flex-col items-center pop-in">
+      
+      <!-- CABEÇALHO DA FASE 2 COMPACTO (MESMA PROPORÇÃO DA FASE 1) -->
+      <div class="w-full mb-2 flex items-center justify-between gap-2.5 bg-white/95 backdrop-blur px-3.5 py-1.5 md:py-2 rounded-xl shadow-sm border border-sky-300">
+        <div class="flex items-center gap-2 flex-wrap min-w-0">
+          <span class="bg-sky-100 text-sky-900 text-[11px] font-black uppercase px-2.5 py-0.5 rounded-full border border-sky-200 shrink-0">Fase 2 • Eco-Bike</span>
+          <h2 class="text-sm md:text-base font-black text-sky-950 leading-tight truncate">Expedição Eco-Bike: Logística Reversa</h2>
+          <span class="hidden lg:inline text-xs text-slate-500 font-semibold">• Leve cada resíduo especial ao estabelecimento correto</span>
+        </div>
+        <div class="flex items-center gap-1.5 bg-sky-50 px-2.5 py-0.5 rounded-lg border border-sky-200 shrink-0">
+          <span class="text-[11px] text-slate-500 font-black uppercase hidden sm:inline">Entregas:</span>
+          <span class="text-base md:text-lg font-black text-sky-700"><span id="p2ItemCount">0</span>/4</span>
+        </div>
+      </div>
+
+      <!-- CONTAINER PRINCIPAL: JOGO NA ESQUERDA + VOCÊ SABIA NA DIREITA -->
+      <div class="w-full flex flex-col xl:flex-row items-start justify-center gap-4 md:gap-5">
+        
+        <!-- COLUNA DO JOGO (CANVAS + ORIENTAÇÃO + CONTROLES - MESMA DISTRIBUIÇÃO DA FASE 1) -->
+        <div class="w-full max-w-[830px] xl:w-[830px] xl:min-w-[830px] shrink-0 flex flex-col items-center mx-auto xl:mx-0">
+          
+          <!-- CANVAS GAME 2 -->
+          <div class="w-full game-canvas-container border-[3px] border-sky-500">
+            <canvas id="canvasPhase2" width="800" height="620"></canvas>
+          </div>
+
+          <!-- CARGO & DICA DA FASE 2 (ALTURA FIXA ESTÁVEL PARA 2 LINHAS IGUAL À FASE 1) -->
+          <div id="p2TipBox" class="w-full mt-2 bg-white px-3 sm:px-4 py-2 rounded-2xl border-2 border-sky-300 shadow-sm flex items-center justify-between gap-2 sm:gap-3 text-xs md:text-sm font-extrabold text-slate-800 min-h-[58px] sm:h-[58px] sm:max-h-[58px] overflow-hidden">
+            <div class="flex items-center gap-2 sm:gap-2.5 min-w-0 flex-1">
+              <span class="text-xl sm:text-2xl shrink-0">🚲</span>
+              <span id="p2TipText" class="leading-snug line-clamp-2">Pilote a Eco-Bike até o estabelecimento indicado para entregar a carga!</span>
+            </div>
+            <div id="p2CargoBadge" class="bg-amber-100 text-amber-950 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-xs md:text-sm font-black border-2 border-amber-400 shrink-0 shadow-sm flex items-center gap-1 sm:gap-1.5">
+              <span>📦<span class="hidden sm:inline"> Carregando:</span></span>
+              <span id="p2CargoName" class="underline decoration-amber-500 decoration-2">-</span>
+            </div>
+          </div>
+
+          <!-- CONTROLES MÓVEIS COMPACTOS FASE 2 -->
+          <div class="w-full mt-2 flex items-stretch justify-between px-0.5 gap-2.5">
+            
+            <div class="grid grid-cols-3 gap-1.5 w-36 h-20 shrink-0">
+              <div></div>
+              <button onpointerdown="startMove('up')" onpointerup="stopMove('up')" onpointerleave="stopMove('up')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-sky-600">⬆️</button>
+              <div></div>
+              <button onpointerdown="startMove('left')" onpointerup="stopMove('left')" onpointerleave="stopMove('left')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-sky-600">⬅️</button>
+              <button onpointerdown="startMove('down')" onpointerup="stopMove('down')" onpointerleave="stopMove('down')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-sky-600">⬇️</button>
+              <button onpointerdown="startMove('right')" onpointerup="stopMove('right')" onpointerleave="stopMove('right')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-sky-600">➡️</button>
+            </div>
+
+            <button onclick="triggerP2Action()" class="arcade-btn flex-1 h-20 bg-amber-400 hover:bg-amber-300 text-amber-950 font-black rounded-2xl flex flex-row sm:flex-col items-center justify-center gap-2 sm:gap-0.5 shadow-md border-2 border-amber-500 px-3">
+              <span class="text-3xl">🔔</span>
+              <div class="flex flex-col items-center">
+                <span class="text-sm md:text-base font-black tracking-wide leading-tight">ENTREGAR CARGA AQUI</span>
+                <span class="text-[10px] text-amber-950 font-bold uppercase opacity-80">(Ou barra de Espaço)</span>
+              </div>
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- COLUNA DA DIREITA: PAINEL EDUCATIVO 'VOCÊ SABIA?' COM MESMA PROPORÇÃO E INTERATIVIDADE DA FASE 1 -->
+        <aside class="w-full max-w-[830px] xl:w-[410px] xl:min-w-[410px] xl:max-w-[410px] xl:h-[796px] xl:min-h-[796px] xl:max-h-[796px] shrink-0 bg-white rounded-3xl p-4 md:p-5 border-4 border-sky-400 shadow-xl flex flex-col justify-between gap-2 text-left mx-auto xl:mx-0">
+          
+          <div class="flex items-center justify-between border-b-2 border-sky-200 pb-2">
+            <div class="flex items-center gap-2.5">
+              <span class="text-3xl">💡</span>
+              <div>
+                <span class="bg-sky-100 text-sky-950 text-xs font-black uppercase px-2.5 py-0.5 rounded-full border border-sky-300">
+                  Logística Reversa
+                </span>
+                <h3 class="text-lg md:text-xl font-black text-slate-900 leading-tight mt-0.5">
+                  Você Sabia?
+                </h3>
+              </div>
+            </div>
+            <span class="text-xs font-extrabold text-sky-800 bg-sky-50 px-2 py-1 rounded-lg border border-sky-200">Lei 12.305/10</span>
+          </div>
+
+          <p class="text-xs md:text-sm text-slate-700 font-semibold leading-relaxed">
+            Resíduos especiais ou volumosos <b>não vão no caminhão comum</b>. Veja onde entregar cada item em Ribeirão Preto:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:flex xl:flex-col gap-2.5">
+            
+            <!-- 1. Ecoponto Municipal -->
+            <div id="p2Card-ecoponto" onclick="onP2CardClick('ecoponto')" class="p2-station-card cursor-pointer transition-all duration-300 bg-emerald-50/90 hover:scale-[1.02] border-2 border-emerald-400 rounded-2xl p-3 flex items-start gap-2.5 relative">
+              <span class="text-2xl shrink-0">♻️</span>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-1 h-5">
+                  <span class="font-black text-xs md:text-sm text-emerald-950 truncate">Ecoponto • Caçambas</span>
+                  <span class="p2-match-badge invisible opacity-0 bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-full animate-pulse shadow-sm shrink-0">👉 ENTREGUE AQUI!</span>
+                </div>
+                <p class="text-xs text-slate-700 font-medium leading-snug mt-0.5">
+                  Recebe <b>sofás velhos, pneus, madeiras e entulho</b>. Evita descarte em terrenos e combate a dengue!
+                </p>
+              </div>
+            </div>
+
+            <!-- 2. Farmácia LOGMED -->
+            <div id="p2Card-farmacia" onclick="onP2CardClick('farmacia')" class="p2-station-card cursor-pointer transition-all duration-300 bg-sky-50/90 hover:scale-[1.02] border-2 border-sky-400 rounded-2xl p-3 flex items-start gap-2.5 relative">
+              <span class="text-2xl shrink-0">➕</span>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-1 h-5">
+                  <span class="font-black text-xs md:text-sm text-sky-950 truncate">Farmácia • Cruz Vermelha</span>
+                  <span class="p2-match-badge invisible opacity-0 bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-full animate-pulse shadow-sm shrink-0">👉 ENTREGUE AQUI!</span>
+                </div>
+                <p class="text-xs text-slate-700 font-medium leading-snug mt-0.5">
+                  Recebe <b>remédios, xaropes e cartelas vencidas</b>. Nunca jogue na pia ou vaso sanitário!
+                </p>
+              </div>
+            </div>
+
+            <!-- 3. Supermercado (Green Eletron) -->
+            <div id="p2Card-supermercado" onclick="onP2CardClick('supermercado')" class="p2-station-card cursor-pointer transition-all duration-300 bg-amber-50/90 hover:scale-[1.02] border-2 border-amber-400 rounded-2xl p-3 flex items-start gap-2.5 relative">
+              <span class="text-2xl shrink-0">🛒</span>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-1 h-5">
+                  <span class="font-black text-xs md:text-sm text-amber-950 truncate">Supermercado • Pilhas</span>
+                  <span class="p2-match-badge invisible opacity-0 bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-full animate-pulse shadow-sm shrink-0">👉 ENTREGUE AQUI!</span>
+                </div>
+                <p class="text-xs text-slate-700 font-medium leading-snug mt-0.5">
+                  Recebe <b>pilhas, baterias e pequenos eletrônicos</b> que contêm metais pesados tóxicos.
+                </p>
+              </div>
+            </div>
+
+            <!-- 4. Ponto de Troca de Óleo -->
+            <div id="p2Card-oleo" onclick="onP2CardClick('oleo')" class="p2-station-card cursor-pointer transition-all duration-300 bg-purple-50/90 hover:scale-[1.02] border-2 border-purple-400 rounded-2xl p-3 flex items-start gap-2.5 relative">
+              <span class="text-2xl shrink-0">🛢️</span>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-1 h-5">
+                  <span class="font-black text-xs md:text-sm text-purple-950 truncate">Eco-Posto • Óleo Usado</span>
+                  <span class="p2-match-badge invisible opacity-0 bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-full animate-pulse shadow-sm shrink-0">👉 ENTREGUE AQUI!</span>
+                </div>
+                <p class="text-xs text-slate-700 font-medium leading-snug mt-0.5">
+                  Recebe <b>óleo de fritura em garrafa PET</b> para virar biodiesel e sabão ecológico!
+                </p>
+              </div>
+            </div>
+
+            <!-- 5. Como Identificar no Mapa -->
+            <div class="md:col-span-2 bg-slate-50 border-2 border-slate-300 rounded-2xl p-2.5 flex items-start gap-2.5">
+              <span class="text-2xl shrink-0">🗺️</span>
+              <div>
+                <span class="font-black text-xs md:text-sm text-slate-800">Guia Visual do Mapa</span>
+                <p class="text-xs text-slate-600 font-medium leading-snug mt-0.5">
+                  Observe a fachada de cada prédio: <b>Caçambas</b> (Ecoponto), <b>Cruz Vermelha</b> (Farmácia), <b>Carrinhos/Frutas</b> (Mercado) e <b>Tanques Amarelos</b> (Óleo).
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Dica Local Ribeirão Preto - Ecopontos e Descarte Consciente -->
+          <div class="mt-1 bg-sky-50 p-3 rounded-2xl border border-sky-300 text-xs font-bold text-sky-950 flex items-center gap-2.5">
+            <span class="text-2xl shrink-0">📍</span>
+            <span class="leading-snug">Em Ribeirão Preto, consulte os <b>6 Ecopontos Municipais</b> ou ligue <b>156 (Cata-Treco)</b> para recolhimento gratuito!</span>
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+
+    <!-- ---------------------------------------- -->
+    <!-- TELA 4: FASE 3 - GUARDIÃO DO AQUÍFERO    -->
+    <!-- ---------------------------------------- -->
+    <section id="screenPhase3" class="hidden w-full max-w-[1260px] mx-auto flex flex-col items-center pop-in">
+      
+      <!-- CABEÇALHO DA FASE 3 COMPACTO -->
+      <div class="w-full mb-2 flex items-center justify-between gap-2.5 bg-slate-900 text-white px-3.5 py-1.5 md:py-2 rounded-xl shadow-md border border-cyan-400">
+        <div class="flex items-center gap-2 flex-wrap min-w-0">
+          <span class="bg-cyan-400 text-cyan-950 text-[11px] font-black uppercase px-2.5 py-0.5 rounded-full shrink-0">Fase 3 • Aquífero</span>
+          <h2 class="text-sm md:text-base font-black text-cyan-200 leading-tight truncate">Guardião do Aquífero & Cooperativa Mãos Dadas</h2>
+          <span class="hidden lg:inline text-xs text-slate-300 font-semibold">• Resgate os recicláveis com a rede</span>
+        </div>
+        <div class="flex items-center gap-1.5 bg-slate-800 px-2.5 py-0.5 rounded-lg border border-cyan-600 shrink-0">
+          <span class="text-[11px] text-cyan-300 font-black uppercase hidden sm:inline">Salvos:</span>
+          <span class="text-base md:text-lg font-black text-amber-300"><span id="p3ItemCount">0</span>/6</span>
+        </div>
+      </div>
+
+      <!-- CONTAINER PRINCIPAL: JOGO NA ESQUERDA + VOCÊ SABIA NA DIREITA -->
+      <div class="w-full flex flex-col xl:flex-row items-start justify-center gap-4 md:gap-5">
+        
+        <!-- COLUNA DO JOGO -->
+        <div class="w-full max-w-[830px] xl:w-[830px] xl:min-w-[830px] shrink-0 flex flex-col items-center mx-auto xl:mx-0">
+          
+          <!-- CANVAS GAME 3 -->
+          <div class="w-full game-canvas-container border-[3px] border-cyan-400" style="background: #0f172a;">
+            <canvas id="canvasPhase3" width="800" height="620"></canvas>
+          </div>
+
+          <!-- DICA DO AQUÍFERO (ALTURA FIXA ESTÁVEL PARA 2 LINHAS) -->
+          <div class="w-full mt-2 bg-slate-900 text-cyan-100 px-3 sm:px-4 py-2 rounded-2xl border-2 border-cyan-500 shadow-md flex items-center justify-between gap-2.5 sm:gap-3 text-xs md:text-sm font-bold min-h-[58px] sm:h-[58px] sm:max-h-[58px] overflow-hidden">
+            <div class="flex items-center gap-2 sm:gap-2.5 min-w-0">
+              <span class="text-2xl shrink-0">💧</span>
+              <span class="leading-snug">100% da água de Ribeirão Preto vem do Aquífero Guarani! Salve os materiais para a Cooperativa!</span>
+            </div>
+          </div>
+
+          <!-- CONTROLES LATERAIS DA REDE DE RESGATE COMPACTOS -->
+          <div class="w-full mt-2 flex items-stretch justify-center gap-3 px-0.5">
+            <button onpointerdown="startMove('left')" onpointerup="stopMove('left')" onpointerleave="stopMove('left')" class="arcade-btn flex-1 h-20 bg-cyan-600 hover:bg-cyan-500 text-white font-black text-sm sm:text-base md:text-lg rounded-2xl flex items-center justify-center gap-2 shadow-md border-2 border-cyan-400">
+              <span>⬅️ MOVER ESQUERDA</span>
+            </button>
+            <button onpointerdown="startMove('right')" onpointerup="stopMove('right')" onpointerleave="stopMove('right')" class="arcade-btn flex-1 h-20 bg-cyan-600 hover:bg-cyan-500 text-white font-black text-sm sm:text-base md:text-lg rounded-2xl flex items-center justify-center gap-2 shadow-md border-2 border-cyan-400">
+              <span>MOVER DIREITA ➡️</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- COLUNA DA DIREITA: PAINEL EDUCATIVO 'VOCÊ SABIA?' DESTACADO E LEGÍVEL -->
+        <aside class="w-full max-w-[830px] xl:w-[410px] xl:min-w-[410px] xl:max-w-[410px] xl:h-[796px] xl:min-h-[796px] xl:max-h-[796px] shrink-0 bg-slate-900 text-white rounded-3xl p-4 md:p-5 border-4 border-cyan-400 shadow-xl flex flex-col justify-between gap-2 text-left mx-auto xl:mx-0">
+          
+          <div class="flex items-center justify-between border-b-2 border-cyan-800 pb-2">
+            <div class="flex items-center gap-2.5">
+              <span class="text-3xl">💧</span>
+              <div>
+                <span class="bg-cyan-950 text-cyan-300 text-xs font-black uppercase px-2.5 py-0.5 rounded-full border border-cyan-700">
+                  Nosso Tesouro Hídrico
+                </span>
+                <h3 class="text-lg md:text-xl font-black text-cyan-100 leading-tight mt-0.5">
+                  Você Sabia?
+                </h3>
+              </div>
+            </div>
+            <span class="text-xs font-extrabold text-cyan-400 bg-slate-800 px-2 py-1 rounded-lg border border-cyan-700">Ribeirão Preto</span>
+          </div>
+
+          <p class="text-xs md:text-sm text-slate-300 font-semibold leading-relaxed">
+            Ribeirão Preto é uma das poucas grandes cidades do planeta abastecida <b>100% por águas subterrâneas puras</b>:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:flex xl:flex-col gap-2">
+            
+            <div class="bg-slate-800/90 border-2 border-cyan-500/50 rounded-2xl p-3 flex items-start gap-2.5">
+              <span class="text-2xl shrink-0">🌊</span>
+              <div>
+                <span class="font-black text-xs md:text-sm text-cyan-300">Aquífero Guarani & Arenito</span>
+                <p class="text-xs text-slate-300 font-medium leading-snug mt-0.5">
+                  Nossa água brota do Arenito Botucatu a centenas de metros de profundidade, filtrada por séculos pela natureza.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-slate-800/90 border-2 border-amber-500/50 rounded-2xl p-3 flex items-start gap-2.5">
+              <span class="text-2xl shrink-0">⚠️</span>
+              <div>
+                <span class="font-black text-xs md:text-sm text-amber-300">O Perigo do Chorume</span>
+                <p class="text-xs text-slate-300 font-medium leading-snug mt-0.5">
+                  Lixo descartado no chão apodrece e gera chorume tóxico, que pode infiltrar no solo e contaminar o aquífero.
+                </p>
+              </div>
+            </div>
+
+            <div class="md:col-span-2 bg-slate-800/90 border-2 border-emerald-500/50 rounded-2xl p-3 flex items-start gap-2.5">
+              <span class="text-2xl shrink-0">🛻</span>
+              <div>
+                <span class="font-black text-xs md:text-sm text-emerald-300">Cooperativa Mãos Dadas</span>
+                <p class="text-xs text-slate-300 font-medium leading-snug mt-0.5">
+                  Em Ribeirão Preto, os cooperados separam e vendem os recicláveis, sustentando famílias com trabalho digno e sustentável!
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Dica Local Ribeirão Preto - Preservação do Aquífero -->
+          <div class="mt-1 bg-slate-800/90 border-2 border-cyan-500/50 rounded-2xl p-3 flex items-start gap-2.5">
+            <span class="text-2xl shrink-0">🛡️</span>
+            <div>
+              <span class="font-black text-xs md:text-sm text-cyan-200">Preservação Permanente</span>
+              <p class="text-xs text-slate-300 font-medium leading-snug mt-0.5">
+                Descartar o lixo no local correto protege a infiltração de água limpa no Arenito Botucatu, mantendo o Aquífero puro para as futuras gerações!
+              </p>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+
+    <!-- ---------------------------------------- -->
+    <!-- TELA 5: CONCLUSÃO & DIPLOMA OFICIAL       -->
+    <!-- ---------------------------------------- -->
+    <section id="screenWin" class="hidden bg-white rounded-3xl p-6 md:p-10 shadow-2xl border-4 border-amber-400 text-center max-w-3xl mx-auto pop-in">
+      
+      <div class="text-6xl md:text-7xl animate-bounce mb-2">🏆 🌍 📜</div>
+      
+      <span class="bg-amber-100 text-amber-900 text-xs font-black uppercase px-4 py-1.5 rounded-full">
+        Missão Concluída com Honra!
+      </span>
+
+      <h2 class="text-3xl md:text-4xl font-black text-slate-900 mt-3">
+        Parabéns, Guardião Oficial de Ribeirão Preto!
+      </h2>
+
+      <p class="text-slate-600 max-w-lg mx-auto mt-2 text-sm md:text-base leading-relaxed">
+        Você dominou a separação em casa, utilizou os Ecopontos e salvou o Aquífero Guarani enviando resíduos à Cooperativa Mãos Dadas!
+      </p>
+
+      <!-- GERADOR DE CERTIFICADO -->
+      <div class="mt-8 max-w-lg mx-auto bg-amber-50/80 p-6 rounded-3xl border-2 border-amber-300 text-left">
+        <label for="finalStudentName" class="font-black text-amber-950 text-sm block">Digite seu Nome para o Certificado Escolar:</label>
+        <div class="mt-2 flex flex-col sm:flex-row gap-2">
+          <input type="text" id="finalStudentName" maxlength="48" onkeydown="if(event.key==='Enter') generateDiploma()" oninput="document.getElementById('diplomaNameError')?.classList.add('hidden')" placeholder="Ex: Lucas Silva" class="flex-1 px-4 py-3 rounded-2xl text-slate-900 font-black text-base border-2 border-amber-300 focus:outline-none focus:border-emerald-600 bg-white">
+          <button onclick="generateDiploma()" class="arcade-btn bg-emerald-600 hover:bg-emerald-500 text-white font-black px-6 py-3 rounded-2xl transition shadow-md whitespace-nowrap cursor-pointer">
+            Emitir Diploma
+          </button>
+        </div>
+        <p id="diplomaNameError" class="hidden text-xs font-extrabold text-red-600 mt-2">
+          ⚠️ Por favor, digite o seu nome acima para personalizar o seu certificado!
+        </p>
+      </div>
+
+      <!-- DIPLOMA IMPRESSO / VISUAL -->
+      <div id="printableDiploma" class="hidden mt-8 bg-gradient-to-br from-amber-50 to-white p-6 md:p-10 rounded-3xl border-8 border-emerald-600 shadow-2xl max-w-2xl mx-auto text-center relative overflow-hidden">
+        
+        <!-- Borda de adorno -->
+        <div class="border-2 border-dashed border-amber-400 p-6 rounded-2xl relative">
+          
+          <div class="flex items-center justify-between border-b-2 border-emerald-200 pb-3 mb-4 gap-2 flex-wrap">
+            <span class="text-[11px] font-black text-emerald-800 uppercase tracking-wider">Programa EcoKids Ribeirão • Conscientização Ecológica</span>
+            <span class="bg-amber-400 text-amber-950 text-[10px] font-black px-2 py-0.5 rounded-full">MEIO AMBIENTE & SUSTENTABILIDADE</span>
+          </div>
+
+          <div class="text-3xl my-2">🏅</div>
+          <div class="text-xs font-black text-slate-400 uppercase tracking-widest">CERTIFICADO DE MÉRITO ECOLÓGICO</div>
+          
+          <h3 class="text-2xl md:text-3xl font-black text-emerald-800 mt-2 font-heading">
+            Guardião Ambiental Mirim
+          </h3>
+
+          <p class="text-xs text-slate-500 mt-3 max-w-md mx-auto">
+            Certificamos solenemente que o(a) estudante
+          </p>
+
+          <div id="diplomaNamePlaceholder" class="text-2xl md:text-3xl font-black text-slate-900 my-2 text-emerald-700 underline decoration-amber-400 decoration-4">
+            Nome do Estudante
+          </div>
+
+          <p class="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
+            concluiu com êxito os desafios práticos do projeto <b>EcoKids Ribeirão: O Caminho do Resíduo</b>, aprendendo a segregação na fonte, a logística reversa nos Ecopontos e a preservação do <b>Aquífero Guarani</b>.
+          </p>
+
+          <div class="mt-3 flex flex-wrap items-center justify-center gap-2">
+            <div id="diplomaAvatarCompanion" class="text-xs font-black text-emerald-800 bg-emerald-50 py-1 px-3 rounded-xl inline-block border border-emerald-200">
+              Companheiro(a) de missão: Gabi 👧
+            </div>
+            <div class="text-xs font-black text-amber-900 bg-amber-100 py-1 px-3 rounded-xl inline-block border border-amber-300">
+              Pontuação Final: ⭐ <span id="diplomaScorePlaceholder">1700</span> pts
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t-2 border-emerald-100 flex items-center justify-between text-[11px] font-bold text-slate-500">
+            <div>
+              <div>Ribeirão Preto, SP</div>
+              <div class="text-emerald-700 font-black">Preservação Ambiental</div>
+            </div>
+            <div class="text-right">
+              <div class="text-amber-600 font-black text-xs">⭐ NOTA 10 ⭐</div>
+              <div>Ano Letivo 2026</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- BOTÕES FINAIS -->
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <button id="btnPrintDiploma" onclick="window.print()" class="hidden arcade-btn bg-sky-600 hover:bg-sky-500 text-white font-black px-6 py-3.5 rounded-2xl shadow-md transition items-center gap-2 cursor-pointer">
+          <span>🖨️ Imprimir / Salvar em PDF</span>
+        </button>
+        <button onclick="restartGame()" class="arcade-btn bg-slate-200 hover:bg-slate-300 text-slate-800 font-black px-6 py-3.5 rounded-2xl shadow-md transition cursor-pointer">
+          🔄 Jogar Novamente
+        </button>
+      </div>
+    </section>
+
+    <!-- MODAL DE CONFIRMAÇÃO: VOLTAR AO INÍCIO -->
+    <div id="exitConfirmModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/75 backdrop-blur-sm p-4 pop-in">
+      <div class="bg-white rounded-3xl p-6 md:p-8 max-w-md w-full border-4 border-amber-400 shadow-2xl text-center relative">
+        <div class="w-16 h-16 rounded-full bg-amber-100 border-2 border-amber-400 flex items-center justify-center text-4xl mx-auto mb-3 shadow-inner">
+          ⚠️
+        </div>
+        <h3 class="text-xl md:text-2xl font-black text-slate-900">Voltar para o Início?</h3>
+        <p class="text-slate-600 font-semibold text-sm md:text-base mt-2 leading-relaxed">
+          Tem certeza? Todo o progresso desta partida será perdido e o jogo recomeçará do zero!
+        </p>
+        <div class="mt-6 flex flex-col sm:flex-row items-stretch justify-center gap-3">
+          <button onclick="closeExitConfirmModal()" class="arcade-btn flex-1 bg-emerald-500 hover:bg-emerald-400 text-emerald-950 font-black px-5 py-3 rounded-2xl border-2 border-emerald-600 text-sm md:text-base transition cursor-pointer">
+            Continuar Jogando 🎮
+          </button>
+          <button onclick="executeExitToHome()" class="arcade-btn flex-1 bg-red-500 hover:bg-red-400 text-white font-black px-5 py-3 rounded-2xl border-2 border-red-600 text-sm md:text-base transition cursor-pointer">
+            Sim, Voltar 🏠
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- RODAPÉ                                     -->
+  <!-- ========================================== -->
+  <footer class="bg-emerald-900 text-emerald-200 text-center py-3 text-xs border-t-2 border-emerald-700">
+    <p>EcoKids Ribeirão • <b>Educação Ambiental e Logística Reversa</b> • Versão 1.0.0 • Ribeirão Preto/SP • 2026</p>
+  </footer>
+
+
+  <!-- ========================================== -->
+  <!-- MOTOR DO JOGO JAVASCRIPT                   -->
+  <!-- ========================================== -->
+  <script>
+    /* =======================================================
+       1. ESTADO GLOBAL & CONFIGURAÇÕES
+       ======================================================= */
+    const STATE = {
+      score: 0,
+      phase: 0, // 0: Intro, 1: Quintal, 2: Eco-Bike, 3: Aquífero, 4: Vitória
+      avatar: 'gabi', // 'gabi', 'leo', 'dandara' ou 'davi'
+      soundEnabled: true,
+      keys: { up: false, down: false, left: false, right: false },
+      particles: [],
+      timeouts: []
+    };
+
+    function scheduleGameTimeout(fn, delay) {
+      const id = setTimeout(() => {
+        STATE.timeouts = STATE.timeouts.filter(t => t !== id);
+        fn();
+      }, delay);
+      STATE.timeouts.push(id);
+      return id;
+    }
+
+    function clearAllGameTimeouts() {
+      while (STATE.timeouts.length > 0) {
+        clearTimeout(STATE.timeouts.pop());
+      }
+    }
+
+    /* =======================================================
+       2. SINTETIZADOR DE ÁUDIO PROCEDURAL (Web Audio API)
+       Sem arquivos externos para funcionar 100% offline
+       ======================================================= */
+    let audioCtx = null;
+    function getAudioContext() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function toggleAudio() {
+      STATE.soundEnabled = !STATE.soundEnabled;
+      const btn = document.getElementById('btnSoundToggle');
+      if (btn) {
+        btn.innerText = STATE.soundEnabled ? '🔊' : '🔇';
+        btn.setAttribute('aria-pressed', STATE.soundEnabled ? 'true' : 'false');
+      }
+    }
+
+    function playTone(ctx, type, startFreq, endFreq, startTime, duration, peakGain) {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.type = type;
+      osc.frequency.setValueAtTime(startFreq, startTime);
+      if (endFreq !== null && endFreq !== startFreq) {
+        osc.frequency.exponentialRampToValueAtTime(endFreq, startTime + duration);
+      }
+      gain.gain.setValueAtTime(peakGain, startTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
+      osc.start(startTime);
+      osc.stop(startTime + duration);
+    }
+
+    function playSound(type) {
+      if (!STATE.soundEnabled) return;
+      try {
+        const ctx = getAudioContext();
+        const now = ctx.currentTime;
+
+        if (type === 'step') {
+          playTone(ctx, 'triangle', 140, 60, now, 0.06, 0.07);
+        } else if (type === 'pickup') {
+          playTone(ctx, 'sine', 320, 650, now, 0.14, 0.18);
+        } else if (type === 'good') {
+          // Arpeggio alegre (Do - Mi - Sol - Do alto)
+          [523.25, 659.25, 783.99, 1046.50].forEach((freq, i) => {
+            playTone(ctx, 'triangle', freq, null, now + i * 0.07, 0.18, 0.15);
+          });
+        } else if (type === 'bad') {
+          playTone(ctx, 'sawtooth', 220, 120, now, 0.25, 0.2);
+        } else if (type === 'bell') {
+          // Campainha da bicicleta
+          [1300, 1500].forEach((freq, i) => {
+            playTone(ctx, 'sine', freq, null, now + i * 0.1, 0.25, 0.2);
+          });
+        } else if (type === 'splash') {
+          playTone(ctx, 'sine', 500, 250, now, 0.2, 0.15);
+        } else if (type === 'fanfare') {
+          [523.25, 659.25, 783.99, 1046.50].forEach((f, idx) => {
+            playTone(ctx, 'triangle', f, null, now + idx * 0.12, 0.4, 0.25);
+          });
+        }
+      } catch (e) {}
+    }
+
+    /* =======================================================
+       3. SISTEMA DE CONTROLE (Teclado, D-Pad, Toque/Arraste)
+       ======================================================= */
+    window.addEventListener('keydown', (e) => {
+      // Permite digitação normal quando o foco estiver em campos de texto (ex: certificado)
+      if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) {
+        return;
+      }
+
+      if (e.code === 'Escape' || e.key === 'Escape') {
+        const exitModal = document.getElementById('exitConfirmModal');
+        if (exitModal && !exitModal.classList.contains('hidden')) {
+          closeExitConfirmModal();
+          return;
+        }
+        const p1Modal = document.getElementById('p1SuccessModal');
+        if (p1Modal && !p1Modal.classList.contains('hidden')) {
+          closeP1Modal();
+          return;
+        }
+        if (STATE.phase >= 1 && STATE.phase <= 3) {
+          confirmExitToHome();
+          return;
+        }
+      }
+
+      // Previne o scroll da página pelas setas do teclado e pela barra de espaço durante o jogo
+      if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Space'].includes(e.code) ||
+          ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].includes(e.key)) {
+        e.preventDefault();
+      }
+
+      if (['ArrowUp', 'KeyW'].includes(e.code) || e.key === 'ArrowUp') STATE.keys.up = true;
+      if (['ArrowDown', 'KeyS'].includes(e.code) || e.key === 'ArrowDown') STATE.keys.down = true;
+      if (['ArrowLeft', 'KeyA'].includes(e.code) || e.key === 'ArrowLeft') STATE.keys.left = true;
+      if (['ArrowRight', 'KeyD'].includes(e.code) || e.key === 'ArrowRight') STATE.keys.right = true;
+
+      // Evita disparos repetidos por segurar Espaço/Enter (e.repeat)
+      if (!e.repeat && (e.code === 'Space' || e.key === ' ' || e.code === 'Enter' || e.key === 'Enter')) {
+        const exitModal = document.getElementById('exitConfirmModal');
+        if (exitModal && !exitModal.classList.contains('hidden')) return;
+        if (STATE.phase === 1) triggerP1Action();
+        if (STATE.phase === 2) triggerP2Action();
+      }
+    });
+
+    window.addEventListener('keyup', (e) => {
+      if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) {
+        return;
+      }
+
+      if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Space'].includes(e.code) ||
+          ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].includes(e.key)) {
+        e.preventDefault();
+      }
+
+      if (['ArrowUp', 'KeyW'].includes(e.code) || e.key === 'ArrowUp') STATE.keys.up = false;
+      if (['ArrowDown', 'KeyS'].includes(e.code) || e.key === 'ArrowDown') STATE.keys.down = false;
+      if (['ArrowLeft', 'KeyA'].includes(e.code) || e.key === 'ArrowLeft') STATE.keys.left = false;
+      if (['ArrowRight', 'KeyD'].includes(e.code) || e.key === 'ArrowRight') STATE.keys.right = false;
+    });
+
+    // Se o usuário alternar de janela ou aba, reseta o estado de movimento
+    window.addEventListener('blur', () => {
+      STATE.keys.up = false;
+      STATE.keys.down = false;
+      STATE.keys.left = false;
+      STATE.keys.right = false;
+    });
+
+    function startMove(dir) {
+      STATE.keys[dir] = true;
+    }
+    function stopMove(dir) {
+      STATE.keys[dir] = false;
+    }
+
+    const AVATARS = {
+      gabi: { name: 'Gabi', role: 'Guardiã dos Rios', icon: '👧', activeClass: 'border-emerald-500 bg-emerald-50 ring-emerald-200' },
+      leo: { name: 'Leo', role: 'Guardião da Terra', icon: '👦', activeClass: 'border-amber-500 bg-amber-50 ring-amber-200' },
+      dandara: { name: 'Dandara', role: 'Guardiã da Fauna', icon: '👧🏾', activeClass: 'border-purple-500 bg-purple-50 ring-purple-200' },
+      davi: { name: 'Davi', role: 'Guardião da Floresta', icon: '👦🏾', activeClass: 'border-orange-500 bg-orange-50 ring-orange-200' }
+    };
+
+    function selectAvatar(name) {
+      if (!AVATARS[name]) name = 'gabi';
+      STATE.avatar = name;
+      ['gabi', 'leo', 'dandara', 'davi'].forEach(k => {
+        const btn = document.getElementById('optAvatar' + k.charAt(0).toUpperCase() + k.slice(1));
+        if (!btn) return;
+        const info = AVATARS[k];
+        if (k === name) {
+          btn.className = `p-3.5 rounded-2xl border-4 ${info.activeClass} flex flex-col items-center justify-center gap-1.5 shadow-md ring-4 cursor-pointer transition transform scale-105`;
+        } else {
+          btn.className = "p-3.5 rounded-2xl border-4 border-slate-200 bg-white hover:bg-slate-50 flex flex-col items-center justify-center gap-1.5 shadow-sm cursor-pointer transition";
+        }
+      });
+      playSound('pickup');
+    }
+
+    /* =======================================================
+       4. GERENCIAMENTO DE TELAS E FLUXO
+       ======================================================= */
+    function setPhase(phase) {
+      clearAllGameTimeouts();
+      if (P1.animId) { cancelAnimationFrame(P1.animId); P1.animId = null; }
+      if (P2.animId) { cancelAnimationFrame(P2.animId); P2.animId = null; }
+      if (P3.animId) { cancelAnimationFrame(P3.animId); P3.animId = null; }
+      STATE.keys = { up: false, down: false, left: false, right: false };
+      STATE.particles = [];
+      STATE.phase = phase;
+
+      document.getElementById('screenIntro').classList.add('hidden');
+      document.getElementById('screenPhase1').classList.add('hidden');
+      document.getElementById('screenPhase2').classList.add('hidden');
+      document.getElementById('screenPhase3').classList.add('hidden');
+      document.getElementById('screenWin').classList.add('hidden');
+      const p1Modal = document.getElementById('p1SuccessModal');
+      if (p1Modal) p1Modal.classList.add('hidden');
+
+      const hudLabel = document.getElementById('hudPhaseLabel');
+      const pBar = document.getElementById('globalProgressBar');
+
+      if (phase === 0) {
+        document.getElementById('screenIntro').classList.remove('hidden');
+        hudLabel.innerText = "Início";
+        pBar.style.width = "0%";
+        document.getElementById('printableDiploma')?.classList.add('hidden');
+        document.getElementById('btnPrintDiploma')?.classList.add('hidden');
+        document.getElementById('diplomaNameError')?.classList.add('hidden');
+      } else if (phase === 1) {
+        document.getElementById('screenPhase1').classList.remove('hidden');
+        hudLabel.innerText = "Fase 1/3: Quintal";
+        pBar.style.width = "33%";
+        initPhase1();
+      } else if (phase === 2) {
+        document.getElementById('screenPhase2').classList.remove('hidden');
+        hudLabel.innerText = "Fase 2/3: Eco-Bike";
+        pBar.style.width = "66%";
+        initPhase2();
+      } else if (phase === 3) {
+        document.getElementById('screenPhase3').classList.remove('hidden');
+        hudLabel.innerText = "Fase 3/3: Aquífero";
+        pBar.style.width = "100%";
+        initPhase3();
+      } else if (phase === 4) {
+        document.getElementById('screenWin').classList.remove('hidden');
+        hudLabel.innerText = "Concluído! 🏆";
+        pBar.style.width = "100%";
+        playSound('fanfare');
+        const scoreEl = document.getElementById('diplomaScorePlaceholder');
+        if (scoreEl) scoreEl.innerText = STATE.score;
+        scheduleGameTimeout(() => document.getElementById('finalStudentName')?.focus(), 150);
+      }
+
+      if (phase >= 1 && phase <= 3) {
+        requestAnimationFrame(() => syncGameCardHeight());
+      }
+    }
+
+    function startMission() {
+      STATE.score = 0;
+      updateScore(0);
+      setPhase(1);
+    }
+
+    function updateScore(pts) {
+      STATE.score += pts;
+      document.getElementById('hudScore').innerText = STATE.score;
+    }
+
+    function restartGame() {
+      executeExitToHome();
+    }
+
+    function confirmExitToHome() {
+      if (STATE.phase === 0) return;
+      const modal = document.getElementById('exitConfirmModal');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeExitConfirmModal() {
+      const modal = document.getElementById('exitConfirmModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function executeExitToHome() {
+      clearAllGameTimeouts();
+      if (P1.animId) { cancelAnimationFrame(P1.animId); P1.animId = null; }
+      if (P2.animId) { cancelAnimationFrame(P2.animId); P2.animId = null; }
+      if (P3.animId) { cancelAnimationFrame(P3.animId); P3.animId = null; }
+      STATE.score = 0;
+      STATE.keys = { up: false, down: false, left: false, right: false };
+      updateScore(0);
+      const modal = document.getElementById('exitConfirmModal');
+      if (modal) modal.classList.add('hidden');
+      setPhase(0);
+      playSound('pickup');
+    }
+
+    /* Helper para Renderização Retina / Alta Resolução nos Canvases */
+    function setupHiDPICanvas(canvas, logicalW = 800, logicalH = 620) {
+      if (!canvas) return;
+      const dpr = Math.max(window.devicePixelRatio || 1, 2);
+      const targetW = Math.round(logicalW * dpr);
+      const targetH = Math.round(logicalH * dpr);
+      if (canvas.width !== targetW) canvas.width = targetW;
+      if (canvas.height !== targetH) canvas.height = targetH;
+    }
+
+    /* =======================================================
+       DIMENSÃO FIXA E IMUTÁVEL DO CARD DO JOGO (830x642px CSS /
+       800x620px LÓGICOS - ALINHADO AOS 796px DO 'VOCÊ SABIA?')
+       O tamanho do card do jogo é 100% fixo e jamais muda
+       durante a partida.
+       ======================================================= */
+    let asideResizeObserver = null;
+
+    function syncGameCardHeight() {
+      if (!STATE || STATE.phase < 1 || STATE.phase > 3) return;
+
+      if (STATE.phase === 1 && P1.canvas) {
+        P1.w = 800;
+        P1.h = 620;
+        setupHiDPICanvas(P1.canvas, 800, 620);
+      } else if (STATE.phase === 2 && P2.canvas) {
+        P2.w = 800;
+        P2.h = 620;
+        setupHiDPICanvas(P2.canvas, 800, 620);
+      } else if (STATE.phase === 3 && P3.canvas) {
+        P3.w = 800;
+        P3.h = 620;
+        setupHiDPICanvas(P3.canvas, 800, 620);
+      }
+    }
+
+    function initAsideResizeObserver() {
+      // Desativado propositalmente: o card do jogo agora possui tamanho 100% fixo
+      if (asideResizeObserver) {
+        asideResizeObserver.disconnect();
+        asideResizeObserver = null;
+      }
+    }
+
+    /* =======================================================
+       5. MOTOR GRÁFICO HI-BIT PIXEL ART (ALTA DEFINIÇÃO / HD)
+       Estética Pixel Art moderna (estilo Stardew Valley HD /
+       Sea of Stars): contornos escuros nítidos, sombreamento
+       cel-shaded em camadas, cantos chanfrados de alta precisão
+       e sprites matriciais 20x20 de alta densidade!
+       ======================================================= */
+    function px(val, p = 1.5) {
+      return Math.round(val / p) * p;
+    }
+
+    function fillPx(ctx, x, y, w, h, color, p = 1.5) {
+      if (color) ctx.fillStyle = color;
+      const sx = Math.round(x / p) * p;
+      const sy = Math.round(y / p) * p;
+      const sw = Math.max(p, Math.round(w / p) * p);
+      const sh = Math.max(p, Math.round(h / p) * p);
+      ctx.fillRect(sx, sy, sw, sh);
+    }
+
+    // Caixa Hi-Bit Pixel Art com duplo chanfro de alta definição, relevo 3D e sombra nítida
+    function drawPixelBox(ctx, x, y, w, h, bgColor, borderColor = '#0f172a', p = 1.5, highlightColor = null, shadowColor = 'rgba(15, 23, 42, 0.22)') {
+      const rx = Math.round(x);
+      const ry = Math.round(y);
+      const rw = Math.round(w);
+      const rh = Math.round(h);
+      if (rw <= 0 || rh <= 0) return;
+
+      // Se for um elemento fino/pequeno (como braços, sapatos, laços do avatar), renderiza com contorno pixel nítido proporcional
+      if (rw < 14 || rh < 14) {
+        if (shadowColor) {
+          ctx.fillStyle = shadowColor;
+          ctx.fillRect(rx + 1, ry + 1, rw, rh);
+        }
+        if (borderColor) {
+          ctx.fillStyle = borderColor;
+          ctx.fillRect(rx, ry, rw, rh);
+          ctx.fillStyle = bgColor;
+          ctx.fillRect(rx + 1, ry + 1, Math.max(1, rw - 2), Math.max(1, rh - 2));
+        } else {
+          ctx.fillStyle = bgColor;
+          ctx.fillRect(rx, ry, rw, rh);
+        }
+        if (highlightColor && rw > 2) {
+          ctx.fillStyle = highlightColor;
+          ctx.fillRect(rx + 1, ry + 1, rw - 2, 1);
+        }
+        return;
+      }
+
+      const s = Math.min(p, 2); // Chanfro fino de alta resolução
+      if (shadowColor) {
+        ctx.fillStyle = shadowColor;
+        ctx.fillRect(rx + s * 2 + 2, ry + 3, rw - s * 4, rh);
+        ctx.fillRect(rx + s + 2, ry + s + 3, rw - s * 2, rh - s * 2);
+        ctx.fillRect(rx + 2, ry + s * 2 + 3, rw, rh - s * 4);
+      }
+
+      if (borderColor) {
+        ctx.fillStyle = borderColor;
+        ctx.fillRect(rx + s * 2, ry, rw - s * 4, rh);
+        ctx.fillRect(rx + s, ry + s, rw - s * 2, rh - s * 2);
+        ctx.fillRect(rx, ry + s * 2, rw, rh - s * 4);
+      }
+
+      const b = 2; // Espessura da borda pixel art HD
+      ctx.fillStyle = bgColor;
+      ctx.fillRect(rx + s + b, ry + b, rw - (s + b) * 2, rh - b * 2);
+      ctx.fillRect(rx + b, ry + s + b, rw - b * 2, rh - (s + b) * 2);
+
+      if (highlightColor) {
+        ctx.fillStyle = highlightColor;
+        ctx.fillRect(rx + s + b, ry + b, rw - (s + b) * 2, 2);
+      }
+    }
+
+    // Círculo / Medalhão em Pixel Art de Alta Definição (micro-degraus de 1.5px sem serrilhado grosseiro)
+    function drawPixelCircle(ctx, cx, cy, r, fillColor, borderColor = null, p = 1.5) {
+      const step = 1.5; // Força alta resolução em qualquer curva pixel art
+      const scx = Math.round(cx / step) * step;
+      const scy = Math.round(cy / step) * step;
+      const R = Math.max(3, Math.round(r / step));
+
+      if (borderColor) {
+        ctx.fillStyle = borderColor;
+        for (let iy = -R; iy <= R; iy++) {
+          const span = Math.floor(Math.sqrt((R + 0.35) * (R + 0.35) - iy * iy));
+          ctx.fillRect(scx - span * step, scy + iy * step, (span * 2 + 1) * step, step + 0.4);
+        }
+        const Ri = Math.max(1, R - 1.5);
+        ctx.fillStyle = fillColor;
+        for (let iy = -Math.floor(Ri); iy <= Math.floor(Ri); iy++) {
+          const span = Math.floor(Math.sqrt((Ri + 0.35) * (Ri + 0.35) - iy * iy));
+          ctx.fillRect(scx - span * step, scy + iy * step, (span * 2 + 1) * step, step + 0.4);
+        }
+      } else {
+        ctx.fillStyle = fillColor;
+        for (let iy = -R; iy <= R; iy++) {
+          const span = Math.floor(Math.sqrt((R + 0.35) * (R + 0.35) - iy * iy));
+          ctx.fillRect(scx - span * step, scy + iy * step, (span * 2 + 1) * step, step + 0.4);
+        }
+      }
+    }
+
+    // Faixa de Dithering Fino em Alta Resolução (micro-xadrez 2px suave)
+    function drawDitherBand(ctx, x, y, w, h, colorTop, colorBottom, p = 2) {
+      const step = 2; // Micro-xadrez HD delicado
+      const sx = Math.round(x);
+      const sy = Math.round(y);
+      const sw = Math.round(w);
+      const sh = Math.round(h);
+      ctx.fillStyle = colorBottom;
+      ctx.fillRect(sx, sy, sw, sh);
+      ctx.fillStyle = colorTop;
+      ctx.fillRect(sx, sy, sw, Math.floor(sh * 0.35));
+      const cols = Math.floor(sw / step);
+      const rows = Math.floor(sh / step);
+      for (let r = 0; r < rows; r++) {
+        for (let c = (r % 2); c < cols; c += 2) {
+          ctx.fillRect(sx + c * step, sy + r * step, step, step);
+        }
+      }
+    }
+
+    // Paleta Expandida Hi-Bit (24 cores ricas com luz, meio-tom, sombra e contorno)
+    const PIXEL_PALETTE = {
+      'K': '#0f172a', // Contorno escuro profundo
+      'W': '#ffffff', // Branco especular puro
+      'S': '#e2e8f0', // Prata claro
+      's': '#94a3b8', // Prata sombra
+      'G': '#64748b', // Cinza médio
+      'D': '#334155', // Cinza chumbo escuro
+      'R': '#ef4444', // Vermelho vivo
+      'r': '#b91c1c', // Vermelho sombra
+      'O': '#f97316', // Laranja vivo
+      'o': '#c2410c', // Laranja sombra
+      'B': '#d97706', // Papelão / Âmbar claro
+      'b': '#b45309', // Papelão médio
+      'n': '#78350f', // Marrom escuro
+      'm': '#451a03', // Madeira profunda
+      'Y': '#facc15', // Amarelo ouro
+      'y': '#fef08a', // Amarelo luz / creme
+      'E': '#22c55e', // Verde esmeralda vivo
+      'e': '#15803d', // Verde floresta sombra
+      'L': '#86efac', // Verde menta luz
+      'C': '#38bdf8', // Azul ciano vivo
+      'c': '#bae6fd', // Azul gelo luz
+      'U': '#0284c7', // Azul oceano médio
+      'u': '#1d4ed8', // Azul royal intenso
+      'P': '#a855f7', // Roxo vibrante
+      'p': '#6b21a8', // Roxo sombra
+      'M': '#ec4899', // Rosa vibrante
+      'F': '#fcd5ce', // Pele clara de bebê (pêssego suave)
+      'f': '#f4b8ad'  // Sombra suave da pele de bebê
+    };
+
+    // Matrizes 16x16 de Alta Densidade (256 micro-pixels por sprite!) para máxima definição
+    const PIXEL_SPRITES = {
+      papel: [
+        "....KKKKKKKK....",
+        "..KKBBBBBBBBKK..",
+        ".KBBByyyyyyBBBK.",
+        "KBBBByyyyyyBBBBK",
+        "KKKKKKKKKKKKKKKK",
+        "KBBBBByyyyBBBBBK",
+        "KBBBBByyyybbbbBK",
+        "KBBBBByyyybbbbBK",
+        "KBBBBBBBBbbbbbBK",
+        "KBBBBWWWbbbbbbBK",
+        "KBBBBWKWbbbbbbBK",
+        "KBBBBWWWbbbbbbBK",
+        "KbbbbbbbbbbbbnnK",
+        ".KnnnnnnnnnnnnK.",
+        "..KKKKKKKKKKKK..",
+        "................"
+      ],
+      plastico: [
+        ".....KKKKKK.....",
+        ".....KRRRRK.....",
+        ".....KrrrrK.....",
+        ".....KKKKKK.....",
+        "....KccCCCCK....",
+        "...KcWCCCCCCK...",
+        "..KCWCCCCCCCCK..",
+        "..KRRRRRRRRRRK..",
+        "..KRRWWWWWWrrK..",
+        "..KRRRRRRRRrrK..",
+        "..KCWCCCCCCUUK..",
+        "..KCWCCCCCCUUK..",
+        "..KCWCCCCCCUUK..",
+        "..KccCCCCCCUUK..",
+        "...KKKKKKKKKK...",
+        "................"
+      ],
+      vidro: [
+        "....KKKKKKKK....",
+        "...KYYyyyyYYK...",
+        "...KYYYYYYYYK...",
+        "...KKKKKKKKKK...",
+        "..KLcLLLLLLLeK..",
+        ".KLcRRRRRRRRLeK.",
+        ".KLWWRRRRRryrLK.",
+        ".KLWRRRRRRRRRrK.",
+        ".KLRRWWWWWWrrLK.",
+        ".KLRRWRRRRWrrLK.",
+        ".KLRRWWWWWWrrLK.",
+        ".KLcRRRRryrRLeK.",
+        "..KLcLLLLLLLeK..",
+        "...KKKKKKKKKK...",
+        "................",
+        "................"
+      ],
+      metal: [
+        "....KKKKKKKK....",
+        "...KSWWWWWWsK...",
+        "..KSsKKKKKKsSK..",
+        "..KKKKKKKKKKKK..",
+        "..KYWYYYYYYBBK..",
+        "..KYWWYYYYYBBK..",
+        "..KYWRRRRRRrrK..",
+        "..KYWWWWWWWWWK..",
+        "..KYWRRRRRRrrK..",
+        "..KYWWYYYYYBBK..",
+        "..KYWYYYYYYBBK..",
+        "..KYYBBBBBBBBK..",
+        "..KSWWWWWWWWsK..",
+        "...KKKKKKKKKK...",
+        "................",
+        "................"
+      ],
+      organico: [
+        ".......KKKK.....",
+        "......KmmmmK....",
+        "......KYYYYK....",
+        ".....KYyyyyYK...",
+        "....KYYyyyyYYK..",
+        "...KYYYyWWyYYYK.",
+        "..KYYYKYYYYKYYYK",
+        ".KYYYK.KYYK.KYYK",
+        "KYYbK..KYYK..KYK",
+        "KYbK...KYYK..KK.",
+        "KKK....KYYK.....",
+        ".......KYbK.....",
+        ".......KKKK.....",
+        "................",
+        "................",
+        "................"
+      ],
+      rejeito: [
+        "....KKKKKKKK....",
+        "..KKFFFbbFFFKK..",
+        ".KFFFFFbBFFFFFK.",
+        "KFFFFFFFFFFFFFFK",
+        "KFFFFFFFFFFFFFFK",
+        "KFFKFFFFFFFFKFFK",
+        "KFFKWKKFFKWKKFFK",
+        "KFFKKKKFFKKKKFFK",
+        "KFFFFFFFFFFFFFFK",
+        "KFMMFFFCCFFFMMFK",
+        ".KFFFFCUUCFFFFK.",
+        ".KfffCCWWCCfffK.",
+        "..KffCCWWCCffK..",
+        "...KKffCCffKK...",
+        ".....KKKKKK.....",
+        "................"
+      ],
+      lixeira_rejeito: [
+        ".....KKKKKK.....",
+        "....KGGSSGGK....",
+        "...KKKKKKKKKK...",
+        "..KDDDDDDDDDDK..",
+        ".KDDGDDDDDDDDDK.",
+        ".KDDGRRDDDDDDDK.",
+        ".KDDDRRRDDRRRDK.",
+        ".KDDDDWRRRRWDK..",
+        ".KDDDDDRRRRDDK..",
+        ".KDDDDWRRRRWDK..",
+        ".KDDDRRRDDRRRDK.",
+        ".KDDDDDDDDDDDDK.",
+        "..KDDDDDDDDDDK..",
+        "...KKKKKKKKKK...",
+        "................",
+        "................"
+      ],
+      garrafa_vidro: [
+        "......KKKK......",
+        "......KBBK......",
+        "......KKKK......",
+        "......KEEK......",
+        ".....KLEEEK.....",
+        "....KLWEEEEK....",
+        "...KLWEEEEeeK...",
+        "...KLWyyyyyeK...",
+        "...KLEyWWyyeK...",
+        "...KLEyyyyyeK...",
+        "...KLWEEEEeeK...",
+        "...KLWEEEEeeK...",
+        "...KeeeeeeeeK...",
+        "....KKKKKKKK....",
+        "................",
+        "................"
+      ],
+      jornal: [
+        "..KKKKKKKKKKKK..",
+        ".KWWWWWWWWWWWWK.",
+        "KWWuuuuuWWWWWWsK",
+        "KWWuuuuuWRRRRWsK",
+        "KWWWWWWWWRyyRWsK",
+        "KWWDDDDDWRRRRWsK",
+        "KWWWWWWWWWWWWWsK",
+        "KWWDDDDDDDDDDWsK",
+        "KWWWWWWWWWWWWWsK",
+        "KWWDDDDDDDDDDWsK",
+        "KWWWWWWWWWWWWWsK",
+        "KSSSSSSSSSSSSssK",
+        ".KKKKKKKKKKKKKK.",
+        "................",
+        "................",
+        "................"
+      ],
+      sofa: [
+        "..KKKKKKKKKKKK..",
+        ".KRRRRRRRRRRRRK.",
+        "KRWWWRRRRRRYYRRK",
+        "KRRRRrRRRRRYYRRK",
+        "KRRRRrRRRRRRRRRK",
+        "KKKKKRRRRRRKKKKK",
+        "KOOrrRRRRRRrrOOK",
+        "KOOrrrrrrrrrrOOK",
+        "KrrrrrrrrrrrrrrK",
+        "KKKKKKKKKKKKKKKK",
+        "..KmmK....KmmK..",
+        "..KKKK....KKKK..",
+        "................",
+        "................",
+        "................",
+        "................"
+      ],
+      pneu: [
+        "....KKKKKKKK....",
+        "..KKDDDDDDDDKK..",
+        ".KDDGDDDDDDGDDK.",
+        ".KDDKKKKKKKKDDK.",
+        "KDDKSSSSSSSSKDDK",
+        "KDGKSWWKKKKsSKDK",
+        "KDDKSWKKKKssSKDK",
+        "KDDKSKKKKKssSKDK",
+        "KDGKSssKKKKsSKDK",
+        "KDDKSSSSSSSSKDDK",
+        ".KDDKKKKKKKKDDK.",
+        ".KDDGDDDDDDGDDK.",
+        "..KKDDDDDDDDKK..",
+        "....KKKKKKKK....",
+        "................",
+        "................"
+      ],
+      pilha: [
+        ".....KKKKKK.....",
+        ".....KYYYYK.....",
+        "...KKKKKKKKKK...",
+        "...KDDDDDDDDK...",
+        "...KDWDDDDDDK...",
+        "...KDWDDYYDDK...",
+        "...KDWDYYYDDK...",
+        "...KDWDDYYDDK...",
+        "...KEEEEEEEEK...",
+        "...KEWEEEEEEeK..",
+        "...KEWWWWWWeeK..",
+        "...KEEEEEeeeeK..",
+        "...KKKKKKKKKK...",
+        "................",
+        "................",
+        "................"
+      ],
+      remedio: [
+        "....KKKKKKKK....",
+        "....KccCCCCK....",
+        "...KKKKKKKKKK...",
+        "..KWWWWWWWWWWK..",
+        "..KWWSSSSSSWWK..",
+        "..KWWWWRRWWWWK..",
+        "..KWWWWRRWWWWK..",
+        "..KWWWRRRRRWWK..",
+        "..KWWWWRRWWWWK..",
+        "..KWWWWWWWWWWK..",
+        "..KSSSSSSSSSSK..",
+        "...KKKKKKKKKK...",
+        "................",
+        "................",
+        "................",
+        "................"
+      ],
+      oleo: [
+        "...KKKKKKKKKK...",
+        "..KPPPPPPPPPPK..",
+        ".KKKKKKKKKKKKKK.",
+        "..KPPWWWWPPPPpK.",
+        "..KPPpPPPPPPPpK.",
+        ".KKKKKKKKKKKKKK.",
+        "..KPPPPYYPPPPpK.",
+        "..KPPPYYYYPPPpK.",
+        "..KPPYYWWYYPPpK.",
+        "..KPPYYYYYYPPpK.",
+        "..KPPPYYYYPPPpK.",
+        ".KKKKKKKKKKKKKK.",
+        "..KPPPPPPPPppK..",
+        "...KKKKKKKKKK...",
+        "................",
+        "................"
+      ],
+      recycle: [
+        ".....KKKKKK.....",
+        "....KLEEEELK....",
+        "...KLEEEKKEEK...",
+        "..KLEEK..KEEEK..",
+        ".KLEEK....KEEEK.",
+        ".KKKK......KKKK.",
+        "KEEEEK....KEEEEK",
+        "KLLLLK....KLLLLK",
+        "KEEEEKKKKKKEEEEK",
+        ".KEEEEEEEEEEEEK.",
+        "..KeeeeeeeeeeK..",
+        "...KKKKKKKKKK...",
+        "................",
+        "................",
+        "................",
+        "................"
+      ],
+      bird: [
+        ".....KKKKKK.....",
+        "...KKCCCCCCKK...",
+        "..KCCcCCCCcCCK..",
+        "..KCCCKWWCCCCK..",
+        ".KCCCCKKKKCCOCK.",
+        ".KCCCCCCCCCCOOK.",
+        ".KCCUUUUWWWWKK..",
+        "..KCUUUWWWWWWK..",
+        "...KWWWWWWWWK...",
+        "....KKKKKKKK....",
+        ".....KK..KK.....",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................"
+      ],
+      bfly1: [
+        "..KKKK....KKKK..",
+        ".KMMMMK..KMMMMK.",
+        ".KMYYMKKKKMYYMK.",
+        ".KMMWWKKKKWWMMK.",
+        "..KMMMKKKKMMMK..",
+        "...KKOOOOOOKK...",
+        "..KOOKKKKKKOOK..",
+        "..KOOOK..KOOOK..",
+        "...KKK....KKK...",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................"
+      ],
+      bfly2: [
+        "................",
+        "...KKKK..KKKK...",
+        "..KMMMMKKMMMMK..",
+        "..KMYYMKKMYYMK..",
+        "...KMMWWWWMMK...",
+        "....KOOOOOOK....",
+        "...KOOKKKKOOK...",
+        "....KK....KK....",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................",
+        "................"
+      ]
+    };
+
+    function drawPixelSprite(ctx, spriteKey, cx, cy, scale = 2.2) {
+      const rows = PIXEL_SPRITES[spriteKey] || PIXEL_SPRITES.papel;
+      const numRows = rows.length;
+      const numCols = rows[0].length;
+      // Escala ajustada para 16x16 manter o mesmo tamanho físico com 2x mais definição!
+      const effScale = scale * (12 / numCols);
+      const startX = cx - (numCols * effScale) / 2;
+      const startY = cy - (numRows * effScale) / 2;
+
+      for (let r = 0; r < numRows; r++) {
+        const rowStr = rows[r];
+        let c = 0;
+        while (c < numCols) {
+          const ch = rowStr[c];
+          if (ch === '.') {
+            c++;
+            continue;
+          }
+          let run = 1;
+          while (c + run < numCols && rowStr[c + run] === ch) {
+            run++;
+          }
+          ctx.fillStyle = PIXEL_PALETTE[ch] || '#0f172a';
+          ctx.fillRect(
+            Math.round((startX + c * effScale) * 2) / 2,
+            Math.round((startY + r * effScale) * 2) / 2,
+            Math.ceil(run * effScale * 2) / 2,
+            Math.ceil(effScale * 2) / 2
+          );
+          c += run;
+        }
+      }
+    }
+
+    function getSpriteKeyForItem(item) {
+      if (!item) return 'papel';
+      const id = (item.id || '').toLowerCase();
+      const icon = item.icon || '';
+      const name = (item.name || '').toLowerCase();
+      if (id === 'papel' || icon === '📦') return 'papel';
+      if (id === 'plastico' || icon === '🧴') return 'plastico';
+      if (id === 'vidro' || icon === '🫙') return 'vidro';
+      if (id === 'metal' || icon === '🥫') return 'metal';
+      if (id === 'organico' || icon === '🍌' || icon === '🍎') return 'organico';
+      if (icon === '🗑️') return 'lixeira_rejeito';
+      if (id === 'rejeito' || icon === '👶') return 'rejeito';
+      if (icon === '🍾' || name.includes('garrafa de vidro')) return 'garrafa_vidro';
+      if (icon === '🗞️' || name.includes('revista') || name.includes('jornal')) return 'jornal';
+      if (icon === '🛋️' || name.includes('sofá')) return 'sofa';
+      if (icon === '🛞' || name.includes('pneu')) return 'pneu';
+      if (icon === '🔋' || id === 'supermercado' || icon === '🏬') return 'pilha';
+      if (icon === '💊' || id === 'farmacia' || icon === '🏥') return 'remedio';
+      if (icon === '🛢️' || id === 'oleo') return 'oleo';
+      if (id === 'ecoponto' || icon === '🟢') return 'recycle';
+      return 'papel';
+    }
+
+    /* =======================================================
+       5B. DESENHO DO PERSONAGEM EM HI-BIT PIXEL ART (HD)
+       ======================================================= */
+    function drawAvatar(ctx, x, y, walkCycle, isCarrying, carriedItem, avatarType) {
+      ctx.save();
+      const P = 1; // Grade Hi-Bit de 1px para resolução máxima com estética Pixel Art
+      ctx.translate(Math.round(x), Math.round(y));
+
+      const isGirl = (avatarType === 'gabi' || avatarType === 'dandara');
+      const isDarkSkin = (avatarType === 'dandara' || avatarType === 'davi');
+      const skinColor = isDarkSkin ? '#6f3c1b' : '#fcd5ce';
+      const skinShadow = isDarkSkin ? '#522b13' : '#f4b8ad';
+      const skinLight = isDarkSkin ? '#854d27' : '#ffe5e0';
+      const K = '#0f172a'; // Contorno escuro estilo Pixel Art
+
+      // Sombra cel-shaded no chão
+      drawPixelCircle(ctx, 0, 16, 15, 'rgba(15, 23, 42, 0.20)', null, 1.5);
+
+      const bob = Math.round(Math.sin(walkCycle) * 2.5);
+      const legStep = Math.round(Math.sin(walkCycle) * 5);
+
+      // 1. PERNINHAS E SAPATOS HI-BIT PIXEL ART
+      const legColor = isDarkSkin ? '#452310' : '#334155';
+      // Perna esquerda
+      fillPx(ctx, -9 - legStep * 0.5, 0 + bob, 6, 14, K, P);
+      fillPx(ctx, -8 - legStep * 0.5, 1 + bob, 4, 12, legColor, P);
+      // Perna direita
+      fillPx(ctx, 3 + legStep * 0.5, 0 + bob, 6, 14, K, P);
+      fillPx(ctx, 4 + legStep * 0.5, 1 + bob, 4, 12, legColor, P);
+
+      // Meias brancas para as meninas
+      if (isGirl) {
+        fillPx(ctx, -8 - legStep * 0.5, 8 + bob, 4, 4, '#ffffff', P);
+        fillPx(ctx, 4 + legStep * 0.5, 8 + bob, 4, 4, '#ffffff', P);
+      }
+
+      // Sapatos com contorno pixelado e ponto de luz
+      let shoeColor = '#15803d';
+      if (avatarType === 'gabi') shoeColor = '#ec4899';
+      else if (avatarType === 'dandara') shoeColor = '#facc15';
+      else if (avatarType === 'leo') shoeColor = '#0284c7';
+
+      drawPixelBox(ctx, -11 - legStep * 0.5, 11, 9, 6, shoeColor, K, 1, 'rgba(255,255,255,0.4)', null);
+      drawPixelBox(ctx, 2 + legStep * 0.5, 11, 9, 6, shoeColor, K, 1, 'rgba(255,255,255,0.4)', null);
+
+      // 2. TRONCO E ROUPINHA HI-BIT PIXEL ART
+      if (avatarType === 'gabi') {
+        // Vestidinho verde esmeralda com saia evasê em micro-degraus e pregas sombreadas
+        drawPixelBox(ctx, -13, -20 + bob, 26, 14, '#10b981', K, 1.5, '#34d399', null);
+        // Saia evasê em degraus finos de 1.5px
+        fillPx(ctx, -15, -8 + bob, 30, 5, K, P);
+        fillPx(ctx, -17, -4 + bob, 34, 7, K, P);
+        fillPx(ctx, -13, -7 + bob, 26, 4, '#10b981', P);
+        fillPx(ctx, -15, -3 + bob, 30, 4, '#10b981', P);
+        // Sombra das pregas da saia
+        fillPx(ctx, -15, -1 + bob, 30, 2, '#059669', P);
+        fillPx(ctx, -6, -6 + bob, 2, 6, '#059669', P);
+        fillPx(ctx, 4, -6 + bob, 2, 6, '#059669', P);
+
+        // Cinto rosa e gola branca
+        fillPx(ctx, -12, -8 + bob, 24, 2, '#ec4899', P);
+        fillPx(ctx, -5, -18 + bob, 10, 3, '#ffffff', P);
+      } else if (avatarType === 'dandara') {
+        // Vestidinho roxo vibrante com saia evasê e cinto dourado
+        drawPixelBox(ctx, -13, -20 + bob, 26, 14, '#9333ea', K, 1.5, '#c084fc', null);
+        fillPx(ctx, -15, -8 + bob, 30, 5, K, P);
+        fillPx(ctx, -17, -4 + bob, 34, 7, K, P);
+        fillPx(ctx, -13, -7 + bob, 26, 4, '#9333ea', P);
+        fillPx(ctx, -15, -3 + bob, 30, 4, '#9333ea', P);
+        fillPx(ctx, -15, -1 + bob, 30, 2, '#7e22ce', P);
+        fillPx(ctx, -6, -6 + bob, 2, 6, '#7e22ce', P);
+        fillPx(ctx, 4, -6 + bob, 2, 6, '#7e22ce', P);
+
+        // Cinto e gola dourados
+        fillPx(ctx, -12, -8 + bob, 24, 2, '#facc15', P);
+        fillPx(ctx, -5, -18 + bob, 10, 3, '#facc15', P);
+      } else if (avatarType === 'leo') {
+        // Camiseta amarela solar e bermuda azul com sombreamento cel-shaded
+        drawPixelBox(ctx, -13, -20 + bob, 26, 15, '#f59e0b', K, 1.5, '#fde047', null);
+        drawPixelBox(ctx, -12, -6 + bob, 24, 9, '#0284c7', K, 1.5, null, null);
+        fillPx(ctx, -1, -2 + bob, 2, 5, K, P); // Divisão da bermuda
+      } else {
+        // Davi: Camiseta laranja e bermuda verde floresta
+        drawPixelBox(ctx, -13, -20 + bob, 26, 15, '#ea580c', K, 1.5, '#fb923c', null);
+        drawPixelBox(ctx, -12, -6 + bob, 24, 9, '#15803d', K, 1.5, null, null);
+        fillPx(ctx, -1, -2 + bob, 2, 5, K, P);
+      }
+
+      // Emblema ecológico no peito em alta definição
+      fillPx(ctx, -3, -14 + bob, 6, 5, '#ffffff', P);
+      fillPx(ctx, -2, -13 + bob, 4, 3, '#16a34a', P);
+
+      // 3. CABEÇA HI-BIT PIXEL ART (contorno escuro fino e sombreamento suave)
+      drawPixelCircle(ctx, 0, -32 + bob, 14.5, skinColor, K, 1.5);
+      fillPx(ctx, -8, -41 + bob, 16, 2, skinLight, P);
+      fillPx(ctx, -7, -21 + bob, 14, 2, skinShadow, P);
+
+      // 4. CABELOS E ACESSÓRIOS HI-BIT PIXEL ART (estritamente acima dos olhos: y <= -35)
+      if (avatarType === 'gabi') {
+        // Maria-chiquinhas laterais esculpidas em Hi-Bit (fora do rosto!)
+        drawPixelCircle(ctx, -17, -31 + bob, 6, '#78350f', K, 1.5);
+        drawPixelCircle(ctx, -18, -24 + bob, 5.5, '#78350f', K, 1.5);
+        fillPx(ctx, -19, -33 + bob, 3, 5, '#b45309', P); // Mecha de luz
+
+        drawPixelCircle(ctx, 17, -31 + bob, 6, '#78350f', K, 1.5);
+        drawPixelCircle(ctx, 18, -24 + bob, 5.5, '#78350f', K, 1.5);
+        fillPx(ctx, 16, -33 + bob, 3, 5, '#b45309', P);
+
+        // Lacinhos rosa choque detalhados
+        drawPixelBox(ctx, -19, -37 + bob, 7, 5, '#ec4899', K, 1, '#f9a8d4', null);
+        drawPixelBox(ctx, 12, -37 + bob, 7, 5, '#ec4899', K, 1, '#f9a8d4', null);
+
+        // Topo do cabelo castanho e tiara rosa (acima de y = -35 + bob)
+        fillPx(ctx, -13, -45 + bob, 26, 9, K, P);
+        fillPx(ctx, -11, -47 + bob, 22, 3, K, P);
+        fillPx(ctx, -12, -44 + bob, 24, 8, '#78350f', P);
+        fillPx(ctx, -10, -46 + bob, 20, 3, '#78350f', P);
+        fillPx(ctx, -8, -45 + bob, 16, 2, '#b45309', P); // Reflexo do cabelo
+        fillPx(ctx, -10, -43 + bob, 20, 2, '#ec4899', P); // Tiara rosa
+      } else if (avatarType === 'dandara') {
+        // Dois Afro-Puffs volumosos em Hi-Bit Pixel Art
+        drawPixelCircle(ctx, -17, -41 + bob, 8.5, '#1c1917', K, 1.5);
+        fillPx(ctx, -20, -45 + bob, 4, 3, '#3f3f46', P); // Luz dos cachos
+        drawPixelCircle(ctx, 17, -41 + bob, 8.5, '#1c1917', K, 1.5);
+        fillPx(ctx, 16, -45 + bob, 4, 3, '#3f3f46', P);
+
+        // Lacinhos dourados na base dos puffs
+        drawPixelBox(ctx, -15, -39 + bob, 6, 4, '#facc15', K, 1, '#fef08a', null);
+        drawPixelBox(ctx, 9, -39 + bob, 6, 4, '#facc15', K, 1, '#fef08a', null);
+
+        // Topo do cabelo afro (acima de y = -35 + bob)
+        fillPx(ctx, -13, -46 + bob, 26, 10, K, P);
+        fillPx(ctx, -10, -49 + bob, 20, 4, K, P);
+        fillPx(ctx, -12, -45 + bob, 24, 9, '#1c1917', P);
+        fillPx(ctx, -9, -48 + bob, 18, 4, '#1c1917', P);
+        fillPx(ctx, -6, -46 + bob, 12, 2, '#3f3f46', P);
+
+        // Brinquinhos de argola dourada
+        fillPx(ctx, -16, -29 + bob, 3, 4, '#eab308', P);
+        fillPx(ctx, -15, -28 + bob, 2, 2, '#fef08a', P);
+        fillPx(ctx, 13, -29 + bob, 3, 4, '#eab308', P);
+        fillPx(ctx, 13, -28 + bob, 2, 2, '#fef08a', P);
+      } else if (avatarType === 'leo') {
+        // Costeletas / Cabelo castanho nas têmporas emoldurando o rosto
+        fillPx(ctx, -14, -39 + bob, 4, 7, K, P);
+        fillPx(ctx, -13, -38 + bob, 3, 5, '#78350f', P);
+        fillPx(ctx, 10, -39 + bob, 4, 7, K, P);
+        fillPx(ctx, 10, -38 + bob, 3, 5, '#78350f', P);
+
+        // Copa arredondada do boné acompanhando a curvatura natural da cabeça
+        fillPx(ctx, -8, -48 + bob, 16, 3, K, P);
+        fillPx(ctx, -11, -46 + bob, 22, 4, K, P);
+        fillPx(ctx, -13, -43 + bob, 26, 6, K, P);
+
+        fillPx(ctx, -7, -47 + bob, 14, 2, '#38bdf8', P); // Luz superior da copa
+        fillPx(ctx, -10, -45 + bob, 20, 3, '#0ea5e9', P); // Meio-tom da copa
+        fillPx(ctx, -12, -42 + bob, 24, 5, '#0284c7', P); // Base da copa
+
+        // Emblema amarelo solar no centro do boné
+        fillPx(ctx, -3, -44 + bob, 6, 4, '#ffffff', P);
+        fillPx(ctx, -2, -43 + bob, 4, 2, '#facc15', P);
+
+        // Aba frontal esportiva curvada sobre a testa (acima das sobrancelhas)
+        fillPx(ctx, -14, -39 + bob, 28, 3, K, P);
+        fillPx(ctx, -12, -36 + bob, 24, 1.5, K, P);
+        fillPx(ctx, -12, -38 + bob, 24, 2, '#0369a1', P);
+        fillPx(ctx, -10, -39 + bob, 20, 1.5, '#38bdf8', P);
+      } else {
+        // Davi: Corte Afro High-Top Fade em Hi-Bit Pixel Art
+        fillPx(ctx, -13, -48 + bob, 26, 12, K, P);
+        fillPx(ctx, -11, -50 + bob, 22, 3, K, P);
+        fillPx(ctx, -12, -47 + bob, 24, 11, '#1c1917', P);
+        fillPx(ctx, -10, -49 + bob, 20, 3, '#1c1917', P);
+        fillPx(ctx, -7, -47 + bob, 14, 2, '#3f3f46', P);
+        fillPx(ctx, -11, -36 + bob, 22, 1.5, '#452310', P);
+      }
+
+      // 5. ROSTO HI-BIT PIXEL ART: SOBRANCELHAS, OLHOS EXPRESSIVOS, CÍLIOS, BOCHECHAS E SORRISO
+      const browColor = isDarkSkin ? '#1c1917' : '#78350f';
+      fillPx(ctx, -8, -34 + bob, 5, 1.5, browColor, P);
+      fillPx(ctx, 3, -34 + bob, 5, 1.5, browColor, P);
+
+      // Olhos expressivos 5x5 com duplo brilho branco (estilo anime/pixel HD)
+      fillPx(ctx, -8, -32 + bob, 5, 5, K, P);
+      fillPx(ctx, 3, -32 + bob, 5, 5, K, P);
+      // Brilho principal superior direito (2x2) + brilho secundário inferior esquerdo (1x1)
+      fillPx(ctx, -5, -32 + bob, 2, 2, '#ffffff', P);
+      fillPx(ctx, 6, -32 + bob, 2, 2, '#ffffff', P);
+      fillPx(ctx, -7, -29 + bob, 1, 1, '#bae6fd', P);
+      fillPx(ctx, 4, -29 + bob, 1, 1, '#bae6fd', P);
+
+      // Cílios delicados nas meninas (Gabi e Dandara)
+      if (isGirl) {
+        fillPx(ctx, -10, -32 + bob, 2, 1.5, K, P);
+        fillPx(ctx, -9, -33 + bob, 1.5, 1.5, K, P);
+        fillPx(ctx, 8, -32 + bob, 2, 1.5, K, P);
+        fillPx(ctx, 7.5, -33 + bob, 1.5, 1.5, K, P);
+      }
+
+      // Bochechas rosadas
+      const blushColor = isDarkSkin ? 'rgba(239, 68, 68, 0.45)' : 'rgba(244, 63, 94, 0.5)';
+      fillPx(ctx, -10, -27 + bob, 4, 2.5, blushColor, P);
+      fillPx(ctx, 6, -27 + bob, 4, 2.5, blushColor, P);
+
+      // Sorriso simpático em micro-degraus de pixel
+      fillPx(ctx, -4, -25 + bob, 1.5, 1.5, K, P);
+      fillPx(ctx, -2.5, -23.5 + bob, 5, 1.5, K, P);
+      fillPx(ctx, 2.5, -25 + bob, 1.5, 1.5, K, P);
+
+      // 6. BRAÇOS E ITEM CARREGADO EM HI-BIT PIXEL ART
+      let sleeveColor = '#10b981';
+      if (avatarType === 'gabi') sleeveColor = '#10b981';
+      else if (avatarType === 'dandara') sleeveColor = '#9333ea';
+      else if (avatarType === 'leo') sleeveColor = '#f59e0b';
+      else if (avatarType === 'davi') sleeveColor = '#ea580c';
+
+      if (isCarrying) {
+        // Braços erguidos perfeitamente simétricos (centrados em -13 e +13)
+        // Braço esquerdo [-16 a -10]
+        drawPixelBox(ctx, -16, -38 + bob, 6, 22, skinColor, K, 1, null, null);
+        fillPx(ctx, -15, -20 + bob, 4, 4, sleeveColor, P); // Manga na base do ombro
+        fillPx(ctx, -15, -37 + bob, 4, 3, skinLight, P);  // Mãozinha erguida
+
+        // Braço direito [10 a 16]
+        drawPixelBox(ctx, 10, -38 + bob, 6, 22, skinColor, K, 1, null, null);
+        fillPx(ctx, 11, -20 + bob, 4, 4, sleeveColor, P);  // Manga na base do ombro
+        fillPx(ctx, 11, -37 + bob, 4, 3, skinLight, P);  // Mãozinha erguida
+
+        if (carriedItem) {
+          // Medalhão Hi-Bit e Sprite 16x16 HD do item acima da cabeça
+          drawPixelCircle(ctx, 0, -56 + bob, 21, '#ffffff', carriedItem.binColor || K, 1.5);
+          drawPixelSprite(ctx, getSpriteKeyForItem(carriedItem), 0, -56 + bob, 2.5);
+
+          // Balão estilo RPG HD com fonte nítida de alta definição
+          ctx.font = 'bold 12px "Fredoka", "Segoe UI", sans-serif';
+          const label = carriedItem.shortName || carriedItem.name;
+          const tw = Math.ceil(ctx.measureText(label).width);
+          drawPixelBox(ctx, -tw / 2 - 10, -94 + bob, tw + 20, 22, '#ffffff', carriedItem.binColor || K, 1.5, null, 'rgba(0,0,0,0.2)');
+          ctx.fillStyle = '#0f172a';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(label, 0, -83 + bob);
+        }
+      } else {
+        // Braços em repouso / balanço lateral perfeitamente simétricos (largura 6px, centrados em -15 e +15)
+        const armSwing = Math.round(legStep * 0.5);
+        // Braço esquerdo [-18 a -12]
+        drawPixelBox(ctx, -18, -17 + bob - armSwing, 6, 16, skinColor, K, 1, null, null);
+        fillPx(ctx, -17, -16 + bob - armSwing, 4, 4, sleeveColor, P); // Manga da camiseta/vestido
+        fillPx(ctx, -17, -4 + bob - armSwing, 4, 2, skinLight, P);   // Mãozinha
+
+        // Braço direito [12 a 18]
+        drawPixelBox(ctx, 12, -17 + bob + armSwing, 6, 16, skinColor, K, 1, null, null);
+        fillPx(ctx, 13, -16 + bob + armSwing, 4, 4, sleeveColor, P); // Manga da camiseta/vestido
+        fillPx(ctx, 13, -4 + bob + armSwing, 4, 2, skinLight, P);   // Mãozinha
+      }
+
+      ctx.restore();
+    }
+
+
+    /* =======================================================
+       6. FASE 1: O QUINTAL LIMPO (LIXEIRAS & TRANSPORTE)
+       ======================================================= */
+    const P1 = {
+      canvas: null,
+      ctx: null,
+      w: 800,
+      h: 620,
+      player: { x: 400, y: 360, vx: 0, vy: 0, speed: 4.2, walkCycle: 0, targetX: null, targetY: null },
+      carrying: null,
+      itemsSorted: 0,
+      animId: null,
+      // Exatamente 6 resíduos (1 para cada cesto), que aparecem juntos espalhados no gramado
+      items: [
+        {
+          id: "papel",
+          name: "Caixa de Papelão Limpa",
+          shortName: "Caixa de Papelão",
+          icon: "📦",
+          cat: "papel",
+          binName: "Papel (Azul)",
+          binColor: "#2563eb",
+          x: 180,
+          y: 285,
+          collected: false,
+          sorted: false,
+          explanation: "A caixa de papelão é feita de fibras de celulose limpas e secas. Quando descartada na lixeira Azul, ela segue para a reciclagem e pode virar novos cadernos, caixas e livros, poupando árvores e água!",
+          examples: [
+            { icon: "🗞️", name: "Jornais e Revistas" },
+            { icon: "📝", name: "Folhas de Caderno" },
+            { icon: "📦", name: "Caixas de Brinquedo" },
+            { icon: "✉️", name: "Envelopes de Papel" }
+          ]
+        },
+        {
+          id: "plastico",
+          name: "Garrafa PET de Refrigerante",
+          shortName: "Garrafa PET",
+          icon: "🧴",
+          cat: "plastico",
+          binName: "Plástico (Vermelho)",
+          binColor: "#dc2626",
+          x: 400,
+          y: 285,
+          collected: false,
+          sorted: false,
+          explanation: "O plástico pode demorar mais de 400 anos para se decompor na natureza! Na lixeira Vermelha, a garrafa PET é lavada, picada em flocos e reaproveitada para fazer novas embalagens, tecidos e brinquedos.",
+          examples: [
+            { icon: "🧴", name: "Frascos de Xampu" },
+            { icon: "🛍️", name: "Sacolas de Mercado" },
+            { icon: "🥤", name: "Copos Plásticos Limpos" },
+            { icon: "🪣", name: "Potes de Sorvete" }
+          ]
+        },
+        {
+          id: "vidro",
+          name: "Pote de Vidro de Geleia",
+          shortName: "Pote de Vidro",
+          icon: "🫙",
+          cat: "vidro",
+          binName: "Vidro (Verde)",
+          binColor: "#16a34a",
+          x: 620,
+          y: 285,
+          collected: false,
+          sorted: false,
+          explanation: "O vidro é 100% reciclável infinitas vezes sem perder a qualidade! Jogando na lixeira Verde, você evita a extração de areia e minerais da natureza e reduz a emissão de carbono.",
+          examples: [
+            { icon: "🍾", name: "Garrafas de Azeite e Suco" },
+            { icon: "🫙", name: "Potes de Maionese" },
+            { icon: "🍶", name: "Frascos de Perfume" },
+            { icon: "🥛", name: "Copos de Vidro" }
+          ]
+        },
+        {
+          id: "metal",
+          name: "Lata de Alumínio de Suco",
+          shortName: "Lata de Alumínio",
+          icon: "🥫",
+          cat: "metal",
+          binName: "Metal (Amarelo)",
+          binColor: "#f59e0b",
+          x: 180,
+          y: 448,
+          collected: false,
+          sorted: false,
+          explanation: "O Brasil é campeão mundial na reciclagem de latinhas de alumínio! Em apenas 60 dias, uma latinha descartada na lixeira Amarela é derretida e volta novinha para as prateleiras das lojas.",
+          examples: [
+            { icon: "🥫", name: "Latinhas de Refrigerante" },
+            { icon: "🥫", name: "Latas de Milho e Atum" },
+            { icon: "🥄", name: "Tampinhas Metálicas" },
+            { icon: "📎", name: "Clipes e Panelas Velhas" }
+          ]
+        },
+        {
+          id: "organico",
+          name: "Casca de Banana",
+          shortName: "Casca de Banana",
+          icon: "🍌",
+          cat: "organico",
+          binName: "Orgânico (Marrom)",
+          binColor: "#78350f",
+          x: 400,
+          y: 448,
+          collected: false,
+          sorted: false,
+          explanation: "Cascas de frutas e restos de comida não viram plástico nem papel, mas viram ADUBO! Pelo processo de compostagem, a matéria orgânica vira fertilizante natural para enriquecer hortas e jardins.",
+          examples: [
+            { icon: "🍎", name: "Cascas de Frutas" },
+            { icon: "🥕", name: "Restos de Legumes" },
+            { icon: "☕", name: "Borra de Café e Chá" },
+            { icon: "🍂", name: "Folhas Secas do Jardim" }
+          ]
+        },
+        {
+          id: "rejeito",
+          name: "Fralda Descartável Usada",
+          shortName: "Fralda Usada (Rejeito)",
+          icon: "👶",
+          cat: "rejeito",
+          binName: "Rejeito (Cinza)",
+          binColor: "#475569",
+          x: 620,
+          y: 448,
+          collected: false,
+          sorted: false,
+          explanation: "Atenção máxima: fraldas usadas, papéis higiênicos e curativos contêm germes e sujeira. Eles NUNCA podem ser reciclados! Devem ir na lixeira Cinza de REJEITO e seguir protegidos para o aterro sanitário.",
+          examples: [
+            { icon: "🧻", name: "Papel Higiênico Usado" },
+            { icon: "🍕", name: "Papel de Pizza Engordurado" },
+            { icon: "🩹", name: "Curativos e Fitas Adesivas" },
+            { icon: "🧽", name: "Esponjas de Pia Velhas" }
+          ]
+        }
+      ],
+      // 6 Lixeiras oficiais com dimensões ampliadas e simetria matemática
+      bins: [
+        { id: 'papel', name: 'PAPEL', icon: '📦', color: '#2563eb', x: 82, y: 52, w: 90, h: 104 },
+        { id: 'plastico', name: 'PLÁSTICO', icon: '🧴', color: '#dc2626', x: 209, y: 52, w: 90, h: 104 },
+        { id: 'vidro', name: 'VIDRO', icon: '🫙', color: '#16a34a', x: 336, y: 52, w: 90, h: 104 },
+        { id: 'metal', name: 'METAL', icon: '🥫', color: '#d97706', x: 463, y: 52, w: 90, h: 104 },
+        { id: 'organico', name: 'ORGÂNICO', icon: '🍎', color: '#78350f', x: 590, y: 52, w: 90, h: 104 },
+        { id: 'rejeito', name: 'REJEITO', icon: '🗑️', color: '#475569', x: 717, y: 52, w: 90, h: 104 }
+      ]
+    };
+
+    function initPhase1() {
+      P1.canvas = document.getElementById('canvasPhase1');
+      P1.ctx = P1.canvas.getContext('2d');
+      setupHiDPICanvas(P1.canvas, P1.w || 800, P1.h || 620);
+
+      P1.itemsSorted = 0;
+      P1.carrying = null;
+      highlightVoceSabia(null);
+      P1.player.x = 400;
+      P1.player.y = 360;
+      P1.player.targetX = null;
+      P1.player.targetY = null;
+
+      // Reseta todos os 6 resíduos no gramado
+      P1.items.forEach(it => {
+        if (it.origX === undefined) {
+          it.origX = it.x;
+          it.origY = it.y;
+        } else {
+          it.x = it.origX;
+          it.y = it.origY;
+        }
+        it.collected = false;
+        it.sorted = false;
+      });
+
+      document.getElementById('p1ItemCount').innerText = "0";
+      document.getElementById('p1TipText').innerText = "Caminhe até qualquer resíduo no quintal para pegá-lo com as mãos!";
+      document.getElementById('p1CarryingBadge').classList.add('hidden');
+      document.getElementById('p1ActionLabel').innerText = "PEGAR ITEM";
+
+      // Clique/Toque no canvas
+      P1.canvas.onpointerdown = (e) => {
+        const modal = document.getElementById('p1SuccessModal');
+        if (modal && !modal.classList.contains('hidden')) return;
+
+        const rect = P1.canvas.getBoundingClientRect();
+        const scaleX = (P1.w || 800) / rect.width;
+        const scaleY = (P1.h || 620) / rect.height;
+        const clickX = (e.clientX - rect.left) * scaleX;
+        const clickY = (e.clientY - rect.top) * scaleY;
+
+        if (!P1.carrying) {
+          // Se clicou direto num resíduo
+          for (let it of P1.items) {
+            if (it.collected || it.sorted) continue;
+            if (Math.hypot(clickX - it.x, clickY - it.y) < 45) {
+              P1.player.targetX = it.x;
+              P1.player.targetY = it.y;
+              return;
+            }
+          }
+        } else {
+          // Se está carregando e clicou em uma lixeira no topo
+          if (clickY < 185) {
+            for (let bin of P1.bins) {
+              if (Math.abs(clickX - bin.x) < bin.w / 2 + 15) {
+                P1.player.targetX = bin.x;
+                P1.player.targetY = 164; // Dentro do limite caminável (y >= 160) e ao alcance da lixeira
+                return;
+              }
+            }
+          }
+        }
+
+        P1.player.targetX = Math.max(50, Math.min((P1.w || 800) - 50, clickX));
+        P1.player.targetY = Math.max(160, Math.min((P1.h || 620) - 40, clickY));
+      };
+
+      if (P1.animId) cancelAnimationFrame(P1.animId);
+      loopPhase1();
+      requestAnimationFrame(() => syncGameCardHeight(true));
+    }
+
+    function highlightVoceSabia(cat) {
+      const cards = document.querySelectorAll('.vs-bin-card');
+      cards.forEach(card => {
+        card.classList.remove('ring-4', 'ring-amber-400', 'shadow-lg');
+        const badge = card.querySelector('.vs-match-badge');
+        if (badge) badge.classList.add('invisible', 'opacity-0');
+      });
+
+      if (cat) {
+        const targetCard = document.getElementById('vsCard-' + cat);
+        if (targetCard) {
+          targetCard.classList.add('ring-4', 'ring-amber-400', 'shadow-lg');
+          const badge = targetCard.querySelector('.vs-match-badge');
+          if (badge) badge.classList.remove('invisible', 'opacity-0', 'hidden');
+        }
+      }
+    }
+
+    function onVsCardClick(cat) {
+      playSound('pickup');
+      const bin = P1.bins.find(b => b.id === cat);
+      if (!bin) return;
+      if (P1.carrying) {
+        if (P1.carrying.cat === cat) {
+          document.getElementById('p1TipText').innerText = `Perfeito! Você está com ${P1.carrying.shortName}. Caminhando até a lixeira ${bin.name}!`;
+          P1.player.targetX = bin.x;
+          P1.player.targetY = 164;
+        } else {
+          document.getElementById('p1TipText').innerText = `Atenção: ${P1.carrying.shortName} não vai na lixeira ${bin.name}! Veja a lixeira destacada em amarelo no 'Você Sabia?'!`;
+        }
+      } else {
+        document.getElementById('p1TipText').innerText = `Lixeira ${bin.name}: Aceita resíduos da categoria ${cat.toUpperCase()}! Encontre um no quintal!`;
+      }
+    }
+
+    function triggerP1Action() {
+      const modal = document.getElementById('p1SuccessModal');
+      if (modal && !modal.classList.contains('hidden')) {
+        closeP1Modal();
+        return;
+      }
+
+      if (!P1.carrying) {
+        // Tenta pegar o item mais próximo
+        let nearest = null;
+        let minDist = 999;
+        P1.items.forEach(it => {
+          if (it.collected || it.sorted) return;
+          const dist = Math.hypot(P1.player.x - it.x, P1.player.y - it.y);
+          if (dist < minDist) {
+            minDist = dist;
+            nearest = it;
+          }
+        });
+
+        if (nearest && minDist < 70) {
+          P1.carrying = nearest;
+          nearest.collected = true;
+          highlightVoceSabia(nearest.cat);
+          playSound('pickup');
+          document.getElementById('p1TipText').innerText = `Carregando ${P1.carrying.name}! Olhe a cor correspondente no 'Você Sabia?' e leve até a lixeira!`;
+          document.getElementById('p1CarryingBadge').classList.remove('hidden');
+          document.getElementById('p1ActionLabel').innerText = "DESCARTAR NA LIXEIRA";
+        } else if (nearest) {
+          document.getElementById('p1TipText').innerText = `Aproxime-se mais de ${nearest.shortName} para pegá-lo!`;
+        }
+      } else {
+        // Tenta descartar na lixeira mais próxima
+        let nearestBin = null;
+        let minDist = 999;
+        P1.bins.forEach(bin => {
+          const dist = Math.hypot(P1.player.x - bin.x, P1.player.y - (bin.y + bin.h / 2));
+          if (dist < minDist) {
+            minDist = dist;
+            nearestBin = bin;
+          }
+        });
+
+        if (nearestBin && minDist < 95) {
+          if (P1.carrying.cat === nearestBin.id) {
+            // Acertou!
+            const itemSorted = P1.carrying;
+            itemSorted.sorted = true;
+            P1.itemsSorted++;
+            P1.carrying = null;
+            highlightVoceSabia(null);
+            document.getElementById('p1ItemCount').innerText = P1.itemsSorted;
+            document.getElementById('p1CarryingBadge').classList.add('hidden');
+            document.getElementById('p1ActionLabel').innerText = "PEGAR ITEM";
+
+            playSound('good');
+            updateScore(50);
+            createConfetti(nearestBin.x, nearestBin.y + 20);
+
+            // Exibe quadrinho com criança feliz, explicação e outros exemplos
+            openP1Modal(itemSorted, nearestBin);
+          } else {
+            // Errou a lixeira
+            playSound('bad');
+            document.getElementById('p1TipText').innerText = `❌ Ops! ${P1.carrying.shortName} não vai na lixeira ${nearestBin.name}! Procure a correta!`;
+          }
+        } else {
+          // Soltar o resíduo no chão longe das lixeiras
+          const droppedItem = P1.carrying;
+          droppedItem.collected = false;
+          droppedItem.x = Math.round(Math.max(80, Math.min((P1.w || 800) - 80, P1.player.x)));
+          droppedItem.y = Math.round(Math.max(200, Math.min((P1.h || 620) - 40, P1.player.y + 12)));
+          P1.carrying = null;
+          highlightVoceSabia(null);
+          playSound('pickup');
+          document.getElementById('p1TipText').innerText = `Você soltou ${droppedItem.shortName} no chão. Pode pegá-lo novamente quando quiser!`;
+          document.getElementById('p1CarryingBadge').classList.add('hidden');
+          document.getElementById('p1ActionLabel').innerText = "PEGAR ITEM";
+        }
+      }
+    }
+
+    function openP1Modal(item, bin) {
+      const modal = document.getElementById('p1SuccessModal');
+      const avatarEl = document.getElementById('modalKidAvatar');
+      const iconEl = document.getElementById('modalItemIcon');
+      const nameEl = document.getElementById('modalItemName');
+      const badgeEl = document.getElementById('modalBinBadge');
+      const explEl = document.getElementById('modalExplanation');
+      const gridEl = document.getElementById('modalExamplesGrid');
+      const btnTextEl = document.getElementById('modalBtnText');
+
+      // Avatar comemorativo
+      avatarEl.innerText = AVATARS[STATE.avatar]?.icon || '👧';
+      iconEl.innerText = item.icon;
+      nameEl.innerText = item.name;
+      badgeEl.innerText = `Destino: Lixeira ${item.binName}`;
+      badgeEl.style.color = item.binColor;
+      explEl.innerText = item.explanation;
+
+      // Lista de outros exemplos com ícones e textos ampliados
+      gridEl.innerHTML = '';
+      item.examples.forEach(ex => {
+        const div = document.createElement('div');
+        div.className = "bg-white px-3.5 py-2.5 rounded-xl border-2 border-emerald-200 flex items-center gap-3 text-xs md:text-sm font-extrabold text-slate-800 shadow-sm h-full min-h-[48px]";
+        div.innerHTML = `<span class="text-2xl shrink-0">${ex.icon}</span> <span class="leading-snug">${ex.name}</span>`;
+        gridEl.appendChild(div);
+      });
+
+      if (P1.itemsSorted >= 6) {
+        btnTextEl.innerText = "Fase 1 Concluída! Ir para a Fase 2 🚲🚀";
+      } else {
+        btnTextEl.innerText = `Continuar Separando o Quintal (${P1.itemsSorted}/6) 🌿`;
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeP1Modal() {
+      document.getElementById('p1SuccessModal').classList.add('hidden');
+      highlightVoceSabia(null);
+      if (P1.itemsSorted >= 6) {
+        playSound('fanfare');
+        scheduleGameTimeout(() => {
+          if (STATE.phase === 1) setPhase(2);
+        }, 500);
+      } else {
+        document.getElementById('p1TipText').innerText = "Muito bem! Escolha outro resíduo no quintal para descartar!";
+        document.getElementById('p1ActionLabel').innerText = "PEGAR ITEM";
+      }
+    }
+
+    function loopPhase1() {
+      if (STATE.phase !== 1) return;
+      updatePhase1();
+      renderPhase1();
+      P1.animId = requestAnimationFrame(loopPhase1);
+    }
+
+    function updatePhase1() {
+      const modal = document.getElementById('p1SuccessModal');
+      if (modal && !modal.classList.contains('hidden')) {
+        return; // Pausa movimentação enquanto lê o quadrinho
+      }
+
+      const p = P1.player;
+      let moving = false;
+
+      // Teclado / D-Pad
+      if (STATE.keys.up) { p.y -= p.speed; moving = true; p.targetY = null; }
+      if (STATE.keys.down) { p.y += p.speed; moving = true; p.targetY = null; }
+      if (STATE.keys.left) { p.x -= p.speed; moving = true; p.targetX = null; }
+      if (STATE.keys.right) { p.x += p.speed; moving = true; p.targetX = null; }
+
+      // Toque / Clique suave
+      if (p.targetX !== null && p.targetY !== null) {
+        const dx = p.targetX - p.x;
+        const dy = p.targetY - p.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist > 5) {
+          p.x += (dx / dist) * p.speed;
+          p.y += (dy / dist) * p.speed;
+          moving = true;
+        } else {
+          p.targetX = null;
+          p.targetY = null;
+          // Se chegou no destino
+          if (!P1.carrying) {
+            P1.items.forEach(it => {
+              if (it.collected || it.sorted) return;
+              if (Math.hypot(p.x - it.x, p.y - it.y) < 45) {
+                triggerP1Action();
+              }
+            });
+          } else {
+            P1.bins.forEach(bin => {
+              if (Math.hypot(p.x - bin.x, p.y - (bin.y + bin.h / 2)) < 85) {
+                triggerP1Action();
+              }
+            });
+          }
+        }
+      }
+
+      if (moving) {
+        const prevStep = Math.floor(p.walkCycle / 4);
+        p.walkCycle += 0.25;
+        if (Math.floor(p.walkCycle / 4) !== prevStep) playSound('step');
+      } else {
+        p.walkCycle = 0;
+      }
+
+      // Limites do quintal
+      p.x = Math.max(50, Math.min((P1.w || 800) - 50, p.x));
+      p.y = Math.max(160, Math.min((P1.h || 620) - 40, p.y));
+
+      // Atualiza o texto do botão de ação apenas quando houver mudança real
+      const actionLabel = document.getElementById('p1ActionLabel');
+      if (actionLabel) {
+        let nextLabel = "PEGAR ITEM";
+        if (P1.carrying) {
+          let nearBin = false;
+          for (let bin of P1.bins) {
+            if (Math.hypot(p.x - bin.x, p.y - (bin.y + bin.h / 2)) < 95) {
+              nearBin = true;
+              break;
+            }
+          }
+          nextLabel = nearBin ? "DESCARTAR NA LIXEIRA" : "SOLTAR NO CHÃO";
+        }
+        if (actionLabel.innerText !== nextLabel) {
+          actionLabel.innerText = nextLabel;
+        }
+      }
+    }
+
+    function drawBackyardStaticScenery(ctx, w = 800, h = 620) {
+      const P = 2; // Grade Hi-Bit HD de 2px (400x310 micro-tiles nítidos)
+
+      // 1. Céu em Pixel Art HD com Dithering Fino no topo
+      fillPx(ctx, 0, 0, w, 24, '#7dd3fc', P);
+      drawDitherBand(ctx, 0, 20, w, 12, '#7dd3fc', '#bae6fd', P);
+      fillPx(ctx, 0, 32, w, 16, '#bae6fd', P);
+
+      // Sol em Pixel Art HD no canto superior direito
+      drawPixelCircle(ctx, w - 40, 20, 24, '#fef08a', '#facc15', P);
+      drawPixelCircle(ctx, w - 40, 20, 14, '#fde047', null, P);
+
+      // 2. Telhado Colonial Cerâmico em Hi-Bit Pixel Art (0 a 36px)
+      fillPx(ctx, 0, 0, w, 32, '#9a3412', P);
+      fillPx(ctx, 0, 26, w, 10, '#7c2d12', P);
+      // Telhas coloniais esculpidas com luz, meio-tom e contorno lateral
+      for (let tx = 0; tx < w; tx += 28) {
+        fillPx(ctx, tx + 2, 2, 24, 28, '#c2410c', P);
+        fillPx(ctx, tx + 4, 4, 20, 24, '#ea580c', P);
+        fillPx(ctx, tx + 6, 6, 14, 18, '#f97316', P);
+        fillPx(ctx, tx + 8, 8, 8, 12, '#fb923c', P);
+        fillPx(ctx, tx + 2, 28, 24, 4, '#451a03', P);
+      }
+
+      // Beiral de madeira com relevo cel-shaded e sombra projetada
+      fillPx(ctx, 0, 34, w, 4, '#92400e', P);
+      fillPx(ctx, 0, 38, w, 6, '#78350f', P);
+      fillPx(ctx, 0, 44, w, 4, '#0f172a', P);
+      fillPx(ctx, 0, 48, w, 6, 'rgba(15, 23, 42, 0.16)', P);
+      // Rebites dourados no beiral
+      for (let nx = 14; nx < w; nx += 56) {
+        fillPx(ctx, nx, 37, 4, 4, '#0f172a', 1);
+        fillPx(ctx, nx + 1, 38, 2, 2, '#fbbf24', 1);
+      }
+
+      // Plaquinha de madeira em estilo RPG Hi-Bit sobre o pátio
+      drawPixelBox(ctx, (w - 310) / 2, 7, 310, 26, '#b45309', '#451a03', 2, '#f59e0b');
+      ctx.fillStyle = '#fef08a';
+      ctx.font = '800 12.5px "Fredoka", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('PÁTIO DE COLETA SELETIVA', w / 2, 20);
+
+      // 3. Pátio Pavimentado em Lajotas de Pedra Hi-Bit (48px a 168px)
+      fillPx(ctx, 0, 48, w, 120, '#cbd5e1', P);
+      for (let r = 0; r < 5; r++) {
+        const py = 48 + r * 24;
+        const offset = (r % 2) * 24;
+        for (let pxTile = -offset; pxTile < w; pxTile += 48) {
+          const tx = Math.max(0, pxTile);
+          const tw = Math.min(46, w - tx);
+          if (tw > 6) {
+            fillPx(ctx, tx, py, tw, 22, '#f1f5f9', P);
+            fillPx(ctx, tx, py, tw, 3, '#ffffff', P); // Brilho superior da lajota
+            fillPx(ctx, tx, py + 19, tw, 3, '#e2e8f0', P); // Sombra interna inferior
+          }
+        }
+      }
+
+      // Meio-fio de blocos de granito separando o pátio do gramado
+      fillPx(ctx, 0, 160, w, 8, '#334155', P);
+      for (let bx = 2; bx < w; bx += 24) {
+        fillPx(ctx, bx, 161, 20, 6, (bx % 48 === 2) ? '#94a3b8' : '#cbd5e1', P);
+        fillPx(ctx, bx + 2, 161, 16, 2, '#f8fafc', P);
+      }
+
+      // 4. Gramado Vibrante em Hi-Bit Pixel Art com Micro-Dithering (168px até h)
+      const grassH = h - 168;
+      const band1H = Math.round(grassH * 0.28);
+      const band2H = Math.round(grassH * 0.36);
+      const yBand2 = 168 + band1H;
+      const yBand3 = yBand2 + band2H;
+
+      fillPx(ctx, 0, 168, w, band1H, '#86efac', P);
+      drawDitherBand(ctx, 0, yBand2 - 10, w, 20, '#86efac', '#4ade80', P);
+      fillPx(ctx, 0, yBand2 + 10, w, band2H - 10, '#4ade80', P);
+      drawDitherBand(ctx, 0, yBand3 - 10, w, 20, '#4ade80', '#22c55e', P);
+      fillPx(ctx, 0, yBand3 + 10, w, h - (yBand3 + 10), '#22c55e', P);
+
+      // Tufos de grama esculpidos em Hi-Bit Pixel Art
+      const grassBlades = [
+        [110, 210], [140, Math.round(168 + grassH * 0.45)], [280, 220], [360, h - 55], [470, 230],
+        [540, Math.round(168 + grassH * 0.40)], [670, 210], [730, 260], [220, h - 35], [490, h - 35],
+        [60, 300], [750, 230], [310, Math.round(168 + grassH * 0.28)], [610, h - 45], [170, h - 65]
+      ];
+      grassBlades.forEach(([gx, gy]) => {
+        fillPx(ctx, gx - 6, gy - 4, 3, 6, '#15803d', 1.5);
+        fillPx(ctx, gx - 1, gy - 8, 3, 10, '#166534', 1.5);
+        fillPx(ctx, gx + 4, gy - 5, 3, 7, '#15803d', 1.5);
+        fillPx(ctx, gx - 1, gy - 8, 2, 3, '#4ade80', 1.5);
+      });
+
+      // 5. Caminho de Pedras (Stepping Stones) em Hi-Bit Pixel Art
+      const stones = [
+        [400, 188, 44, 20],
+        [380, 228, 48, 20],
+        [356, Math.round(168 + grassH * 0.32), 52, 24],
+        [380, Math.round(168 + grassH * 0.50), 48, 20],
+        [428, Math.round(168 + grassH * 0.72), 52, 24],
+        [416, h - 36, 48, 20],
+        [260, Math.round(168 + grassH * 0.38), 44, 20],
+        [532, Math.round(168 + grassH * 0.40), 48, 20]
+      ];
+      stones.forEach(([sx, sy, sw, sh]) => {
+        drawPixelBox(ctx, sx - sw / 2, sy - sh / 2, sw, sh, '#e2e8f0', '#475569', P, '#ffffff', 'rgba(21, 128, 61, 0.38)');
+        fillPx(ctx, sx - sw / 2 + 6, sy + sh / 2 - 5, sw - 12, 2, '#cbd5e1', 1.5);
+      });
+
+      // 6. Cerquinha Branca em Hi-Bit Pixel Art e Arbustos Floridos no Canto Esquerdo
+      fillPx(ctx, 4, 214, 16, 4, '#94a3b8', P);
+      fillPx(ctx, 4, Math.round(168 + grassH * 0.5), 16, 4, '#94a3b8', P);
+      fillPx(ctx, 4, h - 48, 16, 4, '#94a3b8', P);
+      for (let fy = 192; fy <= h - 32; fy += 26) {
+        drawPixelBox(ctx, 4, fy, 12, 24, '#ffffff', '#0f172a', 1.5, '#f8fafc', 'rgba(15, 23, 42, 0.2)');
+      }
+
+      const leftBushes = [
+        { x: 24, y: 204, r: 14, c: '#15803d', hi: '#22c55e' },
+        { x: 28, y: 224, r: 12, c: '#16a34a', hi: '#4ade80' },
+        { x: 22, y: h - 56, r: 14, c: '#15803d', hi: '#22c55e' },
+        { x: 26, y: h - 32, r: 14, c: '#16a34a', hi: '#4ade80' }
+      ];
+      leftBushes.forEach(b => {
+        drawPixelCircle(ctx, b.x, b.y, b.r, b.c, '#0f172a', P);
+        drawPixelCircle(ctx, b.x - 2, b.y - 3, b.r * 0.55, b.hi, null, P);
+        fillPx(ctx, b.x - 4, b.y - 3, 3, 3, '#ef4444', 1.5);
+        fillPx(ctx, b.x + 3, b.y + 2, 3, 3, '#f97316', 1.5);
+      });
+
+      // 7. Grande Laranjeira em Hi-Bit Pixel Art no Canto Inferior Direito
+      // Tronco esculpido com casca cel-shaded e contorno escuro
+      fillPx(ctx, w - 50, h - 142, 50, 142, '#0f172a', P);
+      fillPx(ctx, w - 46, h - 138, 42, 138, '#451a03', P);
+      fillPx(ctx, w - 42, h - 136, 32, 136, '#78350f', P);
+      fillPx(ctx, w - 34, h - 130, 14, 124, '#92400e', P);
+      fillPx(ctx, w - 28, h - 120, 6, 100, '#b45309', P);
+      // Raízes na base
+      fillPx(ctx, w - 62, h - 16, 22, 16, '#0f172a', P);
+      fillPx(ctx, w - 58, h - 13, 18, 13, '#78350f', P);
+
+      // Copas folhosas em camadas de Pixel Art HD
+      const canopyLayers = [
+        { x: w - 24, y: h - 136, r: 60, color: '#14532d', border: '#0f172a' },
+        { x: w - 64, y: h - 104, r: 48, color: '#166534', border: '#0f172a' },
+        { x: w - 24, y: h - 64, r: 56, color: '#15803d', border: '#0f172a' },
+        { x: w - 72, y: h - 140, r: 40, color: '#16a34a', border: '#0f172a' },
+        { x: w - 40, y: h - 32, r: 44, color: '#15803d', border: null },
+        { x: w - 58, y: h - 128, r: 30, color: '#22c55e', border: null },
+        { x: w - 30, y: h - 148, r: 24, color: '#4ade80', border: null }
+      ];
+      canopyLayers.forEach(c => {
+        drawPixelCircle(ctx, c.x, c.y, c.r, c.color, c.border, P);
+      });
+
+      // Laranjas maduras em Hi-Bit Pixel Art (com contorno escuro, brilho e folhinha)
+      const oranges = [
+        [w - 72, h - 136], [w - 44, h - 164], [w - 56, h - 88],
+        [w - 24, h - 104], [w - 64, h - 56], [w - 24, h - 36]
+      ];
+      oranges.forEach(([ox, oy]) => {
+        drawPixelCircle(ctx, ox, oy, 7, '#f97316', '#0f172a', 1.5);
+        fillPx(ctx, ox - 3, oy - 3, 3, 3, '#fef08a', 1);
+        fillPx(ctx, ox, oy - 8, 4, 3, '#22c55e', 1);
+      });
+
+      // Passarinho azul em Pixel Art HD pousado na copa
+      drawPixelSprite(ctx, 'bird', w - 68, h - 172, 1.9);
+
+      // 8. Florzinhas Silvestres em Hi-Bit Pixel Art
+      const flowerPositions = [
+        [120, 220, '#ffffff', '#eab308'],
+        [260, Math.round(168 + grassH * 0.75), '#ffffff', '#eab308'],
+        [520, 230, '#f472b6', '#fde047'],
+        [736, 230, '#ffffff', '#eab308'],
+        [320, Math.round(168 + grassH * 0.45), '#38bdf8', '#facc15'],
+        [632, h - 32, '#fb923c', '#fef08a'],
+        [152, h - 32, '#f472b6', '#fef08a']
+      ];
+      flowerPositions.forEach(([fx, fy, petalColor, centerColor]) => {
+        const sfx = Math.round(fx);
+        const sfy = Math.round(fy);
+        fillPx(ctx, sfx - 4, sfy - 4, 8, 8, '#14532d', 1);
+        fillPx(ctx, sfx - 3, sfy - 1, 6, 2, petalColor, 1);
+        fillPx(ctx, sfx - 1, sfy - 3, 2, 6, petalColor, 1);
+        fillPx(ctx, sfx - 1, sfy - 1, 2, 2, centerColor, 1);
+      });
+    }
+
+    function drawBackyardScenery(ctx, w = 800, h = 620, dpr = 2) {
+      const targetW = Math.round(w * dpr);
+      const targetH = Math.round(h * dpr);
+      if (!P1._bgCanvas || P1._bgCanvas.width !== targetW || P1._bgCanvas.height !== targetH) {
+        P1._bgCanvas = document.createElement('canvas');
+        P1._bgCanvas.width = targetW;
+        P1._bgCanvas.height = targetH;
+        const bctx = P1._bgCanvas.getContext('2d');
+        bctx.scale(dpr, dpr);
+        drawBackyardStaticScenery(bctx, w, h);
+      }
+      ctx.drawImage(P1._bgCanvas, 0, 0, w, h);
+
+      // 9. Borboleta em Pixel Art HD (2 quadros de animação em tempo real)
+      const now = Date.now();
+      const grassH = h - 168;
+      const bflyX = Math.round(490 + Math.sin(now * 0.002) * 44);
+      const bflyY = Math.round(168 + grassH * 0.42 + Math.cos(now * 0.003) * 24);
+      const bflyFrame = (Math.floor(now / 180) % 2 === 0) ? 'bfly1' : 'bfly2';
+      drawPixelSprite(ctx, bflyFrame, bflyX, bflyY, 1.85);
+    }
+
+    function renderPhase1() {
+      const ctx = P1.ctx;
+      const dpr = Math.max(window.devicePixelRatio || 1, 2);
+      const w = P1.w || 800;
+      const h = P1.h || 620;
+      ctx.save();
+      ctx.scale(dpr, dpr);
+      ctx.clearRect(0, 0, w, h);
+
+      // 1. Desenho do Cenário do Quintal em Hi-Bit Pixel Art HD (com cache offscreen)
+      drawBackyardScenery(ctx, w, h, dpr);
+
+      // 2. Desenho das 6 Lixeiras em Hi-Bit Pixel Art HD
+      P1.bins.forEach(bin => {
+        const dist = Math.hypot(P1.player.x - bin.x, P1.player.y - (bin.y + bin.h / 2));
+        const isOpen = dist < 85;
+        const P = 2;
+
+        // Sombra projetada sob a lixeira
+        drawPixelCircle(ctx, bin.x, bin.y + bin.h + 1, bin.w * 0.46, 'rgba(15, 23, 42, 0.22)', null, P);
+
+        // Corpo da lixeira em Hi-Bit Pixel Art com chanfro duplo e contorno escuro
+        drawPixelBox(ctx, bin.x - bin.w / 2, bin.y, bin.w, bin.h, bin.color, '#0f172a', P, 'rgba(255,255,255,0.35)', null);
+
+        // Frisos verticais cel-shaded (luz à esquerda, sombra à direita)
+        fillPx(ctx, bin.x - bin.w / 2 + 6, bin.y + 8, 5, bin.h - 16, 'rgba(255, 255, 255, 0.30)', 1.5);
+        fillPx(ctx, bin.x + bin.w / 2 - 11, bin.y + 8, 5, bin.h - 16, 'rgba(15, 23, 42, 0.24)', 1.5);
+
+        // Pedal metálico inferior da lixeira
+        drawPixelBox(ctx, bin.x - 11, bin.y + bin.h - 7, 22, 7, '#cbd5e1', '#0f172a', 1.5, '#ffffff', null);
+
+        // Tampa articulada em Hi-Bit Pixel Art (sobe quando o jogador chega perto)
+        const lidY = isOpen ? bin.y - 17 : bin.y - 6;
+        drawPixelBox(ctx, bin.x - bin.w / 2 - 5, lidY, bin.w + 10, 14, bin.color, '#0f172a', P, 'rgba(255,255,255,0.42)', null);
+        // Alça superior da tampa
+        drawPixelBox(ctx, bin.x - 11, lidY - 6, 22, 7, bin.color, '#0f172a', 1.5, 'rgba(255,255,255,0.4)', null);
+
+        // Emblema circular HD com o Sprite 16x16 da categoria
+        drawPixelCircle(ctx, bin.x, bin.y + 39, 22, '#ffffff', '#0f172a', 1.5);
+        drawPixelSprite(ctx, getSpriteKeyForItem(bin), bin.x, bin.y + 39, 2.1);
+
+        // Placa branca em Hi-Bit Pixel Art com o nome nítido da lixeira
+        drawPixelBox(ctx, bin.x - 43, bin.y + 68, 86, 23, '#ffffff', '#0f172a', 1.5, '#f8fafc', null);
+        ctx.fillStyle = bin.color;
+        ctx.font = '800 11.5px "Fredoka", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(bin.name, bin.x, bin.y + 80);
+      });
+
+      // 3. Desenho de TODOS os resíduos no gramado em Hi-Bit Pixel Art HD
+      const now = Date.now();
+      P1.items.forEach(it => {
+        if (it.collected || it.sorted) return;
+
+        ctx.save();
+        const ix = Math.round(it.x);
+        const iy = Math.round(it.y);
+        ctx.translate(ix, iy);
+
+        // Sombra sob o item
+        drawPixelCircle(ctx, 0, 24, 21, 'rgba(15, 23, 42, 0.22)', null, 1.5);
+
+        // Flutuação suave a 60 FPS
+        const floatY = Math.round(Math.sin(now * 0.004 + it.x) * 3.5);
+
+        // Medalhão Hi-Bit Pixel Art com aro colorido da categoria e brilho interno
+        drawPixelCircle(ctx, 0, floatY, 33, '#0f172a', null, 1.5);
+        drawPixelCircle(ctx, 0, floatY, 30, it.binColor, null, 1.5);
+        drawPixelCircle(ctx, 0, floatY, 25, '#ffffff', null, 1.5);
+
+        // Sprite Hi-Bit 16x16 de alta definição do resíduo
+        drawPixelSprite(ctx, getSpriteKeyForItem(it), 0, floatY, 2.35);
+
+        // Etiqueta RPG Hi-Bit com tipografia de alta definição
+        ctx.font = '800 11.5px "Fredoka", sans-serif';
+        const label = it.shortName.toUpperCase();
+        const labelW = Math.ceil(ctx.measureText(label).width);
+        drawPixelBox(ctx, -labelW / 2 - 11, floatY + 35, labelW + 22, 23, '#0f172a', it.binColor, 1.5, null, 'rgba(15, 23, 42, 0.28)');
+
+        ctx.fillStyle = '#ffffff';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(label, 0, floatY + 47);
+
+        ctx.restore();
+      });
+
+      // 4. Desenho do Jogador em Hi-Bit Pixel Art HD
+      drawAvatar(ctx, P1.player.x, P1.player.y, P1.player.walkCycle, !!P1.carrying, P1.carrying, STATE.avatar);
+
+      // 5. Partículas Hi-Bit Pixel Art
+      drawParticles(ctx);
+
+      ctx.restore();
+    }
+
+
+    /* =======================================================
+       7. FASE 2: EXPEDIÇÃO ECO-BIKE (LOGÍSTICA REVERSA)
+       ======================================================= */
+    const P2 = {
+      canvas: null,
+      ctx: null,
+      w: 800,
+      h: 620,
+      player: { x: 400, y: 310, vx: 0, vy: 0, speed: 4.5, angle: 0, facing: 1, walkCycle: 0, targetX: null, targetY: null },
+      missionIndex: 0,
+      currentMission: null,
+      isDelivering: false,
+      animId: null,
+      stations: [
+        { id: 'ecoponto', name: 'ECOPONTO MUNICIPAL', icon: '🟢', label: 'Caçambas: Móveis, Pneus e Entulho', x: 155, y: 126, w: 226, h: 112, color: '#10b981', delivered: false },
+        { id: 'farmacia', name: 'FARMÁCIA LOGMED', icon: '🏥', label: 'Farmácia: Remédios e Xaropes', x: 645, y: 126, w: 226, h: 112, color: '#0ea5e9', delivered: false },
+        { id: 'supermercado', name: 'SUPERMERCADO', icon: '🏬', label: 'Mercado: Pilhas e Eletrônicos', x: 155, y: 494, w: 226, h: 112, color: '#f59e0b', delivered: false },
+        { id: 'oleo', name: 'ECO-POSTO DE ÓLEO', icon: '🛢️', label: 'Tambores: Óleo de Cozinha PET', x: 645, y: 494, w: 226, h: 112, color: '#8b5cf6', delivered: false }
+      ],
+      missionsPool: {
+        ecoponto: [
+          { name: "Sofá Velho Rasgado", shortName: "SOFÁ VELHO", icon: "🛋️", target: "ecoponto", color: "#10b981", tip: "Móveis velhos, sofás e madeiras vão nas caçambas do Ecoponto Municipal!" },
+          { name: "Pneu de Carro Usado", shortName: "PNEU USADO", icon: "🛞", target: "ecoponto", color: "#10b981", tip: "Evite a dengue! Pneus velhos são recebidos gratuitamente no Ecoponto." }
+        ],
+        farmacia: [
+          { name: "Remédios e Xaropes Vencidos", shortName: "REMÉDIOS VENCIDOS", icon: "💊", target: "farmacia", color: "#0ea5e9", tip: "Remédios nunca vão na pia ou privada! Entregue na Farmácia (coletor LOGMED)." }
+        ],
+        supermercado: [
+          { name: "Pilhas e Baterias Usadas", shortName: "PILHAS E BATERIAS", icon: "🔋", target: "supermercado", color: "#f59e0b", tip: "Pilhas e baterias têm metais pesados! Entregue no totem do Supermercado." }
+        ],
+        oleo: [
+          { name: "Óleo de Cozinha em PET", shortName: "ÓLEO DE COZINHA", icon: "🛢️", target: "oleo", color: "#8b5cf6", tip: "1 litro de óleo contamina 25 mil litros de água! Entregue nos tambores do Eco-Posto." }
+        ]
+      },
+      missions: []
+    };
+
+    function buildUniqueP2Missions() {
+      // Seleciona exatamente 1 missão para cada um dos 4 estabelecimentos (ZERO repetição de local!)
+      const ecoOptions = P2.missionsPool.ecoponto;
+      const chosenEco = ecoOptions[Math.floor(Math.random() * ecoOptions.length)];
+      const list = [
+        { ...chosenEco },
+        { ...P2.missionsPool.farmacia[0] },
+        { ...P2.missionsPool.supermercado[0] },
+        { ...P2.missionsPool.oleo[0] }
+      ];
+      // Embaralha a ordem dos 4 estabelecimentos (Fisher-Yates)
+      for (let i = list.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = list[i];
+        list[i] = list[j];
+        list[j] = temp;
+      }
+      return list;
+    }
+
+    function updateP2VsSidebar() {
+      const targetId = (P2.currentMission && !P2.isDelivering) ? P2.currentMission.target : null;
+      document.querySelectorAll('.p2-station-card').forEach(card => {
+        const cardStation = card.id.replace('p2Card-', '');
+        const badge = card.querySelector('.p2-match-badge');
+        if (targetId && cardStation === targetId) {
+          card.classList.add('ring-4', 'ring-amber-400', 'shadow-md');
+          if (badge) badge.classList.remove('invisible', 'opacity-0', 'hidden');
+        } else {
+          card.classList.remove('ring-4', 'ring-amber-400', 'shadow-md');
+          if (badge) badge.classList.add('invisible', 'opacity-0');
+        }
+      });
+    }
+
+    function onP2CardClick(stationId) {
+      const st = P2.stations.find(s => s.id === stationId);
+      if (!st) return;
+      P2.player.targetX = st.x;
+      P2.player.targetY = st.y < (P2.h || 620) / 2 ? st.y + st.h / 2 + 18 : st.y - st.h / 2 - 18;
+      document.getElementById('p2TipText').innerText = `🚲 Indo até ${st.name}! Pressione Espaço ou clique em "Entregar Carga" quando chegar.`;
+    }
+
+    function initPhase2() {
+      P2.canvas = document.getElementById('canvasPhase2');
+      P2.ctx = P2.canvas.getContext('2d');
+      setupHiDPICanvas(P2.canvas, P2.w || 800, P2.h || 620);
+
+      P2.missionIndex = 0;
+      P2.isDelivering = false;
+      P2.player.x = 400;
+      P2.player.y = Math.round((P2.h || 620) / 2);
+      P2.player.facing = 1;
+      P2.player.walkCycle = 0;
+      P2.player.targetX = null;
+      P2.player.targetY = null;
+      P2.stations.forEach(st => { st.delivered = false; });
+      P2.missions = buildUniqueP2Missions();
+      spawnP2Mission();
+
+      P2.canvas.onpointerdown = (e) => {
+        const rect = P2.canvas.getBoundingClientRect();
+        const scaleX = (P2.w || 800) / rect.width;
+        const scaleY = (P2.h || 620) / rect.height;
+        const clickX = (e.clientX - rect.left) * scaleX;
+        const clickY = (e.clientY - rect.top) * scaleY;
+
+        const clickedSt = P2.stations.find(st => {
+          const bayY = st.y < (P2.h || 620) / 2 ? st.y + st.h / 2 + 5 : st.y - st.h / 2 - 22;
+          const inBuilding = Math.abs(clickX - st.x) <= st.w / 2 + 8 && Math.abs(clickY - st.y) <= st.h / 2 + 8;
+          const inBay = Math.abs(clickX - st.x) <= 56 && clickY >= bayY - 4 && clickY <= bayY + 21;
+          return inBuilding || inBay;
+        });
+
+        if (clickedSt) {
+          onP2CardClick(clickedSt.id);
+        } else {
+          P2.player.targetX = Math.max(65, Math.min((P2.w || 800) - 65, clickX));
+          P2.player.targetY = Math.max(65, Math.min((P2.h || 620) - 65, clickY));
+        }
+      };
+
+      if (P2.animId) cancelAnimationFrame(P2.animId);
+      loopPhase2();
+      requestAnimationFrame(() => syncGameCardHeight(true));
+    }
+
+    function spawnP2Mission() {
+      document.getElementById('p2ItemCount').innerText = P2.missionIndex;
+      if (P2.missionIndex >= P2.missions.length) {
+        P2.currentMission = null;
+        updateP2VsSidebar();
+        playSound('fanfare');
+        scheduleGameTimeout(() => {
+          if (STATE.phase === 2) setPhase(3);
+        }, 1200);
+        return;
+      }
+      P2.currentMission = P2.missions[P2.missionIndex];
+      const st = P2.stations.find(s => s.id === P2.currentMission.target);
+      const stName = st ? st.name : 'destino correto';
+      document.getElementById('p2CargoName').innerText = `${P2.currentMission.icon} ${P2.currentMission.shortName}`;
+      document.getElementById('p2TipText').innerText = `Carregando ${P2.currentMission.icon} ${P2.currentMission.name}! Leve até: ${stName}.`;
+      updateP2VsSidebar();
+    }
+
+    function triggerP2Action() {
+      if (P2.isDelivering || !P2.currentMission) return;
+      playSound('bell');
+      const mission = P2.currentMission;
+      let inStation = null;
+      P2.stations.forEach(st => {
+        const dx = Math.abs(P2.player.x - st.x);
+        const dy = Math.abs(P2.player.y - st.y);
+        if (dx < st.w / 2 + 42 && dy < st.h / 2 + 42) {
+          inStation = st;
+        }
+      });
+
+      if (inStation) {
+        if (inStation.id === mission.target) {
+          // Trava entregas repetidas durante a comemoração
+          P2.isDelivering = true;
+          inStation.delivered = true;
+          playSound('good');
+          updateScore(125);
+          createConfetti(inStation.x, inStation.y);
+          P2.missionIndex++;
+          document.getElementById('p2ItemCount').innerText = P2.missionIndex;
+          document.getElementById('p2TipText').innerText = `🎉 Entrega concluída! ${mission.tip} (+125 pts)`;
+          updateP2VsSidebar();
+          scheduleGameTimeout(() => {
+            if (STATE.phase !== 2) return;
+            P2.isDelivering = false;
+            spawnP2Mission();
+          }, 1150);
+        } else {
+          playSound('bad');
+          const rightSt = P2.stations.find(s => s.id === mission.target);
+          document.getElementById('p2TipText').innerText = `❌ Aqui é ${inStation.name}! ${mission.name} deve ser entregue em: ${rightSt ? rightSt.name : 'outro ponto'}!`;
+        }
+      } else {
+        const rightSt = P2.stations.find(s => s.id === mission.target);
+        document.getElementById('p2TipText').innerText = `🚲 Aproxime-se da vaga em frente a ${rightSt ? rightSt.name : 'um estabelecimento'} para entregar!`;
+      }
+    }
+
+    function loopPhase2() {
+      if (STATE.phase !== 2) return;
+      updatePhase2();
+      renderPhase2();
+      P2.animId = requestAnimationFrame(loopPhase2);
+    }
+
+    function updatePhase2() {
+      P2.tick = (P2.tick || 0) + 1;
+      const p = P2.player;
+      let dx = 0;
+      let dy = 0;
+
+      if (STATE.keys.up) dy -= p.speed;
+      if (STATE.keys.down) dy += p.speed;
+      if (STATE.keys.left) dx -= p.speed;
+      if (STATE.keys.right) dx += p.speed;
+
+      if (p.targetX !== null && p.targetY !== null) {
+        const tdx = p.targetX - p.x;
+        const tdy = p.targetY - p.y;
+        const dist = Math.sqrt(tdx * tdx + tdy * tdy);
+        if (dist > 5) {
+          dx = (tdx / dist) * p.speed;
+          dy = (tdy / dist) * p.speed;
+        } else {
+          p.targetX = null;
+          p.targetY = null;
+          // Se chegou exatamente na vaga de um estabelecimento por clique, realiza a entrega automaticamente
+          if (P2.currentMission && !P2.isDelivering) {
+            const nearStation = P2.stations.find(st =>
+              Math.abs(p.x - st.x) < st.w / 2 + 42 && Math.abs(p.y - st.y) < st.h / 2 + 42
+            );
+            if (nearStation) triggerP2Action();
+          }
+        }
+      }
+
+      if (dx !== 0 || dy !== 0) {
+        p.x += dx;
+        p.y += dy;
+        p.angle = Math.atan2(dy, dx);
+        p.walkCycle = (p.walkCycle || 0) + 0.26;
+        // Mantém o avatar sempre em pé (apenas espelha horizontalmente a bike para esquerda/direita)
+        if (dx > 0.25) p.facing = 1;
+        else if (dx < -0.25) p.facing = -1;
+      }
+
+      p.x = Math.max(65, Math.min((P2.w || 800) - 65, p.x));
+      p.y = Math.max(65, Math.min((P2.h || 620) - 65, p.y));
+    }
+
+    function drawP2CityBase(mainCtx, w, h) {
+      const dpr = Math.max(window.devicePixelRatio || 1, 2);
+      const targetW = Math.round(w * dpr);
+      const targetH = Math.round(h * dpr);
+
+      if (!P2._bgCanvas || P2._bgCanvas.width !== targetW || P2._bgCanvas.height !== targetH) {
+        P2._bgCanvas = document.createElement('canvas');
+        P2._bgCanvas.width = targetW;
+        P2._bgCanvas.height = targetH;
+        const ctx = P2._bgCanvas.getContext('2d');
+        ctx.save();
+        ctx.scale(dpr, dpr);
+
+        const P = 2; // Grade Hi-Bit HD de 2px para o mapa urbano em Pixel Art
+        const roadY = px((h - 100) / 2, P);
+        const roadH = 100;
+        const roadW = 100;
+        const roadX = px((w - 100) / 2, P);
+        const cx = px(w / 2, P);
+        const cy = roadY + 50;
+
+        // 1. QUARTEIRÕES VERDES DE RIBEIRÃO PRETO EM HI-BIT PIXEL ART
+        fillPx(ctx, 0, 0, w, h, '#dcfce7', P);
+
+        // Manchas de grama e tufos em Hi-Bit Pixel Art nos 4 quadrantes
+        const lawnPatches = [
+          [34, 42], [292, 46], [34, 206], [292, 208],
+          [508, 42], [766, 46], [508, 206], [766, 208],
+          [34, roadY + 138], [292, roadY + 142], [34, h - 42], [292, h - 46],
+          [508, roadY + 138], [766, roadY + 142], [508, h - 42], [766, h - 46]
+        ];
+        lawnPatches.forEach(([lx, ly]) => {
+          drawPixelCircle(ctx, lx, ly, 15, '#bbf7d0', null, 1.5);
+          fillPx(ctx, lx - 5, ly - 3, 3, 6, '#4ade80', 1.5);
+          fillPx(ctx, lx, ly - 6, 3, 8, '#16a34a', 1.5);
+          fillPx(ctx, lx + 5, ly - 2, 3, 6, '#22c55e', 1.5);
+        });
+
+        // 2. CALÇADAS PAVIMENTADAS EM LAJOTAS HI-BIT PIXEL ART (PASSEIO PÚBLICO)
+        fillPx(ctx, 0, roadY - 20, w, 20, '#cbd5e1', P);
+        fillPx(ctx, 0, roadY + roadH, w, 20, '#cbd5e1', P);
+        fillPx(ctx, roadX - 20, 0, 20, h, '#cbd5e1', P);
+        fillPx(ctx, roadX + roadW, 0, 20, h, '#cbd5e1', P);
+
+        // Lajotas das calçadas com chanfro de luz em grade de 24px
+        for (let x = 0; x < w; x += 24) {
+          if (x < roadX - 20 || x > roadX + roadW + 16) {
+            fillPx(ctx, x + 1, roadY - 18, 21, 14, '#f8fafc', 1.5);
+            fillPx(ctx, x + 1, roadY - 18, 21, 2, '#ffffff', 1.5);
+            fillPx(ctx, x + 1, roadY + roadH + 4, 21, 14, '#f8fafc', 1.5);
+            fillPx(ctx, x + 1, roadY + roadH + 4, 21, 2, '#ffffff', 1.5);
+          }
+        }
+        for (let y = 0; y < h; y += 24) {
+          if (y < roadY - 20 || y > roadY + roadH + 16) {
+            fillPx(ctx, roadX - 18, y + 1, 14, 21, '#f8fafc', 1.5);
+            fillPx(ctx, roadX + roadW + 4, y + 1, 14, 21, '#f8fafc', 1.5);
+          }
+        }
+
+        // Meio-fio de granito com contorno nítido
+        fillPx(ctx, 0, roadY - 3, w, 3, '#475569', 1.5);
+        fillPx(ctx, 0, roadY + roadH, w, 3, '#475569', 1.5);
+        fillPx(ctx, roadX - 3, 0, 3, h, '#475569', 1.5);
+        fillPx(ctx, roadX + roadW, 0, 3, h, '#475569', 1.5);
+
+        // Árvores Urbanas e Ipês Amarelo/Roxo em Hi-Bit Pixel Art nas 4 esquinas
+        const urbanTrees = [
+          { x: roadX - 36, y: roadY - 36, r: 21, color: '#22c55e', mid: '#16a34a', shade: '#15803d', petals: null },
+          { x: roadX + roadW + 36, y: roadY - 36, r: 21, color: '#fef08a', mid: '#facc15', shade: '#ca8a04', petals: '#fde047' }, // Ipê Amarelo
+          { x: roadX - 36, y: roadY + roadH + 36, r: 21, color: '#4ade80', mid: '#22c55e', shade: '#15803d', petals: null },
+          { x: roadX + roadW + 36, y: roadY + roadH + 36, r: 21, color: '#e9d5ff', mid: '#a855f7', shade: '#7e22ce', petals: '#d8b4fe' } // Ipê Roxo
+        ];
+        urbanTrees.forEach(t => {
+          drawPixelCircle(ctx, t.x + 3, t.y + 12, 18, 'rgba(15, 23, 42, 0.18)', null, 1.5);
+          if (t.petals) {
+            fillPx(ctx, t.x - 15, t.y + 15, 3, 3, t.petals, 1.5);
+            fillPx(ctx, t.x + 11, t.y + 12, 3, 3, t.mid, 1.5);
+            fillPx(ctx, t.x - 6, t.y + 19, 3, 3, t.petals, 1.5);
+            fillPx(ctx, t.x + 5, t.y + 17, 3, 3, t.mid, 1.5);
+          }
+          fillPx(ctx, t.x - 5, t.y + 4, 10, 12, '#0f172a', 1.5);
+          fillPx(ctx, t.x - 3, t.y + 4, 6, 11, '#78350f', 1.5);
+          drawPixelCircle(ctx, t.x, t.y, t.r, t.shade, '#0f172a', 1.5);
+          drawPixelCircle(ctx, t.x - 2, t.y - 2, t.r - 4, t.mid, null, 1.5);
+          drawPixelCircle(ctx, t.x - 5, t.y - 5, t.r - 10, t.color, null, 1.5);
+        });
+
+        // 3. ASFALTO DAS AVENIDAS PRINCIPAIS EM HI-BIT PIXEL ART
+        fillPx(ctx, roadX, 0, roadW, h, '#334155', P);
+        fillPx(ctx, 0, roadY, w, roadH, '#334155', P);
+
+        // Textura discreta de asfalto
+        const asphaltDots = [
+          [120, roadY + 16], [260, roadY + 60], [540, roadY + 24], [680, roadY + 56],
+          [roadX + 24, 60], [roadX + 72, 120], [roadX + 28, h - 80], [roadX + 68, h - 40]
+        ];
+        asphaltDots.forEach(([ax, ay]) => {
+          fillPx(ctx, ax, ay, 3, 3, '#1e293b', 1.5);
+        });
+
+        // Linhas brancas de bordo da pista
+        fillPx(ctx, 0, roadY + 3, roadX, 3, '#f8fafc', 1.5);
+        fillPx(ctx, roadX + roadW, roadY + 3, w - (roadX + roadW), 3, '#f8fafc', 1.5);
+        fillPx(ctx, 0, roadY + roadH - 6, roadX, 3, '#f8fafc', 1.5);
+        fillPx(ctx, roadX + roadW, roadY + roadH - 6, w - (roadX + roadW), 3, '#f8fafc', 1.5);
+        fillPx(ctx, roadX + 3, 0, 3, roadY, '#f8fafc', 1.5);
+        fillPx(ctx, roadX + 3, roadY + roadH, 3, h - (roadY + roadH), '#f8fafc', 1.5);
+        fillPx(ctx, roadX + roadW - 6, 0, 3, roadY, '#f8fafc', 1.5);
+        fillPx(ctx, roadX + roadW - 6, roadY + roadH, 3, h - (roadY + roadH), '#f8fafc', 1.5);
+
+        // 4. CICLOVIA SEGREGADA EM HI-BIT PIXEL ART (FAIXA VERMELHA)
+        const bikeY = roadY + roadH - 26;
+        fillPx(ctx, 0, bikeY, roadX - 28, 19, '#dc2626', P);
+        fillPx(ctx, 0, bikeY + 2, roadX - 28, 3, '#ef4444', P);
+        fillPx(ctx, roadX + roadW + 28, bikeY, w - (roadX + roadW + 28), 19, '#dc2626', P);
+        fillPx(ctx, roadX + roadW + 28, bikeY + 2, w - (roadX + roadW + 28), 3, '#ef4444', P);
+
+        // Linha tracejada branca da ciclovia
+        for (let bx = 4; bx < w; bx += 16) {
+          if (bx < roadX - 32 || bx > roadX + roadW + 28) {
+            fillPx(ctx, bx, bikeY, 9, 3, '#ffffff', 1.5);
+          }
+        }
+
+        // Pictogramas nítidos de bicicleta na ciclovia
+        [72, 200, w - 200, w - 72].forEach(bx => {
+          drawPixelCircle(ctx, bx - 6, bikeY + 12, 3.5, '#dc2626', '#ffffff', 1);
+          drawPixelCircle(ctx, bx + 6, bikeY + 12, 3.5, '#dc2626', '#ffffff', 1);
+          fillPx(ctx, bx - 4, bikeY + 7, 8, 2, '#ffffff', 1);
+          fillPx(ctx, bx + 2, bikeY + 5, 2, 5, '#ffffff', 1);
+        });
+
+        // 5. FAIXAS DE PEDESTRE ZEBRADAS EM HI-BIT PIXEL ART
+        for (let y = roadY + 11; y < roadY + roadH - 28; y += 11) {
+          fillPx(ctx, roadX - 30, y, 18, 6, '#ffffff', 1.5);
+          fillPx(ctx, roadX + roadW + 12, y, 18, 6, '#ffffff', 1.5);
+        }
+        for (let x = roadX + 11; x < roadX + roadW - 11; x += 11) {
+          fillPx(ctx, x, roadY - 30, 6, 18, '#ffffff', 1.5);
+          fillPx(ctx, x, roadY + roadH + 12, 6, 18, '#ffffff', 1.5);
+        }
+
+        // 6. FAIXAS AMARELAS TRACEJADAS DAS AVENIDAS
+        for (let y = 8; y < h; y += 24) {
+          if (y < roadY - 40 || y > roadY + roadH + 32) {
+            fillPx(ctx, cx - 2, y, 4, 12, '#facc15', 1.5);
+          }
+        }
+        for (let x = 8; x < w; x += 24) {
+          if (x < roadX - 40 || x > roadX + roadW + 32) {
+            fillPx(ctx, x, roadY + 36, 12, 4, '#facc15', 1.5);
+          }
+        }
+
+        // Placas de esquina em Hi-Bit Pixel Art ("AV. MAURÍLIO BIAGI" e "AV. FCO. JUNQUEIRA")
+        drawPixelBox(ctx, 12, roadY - 19, 136, 17, '#0284c7', '#0f172a', 1.5, '#38bdf8', null);
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '800 9.5px "Fredoka", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('AV. MAURÍLIO BIAGI', 80, roadY - 10.5);
+
+        drawPixelBox(ctx, roadX - 19, 12, 17, 146, '#0284c7', '#0f172a', 1.5, '#38bdf8', null);
+        ctx.save();
+        ctx.translate(roadX - 10.5, 85);
+        ctx.rotate(-Math.PI / 2);
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '800 9.5px "Fredoka", sans-serif';
+        ctx.fillText('AV. FCO. JUNQUEIRA', 0, 0);
+        ctx.restore();
+
+        // 7. ROTATÓRIA CENTRAL PAISAGÍSTICA COM CHAFARIZ EM HI-BIT PIXEL ART (BASE)
+        drawPixelCircle(ctx, cx, cy, 62, '#cbd5e1', '#0f172a', 1.5);
+        drawPixelCircle(ctx, cx, cy, 54, '#16a34a', '#14532d', 1.5);
+        drawPixelCircle(ctx, cx, cy, 48, '#22c55e', null, 1.5);
+
+        // Canteiro circular de florzinhas em Hi-Bit Pixel Art
+        const flowerColors = ['#ef4444', '#facc15', '#ffffff', '#f472b6'];
+        for (let i = 0; i < 12; i++) {
+          const ang = (i / 12) * Math.PI * 2;
+          const fx = Math.round(cx + Math.cos(ang) * 42);
+          const fy = Math.round(cy + Math.sin(ang) * 42);
+          drawPixelCircle(ctx, fx, fy, 3.5, flowerColors[i % flowerColors.length], '#14532d', 1);
+        }
+
+        // Espelho d'água e chafariz central em Hi-Bit Pixel Art
+        drawPixelCircle(ctx, cx, cy, 33, '#0284c7', '#f8fafc', 1.5);
+        drawPixelCircle(ctx, cx, cy, 24, '#0ea5e9', null, 1.5);
+
+        ctx.restore();
+      }
+
+      mainCtx.drawImage(P2._bgCanvas, 0, 0, w, h);
+    }
+
+    function renderPhase2() {
+      const ctx = P2.ctx;
+      const dpr = Math.max(window.devicePixelRatio || 1, 2);
+      const w = P2.w || 800;
+      const h = P2.h || 620;
+      const tick = P2.tick || 0;
+      const P = 2;
+      ctx.save();
+      ctx.scale(dpr, dpr);
+      ctx.clearRect(0, 0, w, h);
+
+      const roadY = px((h - 100) / 2, P);
+      const cx = px(w / 2, P);
+      const cy = roadY + 50;
+
+      // 1-7. MAPA URBANO BASE CACHEADO EM OFFSCREEN CANVAS
+      drawP2CityBase(ctx, w, h);
+
+      // Ondulação concêntrica animada na água e jatos cristalinos do chafariz
+      const rippleR = 8 + Math.floor((tick % 36) / 4) * 2;
+      drawPixelCircle(ctx, cx, cy, rippleR, '#38bdf8', '#bae6fd', 1.5);
+      drawPixelCircle(ctx, cx, cy, 6, '#e0f2fe', '#0284c7', 1.5);
+      fillPx(ctx, cx - 2, cy - 2, 4, 4, '#ffffff', 1);
+
+      const jetStep = (Math.floor(tick / 6) % 4) * 2.5;
+      fillPx(ctx, cx - 8, cy - 9 - jetStep, 3, 3, '#e0f2fe', 1);
+      fillPx(ctx, cx + 5, cy - 11 + jetStep * 0.5, 3, 3, '#e0f2fe', 1);
+      fillPx(ctx, cx - 1, cy - 15 - jetStep * 0.5, 3, 3, '#ffffff', 1);
+
+      // 8. OS 4 ESTABELECIMENTOS COM ARQUITETURA DISTINTA EM HI-BIT PIXEL ART HD
+      P2.stations.forEach(st => {
+        const isTarget = P2.currentMission && !P2.isDelivering && P2.currentMission.target === st.id;
+        const blink = Math.floor(tick / 12) % 2 === 0;
+        const SP = 2;
+        const left = st.x - st.w / 2;
+        const top = st.y - st.h / 2;
+
+        // Vaga de parada da Eco-Bike na calçada
+        const bayY = st.y < cy ? st.y + st.h / 2 + 5 : st.y - st.h / 2 - 22;
+        drawPixelBox(
+          ctx,
+          st.x - 54,
+          bayY,
+          108,
+          17,
+          st.delivered ? '#dcfce7' : (isTarget ? (blink ? '#fef08a' : '#fde047') : '#f1f5f9'),
+          st.delivered ? '#16a34a' : (isTarget ? '#ca8a04' : '#64748b'),
+          1.5,
+          '#ffffff',
+          null
+        );
+        ctx.fillStyle = st.delivered ? '#15803d' : (isTarget ? '#0f172a' : '#475569');
+        ctx.font = '800 9.5px "Fredoka", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(st.delivered ? '✓ ENTREGUE!' : (isTarget ? 'PARE AQUI!' : 'VAGA BIKE'), st.x, bayY + 8.5);
+
+        // Moldura Piscante Hi-Bit se for o destino da missão atual
+        if (isTarget) {
+          const borderCol = blink ? '#facc15' : '#f97316';
+          drawPixelBox(ctx, left - 6, top - 6, st.w + 12, st.h + 12, borderCol, '#0f172a', SP, '#fef08a', null);
+        }
+
+        // Corpo base do estabelecimento
+        const wallBg = st.id === 'ecoponto' ? '#ecfdf5' : (st.id === 'farmacia' ? '#f8fafc' : (st.id === 'supermercado' ? '#fffbeb' : '#faf5ff'));
+        drawPixelBox(ctx, left, top, st.w, st.h, wallBg, '#0f172a', SP, '#ffffff', 'rgba(15, 23, 42, 0.22)');
+
+        if (st.id === 'ecoponto') {
+          // === 1. ECOPONTO MUNICIPAL: PÁTIO DE RECICLAGEM COM CAÇAMBAS COLORIDAS E PNEUS ===
+          // Telhado ecológico verde esmeralda
+          fillPx(ctx, left + 2, top + 2, st.w - 4, 24, '#059669', 1.5);
+          for (let tx = left + 8; tx < left + st.w - 10; tx += 16) {
+            fillPx(ctx, tx, top + 2, 8, 24, '#10b981', 1.5);
+          }
+          fillPx(ctx, left + 2, top + 26, st.w - 4, 2, '#0f172a', 1);
+
+          // Frontão central superior com símbolo de Reciclagem
+          drawPixelCircle(ctx, st.x - 86, top + 14, 11, '#ffffff', '#0f172a', 1.5);
+          drawPixelSprite(ctx, 'recycle', st.x - 86, top + 14, 1.0);
+
+          // 3 Caçambas de Entulho/Reciclagem estacionadas no pátio (Azul, Amarela e Laranja)
+          const dumpsters = [
+            { dx: st.x - 88, col: '#2563eb', hi: '#60a5fa', label: 'MADEIRA' },
+            { dx: st.x - 22, col: '#eab308', hi: '#fef08a', label: 'ENTULHO' },
+            { dx: st.x + 44, col: '#ea580c', hi: '#fdba74', label: 'VOLUMOSO' }
+          ];
+          dumpsters.forEach(d => {
+            // Carga visível dentro da caçamba
+            fillPx(ctx, d.dx + 4, st.y - 12, 36, 8, '#78350f', 1.5);
+            fillPx(ctx, d.dx + 12, st.y - 15, 20, 6, '#d97706', 1.5);
+            // Corpo trapezoidal da caçamba metálica
+            drawPixelBox(ctx, d.dx, st.y - 7, 44, 26, d.col, '#0f172a', 1.5, d.hi, null);
+            // Reforços verticais da caçamba
+            fillPx(ctx, d.dx + 11, st.y - 3, 3, 18, 'rgba(15,23,42,0.28)', 1);
+            fillPx(ctx, d.dx + 22, st.y - 3, 3, 18, 'rgba(15,23,42,0.28)', 1);
+            fillPx(ctx, d.dx + 31, st.y - 3, 3, 18, 'rgba(15,23,42,0.28)', 1);
+          });
+
+          // Pilha de pneus no canto direito do Ecoponto
+          drawPixelSprite(ctx, 'pneu', st.x + 88, st.y + 4, 1.35);
+
+        } else if (st.id === 'farmacia') {
+          // === 2. FARMÁCIA LOGMED: CRUZ VERMELHA DE DROGARIA NO TOPO, VITRINE DE REMÉDIOS E PORTA DUPLA ===
+          // Faixa superior azul-celeste clínica
+          fillPx(ctx, left + 2, top + 2, st.w - 4, 24, '#0284c7', 1.5);
+          fillPx(ctx, left + 2, top + 2, st.w - 4, 4, '#38bdf8', 1.5);
+          fillPx(ctx, left + 2, top + 26, st.w - 4, 2, '#0f172a', 1);
+
+          // Brasão branco com GRANDE CRUZ VERMELHA DE FARMÁCIA à esquerda do letreiro
+          drawPixelBox(ctx, left + 8, top + 3, 22, 22, '#ffffff', '#0f172a', 1.5, null, null);
+          fillPx(ctx, left + 16, top + 6, 6, 16, '#ef4444', 1);
+          fillPx(ctx, left + 11, top + 11, 16, 6, '#ef4444', 1);
+
+          // Vitrine esquerda com prateleiras de caixinhas de remédios coloridas
+          drawPixelBox(ctx, left + 12, st.y - 16, 56, 34, '#e0f2fe', '#334155', 1.5, '#ffffff', null);
+          fillPx(ctx, left + 16, st.y - 5, 48, 2, '#64748b', 1); // Prateleira 1
+          fillPx(ctx, left + 16, st.y + 6, 48, 2, '#64748b', 1); // Prateleira 2
+          // Frascos e caixas nas prateleiras
+          fillPx(ctx, left + 19, st.y - 12, 8, 7, '#ef4444', 1);
+          fillPx(ctx, left + 30, st.y - 12, 8, 7, '#22c55e', 1);
+          fillPx(ctx, left + 41, st.y - 12, 8, 7, '#f59e0b', 1);
+          fillPx(ctx, left + 22, st.y - 1, 9, 7, '#3b82f6', 1);
+          fillPx(ctx, left + 36, st.y - 1, 9, 7, '#ec4899', 1);
+
+          // Porta dupla de vidro central da Farmácia com Cruz Vermelha
+          drawPixelBox(ctx, st.x - 24, st.y - 16, 48, 38, '#bae6fd', '#0f172a', 1.5, '#e0f2fe', null);
+          fillPx(ctx, st.x - 1, st.y - 14, 2, 34, '#0f172a', 1); // Divisão das portas
+          // Cruz vermelha estampada na porta
+          fillPx(ctx, st.x - 14, st.y - 6, 3, 9, '#ef4444', 1);
+          fillPx(ctx, st.x - 17, st.y - 3, 9, 3, '#ef4444', 1);
+          fillPx(ctx, st.x + 11, st.y - 6, 3, 9, '#ef4444', 1);
+          fillPx(ctx, st.x + 8, st.y - 3, 9, 3, '#ef4444', 1);
+
+          // Totem Coletor LOGMED à direita com ícone de Remédio
+          drawPixelBox(ctx, st.x + 36, st.y - 16, 62, 34, '#f0f9ff', '#0284c7', 1.5, '#ffffff', null);
+          drawPixelSprite(ctx, 'remedio', st.x + 67, st.y + 1, 1.55);
+
+        } else if (st.id === 'supermercado') {
+          // === 3. SUPERMERCADO: TOLDO LISTRADO LARANJA/AMARELO, BANCA DE FRUTAS, CARRINHO E TOTEM DE PILHAS ===
+          // Toldo comercial listrado vermelho/laranja e amarelo
+          fillPx(ctx, left + 2, top + 2, st.w - 4, 24, '#ea580c', 1.5);
+          for (let tx = left + 6; tx < left + st.w - 10; tx += 16) {
+            fillPx(ctx, tx, top + 2, 8, 24, '#facc15', 1.5);
+          }
+          fillPx(ctx, left + 2, top + 26, st.w - 4, 2, '#0f172a', 1);
+          // Faixa escura sob o texto do toldo para leitura imediata
+          drawPixelBox(ctx, st.x - 76, top + 4, 152, 20, '#b45309', '#0f172a', 1, null, null);
+
+          // Banca de Hortifruti / Frutas Coloridas à esquerda da fachada
+          drawPixelBox(ctx, left + 10, st.y - 12, 58, 30, '#fef3c7', '#b45309', 1.5, '#ffffff', null);
+          fillPx(ctx, left + 12, st.y - 14, 54, 5, '#16a34a', 1); // Teto da banca
+          // Frutas (maçãs vermelhas, laranjas, bananas amarelas e melancias verdes)
+          drawPixelCircle(ctx, left + 22, st.y, 4.5, '#ef4444', '#0f172a', 1);
+          drawPixelCircle(ctx, left + 33, st.y, 4.5, '#f97316', '#0f172a', 1);
+          drawPixelCircle(ctx, left + 44, st.y, 4.5, '#facc15', '#0f172a', 1);
+          drawPixelCircle(ctx, left + 55, st.y, 4.5, '#22c55e', '#0f172a', 1);
+          fillPx(ctx, left + 14, st.y + 7, 50, 8, '#92400e', 1); // Caixote de madeira
+
+          // Porta automática deslizante larga do Supermercado no centro
+          drawPixelBox(ctx, st.x - 24, st.y - 16, 48, 38, '#bae6fd', '#0f172a', 1.5, '#e0f2fe', null);
+          fillPx(ctx, st.x - 1, st.y - 14, 2, 34, '#0f172a', 1);
+          fillPx(ctx, st.x - 18, st.y - 13, 36, 5, '#dc2626', 1); // Letreiro "ENTRADA"
+
+          // Totem Verde Green Eletron de Coleta de Pilhas e Baterias à direita
+          drawPixelBox(ctx, st.x + 34, st.y - 16, 66, 34, '#dcfce7', '#16a34a', 1.5, '#ffffff', null);
+          drawPixelSprite(ctx, 'pilha', st.x + 67, st.y + 1, 1.55);
+
+        } else {
+          // === 4. ECO-POSTO DE ÓLEO: DOIS GRANDES TANQUES CILÍNDRICOS AMARELOS DE BIODIESEL E GOTA DOURADA ===
+          // Cobertura roxa e dourada
+          fillPx(ctx, left + 2, top + 2, st.w - 4, 24, '#6b21a8', 1.5);
+          fillPx(ctx, left + 2, top + 2, st.w - 4, 4, '#a855f7', 1.5);
+          fillPx(ctx, left + 2, top + 26, st.w - 4, 2, '#0f172a', 1);
+
+          // Tanque Cilíndrico Amarelo de Óleo #1 (Esquerda) com tubulação metálica
+          fillPx(ctx, left + 44, st.y - 6, 28, 6, '#64748b', 1.5); // Tubo conector
+          drawPixelBox(ctx, left + 12, st.y - 17, 36, 36, '#facc15', '#0f172a', 1.5, '#fef08a', null);
+          fillPx(ctx, left + 14, st.y - 7, 32, 3, '#b45309', 1); // Cinta metálica 1
+          fillPx(ctx, left + 14, st.y + 5, 32, 3, '#b45309', 1); // Cinta metálica 2
+          drawPixelCircle(ctx, left + 30, st.y - 1, 5, '#ea580c', '#ffffff', 1); // Gota no tanque
+
+          // Tanque Cilíndrico Amarelo de Óleo #2 (Direita)
+          fillPx(ctx, st.x + 26, st.y - 6, 28, 6, '#64748b', 1.5); // Tubo conector
+          drawPixelBox(ctx, st.x + 50, st.y - 17, 36, 36, '#facc15', '#0f172a', 1.5, '#fef08a', null);
+          fillPx(ctx, st.x + 52, st.y - 7, 32, 3, '#b45309', 1);
+          fillPx(ctx, st.x + 52, st.y + 5, 32, 3, '#b45309', 1);
+          drawPixelCircle(ctx, st.x + 68, st.y - 1, 5, '#ea580c', '#ffffff', 1);
+
+          // Cabine central coletora de Garrafas PET de Óleo
+          drawPixelCircle(ctx, st.x, st.y + 1, 22, '#ffffff', '#8b5cf6', 1.5);
+          drawPixelSprite(ctx, 'oleo', st.x, st.y + 1, 1.75);
+        }
+
+        // Nome do estabelecimento no topo
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '800 11px "Fredoka", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(st.name, st.x, top + 14.5);
+
+        // Plaqueta descritiva inferior em Hi-Bit Pixel Art
+        drawPixelBox(ctx, left + 6, top + st.h - 22, st.w - 12, 18, '#f1f5f9', '#475569', 1.5, '#ffffff', null);
+        ctx.fillStyle = '#0f172a';
+        ctx.font = '800 10px "Nunito", sans-serif';
+        ctx.fillText(st.label, st.x, top + st.h - 13);
+
+        // Placa saltitante "ENTREGUE AQUI!" em Hi-Bit Pixel Art se for o destino atual
+        if (isTarget) {
+          const bounce = Math.round(Math.sin(tick * 0.18) * 3);
+          const badgeY = st.y < cy ? (top - 26 + bounce) : (top + st.h + 6 + bounce);
+          drawPixelBox(ctx, st.x - 72, badgeY, 144, 21, '#facc15', '#0f172a', 1.5, '#fef08a', 'rgba(15, 23, 42, 0.28)');
+          ctx.fillStyle = '#0f172a';
+          ctx.font = '800 10.5px "Fredoka", sans-serif';
+          ctx.fillText('👉 ENTREGUE AQUI!', st.x, badgeY + 10.5);
+        }
+      });
+
+      // 9. ECO-BIKE, CARRETINHA DE CARGA E AVATAR SEMPRE EM PÉ (PERSPECTIVA 2.5D RPG HD)
+      const pxX = Math.round(P2.player.x);
+      const pxY = Math.round(P2.player.y);
+      const facing = P2.player.facing || 1; // 1 = direita, -1 = esquerda (NUNCA fica de cabeça para baixo!)
+
+      ctx.save();
+      ctx.translate(pxX, pxY);
+
+      // Sombra no asfalto sob o conjunto Eco-Bike + Carretinha
+      drawPixelBox(ctx, -52, 8, 104, 14, 'rgba(15, 23, 42, 0.22)', null, 1.5, null, null);
+
+      // Desenha o chassi da Eco-Bike e a Carretinha espelhados apenas horizontalmente (Y sempre em pé!)
+      ctx.save();
+      ctx.scale(facing, 1);
+
+      // Facho de luz do farol dianteiro
+      fillPx(ctx, 34, -10, 16, 12, 'rgba(254, 240, 138, 0.45)', 1.5);
+      fillPx(ctx, 50, -15, 18, 22, 'rgba(254, 240, 138, 0.24)', 1.5);
+
+      // Engate metálico conectando a bike à carretinha traseira
+      fillPx(ctx, -18, 2, 16, 4, '#0f172a', 1);
+      fillPx(ctx, -17, 3, 14, 2, '#cbd5e1', 1);
+
+      // Carretinha de Carga aberta em madeira e aço (atrás da bike: x = -54 a -14)
+      drawPixelBox(ctx, -54, -12, 42, 22, '#d97706', '#0f172a', 1.5, '#fbbf24', null);
+      fillPx(ctx, -50, -6, 34, 3, '#92400e', 1);
+      fillPx(ctx, -50, 1, 34, 3, '#92400e', 1);
+      // Roda da carretinha
+      drawPixelCircle(ctx, -33, 12, 9, '#0f172a', null, 1.5);
+      drawPixelCircle(ctx, -33, 12, 4, '#cbd5e1', null, 1);
+
+      // Rodas traseira e dianteira da Eco-Bike (em pé!)
+      drawPixelCircle(ctx, 0, 12, 9.5, '#0f172a', null, 1.5);
+      drawPixelCircle(ctx, 0, 12, 4.5, '#e2e8f0', null, 1);
+      drawPixelCircle(ctx, 28, 12, 9.5, '#0f172a', null, 1.5);
+      drawPixelCircle(ctx, 28, 12, 4.5, '#e2e8f0', null, 1);
+
+      // Quadro Esmeralda da Eco-Bike + Guidão + Farol de LED
+      fillPx(ctx, 0, 2, 26, 4, '#0f172a', 1);
+      fillPx(ctx, 1, 3, 24, 2, '#10b981', 1);
+      fillPx(ctx, 22, -14, 4, 24, '#0f172a', 1); // Coluna do guidão
+      fillPx(ctx, 23, -13, 2, 22, '#cbd5e1', 1);
+      fillPx(ctx, 18, -15, 8, 4, '#334155', 1); // Manopla do guidão
+      fillPx(ctx, 26, -8, 5, 6, '#fde047', 1); // Farol dianteiro
+
+      ctx.restore(); // Fim do espelhamento horizontal do chassi
+
+      // GRANDE MEDALHÃO DA CARGA DENTRO DA CARRETINHA (sempre em pé e super visível!)
+      const trailerCenterX = -33 * facing;
+      if (P2.currentMission) {
+        const cargoCol = P2.currentMission.color || '#f59e0b';
+        drawPixelCircle(ctx, trailerCenterX, -14, 23, '#0f172a', null, 1.5);
+        drawPixelCircle(ctx, trailerCenterX, -14, 20, cargoCol, null, 1.5);
+        drawPixelCircle(ctx, trailerCenterX, -14, 16, '#ffffff', null, 1.5);
+        drawPixelSprite(ctx, getSpriteKeyForItem(P2.currentMission), trailerCenterX, -14, 2.05);
+      }
+
+      // AVATAR SEMPRE EM PÉ PILOTANDO A ECO-BIKE
+      drawAvatar(ctx, 11 * facing, -3, P2.player.walkCycle || 0, false, null, STATE.avatar);
+
+      // ETIQUETA FLUTUANTE RPG DE ALTA VISIBILIDADE MOSTRANDO O QUE ESTÁ SENDO CARREGADO
+      if (P2.currentMission) {
+        const cargoLabel = `CARGA: ${P2.currentMission.shortName}`;
+        ctx.font = '800 10.5px "Fredoka", sans-serif';
+        const lw = Math.ceil(ctx.measureText(cargoLabel).width);
+        const boxW = lw + 20;
+        const boxY = -72;
+        drawPixelBox(ctx, -boxW / 2, boxY, boxW, 21, '#0f172a', P2.currentMission.color || '#facc15', 1.5, null, 'rgba(15, 23, 42, 0.28)');
+        ctx.fillStyle = '#fef08a';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(cargoLabel, 0, boxY + 10.5);
+      }
+
+      ctx.restore();
+
+      // Partículas Hi-Bit Pixel Art
+      drawParticles(ctx);
+
+      ctx.restore();
+    }
+
+
+    /* =======================================================
+       8. FASE 3: O GUARDIÃO DO AQUÍFERO GUARANI
+       ======================================================= */
+    const P3 = {
+      canvas: null,
+      ctx: null,
+      w: 800,
+      h: 620,
+      player: { x: 400, y: 490, speed: 7.0, w: 115, h: 26 },
+      rescuedCount: 0,
+      animId: null,
+      fallingItems: [],
+      spawnTimer: 0,
+      waterWaveOffset: 0,
+      itemsPool: [
+        { name: "Garrafa de Vidro", icon: "🍾", cat: "recicla" },
+        { name: "Lata de Alumínio", icon: "🥫", cat: "recicla" },
+        { name: "Caixa de Papelão", icon: "📦", cat: "recicla" },
+        { name: "Embalagem PET", icon: "🧴", cat: "recicla" },
+        { name: "Revista e Jornal", icon: "🗞️", cat: "recicla" },
+        { name: "Pote de Conserva", icon: "🫙", cat: "recicla" }
+      ]
+    };
+
+    function initPhase3() {
+      P3.canvas = document.getElementById('canvasPhase3');
+      P3.ctx = P3.canvas.getContext('2d');
+      setupHiDPICanvas(P3.canvas, P3.w || 800, P3.h || 620);
+
+      P3.rescuedCount = 0;
+      P3.player.x = 340;
+      P3.player.y = (P3.h || 620) - 130;
+      P3.fallingItems = [];
+      P3.spawnTimer = 0;
+      document.getElementById('p3ItemCount').innerText = '0';
+
+      // Movimentação por toque ou arraste na tela do jogo (respeitando o galpão da Cooperativa à direita)
+      const handlePointer = (e) => {
+        const rect = P3.canvas.getBoundingClientRect();
+        const scaleX = (P3.w || 800) / rect.width;
+        const x = (e.clientX - rect.left) * scaleX;
+        P3.player.x = Math.max(80, Math.min(575, x));
+      };
+      P3.canvas.onpointerdown = handlePointer;
+      P3.canvas.onpointermove = (e) => {
+        if (e.buttons > 0) handlePointer(e);
+      };
+
+      if (P3.animId) cancelAnimationFrame(P3.animId);
+      loopPhase3();
+      requestAnimationFrame(() => syncGameCardHeight(true));
+    }
+
+    function loopPhase3() {
+      if (STATE.phase !== 3) return;
+      updatePhase3();
+      renderPhase3();
+      P3.animId = requestAnimationFrame(loopPhase3);
+    }
+
+    function updatePhase3() {
+      P3.tick = (P3.tick || 0) + 1;
+      // Controles do jogador (esquerda / direita) com limites consistentes com o trilho subterrâneo
+      if (STATE.keys.left) P3.player.x -= P3.player.speed;
+      if (STATE.keys.right) P3.player.x += P3.player.speed;
+      P3.player.x = Math.max(80, Math.min(575, P3.player.x));
+
+      if (P3.rescuedCount >= 6) {
+        P3.waterWaveOffset += 0.05;
+        return;
+      }
+
+      // Spawner de resíduos caindo
+      P3.spawnTimer++;
+      if (P3.spawnTimer % 90 === 0 && P3.rescuedCount < 6) {
+        const proto = P3.itemsPool[Math.floor(Math.random() * P3.itemsPool.length)];
+        P3.fallingItems.push({
+          ...proto,
+          x: 110 + Math.random() * 440,
+          y: 40,
+          vy: 2.2 + Math.random() * 0.8
+        });
+      }
+
+      // Atualiza itens caindo
+      for (let i = P3.fallingItems.length - 1; i >= 0; i--) {
+        const it = P3.fallingItems[i];
+        it.y += it.vy;
+
+        // Checa colisão com o carrinho/rede de resgate
+        if (it.y >= P3.player.y - 25 && it.y <= P3.player.y + 15) {
+          if (Math.abs(it.x - P3.player.x) < P3.player.w / 2 + 20) {
+            // Resgatado com sucesso!
+            playSound('good');
+            updateScore(150);
+            createConfetti(it.x, it.y);
+            P3.rescuedCount++;
+            document.getElementById('p3ItemCount').innerText = P3.rescuedCount;
+            P3.fallingItems.splice(i, 1);
+
+            if (P3.rescuedCount >= 6) {
+              P3.fallingItems = [];
+              playSound('fanfare');
+              scheduleGameTimeout(() => {
+                if (STATE.phase === 3) setPhase(4);
+              }, 1400);
+              break;
+            }
+            continue;
+          }
+        }
+
+        // Se caiu na água do aquífero
+        const waterLimit = (P3.h || 620) - 80;
+        if (it.y > waterLimit) {
+          playSound('splash');
+          createWaterSplash(it.x, waterLimit + 10);
+          P3.fallingItems.splice(i, 1);
+        }
+      }
+
+      P3.waterWaveOffset += 0.05;
+    }
+
+    function drawP3GeoBase(mainCtx, w, h) {
+      const dpr = Math.max(window.devicePixelRatio || 1, 2);
+      const targetW = Math.round(w * dpr);
+      const targetH = Math.round(h * dpr);
+
+      if (!P3._bgCanvas || P3._bgCanvas.width !== targetW || P3._bgCanvas.height !== targetH) {
+        P3._bgCanvas = document.createElement('canvas');
+        P3._bgCanvas.width = targetW;
+        P3._bgCanvas.height = targetH;
+        const ctx = P3._bgCanvas.getContext('2d');
+        ctx.save();
+        ctx.scale(dpr, dpr);
+
+        const P = 2;
+        const surfaceH = 76;
+        const terraRoxaH = 68;
+        const basaltoH = 76;
+        const waterTop = px(h - 84, P);
+
+        // 1. CÉU NOTURNO E SKYLINE DE RIBEIRÃO PRETO EM HI-BIT PIXEL ART (0 a 76px)
+        fillPx(ctx, 0, 0, w, 28, '#09152b', P);
+        drawDitherBand(ctx, 0, 24, w, 16, '#09152b', '#1e293b', P);
+        fillPx(ctx, 0, 40, w, 36, '#1e293b', P);
+
+        // Silhueta Hi-Bit Pixel Art dos marcos arquitetônicos de Ribeirão Preto
+        // Theatro Pedro II
+        fillPx(ctx, 48, 32, 72, 32, '#0f172a', P);
+        fillPx(ctx, 54, 29, 60, 3, '#0f172a', P);
+        fillPx(ctx, 62, 26, 44, 3, '#0f172a', P);
+        fillPx(ctx, 70, 23, 28, 3, '#0f172a', P);
+        fillPx(ctx, 78, 20, 12, 3, '#0f172a', P);
+        for (let cx = 56; cx <= 104; cx += 12) {
+          fillPx(ctx, cx, 36, 4, 20, '#334155', 1.5);
+          fillPx(ctx, cx, 36, 1.5, 20, '#64748b', 1);
+        }
+
+        // Edifícios do Centro Histórico
+        fillPx(ctx, 128, 20, 40, 44, '#0f172a', P);
+        fillPx(ctx, 172, 28, 36, 36, '#0f172a', P);
+        fillPx(ctx, 216, 32, 44, 32, '#0f172a', P);
+
+        // Caixa d'água / Torre DAE Saerp
+        fillPx(ctx, 288, 28, 28, 36, '#0f172a', P);
+        drawPixelCircle(ctx, 302, 26, 16, '#0f172a', '#334155', 1.5);
+
+        // Mais prédios e árvores do Parque Curupira
+        fillPx(ctx, 340, 36, 36, 28, '#0f172a', P);
+        fillPx(ctx, 384, 24, 44, 40, '#0f172a', P);
+        fillPx(ctx, 440, 32, 32, 32, '#0f172a', P);
+        fillPx(ctx, 480, 20, 40, 44, '#0f172a', P);
+        fillPx(ctx, 528, 28, 44, 36, '#0f172a', P);
+        drawPixelCircle(ctx, 600, 48, 16, '#14532d', '#0f172a', 1.5);
+        drawPixelCircle(ctx, 632, 44, 20, '#166534', '#0f172a', 1.5);
+
+        // Janelinhas acesas nos prédios
+        const windows = [
+          [136, 28], [152, 28], [136, 40], [152, 40],
+          [180, 36], [196, 36], [180, 48],
+          [392, 32], [408, 32], [392, 44], [408, 44],
+          [488, 28], [504, 28], [488, 40], [504, 40]
+        ];
+        windows.forEach(([wx, wy]) => {
+          fillPx(ctx, wx, wy, 5, 4, '#fef08a', 1);
+        });
+
+        // Pista asfáltica da superfície com faixas amarelas
+        fillPx(ctx, 0, surfaceH - 12, w, 12, '#475569', P);
+        fillPx(ctx, 0, surfaceH - 3, w, 3, '#0f172a', 1.5);
+        for (let rx = 8; rx < w; rx += 24) {
+          fillPx(ctx, rx, surfaceH - 8, 12, 3, '#facc15', 1.5);
+        }
+
+        // Letreiro da Superfície
+        drawPixelBox(ctx, 12, 5, 360, 21, 'rgba(15, 23, 42, 0.90)', '#38bdf8', 1.5, null, null);
+        ctx.fillStyle = '#38bdf8';
+        ctx.font = '800 11px "Fredoka", sans-serif';
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('SUPERFÍCIE DE RIBEIRÃO PRETO • RIO PARDO', 22, 15.5);
+
+        // 2. CAMADA 1: SOLO FÉRTIL (TERRA ROXA)
+        fillPx(ctx, 0, surfaceH, w, 28, '#7c2d12', P);
+        drawDitherBand(ctx, 0, surfaceH + 24, w, 16, '#7c2d12', '#9a3412', P);
+        fillPx(ctx, 0, surfaceH + 40, w, terraRoxaH - 40, '#9a3412', P);
+        drawDitherBand(ctx, 0, surfaceH + terraRoxaH - 8, w, 8, '#9a3412', '#451a03', P);
+
+        const rootX = [92, 240, 412, 572, 700];
+        rootX.forEach(rx => {
+          fillPx(ctx, rx, surfaceH, 3, 16, '#d97706', 1.5);
+          fillPx(ctx, rx + 3, surfaceH + 16, 3, 16, '#b45309', 1.5);
+          fillPx(ctx, rx - 3, surfaceH + 24, 3, 12, '#b45309', 1.5);
+          fillPx(ctx, rx + 6, surfaceH + 32, 3, 12, '#78350f', 1.5);
+        });
+
+        drawPixelBox(ctx, 14, surfaceH + 8, 210, 21, '#0f172a', '#ea580c', 1.5, null, null);
+        ctx.fillStyle = '#fed7aa';
+        ctx.font = '800 10.5px "Fredoka", sans-serif';
+        ctx.fillText('SOLO FÉRTIL (TERRA ROXA)', 24, surfaceH + 18.5);
+
+        // 3. CAMADA 2: BASALTO SERRA GERAL
+        const basaltoY = surfaceH + terraRoxaH;
+        fillPx(ctx, 0, basaltoY, w, 24, '#1e293b', P);
+        drawDitherBand(ctx, 0, basaltoY + 20, w, 16, '#1e293b', '#334155', P);
+        fillPx(ctx, 0, basaltoY + 36, w, basaltoH - 48, '#334155', P);
+        drawDitherBand(ctx, 0, basaltoY + basaltoH - 12, w, 12, '#334155', '#1e293b', P);
+
+        for (let bx = 32; bx < w; bx += 48) {
+          fillPx(ctx, bx, basaltoY, 3, 24, '#0f172a', 1.5);
+          fillPx(ctx, bx + 3, basaltoY + 24, 3, 28, '#0f172a', 1.5);
+          fillPx(ctx, bx, basaltoY + 52, 3, 24, '#0f172a', 1.5);
+          fillPx(ctx, bx + 6, basaltoY + 26, 3, 18, '#64748b', 1.5);
+        }
+
+        drawPixelBox(ctx, 14, basaltoY + 8, 246, 21, '#0f172a', '#64748b', 1.5, null, null);
+        ctx.fillStyle = '#cbd5e1';
+        ctx.font = '800 10.5px "Fredoka", sans-serif';
+        ctx.fillText('BASALTO SERRA GERAL (ROCHA)', 24, basaltoY + 18.5);
+
+        // 4. CAMADA 3: ARENITO BOTUCATU
+        const arenitoY = basaltoY + basaltoH;
+        const arenitoH = waterTop - arenitoY;
+        const arBand = Math.max(16, Math.floor(arenitoH / 3));
+
+        fillPx(ctx, 0, arenitoY, w, arBand, '#b45309', P);
+        drawDitherBand(ctx, 0, arenitoY + arBand - 8, w, 16, '#b45309', '#d97706', P);
+        fillPx(ctx, 0, arenitoY + arBand + 8, w, arBand, '#d97706', P);
+        drawDitherBand(ctx, 0, arenitoY + arBand * 2, w, 16, '#d97706', '#f59e0b', P);
+        fillPx(ctx, 0, arenitoY + arBand * 2 + 16, w, Math.max(8, waterTop - (arenitoY + arBand * 2 + 16)), '#f59e0b', P);
+
+        for (let dx = 0; dx < w; dx += 12) {
+          const wave1 = px(arenitoY + 28 + Math.sin(dx * 0.015) * 12, P);
+          const wave2 = px(arenitoY + 68 + Math.cos(dx * 0.018) * 12, P);
+          if (wave1 < waterTop - 8) fillPx(ctx, dx, wave1, 10, 3, 'rgba(254, 240, 138, 0.30)', 1.5);
+          if (wave2 < waterTop - 8) fillPx(ctx, dx, wave2, 10, 3, 'rgba(254, 240, 138, 0.30)', 1.5);
+        }
+
+        drawPixelBox(ctx, 14, arenitoY + 8, 256, 21, '#0f172a', '#facc15', 1.5, null, null);
+        ctx.fillStyle = '#fef08a';
+        ctx.font = '800 10.5px "Fredoka", sans-serif';
+        ctx.fillText('ARENITO BOTUCATU (FILTRO PURO)', 24, arenitoY + 18.5);
+
+        // 5. COOPERATIVA MÃOS DADAS & CAMINHÃO
+        const coopW = 156;
+        const coopH = 108;
+        const coopX = px(w - coopW - 12, P);
+        const coopY = px(waterTop - coopH - 12, P);
+
+        drawPixelBox(ctx, coopX, coopY, coopW, coopH, '#14532d', '#0f172a', 2, '#22c55e', 'rgba(15, 23, 42, 0.35)');
+        fillPx(ctx, coopX + 3, coopY + 3, coopW - 6, 27, '#15803d', 1.5);
+        fillPx(ctx, coopX + 3, coopY + 30, coopW - 6, 2, '#22c55e', 1.5);
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '800 10.5px "Fredoka", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('COOPERATIVA', coopX + coopW / 2, coopY + 11);
+        ctx.fillText('MÃOS DADAS', coopX + coopW / 2, coopY + 22);
+
+        drawPixelBox(ctx, coopX + 12, coopY + 40, 76, 40, '#166534', '#0f172a', 1.5, '#22c55e', null);
+        drawPixelSprite(ctx, 'papel', coopX + 28, coopY + 56, 1.35);
+        drawPixelSprite(ctx, 'plastico', coopX + 50, coopY + 56, 1.35);
+        drawPixelSprite(ctx, 'metal', coopX + 70, coopY + 56, 1.35);
+
+        drawPixelBox(ctx, coopX + 88, coopY + 46, 48, 34, '#ffffff', '#0f172a', 1.5, '#f8fafc', null);
+        drawPixelBox(ctx, coopX + 98, coopY + 50, 30, 15, '#38bdf8', '#0f172a', 1, '#bae6fd', null);
+        fillPx(ctx, coopX + 130, coopY + 67, 5, 5, '#fde047', 1);
+
+        [coopX + 32, coopX + 68, coopX + 114].forEach(wx => {
+          drawPixelCircle(ctx, wx, coopY + 80, 8, '#0f172a', null, 1.5);
+          drawPixelCircle(ctx, wx, coopY + 80, 3.5, '#cbd5e1', null, 1);
+        });
+
+        // 6. BASE DAS ÁGUAS DO AQUÍFERO GUARANI
+        fillPx(ctx, 0, waterTop + 6, w, h - (waterTop + 6), '#0284c7', P);
+        drawDitherBand(ctx, 0, waterTop + 26, w, 16, '#0284c7', '#0369a1', P);
+        fillPx(ctx, 0, waterTop + 42, w, h - (waterTop + 42), '#0369a1', P);
+        drawDitherBand(ctx, 0, h - 28, w, 28, '#0369a1', '#082f49', P);
+
+        // Trilho Subterrâneo Fixo
+        const railY = Math.round((h - 130) + 14);
+        for (let rx = 40; rx < w - 160; rx += 18) {
+          fillPx(ctx, rx, railY + 2, 7, 5, '#451a03', 1.5);
+        }
+        fillPx(ctx, 36, railY, w - 196, 3.5, '#94a3b8', 1.5);
+        fillPx(ctx, 36, railY, w - 196, 1.5, '#e2e8f0', 1);
+
+        ctx.restore();
+      }
+
+      mainCtx.drawImage(P3._bgCanvas, 0, 0, w, h);
+    }
+
+    function renderPhase3() {
+      const ctx = P3.ctx;
+      const dpr = Math.max(window.devicePixelRatio || 1, 2);
+      const w = P3.w || 800;
+      const h = P3.h || 620;
+      const tick = P3.tick || 0;
+      const P = 2;
+      ctx.save();
+      ctx.scale(dpr, dpr);
+      ctx.clearRect(0, 0, w, h);
+
+      const surfaceH = 76;
+      const terraRoxaH = 68;
+      const basaltoH = 76;
+      const basaltoY = surfaceH + terraRoxaH;
+      const arenitoY = basaltoY + basaltoH;
+      const waterTop = px(h - 84, P);
+      const arenitoH = waterTop - arenitoY;
+
+      // 1-6. ESTRATOS GEOLÓGICOS E SKYLINE CACHEADOS EM OFFSCREEN CANVAS
+      drawP3GeoBase(ctx, w, h);
+
+      // Estrelas cintilantes animadas
+      const stars = [
+        [40, 16], [112, 12], [220, 20], [312, 16],
+        [420, 12], [532, 20], [640, 12], [740, 16]
+      ];
+      stars.forEach(([sx, sy], idx) => {
+        const twinkle = (Math.floor(tick / 15) + idx) % 2 === 0;
+        fillPx(ctx, sx, sy, 3, 3, twinkle ? '#fef08a' : '#ffffff', 1);
+      });
+
+      // Gotas de água pura infiltrando pelos poros do arenito
+      for (let i = 0; i < 6; i++) {
+        const dropX = Math.round(140 + i * 84);
+        const dropY = Math.round(arenitoY + 20 + ((tick * 1.5 + i * 35) % Math.max(24, arenitoH - 28)));
+        fillPx(ctx, dropX, dropY, 4, 7, '#38bdf8', 1);
+        fillPx(ctx, dropX + 1, dropY + 1, 1.5, 2, '#ffffff', 1);
+      }
+
+      // Selo piscante 100% RECICLADO na Cooperativa
+      const coopW = 156;
+      const coopH = 108;
+      const coopX = px(w - coopW - 12, P);
+      const coopY = px(waterTop - coopH - 12, P);
+      const coopBlink = Math.floor(tick / 15) % 2 === 0;
+      ctx.fillStyle = coopBlink ? '#fde047' : '#86efac';
+      ctx.font = '800 10px "Fredoka", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('100% RECICLADO', coopX + coopW / 2, coopY + coopH - 10);
+
+      // Cristas de onda escalonadas em degraus finos de 8px (efeito de água Pixel Art HD)
+      for (let x = 0; x < w; x += 8) {
+        const waveY = px(waterTop + Math.sin((x * 0.025) + P3.waterWaveOffset) * 5, 1.5);
+        fillPx(ctx, x, waveY, 8, 3, '#e0f2fe', 1.5); // Espuma brilhante no topo
+        fillPx(ctx, x, waveY + 3, 8, 10, '#38bdf8', 1.5); // Camada cristalina superficial
+        fillPx(ctx, x, waveY + 13, 8, 10, '#0284c7', 1.5);
+      }
+
+      // Bolhas cristalinas subindo em Hi-Bit Pixel Art
+      for (let i = 0; i < 8; i++) {
+        const bx = Math.round(60 + i * 96 + Math.sin(tick * 0.05 + i) * 8);
+        const by = Math.round(waterTop + 16 + ((tick * 1.2 + i * 25) % Math.max(16, h - waterTop - 28)));
+        drawPixelCircle(ctx, bx, by, 4.5, '#0284c7', '#bae6fd', 1);
+        fillPx(ctx, bx - 1.5, by - 1.5, 2, 2, '#ffffff', 1);
+      }
+
+      // Faixa de texto das Águas do Aquífero
+      drawPixelBox(ctx, (w - 480) / 2, h - 30, 480, 22, 'rgba(8, 47, 73, 0.90)', '#38bdf8', 1.5, null, null);
+      ctx.fillStyle = '#e0f2fe';
+      ctx.font = '800 11.5px "Fredoka", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('ÁGUAS CRISTALINAS DO AQUÍFERO GUARANI • 100% PURAS', w / 2, h - 19);
+
+      // 7. ITENS RECICLÁVEIS CAINDO EM CÁPSULAS HI-BIT PIXEL ART
+      P3.fallingItems.forEach(it => {
+        const ix = Math.round(it.x);
+        const iy = Math.round(it.y);
+
+        // Sombra e cápsula esférica em Hi-Bit Pixel Art
+        drawPixelCircle(ctx, ix + 2, iy + 3, 26, 'rgba(15, 23, 42, 0.32)', null, 1.5);
+        drawPixelCircle(ctx, ix, iy, 26, '#ffffff', '#0284c7', 1.5);
+        drawPixelCircle(ctx, ix, iy, 21, '#f0f9ff', '#38bdf8', 1.5);
+
+        // Sprite Hi-Bit 16x16 de alta definição do resíduo
+        drawPixelSprite(ctx, getSpriteKeyForItem(it), ix, iy, 2.15);
+
+        // Etiqueta inferior em Hi-Bit Pixel Art
+        const shortTag = it.name.split(' ')[0].toUpperCase();
+        drawPixelBox(ctx, ix - 40, iy + 23, 80, 17, '#0f172a', '#38bdf8', 1.5, null, null);
+        ctx.fillStyle = '#7dd3fc';
+        ctx.font = '800 10px "Fredoka", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(shortTag, ix, iy + 31.5);
+      });
+
+      // 8. REDE HIDRÁULICA DE RESGATE & AVATAR EM HI-BIT PIXEL ART
+      ctx.save();
+      ctx.translate(Math.round(P3.player.x), Math.round(P3.player.y));
+
+      // Cone de energia luminosa em camadas suaves apontando para cima
+      fillPx(ctx, -P3.player.w / 2, -20, P3.player.w, 8, 'rgba(250, 204, 21, 0.35)', 2);
+      fillPx(ctx, -P3.player.w / 2 - 8, -32, P3.player.w + 16, 12, 'rgba(250, 204, 21, 0.20)', 2);
+      fillPx(ctx, -P3.player.w / 2 - 16, -44, P3.player.w + 32, 12, 'rgba(250, 204, 21, 0.09)', 2);
+
+      // Rodinhas de aço sobre o trilho
+      drawPixelCircle(ctx, -P3.player.w * 0.35, 14, 7.5, '#1e293b', '#0f172a', 1.5);
+      drawPixelCircle(ctx, -P3.player.w * 0.35, 14, 3, '#cbd5e1', null, 1);
+      drawPixelCircle(ctx, P3.player.w * 0.35, 14, 7.5, '#1e293b', '#0f172a', 1.5);
+      drawPixelCircle(ctx, P3.player.w * 0.35, 14, 3, '#cbd5e1', null, 1);
+
+      // Cesto Coletor / Vagonete em Hi-Bit Pixel Art com faixas zebradas de segurança
+      drawPixelBox(ctx, -P3.player.w / 2, -12, P3.player.w, 24, '#f59e0b', '#0f172a', 2, '#fde047', null);
+      for (let hx = -P3.player.w / 2 + 8; hx < P3.player.w / 2 - 12; hx += 16) {
+        fillPx(ctx, hx, -9, 8, 18, '#b45309', 1.5);
+      }
+
+      // Placa central do vagonete com tipografia nítida
+      drawPixelBox(ctx, -53, -9, 106, 18, '#0f172a', '#facc15', 1.5, null, null);
+      ctx.fillStyle = '#fef08a';
+      ctx.font = '800 10px "Fredoka", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('REDE DE RESGATE', 0, 0);
+
+      // Avatar Hi-Bit Pixel Art operando o vagonete
+      drawAvatar(ctx, 0, -24, 0, true, null, STATE.avatar);
+
+      ctx.restore();
+
+      // Partículas Hi-Bit Pixel Art
+      drawParticles(ctx);
+
+      ctx.restore();
+    }
+
+
+    /* =======================================================
+       9. SISTEMA DE PARTÍCULAS EM HI-BIT PIXEL ART
+       ======================================================= */
+    function createConfetti(x, y) {
+      for (let i = 0; i < 24; i++) {
+        STATE.particles.push({
+          x: x,
+          y: y,
+          vx: (Math.random() - 0.5) * 8,
+          vy: (Math.random() - 0.7) * 8,
+          size: 4 + Math.floor(Math.random() * 2) * 2,
+          color: ['#facc15', '#22c55e', '#38bdf8', '#ec4899', '#a855f7'][Math.floor(Math.random() * 5)],
+          life: 1.0
+        });
+      }
+    }
+
+    function createWaterSplash(x, y) {
+      for (let i = 0; i < 14; i++) {
+        STATE.particles.push({
+          x: x,
+          y: y,
+          vx: (Math.random() - 0.5) * 6,
+          vy: -Math.random() * 5,
+          size: 4,
+          color: '#e0f2fe',
+          life: 0.85
+        });
+      }
+    }
+
+    function drawParticles(ctx) {
+      for (let i = STATE.particles.length - 1; i >= 0; i--) {
+        const p = STATE.particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.2; // gravidade
+        p.life -= 0.025;
+
+        if (p.life <= 0) {
+          STATE.particles.splice(i, 1);
+          continue;
+        }
+
+        const sz = Math.max(4, Math.round(p.size));
+        const sx = Math.round(p.x);
+        const sy = Math.round(p.y);
+        ctx.globalAlpha = Math.max(0, p.life);
+        ctx.fillStyle = '#0f172a';
+        ctx.fillRect(sx - 1, sy - 1, sz + 2, sz + 2);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(sx, sy, sz, sz);
+        ctx.globalAlpha = 1.0;
+      }
+    }
+
+
+    /* =======================================================
+       10. CERTIFICADO E FINALIZAÇÃO
+       ======================================================= */
+    function generateDiploma() {
+      const nameInput = document.getElementById('finalStudentName');
+      const errEl = document.getElementById('diplomaNameError');
+      const name = nameInput.value.trim();
+      if (!name) {
+        if (errEl) errEl.classList.remove('hidden');
+        nameInput.classList.add('ring-4', 'ring-rose-400', 'border-rose-500');
+        playSound('bad');
+        nameInput.focus();
+        return;
+      }
+      if (errEl) errEl.classList.add('hidden');
+      nameInput.classList.remove('ring-4', 'ring-rose-400', 'border-rose-500');
+
+      document.getElementById('diplomaNamePlaceholder').innerText = name;
+      const scoreEl = document.getElementById('diplomaScorePlaceholder');
+      if (scoreEl) scoreEl.innerText = STATE.score;
+      const compEl = document.getElementById('diplomaAvatarCompanion');
+      if (compEl && AVATARS[STATE.avatar]) {
+        const a = AVATARS[STATE.avatar];
+        compEl.innerHTML = `Companheiro(a) de missão: <b>${a.name} ${a.icon}</b> (${a.role})`;
+      }
+      document.getElementById('printableDiploma').classList.remove('hidden');
+      document.getElementById('btnPrintDiploma').classList.remove('hidden');
+      playSound('fanfare');
+      createConfetti(400, 200);
+    }
+
+    // Renderiza retratos em Hi-Bit Pixel Art HD nos 4 cartões de seleção da tela inicial
+    function renderIntroPixelAvatars() {
+      const mapping = [
+        { id: 'optAvatarGabi', key: 'gabi' },
+        { id: 'optAvatarLeo', key: 'leo' },
+        { id: 'optAvatarDandara', key: 'dandara' },
+        { id: 'optAvatarDavi', key: 'davi' }
+      ];
+      mapping.forEach(({ id, key }) => {
+        const btn = document.getElementById(id);
+        if (!btn) return;
+        const badge = btn.querySelector('.w-14.h-14');
+        if (!badge) return;
+        badge.innerHTML = '';
+        const cvs = document.createElement('canvas');
+        cvs.width = 168;
+        cvs.height = 168;
+        cvs.style.width = '52px';
+        cvs.style.height = '52px';
+        const cctx = cvs.getContext('2d');
+        cctx.scale(2.6, 2.6);
+        drawAvatar(cctx, 32, 48, 0, false, null, key);
+        badge.appendChild(cvs);
+      });
+    }
+
+    window.addEventListener('resize', () => {
+      syncGameCardHeight();
+    });
+
+    // Inicialização da tela inicial
+    window.addEventListener('DOMContentLoaded', () => {
+      initAsideResizeObserver();
+      renderIntroPixelAvatars();
+      setPhase(0);
+    });
+  </script>
+
+</body>
+</html>
