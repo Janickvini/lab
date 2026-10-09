@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard de Publicações Prospectivas em Defesa (LSC/EGN)</title>
+  
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Custom Styling -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Loading Overlay -->
+  <div id="loading-overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: radial-gradient(circle at 50% 50%, hsl(224, 71%, 4%) 0%, hsl(222, 47%, 2%) 100%); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 1rem; transition: opacity 0.5s ease, visibility 0.5s ease;">
+    <i class="fa-solid fa-spinner fa-spin-pulse" style="font-size: 3rem; color: hsl(204, 100%, 48%); text-shadow: 0 0 15px rgba(0, 150, 255, 0.4);"></i>
+    <div style="font-size: 1.25rem; font-weight: 700; color: #fff; font-family: 'Inter', sans-serif;">Carregando Planilha...</div>
+    <div id="loading-status" style="font-size: 0.85rem; color: hsl(215, 20%, 65%); font-family: 'Inter', sans-serif;">Verificando conexão e baixando arquivo Excel do repositório...</div>
+  </div>
+
+  <div class="app-container">
+    
+    <!-- Sidebar: Dynamic Filter Panel -->
+    <aside class="sidebar">
+      <div class="brand-section">
+        <i class="fa-solid fa-chart-pie brand-logo"></i>
+        <div class="brand-info">
+          <div class="brand-name">DashSheet</div>
+          <p style="font-size: 0.65rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">BasePPDef BI</p>
+        </div>
+      </div>
+      
+      <div class="filter-section-title">
+        <h2>Filtros</h2>
+        <button id="btn-reset" class="btn-reset-filters" title="Limpar todos os filtros">
+          <i class="fa-solid fa-arrow-rotate-left"></i> Limpar
+        </button>
+      </div>
+      
+      <div class="filters-wrapper">
+        <!-- Search Filter -->
+        <div class="filter-group">
+          <label for="search-input">Busca Global</label>
+          <div class="search-input-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="search-input" class="filter-input" placeholder="Buscar por termo ou estudo...">
+          </div>
+        </div>
+        
+        <!-- Year Filter -->
+        <div class="filter-group">
+          <label>Ano de Publicação</label>
+          <div id="filter-year" class="custom-multiselect">
+            <div class="multiselect-selected" data-placeholder="Todos os anos">Todos os anos</div>
+            <div class="multiselect-options"></div>
+          </div>
+        </div>
+        
+        <!-- Region Filter -->
+        <div class="filter-group">
+          <label>Região do Relatório</label>
+          <div id="filter-region" class="custom-multiselect">
+            <div class="multiselect-selected" data-placeholder="Todas as regiões">Todas as regiões</div>
+            <div class="multiselect-options"></div>
+          </div>
+        </div>
+        
+        <!-- Requesting Country Filter -->
+        <div class="filter-group">
+          <label>País Solicitante</label>
+          <div id="filter-country-req" class="custom-multiselect">
+            <div class="multiselect-selected" data-placeholder="Todos os países">Todos os países</div>
+            <div class="multiselect-options"></div>
+          </div>
+        </div>
+
+        <!-- Object Country Filter -->
+        <div class="filter-group">
+          <label>País/Região Alvo (Objeto)</label>
+          <div id="filter-country-obj" class="custom-multiselect">
+            <div class="multiselect-selected" data-placeholder="Todos os alvos">Todos os alvos</div>
+            <div class="multiselect-options"></div>
+          </div>
+        </div>
+
+        <!-- Institution Filter -->
+        <div class="filter-group">
+          <label>Instituição</label>
+          <div id="filter-institution" class="custom-multiselect">
+            <div class="multiselect-selected" data-placeholder="Todas as instituições">Todas as instituições</div>
+            <div class="multiselect-options"></div>
+          </div>
+        </div>
+
+        <!-- Thematic Filters (Toggles) -->
+        <div class="filter-group">
+          <label>Dimensões Temáticas</label>
+          <div class="thematic-filters" id="thematic-toggles">
+            <div class="theme-checkbox" data-theme="Sementes"><i class="fa-solid fa-seedling"></i> Sementes</div>
+            <div class="theme-checkbox" data-theme="Político/geopolítico"><i class="fa-solid fa-globe"></i> Político/Geopolítico</div>
+            <div class="theme-checkbox" data-theme="Econômico"><i class="fa-solid fa-coins"></i> Econômico</div>
+            <div class="theme-checkbox" data-theme="Social"><i class="fa-solid fa-users"></i> Social</div>
+            <div class="theme-checkbox" data-theme="Tecnológico"><i class="fa-solid fa-laptop-code"></i> Tecnológico</div>
+            <div class="theme-checkbox" data-theme="Ambiental"><i class="fa-solid fa-leaf"></i> Ambiental</div>
+            <div class="theme-checkbox" data-theme="Legal"><i class="fa-solid fa-scale-balanced"></i> Legal</div>
+            <div class="theme-checkbox" data-theme="Militar"><i class="fa-solid fa-shield-halved"></i> Militar</div>
+            <div class="theme-checkbox" data-theme="Marítimo"><i class="fa-solid fa-anchor"></i> Marítimo</div>
+            <div class="theme-checkbox" data-theme="Terrestre"><i class="fa-solid fa-mountain"></i> Terrestre</div>
+            <div class="theme-checkbox" data-theme="Aeroespacial"><i class="fa-solid fa-rocket"></i> Aeroespacial</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    
+    <!-- Header Area -->
+    <header class="header-bar">
+      <div class="title-area">
+        <h1>Dashboard de Publicações Prospectivas em Defesa (LSC/EGN)</h1>
+        <p id="database-status-text">Base Carregada: 840 relatórios, 208 stakeholders ao redor do mundo</p>
+      </div>
+      
+      <!-- Navigation & Upload buttons -->
+      <div class="action-area">
+        <nav class="tab-navigation">
+          <button class="tab-btn active" data-tab="tab-dashboard">
+            <i class="fa-solid fa-chart-line"></i> Dashboard
+          </button>
+          <button class="tab-btn" data-tab="tab-reports">
+            <i class="fa-solid fa-file-invoice"></i> Relatórios
+          </button>
+          <button class="tab-btn" data-tab="tab-stakeholders">
+            <i class="fa-solid fa-building-shield"></i> Stakeholders
+          </button>
+        </nav>
+        
+        <!-- Theme Toggle Button -->
+        <button id="btn-theme-toggle" class="btn-theme-toggle" title="Alternar tema claro/escuro">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </header>
+    
+    <!-- Main Scrollable Content Area -->
+    <main class="main-content">
+      
+      <!-- TAB 1: DASHBOARD VIEW -->
+      <section id="tab-dashboard" class="tab-pane active">
+        <!-- KPI Row -->
+        <div class="kpi-container">
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="fa-solid fa-file-signature"></i></div>
+            <div class="kpi-info">
+              <span class="kpi-title">Relatórios Filtrados</span>
+              <span class="kpi-value" id="kpi-total-reports">0</span>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="fa-solid fa-landmark"></i></div>
+            <div class="kpi-info">
+              <span class="kpi-title">Instituições Ativas</span>
+              <span class="kpi-value" id="kpi-active-stakeholders">0</span>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="fa-solid fa-earth-americas"></i></div>
+            <div class="kpi-info">
+              <span class="kpi-title">Países Objeto</span>
+              <span class="kpi-value" id="kpi-total-countries">0</span>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="fa-solid fa-shield"></i></div>
+            <div class="kpi-info">
+              <span class="kpi-title">Defesa & Segurança</span>
+              <span class="kpi-value" id="kpi-defense-percentage">0%</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Charts Row -->
+        <div class="charts-grid">
+          <!-- Chart 1: Publications Timeline -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <span class="chart-title">Linha do Tempo de Publicações</span>
+              <div class="chart-actions">
+                <button class="chart-btn active" data-chart-type="line">Linhas</button>
+                <button class="chart-btn" data-chart-type="bar">Barras</button>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="chart-timeline"></canvas>
+            </div>
+          </div>
+          
+          <!-- Chart 2: Regional Distribution -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <span class="chart-title">Distribuição Geográfica (Regiões)</span>
+            </div>
+            <div class="chart-container">
+              <canvas id="chart-regions"></canvas>
+            </div>
+          </div>
+          
+          <!-- Chart 3: Top Institutions -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <span class="chart-title">Top 10 Instituições por Volume</span>
+            </div>
+            <div class="chart-container">
+              <canvas id="chart-institutions"></canvas>
+            </div>
+          </div>
+          
+          <!-- Chart 4: Thematic Distribution -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <span class="chart-title">Incidência de Dimensões Temáticas</span>
+            </div>
+            <div class="chart-container">
+              <canvas id="chart-thematics"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- TAB 2: REPORTS LIST VIEW -->
+      <section id="tab-reports" class="tab-pane">
+        <div class="table-panel">
+          <div class="table-panel-header">
+            <div class="table-panel-title">
+              <i class="fa-solid fa-table"></i> Lista de Relatórios Filtrados
+          </div>
+          
+          <div class="table-responsive">
+            <table class="dashboard-table" id="table-reports-list">
+              <thead>
+                <tr>
+                  <th data-sort="Ano">Ano <i class="fa-solid fa-sort"></i></th>
+                  <th data-sort="Região">Região <i class="fa-solid fa-sort"></i></th>
+                  <th data-sort="País Objeto">País Objeto <i class="fa-solid fa-sort"></i></th>
+                  <th data-sort="Instituição">Instituição <i class="fa-solid fa-sort"></i></th>
+                  <th data-sort="Nome do Estudo">Nome do Estudo <i class="fa-solid fa-sort"></i></th>
+                  <th data-sort="Trata de def/seg">Def/Seg <i class="fa-solid fa-sort"></i></th>
+                  <th>Temas</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="reports-table-body">
+                <!-- Populated dynamically -->
+              </tbody>
+            </table>
+          </div>
+          
+          <!-- Table Pagination -->
+          <div class="pagination-controls">
+            <div class="pagination-info" id="reports-pagination-info">
+              Exibindo 0-0 de 0 relatórios
+            </div>
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
+              <div style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--text-muted);">
+                <span>Itens por página:</span>
+                <select id="reports-page-size" class="filter-input" style="width: auto; padding: 4px 8px; min-height: auto; border-radius: var(--border-radius-sm); background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); color: var(--text-main);">
+                  <option value="10">10</option>
+                  <option value="20" selected>20</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                </select>
+              </div>
+              <div class="pagination-buttons">
+                <button id="btn-reports-prev" class="btn-page" disabled><i class="fa-solid fa-chevron-left"></i> Anterior</button>
+                <button id="btn-reports-next" class="btn-page" disabled>Próximo <i class="fa-solid fa-chevron-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- TAB 3: STAKEHOLDERS LIST VIEW -->
+      <section id="tab-stakeholders" class="tab-pane">
+        <div class="table-panel">
+          <div class="table-panel-header">
+            <div class="table-panel-title">
+              <i class="fa-solid fa-landmark-dome"></i> Mapeamento de Stakeholders / Instituições
+          </div>
+          
+          <div class="table-responsive">
+            <table class="dashboard-table" id="table-stakeholders-list">
+              <thead>
+                <tr>
+                  <th data-sort="Região">Região <i class="fa-solid fa-sort"></i></th>
+                  <th data-sort="País">País <i class="fa-solid fa-sort"></i></th>
+                  <th data-sort="Instituição">Instituição <i class="fa-solid fa-sort"></i></th>
+                  <th data-sort="Órgão Associado">Órgão Associado <i class="fa-solid fa-sort"></i></th>
+                  <th data-sort="Relatórios por instituição">Nº Relatórios <i class="fa-solid fa-sort"></i></th>
+                  <th>Link</th>
+                </tr>
+              </thead>
+              <tbody id="stakeholders-table-body">
+                <!-- Populated dynamically -->
+              </tbody>
+            </table>
+          </div>
+          
+          <!-- Table Pagination -->
+          <div class="pagination-controls">
+            <div class="pagination-info" id="stakeholders-pagination-info">
+              Exibindo 0-0 de 0 stakeholders
+            </div>
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
+              <div style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--text-muted);">
+                <span>Itens por página:</span>
+                <select id="stakeholders-page-size" class="filter-input" style="width: auto; padding: 4px 8px; min-height: auto; border-radius: var(--border-radius-sm); background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); color: var(--text-main);">
+                  <option value="10">10</option>
+                  <option value="20" selected>20</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                </select>
+              </div>
+              <div class="pagination-buttons">
+                <button id="btn-stakeholders-prev" class="btn-page" disabled><i class="fa-solid fa-chevron-left"></i> Anterior</button>
+                <button id="btn-stakeholders-next" class="btn-page" disabled>Próximo <i class="fa-solid fa-chevron-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    </main>
+  </div>
+
+  <!-- Chart.js for visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+  
+  <!-- SheetJS for client-side Excel parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  
+  <!-- Loaded Database JavaScript (baseData variable) -->
+  <script src="data.js"></script>
+  
+  <!-- Main Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>
