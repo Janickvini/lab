@@ -709,7 +709,7 @@ a:hover {
 
 .sf-email-layout {
   display: grid;
-  grid-template-columns: 260px 400px 1fr;
+  grid-template-columns: 260px 420px 1fr;
   gap: 10px;
   height: calc(100vh - 145px);
   min-height: 580px;
@@ -985,15 +985,16 @@ a:hover {
 }
 
 .inbox-item {
-  padding: 9px 12px;
+  padding: 11px 13px;
   border-bottom: 1px solid var(--border-subtle);
   cursor: pointer;
   transition: var(--transition);
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   border-left: 3px solid transparent;
   user-select: none;
+  background-color: var(--bg-surface);
 }
 
 .inbox-item:hover {
@@ -1005,18 +1006,74 @@ a:hover {
   border-left-color: var(--accent-primary);
 }
 
-.inbox-item-row-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 6px;
+/* 1. Título no Topo do Card */
+.inbox-item-title {
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text-primary);
+  display: block;
+  width: 100%;
+  word-break: break-word;
+  margin-bottom: 1px;
 }
 
-.inbox-badges-left {
+.inbox-item.active .inbox-item-title {
+  color: var(--text-primary);
+}
+
+/* 2. Tópico Padronizado em Linha Própria */
+.inbox-item-topic {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  line-height: 1.35;
+  width: 100%;
+  font-weight: 500;
+}
+
+.inbox-item-topic i {
+  font-size: 0.68rem;
+  opacity: 0.8;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--accent-primary);
+}
+
+.inbox-item-topic span {
+  word-break: break-word;
+  white-space: normal;
+}
+
+/* 3. Linha de Metadados: ID Neutro + Tipologia Colorida + Ícone de Revisão Sutil + Ref */
+.inbox-item-meta-row {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
   flex-wrap: wrap;
+  font-size: 0.70rem;
+  line-height: 1;
+}
+
+/* 2. ID Neutro */
+.badge-id-neutral {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.70rem;
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.inbox-item.active .badge-id-neutral {
+  color: var(--text-primary);
+  border-color: var(--border-medium);
 }
 
 .badge-id {
@@ -1030,21 +1087,16 @@ a:hover {
   border-radius: var(--radius-xs);
 }
 
-.inbox-item.active .badge-id {
-  background-color: var(--accent-primary);
-  color: #ffffff;
-  border-color: var(--accent-primary);
-}
-
-/* Tipologia Badges */
+/* 5. Tipologia Badges (Coloridas) */
 .badge-typology {
   font-size: 0.66rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  padding: 1px 5px;
+  padding: 2px 6px;
   border-radius: var(--radius-xs);
   border: 1px solid transparent;
+  line-height: 1;
 }
 
 .badge-typology.ruptura {
@@ -1077,10 +1129,27 @@ a:hover {
   border-color: var(--badge-fato-border);
 }
 
-.badge-typology.surpresa-inevitável, .badge-typology.surpresa_inevitavel {
+.badge-typology.surpresa-inevitável, .badge-typology.surpresa-inevitavel, .badge-typology.surpresa_inevitavel {
   background-color: var(--badge-surpresa-bg);
   color: var(--badge-surpresa-text);
   border-color: var(--badge-surpresa-border);
+}
+
+/* 4. Ícone Sutil de Revisão */
+.icon-reviewed-subtle {
+  color: #10b981;
+  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.9;
+}
+
+.icon-pending-subtle {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.65;
 }
 
 .badge-reviewed {
@@ -1119,37 +1188,14 @@ a:hover {
   align-items: center;
   gap: 4px;
   white-space: nowrap;
+  margin-left: auto;
 }
 
-.inbox-item-title {
-  font-size: 0.83rem;
-  font-weight: 600;
-  line-height: 1.35;
-  color: var(--text-primary);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.inbox-item.active .inbox-item-title {
-  color: var(--text-primary);
-}
-
-.inbox-item-topic {
-  font-size: 0.68rem;
-  color: var(--text-muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
+/* 3. Chips PESTEL Neutros para a lista de sementes */
 .inbox-item-pestel-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 3px;
+  gap: 4px;
 }
 
 .pestel-chip {
@@ -1160,6 +1206,18 @@ a:hover {
   border: 1px solid transparent;
   text-transform: uppercase;
   letter-spacing: 0.03em;
+}
+
+.pestel-chip.pestel-chip-neutral {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  font-weight: 500;
+}
+
+.inbox-item.active .pestel-chip.pestel-chip-neutral {
+  border-color: var(--border-medium);
+  color: var(--text-secondary);
 }
 
 .pestel-chip.politico { color: var(--pestel-pol); background-color: var(--pestel-pol-bg); border-color: rgba(244, 63, 94, 0.22); }
@@ -1386,6 +1444,35 @@ a:hover {
   padding: 16px 18px;
 }
 
+/* Citações Numéricas Interativas */
+.citation-badge-group {
+  display: inline;
+  color: var(--text-muted);
+}
+
+.citation-badge-link {
+  font-family: var(--font-mono);
+  font-size: 0.78em;
+  font-weight: 600;
+  color: var(--accent-primary);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  padding: 1px 5px;
+  border-radius: var(--radius-xs);
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: var(--transition);
+  vertical-align: baseline;
+}
+
+.citation-badge-link:hover {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  border-color: var(--accent-primary);
+  transform: translateY(-1px);
+}
+
 .dossier-implications-box {
   border-left: 3px solid var(--accent-primary);
   background-color: var(--bg-surface-elevated);
@@ -1429,6 +1516,29 @@ a:hover {
   flex-direction: column;
   gap: 5px;
   transition: var(--transition);
+  scroll-margin-top: 16px;
+}
+
+.dossier-article-card.highlight-pulse {
+  animation: cardHighlightPulse 1.4s ease-out;
+}
+
+@keyframes cardHighlightPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5);
+    border-color: var(--accent-primary);
+    background-color: var(--bg-surface-hover);
+  }
+  40% {
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.25);
+    border-color: var(--accent-primary);
+    background-color: var(--bg-surface-hover);
+  }
+  100% {
+    box-shadow: none;
+    border-color: var(--border-subtle);
+    background-color: var(--bg-surface-elevated);
+  }
 }
 
 .dossier-article-card:hover {
@@ -1655,10 +1765,21 @@ a:hover {
 .corporate-table th.th-sortable {
   cursor: pointer;
   user-select: none;
+  transition: var(--transition);
 }
 
 .corporate-table th.th-sortable:hover {
   color: var(--text-primary);
+}
+
+.corporate-table th.th-sortable.sorted-active {
+  color: var(--accent-primary);
+  border-bottom: 2px solid var(--accent-primary);
+  background-color: var(--bg-surface-hover);
+}
+
+.corporate-table th.th-sortable.sorted-active i {
+  color: var(--accent-primary);
 }
 
 .corporate-table td {

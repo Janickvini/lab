@@ -58,19 +58,13 @@
             <button id="tab-btn-sf" class="tab-btn active" data-tab="sf" title="Visualizar Sementes de Futuro">
               <i class="fa-solid fa-seedling"></i>
               <span>Sementes de Futuro</span>
-              <span class="tab-badge" id="badge-total-sf">62</span>
+              <span class="tab-badge" id="badge-total-sf">67</span>
             </button>
             <button id="tab-btn-scopus" class="tab-btn" data-tab="scopus" title="Explorar Base de Referências">
               <i class="fa-solid fa-book-bookmark"></i>
               <span>Referências</span>
-              <span class="tab-badge" id="badge-total-scopus">326</span>
+              <span class="tab-badge" id="badge-total-scopus">339</span>
             </button>
-          </div>
-
-          <!-- Data Source Status Indicator -->
-          <div class="data-source-pill" id="data-source-pill" title="Status da Fonte de Dados">
-            <i class="fa-solid fa-database"></i>
-            <span id="data-source-text">Carregando base...</span>
           </div>
 
           <!-- Accessibility Font Size Controls (A- / A / A+) -->
@@ -104,17 +98,15 @@
           <div class="stat-icon stat-icon-blue"><i class="fa-solid fa-dna"></i></div>
           <div class="stat-details">
             <div class="stat-label">Total de Sementes</div>
-            <div class="stat-value" id="kpi-total-sf">62</div>
-            <div class="stat-sub">Mapeamento Prospectivo</div>
+            <div class="stat-value" id="kpi-total-sf">67</div>
           </div>
         </div>
 
         <div class="stat-card">
           <div class="stat-icon stat-icon-indigo"><i class="fa-solid fa-diagram-project"></i></div>
           <div class="stat-details">
-            <div class="stat-label">Artigos de Suporte</div>
-            <div class="stat-value" id="kpi-artigos-citados">302</div>
-            <div class="stat-sub">de 326 na base Scopus</div>
+            <div class="stat-label">Referências</div>
+            <div class="stat-value" id="kpi-artigos-citados">314</div>
           </div>
         </div>
 
@@ -123,7 +115,6 @@
           <div class="stat-details">
             <div class="stat-label">Eixos Estratégicos</div>
             <div class="stat-value" id="kpi-total-eixos">5</div>
-            <div class="stat-sub">Dimensões Centrais</div>
           </div>
         </div>
 
@@ -131,8 +122,7 @@
           <div class="stat-icon stat-icon-emerald"><i class="fa-solid fa-circle-check"></i></div>
           <div class="stat-details">
             <div class="stat-label">Revisadas</div>
-            <div class="stat-value" id="kpi-revisadas">4</div>
-            <div class="stat-sub">SF Revisada - OK</div>
+            <div class="stat-value" id="kpi-revisadas">10</div>
           </div>
         </div>
 
@@ -263,8 +253,8 @@
               <div class="sidebar-filter-group">
                 <label for="filter-revisada"><i class="fa-solid fa-circle-check"></i> Status</label>
                 <select id="filter-revisada" class="sidebar-select">
-                  <option value="">Todos os Status (62)</option>
-                  <option value="revisada">SF Revisada - OK</option>
+                  <option value="">Todos os Status</option>
+                  <option value="revisada">Revisada</option>
                   <option value="pendente">Em revisão</option>
                 </select>
               </div>
@@ -362,9 +352,9 @@
               <div class="filter-field filter-field-inline">
                 <label for="scopus-filter-relation">Relação com SFs:</label>
                 <select id="scopus-filter-relation" class="form-select-sm">
-                  <option value="">Todos os Artigos (326)</option>
-                  <option value="linked" selected>Apenas com SFs Vinculadas (302)</option>
-                  <option value="unlinked">Sem SFs Vinculadas (24)</option>
+                  <option value="">Todos os Artigos (339)</option>
+                  <option value="linked" selected>Apenas com SFs Vinculadas (314)</option>
+                  <option value="unlinked">Sem SFs Vinculadas (25)</option>
                 </select>
               </div>
 
@@ -379,7 +369,7 @@
 
           <div class="filter-status-bar">
             <div class="results-counter">
-              Mostrando <strong id="scopus-filtered-count">302</strong> de <span id="scopus-total-count">326</span> Artigos Scopus
+              Mostrando <strong id="scopus-filtered-count">314</strong> de <span id="scopus-total-count">339</span> Artigos Scopus
             </div>
           </div>
 
@@ -486,7 +476,7 @@
         <div class="modal-section">
           <div class="section-title">
             <i class="fa-solid fa-file-lines"></i>
-            <span>Resumo Científico (Abstract)</span>
+            <span>Resumo:</span>
           </div>
           <div class="section-content text-abstract" id="modal-art-abstract">
             <!-- Abstract content -->

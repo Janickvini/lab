@@ -41,7 +41,7 @@ Protótipo executivo desenvolvido para visualização analítica, filtragem e cu
 ## 🔍 Funcionalidades Disponíveis no Protótipo
 
 1. **Painel Executivo / KPIs:**
-   * Total de sementes (62), artigos Scopus de suporte vinculados (302), eixos estratégicos (5) e status de curadoria concluída.
+   * Total de sementes (67), referências Scopus vinculadas (314), eixos estratégicos (5) e status de curadoria concluída.
 2. **Painel Analítico Recolhível (Gráficos):**
    * Gráfico de rosca: Distribuição por Tipologia Prospectiva (*Ruptura, Tendência, Sinal Fraco, Incerteza, Fato Predeterminado, Surpresa Inevitável*).
    * Gráfico de barras: Incidência nas Dimensões PESTEL (*Político, Econômico, Social, Tecnológico, Ambiental, Legal*).
@@ -52,11 +52,11 @@ Protótipo executivo desenvolvido para visualização analítica, filtragem e cu
 4. **Navegação Integrada em 3 Colunas (Estilo Leitor de E-mail):**
    * **Coluna da Esquerda (Filtros):** Busca textual e seletores por Eixo, Tipologia, PESTEL, Tópico e Status de Curadoria.
    * **Coluna Central (Lista de Sementes):** Relação scannável de todas as sementes encontradas com badges de identificação, ordenação dinâmica e indicador de seleção ativa.
-   * **Coluna da Direita (Área de Leitura Contínua):** Carrega o dossiê completo imediatamente ao clicar em qualquer semente, contendo narrativa com citações numéricas, implicações para 2040 e lista de artigos Scopus fundamentadores com expansão inline de Abstract.
+   * **Coluna da Direita (Área de Leitura Contínua):** Carrega o dossiê completo imediatamente ao clicar em qualquer semente, contendo narrativa com citações numéricas, implicações para 2040 e lista de referências Scopus fundamentadoras com expansão inline de Resumo.
 5. **Navegação Rápida por Teclado:**
    * É possível usar as setas **↑** e **↓** do teclado para alternar entre as sementes da lista e realizar a leitura contínua de forma ágil e fluida durante reuniões executivas.
 6. **Aba de Artigos Scopus (Referências):**
-   * Navegação independente pelos 326 artigos científicos rastreados, com busca por autor, periódico, ano e identificação das SFs que fundamentam.
+   * Navegação independente pelos artigos científicos rastreados (339), com busca por autor, periódico, ano e identificação das SFs que fundamentam.
 7. **Acessibilidade e Conforto Visual (Controle de Fonte A- / A / A+):**
    * Botões no cabeçalho superior que permitem redimensionar todas as fontes em 5 níveis (de 90% a 130%), facilitando a leitura por longos períodos em reuniões ou apresentações com projetores, com persistência automática no navegador.
 8. **Alternância de Tema (Modo Escuro / Modo Claro):**

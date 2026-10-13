@@ -2,11 +2,11 @@
 const sfData = {
   "metadata": {
     "sourceFile": "SF CSED.xlsx",
-    "totalSF": 62,
-    "totalArticles": 326,
-    "totalArticlesCited": 302,
-    "totalRevisadas": 5,
-    "generatedAt": "11/10/2026 18:18:48"
+    "totalSF": 67,
+    "totalArticles": 339,
+    "totalArticlesCited": 314,
+    "totalRevisadas": 10,
+    "generatedAt": "13/10/2026 19:49:02"
   },
   "sementes": [
     {
@@ -42,10 +42,35 @@ const sfData = {
       "revisada": true
     },
     {
+      "id": "SFQ01",
+      "topico": "Empregabilidade, Futuro do Trabalho e Novas Competências",
+      "titulo": "Letramento Quântico (Quantum Literacy) e Formação Antecipatória de Competências para a Economia Quântica",
+      "descricao": "Observa-se o crescimento acelerado de políticas governamentais e diretrizes institucionais voltadas ao desenvolvimento de competências em tecnologias quânticas bem antes da ampla disponibilidade comercial do hardware (382, 384). Mapeamentos acadêmicos recentes documentam a consolidação de um campo pedagógico próprio com estratégias didáticas empíricas para o ensino de conceitos quânticos em cursos STEM e Ciência de Dados (388, 389), acompanhado pelos primeiros movimentos no mercado brasileiro de formação profissional, como o lançamento de programas de pós-graduação pioneiros voltados à engenharia e tecnologia (393). Esse movimento sinaliza uma trajetória na qual o letramento quântico ('Quantum Literacy') deixa de ser nicho restrito da física teórica e passa a ser demandado como competência transversal em diversas áreas, como finanças, logística, química computacional e cibersegurança (383, 388), forçando as IES a anteciparem a reformulação curricular para evitar um apagão de mão de obra especializada no horizonte 2030–2040 (382, 384)",
+      "classificacao": "Sinal Fraco",
+      "pestel": [
+        "Tecnológico",
+        "Social",
+        "Econômico"
+      ],
+      "eixo": "5 - Transformação Tecnológica",
+      "qtdArtigos": 6,
+      "artigosIds": [
+        382,
+        383,
+        384,
+        388,
+        389,
+        393
+      ],
+      "referenciasResumidas": "[382] OECD (2025) - A quantum technologies policy primer | [383] OECD (2025) - An overview of national strategies and policies for quantum technologies | [384] European Commission (2025) - Quantum Europe Strategy: Building a world-leading quantum ecosystem in Europe | [388] López-Meneses E. (2025) - Quantum Computing in Data Science and STEM Education: Mapping Academic Trends and Analyzing Practical Tools | [389] Donhauser A. (2024) - Empirical insights into the effects of research-based teaching strategies in quantum education | [393] MCTI (2026) - Iniciativa Brasileira de Tecnologias Quânticas (IBQuântica), Hub Nacional de Campinas e Pós-Graduação UniSENAI-SP",
+      "implicacoes": "Oportunidade para liderar a oferta de cursos curtos de extensão, nanodegrees e especializações lato sensu em fundamentos de computação quântica aplicada (finanças quânticas, otimização e cibersegurança) em parceria com provedores em nuvem, preparando o terreno antes que as graduações tradicionais de computação e engenharias tornem essa formação obrigatória nas DCNs",
+      "revisada": true
+    },
+    {
       "id": "SF02",
       "topico": "Corpo Docente, Carreira Acadêmica e Formação de Professores",
       "titulo": "Requalificação Digital Compulsória, Letramento em Futuros e Desenvolvimento Profissional Contínuo (CPD) do Corpo Docente",
-      "descricao": "O avanço vertiginoso das tecnologias emergentes impõe uma obsolescência acelerada das competências pedagógicas e digitais tradicionais do corpo docente, transformando a requalificação contínua de escolha voluntária em exigência estrutural compulsória para a sobrevivência institucional (52, 324). Essa transição evidencia disparidades geracionais e atitudinais profundas entre os professores quanto à prontidão para adotar IA e ferramentas virtuais (324). Diante desse cenário, emergem abordagens inovadoras de Desenvolvimento Profissional Contínuo (CPD) que superam treinamentos instrumentais rasos para focar no desenvolvimento de liderança adaptativa e na prevenção do desperdício de talentos acadêmicos (293), incorporando o letramento em futuros ('Futures Literacy') preconizado pela UNESCO como habilidade essencial para que os docentes aprendam a navegar a incerteza e capacitem os estudantes a antecipar transformações complexas (111).",
+      "descricao": "O avanço das tecnologias promove uma obsolescência acelerada das competências pedagógicas e digitais tradicionais do corpo docente, fazendo da requalificação contínua uma exigência estrutural para a sustentabilidade institucional (52, 324). Evidenciam-se disparidades geracionais entre professores e alunos quando à prontidão para adotar ferramentas virtuais, dentre elas a IA (324). Diante desse cenário, emergem abordagens inovadoras de Desenvolvimento Profissional Contínuo (CPD) que superam treinamentos instrumentais rasos para focar no desenvolvimento de liderança adaptativa e na prevenção do desperdício de talentos acadêmicos (293), incorporando o letramento em futuros ('Futures Literacy') preconizado pela UNESCO como habilidade essencial para que os docentes aprendam a navegar a incerteza e capacitem os estudantes a antecipar transformações complexas (111).",
       "classificacao": "Ruptura",
       "pestel": [
         "Social",
@@ -61,6 +86,27 @@ const sfData = {
       ],
       "referenciasResumidas": "[52] Akgün-özbek E. (2022) - E-Transformation in Higher Education and What It Coerces for the Faculty | [111] Kazemier E.M. (2021) - Mastering futures literacy in higher education: An evaluation of learning outcomes and instructional design of a faculty development program | [293] Qadhi S.M. (2023) - Reimaging Continuing Professional Development in Higher Education - Toward Sustainability | [324] Saavedra A.M. (2025) - Teachers' Perceptions, Attitudes, and Beliefs Regarding the Use of AI in Higher Education: A Multigenerational Analysis in Guatemala",
       "implicacoes": "Torna indispensável para as IES privadas a estruturação de Academias Corporativas Docentes permanentes com trilhas de letramento em IA e metodologias prospectivas. O investimento estruturado em CPD deixa de ser custo de RH para se tornar ativo central de retenção de talentos e mitigação da perda de relevância acadêmica frente a novas edtechs.",
+      "revisada": true
+    },
+    {
+      "id": "SFQ02",
+      "topico": "Gestão Institucional, Análise de Dados e Inteligência Operacional",
+      "titulo": "Ameaça de segurança de dados e Adequação dos Protocolos de segurança nas IES",
+      "descricao": "A demonstração matemática de que computadores quânticos futuros serão capazes de quebrar os algoritmos clássicos de criptografia de chave pública (como RSA e curvas elípticas) desencadeou a publicação oficial dos primeiros padrões internacionais de Criptografia Pós-Quântica pelo NIST entre 2024 e 2026 (390). Soma-se a isso a prática já observada de espionagem digital 'Harvest Now, Decrypt Later' (captura massiva de dados criptografados hoje para decifração quando o computador quântico estiver maduro), criando riscos retroativos para registros acadêmicos perenes, pesquisas com patentes e dados sensíveis de estudantes (382, 390). Esse contexto transforma a migração para infraestruturas imunes a ataques quânticos em uma necessidade institucional com longo ciclo de implantação, levando as universidades a reestruturarem seus protocolos de cibersegurança e conformidade de dados anos antes da consolidação física da computação quântica (382, 390).",
+      "classificacao": "Surpresa inevitável",
+      "pestel": [
+        "Tecnológico",
+        "Legal",
+        "Econômico"
+      ],
+      "eixo": "5 - Transformação Tecnológica",
+      "qtdArtigos": 2,
+      "artigosIds": [
+        382,
+        390
+      ],
+      "referenciasResumidas": "[382] OECD (2025) - A quantum technologies policy primer | [390] NIST (2024) - Post-Quantum Cryptography Standardization (FIPS 203, FIPS 204, FIPS 205)",
+      "implicacoes": "Exigirá auditoria e atualização gradual dos sistemas de registro acadêmico, diplomas digitais, prontuários de clínicas-escola e bases de dados corporativas da CSED para criptografia pós-quântica (PQC). A instituição que atrasar essa transição enfrentará passivos regulatórios perante a LGPD e risco de obsolescência de sua infraestrutura de confiança digital.",
       "revisada": true
     },
     {
@@ -88,6 +134,26 @@ const sfData = {
       "revisada": false
     },
     {
+      "id": "SFQ03",
+      "topico": "Gestão Institucional, Análise de Dados e Inteligência Operacional",
+      "titulo": "Otimização Quântica Híbrida (Quantum Annealing) na Resolução de Gargalos Operacionais Complexos da Universidade",
+      "descricao": "Experiências empíricas pioneiras com processadores quânticos híbridos (como annealers acoplados a sistemas de computação clássica) demonstraram viabilidade prática na resolução de problemas complexos de otimização combinatória universitária, como o escalonamento simultâneo de milhares de exames, disciplinas e salas para turmas massivas sem conflitos de horários (387). Esse sinal indica que a primeira porta de entrada da computação quântica no cotidiano educacional pode não ocorrer na sala de aula, mas nas operações logísticas de retaguarda ('back-office'), onde o cálculo combinatório de alocação de turmas, rotas de transporte, ensalamento dinâmico e retenção discente em grandes redes multicampi atinge limites matemáticos para algoritmos puramente convencionais (387, 392).",
+      "classificacao": "Sinal Fraco",
+      "pestel": [
+        "Tecnológico",
+        "Econômico"
+      ],
+      "eixo": "5 - Transformação Tecnológica",
+      "qtdArtigos": 2,
+      "artigosIds": [
+        387,
+        392
+      ],
+      "referenciasResumidas": "[387] Zhou Z. (2025) - Hybrid quantum annealing for large-scale exam scheduling: Validation in real-world educational scenarios | [392] IBM Quantum (2026) - IBM Quantum Technology Atlas and Development Roadmap",
+      "implicacoes": "Para grandes conglomerados educacionais com centenas de milhares de alunos e múltiplos polos, a utilização de serviços híbridos de otimização quântica em nuvem poderá destravar ganhos de eficiência operacional no uso de prédios, laboratórios e alocação de docentes, reduzindo o custo por aluno e a ociosidade física",
+      "revisada": true
+    },
+    {
       "id": "SF04",
       "topico": "Corpo Docente, Carreira Acadêmica e Formação de Professores",
       "titulo": "Desagregação do Trabalho Acadêmico (Unbundling), Flexibilização Contratual e Crise de Sustentabilidade Humana na Docência",
@@ -112,10 +178,30 @@ const sfData = {
       "revisada": false
     },
     {
+      "id": "SFQ04",
+      "topico": "Inteligência Artificial e Tecnologias Emergentes no Ensino",
+      "titulo": "Convergência entre Algoritmos Quânticos e Educação 5.0 para a Hiperpersonalização da Aprendizagem",
+      "descricao": "O Conceito de Educação 5.0 (caracterizada pelo foco no desenvolvimento humano integral apoiado por tecnologias avançadas) encontra um novo vetor de aceleração em pesquisas que combinam Inteligência Artificial e Computação Quântica (Quantum Machine Learning - QML) (386). Enquanto as plataformas atuais se limitam a adaptar conteúdos a partir de métricas básicas de acertos e erros, os modelos quânticos experimentais demonstram capacidade matemática de processar simultaneamente centenas de variáveis do perfil do estudante (ritmo cognitivo, lacunas conceituais prévias, engajamento e preferências de aprendizagem) para criar trilhas de ensino dinâmicas e hiperpersonalizadas em tempo real (386). Embora revisões sistemáticas apontem que a tecnologia ainda opera em fase laboratorial com limitações de hardware e taxas de ruído (391), esse movimento estabelece as bases teóricas para que as instituições transitem de sistemas de tutoria padronizados para ecossistemas de aprendizagem adaptativa com profundidade sem precedentes até 2040 (386, 391).",
+      "classificacao": "Sinal Fraco",
+      "pestel": [
+        "Tecnológico",
+        "Social"
+      ],
+      "eixo": "5 - Transformação Tecnológica",
+      "qtdArtigos": 2,
+      "artigosIds": [
+        386,
+        391
+      ],
+      "referenciasResumidas": "[386] Rosales Huamani J.A. (2026) - A Systematic Review of Quantum Machine Learning in Education 5.0: Applications and Future Research Directions | [391] Rodríguez-Díaz F. (2025) - A Survey of Quantum Machine Learning: Foundations, Algorithms, Frameworks, Data and Applications",
+      "implicacoes": "Sinal de longo prazo para monitoramento tecnológico. Não demanda investimentos imediatos de capital, mas sugere que a equipe de P&D educacional e Data Analytics da Cruzeiro acompanhe a evolução de bibliotecas de QML híbridas disponibilizadas em nuvem para casos onde os modelos preditivos tradicionais de evasão encontrem limites computacionais.",
+      "revisada": true
+    },
+    {
       "id": "SF05",
       "topico": "Corpo Docente, Carreira Acadêmica e Formação de Professores",
       "titulo": "O Custo de Oportunidade Docente: Disputa por Especialistas entre o Mercado Profissional e a Universidade (Teacher-Practitioners)",
-      "descricao": "Agudiza-se a assimetria concorrencial entre o mercado de trabalho corporativo/clínico e as instituições de ensino superior pela atração e retenção de profissionais altamente qualificados (os chamados teacher-practitioners), especialmente em áreas de alta demanda econômica como Medicina, Saúde, Tecnologia e Ciências Aplicadas (78, 121). Indivíduos com sólida identidade profissional no mercado vivenciam uma instabilidade crônica em sua trajetória acadêmica, frequentemente interrompendo ou abandonando a docência devido à discrepância salarial com a prática privada, à sobrecarga burocrática institucional e à ausência de planos de carreira adaptados à dupla identidade profissional (121). Esse descompasso resulta em uma escassez estrutural de docentes técnicos e práticos nas universidades (78), desafiando as faculdades a criarem novos arranjos de vinculação (como cátedras corporativas, preceptoria clínica diferenciada e flexibilidade de alocação de tempo) capazes de compensar o elevado custo de oportunidade desses especialistas frente ao mercado (58, 121, 247).",
+      "descricao": "Assimetria de concorrência entre o mercado de trabalho corporativo e as instituições de ensino superior pela atração e retenção de profissionais qualificados (os chamados teacher-practitioners), especialmente em áreas de alta demanda econômica como Medicina, Saúde, Tecnologia e Ciências Aplicadas (78, 121). Indivíduos com sólida identidade profissional no mercado vivenciam uma instabilidade crônica em sua trajetória acadêmica, frequentemente interrompendo ou abandonando a docência devido à discrepância salarial com a prática privada, à sobrecarga burocrática institucional e à ausência de planos de carreira adaptados à dupla identidade profissional (121). Esse descompasso resulta em uma escassez estrutural de docentes técnicos e práticos nas universidades (78), desafiando as faculdades a criarem novos arranjos de vinculação (como cátedras corporativas, preceptoria clínica diferenciada e flexibilidade de alocação de tempo) capazes de compensar o elevado custo de oportunidade desses especialistas frente ao mercado (58, 121, 247).",
       "classificacao": "Tendência",
       "pestel": [
         "Econômico",
@@ -132,6 +218,28 @@ const sfData = {
       ],
       "referenciasResumidas": "[58] Blass E. (2010) - Visioning 2035: The future of the higher education sector in the UK | [78] Fletcher E.C., Jr. (2022) - Characteristics of Career and Technical Education Faculty across Institutions of Higher Education in the United States | [121] Peri E. (2024) - Who am I—Teacher or practitioner? Teacher-practitioners’ experience of identity in higher education—A phenomenological view | [247] Martinez B. (2026) - EXPAND YOUR SCOPE:Sharing Your Expertise in Spaces Inside and Outside of Higher Education",
       "implicacoes": "Exigirá dos grupos educacionais privados a superação definitiva da contratação docente baseada exclusivamente no modelo tradicional horista para cursos profissionalizantes nobres (como Medicina e Tecnologia). Para não perderem os melhores médicos e especialistas para consultórios, hospitais privados e Big Techs, as IES precisarão formatar parcerias institucionais híbridas (ex.: divisão de tempo entre clínica/hospital-escola conveniado e docência de mentoria), garantindo prestígio e remuneração competitiva para atrair quem realmente domina a prática do mercado.",
+      "revisada": true
+    },
+    {
+      "id": "SFQ05",
+      "topico": "Governança, Políticas Públicas e Regulação",
+      "titulo": "Hegemonia da 'Computação Quântica como Serviço' (QCaaS) e Tensões de Soberania Tecnológica Acadêmica",
+      "descricao": "O modelo de viabilização da computação quântica tem se estruturado predominantemente por plataformas de acesso remoto em nuvem geridas por grandes conglomerados de tecnologia (QCaaS), eliminando a necessidade de investimento institucional em hardware próprio (que envolve estruturas criogênicas), mas concentrando a infraestrutura de ponta no setor privado do Norte Global (382). Alertas recentes da UNESCO destacam o risco de aprofundamento das assimetrias educacionais e científicas entre países centrais e emergentes (385), o que já impulsiona reações locais no Brasil com propostas de criação de ecossistemas cooperativos e hubs nacionais de tecnologias quânticas (393). A incerteza está em como se dará a divisão entre a dependência comercial de fornecedores proprietários globais ou a participação em consórcios acadêmico-governamentais de tecnologia aberta (382, 385, 393).",
+      "classificacao": "Incerteza",
+      "pestel": [
+        "Político",
+        "Tecnológico",
+        "Econômico"
+      ],
+      "eixo": "2 - Evolução Histórica e Marcos Regulatórios dos últimos 10 anos",
+      "qtdArtigos": 3,
+      "artigosIds": [
+        382,
+        385,
+        393
+      ],
+      "referenciasResumidas": "[382] OECD (2025) - A quantum technologies policy primer | [385] UNESCO (2025) - 2025 International Year of Quantum Science and Technology (IYQ) | [393] MCTI (2026) - Iniciativa Brasileira de Tecnologias Quânticas (IBQuântica), Hub Nacional de Campinas e Pós-Graduação UniSENAI-SP",
+      "implicacoes": "Alerta para que as IES privadas evitem contratos de exclusividade tecnológica prematuros com provedores internacionais, priorizando parcerias com ecossistemas regionais de inovação e polos de pesquisa aplicada (como o Hub de Campinas e EMBRAPII), posicionando-se como centros aplicadores e difusores da tecnologia no Brasil.",
       "revisada": true
     },
     {
@@ -161,7 +269,7 @@ const sfData = {
       "id": "SF07",
       "topico": "Modelos Pedagógicos, Aprendizagem Híbrida e EAD",
       "titulo": "Superação do EAD Massificado de Baixo Custo: Profissionalização, Qualidade Multidimensional e Abordagem Institucional Integrada (Whole-Institution)",
-      "descricao": "Desgaste e perda progressiva de eficácia dos modelos de educação a distância puramente transmissivos e de baixo investimento pedagógico, fenômeno historicamente evidenciado pelo rápido ciclo de obsolescência de formatos massificados e pelas elevadas taxas de abandono discente diante de repositórios estáticos de conteúdo (117, 214). Investigações empíricas recentes sobre a experiência estudantil em contextos de expansão digital revelam que a permanência e a fidelização discente não decorrem do mero acesso à plataforma tecnológica, mas de uma percepção de qualidade condicionada a múltiplos fatores, como suporte acadêmico contínuo e rápido, mediação docente ativa, atenção institucional a desigualdades técnicas, plataformas intuitivas e relevância do currículo (103, 240, 353). Já se pode observar episódios de transição de ações remotas fragmentadas para abordagens institucionais sistêmicas (whole-institution approach), acompanhadas pelo avanço de formatos híbridos de aprendizagem que registram resultados pedagógicos superiores ao combinarem flexibilidade digital com momentos deliberados de interação orientada (84, 118, 187). Esse conjunto de fatores aponta para uma potencial bifurcação de trajetórias no setor: de um lado, a vulnerabilidade e o desgaste reputacional de instituições que sustentam sua oferta exclusivamente no corte de custos e na entrega passiva; de outro, a consolidação de ecossistemas digitais de alta densidade relacional, nos quais a sustentabilidade do modelo decorre do equilíbrio entre arquitetura tecnológica avançada e presença humana qualificada (84, 103, 187).",
+      "descricao": "Desgaste e perda progressiva de eficácia dos modelos de educação a distância puramente transmissivos e de baixo investimento pedagógico, fenômeno historicamente evidenciado pelo rápido ciclo de obsolescência de formatos massificados e pelas elevadas taxas de abandono discente diante de repositórios estáticos de conteúdo (117, 214). Investigações empíricas recentes sobre a experiência estudantil em contextos de expansão digital revelam que a permanência e a fidelização discente não decorrem do mero acesso à plataforma tecnológica, mas de uma percepção de qualidade condicionada a múltiplos fatores, como suporte acadêmico contínuo e rápido, mediação docente ativa, atenção institucional a desigualdades técnicas, plataformas intuitivas e relevância do currículo (103, 240, 353). Como sinal emergente dessa dinâmica, observa-se a transição de ações remotas fragmentadas para abordagens institucionais sistêmicas (whole-institution approach), acompanhadas pelo avanço de formatos híbridos de aprendizagem que registram resultados pedagógicos superiores ao combinarem flexibilidade digital com momentos deliberados de interação orientada (84, 118, 187). Esse conjunto de fatores aponta para uma potencial bifurcação de trajetórias no setor: de um lado, a vulnerabilidade e o desgaste reputacional de instituições que sustentam sua oferta exclusivamente no corte de custos e na entrega passiva; de outro, a consolidação de ecossistemas digitais de alta densidade relacional, nos quais a sustentabilidade do modelo decorre do equilíbrio entre arquitetura tecnológica avançada e presença humana qualificada (84, 103, 187).\"",
       "classificacao": "Sinal fraco",
       "pestel": [
         "Econômico",
@@ -1109,7 +1217,7 @@ const sfData = {
         "Social",
         "Econômico"
       ],
-      "eixo": "6 - Fatores Ambientais (ESG e Clima)",
+      "eixo": "6 - Fatores Ambientais (ESG e Clima): eventos climáticos, requisitos de sustentabilidade do Inep/Sinaes, responsabilidade social corporativa",
       "qtdArtigos": 7,
       "artigosIds": [
         20,
@@ -1135,7 +1243,7 @@ const sfData = {
         "Social",
         "Econômico"
       ],
-      "eixo": "6 - Fatores Ambientais (ESG e Clima)",
+      "eixo": "6 - Fatores Ambientais (ESG e Clima): eventos climáticos, requisitos de sustentabilidade do Inep/Sinaes, responsabilidade social corporativa",
       "qtdArtigos": 2,
       "artigosIds": [
         256,
@@ -1156,7 +1264,7 @@ const sfData = {
         "Tecnológico",
         "Social"
       ],
-      "eixo": "6 - Fatores Ambientais (ESG e Clima)",
+      "eixo": "6 - Fatores Ambientais (ESG e Clima): eventos climáticos, requisitos de sustentabilidade do Inep/Sinaes, responsabilidade social corporativa",
       "qtdArtigos": 2,
       "artigosIds": [
         95,
@@ -1176,7 +1284,7 @@ const sfData = {
         "Ambiental",
         "Social"
       ],
-      "eixo": "6 - Fatores Ambientais (ESG e Clima)",
+      "eixo": "6 - Fatores Ambientais (ESG e Clima): eventos climáticos, requisitos de sustentabilidade do Inep/Sinaes, responsabilidade social corporativa",
       "qtdArtigos": 5,
       "artigosIds": [
         29,
@@ -1200,7 +1308,7 @@ const sfData = {
         "Social",
         "Econômico"
       ],
-      "eixo": "6 - Fatores Ambientais (ESG e Clima)",
+      "eixo": "6 - Fatores Ambientais (ESG e Clima): eventos climáticos, requisitos de sustentabilidade do Inep/Sinaes, responsabilidade social corporativa",
       "qtdArtigos": 3,
       "artigosIds": [
         70,
@@ -6686,6 +6794,215 @@ const sfData = {
       "associatedSFs": [
         "SF17",
         "SF20"
+      ]
+    },
+    {
+      "id": 381,
+      "authors": "SEMESP",
+      "title": "Mapa do ensino superior no Brasil 2026 (16. ed.)",
+      "year": 2026,
+      "sourceTitle": "Mapa do ensino superior no Brasil 2026 (16. ed.)",
+      "doi": "",
+      "doiLink": "https://www.semesp.org.br/mapa/home/",
+      "abstract": "",
+      "authorKeywords": "",
+      "indexKeywords": "",
+      "documentType": "Relatório",
+      "associatedSFs": []
+    },
+    {
+      "id": 382,
+      "authors": "OECD",
+      "title": "A quantum technologies policy primer",
+      "year": 2025,
+      "sourceTitle": "OECD Digital Economy Papers",
+      "doi": "",
+      "doiLink": "https://doi.org/10.1787/fd1153c3-en",
+      "abstract": "",
+      "authorKeywords": "",
+      "indexKeywords": "",
+      "documentType": "Relatório",
+      "associatedSFs": [
+        "SFQ01",
+        "SFQ02",
+        "SFQ05"
+      ]
+    },
+    {
+      "id": 383,
+      "authors": "OECD",
+      "title": "An overview of national strategies and policies for quantum technologies",
+      "year": 2025,
+      "sourceTitle": "OECD Digital Economy Papers",
+      "doi": "",
+      "doiLink": "https://doi.org/10.1787/5e55e7ab-en",
+      "abstract": "",
+      "authorKeywords": "",
+      "indexKeywords": "",
+      "documentType": "Relatório",
+      "associatedSFs": [
+        "SFQ01"
+      ]
+    },
+    {
+      "id": 384,
+      "authors": "European Commission",
+      "title": "Quantum Europe Strategy: Building a world-leading quantum ecosystem in Europe",
+      "year": 2025,
+      "sourceTitle": "European Commission Policy Documents",
+      "doi": "",
+      "doiLink": "https://digital-strategy.ec.europa.eu/en/library/quantum-europe-strategy",
+      "abstract": "",
+      "authorKeywords": "",
+      "indexKeywords": "",
+      "documentType": "Relatório",
+      "associatedSFs": [
+        "SFQ01"
+      ]
+    },
+    {
+      "id": 385,
+      "authors": "UNESCO",
+      "title": "2025 International Year of Quantum Science and Technology (IYQ)",
+      "year": 2025,
+      "sourceTitle": "UNESCO Official Initiatives & Reports",
+      "doi": "",
+      "doiLink": "https://www.unesco.org/en/quantum-science-technology/about",
+      "abstract": "",
+      "authorKeywords": "",
+      "indexKeywords": "",
+      "documentType": "Relatório",
+      "associatedSFs": [
+        "SFQ05"
+      ]
+    },
+    {
+      "id": 386,
+      "authors": "Rosales Huamani J.A., Ogosi Auqui J., Toribio Pando P., Capcha Milla E., Quinto Esquivel J.L., Castillo Sequera J.L.",
+      "title": "A Systematic Review of Quantum Machine Learning in Education 5.0: Applications and Future Research Directions",
+      "year": 2026,
+      "sourceTitle": "Algorithms",
+      "doi": "",
+      "doiLink": "https://doi.org/10.3390/a19050379",
+      "abstract": "",
+      "authorKeywords": "",
+      "indexKeywords": "",
+      "documentType": "Article",
+      "associatedSFs": [
+        "SFQ04"
+      ]
+    },
+    {
+      "id": 387,
+      "authors": "Zhou Z., Chen Q., Zhang C., Tan M., Li S.",
+      "title": "Hybrid quantum annealing for large-scale exam scheduling: Validation in real-world educational scenarios",
+      "year": 2025,
+      "sourceTitle": "Applied Soft Computing",
+      "doi": "",
+      "doiLink": "https://doi.org/10.1016/j.asoc.2025.113756",
+      "abstract": "",
+      "authorKeywords": "",
+      "indexKeywords": "",
+      "documentType": "Article",
+      "associatedSFs": [
+        "SFQ03"
+      ]
+    },
+    {
+      "id": 388,
+      "authors": "López-Meneses E., Cáceres-Tello J., Galán-Hernández J.J., López-Catalán L.",
+      "title": "Quantum Computing in Data Science and STEM Education: Mapping Academic Trends and Analyzing Practical Tools",
+      "year": 2025,
+      "sourceTitle": "Computers",
+      "doi": "",
+      "doiLink": "https://doi.org/10.3390/computers14060235",
+      "abstract": "",
+      "authorKeywords": "",
+      "indexKeywords": "",
+      "documentType": "Article",
+      "associatedSFs": [
+        "SFQ01"
+      ]
+    },
+    {
+      "id": 389,
+      "authors": "Donhauser A., Bitzenbauer P., Qerimi L., Heusler S., Küchemann S., Kuhn J., Ubben M.S.",
+      "title": "Empirical insights into the effects of research-based teaching strategies in quantum education",
+      "year": 2024,
+      "sourceTitle": "Physical Review Physics Education Research",
+      "doi": "",
+      "doiLink": "https://doi.org/10.1103/PhysRevPhysEducRes.20.020601",
+      "abstract": "",
+      "authorKeywords": "",
+      "indexKeywords": "",
+      "documentType": "Article",
+      "associatedSFs": [
+        "SFQ01"
+      ]
+    },
+    {
+      "id": 390,
+      "authors": "National Institute of Standards and Technology (NIST)",
+      "title": "Post-Quantum Cryptography Standardization (FIPS 203, FIPS 204, FIPS 205)",
+      "year": 2024,
+      "sourceTitle": "NIST Computer Security Resource Center (CSRC)",
+      "doi": "",
+      "doiLink": "https://csrc.nist.gov/Projects/Post-Quantum-Cryptography/Post_Quantum_Cryptography-Standardization",
+      "abstract": "",
+      "authorKeywords": "",
+      "indexKeywords": "",
+      "documentType": "Relatório",
+      "associatedSFs": [
+        "SFQ02"
+      ]
+    },
+    {
+      "id": 391,
+      "authors": "Rodríguez-Díaz F., Gutiérrez-Avilés D., Troncoso A., Martínez-Álvarez F.",
+      "title": "A Survey of Quantum Machine Learning: Foundations, Algorithms, Frameworks, Data and Applications",
+      "year": 2025,
+      "sourceTitle": "ACM Computing Surveys",
+      "doi": "",
+      "doiLink": "https://doi.org/10.1145/3764582",
+      "abstract": "",
+      "authorKeywords": "",
+      "indexKeywords": "",
+      "documentType": "Article",
+      "associatedSFs": [
+        "SFQ04"
+      ]
+    },
+    {
+      "id": 392,
+      "authors": "IBM Quantum",
+      "title": "IBM Quantum Technology Atlas and Development Roadmap",
+      "year": 2026,
+      "sourceTitle": "IBM Research Platform",
+      "doi": "",
+      "doiLink": "https://www.ibm.com/roadmaps/quantum/",
+      "abstract": "",
+      "authorKeywords": "",
+      "indexKeywords": "",
+      "documentType": "Relatório",
+      "associatedSFs": [
+        "SFQ03"
+      ]
+    },
+    {
+      "id": 393,
+      "authors": "MCTI, UniSENAI-SP, Unicamp",
+      "title": "Iniciativa Brasileira de Tecnologias Quânticas (IBQuântica), Hub Nacional de Campinas e Pós-Graduação UniSENAI-SP",
+      "year": 2026,
+      "sourceTitle": "MCTI / Unicamp / SENAI-SP",
+      "doi": "",
+      "doiLink": "https://www.gov.br/mcti",
+      "abstract": "",
+      "authorKeywords": "",
+      "indexKeywords": "",
+      "documentType": "Relatório",
+      "associatedSFs": [
+        "SFQ01",
+        "SFQ05"
       ]
     }
   ]

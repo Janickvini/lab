@@ -153,10 +153,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   async function loadDataPipeline() {
-    updateLoadingStatus('Tentando carregar dados do arquivo SF CSED.xlsx...');
+    updateLoadingStatus('Iniciando carregamento da base prospectiva...');
+
+    const isHttp = window.location.protocol.startsWith('http');
+
+    // Sob protocolo file://, chamadas fetch() locais são bloqueadas por CORS na maioria dos navegadores.
+    // Usamos diretamente o snapshot consolidado (data.js) para carregamento instantâneo (~5ms) sem erros.
+    if (!isHttp && typeof sfData !== 'undefined' && sfData.sementes && sfData.artigos) {
+      state.rawSementes = sfData.sementes;
+      state.rawArticles = sfData.artigos;
+      state.articlesMap = new Map(sfData.artigos.map(a => [a.id, a]));
+      console.log('Dados carregados instantaneamente do snapshot local (data.js) via protocolo file://');
+      updateDataSourceStatus('datajs');
+      return true;
+    }
 
     let loadedFromExcel = false;
-    const isHttp = window.location.protocol.startsWith('http');
     const bust = isHttp ? ('?v=' + Date.now()) : '';
     const excelUrls = [
       `./SF CSED.xlsx${bust}`,
@@ -164,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `../sfcsed/SF CSED.xlsx${bust}`
     ];
 
-    if (typeof XLSX !== 'undefined') {
+    if (isHttp && typeof XLSX !== 'undefined') {
       for (const url of excelUrls) {
         try {
           const resp = await fetch(url);
@@ -181,7 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           }
         } catch (err) {
-          // fetch might fail under file:// protocol due to CORS
           // fallback will be used
         }
       }
@@ -352,13 +363,25 @@ document.addEventListener('DOMContentLoaded', () => {
       opt.textContent = y;
       selectYear.appendChild(opt);
     });
+
+    // Scopus Relation Options
+    const selectRel = document.getElementById('scopus-filter-relation');
+    if (selectRel) {
+      const linkedCount = state.rawArticles.filter(a => a.associatedSFs.length > 0).length;
+      const unlinkedCount = state.rawArticles.length - linkedCount;
+      selectRel.innerHTML = `
+        <option value="">Todos os Artigos (${state.rawArticles.length})</option>
+        <option value="linked" selected>Apenas com SFs Vinculadas (${linkedCount})</option>
+        <option value="unlinked">Sem SFs Vinculadas (${unlinkedCount})</option>
+      `;
+    }
   }
 
   // ========================================================================
   // FILTERING LOGIC: SEMENTES DE FUTURO
   // ========================================================================
   function applySfFilters() {
-    const q = state.filters.search.trim().toLowerCase();
+    const q = removeAccents(state.filters.search.trim());
     const fEixo = state.filters.eixo;
     const fClass = state.filters.classificacao;
     const fPestel = state.filters.pestel;
@@ -369,12 +392,12 @@ document.addEventListener('DOMContentLoaded', () => {
       // 1. Text Search (ID, Title, Description, Implications, Topic, or author mentions)
       if (q) {
         const matches = 
-          sf.id.toLowerCase().includes(q) ||
-          sf.titulo.toLowerCase().includes(q) ||
-          sf.descricao.toLowerCase().includes(q) ||
-          sf.implicacoes.toLowerCase().includes(q) ||
-          sf.topico.toLowerCase().includes(q) ||
-          sf.referenciasResumidas.toLowerCase().includes(q);
+          removeAccents(sf.id).includes(q) ||
+          removeAccents(sf.titulo).includes(q) ||
+          removeAccents(sf.descricao).includes(q) ||
+          removeAccents(sf.implicacoes).includes(q) ||
+          removeAccents(sf.topico).includes(q) ||
+          removeAccents(sf.referenciasResumidas).includes(q);
         if (!matches) return false;
       }
 
@@ -475,31 +498,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const typClass = cleanBadgeClass(sf.classificacao);
 
-      const reviewedBadge = sf.revisada 
-        ? `<span class="badge-reviewed" title="SF Revisada - OK"><i class="fa-solid fa-check"></i> SF Revisada - OK</span>`
-        : `<span class="badge-pending" title="Em revisão"><i class="fa-regular fa-clock"></i> Em revisão</span>`;
+      const reviewedIcon = sf.revisada 
+        ? `<span class="icon-reviewed-subtle" title="Revisada"><i class="fa-solid fa-circle-check"></i></span>`
+        : `<span class="icon-pending-subtle" title="Em revisão"><i class="fa-regular fa-clock"></i></span>`;
 
       const pestelChips = sf.pestel.map(p => {
-        const pClass = cleanBadgeClass(p);
-        return `<span class="pestel-chip ${pClass}">${p}</span>`;
+        return `<span class="pestel-chip pestel-chip-neutral">${escapeHtml(p)}</span>`;
       }).join('');
 
       item.innerHTML = `
-        <div class="inbox-item-row-top">
-          <div class="inbox-badges-left">
-            <span class="badge-id">${sf.id}</span>
-            <span class="badge-typology ${typClass}">${sf.classificacao}</span>
-            ${reviewedBadge}
-          </div>
-          <div class="inbox-art-count" title="${sf.qtdArtigos} artigos científicos de suporte">
-            <i class="fa-solid fa-book-open"></i> ${sf.qtdArtigos} art.
-          </div>
-        </div>
-
         <div class="inbox-item-title">${escapeHtml(sf.titulo)}</div>
 
-        <div class="inbox-item-topic">
-          <i class="fa-solid fa-tag"></i> ${escapeHtml(sf.topico)}
+        <div class="inbox-item-topic" title="${escapeHtml(sf.topico)}">
+          <i class="fa-solid fa-tag"></i> <span>${escapeHtml(sf.topico)}</span>
+        </div>
+
+        <div class="inbox-item-meta-row">
+          <span class="badge-id-neutral">${sf.id}</span>
+          <span class="badge-typology ${typClass}">${escapeHtml(sf.classificacao)}</span>
+          ${reviewedIcon}
+          <span class="inbox-art-count" title="${sf.qtdArtigos} referências vinculadas">
+            <i class="fa-solid fa-book-open"></i> ${sf.qtdArtigos} ref.
+          </span>
         </div>
 
         <div class="inbox-item-pestel-row">
@@ -547,7 +567,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const typClass = cleanBadgeClass(sf.classificacao);
 
     const reviewedBadge = sf.revisada 
-      ? `<span class="badge-reviewed" style="font-size: 0.74rem; padding: 3px 8px;"><i class="fa-solid fa-check-circle"></i> SF Revisada - OK</span>`
+      ? `<span class="badge-reviewed" style="font-size: 0.74rem; padding: 3px 8px;"><i class="fa-solid fa-check-circle"></i> Revisada</span>`
       : `<span class="badge-pending" style="font-size: 0.74rem; padding: 3px 8px;"><i class="fa-regular fa-clock"></i> Em revisão</span>`;
 
     const pestelChips = sf.pestel.map(p => {
@@ -592,7 +612,7 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
               <div class="art-card-actions">
                 <button class="btn-art-inline-toggle" data-toggle-abstract="${art.id}">
-                  <i class="fa-solid fa-file-lines"></i> <span>Ver Abstract</span>
+                  <i class="fa-solid fa-file-lines"></i> <span>Resumo</span>
                 </button>
                 ${doiButton}
               </div>
@@ -602,7 +622,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="art-card-authors">${escapeHtml(art.authors)}</div>
 
             <div class="art-inline-abstract" id="abstract-drawer-${art.id}">
-              <strong>Resumo Científico (Abstract):</strong>
+              <strong>Resumo:</strong>
               <p style="margin-top: 6px;">${escapeHtml(art.abstract || 'Resumo não disponível na base bibliográfica.')}</p>
             </div>
           </div>
@@ -690,14 +710,43 @@ document.addEventListener('DOMContentLoaded', () => {
       deselectSf();
     });
 
-    document.getElementById('btn-copy-dossier').addEventListener('click', (e) => {
+    document.getElementById('btn-copy-dossier').addEventListener('click', () => {
       const copyText = `[${sf.id}] ${sf.titulo}\n\nTipologia: ${sf.classificacao} | Eixo: ${sf.eixo}\n\nDescrição:\n${sf.descricao}\n\nImplicações 2040:\n${sf.implicacoes}`;
-      navigator.clipboard.writeText(copyText).then(() => {
-        const btn = document.getElementById('btn-copy-dossier');
+      const btn = document.getElementById('btn-copy-dossier');
+      copyTextToClipboard(copyText, () => {
         btn.innerHTML = `<i class="fa-solid fa-check"></i> Copiado!`;
         setTimeout(() => {
           btn.innerHTML = `<i class="fa-regular fa-copy"></i> Copiar`;
         }, 1800);
+      });
+    });
+
+    // Navegação interativa nas citações numéricas do texto
+    dossier.querySelectorAll('.citation-badge-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const refId = link.getAttribute('data-art-ref');
+        const targetCard = document.getElementById(`art-card-${refId}`);
+        if (targetCard) {
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          targetCard.classList.remove('highlight-pulse');
+          void targetCard.offsetWidth; // force reflow
+          targetCard.classList.add('highlight-pulse');
+
+          // Abre o abstract automaticamente caso esteja oculto
+          const drawer = document.getElementById(`abstract-drawer-${refId}`);
+          const btn = targetCard.querySelector(`[data-toggle-abstract="${refId}"]`);
+          if (drawer && !drawer.classList.contains('visible')) {
+            drawer.classList.add('visible');
+            if (btn) btn.innerHTML = `<i class="fa-solid fa-chevron-up"></i> <span>Ocultar</span>`;
+          }
+        } else {
+          // Se o artigo citado não estiver na lista direta desta SF, abre no modal Scopus
+          const artNum = parseInt(refId, 10);
+          if (!isNaN(artNum)) {
+            openArticleModal(artNum);
+          }
+        }
       });
     });
 
@@ -710,7 +759,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const isVisible = drawer.classList.contains('visible');
           if (isVisible) {
             drawer.classList.remove('visible');
-            btn.innerHTML = `<i class="fa-solid fa-file-lines"></i> <span>Ver Abstract</span>`;
+            btn.innerHTML = `<i class="fa-solid fa-file-lines"></i> <span>Resumo</span>`;
           } else {
             drawer.classList.add('visible');
             btn.innerHTML = `<i class="fa-solid fa-chevron-up"></i> <span>Ocultar</span>`;
@@ -787,7 +836,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (state.filters.revisada) {
-      const revLabel = state.filters.revisada === 'revisada' ? 'SF Revisada - OK' : 'Em revisão';
+      const revLabel = state.filters.revisada === 'revisada' ? 'Revisada' : 'Em revisão';
       addTag(`${revLabel}`, () => {
         state.filters.revisada = '';
         document.getElementById('filter-revisada').value = '';
@@ -1004,7 +1053,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // SCOPUS REFERENCES TABLE VIEW (TAB 2)
   // ========================================================================
   function applyScopusFilters() {
-    const q = state.scopusFilters.search.trim().toLowerCase();
+    const q = removeAccents(state.scopusFilters.search.trim());
     const rel = state.scopusFilters.relation;
     const yr = state.scopusFilters.year;
 
@@ -1012,11 +1061,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (q) {
         const matches = 
           String(art.id).includes(q) ||
-          art.title.toLowerCase().includes(q) ||
-          art.authors.toLowerCase().includes(q) ||
-          art.sourceTitle.toLowerCase().includes(q) ||
-          art.authorKeywords.toLowerCase().includes(q) ||
-          art.abstract.toLowerCase().includes(q);
+          removeAccents(art.title).includes(q) ||
+          removeAccents(art.authors).includes(q) ||
+          removeAccents(art.sourceTitle).includes(q) ||
+          removeAccents(art.authorKeywords).includes(q) ||
+          removeAccents(art.abstract).includes(q);
         if (!matches) return false;
       }
 
@@ -1101,7 +1150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <td style="text-align: right;">
           <div style="display: flex; align-items: center; justify-content: flex-end; gap: 6px;">
             <button class="btn-art-action btn-open-abstract" data-art-id="${art.id}">
-              <i class="fa-solid fa-file-lines"></i> Abstract
+              <i class="fa-solid fa-file-lines"></i> Resumo
             </button>
             ${doiButton}
           </div>
@@ -1126,6 +1175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     renderScopusPagination();
+    updateScopusTableSortHeaders();
   }
 
   function renderScopusPagination() {
@@ -1173,7 +1223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const abstractEl = document.getElementById('modal-art-abstract');
-    abstractEl.textContent = art.abstract || 'Resumo (Abstract) não disponível na extração bibliográfica.';
+    abstractEl.textContent = art.abstract || 'Resumo não disponível na extração bibliográfica.';
 
     const kwSection = document.getElementById('modal-art-keywords-section');
     const kwCloud = document.getElementById('modal-art-keywords');
@@ -1269,7 +1319,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sfSearchInput.addEventListener('input', (e) => {
       state.filters.search = e.target.value;
       sfSearchClear.style.display = state.filters.search ? 'block' : 'none';
-      debounce(() => applySfFilters(), 250)();
+      debouncedApplySfFilters();
     });
 
     sfSearchClear.addEventListener('click', () => {
@@ -1322,7 +1372,7 @@ document.addEventListener('DOMContentLoaded', () => {
     scopusSearchInput.addEventListener('input', (e) => {
       state.scopusFilters.search = e.target.value;
       scopusSearchClear.style.display = state.scopusFilters.search ? 'block' : 'none';
-      debounce(() => applyScopusFilters(), 250)();
+      debouncedApplyScopusFilters();
     });
 
     scopusSearchClear.addEventListener('click', () => {
@@ -1447,7 +1497,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // THEME MANAGEMENT (DARK / LIGHT SOBER EXECUTIVE)
   // ========================================================================
   function setupTheme() {
-    const savedTheme = localStorage.getItem('sfcsed_theme') || 'dark';
+    const savedTheme = safeGetStorage('sfcsed_theme', 'dark');
     setTheme(savedTheme);
 
     const btnTheme = document.getElementById('btn-theme-toggle');
@@ -1460,7 +1510,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function setTheme(theme) {
     state.theme = theme;
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('sfcsed_theme', theme);
+    safeSetStorage('sfcsed_theme', theme);
 
     const icon = document.getElementById('theme-icon');
     const text = document.getElementById('theme-text');
@@ -1488,7 +1538,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const DEFAULT_FONT_SCALE_INDEX = 1; // 100%
 
   function setupFontScale() {
-    const savedScale = localStorage.getItem('sfcsed_font_scale');
+    const savedScale = safeGetStorage('sfcsed_font_scale');
     let scaleIndex = savedScale !== null ? parseInt(savedScale, 10) : DEFAULT_FONT_SCALE_INDEX;
     if (isNaN(scaleIndex) || scaleIndex < 0 || scaleIndex >= FONT_SCALES.length) {
       scaleIndex = DEFAULT_FONT_SCALE_INDEX;
@@ -1526,7 +1576,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function getStoredFontScaleIndex() {
-    const val = localStorage.getItem('sfcsed_font_scale');
+    const val = safeGetStorage('sfcsed_font_scale');
     const idx = val !== null ? parseInt(val, 10) : DEFAULT_FONT_SCALE_INDEX;
     return isNaN(idx) ? DEFAULT_FONT_SCALE_INDEX : Math.max(0, Math.min(FONT_SCALES.length - 1, idx));
   }
@@ -1538,7 +1588,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       document.documentElement.style.fontSize = `${scale.value}%`;
     }
-    localStorage.setItem('sfcsed_font_scale', index);
+    safeSetStorage('sfcsed_font_scale', index);
 
     const btnDec = document.getElementById('btn-font-dec');
     const btnInc = document.getElementById('btn-font-inc');
@@ -1564,6 +1614,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========================================================================
   // UTILITY HELPERS
   // ========================================================================
+  function removeAccents(str) {
+    if (!str) return '';
+    return String(str)
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase();
+  }
+
   function cleanBadgeClass(str) {
     if (!str) return 'generic';
     return String(str)
@@ -1585,8 +1643,84 @@ document.addEventListener('DOMContentLoaded', () => {
   function highlightNumericCitations(text) {
     if (!text) return '';
     const safe = escapeHtml(text);
-    return safe.replace(/\((\d+[\d\s,]*)\)/g, (match, nums) => {
-      return `<span style="font-family: var(--font-mono); font-size: 0.8em; font-weight: 600; color: var(--accent-primary); background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); padding: 1px 5px; border-radius: 4px;">(${nums})</span>`;
+    return safe.replace(/\((\d+(?:[\s,]+\d+)*)\)/g, (match, numsStr) => {
+      const parts = numsStr.split(/[\s,]+/).filter(Boolean);
+      const links = parts.map(num => {
+        return `<a href="#art-card-${num}" class="citation-badge-link" data-art-ref="${num}" title="Ver referência #${num}">#${num}</a>`;
+      }).join(', ');
+      return `<span class="citation-badge-group">(${links})</span>`;
+    });
+  }
+
+  function copyTextToClipboard(text, onSuccess, onError) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(() => {
+        if (onSuccess) onSuccess();
+      }).catch(() => {
+        fallbackCopyText(text, onSuccess, onError);
+      });
+    } else {
+      fallbackCopyText(text, onSuccess, onError);
+    }
+  }
+
+  function fallbackCopyText(text, onSuccess, onError) {
+    try {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      textArea.style.top = '-999999px';
+      textArea.setAttribute('readonly', '');
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      const successful = document.execCommand('copy');
+      document.body.removeChild(textArea);
+      if (successful) {
+        if (onSuccess) onSuccess();
+      } else if (onError) {
+        onError();
+      }
+    } catch (err) {
+      console.warn('Falha na cópia para o clipboard:', err);
+      if (onError) onError(err);
+    }
+  }
+
+  function safeGetStorage(key, fallback = null) {
+    try {
+      const val = localStorage.getItem(key);
+      return val !== null ? val : fallback;
+    } catch (e) {
+      return fallback;
+    }
+  }
+
+  function safeSetStorage(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch (e) {
+      // Storage indisponível ou cota excedida
+    }
+  }
+
+  function updateScopusTableSortHeaders() {
+    const { column, direction } = state.sortingScopus;
+    document.querySelectorAll('#scopus-table th.th-sortable').forEach(th => {
+      const col = th.getAttribute('data-sort');
+      const icon = th.querySelector('i');
+      if (col === column) {
+        th.classList.add('sorted-active');
+        if (icon) {
+          icon.className = direction === 'asc' ? 'fa-solid fa-sort-up' : 'fa-solid fa-sort-down';
+        }
+      } else {
+        th.classList.remove('sorted-active');
+        if (icon) {
+          icon.className = 'fa-solid fa-sort';
+        }
+      }
     });
   }
 
@@ -1606,13 +1740,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (el) el.textContent = msg;
   }
 
-  let debounceTimer;
   function debounce(func, delay) {
+    let timer;
     return function(...args) {
-      clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(() => func.apply(this, args), delay);
+      clearTimeout(timer);
+      timer = setTimeout(() => func.apply(this, args), delay);
     };
   }
+
+  const debouncedApplySfFilters = debounce(() => applySfFilters(), 250);
+  const debouncedApplyScopusFilters = debounce(() => applyScopusFilters(), 250);
 
   // Execute initialization
   init();
