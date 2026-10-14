@@ -312,9 +312,48 @@ document.addEventListener('DOMContentLoaded', () => {
       const rawPestel = String(getRowVal(row, ['PESTEL', 'Dimensões PESTEL', 'Dimensoes PESTEL', 'Dimensões']) || '');
       const pestelList = rawPestel.replace(/;/g, ',').split(',').map(d => d.trim()).filter(Boolean);
 
-      // Reviewed flag
-      const rawRev = getRowVal(row, ['Revisada', 'Status Revisão', 'Revisado'], 0);
-      const isRev = (rawRev === 1 || rawRev === '1' || String(rawRev).trim().toLowerCase() === 'sim' || String(rawRev).trim().toLowerCase() === 'true');
+      // Reviewed & status parsing
+      const rawRev = getRowVal(row, ['Revisada', 'Status Revisão', 'Revisado', 'Status'], 0);
+      const rawRevStr = String(rawRev || '').trim();
+      const statusLower = rawRevStr.toLowerCase();
+
+      // Justificativa
+      const rawJust = String(getRowVal(row, ['Justificativa', 'Justificativa Metodológica', 'Motivo'], '')).trim();
+      const justVal = (rawJust.toUpperCase() === 'N/A' || rawJust.toUpperCase() === 'NAN') ? '' : rawJust;
+
+      let statusTipo = 'pendente';
+      let fusaoId = '';
+      let isRev = false;
+
+      if (['ok', '1', 'sim', 'true', 's', 'revisada', 'revisado', 'aprovada', 'aprovado'].includes(statusLower) || statusLower === 'ok') {
+        statusTipo = 'ok';
+        isRev = true;
+      } else if (statusLower.includes('mescl') || statusLower.includes('fus') || statusLower.includes('fundid')) {
+        statusTipo = 'mesclada';
+        isRev = true;
+        const matchParen = rawRevStr.match(/\((.*?)\)/);
+        if (matchParen) {
+          fusaoId = matchParen[1].trim();
+        } else {
+          const matchSf = rawRevStr.match(/(SF[A-Z0-9]+)/i);
+          if (matchSf) fusaoId = matchSf[1].trim();
+        }
+      } else if (statusLower.includes('descart')) {
+        statusTipo = 'descartada';
+        isRev = true;
+      } else {
+        statusTipo = 'pendente';
+        isRev = false;
+      }
+
+      let statusLabel = 'Em revisão';
+      if (statusTipo === 'ok') {
+        statusLabel = 'Revisada (OK)';
+      } else if (statusTipo === 'mesclada') {
+        statusLabel = fusaoId ? `Revisada (Mesclada: ${fusaoId})` : 'Revisada (Mesclada)';
+      } else if (statusTipo === 'descartada') {
+        statusLabel = 'Revisada (Descartada)';
+      }
 
       // Indicadores
       const rawInd = String(getRowVal(row, ['Indicadores', 'Indicadores Prospectivos'], '')).trim();
@@ -339,8 +378,25 @@ document.addEventListener('DOMContentLoaded', () => {
         referenciasResumidas: getRowVal(row, ['Referências', 'Referências Bibliográficas Resumidas (Autores, Ano, Título)', 'Referencias'], ''),
         implicacoes: getRowVal(row, ['Implicações', 'Conexão / Implicações Estratégicas para o Ensino Superior Privado até 2040', 'Implicacoes'], ''),
         indicadores: indVal,
-        revisada: isRev
+        revisada: isRev,
+        statusTipo: statusTipo,
+        statusRevisao: (rawRevStr && rawRevStr !== '0') ? rawRevStr : 'Em revisão',
+        statusLabel: statusLabel,
+        justificativa: justVal,
+        fusaoId: fusaoId,
+        incorporadas: []
       });
+    });
+
+    // Mapeamento reverso de incorporações (ex: SFS02 incorpora SF22)
+    const sfMap = new Map(state.rawSementes.map(s => [s.id, s]));
+    state.rawSementes.forEach(s => {
+      if (s.fusaoId && sfMap.has(s.fusaoId)) {
+        const target = sfMap.get(s.fusaoId);
+        if (!target.incorporadas.includes(s.id)) {
+          target.incorporadas.push(s.id);
+        }
+      }
     });
 
     // Sort SFs numerically
@@ -434,7 +490,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fRev = state.filters.revisada;
 
     state.filteredSementes = state.rawSementes.filter(sf => {
-      // 1. Text Search (ID, Title, Description, Implications, Topic, Indicators, or author mentions)
+      // 1. Text Search (ID, Title, Description, Implications, Topic, Indicators, Justification, or author mentions)
       if (q) {
         const matches = 
           removeAccents(sf.id).includes(q) ||
@@ -443,6 +499,7 @@ document.addEventListener('DOMContentLoaded', () => {
           removeAccents(sf.implicacoes).includes(q) ||
           removeAccents(sf.topico).includes(q) ||
           removeAccents(sf.indicadores || '').includes(q) ||
+          removeAccents(sf.justificativa || '').includes(q) ||
           removeAccents(sf.referenciasResumidas).includes(q);
         if (!matches) return false;
       }
@@ -459,9 +516,12 @@ document.addEventListener('DOMContentLoaded', () => {
       // 5. Tópico Filter
       if (fTopico && sf.topico !== fTopico) return false;
 
-      // 6. Revisada Filter
+      // 6. Revisada / Status Filter
+      if (fRev === 'pendente' && sf.statusTipo !== 'pendente') return false;
       if (fRev === 'revisada' && !sf.revisada) return false;
-      if (fRev === 'pendente' && sf.revisada) return false;
+      if (fRev === 'revisada-ok' && sf.statusTipo !== 'ok') return false;
+      if (fRev === 'revisada-descartada' && sf.statusTipo !== 'descartada') return false;
+      if (fRev === 'revisada-mesclada' && sf.statusTipo !== 'mesclada') return false;
 
       return true;
     });
@@ -536,7 +596,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     state.filteredSementes.forEach(sf => {
       const item = document.createElement('div');
-      item.className = 'inbox-item';
+      item.className = 'inbox-item' + (sf.statusTipo ? ' item-' + sf.statusTipo : '');
       item.setAttribute('data-sf-id', sf.id);
       if (state.selectedSfId === sf.id) {
         item.classList.add('active');
@@ -544,9 +604,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const typClass = cleanBadgeClass(sf.classificacao);
 
-      const reviewedIcon = sf.revisada 
-        ? `<span class="icon-reviewed-subtle" title="Revisada"><i class="fa-solid fa-circle-check"></i></span>`
-        : `<span class="icon-pending-subtle" title="Em revisão"><i class="fa-regular fa-clock"></i></span>`;
+      let statusBadge = '';
+      if (sf.statusTipo === 'mesclada') {
+        const justTitle = sf.justificativa ? `Justificativa: ${sf.justificativa}` : `Mesclada com ${sf.fusaoId || ''}`;
+        statusBadge = `<span class="badge-status-subtle badge-status-fundida" title="${escapeHtml(justTitle)}"><i class="fa-solid fa-code-merge"></i> Mesclada</span>`;
+      } else if (sf.statusTipo === 'descartada') {
+        const justTitle = sf.justificativa ? `Justificativa: ${sf.justificativa}` : 'Descartada na revisão';
+        statusBadge = `<span class="badge-status-subtle badge-status-descartada" title="${escapeHtml(justTitle)}"><i class="fa-solid fa-ban"></i> Descartada</span>`;
+      } else if (sf.statusTipo === 'ok') {
+        const justTitle = sf.justificativa ? `Justificativa: ${sf.justificativa}` : 'Revisada (OK)';
+        statusBadge = `<span class="icon-reviewed-subtle" title="${escapeHtml(justTitle)}"><i class="fa-solid fa-circle-check"></i></span>`;
+      } else {
+        statusBadge = `<span class="icon-pending-subtle" title="Em revisão"><i class="fa-regular fa-clock"></i></span>`;
+      }
 
       const pestelChips = sf.pestel.map(p => {
         return `<span class="pestel-chip pestel-chip-neutral">${escapeHtml(p)}</span>`;
@@ -562,7 +632,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="inbox-item-meta-row">
           <span class="badge-id-neutral">${sf.id}</span>
           <span class="badge-typology ${typClass}">${escapeHtml(sf.classificacao)}</span>
-          ${reviewedIcon}
+          ${statusBadge}
           <span class="inbox-art-count" title="${sf.qtdArtigos} referências vinculadas">
             <i class="fa-solid fa-book-open"></i> ${sf.qtdArtigos} ref.
           </span>
@@ -585,6 +655,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // SELEÇÃO & ÁREA DE LEITURA (COLUNA 3 — READING PANE)
   // ========================================================================
   function selectSf(sfId) {
+    // Se a SF selecionada não estiver visível na filtragem atual, limpa os filtros para torná-la acessível
+    const inFiltered = state.filteredSementes.some(s => s.id === sfId);
+    if (!inFiltered && state.rawSementes.some(s => s.id === sfId)) {
+      resetSfFilters();
+    }
+
     state.selectedSfId = sfId;
 
     // Atualiza classe ativa na lista de itens
@@ -612,9 +688,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const typClass = cleanBadgeClass(sf.classificacao);
 
-    const reviewedBadge = sf.revisada 
-      ? `<span class="badge-reviewed" style="font-size: 0.74rem; padding: 3px 8px;"><i class="fa-solid fa-check-circle"></i> Revisada</span>`
-      : `<span class="badge-pending" style="font-size: 0.74rem; padding: 3px 8px;"><i class="fa-regular fa-clock"></i> Em revisão</span>`;
+    let reviewedBadge = '';
+    if (sf.statusTipo === 'mesclada') {
+      reviewedBadge = `<span class="badge-status-dossier badge-dossier-fundida"><i class="fa-solid fa-code-merge"></i> Revisada (Mesclada)${sf.fusaoId ? ' → ' + escapeHtml(sf.fusaoId) : ''}</span>`;
+    } else if (sf.statusTipo === 'descartada') {
+      reviewedBadge = `<span class="badge-status-dossier badge-dossier-descartada"><i class="fa-solid fa-ban"></i> Revisada (Descartada)</span>`;
+    } else if (sf.statusTipo === 'ok') {
+      reviewedBadge = `<span class="badge-reviewed" style="font-size: 0.74rem; padding: 3px 8px;"><i class="fa-solid fa-check-circle"></i> Revisada (OK)</span>`;
+    } else {
+      reviewedBadge = `<span class="badge-pending" style="font-size: 0.74rem; padding: 3px 8px;"><i class="fa-regular fa-clock"></i> Em revisão</span>`;
+    }
 
     const pestelChips = sf.pestel.map(p => {
       const pClass = cleanBadgeClass(p);
@@ -622,6 +705,65 @@ document.addEventListener('DOMContentLoaded', () => {
     }).join('');
 
     const descFormatted = highlightNumericCitations(sf.descricao);
+
+    // Banner contextual de status (Mesclada, Descartada, Incorporadora)
+    let statusBannerHtml = '';
+    if (sf.statusTipo === 'mesclada') {
+      const targetSf = sf.fusaoId ? state.rawSementes.find(s => s.id === sf.fusaoId) : null;
+      statusBannerHtml = `
+        <div class="dossier-status-banner banner-fundida">
+          <div class="status-banner-icon"><i class="fa-solid fa-code-merge"></i></div>
+          <div class="status-banner-body">
+            <div class="status-banner-title">Semente Revisada (Mesclada)</div>
+            ${sf.justificativa ? `
+              <div class="status-banner-justificativa">
+                <i class="fa-solid fa-circle-info"></i> <span><strong>Justificativa metodológica:</strong> ${escapeHtml(sf.justificativa)}</span>
+              </div>
+            ` : ''}
+            <div class="status-banner-text">
+              Esta semente foi integrada e sintetizada na semente 
+              <a href="javascript:void(0)" class="banner-sf-link" data-jump-sf="${escapeHtml(sf.fusaoId)}">
+                <strong>${escapeHtml(sf.fusaoId)}</strong>${targetSf ? ' — ' + escapeHtml(targetSf.titulo) : ''}
+              </a>. Seus dados e referências originais permanecem arquivados aqui para fins de rastreabilidade.
+            </div>
+          </div>
+          ${sf.fusaoId ? `<button class="btn-banner-jump" data-jump-sf="${escapeHtml(sf.fusaoId)}"><i class="fa-solid fa-arrow-right"></i> Ver ${escapeHtml(sf.fusaoId)}</button>` : ''}
+        </div>
+      `;
+    } else if (sf.statusTipo === 'descartada') {
+      statusBannerHtml = `
+        <div class="dossier-status-banner banner-descartada">
+          <div class="status-banner-icon"><i class="fa-solid fa-ban"></i></div>
+          <div class="status-banner-body">
+            <div class="status-banner-title">Semente Revisada (Descartada)</div>
+            ${sf.justificativa ? `
+              <div class="status-banner-justificativa">
+                <i class="fa-solid fa-circle-exclamation"></i> <span><strong>Justificativa metodológica:</strong> ${escapeHtml(sf.justificativa)}</span>
+              </div>
+            ` : ''}
+            <div class="status-banner-text">
+              Esta semente foi descontinuada na revisão metodológica de cenários. Seus artigos e metadados permanecem preservados nesta base para histórico e auditoria científica.
+            </div>
+          </div>
+        </div>
+      `;
+    } else if (sf.incorporadas && sf.incorporadas.length > 0) {
+      statusBannerHtml = `
+        <div class="dossier-status-banner banner-incorporadora">
+          <div class="status-banner-icon"><i class="fa-solid fa-object-group"></i></div>
+          <div class="status-banner-body">
+            <div class="status-banner-title">Síntese de Consolidação Metodológica</div>
+            <div class="status-banner-text">
+              Esta semente incorpora e expande os achados de: 
+              ${sf.incorporadas.map(incId => {
+                const incSf = state.rawSementes.find(s => s.id === incId);
+                return `<a href="javascript:void(0)" class="banner-sf-link" data-jump-sf="${escapeHtml(incId)}" title="${incSf ? escapeHtml(incSf.titulo) : ''}"><strong>${escapeHtml(incId)}</strong></a>`;
+              }).join(', ')}.
+            </div>
+          </div>
+        </div>
+      `;
+    }
 
     // Renderiza bloco de Indicadores se houver
     let indicatorsHtml = '';
@@ -717,6 +859,8 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
 
+      ${statusBannerHtml}
+
       <!-- Título Executivo -->
       <h2 class="dossier-title">${escapeHtml(sf.titulo)}</h2>
 
@@ -780,7 +924,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('btn-copy-dossier').addEventListener('click', () => {
-      let copyText = `[${sf.id}] ${sf.titulo}\n\nTipologia: ${sf.classificacao} | Eixo: ${sf.eixo}\n\nDescrição:\n${sf.descricao}`;
+      let copyText = `[${sf.id}] ${sf.titulo}\n\nStatus: ${sf.statusLabel || sf.statusRevisao} | Tipologia: ${sf.classificacao} | Eixo: ${sf.eixo}`;
+      if (sf.justificativa) {
+        copyText += `\nJustificativa: ${sf.justificativa}`;
+      }
+      copyText += `\n\nDescrição:\n${sf.descricao}`;
       if (rawIndicadores && rawIndicadores.toUpperCase() !== 'N/A') {
         copyText += `\n\nIndicadores:\n${rawIndicadores}`;
       }
@@ -791,6 +939,17 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           btn.innerHTML = `<i class="fa-regular fa-copy"></i> Copiar`;
         }, 1800);
+      });
+    });
+
+    // Navegação interativa para sementes fundidas/incorporadas
+    dossier.querySelectorAll('[data-jump-sf]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = el.getAttribute('data-jump-sf');
+        if (targetId) {
+          selectSf(targetId);
+        }
       });
     });
 
@@ -909,7 +1068,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (state.filters.revisada) {
-      const revLabel = state.filters.revisada === 'revisada' ? 'Revisada' : 'Em revisão';
+      let revLabel = 'Status: Em revisão';
+      if (state.filters.revisada === 'revisada') revLabel = 'Status: Revisada';
+      else if (state.filters.revisada === 'revisada-ok') revLabel = 'Status: Revisada (OK)';
+      else if (state.filters.revisada === 'revisada-descartada') revLabel = 'Status: Revisada (Descartada)';
+      else if (state.filters.revisada === 'revisada-mesclada') revLabel = 'Status: Revisada (Mesclada)';
+      else if (state.filters.revisada === 'pendente') revLabel = 'Status: Em revisão';
       addTag(`${revLabel}`, () => {
         state.filters.revisada = '';
         document.getElementById('filter-revisada').value = '';
@@ -926,11 +1090,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const artigosCitados = state.rawArticles.filter(a => a.associatedSFs.length > 0).length;
     const totalEixos = new Set(state.rawSementes.map(s => s.eixo).filter(Boolean)).size;
     const totalRevisadas = state.rawSementes.filter(s => s.revisada).length;
+    const totalAprovadas = state.rawSementes.filter(s => s.statusTipo === 'ok').length;
+    const totalMescladas = state.rawSementes.filter(s => s.statusTipo === 'mesclada').length;
+    const totalDescartadas = state.rawSementes.filter(s => s.statusTipo === 'descartada').length;
 
     document.getElementById('kpi-total-sf').textContent = totalSF;
     document.getElementById('kpi-artigos-citados').textContent = artigosCitados;
     document.getElementById('kpi-total-eixos').textContent = totalEixos;
-    document.getElementById('kpi-revisadas').textContent = totalRevisadas;
+    
+    const kpiRev = document.getElementById('kpi-revisadas');
+    if (kpiRev) {
+      kpiRev.textContent = totalRevisadas;
+      kpiRev.title = `${totalRevisadas} revisadas (${totalAprovadas} OK, ${totalMescladas} Mesclada, ${totalDescartadas} Descartada)`;
+    }
 
     document.getElementById('badge-total-sf').textContent = totalSF;
     document.getElementById('badge-total-scopus').textContent = state.rawArticles.length;

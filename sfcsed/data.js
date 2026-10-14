@@ -5,8 +5,12 @@ const sfData = {
     "totalSF": 70,
     "totalArticles": 339,
     "totalArticlesCited": 315,
-    "totalRevisadas": 13,
-    "generatedAt": "14/10/2026 13:28:16"
+    "totalRevisadas": 15,
+    "totalAprovadas": 13,
+    "totalMescladas": 1,
+    "totalDescartadas": 1,
+    "totalPendentes": 55,
+    "generatedAt": "14/10/2026 15:46:24"
   },
   "sementes": [
     {
@@ -15,7 +19,7 @@ const sfData = {
       "topico": "Corpo Docente, Carreira Acadêmica e Formação de Professores",
       "titulo": "Reconfiguração Tridimensional do Papel Docente: Designer de Aprendizagem, Mentor Humano e Decisor por Dados",
       "descricao": "Esgotamento da figura do professor universitário como mero transmissor expositivo de conteúdos técnicos, função progressiva e aceleradamente desvinculada da figura, antes central, do professor como detentor de conhecimento, por conta da inteligência artificial generativa, das tecnologias digitais de informação e comunicação, e de plataformas aprendizagem adaptativa/personalizada (52, 63, 128, 207, 291). Esse contexto enseja o surgimento de questionamentos sobre a identidade profissional e acadêmica do professor universitário (121), sinalizando potenciais rupturas que reconfiguram o trabalho docente em três dimensões: (1) Designer de experiências e avaliações formativas, responsável pela curadoria de problemas reais, simulações, feedback construtivo e orquestração de metodologias ativas (63, 145, 280); (2) Mentor relacional e formador de valores, dedicado ao desenvolvimento socioemocional, dilemas éticos, pensamento crítico e orientação de carreira dos estudantes (54, 63); e (3) Decisor pedagógico guiado por dados, que utiliza diagnósticos preditivos de Learning Analytics e métricas de desempenho para intervir tempestivamente em lacunas de aprendizagem e riscos de evasão (63, 378). Um potencial impacto desse movimento é o desafio aos modelos tradicionais de contratação, remuneração e alocação de carga horária baseados estritamente na hora-aula expositiva (78, 121) e desencadeia fortes tensões na carreira — oscilando entre o risco de precarização, estresse e sobrecarga digital decorrentes da adoção compulsória de novas ferramentas (52, 207) e o imperativo de valorização da liderança pedagógica e da centralidade humana do professor como ativo estratégico indispensável de qualidade e sustentabilidade institucional (54, 63, 145).",
-      "descricaoApa": "N/A",
+      "descricaoApa": "Esgotamento da figura do professor universitário como mero transmissor expositivo de conteúdos técnicos, função progressiva e aceleradamente desvinculada da figura, antes central, do professor como detentor de conhecimento, por conta da inteligência artificial generativa, das tecnologias digitais de informação e comunicação, e de plataformas de aprendizagem adaptativa/personalizada (Akgün-Özbek & Özkul, 2022; de Bem Machado et al., 2025; Soomro et al., 2026; Vinodh et al., 2026; Zhu et al., 2026). Esse contexto enseja o surgimento de questionamentos sobre a identidade profissional e acadêmica do professor universitário (Peri et al., 2024), sinalizando potenciais rupturas que reconfiguram o trabalho docente em três dimensões: (1) **Designer de experiências e avaliações formativas**, responsável pela curadoria de problemas reais, simulações, feedback construtivo e orquestração de metodologias ativas (Aguayo-Hernández et al., 2025; Pruikkonen et al., 2026; Zhu et al., 2026); (2) **Mentor relacional e formador de valores**, dedicado ao desenvolvimento socioemocional, dilemas éticos, pensamento crítico e orientação de carreira dos estudantes (Upadhayay et al., 2021; Zhu et al., 2026); e (3) **Decisor pedagógico guiado por dados**, que utiliza diagnósticos preditivos de _Learning Analytics_ e métricas de desempenho para intervir tempestivamente em lacunas de aprendizagem e riscos de evasão (Alakoum & Nica, 2025; Zhu et al., 2026). Um potencial impacto desse movimento é o desafio aos modelos tradicionais de contratação, remuneração e alocação de carga horária baseados estritamente na hora-aula expositiva (Fletcher, 2022; Peri et al., 2024) e desencadeia fortes tensões na carreira — oscilando entre o risco de precarização, estresse e sobrecarga digital decorrentes da adoção compulsória de novas ferramentas (Akgün-Özbek & Özkul, 2022; Soomro et al., 2026) e o imperativo de valorização da liderança pedagógica e da centralidade humana do professor como ativo estratégico indispensável de qualidade e sustentabilidade institucional (Pruikkonen et al., 2026; Upadhayay et al., 2021; Zhu et al., 2026).",
       "classificacao": "Ruptura",
       "pestel": [
         "Social",
@@ -42,7 +46,13 @@ const sfData = {
       "referenciasResumidas": "[52] Akgün-özbek E. (2022) - E-Transformation in Higher Education and What It Coerces for the Faculty | [54] Upadhayay R. (2021) - How Teachers Information Communication and Technology Empowering Personality of A Student-Perspective of Higher Education Institutions | [63] Zhu Y. (2026) - Strategies and Practices for Enhancing Higher Education Faculty Teaching Capabilities through Artificial Intelligence | [78] Fletcher E.C., Jr. (2022) - Characteristics of Career and Technical Education Faculty across Institutions of Higher Education in the United States | [121] Peri E. (2024) - Who am I—Teacher or practitioner? Teacher-practitioners’ experience of identity in higher education—A phenomenological view | ... (+8 artigos)",
       "implicacoes": "Exige dos grupos educacionais privados a transição do modelo fabril de hora-aula expositiva para matrizes de contratação híbridas e multifuncionais (remunerando curadoria, mentoria e tutoria inteligente). Instituições que mantiverem o professor apenas como expositor presencial enfrentarão obsolescência de valor e desengajamento discente frente a plataformas de IA; aquelas que investirem na requalificação para o papel tridimensional consolidarão diferenciais insubstituíveis de reputação, retenção e qualidade percebida.",
       "indicadores": "",
-      "revisada": true
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SFQ01",
@@ -70,7 +80,13 @@ const sfData = {
       "referenciasResumidas": "[382] OECD (2025) - A quantum technologies policy primer | [383] OECD (2025) - An overview of national strategies and policies for quantum technologies | [384] European Commission (2025) - Quantum Europe Strategy: Building a world-leading quantum ecosystem in Europe | [388] López-Meneses E. (2025) - Quantum Computing in Data Science and STEM Education: Mapping Academic Trends and Analyzing Practical Tools | [389] Donhauser A. (2024) - Empirical insights into the effects of research-based teaching strategies in quantum education | [393] MCTI (2026) - Iniciativa Brasileira de Tecnologias Quânticas (IBQuântica), Hub Nacional de Campinas e Pós-Graduação UniSENAI-SP",
       "implicacoes": "Oportunidade para liderar a oferta de cursos curtos de extensão, nanodegrees e especializações lato sensu em fundamentos de computação quântica aplicada (finanças quânticas, otimização e cibersegurança) em parceria com provedores em nuvem, preparando o terreno antes que as graduações tradicionais de computação e engenharias tornem essa formação obrigatória nas DCNs",
       "indicadores": "",
-      "revisada": true
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SFS01",
@@ -93,7 +109,13 @@ const sfData = {
       "referenciasResumidas": "[381] Semesp (2026) - Mapa do Ensino Superior no Brasil 2026 (16ª edição)",
       "implicacoes": "Necessidade de diferenciação clara da proposta de valor. Os campi presenciais precisam ser ressignificados como centros de experiência, convivência e práticas laboratoriais complexas, enquanto a esteira de EAD e semipresencial deve investir em flexibilidade assíncrona, microcertificações e suporte à retenção de alunos com pouco tempo disponível.",
       "indicadores": "Proporção de matrículas de ingressantes com mais de 25 anos; Taxa de crescimento do EAD vs. taxa de retração do presencial por turno (diurno/noturno); Ticket médio por modalidade.",
-      "revisada": true
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF02",
@@ -101,7 +123,7 @@ const sfData = {
       "topico": "Corpo Docente, Carreira Acadêmica e Formação de Professores",
       "titulo": "Requalificação Digital Compulsória, Letramento em Futuros e Desenvolvimento Profissional Contínuo (CPD) do Corpo Docente",
       "descricao": "O avanço das tecnologias promove uma obsolescência acelerada das competências pedagógicas e digitais tradicionais do corpo docente, fazendo da requalificação contínua uma exigência estrutural para a sustentabilidade institucional (52, 324). Evidenciam-se disparidades geracionais entre professores e alunos quando à prontidão para adotar ferramentas virtuais, dentre elas a IA (324). Diante desse cenário, emergem abordagens inovadoras de Desenvolvimento Profissional Contínuo (CPD) que superam treinamentos instrumentais rasos para focar no desenvolvimento de liderança adaptativa e na prevenção do desperdício de talentos acadêmicos (293), incorporando o letramento em futuros ('Futures Literacy') preconizado pela UNESCO como habilidade essencial para que os docentes aprendam a navegar a incerteza e capacitem os estudantes a antecipar transformações complexas (111).",
-      "descricaoApa": "N/A",
+      "descricaoApa": "O avanço das tecnologias promove uma obsolescência acelerada das competências pedagógicas e digitais tradicionais do corpo docente, fazendo da requalificação contínua uma exigência estrutural para a sustentabilidade institucional (Akgün-Özbek & Özkul, 2022; Saavedra et al., 2025). Evidenciam-se disparidades geracionais entre professores e alunos quanto à prontidão para adotar ferramentas virtuais, dentre elas a IA (Saavedra et al., 2025). Diante desse cenário, emergem abordagens inovadoras de Desenvolvimento Profissional Contínuo (CPD) que superam treinamentos instrumentais rasos para focar no desenvolvimento de liderança adaptativa e na prevenção do desperdício de talentos acadêmicos (Qadhi & Al-Thani, 2023), incorporando o letramento em futuros (Futures Literacy) preconizado pela UNESCO como habilidade essencial para que os docentes aprendam a navegar a incerteza e capacitem os estudantes a antecipar transformações complexas (Kazemier et al., 2021).",
       "classificacao": "Ruptura",
       "pestel": [
         "Social",
@@ -118,7 +140,13 @@ const sfData = {
       "referenciasResumidas": "[52] Akgün-özbek E. (2022) - E-Transformation in Higher Education and What It Coerces for the Faculty | [111] Kazemier E.M. (2021) - Mastering futures literacy in higher education: An evaluation of learning outcomes and instructional design of a faculty development program | [293] Qadhi S.M. (2023) - Reimaging Continuing Professional Development in Higher Education - Toward Sustainability | [324] Saavedra A.M. (2025) - Teachers' Perceptions, Attitudes, and Beliefs Regarding the Use of AI in Higher Education: A Multigenerational Analysis in Guatemala",
       "implicacoes": "Torna indispensável para as IES privadas a estruturação de Academias Corporativas Docentes permanentes com trilhas de letramento em IA e metodologias prospectivas. O investimento estruturado em CPD deixa de ser custo de RH para se tornar ativo central de retenção de talentos e mitigação da perda de relevância acadêmica frente a novas edtechs.",
       "indicadores": "",
-      "revisada": true
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SFQ02",
@@ -142,15 +170,21 @@ const sfData = {
       "referenciasResumidas": "[382] OECD (2025) - A quantum technologies policy primer | [390] NIST (2024) - Post-Quantum Cryptography Standardization (FIPS 203, FIPS 204, FIPS 205)",
       "implicacoes": "Exigirá auditoria e atualização gradual dos sistemas de registro acadêmico, diplomas digitais, prontuários de clínicas-escola e bases de dados corporativas da CSED para criptografia pós-quântica (PQC). A instituição que atrasar essa transição enfrentará passivos regulatórios perante a LGPD e risco de obsolescência de sua infraestrutura de confiança digital.",
       "indicadores": "",
-      "revisada": true
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SFS02",
       "fonte": "Vinicius",
       "topico": "Financiamento, Mercantilização e Modelos de Negócio",
-      "titulo": "Hegemonia dos Centros Universitários e Desidratação das Faculdades - Homogeneização e Risco à Diversidade Regional",
-      "descricao": "Transformações regulatórias e de mercado ocorridas a partir da reformulação da LDB de 1996 consolidaram os Centros Universitários como o modelo organizacional predominante e mais adaptado à expansão em escala da graduação privada, tanto presencial quanto a distância (381). Em contrapartida, observa-se a perda contínua de participação relativa das Faculdades isoladas, instituições que historicamente desempenharam papel decisivo na interiorização do ensino, na fixação de talentos e no atendimento a nichos vocacionais em municípios de menor porte (381). Pressionadas pelos ganhos de escala e pela explosão de polos de EAD das grandes redes, o recuo dessas faculdades compromete a diversidade do ecossistema educacional e deixa descobertas demandas regionais específicas que não encontram resposta em currículos centralizados e padronizados nacionalmente (381).",
-      "descricaoApa": "Transformações regulatórias e de mercado ocorridas a partir da reformulação da LDB de 1996 consolidaram os Centros Universitários como o modelo organizacional predominante e mais adaptado à expansão em escala da graduação privada, tanto presencial quanto a distância (SEMESP, 2026). Em contrapartida, observa-se a perda contínua de participação relativa das Faculdades isoladas, instituições que historicamente desempenharam papel decisivo na interiorização do ensino, na fixação de talentos e no atendimento a nichos vocacionais em municípios de menor porte (SEMESP, 2026). Pressionadas pelos ganhos de escala e pela explosão de polos de EAD das grandes redes, o recuo dessas faculdades compromete a diversidade do ecossistema educacional e deixa descobertas demandas regionais específicas que não encontram resposta em currículos centralizados e padronizados nacionalmente (SEMESP, 2026).",
+      "titulo": "Reconfiguração Organizacional e Assimetria Espacial - Ascensão dos Centros Universitários e a Emergência de Desertos Educacionais",
+      "descricao": "Transformações regulatórias e de mercado consolidadas no Brasil a partir da LDB de 1996 estabeleceram os Centros Universitários como a organização predominante e mais adaptada à expansão em escala da graduação privada, em detrimento do modelo de Faculdades isoladas, historicamente vitais para a interiorização e a fixação de talentos locais (381). Pressionadas pelos ganhos de escala das grandes redes e pela expansão de polos de EAD de baixo custo, o recuo acelerado dessas faculdades locais compromete a diversidade do sistema e aprofunda uma assimetria territorial que a literatura empírica internacional classifica como a polarização entre 'oásis' (hiperconcentração e saturação institucional nas capitais) e 'desertos educacionais' (vazios territoriais desprovidos de alternativas formativas presenciais de qualidade) (3, 381). Evidências globais demonstram que a mera dispersão de ensino puramente remoto não sana essas fraturas espaciais, demandando estratégias deliberadas de engajamento comunitário (outreach) e adequação curricular para evitar que cidades do interior permaneçam isoladas das cadeias de formação profissional contemporâneas (3, 379), configurando uma tendência de empobrecimento da presença física regional que tensiona futuros marcos de regulação e admissão (87, 262).",
+      "descricaoApa": "Transformações regulatórias e de mercado consolidadas no Brasil a partir da LDB de 1996 estabeleceram os Centros Universitários como a organização predominante e mais adaptada à expansão em escala da graduação privada, em detrimento do modelo de Faculdades isoladas, historicamente vitais para a interiorização e a fixação de talentos locais (SEMESP, 2026). Pressionadas pelos ganhos de escala das grandes redes e pela expansão de polos de EAD de baixo custo, o recuo acelerado dessas faculdades locais compromete a diversidade do sistema e aprofunda uma assimetria territorial que a literatura empírica internacional classifica como a polarização entre 'oásis' (hiperconcentração e saturação institucional nas capitais) e 'desertos educacionais' (vazios territoriais desprovidos de alternativas formativas presenciais de qualidade) (Ram et al., 2022; SEMESP, 2026). Evidências globais demonstram que a mera dispersão de ensino puramente remoto não sana essas fraturas espaciais, demandando estratégias deliberadas de engajamento comunitário (outreach) e adequação curricular para evitar que cidades do interior permaneçam isoladas das cadeias de formação profissional contemporâneas (Ram et al., 2022; Stewart et al., 2024), configurando uma tendência de empobrecimento da presença física regional que tensiona futuros marcos de regulação e admissão (Haj et al., 2018; Salmi, 2018).",
       "classificacao": "Tendência",
       "pestel": [
         "Econômico",
@@ -158,14 +192,26 @@ const sfData = {
         "Legal"
       ],
       "eixo": "4 - Economia e Mercado de Trabalho",
-      "qtdArtigos": 1,
+      "qtdArtigos": 5,
       "artigosIds": [
+        3,
+        87,
+        262,
+        379,
         381
       ],
-      "referenciasResumidas": "[381] Semesp (2026) - Mapa do Ensino Superior no Brasil 2026 (16ª edição)",
-      "implicacoes": "Para grandes grupos educacionais privados, essa dinâmica reforça a conveniência operacional de alavancar a autonomia de seus Centros Universitários para expansão territorial em escala, mas abre um diferencial competitivo para mantenedoras que preservarem identidades locais e projetos pedagógicos aderentes à vocação regional em suas unidades físicas, capturando os nichos de mercado desassistidos pelo encerramento de faculdades locais.",
-      "indicadores": "Distribuição percentual do total de IES por organização acadêmica (Universidades, Centros Universitários e Faculdades); Número de polos de EAD vinculados a Centros Universitários; Encerramento ou fusão de faculdades isoladas no interior do país.",
-      "revisada": true
+      "referenciasResumidas": "[3] Ram M.P. (2022) - Deserts and Oases: Geospatial Analytics of Higher Education Access | [87] Salmi J. (2018) - Social Dimension Within a Quality Oriented Higher Education System | [262] Haj C.M. (2018) - A Typology of Admission Systems Across Europe and Their Impact on the Equity of Access, Progression and Completion in Higher Education | [379] Stewart A. (2024) - Building an outreach culture for fairer access to higher education in Haryana, India: A ‘bottom up’ contribution to policy implementation | [381] Semesp (2026) - Mapa do Ensino Superior no Brasil 2026 (16ª edição)",
+      "implicacoes": "O recuo das faculdades isoladas e a saturação dos grandes centros urbanos indicam que as vias de expansão sustentável para mantenedoras privadas até 2040 migram para o preenchimento qualificado dos desertos educacionais no interior. A oportunidade reside em superar o modelo de polos virtuais precários e implantar unidades descentralizadas multisserviços e modelos híbridos com forte presença física e laboratorial, ancorados nas demandas produtivas regionais (como polos agroindustriais, de saúde regional e novas tecnologias).",
+      "indicadores": "Participação relativa de Centros Universitários versus Faculdades isoladas no total de IES e matrículas; Densidade de cursos e vagas presenciais em municípios fora das regiões metropolitanas (mapeamento de \"desertos educacionais\"); Número de polos de EAD instalados em municípios de médio porte desprovidos de oferta presencial qualificada.",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": [
+        "SF22"
+      ]
     },
     {
       "id": "SF03",
@@ -192,7 +238,13 @@ const sfData = {
       "referenciasResumidas": "[7] Hartlep N.D. (2017) - Homophily in higher education: Historicizing the AERA member-to-fellow pipeline using theories of social reproduction and social networks | [134] Raaper R. (2015) - Mark olssen on neoliberalisation of higher education and academic lives: An interview | [207] Soomro S. (2026) - Artificial intelligence in higher education: faculty empowerment or future workplace stress | [289] Matei L. (2018) - Diverging Paths? Institutional Autonomy and Academic Freedom in the European Higher Education Area | [378] Alakoum A. (2025) - Artificial Intelligence and Performance Measurement Systems in Higher Education: Enhancing Faculty Evaluations and Organizational Outcomes",
       "implicacoes": "O uso predatório de dashboards gerenciais e métricas automatizadas para punição e demissão de docentes pode deflagrar crises sindicais severas, rotatividade destrutiva de professores e perda de reputação de marca. Instituições líderes deverão equilibrar governança por dados com colegialidade, transparência nos algoritmos de avaliação e salvaguarda da liberdade pedagógica.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SFQ03",
@@ -215,7 +267,13 @@ const sfData = {
       "referenciasResumidas": "[387] Zhou Z. (2025) - Hybrid quantum annealing for large-scale exam scheduling: Validation in real-world educational scenarios | [392] IBM Quantum (2026) - IBM Quantum Technology Atlas and Development Roadmap",
       "implicacoes": "Para grandes conglomerados educacionais com centenas de milhares de alunos e múltiplos polos, a utilização de serviços híbridos de otimização quântica em nuvem poderá destravar ganhos de eficiência operacional no uso de prédios, laboratórios e alocação de docentes, reduzindo o custo por aluno e a ociosidade física",
       "indicadores": "",
-      "revisada": true
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SFS03",
@@ -238,7 +296,13 @@ const sfData = {
       "referenciasResumidas": "[381] Semesp (2026) - Mapa do Ensino Superior no Brasil 2026 (16ª edição)",
       "implicacoes": "Instituições de ensino superior organizadas sob o status de Universidade enfrentam o dilema estratégico de legitimar sua autonomia perante os órgãos reguladores e a sociedade: mantenedoras que utilizarem essa prerrogativa exclusivamente para escalar cursos massificados de EAD desprovidos de densidade acadêmica e pesquisa aplicada tendem a enfrentar aperto regulatório do MEC e perda de prestígio de suas marcas; por outro lado, grupos que articularem pesquisa aplicada, inovação e extensão qualificada à sua capilaridade digital criarão um diferencial competitivo de sustentabilidade e reputação inalcançável por modelos puramente conteudistas.",
       "indicadores": "Proporção de matrículas em EAD sobre o total de alunos nas Universidades privadas; Relação entre investimentos em pesquisa/pós-graduação stricto sensu e receita de polos de EAD; Índices regulatórios de qualidade (CPC/IGC) comparativos entre presencial e EAD em universidades privadas.",
-      "revisada": true
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF04",
@@ -265,7 +329,13 @@ const sfData = {
       "referenciasResumidas": "[58] Blass E. (2010) - Visioning 2035: The future of the higher education sector in the UK | [78] Fletcher E.C., Jr. (2022) - Characteristics of Career and Technical Education Faculty across Institutions of Higher Education in the United States | [121] Peri E. (2024) - Who am I—Teacher or practitioner? Teacher-practitioners’ experience of identity in higher education—A phenomenological view | [199] Hollis L.P. (2022) - Universal Declaration of Human Rights: An argument for higher education to prohibit workplace bullying | [331] Kjellstrand I., Sr. (2026) - Middle manager mothers and fathers in academia: embracing and resisting traditional values in Kazakhstani higher education institutions",
       "implicacoes": "O excesso de flexibilização e gig-economy docente trará passivos trabalhistas volumosos e perda de identidade institucional. Os grandes grupos precisarão desenhar contratos híbridos atrativos que valorizem especialistas de mercado sem precarizar o vínculo, garantindo políticas de conciliação familiar e acolhimento psicossocial.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SFQ04",
@@ -288,7 +358,13 @@ const sfData = {
       "referenciasResumidas": "[386] Rosales Huamani J.A. (2026) - A Systematic Review of Quantum Machine Learning in Education 5.0: Applications and Future Research Directions | [391] Rodríguez-Díaz F. (2025) - A Survey of Quantum Machine Learning: Foundations, Algorithms, Frameworks, Data and Applications",
       "implicacoes": "Sinal de longo prazo para monitoramento tecnológico. Não demanda investimentos imediatos de capital, mas sugere que a equipe de P&D educacional e Data Analytics da Cruzeiro acompanhe a evolução de bibliotecas de QML híbridas disponibilizadas em nuvem para casos onde os modelos preditivos tradicionais de evasão encontrem limites computacionais.",
       "indicadores": "",
-      "revisada": true
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF05",
@@ -296,7 +372,7 @@ const sfData = {
       "topico": "Corpo Docente, Carreira Acadêmica e Formação de Professores",
       "titulo": "O Custo de Oportunidade Docente: Disputa por Especialistas entre o Mercado Profissional e a Universidade (Teacher-Practitioners)",
       "descricao": "Assimetria de concorrência entre o mercado de trabalho corporativo e as instituições de ensino superior pela atração e retenção de profissionais qualificados (os chamados teacher-practitioners), especialmente em áreas de alta demanda econômica como Medicina, Saúde, Tecnologia e Ciências Aplicadas (78, 121). Indivíduos com sólida identidade profissional no mercado vivenciam uma instabilidade crônica em sua trajetória acadêmica, frequentemente interrompendo ou abandonando a docência devido à discrepância salarial com a prática privada, à sobrecarga burocrática institucional e à ausência de planos de carreira adaptados à dupla identidade profissional (121). Esse descompasso resulta em uma escassez estrutural de docentes técnicos e práticos nas universidades (78), desafiando as faculdades a criarem novos arranjos de vinculação (como cátedras corporativas, preceptoria clínica diferenciada e flexibilidade de alocação de tempo) capazes de compensar o elevado custo de oportunidade desses especialistas frente ao mercado (58, 121, 247).",
-      "descricaoApa": "N/A",
+      "descricaoApa": "Assimetria de concorrência entre o mercado de trabalho corporativo e as instituições de ensino superior pela atração e retenção de profissionais qualificados (os chamados teacher-practitioners), especialmente em áreas de alta demanda econômica como Medicina, Saúde, Tecnologia e Ciências Aplicadas (Fletcher, 2022; Peri et al., 2024). Indivíduos com sólida identidade profissional no mercado vivenciam uma instabilidade crônica em sua trajetória acadêmica, frequentemente interrompendo ou abandonando a docência devido à discrepância salarial com a prática privada, à sobrecarga burocrática institucional e à ausência de planos de carreira adaptados à dupla identidade profissional (Peri et al., 2024). Esse descompasso resulta em uma escassez estrutural de docentes técnicos e práticos nas universidades (Fletcher, 2022), desafiando as faculdades a criarem novos arranjos de vinculação (como cátedras corporativas, preceptoria clínica diferenciada e flexibilidade de alocação de tempo) capazes de compensar o elevado custo de oportunidade desses especialistas frente ao mercado (Blass et al., 2010; Martinez et al., 2026; Peri et al., 2024).",
       "classificacao": "Tendência",
       "pestel": [
         "Econômico",
@@ -314,7 +390,13 @@ const sfData = {
       "referenciasResumidas": "[58] Blass E. (2010) - Visioning 2035: The future of the higher education sector in the UK | [78] Fletcher E.C., Jr. (2022) - Characteristics of Career and Technical Education Faculty across Institutions of Higher Education in the United States | [121] Peri E. (2024) - Who am I—Teacher or practitioner? Teacher-practitioners’ experience of identity in higher education—A phenomenological view | [247] Martinez B. (2026) - EXPAND YOUR SCOPE:Sharing Your Expertise in Spaces Inside and Outside of Higher Education",
       "implicacoes": "Exigirá dos grupos educacionais privados a superação definitiva da contratação docente baseada exclusivamente no modelo tradicional horista para cursos profissionalizantes nobres (como Medicina e Tecnologia). Para não perderem os melhores médicos e especialistas para consultórios, hospitais privados e Big Techs, as IES precisarão formatar parcerias institucionais híbridas (ex.: divisão de tempo entre clínica/hospital-escola conveniado e docência de mentoria), garantindo prestígio e remuneração competitiva para atrair quem realmente domina a prática do mercado.",
       "indicadores": "",
-      "revisada": true
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SFQ05",
@@ -339,7 +421,13 @@ const sfData = {
       "referenciasResumidas": "[382] OECD (2025) - A quantum technologies policy primer | [385] UNESCO (2025) - 2025 International Year of Quantum Science and Technology (IYQ) | [393] MCTI (2026) - Iniciativa Brasileira de Tecnologias Quânticas (IBQuântica), Hub Nacional de Campinas e Pós-Graduação UniSENAI-SP",
       "implicacoes": "Alerta para que as IES privadas evitem contratos de exclusividade tecnológica prematuros com provedores internacionais, priorizando parcerias com ecossistemas regionais de inovação e polos de pesquisa aplicada (como o Hub de Campinas e EMBRAPII), posicionando-se como centros aplicadores e difusores da tecnologia no Brasil.",
       "indicadores": "",
-      "revisada": true
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF06",
@@ -365,7 +453,13 @@ const sfData = {
       "referenciasResumidas": "[94] Duran M.K.L. (2026) - Modeling Filipino Educators’ Intentions to Integrate Sustainability Topics in Higher Education Using a Hybrid SEM–ANN | [145] Pruikkonen A. (2026) - A Systemic Perspective on Pedagogical Leadership in Higher Education | [273] Jackson L. (2017) - Leaning Out in higher education: A structural, postcolonial perspective | [297] Murphy M. (2019) - Digital scholarship, higher education and the future of the public intellectual",
       "implicacoes": "Professores com forte autoridade científica e presença pública digital serão os maiores ativos de branding e atração orgânica de alunos para as IES privadas. As instituições que incentivarem a divulgação científica e a liderança distribuída atrairão estudantes engajados e construirão diferenciais éticos decisivos.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF07",
@@ -373,7 +467,7 @@ const sfData = {
       "topico": "Modelos Pedagógicos, Aprendizagem Híbrida e EAD",
       "titulo": "Superação do EAD Massificado de Baixo Custo: Profissionalização, Qualidade Multidimensional e Abordagem Institucional Integrada (Whole-Institution)",
       "descricao": "Desgaste e perda progressiva de eficácia dos modelos de educação a distância puramente transmissivos e de baixo investimento pedagógico, fenômeno historicamente evidenciado pelo rápido ciclo de obsolescência de formatos massificados e pelas elevadas taxas de abandono discente diante de repositórios estáticos de conteúdo (117, 214). Investigações empíricas recentes sobre a experiência estudantil em contextos de expansão digital revelam que a permanência e a fidelização discente não decorrem do mero acesso à plataforma tecnológica, mas de uma percepção de qualidade condicionada a múltiplos fatores, como suporte acadêmico contínuo e rápido, mediação docente ativa, atenção institucional a desigualdades técnicas, plataformas intuitivas e relevância do currículo (103, 240, 353). Como sinal emergente dessa dinâmica, observa-se a transição de ações remotas fragmentadas para abordagens institucionais sistêmicas (whole-institution approach), acompanhadas pelo avanço de formatos híbridos de aprendizagem que registram resultados pedagógicos superiores ao combinarem flexibilidade digital com momentos deliberados de interação orientada (84, 118, 187). Esse conjunto de fatores aponta para uma potencial bifurcação de trajetórias no setor: de um lado, a vulnerabilidade e o desgaste reputacional de instituições que sustentam sua oferta exclusivamente no corte de custos e na entrega passiva; de outro, a consolidação de ecossistemas digitais de alta densidade relacional, nos quais a sustentabilidade do modelo decorre do equilíbrio entre arquitetura tecnológica avançada e presença humana qualificada (84, 103, 187).\"",
-      "descricaoApa": "N/A",
+      "descricaoApa": "Desgaste e perda progressiva de eficácia dos modelos de educação a distância puramente transmissivos e de baixo investimento pedagógico, fenômeno historicamente evidenciado pelo rápido ciclo de obsolescência de formatos massificados e pelas elevadas taxas de abandono discente diante de repositórios estáticos de conteúdo (Prasetya et al., 2019; Wang & Ellington, 2022). Investigações empíricas recentes sobre a experiência estudantil em contextos de expansão digital revelam que a permanência e a fidelização discente não decorrem do mero acesso à plataforma tecnológica, mas de uma percepção de qualidade condicionada a múltiplos fatores, como suporte acadêmico contínuo e rápido, mediação docente ativa, atenção institucional a desigualdades técnicas, plataformas intuitivas e relevância do currículo (Le et al., 2026; Nguyen-Anh et al., 2023; Upadhayay et al., 2022). Já se pode observar episódios de transição de ações remotas fragmentadas para abordagens institucionais sistêmicas (whole-institution approach), acompanhadas pelo avanço de formatos híbridos de aprendizagem que registram resultados pedagógicos superiores ao combinarem flexibilidade digital com momentos deliberados de interação orientada (Filback et al., 2026; Thinh, 2026; Yancey, 2026). Esse conjunto de fatores aponta para uma potencial bifurcação de trajetórias no setor: de um lado, a vulnerabilidade e o desgaste reputacional de instituições que sustentam sua oferta exclusivamente no corte de custos e na entrega passiva; de outro, a consolidação de ecossistemas digitais de alta densidade relacional, nos quais a sustentabilidade do modelo decorre do equilíbrio entre arquitetura tecnológica avançada e presença humana qualificada (Filback et al., 2026; Le et al., 2026; Yancey, 2026).",
       "classificacao": "Sinal fraco",
       "pestel": [
         "Econômico",
@@ -395,7 +489,13 @@ const sfData = {
       "referenciasResumidas": "[84] Yancey J.D. (2026) - A Whole-Institution Approach to Digital Education in Higher Education | [103] Le T.H.-C. (2026) - Learning at a distance in non-western context: How distant students perceive quality of higher education in Vietnam | [117] Wang V. (2022) - MOOCs and the Challenges They Pose to Higher Education | [118] Thinh M.P. (2026) - Shaping the Future of Higher Education in Asia: Impact of Hybrid Learning Models on Student Outcomes in Vietnam, Thailand and China: Cluster(s) of Future Studies: Technological Trends, Past and Futures | [187] Filback R.A. (2026) - Achieving High Quality Online Programming in a Shifting Higher Education Landscape: Trends and Implications | ... (+3 artigos)",
       "implicacoes": "O segmento de EAD 100% gravado e de tíquete ultrabaixo sofrerá saturação e desregulamentação regulatória no Brasil. IES privadas que liderarem a transição para um EAD premium, interativo, com tutoria humana qualificada e suporte multidimensional captarão a fatia mais sustentável e fiel do mercado.",
       "indicadores": "",
-      "revisada": true
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF08",
@@ -422,7 +522,13 @@ const sfData = {
       "referenciasResumidas": "[63] Zhu Y. (2026) - Strategies and Practices for Enhancing Higher Education Faculty Teaching Capabilities through Artificial Intelligence | [213] Khatimin N. (2015) - Standard setting in students assessment of higher education institution in Malaysia | [263] Gedera D. (2026) - A Conceptual Framework for Authentic AI-Enabled Assessment (AAA) in Higher Education | [280] Aguayo-Hernández C.H. (2025) - The Building Blocks of the Constructive Assessment of Learning in Higher Education: A Faculty Conception | [303] Attiat M.M. (2024) - The Reality of E-learning Assessment Practices in Higher Education Institutions",
       "implicacoes": "As instituições brasileiras deverão abandonar gradativamente semanas de provas estáticas e softwares invasivos de proctoring. A certificação de competências exigirá bancas orais apoiadas por IA, portfólios dinâmicos e resolução de desafios práticos em tempo real, garantindo integridade e reputação perante o mercado.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF09",
@@ -450,7 +556,13 @@ const sfData = {
       "referenciasResumidas": "[9] Verma B.K. (2026) - Optimizing academic performance in hybrid learning via clustering-guided with data mining techniques in higher education system | [22] Namboodiri S. (2022) - Zoom-ing Past “the New Normal”? Understanding Students’ Engagement with Online Learning in Higher Education during the COVID-19 Pandemic | [163] Spence A. (2015) - Using interactive technology for lectures in higher education information technology | [173] Ashour S. (2021) - Post-pandemic Higher Education: Perspectives from University Leaders and Educational Experts in the United Arab Emirates | [183] Oginni Y. (2022) - Reimagining the Place of Physical Buildings in Higher Education in Developing Countries in a Post-COVID- 19 Era | ... (+1 artigos)",
       "implicacoes": "O estudante não pagará deslocamento e mensalidade presencial para assistir a aulas que poderiam ser gravadas. As IES privadas precisam reformar prédios, eliminando fileiras de carteiras em favor de estúdios de cocriação, laboratórios de prototipagem e arenas de resolução de casos complexos.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF10",
@@ -477,7 +589,13 @@ const sfData = {
       "referenciasResumidas": "[105] Bento B.C. (2023) - Using a Problem-Based Learning Approach to Develop Sustainability Competencies in Higher Education Students | [151] Delgado F. (2021) - Teaching physics for computer science students in higher education during the covid-19 pandemic: A fully internet-supported course | [168] Bhat A.Z. (2022) - Nested Virtualization, an Implementation Scenario for Higher Education Institutions, Solution, and Performance Issues | [178] Martínez-Canton A.E. (2025) - A new way to evaluate the impact of Research-Based Learning (RBL) and develop competencies in higher education | [286] Shaban I.A. (2026) - Implementing metaverse-oriented VR learning platforms in low-budget higher education: a case study with mechanical engineering students",
       "implicacoes": "Permite aos grupos educacionais viabilizar cursos de saúde, engenharias e ciências aplicadas em modelos semipresenciais de custo controlado e alta fidelidade prática, acelerando o desenvolvimento de raciocínio investigativo e competências profissionais antes restritas a bancadas físicas caras.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF11",
@@ -504,7 +622,13 @@ const sfData = {
       "referenciasResumidas": "[47] Géring Z. (2018) - Vision(s) of the university. Applying participatory backcasting to study the future of higher education | [51] Vassilakaki E. (2017) - New Trends in Higher Education: Can Information Professionals Rise to the Challenge? | [86] Padayachee I. (2022) - Factors Influencing Virtual Learning System Usage in Higher Education | [312] Veluvali P. (2022) - Learning Management System for Greater Learner Engagement in Higher Education—A Review | [327] Bradley L. (2026) - Life without Clocks: Experimental autoethnography for strange-ing time and queering futures, in and through Higher Education",
       "implicacoes": "Desafiará os sistemas de gestão acadêmica e contratos semestrais, permitindo que alunos concluam disciplinas em tempos flexíveis (aceleração para talentos rápidos, desaceleração com tutoria adaptativa para alunos com déficits prévios), aumentando radicalmente o LTV e reduzindo a evasão por frustração.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF12",
@@ -512,7 +636,7 @@ const sfData = {
       "topico": "Inteligência Artificial e Tecnologias Emergentes no Ensino",
       "titulo": "Disrupção dos Modelos de Linguagem (LLMs), Colapso dos Padrões Tradicionais de Autoria e Crise da Avaliação Textual",
       "descricao": "A rápida disseminação e especialização funcional de modelos avançados de linguagem natural (como ChatGPT e DeepSeek) operam uma profunda ruptura nos padrões de produção intelectual e escrita acadêmica, provocando o colapso irreversível dos ensaios e monografias padronizadas como instrumentos de aferição de aprendizagem (14, 46, 85). Esse contexto desafia os conceitos consolidados de autoria, originalidade e integridade científica na formação universitária e na publicação de pesquisas (91, 321). Paralelamente, a emergência de plataformas cognitivas e bibliotecas inteligentes redefine o acesso à informação técnico-científica, exigindo que os estudantes transitem da memorização e redação descritiva para competências sofisticadas de curadoria crítica, engenharia de contexto e julgamento epistêmico sobre conteúdos gerados por IA (205, 321).",
-      "descricaoApa": "N/A",
+      "descricaoApa": "A rápida disseminação e especialização funcional de modelos avançados de linguagem natural (como ChatGPT e DeepSeek) operam uma profunda ruptura nos padrões de produção intelectual e escrita acadêmica, provocando o colapso irreversível dos ensaios e monografias padronizadas como instrumentos de aferição de aprendizagem (Pamungkas et al., 2025; Paruthi et al., 2025; Phutela et al., 2024). Esse contexto desafia os conceitos consolidados de autoria, originalidade e integridade científica na formação universitária e na publicação de pesquisas (Gosztonyi, 2026; Sok et al., 2025). Paralelamente, a emergência de plataformas cognitivas e bibliotecas inteligentes redefine o acesso à informação técnico-científica, exigindo que os estudantes transitem da memorização e redação descritiva para competências sofisticadas de curadoria crítica, engenharia de contexto e julgamento epistêmico sobre conteúdos gerados por IA (Sok et al., 2025; Zhu et al., 2025).",
       "classificacao": "Ruptura",
       "pestel": [
         "Tecnológico",
@@ -531,7 +655,13 @@ const sfData = {
       "referenciasResumidas": "[14] Phutela N. (2024) - Future Prospects of ChatGPT in Higher Education | [46] Pamungkas A.F. (2025) - Comparative Analysis of AI Deepseek and ChatGPT in Command Execution Within Field of Higher Education | [85] Paruthi M. (2025) - AI and Higher Education | [91] Gosztonyi M. (2026) - AI’s Impact on Higher Education and Academic Publishing in Asia: Insights from China, South Korea and Singapore | [205] Zhu H. (2025) - Research on the Impact of ChatGPT and Other NLP Technologies Based on GPT Models on the Construction and Development of Intelligent Libraries in Higher Education | ... (+1 artigos)",
       "implicacoes": "Exige repensar radicalmente TCCs, relatórios e monografias de graduação. IES privadas precisarão treinar alunos no uso profissional e crítico de múltiplos LLMs concorrentes, tornando a capacidade de auditar respostas geradas e sintetizar conhecimentos complexos um objetivo de aprendizagem formal.",
       "indicadores": "",
-      "revisada": true
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF13",
@@ -560,7 +690,13 @@ const sfData = {
       "referenciasResumidas": "[13] Sheng Y. (2025) - Research on teaching reform and innovation in higher education based on artificial intelligence | [128] de Bem Machado A. (2025) - State of the Art in Higher Education: Impact of Artificial Intelligence–Based Adaptive Learning Systems in Online Education | [141] Jansirani D. (2026) - AI-Driven Curriculum Design for Higher Education Institutions | [144] Al Qaruty S. (2026) - Artificial Intelligence for Personalized Language Learning in UAE Higher Education: Optimizing Vocabulary Acquisition Among Arabic-Speaking EFL Learners | [291] Vinodh N. (2026) - Revolutionizing Higher Education: Integrating AI Personalized Learning and Adaptive Curriculum Design | ... (+2 artigos)",
       "implicacoes": "Plataformas proprietárias de IA adaptativa se tornarão a principal infraestrutura pedagógica dos grandes grupos educacionais, permitindo nivelamento em tempo real de estudantes provenientes de escolas públicas deficientes e viabilizando personalização de massa com custos marginais decrescentes.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF14",
@@ -586,7 +722,13 @@ const sfData = {
       "referenciasResumidas": "[12] Blekač E. (2025) - Perception of the Aesthetic Value of Art in the Context of Artificial Intelligence and Human Creation Among Higher Education Students | [147] Kardiansyah M.Y. (2024) - Shortcut on the Edge of the Cliff: An Overview of Artificial Intelligence for Higher Education | [257] Prabakaran M. (2025) - Embodied and Contextual Intelligence: Towards a Policy Framework for Higher Education | [288] Fošner A. (2025) - AI chatbots in higher education: Students’ beliefs and concerns | [311] Balalojanan V. (2025) - AI Dependency in Sri Lankan Higher Education: Effects of Chatbot Overuse on Student Learning and Problem-Solving",
       "implicacoes": "O diferencial competitivo das melhores faculdades privadas não será ensinar a usar IA (que se tornará comoditizada e onipresente), mas ensinar a pensar para além da IA — cultivando metacognição, criatividade não-linear e discernimento ético que robôs não conseguem replicar.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF15",
@@ -613,7 +755,13 @@ const sfData = {
       "referenciasResumidas": "[142] Mehdian N. (2025) - AI-Powered Educational System: Challenges for Higher Education in Emerging Economies: Baseline Research | [224] AbouElgheit E. (2026) - Responsible generative AI enablement for learning futures in higher education: a qualitative integrative review and bounded institutional illustration | [283] Tawara A.A. (2025) - Systematic Review and Comprehensive Analysis of Integrating Human-Centered AI in Higher Education: Enhancing Teaching, Learning, and Ethics | [350] Berisha Qehaja A. (2025) - Strategic integration of artificial intelligence solutions to transform teaching practices in higher education | [373] Chan M.A.M. (2026) - INTEGRITY-AI: Integrating Ethical AI Governance for Responsibility, Innovation, and Transparency in Higher Education",
       "implicacoes": "Exige que os grupos educacionais criem Comitês Permanentes de Governança de IA e Ética de Dados, mitigando riscos regulatórios perante a LGPD e o futuro Marco Legal da IA no Brasil, e garantindo que decisões acadêmicas automatizadas sejam explicáveis e transparentes.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF16",
@@ -638,7 +786,13 @@ const sfData = {
       "referenciasResumidas": "[195] Gautama A. (2024) - Metaverse Adoption in Higher Education Institutions (HEIs): A Systematic Literature Review | [219] Kistaubayev Y. (2023) - Ethereum-Based Information System for Digital Higher Education Registry and Verification of Student Achievement Documents | [304] Daniela L. (2018) - How to Predict the Unpredictable: Technology-enhanced Learning and Learning Innovations in Higher Education",
       "implicacoes": "Redução drástica de fraudes em diplomas e desintermediação do processo de validação acadêmica entre universidades e empresas via registros descentralizados, barateando custos operacionais de secretaria e emitindo credenciais verificáveis instantaneamente.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF17",
@@ -664,7 +818,13 @@ const sfData = {
       "referenciasResumidas": "[117] Wang V. (2022) - MOOCs and the Challenges They Pose to Higher Education | [133] Cox T. (2026) - TRANSFORMING HIGHER EDUCATION: LEADERSHIP STRATEGIES FOR MICRO‑CREDENTIAL IMPLEMENTATION AND INNOVATION | [219] Kistaubayev Y. (2023) - Ethereum-Based Information System for Digital Higher Education Registry and Verification of Student Achievement Documents | [380] Hammershøj L.G. (2019) - The perfect storm scenario for the university: Diagnosing converging tendencies in higher education",
       "implicacoes": "Subverte a grade horária e o modelo de negócio centrado em cursos longos. As IES privadas precisarão estruturar portfólios flexíveis em que cada semestre conclua uma microcertificação reconhecida pelo mercado de trabalho, permitindo que o aluno construa seu diploma em blocos autônomos e empilháveis.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF18",
@@ -690,7 +850,13 @@ const sfData = {
       "referenciasResumidas": "[119] Nguyen N.N. (2024) - Examining effects of students’ innovative behaviour and problem-solving skills on crisis management self-efficacy: Policy implications for higher education | [139] Pnevmatikos D. (2025) - Creating Critical Thinking Professionals: Challenges for Higher Education | [180] Okolie U.C. (2020) - Enhancing graduate employability: Why do higher education institutions have problems with teaching generic skills? | [222] Tobias R.G. (2025) - Enhancing Communication Skills in Higher Education through Artificial Intelligence and Virtual Reality | [258] Plucker J.A. (2024) - Implementing Transformational Creativity in Higher Education",
       "implicacoes": "Os índices de empregabilidade dos egressos serão o principal vetor de ranqueamento privado e precificação de cursos. Matrizes curriculares que continuarem ensinando apenas memorização técnica sofrerão fuga de alunos; o diferencial estará na imersão em resolução de problemas reais de empresas parceiras.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF19",
@@ -716,7 +882,13 @@ const sfData = {
       "referenciasResumidas": "[19] Janjua S. (2022) - Technical and Vocational Education in Jordan’s Higher Education System | [176] Almela T. (2023) - Impact of the Industry 4.0 on Higher Education | [247] Martinez B. (2026) - EXPAND YOUR SCOPE:Sharing Your Expertise in Spaces Inside and Outside of Higher Education | [364] Nguyen P.H.H. (2026) - AI-enabled learning practices in higher education: A motivational-cognitive pathway to sustainable entrepreneurial competence",
       "implicacoes": "Expansão acelerada de cursos tecnólogos superiores de 2 a 3 anos com alta densidade digital e foco em automação, inteligência de dados e energias renováveis, atendendo à população que busca rápida ascensão de renda sem o custo temporal de um bacharelado tradicional.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF20",
@@ -741,7 +913,13 @@ const sfData = {
       "referenciasResumidas": "[111] Kazemier E.M. (2021) - Mastering futures literacy in higher education: An evaluation of learning outcomes and instructional design of a faculty development program | [138] Gáspár J. (2021) - Future in the Present: Participatory Futures Research Methods in Economic Higher Education – The Development of Future Competencies | [380] Hammershøj L.G. (2019) - The perfect storm scenario for the university: Diagnosing converging tendencies in higher education",
       "implicacoes": "Incorporação de disciplinas transversais de estudos do futuro e cenarização estratégica em cursos de graduação e pós-graduação executiva, posicionando os estudantes como tomadores de decisão resilientes e visionários no ambiente de negócios brasileiro.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF21",
@@ -771,7 +949,13 @@ const sfData = {
       "referenciasResumidas": "[24] Kazis R. (2020) - Inequities in US Higher Education Access and Success: Obstacles and Opportunities for Marginal Populations | [36] Soudien C. (2020) - Continuing Inequalities in South African Higher Education: The Changing Complexities of Race and Class | [55] Macheka M.T. (2022) - Emergency Remote Instruction (ERI) in Times of COVID-19 Pandemic: Experiences of Educators at Zimbabwean Higher Education Institutions | [79] Chadwick A. (2022) - Higher Education as an Additional Mid-Life Transition: Motivations and Challenges of Older Female Students | [212] Navani M.T. (2020) - Transition to HE and Equitable Learning Outcomes: Challenges for Indian Higher Education | ... (+3 artigos)",
       "implicacoes": "No Brasil, a sustentabilidade da Cruzeiro do Sul e de seus concorrentes dependerá da capacidade de atender com excelência o aluno de classes C e D que trabalha durante o dia. Exige modelos curriculares noturnos e híbridos assíncronos que não punam ausências com reprovação automática por faltas, mas apoiem a progressão por proficiência comprovada.",
       "indicadores": "",
-      "revisada": false
+      "revisada": true,
+      "statusTipo": "descartada",
+      "statusRevisao": "Descartada",
+      "statusLabel": "Revisada (Descartada)",
+      "justificativa": "Não comunica SF",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF22",
@@ -797,7 +981,13 @@ const sfData = {
       "referenciasResumidas": "[3] Ram M.P. (2022) - Deserts and Oases: Geospatial Analytics of Higher Education Access | [87] Salmi J. (2018) - Social Dimension Within a Quality Oriented Higher Education System | [262] Haj C.M. (2018) - A Typology of Admission Systems Across Europe and Their Impact on the Equity of Access, Progression and Completion in Higher Education | [379] Stewart A. (2024) - Building an outreach culture for fairer access to higher education in Haryana, India: A ‘bottom up’ contribution to policy implementation",
       "implicacoes": "O crescimento futuro das IES não virá da saturação das capitais do Sudeste, mas da interiorização inteligente via polos multisserviços em cidades médias do Centro-Oeste, Norte e Nordeste, articulados com governos locais para formar mão de obra indispensável ao agronegócio e serviços essenciais.",
       "indicadores": "",
-      "revisada": false
+      "revisada": true,
+      "statusTipo": "mesclada",
+      "statusRevisao": "Fusão (SFS02)",
+      "statusLabel": "Revisada (Mesclada: SFS02)",
+      "justificativa": "Assunto muito próximo",
+      "fusaoId": "SFS02",
+      "incorporadas": []
     },
     {
       "id": "SF23",
@@ -825,7 +1015,13 @@ const sfData = {
       "referenciasResumidas": "[38] Kwon C.-K. (2025) - Transforming Institutions of Higher Education Into Equity-Centered Learning Organizations to Promote the Whole Selves of Disabled Students | [69] Kunnath S.K. (2019) - Higher Education for Students with Disabilities in India: Insights from a Focus Group Study | [153] Smith M.S. (2020) - Combating the Exclusion and Marginalisation of Persons with Intellectual Disabilities in Higher Education in the United States | [234] Mir A.A. (2022) - Experiences of Students with Disabilities in Indian Higher Education: An Interpretative Phenomenological Study | [250] Camacho-Zuniga C. (2023) - Higher Education for Students with Disabilities. An Overview Through the Lens of Text Min | ... (+1 artigos)",
       "implicacoes": "O cumprimento da Lei Brasileira de Inclusão e das diretrizes do MEC passará da adaptação reativa para a adoção de plataformas digitais com recursos nativos de acessibilidade por IA (audiodescrição em tempo real, interfaces adaptadas para neurodivergentes e legendagem preditiva), evitando multas e atraindo novas matrículas.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF24",
@@ -854,7 +1050,13 @@ const sfData = {
       "referenciasResumidas": "[106] WANGUI K. (2020) - Building Ethical Relationships through the Borderless Higher Education for Refugees Project in Dadaab, Kenya | [136] Berg J. (2018) - A New Aspect of Internationalisation? Specific Challenges and Support Structures for Refugees on Their Way to German Higher Education | [159] Harvey A. (2019) - Beyond cultural capital: Understanding the strengths of new migrants within higher education | [265] Crul M. (2020) - Access to Higher Education and Retention of Students with a Migrant Background in the Netherlands A Comparative Analysis | [310] Donger E. (2020) - Colombian Distress Migrants in Ecuador Limits to Higher Education | ... (+2 artigos)",
       "implicacoes": "Com o aumento de refugiados ambientais e crises migratórias na América Latina (ex.: Venezuela, Haiti, desastres climáticos internos no Brasil), IES que desenvolverem protocolos rápidos de revalidação de saberes e acolhimento multilíngue exercerão liderança cívica e captarão fundos internacionais de cooperação.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF25",
@@ -887,7 +1089,13 @@ const sfData = {
       "referenciasResumidas": "[1] Villegas P.E. (2020) - ‘Now I Constantly Challenge Society by Bringing My Existence Forward’: Creating Counter-Spaces/Stories with Sanctuary Students Transitioning to Higher Education in Toronto | [5] Garland J.L. (2020) - Exploring Place: Indigenous Students in US Higher Education | [60] Ljosland R. (2022) - Scots and Nynorsk: A Comparison of Two Language Movements' Struggle for Recognition in Higher Education | [61] Aiston S.J. (2017) - ''Absent data, absent women'': Gender and higher education leadership | [130] Link R. (2023) - The voice of women in higher education: Current perspectives of students in Germany, Japan and Taiwan. A contrastive analysis of western and eastern perceptions of women empowerment and gender roles among students | ... (+6 artigos)",
       "implicacoes": "A atratividade de marcas educacionais para as novas gerações (Gen Z e Alfa) dependerá de métricas auditáveis de diversidade real: paridade de gênero na docência superior, liderança feminina em cursos tecnológicos e programas de bolsas afirmativas com mentoria de empregabilidade.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF26",
@@ -915,7 +1123,13 @@ const sfData = {
       "referenciasResumidas": "[15] Kushnir I. (2025) - Italyʼs Membership in the European Higher Education Area: Coordinating Cooperation in Higher Education While Attempting to Stay Apolitical | [16] Toderas N. (2018) - The Impact of the Bologna Process on the Governance of Higher Education Systems in Eastern Partnership Countries | [149] Erdogan A. (2015) - Current and Future Prospects for the Bologna Process in the Turkish Higher Education System | [238] Kushnir I. (2025) - Franceʼs Membership in the European Higher Education Area: (Still) ‘Moderatingʼ the Leading of Europe | [302] Teichler U. (2015) - Higher Education Research in Europe | ... (+1 artigos)",
       "implicacoes": "Induzirá a reforma das Diretrizes Curriculares Nacionais (DCNs) no Brasil em direção ao sistema de créditos flexíveis e acumuláveis compatíveis com Mercosul e Europa, permitindo às IES privadas acelerar a internacionalização de currículos e dupla titulação.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF27",
@@ -942,7 +1156,13 @@ const sfData = {
       "referenciasResumidas": "[64] Hoang T.M. (2026) - University Rankings and Their Impact on Higher Education Governance and Autonomy | [284] Kováts G. (2015) - “New” Rankings on the Scene: The U21 Ranking of National Higher Education Systems and U-Multirank | [308] Paul L. (2025) - The 4IR Paradox: Navigating Autonomy and Regulation in Higher Education | [329] Ratanawijitrasin S. (2015) - The Evolving Landscape of South-East Asian Higher Education and the Challenges of Governance | [362] Morris H. (2018) - Transparency Tools in Wales: Bringing Higher Education Performances into Focus?",
       "implicacoes": "As IES privadas precisarão resistir à tentação de queimar capital tentando competir em rankings globais de pesquisa básica acadêmica pura, focando sua diferenciação estratégica em indicadores de empregabilidade, relevância regional, sustentabilidade ESG e satisfação discente.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF28",
@@ -974,7 +1194,13 @@ const sfData = {
       "referenciasResumidas": "[10] Badran A. (2018) - Landscape of higher education in the Arab world: Quality, relevance, and student mobility | [39] Hsieh C.-C. (2016) - A way of policy bricolage or translation: The case of Taiwan's higher education reform of quality assurance | [72] Weingarten H.P. (2018) - Performance of the Ontario (Canada) Higher-education System: Measuring Only What Matters | [104] Chakrapati K. (2021) - Performance of Higher Education in India | [115] Dunne G. (2025) - Reimagining higher education: The impact of learner outcome metrics in Ireland and beyond | ... (+5 artigos)",
       "implicacoes": "No Brasil, a reforma do SINAES/ENADE e a regulação do EAD cobrarão cada vez mais indicadores objetivos de valor agregado de aprendizagem e inserção profissional formal (via dados RAIS/CAGED), penalizando IES que sobrevivem apenas de cumprimento formal de papelada burocrática.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF29",
@@ -1004,7 +1230,13 @@ const sfData = {
       "referenciasResumidas": "[2] Harmsen R. (2015) - Future Scenarios for the European Higher Education Area: Exploring the Possibilities of “Experimentalist Governance” | [67] Dung D.A. (2026) - Reimagining Quality: Artificial Intelligence, Governance and the Politics of Data in Higher Education | [113] Nguyen H.L. (2026) - National policy analysis of digital transformation in Vietnamese higher education: Conceptualising a three-layer model for implementation | [155] Mula-Falcón J. (2023) - Review of higher education policy during the pandemic: A Spanish perspective | [170] Gilal A.R. (2026) - Ethical AI Policies for Higher Education: A Framework for Responsible AI Integration | ... (+3 artigos)",
       "implicacoes": "Abertura de sandboxes regulatórios pelo MEC permitindo que IES credenciadas experimentem currículos 100% personalizados por IA e cursos de ciclo curto inovadores antes de homologação definitiva, criando vantagens pioneiras para instituições inovadoras.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF30",
@@ -1037,7 +1269,13 @@ const sfData = {
       "referenciasResumidas": "[40] Huang F. (2018) - What Is Transparency of Higher Education in East Asia? Case Studies of Japan and China | [45] Al-Qaimari G. (2021) - The governancemodels of higher education institutions in the united arab emirates in the twenty-first century | [57] Vukasovic M. (2018) - Multi-level, Multi-actor and Multi-issue Dimensions of Governance of the European Higher Education Area, and Beyond | [99] Bhushan S. (2023) - Power Centres in Governance of Higher Education | [181] Kováts G. (2018) - Trust and the Governance of Higher Education: The Introduction of Chancellor System in Hungarian Higher Education | ... (+6 artigos)",
       "implicacoes": "Conselhos de administração de IES privadas precisarão abrir assentos formais para lideranças estudantis e representantes comunitários, blindando a governança contra escândalos de integridade acadêmica e assegurando legitimidade social perante investidores ESG.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF31",
@@ -1065,7 +1303,13 @@ const sfData = {
       "referenciasResumidas": "[23] Santhi M. (2021) - Challenges and Prospects of Higher Education in India | [101] Le T.T. (2022) - Investigating Vietnamese undergraduate students’ willingness to pay for higher education under the cost-sharing context | [109] Chattopadhyay A. (2022) - Fireside Chat with Three Vice Chancellors from Three Continents: Re-imagining Higher Education in Emerging Economies | [129] Ahmed S. (2022) - Exploring faculty perception on the COVID-19 imposed shift in higher education of Bangladesh: A neoliberal analysis | [161] Santa R. (2018) - The Future of European Higher Education in an Age of Demographic Headwinds: The Impact of Demographic Decline on Higher Education System Structures Funding in Romania Poland Russia | ... (+2 artigos)",
       "implicacoes": "Fim da viabilidade econômica da estratégia de 'volume a qualquer custo' no Brasil. Com a estabilização e declínio da população jovem de 18 a 24 anos até 2040, as IES privadas que competirem apenas por guerra de preços entrarão em processo de consolidação forçada, falência ou aquisição hostil.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF32",
@@ -1093,7 +1337,13 @@ const sfData = {
       "referenciasResumidas": "[4] Kanaan T.H. (2018) - The political economy of higher education in Jordan: Cost-sharing revisited | [25] Matei L. (2018) - Governance and Funding of Universities in the European Higher Education Area: Times of Rupture | [72] Weingarten H.P. (2018) - Performance of the Ontario (Canada) Higher-education System: Measuring Only What Matters | [242] Kaša R. (2022) - Juggling the Costs of Higher Education Abroad: Voices of International Students from Latvia | [323] Jongbloed B. (2018) - Performance Agreements in Higher Education: A New Approach to Higher Education Funding | ... (+1 artigos)",
       "implicacoes": "Reconfiguração dos programas estatais (ex.: FIES e PROUNI) vinculando a remuneração das mantenedoras à taxa de formandos empregados em suas respectivas áreas de formação, popularizando modelos de financiamento privado de ISA geridos em parceria com fintechs.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF33",
@@ -1118,7 +1368,13 @@ const sfData = {
       "referenciasResumidas": "[8] Zameer A. (2017) - Economic hurdle for implementation of cloud computing in higher education in Sultanate of Oman | [74] Barzman M. (2021) - Exploring Digital Transformation in Higher Education and Research via Scenarios | [360] Robertson S.L. (2017) - Colonising the future: Mega-trade deals, education services and global higher education markets",
       "implicacoes": "Risco iminente de desintermediação da faculdade pelas plataformas globais (Google, Microsoft, Coursera, OpenAI). Para não se tornarem meras prestadoras de serviços terceirizados sem margem, as IES privadas brasileiras precisam construir ecossistemas de aprendizagem próprios e manter soberania sobre seus dados e conteúdos.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF34",
@@ -1142,7 +1398,13 @@ const sfData = {
       "referenciasResumidas": "[89] Wangenge-Ouma G. (2022) - Seizing the COVID-19 Conjuncture: Re-positioning Higher Education Beyond the Pandemic | [164] Bhushan S. (2019) - Quality and Excellence in Higher Education and Metamorphosis: Changing Notions in Educational Discourses in India | [271] Vallente J.P. (2026) - Neoliberal clickbait: University websites and the digital marketization of Philippine higher education",
       "implicacoes": "Migração do modelo de receita pontual de mensalidade universitária (4 anos de graduação) para assinaturas corporativas e planos de requalificação vitalícia de 20 a 30 anos (Netflix da educação profissional), ampliando a base de alunos para adultos de 30 a 60 anos.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF35",
@@ -1170,7 +1432,13 @@ const sfData = {
       "referenciasResumidas": "[71] Liu G. (2026) - SSQIE&T-F: A Comprehensive Framework for Evaluating Higher Education Systems | [209] Celik I. (2023) - Response of learning analytics to the online education challenges during pandemic: Opportunities and key examples in higher education | [251] Maia A. (2018) - Web intelligence in higher education: A study on the usage of business intelligence techniques in education | [322] Boosalis C.N. (2017) - Creating powerful dashboards and visualizations of direct and indirect SLOs measures using Google's Dataset Publishing Language (DPSL) and Google's Public Data Explorer (GPDE) to advance assessment practices in institutional research at institutions of higher education | [325] Sankaranarayana Rao G. (2021) - Can a Student Feedback Provide Correct Opinion on Teaching-Learning Process in Higher Education Institutes? | ... (+1 artigos)",
       "implicacoes": "Transforma os Centros de Inteligência e Retenção das IES privadas em centrais ativas de intervenção preditiva com IA, disparando mentorias personalizadas, socorro acadêmico imediato e renegociação financeira antes que o estudante decida trancar o curso.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF36",
@@ -1199,7 +1467,13 @@ const sfData = {
       "referenciasResumidas": "[42] Bhat A.Z. (2022) - Big Data, a Big Thing for Higher Education | [143] Zameer Bhat A. (2022) - Role of Cloud Computing in Facilitating Educational Excellence, A Case Study of Higher Education Institution in Oman | [162] Choi C.-H. (2019) - Understanding the Deployment Cost of Cloud Computing Services for the Higher Education Institutions | [171] Kumaran S.R. (2016) - Applying Theory of Constraints (TOC) in business intelligence of higher education : A case study of postgraduates by research program | [204] Kumar P. (2021) - Leveraging ICT for Excellence in Higher Education Institutions using Standards and Criteria of Accreditation and Ranking | ... (+3 artigos)",
       "implicacoes": "Unificação completa do Data Lakehouse institucional do grupo educacional, permitindo que a reitoria e diretorias executivas simulem impactos de abertura e fechamento de cursos, precificação dinâmica e otimização de turmas com acurácia preditiva em segundos.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF37",
@@ -1227,7 +1501,13 @@ const sfData = {
       "referenciasResumidas": "[120] Hoseini Moghadam M. (2020) - Scientific excellency model in Iran’s higher education case study: Guilan university of medical sciences | [154] Blankesteijn M.L. (2025) - Embracing the digital horizon: Future scenarios for the Dutch higher education system | [326] Ithnin F. (2018) - Mapping the futures of Malaysian Higher Education: A meta - analysis of futures studies in the Malaysian Higher Education scenario | [351] Ayman M. (2021) - TECHNOLOGY FORESIGHT IN HIGHER EDUCATION INSTITUTIONS | [355] Obaid A.M.H. (2026) - DTS-6D as a Policy and Leadership-Oriented Taxonomy for Digital Transformation in Higher Education Institutions | ... (+1 artigos)",
       "implicacoes": "Substituição dos tradicionais Planos de Desenvolvimento Institucional (PDIs) decenais e burocráticos por sistemas vivos de monitoramento prospectivo e comitês contínuos de cenários, garantindo capacidade de manobra frente a mudanças demográficas, regulatórias e tecnológicas.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF38",
@@ -1255,7 +1535,13 @@ const sfData = {
       "referenciasResumidas": "[49] Sharma P. (2022) - Role of Culture in Developing Transformative Leadership for Higher Education in Emerging Economies | [150] Kaur H. (2021) - Assessing Technical Efficiency of the Indian Higher Education: An Application of Data Envelopment Analysis Approach | [281] Aboramadan M. (2022) - Inclusive Leadership in Higher Education: An Approach to Encourage Management Innovation and a Climate for Creativity | [285] Kisahwan D. (2025) - E-HRM framework for sustainable performance in higher education | [317] Soto M.H. (2026) - Integration of ICT in Higher Education: Perceptions of Digitalisation and Technology at a Private University | ... (+1 artigos)",
       "implicacoes": "Coordenadores de curso e gerentes acadêmicos precisarão ser formados como mediadores culturais de alta empatia, utilizando plataformas inteligentes de RH para equilibrar carga de trabalho e prevenir burnout de professores sem criar um ambiente orwelliano de vigilância.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF39",
@@ -1279,7 +1565,13 @@ const sfData = {
       "referenciasResumidas": "[183] Oginni Y. (2022) - Reimagining the Place of Physical Buildings in Higher Education in Developing Countries in a Post-COVID- 19 Era | [249] Murray J.B. (2025) - Assessing Adaptive Capacity in an Era of Rapid Change for Higher Education Campuses",
       "implicacoes": "Otimização radical do metro quadrado construído nos campi físicos, desmobilizando imóveis alugados desnecessários e convertendo áreas ociosas em espaços de convivência comunitária, clínicas-escola abertas ao público e hubs de inovação com receita compartilhada.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF40",
@@ -1308,7 +1600,13 @@ const sfData = {
       "referenciasResumidas": "[26] Kim Khanh M.T. (2023) - Attracting international students to a developing Asian country: Push–pull factors for a niche market, the case of a Vietnamese higher education institution | [41] Ngao A.I. (2026) - Internationalization and Development of Higher Education in Sub-Saharan Africa: A Meta-ethnography | [92] Castulo N.J. (2026) - Mapping the Internationalisation of Higher Education in the Philippines Within ASEAN: Cluster(s) of Future Studies: Past and Futures; Humanity at the Limen; Internationalisation (new) | [174] Prachi D. (2026) - India and Select Asian Policies for Internationalisation of Higher Education: Cluster(s) of Future Studies: Post Normality and Complexity | [252] Likoko H.M. (2025) - A study on Tanzania foreign language education policies and its impact on the development of Chinese language in Tanzania higher education | ... (+2 artigos)",
       "implicacoes": "Oportunidade para as universidades brasileiras privadas se consolidarem como hub de destino educacional de excelência para estudantes da América do Sul e de países lusófonos africanos, desenvolvendo programas vocacionados para saúde tropical, agronegócio e sustentabilidade.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF41",
@@ -1334,7 +1632,13 @@ const sfData = {
       "referenciasResumidas": "[35] Chasi S. (2022) - Re-imagining International Higher Education Partnerships in the Aftermath of COVID-19 | [90] Hofmeyr A.S. (2022) - Incorporating Intercultural Competence into EFL Classrooms: The Case of Japanese Higher Education Institutions | [114] Woicolesco V.G. (2022) - COVID-19 and the crisis in the internationalization of higher education in emerging contexts | [376] Miller E. (2021) - Industry 4.0 and International Collaborative Online Learning in a Higher Education Course on Machine Learning",
       "implicacoes": "Inclusão obrigatória de disciplinas com módulos COIL em 100% dos cursos de graduação, permitindo que estudantes das periferias brasileiras trabalhem em equipes virtuais internacionais durante a graduação, gerando diferencial competitivo de empregabilidade.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF42",
@@ -1364,7 +1668,13 @@ const sfData = {
       "referenciasResumidas": "[53] Woldegiorgis E.T. (2018) - Policy Travel in Regionalisation of Higher Education: The Case of Bologna Process in Africa | [82] Perez-Encinas A. (2018) - A Collaborative Approach in the Internationalisation Cycle of Higher Education Institutions | [100] Crăciun D. (2018) - National Policies for Higher Education Internationalization: A Global Comparative Perspective | [167] Kushnir I. (2025) - European Cooperation in Higher Education and the Evolving Mission of the European Project (in the Early 2020s) | [184] Kushnir I. (2025) - Germanyʼs Membership in the European Higher Education Area: Leading Europe | ... (+3 artigos)",
       "implicacoes": "Liderança ativa de grupos privados brasileiros na consolidação do Espaço Latino-Americano de Educação Superior (ENLACES/Mercosul Educacional), viabilizando diplomas automáticos e mobilidade facilitada de profissionais na região.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF43",
@@ -1388,7 +1698,13 @@ const sfData = {
       "referenciasResumidas": "[135] Saarinen T. (2022) - What about Swedish?: Internationalisation, Societal Responsibility and National Languages in Finnish Higher Education | [282] Schiltmans J. (2024) - Dutch first in Dutch higher education policy",
       "implicacoes": "Alerta estratégico para as IES brasileiras evitarem a simples cópia submissa de currículos anglófones, promovendo bilinguismo aditivo e valorizando o português e as identidades latino-americanas como potências culturais no cenário global.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF44",
@@ -1420,7 +1736,13 @@ const sfData = {
       "referenciasResumidas": "[43] Taskoh A.K. (2020) - Internationalization in Canadian Higher Education Institutions: Ontario | [56] Belousova T. (2019) - Internationalization of Higher Education in Kerala: A Performance Audit | [68] Heringer R. (2020) - From Enrolment Rates to Collaborative Knowledge Production: A Critique to the Internationalization of Higher Education in Canada | [96] Guri-Rosenblit S. (2015) - Internationalization of Higher Education: Navigating Between Contrasting Trends | [131] Yang X. (2024) - A study of cultural distance, eWOM and perceived risk in shaping higher education students' destination image and future travel plan | ... (+5 artigos)",
       "implicacoes": "A reputação institucional das faculdades privadas dependerá de sua comunidade de alunos e egressos atuando como defensores espontâneos em fóruns globais, exigindo entrega real de valor, suporte ao estudante e empregabilidade, em detrimento de gastos inflacionados com marketing tradicional.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF45",
@@ -1449,7 +1771,13 @@ const sfData = {
       "referenciasResumidas": "[20] Porzionato M. (2015) - Excellence and Diversification of Higher Education Institutions’ Missions | [75] Gupta M.K. (2026) - The Role of Higher Education Institutions in Promoting Sustainable Development in Pharmaceutical Research | [80] Chandel R. (2024) - Principles and Approach Towards Sustainability in Higher Education Institutions | [124] Guilherme P. (2023) - Governance for Sustainability in Higher Education Institutions: A Systematic Review Aiming at the Implementation of the Green Campus | [160] Foo Ng T. (2023) - Implementing Sustainability Strategies, Programs, and Practices for the Communities in Higher Education Institutions: Case Study in USM, Malaysia | ... (+2 artigos)",
       "implicacoes": "Empresas de capital aberto do setor educacional (como a CSED) com relatórios ESG transparentes e auditados terão menor custo de capital em emissões de debêntures e atração de fundos internacionais dedicados à transição ecológica justa.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF46",
@@ -1473,7 +1801,13 @@ const sfData = {
       "referenciasResumidas": "[256] Mac-Lean C. (2023) - The Key Role of Alliances and Multi-stakeholder Collaboration for Climate Action Implementation Within Higher Education Institutions: A Chilean Experience | [345] Moldovan R.-P. (2025) - From assessment to action: A strategic approach to carbon management for climate neutrality in higher education",
       "implicacoes": "Modelos semipresenciais e híbridos inteligentes serão reconhecidos como soluções ambientais diretas de redução de emissões urbanas, articulando planos de transporte compartilhado e infraestrutura cicloviária ao redor dos campi.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF47",
@@ -1497,7 +1831,13 @@ const sfData = {
       "referenciasResumidas": "[95] Ghantasala G.S.P. (2025) - Global Disparities in Green Computing Policy Adoption in Higher Education: A Six-Region Survey | [307] Gibbons S. (2025) - Investigating awareness and behavioural intentions from AI water footprint digital posters in higher education settings",
       "implicacoes": "Exigirá cláusulas de sustentabilidade na contratação de nuvem e serviços de IA (exigindo data centers movidos a energia renovável e baixo uso hídrico) e desenvolvimento de programas institucionais de sobriedade e ética digital.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF48",
@@ -1523,7 +1863,13 @@ const sfData = {
       "referenciasResumidas": "[29] Moraes S.E. (2025) - The Earth Charter and the Development of a Planetary Consciousness in Brazilian Higher Education Institutions | [59] Velez-Colby F. (2025) - Addressing the Era of Sustainability in Fashion Marketing Higher Education: A Radical Proposal for Change | [231] Njihia M. (2025) - Integrating ESD and GCED in Higher Education Curriculum: Perspectives from Kenyatta University, Kenya | [246] Rieckmann M. (2012) - Future-oriented higher education: Which key competencies should be fostered through university teaching and learning? | [318] Nunez M.E. (2023) - Students' Satisfaction and Recommendation of Sostek Application based on Sustainable Development Learning in Higher Education",
       "implicacoes": "Formação obrigatória de todos os profissionais (de administradores e médicos a engenheiros e advogados) em justiça climática e regeneração ambiental, alinhando a Cruzeiro do Sul às demandas corporativas de descarbonização do mercado.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF49",
@@ -1548,7 +1894,13 @@ const sfData = {
       "referenciasResumidas": "[70] Bakry S.H. (2018) - Innovation in Higher Education: Towards Enhancing Sustainable Development | [193] Matura A. (2026) - Driving environmental stewardship: Exploring the impact of green HRM on voluntary green behaviors in higher education institutions | [296] Faitani N.G. (2023) - The Contribution of the Circular Economy to the Fulfillment of the 2030 Agenda in Higher Education Institutions",
       "implicacoes": "Economia expressiva de OPEX por meio de eficiência energética, lixo zero em cantinas e instalações prediais, e consolidação de uma cultura interna de sustentabilidade corporativa que engaja funcionários e estudantes.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF50",
@@ -1572,7 +1924,13 @@ const sfData = {
       "referenciasResumidas": "[33] Pleschová G. (2026) - Student belonging and well-being in higher education: Insights from five European universities | [179] Guilherme A.A. (2023) - The development and initial validation of an instrument measuring levels of violence suffered and practiced by students in higher education | [226] Chopra V. (2020) - Higher Education in Exile: Developing a Sense of Self, Belonging and Purpose for Newcomer Youth",
       "implicacoes": "O maior desafio dos conglomerados educacionais no EAD e híbrido é evitar a sensação de desamparo e invisibilidade do aluno. Estratégias de tutoria humanizada, comunidades de prática e encontros experienciais presenciais regulares serão a principal blindagem contra a evasão.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF51",
@@ -1597,7 +1955,13 @@ const sfData = {
       "referenciasResumidas": "[44] Sirohi V. (2026) - Student Satisfaction and Wellbeing in Higher Education: A Study of Undergraduate Students in India | [108] Wulz J. (2018) - The Role of Student Counselling for Widening Participation of Underrepresented Groups in Higher Education | [200] Shafaei A. (2016) - Internationalisation of higher education: Conceptualising the antecedents and outcomes of cross-cultural adaptation | [218] Rodríguez-Llorente C. (2023) - Academic Motivation and Previous Academic Achievement in Higher Education",
       "implicacoes": "Criação de Centrais de Experiência do Estudante com atendimento one-stop-shop digital sem fricção, inteligência preditiva para resolver pendências financeiras e atendimento psicológico multicanal preventivo.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF52",
@@ -1621,7 +1985,13 @@ const sfData = {
       "referenciasResumidas": "[83] Groß M. (2026) - The webcam strikes a balance: The light and dark sides of webcam use in higher education policies | [177] Elif Kutlugun H. (2026) - The Ambivalent Gaze: Student Perspectives on Surveillance in Higher Education | [294] Novara C. (2022) - Distance Learning during the COVID-19 Pandemic: Resources, Obstacles, and Emotional Implications for Italian Students in Higher Education",
       "implicacoes": "Estabelecimento de diretrizes claras de etiqueta digital e respeito à privacidade estudantil nas plataformas virtuais, superando exigências coercitivas de câmera aberta e sistemas biométricos desumanizadores.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF53",
@@ -1648,7 +2018,13 @@ const sfData = {
       "referenciasResumidas": "[30] Garcia G.M.R. (2023) - Improving Learning Experiences of Business Students in the Classroom Through Emotions in Higher Education | [126] Sarauw L.L. (2024) - The psychological turn in higher education and the new taxonomy of attitudes and emotions: Denmark as a case study | [210] Aktan D. (2023) - Re-designing Higher Education for Mindfulness: Conceptualization and Communication | [292] Zembylas M. (2025) - Theorizing ‘the future’ in higher education: A framework for studying affective futurity | [333] Mahomed F. (2020) - ‘Invisible’ Disabilities in South Africa’s Higher Education Sector: An Analysis of the Inclusion of Persons with Psychosocial and Intellectual Disabilities | ... (+1 artigos)",
       "implicacoes": "Programas institucionais de mentoria socioemocional e pedagogias da esperança que ajudem o estudante a gerenciar a ansiedade de futuro gerada pelo impacto da IA no emprego e pelas crises climáticas.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF54",
@@ -1675,7 +2051,13 @@ const sfData = {
       "referenciasResumidas": "[17] Monteiro F. (2019) - Ethical education as a pillar of the future role of higher education: Analysing its presence in the curricula of engineering courses | [32] Pausits A. (2015) - The Knowledge Society and Diversification of Higher Education: From the Social Contract to the Mission of Universities | [269] Király G. (2021) - Having Nothing but Questions? The Social Discourse on Higher Education Institutions’ Legitimation Crisis | [328] Bertolin J.C.G. (2016) - Ideologies and perceptions of quality in higher education: From the dichotomy between social and economic aspects to the 'middle way' | [370] Sabouri A. (2026) - Unmasking the mirage: A critical examination of Iranian higher education policies on the educated person through Wilkinson’s Islamic critical realism",
       "implicacoes": "Permite a grupos privados como a Cruzeiro do Sul se posicionarem como IES de interesse público e impacto social comprovado, superando o estigma de 'empresa de venda de diplomas' e construindo reputação institucional sólida e duradoura.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF55",
@@ -1699,7 +2081,13 @@ const sfData = {
       "referenciasResumidas": "[93] Guessoum N. (2018) - Science and religion issues in higher education | [254] Gallagher T. (2018) - Promoting the Civic and Democratic Role of Higher Education: The Next Challenge for the EHEA? | [290] Rajaram P.K. (2020) - Providing Access to Higher Education for Refugees in Europe: An Opportunity to Rethink the University and Its Role in the Public Sphere",
       "implicacoes": "Criação de observatórios regionais de combate à desinformação e agências de checagem coordenadas por cursos de jornalismo, direito e tecnologia da informação, prestando serviços cívicos vitais para as comunidades locais.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF56",
@@ -1724,7 +2112,13 @@ const sfData = {
       "referenciasResumidas": "[125] Land M. (2026) - Transformative Education and the Earth Charter: Enabling Sustainable Development Through Transformative Learning in Higher Education | [169] Gayá P. (2017) - Carpe the academy: Dismantling higher education and prefiguring critical utopias through action research | [201] Murphy J.C. (2025) - WORLDMAKING AND LEADING FROM THE MIDDLE: Collaborative Leadership in Higher Education | [336] Andersson Å. (2025) - Youth work pedagogy in higher education and the importance of not-knowing",
       "implicacoes": "Laboratórios de Inovação Social e Cívica integrando extensão universitária obrigatória (10% da carga horária no Brasil) à solução participativa de dilemas urbanos reais com prefeituras e comunidades periféricas.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF57",
@@ -1748,7 +2142,13 @@ const sfData = {
       "referenciasResumidas": "[62] ResCue E. (2023) - The policy relevance of indigenous languages for higher education in Africa: A Ghanaian perspective | [230] Longkumer I.W. (2025) - Decolonizing Higher Education Curricula: Perspectives from Teaching Indigenous Literature | [268] Gamliel O. (2026) - Decolonial Pedagogies and South Asian Studies: Knowledge Production, Erasure and Recovery in Higher Education",
       "implicacoes": "Abertura de licenciaturas e cursos de extensão interculturais para comunidades indígenas, quilombolas e populações tradicionais, enriquecendo o patrimônio epistemológico da instituição.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF58",
@@ -1771,7 +2171,13 @@ const sfData = {
       "referenciasResumidas": "[132] Husain M.M. (2022) - COVID-19 and crises of higher education: Responses and intensifying inequalities in the Global South | [227] Cole R.M. (2020) - Higher education after neoliberalism: Student activism as a guiding light",
       "implicacoes": "Exige que a gestão universitária estabeleça canais institucionais autênticos de diálogo e cocriação com coletivos e representações estudantis, evitando conflitos destrutivos e canalizando o engajamento juvenil em prol de causas institucionais.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF59",
@@ -1798,7 +2204,13 @@ const sfData = {
       "referenciasResumidas": "[18] Blass E. (2014) - Innovation in higher education; will there be a role for “the academe/university” in 2025? | [208] Chakrabarty A. (2023) - Strategic Reforms in the Higher Education Research Ecosystem in India | [220] Sharma D.K. (2022) - A Study of Role and Importance of Academic Collaborations/Memorandum of Understanding in Higher Education Institutions | [274] Cervantes M. (2017) - Higher education institutions in the knowledge triangle | [315] Xu X. (2026) - The Marginal Benefits of R&D Investment in Chinese Higher Education and Implications for Resource Allocation",
       "implicacoes": "Articulação de consórcios de inovação aberta liderados pela Cruzeiro do Sul com polos industriais e de agrotecnologia no interior de SP, Paraná, Centro-Oeste e Nordeste, atraindo recursos da Embrapii, Finep e fundos setoriais privados.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF60",
@@ -1823,7 +2235,13 @@ const sfData = {
       "referenciasResumidas": "[102] Devi L.B. (2019) - Policies and Programmes of Higher Education in Manipur Since the 1990s | [215] McTaggart B. (2024) - Fifty years on – limitations and opportunities within Ireland`s higher education system and structures | [259] Reyes A. (2018) - Connecting higher education and innovation to local development",
       "implicacoes": "Campi de cidades do interior (ex.: Franca, Bauru, Novo Hamburgo) convertendo-se em ecossistemas de desenvolvimento local, com hospitais veterinários, clínicas de saúde integrada e escritórios de apoio a empresas regionais.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF61",
@@ -1847,7 +2265,13 @@ const sfData = {
       "referenciasResumidas": "[50] Shivany S. (2021) - Linkages with Micro Small Medium Enterprises (MSMEs) for Sustainable Higher Education in Management | [76] Kanojia M. (2021) - Leveraging Technology Transfer Commercialization from Higher Education Institutions: A Case Study of an Indian University | [146] Basit A. (2024) - Knowledge entrepreneurship in higher education institutions: a perspective of knowledge sharing and entrepreneurial leadership in Pakistani HEIs",
       "implicacoes": "Criação de aceleradoras universitárias corporativas onde projetos de conclusão de curso dos alunos viram startups reais com investimento-anjo e suporte de mentores de empresas parceiras.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     },
     {
       "id": "SF62",
@@ -1871,7 +2295,13 @@ const sfData = {
       "referenciasResumidas": "[354] Toarniczky A. (2019) - Responsive higher education through transformational practices – The case of a Hungarian business school | [371] Arthur-Holmes F. (2023) - Youth in artisanal and small-scale mining (ASM) and higher education nexus: Diffusion of innovations and knowledge transfer",
       "implicacoes": "Cumprimento estratégico e de alto impacto da curricularização da extensão no Brasil, convertendo atividades comunitárias em vitrines públicas de impacto socioambiental que reforçam o valor da marca institucional perante as comunidades locais.",
       "indicadores": "",
-      "revisada": false
+      "revisada": false,
+      "statusTipo": "pendente",
+      "statusRevisao": "Em revisão",
+      "statusLabel": "Em revisão",
+      "justificativa": "",
+      "fusaoId": "",
+      "incorporadas": []
     }
   ],
   "artigos": [
@@ -1923,7 +2353,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF22"
+        "SF22",
+        "SFS02"
       ]
     },
     {
@@ -3194,7 +3625,8 @@ const sfData = {
       "indexKeywords": "Education computing; Open access; Admission system; Bologna process; Equity; European Countries; High educations; Higher education system; Quality of teaching; Refugee education; Social dimensions; Teaching and researches; Students",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF22"
+        "SF22",
+        "SFS02"
       ]
     },
     {
@@ -5710,7 +6142,8 @@ const sfData = {
       "indexKeywords": "Education computing; Information systems; Open access; Admission; Autonomy; Equity; High educations; Higher education institutions; Higher education system; Impact; Keypoints; Streaming; Transition point; Students",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF22"
+        "SF22",
+        "SFS02"
       ]
     },
     {
@@ -7371,7 +7804,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF22"
+        "SF22",
+        "SFS02"
       ]
     },
     {

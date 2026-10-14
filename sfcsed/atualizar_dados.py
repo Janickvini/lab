@@ -147,9 +147,48 @@ for row in sf_rows[1:]:
     raw_pestel = str(get_field(item, ["PESTEL", "Dimensões PESTEL", "Dimensoes PESTEL", "Dimensões"], ""))
     pestel_list = [dim.strip() for dim in raw_pestel.replace(";", ",").split(",") if dim.strip()]
 
-    # Tratar campo revisada
-    raw_revisada = get_field(item, ["Revisada", "Status Revisão", "Revisado"], 0)
-    is_revisada = (raw_revisada == 1 or str(raw_revisada).strip().lower() in ["1", "sim", "true", "s"])
+    # Tratar campo revisada / status
+    import re
+    raw_revisada = get_field(item, ["Revisada", "Status Revisão", "Revisado", "Status"], 0)
+    raw_revisada_str = str(raw_revisada).strip()
+    status_lower = raw_revisada_str.lower()
+
+    # Tratar campo justificativa
+    raw_justificativa = str(get_field(item, ["Justificativa", "Justificativa Metodológica", "Motivo"], "")).strip()
+    justificativa_val = "" if raw_justificativa.upper() in ["N/A", "NAN", "NONE", ""] else raw_justificativa
+
+    status_tipo = "pendente"
+    fusao_id = ""
+    is_revisada = False
+
+    if status_lower in ["ok", "1", "sim", "true", "s", "revisada", "revisado", "aprovada", "aprovado"] or "ok" in status_lower:
+        status_tipo = "ok"
+        is_revisada = True
+    elif "mescl" in status_lower or "fus" in status_lower or "fundid" in status_lower:
+        status_tipo = "mesclada"
+        is_revisada = True
+        m = re.search(r"\((.*?)\)", raw_revisada_str)
+        if m:
+            fusao_id = m.group(1).strip()
+        else:
+            m2 = re.search(r"(SF[A-Z0-9]+)", raw_revisada_str, re.IGNORECASE)
+            if m2:
+                fusao_id = m2.group(1).strip()
+    elif "descart" in status_lower:
+        status_tipo = "descartada"
+        is_revisada = True
+    else:
+        status_tipo = "pendente"
+        is_revisada = False
+
+    if status_tipo == "ok":
+        status_label = "Revisada (OK)"
+    elif status_tipo == "mesclada":
+        status_label = f"Revisada (Mesclada: {fusao_id})" if fusao_id else "Revisada (Mesclada)"
+    elif status_tipo == "descartada":
+        status_label = "Revisada (Descartada)"
+    else:
+        status_label = "Em revisão"
 
     # Tratar campo indicadores
     raw_indicadores = str(get_field(item, ["Indicadores", "Indicadores Prospectivos"], "")).strip()
@@ -177,9 +216,23 @@ for row in sf_rows[1:]:
         "referenciasResumidas": get_field(item, ["Referências", "Referências Bibliográficas Resumidas (Autores, Ano, Título)", "Referencias"], ""),
         "implicacoes": get_field(item, ["Implicações", "Conexão / Implicações Estratégicas para o Ensino Superior Privado até 2040", "Implicacoes"], ""),
         "indicadores": indicadores_val,
-        "revisada": is_revisada
+        "revisada": is_revisada,
+        "statusTipo": status_tipo,
+        "statusRevisao": raw_revisada_str if raw_revisada_str not in ["0", "None", ""] else "Em revisão",
+        "statusLabel": status_label,
+        "justificativa": justificativa_val,
+        "fusaoId": fusao_id,
+        "incorporadas": []
     }
     sementes_list.append(sf_obj)
+
+# Mapeamento reverso de incorporações (ex: SFS02 incorpora SF22)
+sf_map = {s["id"]: s for s in sementes_list}
+for s in sementes_list:
+    if s["fusaoId"] and s["fusaoId"] in sf_map:
+        target = sf_map[s["fusaoId"]]
+        if s["id"] not in target["incorporadas"]:
+            target["incorporadas"].append(s["id"])
 
 # Ordenar SFs numericamente (ex: SF01, SF02... SF62)
 def sf_sort_key(sf):
@@ -197,6 +250,10 @@ data_payload = {
         "totalArticles": len(articles_list),
         "totalArticlesCited": len([a for a in articles_list if len(a["associatedSFs"]) > 0]),
         "totalRevisadas": len([sf for sf in sementes_list if sf["revisada"]]),
+        "totalAprovadas": len([sf for sf in sementes_list if sf["statusTipo"] == "ok"]),
+        "totalMescladas": len([sf for sf in sementes_list if sf["statusTipo"] == "mesclada"]),
+        "totalDescartadas": len([sf for sf in sementes_list if sf["statusTipo"] == "descartada"]),
+        "totalPendentes": len([sf for sf in sementes_list if sf["statusTipo"] == "pendente"]),
         "generatedAt": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     },
     "sementes": sementes_list,

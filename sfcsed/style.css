@@ -1561,6 +1561,228 @@ a:hover {
   color: #0284c7;
 }
 
+/* ==========================================================================
+   STATUS BANNERS & BADGES (Fundida, Descartada, Incorporadora)
+   ========================================================================== */
+
+/* Banners no topo do Dossiê */
+.dossier-status-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: var(--radius-xs);
+  margin-bottom: 12px;
+  border-left: 4px solid transparent;
+  font-size: 0.84rem;
+}
+
+.status-banner-icon {
+  font-size: 1.15rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.status-banner-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.status-banner-title {
+  font-weight: 700;
+  font-size: 0.86rem;
+  letter-spacing: -0.01em;
+}
+
+.status-banner-justificativa {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background-color: var(--bg-surface);
+  border: 1px dashed var(--border-medium);
+  border-radius: var(--radius-xs);
+  padding: 8px 12px;
+  margin: 6px 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.status-banner-justificativa i {
+  margin-top: 3px;
+  font-size: 0.82rem;
+  opacity: 0.85;
+}
+
+.status-banner-text {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.banner-sf-link {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.banner-sf-link:hover {
+  color: var(--accent-primary);
+}
+
+.btn-banner-jump {
+  align-self: center;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  color: var(--text-primary);
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.btn-banner-jump:hover {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  border-color: var(--accent-primary);
+}
+
+/* Variante: Fundida */
+.banner-fundida {
+  background-color: rgba(147, 51, 234, 0.08);
+  border-left-color: #9333ea;
+}
+.banner-fundida .status-banner-icon {
+  color: #a855f7;
+}
+.banner-fundida .status-banner-title {
+  color: #a855f7;
+}
+[data-theme="light"] .banner-fundida {
+  background-color: #faf5ff;
+  border-left-color: #9333ea;
+}
+[data-theme="light"] .banner-fundida .status-banner-title {
+  color: #7e22ce;
+}
+
+/* Variante: Descartada */
+.banner-descartada {
+  background-color: rgba(239, 68, 68, 0.08);
+  border-left-color: #ef4444;
+}
+.banner-descartada .status-banner-icon {
+  color: #ef4444;
+}
+.banner-descartada .status-banner-title {
+  color: #ef4444;
+}
+[data-theme="light"] .banner-descartada {
+  background-color: #fef2f2;
+  border-left-color: #dc2626;
+}
+[data-theme="light"] .banner-descartada .status-banner-title {
+  color: #b91c1c;
+}
+
+/* Variante: Incorporadora / Síntese */
+.banner-incorporadora {
+  background-color: rgba(14, 165, 233, 0.08);
+  border-left-color: #0ea5e9;
+}
+.banner-incorporadora .status-banner-icon {
+  color: #38bdf8;
+}
+.banner-incorporadora .status-banner-title {
+  color: #38bdf8;
+}
+[data-theme="light"] .banner-incorporadora {
+  background-color: #f0f9ff;
+  border-left-color: #0284c7;
+}
+[data-theme="light"] .banner-incorporadora .status-banner-title {
+  color: #0369a1;
+}
+
+/* Badges de Status na Barra Superior do Dossiê */
+.badge-status-dossier {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.74rem;
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  font-weight: 600;
+}
+.badge-dossier-fundida {
+  background-color: rgba(147, 51, 234, 0.15);
+  color: #c084fc;
+  border: 1px solid rgba(192, 132, 252, 0.3);
+}
+[data-theme="light"] .badge-dossier-fundida {
+  background-color: #f3e8ff;
+  color: #7e22ce;
+  border-color: #d8b4fe;
+}
+.badge-dossier-descartada {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+[data-theme="light"] .badge-dossier-descartada {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border-color: #fca5a5;
+}
+
+/* Badges de Status no Card da Lista (Inbox) */
+.badge-status-subtle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.70rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+}
+.badge-status-fundida {
+  background-color: rgba(147, 51, 234, 0.12);
+  color: #c084fc;
+}
+[data-theme="light"] .badge-status-fundida {
+  background-color: #f3e8ff;
+  color: #7e22ce;
+}
+.badge-status-descartada {
+  background-color: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+}
+[data-theme="light"] .badge-status-descartada {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Opacidade no card da lista para descartadas/fundidas */
+.inbox-item.item-descartada {
+  opacity: 0.72;
+}
+.inbox-item.item-descartada:hover {
+  opacity: 1;
+}
+.inbox-item.item-fundida {
+  border-left-color: #a855f7;
+}
+
 /* Articles Evidence List */
 .dossier-articles-list {
   display: flex;
