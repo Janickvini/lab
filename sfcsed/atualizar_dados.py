@@ -27,12 +27,27 @@ except Exception as e:
     print(f"Erro ao abrir arquivo Excel: {e}")
     sys.exit(1)
 
-# Validação das abas obrigatórias
-required_sheets = ["SF (Scopus)", "Scopus 3 (Limpo)"]
-for sheet_name in required_sheets:
-    if sheet_name not in wb.sheetnames:
-        print(f"Erro: Aba obrigatória '{sheet_name}' não encontrada na planilha. Abas disponíveis: {wb.sheetnames}")
-        sys.exit(1)
+# Validação e localização dinâmica das abas
+def find_sheet(wb, candidates):
+    sheetnames_lower = {s.lower(): s for s in wb.sheetnames}
+    for cand in candidates:
+        if cand.lower() in sheetnames_lower:
+            return wb[sheetnames_lower[cand.lower()]]
+    return None
+
+ws_sf = find_sheet(wb, ["Sementes", "SF (Scopus)", "SF"])
+ws_scopus = find_sheet(wb, ["Referências", "Referencias", "Scopus 3 (Limpo)", "Scopus 3", "Scopus"])
+
+if ws_sf is None:
+    print(f"Erro: Aba de Sementes ('Sementes' ou 'SF (Scopus)') não encontrada na planilha. Abas disponíveis: {wb.sheetnames}")
+    sys.exit(1)
+
+if ws_scopus is None:
+    print(f"Erro: Aba de Referências ('Referências' ou 'Scopus 3 (Limpo)') não encontrada na planilha. Abas disponíveis: {wb.sheetnames}")
+    sys.exit(1)
+
+print(f"Aba de Sementes localizada: '{ws_sf.title}'")
+print(f"Aba de Referências localizada: '{ws_scopus.title}'")
 
 def clean_value(val):
     if val is None:
@@ -42,8 +57,18 @@ def clean_value(val):
     s = str(val).strip()
     return s
 
-# 1. Processar Artigos Scopus (Scopus 3 (Limpo))
-ws_scopus = wb["Scopus 3 (Limpo)"]
+def get_field(item, candidates, default=""):
+    for cand in candidates:
+        if cand in item and item[cand] is not None and str(item[cand]).strip() != "":
+            return item[cand]
+    item_lower = {k.strip().lower(): v for k, v in item.items() if k is not None}
+    for cand in candidates:
+        k_low = cand.strip().lower()
+        if k_low in item_lower and item_lower[k_low] is not None and str(item_lower[k_low]).strip() != "":
+            return item_lower[k_low]
+    return default
+
+# 1. Processar Artigos / Referências
 scopus_rows = list(ws_scopus.iter_rows(values_only=True))
 sc_headers = [str(h).strip() if h is not None else f"col_{i}" for i, h in enumerate(scopus_rows[0])]
 
@@ -58,37 +83,37 @@ for row in scopus_rows[1:]:
         if idx < len(sc_headers):
             item[sc_headers[idx]] = clean_value(val)
     
-    art_id = item.get("ID")
+    art_id = get_field(item, ["ID", "ID Scopus"])
     if art_id != "" and art_id is not None:
         try:
             art_id_int = int(art_id)
         except:
             art_id_int = art_id
         
-        doi_link = item.get("DOILINK", "")
-        doi_val = item.get("DOI", "")
+        doi_val = get_field(item, ["DOI", "Doi"], "")
+        doi_link = get_field(item, ["DOILINK", "DOI Link", "Link"], "")
         if not doi_link and doi_val:
             doi_link = f"https://doi.org/{doi_val}" if not str(doi_val).startswith("http") else str(doi_val)
             
         clean_art = {
             "id": art_id_int,
-            "authors": item.get("Authors", "Autores não informados"),
-            "title": item.get("Title", "Título não informado"),
-            "year": item.get("Year", ""),
-            "sourceTitle": item.get("Source title", ""),
+            "fonte": get_field(item, ["Fonte", "Origem"], ""),
+            "authors": get_field(item, ["Authors", "Autores"], "Autores não informados"),
+            "title": get_field(item, ["Title", "Título", "Titulo", "Título do Artigo"], "Título não informado"),
+            "year": get_field(item, ["Year", "Ano"], ""),
+            "sourceTitle": get_field(item, ["Source title", "Periódico / Fonte", "Periodico / Fonte", "Source"], ""),
             "doi": doi_val,
             "doiLink": doi_link,
-            "abstract": item.get("Abstract", ""),
-            "authorKeywords": item.get("Author Keywords", ""),
-            "indexKeywords": item.get("Index Keywords", ""),
-            "documentType": item.get("Document Type", ""),
+            "abstract": get_field(item, ["Abstract", "Resumo", "Resumo (Abstract)"], ""),
+            "authorKeywords": get_field(item, ["Author Keywords", "Palavras-chave do Autor", "Keywords"], ""),
+            "indexKeywords": get_field(item, ["Index Keywords", "Palavras-chave Indexadas"], ""),
+            "documentType": get_field(item, ["Document Type", "Tipo de Documento"], ""),
             "associatedSFs": []
         }
         articles_dict[art_id_int] = clean_art
         articles_list.append(clean_art)
 
-# 2. Processar Sementes de Futuro (SF (Scopus))
-ws_sf = wb["SF (Scopus)"]
+# 2. Processar Sementes de Futuro
 sf_rows = list(ws_sf.iter_rows(values_only=True))
 sf_headers = [str(h).strip() if h is not None else f"col_{i}" for i, h in enumerate(sf_rows[0])]
 
@@ -102,12 +127,12 @@ for row in sf_rows[1:]:
         if idx < len(sf_headers):
             item[sf_headers[idx]] = clean_value(val)
     
-    sf_id = item.get("ID da SF", "")
+    sf_id = get_field(item, ["ID da SF", "ID SF", "ID"], "")
     if not sf_id:
         continue
 
     # Extrair IDs numéricos de artigos associados
-    raw_art_ids = str(item.get("Artigos Scopus Associados (IDs)", ""))
+    raw_art_ids = str(get_field(item, ["Artigos Scopus Associados (IDs)", "Artigos Associados (IDs)", "Artigos Associados", "Artigos Scopus", "Artigos (IDs)"], ""))
     parsed_art_ids = []
     for p in raw_art_ids.replace(";", ",").split(","):
         p = p.strip()
@@ -119,25 +144,39 @@ for row in sf_rows[1:]:
                 articles_dict[art_num]["associatedSFs"].append(sf_id)
 
     # Processar PESTEL (lista limpa de dimensões)
-    raw_pestel = str(item.get("Dimensões PESTEL", ""))
+    raw_pestel = str(get_field(item, ["PESTEL", "Dimensões PESTEL", "Dimensoes PESTEL", "Dimensões"], ""))
     pestel_list = [dim.strip() for dim in raw_pestel.replace(";", ",").split(",") if dim.strip()]
 
     # Tratar campo revisada
-    raw_revisada = item.get("Revisada", 0)
+    raw_revisada = get_field(item, ["Revisada", "Status Revisão", "Revisado"], 0)
     is_revisada = (raw_revisada == 1 or str(raw_revisada).strip().lower() in ["1", "sim", "true", "s"])
+
+    # Tratar campo indicadores
+    raw_indicadores = str(get_field(item, ["Indicadores", "Indicadores Prospectivos"], "")).strip()
+    indicadores_val = "" if raw_indicadores.upper() in ["N/A", "NAN", "NONE", ""] else raw_indicadores
+
+    # Qtd artigos
+    qtd_art_raw = get_field(item, ["Qtd Artigos", "Quantidade de Artigos"], 0)
+    try:
+        qtd_art_num = int(qtd_art_raw)
+    except:
+        qtd_art_num = 0
 
     sf_obj = {
         "id": sf_id,
-        "topico": item.get("Tópico Mais Amplo Padronizado", "Geral"),
-        "titulo": item.get("Título da Semente de Futuro", "Sem título"),
-        "descricao": item.get("Descrição Global do Fenômeno (com Citações Numéricas)", ""),
-        "classificacao": item.get("Classificação Prospectiva", "Não classificada"),
+        "fonte": get_field(item, ["Fonte", "Origem"], ""),
+        "topico": get_field(item, ["Tópico", "Tópico Mais Amplo Padronizado", "Topico"], "Geral"),
+        "titulo": get_field(item, ["Título SF", "Título da Semente de Futuro", "Titulo SF", "Título", "Titulo"], "Sem título"),
+        "descricao": get_field(item, ["Descrição (Ref N)", "Descrição Global do Fenômeno (com Citações Numéricas)", "Descricao (Ref N)", "Descrição", "Descricao"], ""),
+        "descricaoApa": get_field(item, ["Descrição (Ref APA)", "Descricao (Ref APA)"], ""),
+        "classificacao": get_field(item, ["Classificação", "Classificação Prospectiva", "Classificacao"], "Não classificada"),
         "pestel": pestel_list,
-        "eixo": item.get("Eixo", "Não categorizado"),
-        "qtdArtigos": len(parsed_art_ids) if parsed_art_ids else (item.get("Qtd Artigos") or 0),
+        "eixo": get_field(item, ["Eixo", "Eixo CSED", "Eixo Temático"], "Não categorizado"),
+        "qtdArtigos": len(parsed_art_ids) if parsed_art_ids else qtd_art_num,
         "artigosIds": parsed_art_ids,
-        "referenciasResumidas": item.get("Referências Bibliográficas Resumidas (Autores, Ano, Título)", ""),
-        "implicacoes": item.get("Conexão / Implicações Estratégicas para o Ensino Superior Privado até 2040", ""),
+        "referenciasResumidas": get_field(item, ["Referências", "Referências Bibliográficas Resumidas (Autores, Ano, Título)", "Referencias"], ""),
+        "implicacoes": get_field(item, ["Implicações", "Conexão / Implicações Estratégicas para o Ensino Superior Privado até 2040", "Implicacoes"], ""),
+        "indicadores": indicadores_val,
         "revisada": is_revisada
     }
     sementes_list.append(sf_obj)

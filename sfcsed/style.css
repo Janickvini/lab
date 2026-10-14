@@ -1500,6 +1500,67 @@ a:hover {
   color: var(--text-primary);
 }
 
+/* Indicadores na seção de Descrição do Dossiê */
+.dossier-indicators-box {
+  margin-top: 14px;
+  border-left: 3px solid #0284c7;
+  background-color: var(--bg-surface-elevated);
+  border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+[data-theme="light"] .dossier-indicators-box {
+  border-left-color: #0284c7;
+  background-color: #f0f9ff;
+}
+
+.indicators-box-header {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0284c7;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+[data-theme="light"] .indicators-box-header {
+  color: #0369a1;
+}
+
+.indicators-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.indicators-list li {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-primary);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.indicators-list li i {
+  color: #0284c7;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+[data-theme="light"] .indicators-list li i {
+  color: #0284c7;
+}
+
 /* Articles Evidence List */
 .dossier-articles-list {
   display: flex;

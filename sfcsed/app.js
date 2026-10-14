@@ -184,8 +184,10 @@ document.addEventListener('DOMContentLoaded', () => {
             updateLoadingStatus('Processando planilhas Excel...');
             const arrayBuffer = await resp.arrayBuffer();
             const workbook = XLSX.read(arrayBuffer, { type: 'array' });
-            if (workbook.SheetNames.includes('SF (Scopus)') && workbook.SheetNames.includes('Scopus 3 (Limpo)')) {
-              parseExcelWorkbook(workbook);
+            const sfSheetName = findSheetName(workbook.SheetNames, ['Sementes', 'SF (Scopus)', 'SF']);
+            const refSheetName = findSheetName(workbook.SheetNames, ['Referências', 'Referencias', 'Scopus 3 (Limpo)', 'Scopus 3', 'Scopus']);
+            if (sfSheetName && refSheetName) {
+              parseExcelWorkbook(workbook, sfSheetName, refSheetName);
               loadedFromExcel = true;
               console.log('Dados carregados dinamicamente de:', url);
               updateDataSourceStatus('excel', url);
@@ -215,35 +217,66 @@ document.addEventListener('DOMContentLoaded', () => {
     return true;
   }
 
-  function parseExcelWorkbook(wb) {
-    // 1. Parse Scopus 3 (Limpo)
-    const wsScopus = wb.Sheets['Scopus 3 (Limpo)'];
-    const scopusJson = XLSX.utils.sheet_to_json(wsScopus, { defval: '' });
+  function findSheetName(sheetNames, candidates) {
+    if (!sheetNames || !Array.isArray(sheetNames)) return null;
+    for (const cand of candidates) {
+      const candNorm = removeAccents(cand.trim().toLowerCase());
+      const found = sheetNames.find(s => removeAccents(s.trim().toLowerCase()) === candNorm);
+      if (found) return found;
+    }
+    return null;
+  }
+
+  function getRowVal(row, candidates, defaultVal = '') {
+    if (!row) return defaultVal;
+    for (const cand of candidates) {
+      if (row[cand] !== undefined && row[cand] !== null && String(row[cand]).trim() !== '') {
+        return row[cand];
+      }
+    }
+    const rowKeys = Object.keys(row);
+    for (const cand of candidates) {
+      const candNorm = removeAccents(cand.trim().toLowerCase());
+      const matchKey = rowKeys.find(k => removeAccents(k.trim().toLowerCase()) === candNorm);
+      if (matchKey && row[matchKey] !== undefined && row[matchKey] !== null && String(row[matchKey]).trim() !== '') {
+        return row[matchKey];
+      }
+    }
+    return defaultVal;
+  }
+
+  function parseExcelWorkbook(wb, sfSheetName, refSheetName) {
+    // 1. Localizar e processar Referências / Artigos Scopus
+    const actualRefSheet = refSheetName || findSheetName(wb.SheetNames, ['Referências', 'Referencias', 'Scopus 3 (Limpo)', 'Scopus 3', 'Scopus']);
+    const wsScopus = actualRefSheet ? wb.Sheets[actualRefSheet] : null;
+    const scopusJson = wsScopus ? XLSX.utils.sheet_to_json(wsScopus, { defval: '' }) : [];
     
     state.rawArticles = [];
     state.articlesMap.clear();
 
     scopusJson.forEach(row => {
-      const artId = parseInt(row['ID'], 10);
+      const rawId = getRowVal(row, ['ID', 'ID Scopus']);
+      const artId = parseInt(rawId, 10);
       if (!isNaN(artId)) {
-        let doiLink = row['DOILINK'] || '';
-        const doi = row['DOI'] || '';
+        let doiLink = getRowVal(row, ['DOILINK', 'DOI Link', 'Link']);
+        const doi = getRowVal(row, ['DOI', 'Doi']);
         if (!doiLink && doi) {
           doiLink = String(doi).startsWith('http') ? String(doi) : `https://doi.org/${doi}`;
         }
 
         const artObj = {
           id: artId,
-          authors: row['Authors'] || 'Autores não informados',
-          title: row['Title'] || 'Título não informado',
-          year: row['Year'] || '',
-          sourceTitle: row['Source title'] || '',
+          fonte: String(getRowVal(row, ['Fonte', 'Origem'], '')).trim(),
+          authors: getRowVal(row, ['Authors', 'Autores'], 'Autores não informados'),
+          title: getRowVal(row, ['Title', 'Título', 'Titulo', 'Título do Artigo'], 'Título não informado'),
+          year: getRowVal(row, ['Year', 'Ano'], ''),
+          sourceTitle: getRowVal(row, ['Source title', 'Periódico / Fonte', 'Periodico / Fonte', 'Source'], ''),
           doi: doi,
           doiLink: doiLink,
-          abstract: row['Abstract'] || '',
-          authorKeywords: row['Author Keywords'] || '',
-          indexKeywords: row['Index Keywords'] || '',
-          documentType: row['Document Type'] || '',
+          abstract: getRowVal(row, ['Abstract', 'Resumo', 'Resumo (Abstract)'], ''),
+          authorKeywords: getRowVal(row, ['Author Keywords', 'Palavras-chave do Autor', 'Keywords'], ''),
+          indexKeywords: getRowVal(row, ['Index Keywords', 'Palavras-chave Indexadas'], ''),
+          documentType: getRowVal(row, ['Document Type', 'Tipo de Documento'], ''),
           associatedSFs: []
         };
         state.rawArticles.push(artObj);
@@ -251,17 +284,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // 2. Parse SF (Scopus)
-    const wsSF = wb.Sheets['SF (Scopus)'];
-    const sfJson = XLSX.utils.sheet_to_json(wsSF, { defval: '' });
+    // 2. Localizar e processar Sementes de Futuro
+    const actualSfSheet = sfSheetName || findSheetName(wb.SheetNames, ['Sementes', 'SF (Scopus)', 'SF']);
+    const wsSF = actualSfSheet ? wb.Sheets[actualSfSheet] : null;
+    const sfJson = wsSF ? XLSX.utils.sheet_to_json(wsSF, { defval: '' }) : [];
 
     state.rawSementes = [];
     sfJson.forEach(row => {
-      const sfId = String(row['ID da SF'] || '').trim();
+      const sfId = String(getRowVal(row, ['ID da SF', 'ID SF', 'ID']) || '').trim();
       if (!sfId) return;
 
       // Parse Associated Article IDs
-      const rawArtIds = String(row['Artigos Scopus Associados (IDs)'] || '');
+      const rawArtIds = String(getRowVal(row, ['Artigos Scopus Associados (IDs)', 'Artigos Associados (IDs)', 'Artigos Associados', 'Artigos Scopus', 'Artigos (IDs)']) || '');
       const artIds = [];
       rawArtIds.replace(/;/g, ',').split(',').forEach(p => {
         const num = parseInt(p.trim(), 10);
@@ -275,25 +309,36 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       // Parse PESTEL
-      const rawPestel = String(row['Dimensões PESTEL'] || '');
+      const rawPestel = String(getRowVal(row, ['PESTEL', 'Dimensões PESTEL', 'Dimensoes PESTEL', 'Dimensões']) || '');
       const pestelList = rawPestel.replace(/;/g, ',').split(',').map(d => d.trim()).filter(Boolean);
 
       // Reviewed flag
-      const rawRev = row['Revisada'];
-      const isRev = (rawRev === 1 || rawRev === '1' || String(rawRev).toLowerCase() === 'sim');
+      const rawRev = getRowVal(row, ['Revisada', 'Status Revisão', 'Revisado'], 0);
+      const isRev = (rawRev === 1 || rawRev === '1' || String(rawRev).trim().toLowerCase() === 'sim' || String(rawRev).trim().toLowerCase() === 'true');
+
+      // Indicadores
+      const rawInd = String(getRowVal(row, ['Indicadores', 'Indicadores Prospectivos'], '')).trim();
+      const indVal = (rawInd.toUpperCase() === 'N/A' || rawInd.toUpperCase() === 'NAN') ? '' : rawInd;
+
+      // Qtd Artigos
+      const rawQtd = getRowVal(row, ['Qtd Artigos', 'Quantidade de Artigos'], 0);
+      const parsedQtd = parseInt(rawQtd, 10);
 
       state.rawSementes.push({
         id: sfId,
-        topico: row['Tópico Mais Amplo Padronizado'] || 'Geral',
-        titulo: row['Título da Semente de Futuro'] || 'Sem título',
-        descricao: row['Descrição Global do Fenômeno (com Citações Numéricas)'] || '',
-        classificacao: row['Classificação Prospectiva'] || 'Não classificada',
+        fonte: String(getRowVal(row, ['Fonte', 'Origem'], '')).trim(),
+        topico: getRowVal(row, ['Tópico', 'Tópico Mais Amplo Padronizado', 'Topico'], 'Geral'),
+        titulo: getRowVal(row, ['Título SF', 'Título da Semente de Futuro', 'Titulo SF', 'Título', 'Titulo'], 'Sem título'),
+        descricao: getRowVal(row, ['Descrição (Ref N)', 'Descrição Global do Fenômeno (com Citações Numéricas)', 'Descricao (Ref N)', 'Descrição', 'Descricao'], ''),
+        descricaoApa: getRowVal(row, ['Descrição (Ref APA)', 'Descricao (Ref APA)'], ''),
+        classificacao: getRowVal(row, ['Classificação', 'Classificação Prospectiva', 'Classificacao'], 'Não classificada'),
         pestel: pestelList,
-        eixo: row['Eixo'] || 'Não categorizado',
-        qtdArtigos: artIds.length || parseInt(row['Qtd Artigos'], 10) || 0,
+        eixo: getRowVal(row, ['Eixo', 'Eixo CSED', 'Eixo Temático'], 'Não categorizado'),
+        qtdArtigos: artIds.length || (isNaN(parsedQtd) ? 0 : parsedQtd),
         artigosIds: artIds,
-        referenciasResumidas: row['Referências Bibliográficas Resumidas (Autores, Ano, Título)'] || '',
-        implicacoes: row['Conexão / Implicações Estratégicas para o Ensino Superior Privado até 2040'] || '',
+        referenciasResumidas: getRowVal(row, ['Referências', 'Referências Bibliográficas Resumidas (Autores, Ano, Título)', 'Referencias'], ''),
+        implicacoes: getRowVal(row, ['Implicações', 'Conexão / Implicações Estratégicas para o Ensino Superior Privado até 2040', 'Implicacoes'], ''),
+        indicadores: indVal,
         revisada: isRev
       });
     });
@@ -389,7 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fRev = state.filters.revisada;
 
     state.filteredSementes = state.rawSementes.filter(sf => {
-      // 1. Text Search (ID, Title, Description, Implications, Topic, or author mentions)
+      // 1. Text Search (ID, Title, Description, Implications, Topic, Indicators, or author mentions)
       if (q) {
         const matches = 
           removeAccents(sf.id).includes(q) ||
@@ -397,6 +442,7 @@ document.addEventListener('DOMContentLoaded', () => {
           removeAccents(sf.descricao).includes(q) ||
           removeAccents(sf.implicacoes).includes(q) ||
           removeAccents(sf.topico).includes(q) ||
+          removeAccents(sf.indicadores || '').includes(q) ||
           removeAccents(sf.referenciasResumidas).includes(q);
         if (!matches) return false;
       }
@@ -577,6 +623,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const descFormatted = highlightNumericCitations(sf.descricao);
 
+    // Renderiza bloco de Indicadores se houver
+    let indicatorsHtml = '';
+    const rawIndicadores = (sf.indicadores || '').trim();
+    if (rawIndicadores && rawIndicadores.toUpperCase() !== 'N/A') {
+      const indItems = rawIndicadores.split(';').map(i => i.trim()).filter(Boolean);
+      const indItemsHtml = indItems.length > 0 
+        ? indItems.map(item => `<li><i class="fa-solid fa-chart-line"></i> <span>${escapeHtml(item)}</span></li>`).join('')
+        : `<li><i class="fa-solid fa-chart-line"></i> <span>${escapeHtml(rawIndicadores)}</span></li>`;
+
+      indicatorsHtml = `
+        <div class="dossier-indicators-box">
+          <div class="indicators-box-header">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Indicadores de Monitoramento</span>
+          </div>
+          <ul class="indicators-list">
+            ${indItemsHtml}
+          </ul>
+        </div>
+      `;
+    }
+
     // Renderiza a lista de artigos fundamentadores com acordeão inline de Abstract
     let articlesHtml = '';
     if (sf.artigosIds.length === 0) {
@@ -676,6 +744,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="text-narrative-box">
           ${descFormatted}
         </div>
+        ${indicatorsHtml}
       </div>
 
       <!-- Seção 2: Implicações Estratégicas 2040 -->
@@ -711,7 +780,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('btn-copy-dossier').addEventListener('click', () => {
-      const copyText = `[${sf.id}] ${sf.titulo}\n\nTipologia: ${sf.classificacao} | Eixo: ${sf.eixo}\n\nDescrição:\n${sf.descricao}\n\nImplicações 2040:\n${sf.implicacoes}`;
+      let copyText = `[${sf.id}] ${sf.titulo}\n\nTipologia: ${sf.classificacao} | Eixo: ${sf.eixo}\n\nDescrição:\n${sf.descricao}`;
+      if (rawIndicadores && rawIndicadores.toUpperCase() !== 'N/A') {
+        copyText += `\n\nIndicadores:\n${rawIndicadores}`;
+      }
+      copyText += `\n\nImplicações 2040:\n${sf.implicacoes}`;
       const btn = document.getElementById('btn-copy-dossier');
       copyTextToClipboard(copyText, () => {
         btn.innerHTML = `<i class="fa-solid fa-check"></i> Copiado!`;
