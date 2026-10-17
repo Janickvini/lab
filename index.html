@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bloqueio de Indexação em Motores de Busca (Google, Bing, etc.) -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+  <title>SFCSED — Plataforma de Sementes de Futuro | Ensino Superior 2040</title>
+  
+  <!-- FontAwesome 6 (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Loading Screen Overlay -->
+  <div id="loading-overlay" class="loading-overlay">
+    <div class="loading-box">
+      <div class="loading-spinner"></div>
+      <div class="loading-title">SFCSED — Sementes de Futuro</div>
+      <div id="loading-status" class="loading-status">Carregando base de dados prospectiva...</div>
+    </div>
+  </div>
+
+  <!-- Main Application Wrapper -->
+  <div class="app-layout">
+    
+    <!-- Top Executive Header -->
+    <header class="app-header">
+      <div class="header-container">
+        
+        <div class="header-brand">
+          <div class="brand-badge">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+          <div class="brand-titles">
+            <div class="brand-main">
+              <span class="brand-name">SFCSED</span>
+              <span class="brand-divider">|</span>
+              <span class="brand-project">Sementes de Futuro</span>
+            </div>
+            <div class="brand-subtitle">Estudo Prospectivo: Cenários da Educação Superior 2040</div>
+          </div>
+        </div>
+
+        <!-- Global Actions / Controls -->
+        <div class="header-controls">
+          <!-- View Navigation Tabs -->
+          <div class="nav-tabs" role="tablist">
+            <button id="tab-btn-sf" class="tab-btn active" data-tab="sf" title="Visualizar Sementes de Futuro">
+              <i class="fa-solid fa-seedling"></i>
+              <span>Sementes de Futuro</span>
+              <span class="tab-badge" id="badge-total-sf">67</span>
+            </button>
+            <button id="tab-btn-scopus" class="tab-btn" data-tab="scopus" title="Explorar Base de Referências">
+              <i class="fa-solid fa-book-bookmark"></i>
+              <span>Referências</span>
+              <span class="tab-badge" id="badge-total-scopus">339</span>
+            </button>
+          </div>
+
+          <!-- Accessibility Font Size Controls (A- / A / A+) -->
+          <div class="font-size-controls" role="group" aria-label="Ajuste de tamanho da fonte">
+            <button id="btn-font-dec" class="btn-font-ctrl" title="Diminuir tamanho da fonte (A-)" aria-label="Diminuir tamanho da fonte">
+              <span>A-</span>
+            </button>
+            <button id="btn-font-reset" class="btn-font-ctrl btn-font-reset" title="Tamanho padrão (100%). Clique para redefinir." aria-label="Redefinir tamanho da fonte para 100%">
+              <span id="font-scale-label">A</span>
+            </button>
+            <button id="btn-font-inc" class="btn-font-ctrl" title="Aumentar tamanho da fonte (A+)" aria-label="Aumentar tamanho da fonte">
+              <span>A+</span>
+            </button>
+          </div>
+
+          <!-- Theme Switcher -->
+          <button id="btn-theme-toggle" class="btn-theme" title="Alternar Modo Claro / Escuro">
+            <i class="fa-solid fa-sun" id="theme-icon"></i>
+            <span id="theme-text">Modo Claro</span>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Subheader / Executive Overview Stats Bar (Preservado e Melhorado no Topo) -->
+    <section class="executive-stats-bar">
+      <div class="stats-container">
+        
+        <div class="stat-card">
+          <div class="stat-icon stat-icon-blue"><i class="fa-solid fa-dna"></i></div>
+          <div class="stat-details">
+            <div class="stat-label">Total de Sementes</div>
+            <div class="stat-value" id="kpi-total-sf">67</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon stat-icon-indigo"><i class="fa-solid fa-diagram-project"></i></div>
+          <div class="stat-details">
+            <div class="stat-label">Referências</div>
+            <div class="stat-value" id="kpi-artigos-citados">314</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon stat-icon-slate"><i class="fa-solid fa-layer-group"></i></div>
+          <div class="stat-details">
+            <div class="stat-label">Eixos Estratégicos</div>
+            <div class="stat-value" id="kpi-total-eixos">5</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon stat-icon-emerald"><i class="fa-solid fa-circle-check"></i></div>
+          <div class="stat-details">
+            <div class="stat-label">Revisadas</div>
+            <div class="stat-value" id="kpi-revisadas">10</div>
+          </div>
+        </div>
+
+        <!-- Analytical Toggle Button -->
+        <button id="btn-toggle-analytics" class="btn-analytics-toggle" title="Expandir ou recolher gráficos analíticos">
+          <i class="fa-solid fa-chart-column"></i>
+          <span>Painel Analítico</span>
+          <i class="fa-solid fa-chevron-down toggle-arrow" id="analytics-arrow"></i>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- Collapsible Analytical Visualizations Panel -->
+    <section id="analytics-panel" class="analytics-section collapsed">
+      <div class="analytics-container">
+        
+        <div class="chart-box">
+          <div class="chart-header">
+            <div class="chart-title">
+              <i class="fa-solid fa-bolt"></i> Distribuição por Tipologia Prospectiva
+            </div>
+            <div class="chart-meta">Rupturas, Tendências, Sinais Fracos e Incertezas</div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="chart-classificacao"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-box">
+          <div class="chart-header">
+            <div class="chart-title">
+              <i class="fa-solid fa-cubes"></i> Matriz de Dimensões
+            </div>
+            <div class="chart-meta">Incidência transversal nos vetores macroambientais</div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="chart-pestel"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-box">
+          <div class="chart-header">
+            <div class="chart-title">
+              <i class="fa-solid fa-folder-tree"></i> Cobertura por Eixo Estratégico
+            </div>
+            <div class="chart-meta">Concentração temática das sementes mapeadas</div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="chart-eixos"></canvas>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Content Workspace -->
+    <main class="main-content">
+      
+      <!-- ======================================================= -->
+      <!-- TAB 1: SEMENTES DE FUTURO VIEW (LAYOUT ESTILO LEITOR DE EMAIL) -->
+      <!-- ======================================================= -->
+      <section id="view-sf" class="view-panel active">
+        
+        <div class="sf-email-layout">
+          
+          <!-- ===================================================== -->
+          <!-- COLUNA 1 (ESQUERDA): SIDEBAR DE FILTROS PROSPECTIVOS -->
+          <!-- ===================================================== -->
+          <aside class="sf-filters-sidebar">
+            
+            <div class="sidebar-header">
+              <div class="sidebar-title">
+                <i class="fa-solid fa-sliders"></i>
+                <span>Filtros</span>
+              </div>
+              <button id="btn-clear-filters" class="btn-sidebar-reset" title="Redefinir todos os filtros aplicados">
+                <i class="fa-solid fa-rotate-left"></i> Limpar
+              </button>
+            </div>
+
+            <div class="sidebar-body">
+              
+              <!-- Busca Textual -->
+              <div class="sidebar-filter-group sidebar-search-group">
+                <label for="sf-search-input"><i class="fa-solid fa-magnifying-glass"></i> Busca Textual</label>
+                <div class="sidebar-search-box">
+                  <input type="text" id="sf-search-input" placeholder="ID, termo, autor..." autocomplete="off">
+                  <button id="sf-search-clear" class="btn-clear-inline" style="display: none;" title="Limpar busca">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="filter-divider"></div>
+
+              <!-- Status de Revisão (Colapsável) -->
+              <div class="sidebar-filter-section collapsed" id="section-filter-status" data-filter-group="status">
+                <button type="button" class="filter-section-header" aria-expanded="false" title="Recolher / Expandir Status de Revisão">
+                  <div class="filter-section-title">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Status de Revisão</span>
+                  </div>
+                  <div class="filter-section-meta">
+                    <span class="filter-active-count" id="active-count-status" style="display: none;">0</span>
+                    <i class="fa-solid fa-chevron-down filter-toggle-icon"></i>
+                  </div>
+                </button>
+                <div class="filter-section-content">
+                  <div class="filter-checkbox-list" id="filter-status-options">
+                    <!-- Checkboxes de status gerados dinamicamente -->
+                  </div>
+                </div>
+              </div>
+
+              <div class="filter-divider"></div>
+
+              <!-- Eixo Estratégico (Colapsável) -->
+              <div class="sidebar-filter-section collapsed" id="section-filter-eixo" data-filter-group="eixo">
+                <button type="button" class="filter-section-header" aria-expanded="false" title="Recolher / Expandir Eixo Estratégico">
+                  <div class="filter-section-title">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Eixo Estratégico</span>
+                  </div>
+                  <div class="filter-section-meta">
+                    <span class="filter-active-count" id="active-count-eixo" style="display: none;">0</span>
+                    <i class="fa-solid fa-chevron-down filter-toggle-icon"></i>
+                  </div>
+                </button>
+                <div class="filter-section-content">
+                  <div class="filter-checkbox-list" id="filter-eixo-options">
+                    <!-- Checkboxes de Eixo gerados dinamicamente -->
+                  </div>
+                </div>
+              </div>
+
+              <div class="filter-divider"></div>
+
+              <!-- Tipologia Prospectiva (Colapsável) -->
+              <div class="sidebar-filter-section collapsed" id="section-filter-classificacao" data-filter-group="classificacao">
+                <button type="button" class="filter-section-header" aria-expanded="false" title="Recolher / Expandir Tipologia Prospectiva">
+                  <div class="filter-section-title">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Tipologia Prospectiva</span>
+                  </div>
+                  <div class="filter-section-meta">
+                    <span class="filter-active-count" id="active-count-classificacao" style="display: none;">0</span>
+                    <i class="fa-solid fa-chevron-down filter-toggle-icon"></i>
+                  </div>
+                </button>
+                <div class="filter-section-content">
+                  <div class="filter-checkbox-list" id="filter-classificacao-options">
+                    <!-- Checkboxes de Classificação gerados dinamicamente -->
+                  </div>
+                </div>
+              </div>
+
+              <div class="filter-divider"></div>
+
+              <!-- Dimensões PESTEL (Colapsável) -->
+              <div class="sidebar-filter-section collapsed" id="section-filter-pestel" data-filter-group="pestel">
+                <button type="button" class="filter-section-header" aria-expanded="false" title="Recolher / Expandir Dimensões">
+                  <div class="filter-section-title">
+                    <i class="fa-solid fa-cubes"></i>
+                    <span>Dimensões</span>
+                  </div>
+                  <div class="filter-section-meta">
+                    <span class="filter-active-count" id="active-count-pestel" style="display: none;">0</span>
+                    <i class="fa-solid fa-chevron-down filter-toggle-icon"></i>
+                  </div>
+                </button>
+                <div class="filter-section-content">
+                  <div class="filter-checkbox-list" id="filter-pestel-options">
+                    <!-- Checkboxes de Dimensões gerados dinamicamente -->
+                  </div>
+                </div>
+              </div>
+
+              <div class="filter-divider"></div>
+
+              <!-- Tópico Padronizado (Colapsável) -->
+              <div class="sidebar-filter-section collapsed" id="section-filter-topico" data-filter-group="topico">
+                <button type="button" class="filter-section-header" aria-expanded="false" title="Recolher / Expandir Tópico Padronizado">
+                  <div class="filter-section-title">
+                    <i class="fa-solid fa-tags"></i>
+                    <span>Tópico Padronizado</span>
+                  </div>
+                  <div class="filter-section-meta">
+                    <span class="filter-active-count" id="active-count-topico" style="display: none;">0</span>
+                    <i class="fa-solid fa-chevron-down filter-toggle-icon"></i>
+                  </div>
+                </button>
+                <div class="filter-section-content">
+                  <div class="filter-checkbox-list scrollable-checkbox-list" id="filter-topico-options">
+                    <!-- Checkboxes de Tópico gerados dinamicamente -->
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Sidebar Footer / Status -->
+            <div class="sidebar-footer">
+              <div class="sidebar-counter">
+                Mostrando <strong id="sf-filtered-count">62</strong> de <span id="sf-total-count">62</span>
+              </div>
+            </div>
+
+          </aside>
+
+          <!-- ===================================================== -->
+          <!-- COLUNA 2 (MEIO): LISTA DE SEMENTES SELECIONÁVEIS (INBOX) -->
+          <!-- ===================================================== -->
+          <section class="sf-inbox-column">
+            
+            <div class="inbox-header">
+              <div class="inbox-title-box">
+                <span class="inbox-title">Sementes de Futuro</span>
+                <span class="inbox-counter-badge" id="list-count-badge">62</span>
+              </div>
+              <div class="inbox-sort-wrapper">
+                <select id="sf-list-sort" class="inbox-sort-select" title="Ordenar lista">
+                  <option value="id-asc">ID (SF01 → SF62)</option>
+                  <option value="id-desc">ID (SF62 → SF01)</option>
+                  <option value="artigos-desc">Mais Artigos</option>
+                  <option value="titulo-asc">Título (A-Z)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Active Tags Bar (se houver filtros ativos) -->
+            <div id="active-tags-container" class="inbox-active-tags">
+              <!-- Renderizado dinamicamente -->
+            </div>
+
+            <!-- Lista Rolável de Sementes (Items Selecionáveis) -->
+            <div class="sf-inbox-list" id="sf-inbox-list">
+              <!-- Renderizado dinamicamente por app.js -->
+            </div>
+
+          </section>
+
+          <!-- ===================================================== -->
+          <!-- COLUNA 3 (DIREITA): ÁREA DE LEITURA (READING PANE) -->
+          <!-- ===================================================== -->
+          <section class="sf-reading-column" id="sf-reading-pane">
+            
+            <!-- Estado Inicial / Placeholder (quando nenhuma SF está selecionada) -->
+            <div class="reading-empty-state" id="reading-empty-state">
+              <div class="empty-state-icon">
+                <i class="fa-solid fa-book-open-reader"></i>
+              </div>
+              <h3 class="empty-state-title">Selecione uma Semente de Futuro</h3>
+              <p class="empty-state-text">
+                Escolha uma semente na lista ao lado para carregar a descrição aprofundada do fenômeno, as implicações estratégicas para o Ensino Superior 2040 e os artigos Scopus de suporte.
+              </p>
+              <div class="empty-state-hint">
+                <i class="fa-regular fa-keyboard"></i> Dica: Você também pode navegar pelas sementes usando as teclas <strong>↑</strong> e <strong>↓</strong> do teclado.
+              </div>
+            </div>
+
+            <!-- Conteúdo da Semente Selecionada (Dossiê de Leitura) -->
+            <article class="reading-dossier" id="reading-dossier" style="display: none;">
+              <!-- Renderizado dinamicamente quando uma SF é selecionada -->
+            </article>
+
+          </section>
+
+        </div>
+
+      </section>
+
+      <!-- ============================================== -->
+      <!-- TAB 2: SCOPUS REFERENCES MATRIX VIEW -->
+      <!-- ============================================== -->
+      <section id="view-scopus" class="view-panel" style="display: none;">
+        
+        <div class="filter-toolbar">
+          
+          <div class="filter-top-row">
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              <input type="text" id="scopus-search-input" placeholder="Pesquisar por ID, título do artigo, autores, periódico ou palavras-chave..." autocomplete="off">
+              <button id="scopus-search-clear" class="btn-clear-search" style="display: none;" title="Limpar busca">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+
+            <div class="layout-controls">
+              <div class="filter-field filter-field-inline">
+                <label for="scopus-filter-relation">Relação com SFs:</label>
+                <select id="scopus-filter-relation" class="form-select-sm">
+                  <option value="">Todos os Artigos (339)</option>
+                  <option value="linked" selected>Apenas com SFs Vinculadas (314)</option>
+                  <option value="unlinked">Sem SFs Vinculadas (25)</option>
+                </select>
+              </div>
+
+              <div class="filter-field filter-field-inline">
+                <label for="scopus-filter-year">Ano:</label>
+                <select id="scopus-filter-year" class="form-select-sm">
+                  <option value="">Todos os Anos</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-status-bar">
+            <div class="results-counter">
+              Mostrando <strong id="scopus-filtered-count">314</strong> de <span id="scopus-total-count">339</span> Artigos Scopus
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Scopus Table Container -->
+        <div class="sf-table-wrapper">
+          <div class="table-responsive">
+            <table class="corporate-table" id="scopus-table">
+              <thead>
+                <tr>
+                  <th class="th-sortable" data-sort="id" style="width: 70px;">ID <i class="fa-solid fa-sort"></i></th>
+                  <th class="th-sortable" data-sort="title">Artigo Científico / Fonte <i class="fa-solid fa-sort"></i></th>
+                  <th class="th-sortable" data-sort="authors" style="width: 200px;">Autores <i class="fa-solid fa-sort"></i></th>
+                  <th class="th-sortable" data-sort="year" style="width: 75px; text-align: center;">Ano <i class="fa-solid fa-sort"></i></th>
+                  <th style="width: 140px;">Sementes Vinculadas</th>
+                  <th style="width: 130px; text-align: right;">Evidência</th>
+                </tr>
+              </thead>
+              <tbody id="scopus-table-tbody">
+                <!-- Populated dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Pagination for Scopus View -->
+        <div class="pagination-bar" id="scopus-pagination-bar">
+          <div class="pagination-info" id="scopus-pagination-info">
+            Exibindo 1 a 20 de 302 artigos
+          </div>
+          <div class="pagination-actions">
+            <div class="page-size-picker">
+              <span>Itens por página:</span>
+              <select id="scopus-page-size" class="form-select-sm">
+                <option value="15">15</option>
+                <option value="30" selected>30</option>
+                <option value="60">60</option>
+                <option value="100">100</option>
+              </select>
+            </div>
+            <div class="pagination-buttons">
+              <button id="scopus-page-prev" class="btn-page" disabled><i class="fa-solid fa-chevron-left"></i> Anterior</button>
+              <span id="scopus-page-current" class="page-badge">1 / 1</span>
+              <button id="scopus-page-next" class="btn-page" disabled>Próxima <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL: DETALHES DO ARTIGO SCOPUS / ABSTRACT -->
+  <!-- ============================================== -->
+  <div id="modal-article" class="modal-backdrop" aria-hidden="true" style="display: none; z-index: 10001;">
+    <div class="modal-dialog modal-dialog-md">
+      
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="modal-meta-row">
+            <span class="modal-badge-id" id="modal-art-id">ID 52</span>
+            <span class="badge-year" id="modal-art-year">2022</span>
+            <span class="badge-type" id="modal-art-type">Article</span>
+          </div>
+          <h3 class="modal-title" id="modal-art-title">Título do Artigo</h3>
+          <div class="modal-authors" id="modal-art-authors">Autores</div>
+          <div class="modal-source" id="modal-art-source">Periódico / Fonte</div>
+        </div>
+        <button id="btn-close-art-modal" class="btn-close-modal" title="Fechar (Esc)">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        
+        <div class="modal-section" id="modal-art-doi-section">
+          <div class="doi-link-box">
+            <i class="fa-solid fa-link"></i>
+            <span>DOI / Link de Acesso:</span>
+            <a href="#" target="_blank" rel="noopener noreferrer" id="modal-art-doi-link">https://doi.org/...</a>
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <div class="section-title">
+            <i class="fa-solid fa-file-lines"></i>
+            <span>Resumo:</span>
+          </div>
+          <div class="section-content text-abstract" id="modal-art-abstract">
+            <!-- Abstract content -->
+          </div>
+        </div>
+
+        <div class="modal-section" id="modal-art-keywords-section">
+          <div class="section-title">
+            <i class="fa-solid fa-key"></i>
+            <span>Palavras-Chave (Keywords)</span>
+          </div>
+          <div class="keywords-cloud" id="modal-art-keywords">
+            <!-- Keywords chips -->
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <div class="section-title">
+            <i class="fa-solid fa-seedling"></i>
+            <span>Sementes de Futuro Fundamentadas por este Artigo</span>
+          </div>
+          <div class="linked-sfs-chips" id="modal-art-linked-sfs">
+            <!-- Linked SF chips -->
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button id="btn-art-modal-close-footer" class="btn-secondary">Voltar</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript Libraries -->
+  <!-- 1. Chart.js for executive analytics -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- 2. SheetJS for direct client-side parsing of SF CSED.xlsx -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <!-- 3. Pre-compiled local database snapshot (Fallback for offline/local file:// access) -->
+  <script src="data.js"></script>
+
+  <!-- 4. Core Application Logic -->
+  <script src="app.js"></script>
+
+</body>
+</html>
