@@ -21,14 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Currently Selected Seed (for Reading Pane)
     selectedSfId: null,
 
-    // Filters for Sementes
+    // Filters for Sementes (Multi-select Checkbox System)
     filters: {
       search: '',
-      eixo: '',
-      classificacao: '',
-      pestel: '',
-      topico: '',
-      revisada: '' // '', 'revisada', 'pendente'
+      eixos: [],
+      classificacoes: [],
+      pestels: [],
+      topicos: [],
+      status: []
     },
 
     // Sort order for Sementes List
@@ -122,8 +122,9 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Populate Filters
-    buildFilterDropdowns();
+    // Populate Checkbox Filters & Collapsible Sections
+    buildFilterCheckboxLists();
+    setupCollapsibleFilterSections();
 
     // Initial Filter & Render
     applySfFilters();
@@ -317,29 +318,51 @@ document.addEventListener('DOMContentLoaded', () => {
       const rawRevStr = String(rawRev || '').trim();
       const statusLower = rawRevStr.toLowerCase();
 
+      // Vínculo (Nova coluna dedicada)
+      const rawVinculo = String(getRowVal(row, ['Vínculo', 'Vinculo', 'Vínculo SF', 'Vinculo SF', 'SFs Relacionadas', 'SF Relacionada', 'Vínculos'], '')).trim();
+      const vinculoList = (rawVinculo && rawVinculo.toUpperCase() !== 'N/A' && rawVinculo.toUpperCase() !== 'NAN')
+        ? rawVinculo.split(/[;,]+/).map(v => v.trim()).filter(Boolean)
+        : [];
+
       // Justificativa
       const rawJust = String(getRowVal(row, ['Justificativa', 'Justificativa Metodológica', 'Motivo'], '')).trim();
       const justVal = (rawJust.toUpperCase() === 'N/A' || rawJust.toUpperCase() === 'NAN') ? '' : rawJust;
 
       let statusTipo = 'pendente';
       let fusaoId = '';
+      let divisaoIds = [];
       let isRev = false;
 
-      if (['ok', '1', 'sim', 'true', 's', 'revisada', 'revisado', 'aprovada', 'aprovado'].includes(statusLower) || statusLower === 'ok') {
-        statusTipo = 'ok';
+      if (statusLower.includes('divid') || statusLower.includes('desmembr') || statusLower.includes('separ') || statusLower.includes('divis')) {
+        statusTipo = 'dividida';
         isRev = true;
+        if (vinculoList.length > 0) {
+          divisaoIds = vinculoList.filter(d => d.toUpperCase() !== sfId.toUpperCase());
+        } else {
+          const matchParen = rawRevStr.match(/\((.*?)\)/);
+          const searchTarget = matchParen ? matchParen[1] : rawRevStr;
+          const extracted = searchTarget.match(/(SF[A-Za-z0-9]+)/gi) || [];
+          divisaoIds = extracted.filter(d => d.toUpperCase() !== sfId.toUpperCase());
+        }
       } else if (statusLower.includes('mescl') || statusLower.includes('fus') || statusLower.includes('fundid')) {
         statusTipo = 'mesclada';
         isRev = true;
-        const matchParen = rawRevStr.match(/\((.*?)\)/);
-        if (matchParen) {
-          fusaoId = matchParen[1].trim();
+        if (vinculoList.length > 0) {
+          fusaoId = vinculoList[0];
         } else {
-          const matchSf = rawRevStr.match(/(SF[A-Z0-9]+)/i);
-          if (matchSf) fusaoId = matchSf[1].trim();
+          const matchParen = rawRevStr.match(/\((.*?)\)/);
+          if (matchParen) {
+            fusaoId = matchParen[1].trim();
+          } else {
+            const matchSf = rawRevStr.match(/(SF[A-Z0-9]+)/i);
+            if (matchSf) fusaoId = matchSf[1].trim();
+          }
         }
       } else if (statusLower.includes('descart')) {
         statusTipo = 'descartada';
+        isRev = true;
+      } else if (['ok', '1', 'sim', 'true', 's', 'revisada', 'revisado', 'aprovada', 'aprovado'].includes(statusLower) || statusLower.includes('ok')) {
+        statusTipo = 'ok';
         isRev = true;
       } else {
         statusTipo = 'pendente';
@@ -353,6 +376,8 @@ document.addEventListener('DOMContentLoaded', () => {
         statusLabel = fusaoId ? `Revisada (Mesclada: ${fusaoId})` : 'Revisada (Mesclada)';
       } else if (statusTipo === 'descartada') {
         statusLabel = 'Revisada (Descartada)';
+      } else if (statusTipo === 'dividida') {
+        statusLabel = divisaoIds.length ? `Revisada (Dividida: ${divisaoIds.join(', ')})` : 'Revisada (Dividida)';
       }
 
       // Indicadores
@@ -384,86 +409,148 @@ document.addEventListener('DOMContentLoaded', () => {
         statusLabel: statusLabel,
         justificativa: justVal,
         fusaoId: fusaoId,
+        divisaoIds: divisaoIds,
+        origemDivisao: '',
+        vinculo: vinculoList,
         incorporadas: []
       });
     });
 
-    // Mapeamento reverso de incorporações (ex: SFS02 incorpora SF22)
-    const sfMap = new Map(state.rawSementes.map(s => [s.id, s]));
+    // Mapeamento reverso de incorporações (ex: SFS02 incorpora SF22) e divisões (ex: SF31a/b originam de SF31)
+    const sfMap = new Map();
+    state.rawSementes.forEach(s => sfMap.set(s.id.toUpperCase(), s));
+
     state.rawSementes.forEach(s => {
-      if (s.fusaoId && sfMap.has(s.fusaoId)) {
-        const target = sfMap.get(s.fusaoId);
+      if (s.fusaoId && sfMap.has(s.fusaoId.toUpperCase())) {
+        const target = sfMap.get(s.fusaoId.toUpperCase());
         if (!target.incorporadas.includes(s.id)) {
           target.incorporadas.push(s.id);
         }
       }
+      if (s.divisaoIds && s.divisaoIds.length > 0) {
+        s.divisaoIds = s.divisaoIds.map(d => sfMap.has(d.toUpperCase()) ? sfMap.get(d.toUpperCase()).id : d);
+        s.divisaoIds.forEach(childId => {
+          if (sfMap.has(childId.toUpperCase())) {
+            const child = sfMap.get(childId.toUpperCase());
+            child.origemDivisao = s.id;
+          }
+        });
+      }
+      if (s.vinculo && s.vinculo.length > 0) {
+        s.vinculo.forEach(v => {
+          if (sfMap.has(v.toUpperCase())) {
+            const related = sfMap.get(v.toUpperCase());
+            if (related.statusTipo === 'dividida' && !s.origemDivisao) {
+              s.origemDivisao = related.id;
+              if (!related.divisaoIds.includes(s.id)) {
+                related.divisaoIds.push(s.id);
+              }
+            } else if (related.statusTipo === 'mesclada' && !s.incorporadas.includes(related.id)) {
+              s.incorporadas.push(related.id);
+            }
+          }
+        });
+      }
     });
 
-    // Sort SFs numerically
+    // Sort SFs numerically & alphanumeric (ex: SF01..SF31, SF31a, SF31b..SF62, SFQ, SFS)
     state.rawSementes.sort((a, b) => {
+      const catA = a.id.startsWith('SF') && !a.id.startsWith('SFQ') && !a.id.startsWith('SFS') ? 0 : (a.id.startsWith('SFQ') ? 1 : 2);
+      const catB = b.id.startsWith('SF') && !b.id.startsWith('SFQ') && !b.id.startsWith('SFS') ? 0 : (b.id.startsWith('SFQ') ? 1 : 2);
+      if (catA !== catB) return catA - catB;
       const numA = parseInt(a.id.replace(/\D/g, ''), 10) || 999;
       const numB = parseInt(b.id.replace(/\D/g, ''), 10) || 999;
-      return numA - numB;
+      if (numA !== numB) return numA - numB;
+      return a.id.localeCompare(b.id);
     });
   }
 
   // ========================================================================
-  // DROPDOWNS & FILTER OPTIONS POPULATION
   // ========================================================================
-  function buildFilterDropdowns() {
-    // Eixos
-    const eixos = [...new Set(state.rawSementes.map(s => s.eixo).filter(Boolean))].sort();
-    const selectEixo = document.getElementById('filter-eixo');
-    eixos.forEach(e => {
-      const opt = document.createElement('option');
-      opt.value = e;
-      opt.textContent = e.length > 38 ? e.substring(0, 35) + '...' : e;
-      opt.title = e;
-      selectEixo.appendChild(opt);
-    });
+  // CHECKBOX FILTERS & COLLAPSIBLE SECTIONS GENERATION
+  // ========================================================================
+  function buildFilterCheckboxLists() {
+    // 1. Status de Revisão
+    const containerStatus = document.getElementById('filter-status-options');
+    if (containerStatus) {
+      containerStatus.innerHTML = '';
+      const statusOptions = [
+        { val: 'pendente', label: 'Em revisão', dotClass: 'filter-dot-status-pendente', icon: 'fa-regular fa-clock' },
+        { val: 'ok', label: 'Revisada (OK)', dotClass: 'filter-dot-status-ok' },
+        { val: 'dividida', label: 'Revisada (Dividida)', dotClass: 'filter-dot-status-dividida' },
+        { val: 'mesclada', label: 'Revisada (Mesclada)', dotClass: 'filter-dot-status-mesclada' },
+        { val: 'descartada', label: 'Revisada (Descartada)', dotClass: 'filter-dot-status-descartada' }
+      ];
+      statusOptions.forEach(opt => {
+        const count = state.rawSementes.filter(s => s.statusTipo === opt.val).length;
+        const item = createCheckboxItem('filter-status', opt.val, opt.label, count, opt.dotClass, opt.icon);
+        containerStatus.appendChild(item);
+      });
+    }
 
-    // Classificações Prospectivas
-    const classificacoes = [...new Set(state.rawSementes.map(s => s.classificacao).filter(Boolean))].sort();
-    const selectClass = document.getElementById('filter-classificacao');
-    classificacoes.forEach(c => {
-      const opt = document.createElement('option');
-      opt.value = c;
-      opt.textContent = c;
-      selectClass.appendChild(opt);
-    });
+    // 2. Eixos Estratégicos
+    const containerEixo = document.getElementById('filter-eixo-options');
+    if (containerEixo) {
+      containerEixo.innerHTML = '';
+      const eixos = [...new Set(state.rawSementes.map(s => s.eixo).filter(Boolean))].sort();
+      eixos.forEach((e, idx) => {
+        const count = state.rawSementes.filter(s => s.eixo === e).length;
+        const palette = PALETTE[state.theme] || PALETTE.dark;
+        const color = palette.eixos[idx % palette.eixos.length];
+        const item = createCheckboxItem('filter-eixo', e, e, count, null, null, color);
+        containerEixo.appendChild(item);
+      });
+    }
 
-    // Dimensões PESTEL
-    const allPestel = new Set();
-    state.rawSementes.forEach(s => s.pestel.forEach(p => allPestel.add(p)));
-    const pestelSorted = [...allPestel].sort();
-    const selectPestel = document.getElementById('filter-pestel');
-    pestelSorted.forEach(p => {
-      const opt = document.createElement('option');
-      opt.value = p;
-      opt.textContent = p;
-      selectPestel.appendChild(opt);
-    });
+    // 3. Tipologia Prospectiva (Classificação)
+    const containerClass = document.getElementById('filter-classificacao-options');
+    if (containerClass) {
+      containerClass.innerHTML = '';
+      const classificacoes = [...new Set(state.rawSementes.map(s => s.classificacao).filter(Boolean))].sort();
+      classificacoes.forEach(c => {
+        const count = state.rawSementes.filter(s => s.classificacao === c).length;
+        const dotClass = 'filter-dot-' + cleanBadgeClass(c);
+        const item = createCheckboxItem('filter-classificacao', c, c, count, dotClass);
+        containerClass.appendChild(item);
+      });
+    }
 
-    // Tópicos Padronizados
-    const topicos = [...new Set(state.rawSementes.map(s => s.topico).filter(Boolean))].sort();
-    const selectTopico = document.getElementById('filter-topico');
-    topicos.forEach(t => {
-      const opt = document.createElement('option');
-      opt.value = t;
-      opt.textContent = t.length > 36 ? t.substring(0, 33) + '...' : t;
-      opt.title = t;
-      selectTopico.appendChild(opt);
-    });
+    // 4. Dimensões PESTEL
+    const containerPestel = document.getElementById('filter-pestel-options');
+    if (containerPestel) {
+      containerPestel.innerHTML = '';
+      const allPestel = ['Político', 'Econômico', 'Social', 'Tecnológico', 'Ambiental', 'Legal'];
+      allPestel.forEach(p => {
+        const count = state.rawSementes.filter(s => s.pestel.includes(p)).length;
+        const dotClass = 'filter-dot-' + cleanBadgeClass(p);
+        const item = createCheckboxItem('filter-pestel', p, p, count, dotClass);
+        containerPestel.appendChild(item);
+      });
+    }
 
-    // Scopus Years
+    // 5. Tópicos Padronizados
+    const containerTopico = document.getElementById('filter-topico-options');
+    if (containerTopico) {
+      containerTopico.innerHTML = '';
+      const topicos = [...new Set(state.rawSementes.map(s => s.topico).filter(Boolean))].sort();
+      topicos.forEach(t => {
+        const count = state.rawSementes.filter(s => s.topico === t).length;
+        const item = createCheckboxItem('filter-topico', t, t, count);
+        containerTopico.appendChild(item);
+      });
+    }
+
+    // 6. Scopus Years
     const years = [...new Set(state.rawArticles.map(a => a.year).filter(Boolean))].sort((a, b) => b - a);
     const selectYear = document.getElementById('scopus-filter-year');
-    years.forEach(y => {
-      const opt = document.createElement('option');
-      opt.value = y;
-      opt.textContent = y;
-      selectYear.appendChild(opt);
-    });
+    if (selectYear && selectYear.options.length <= 1) {
+      years.forEach(y => {
+        const opt = document.createElement('option');
+        opt.value = y;
+        opt.textContent = y;
+        selectYear.appendChild(opt);
+      });
+    }
 
     // Scopus Relation Options
     const selectRel = document.getElementById('scopus-filter-relation');
@@ -478,19 +565,100 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function createCheckboxItem(groupName, value, labelText, count, dotClass, iconClass, inlineColor) {
+    const label = document.createElement('label');
+    label.className = 'filter-checkbox-label';
+    label.title = `${labelText} (${count} sementes)`;
+
+    let visual = '';
+    if (dotClass) {
+      visual = `<span class="filter-dot-indicator ${dotClass}"></span>`;
+    } else if (inlineColor) {
+      visual = `<span class="filter-dot-indicator" style="background-color: ${inlineColor};"></span>`;
+    } else if (iconClass) {
+      visual = `<i class="${iconClass}" style="font-size: 0.72rem; width: 14px; text-align: center; color: var(--text-muted);"></i>`;
+    }
+
+    label.innerHTML = `
+      <input type="checkbox" class="filter-checkbox" name="${groupName}" value="${escapeHtml(value)}">
+      ${visual}
+      <span class="filter-label-text">${escapeHtml(labelText)}</span>
+      <span class="filter-item-count">${count}</span>
+    `;
+
+    return label;
+  }
+
+  function syncFilterStateFromDOM() {
+    function getChecked(name) {
+      return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(cb => cb.value);
+    }
+
+    state.filters.status = getChecked('filter-status');
+    state.filters.eixos = getChecked('filter-eixo');
+    state.filters.classificacoes = getChecked('filter-classificacao');
+    state.filters.pestels = getChecked('filter-pestel');
+    state.filters.topicos = getChecked('filter-topico');
+
+    // Update active count badges on headers
+    updateActiveCountBadge('status', state.filters.status.length);
+    updateActiveCountBadge('eixo', state.filters.eixos.length);
+    updateActiveCountBadge('classificacao', state.filters.classificacoes.length);
+    updateActiveCountBadge('pestel', state.filters.pestels.length);
+    updateActiveCountBadge('topico', state.filters.topicos.length);
+
+    // Update .is-checked class on labels
+    document.querySelectorAll('.filter-checkbox').forEach(cb => {
+      const parentLabel = cb.closest('.filter-checkbox-label');
+      if (parentLabel) {
+        if (cb.checked) {
+          parentLabel.classList.add('is-checked');
+        } else {
+          parentLabel.classList.remove('is-checked');
+        }
+      }
+    });
+  }
+
+  function updateActiveCountBadge(group, count) {
+    const badge = document.getElementById(`active-count-${group}`);
+    if (badge) {
+      if (count > 0) {
+        badge.textContent = count;
+        badge.style.display = 'inline-flex';
+      } else {
+        badge.textContent = '0';
+        badge.style.display = 'none';
+      }
+    }
+  }
+
+  function setupCollapsibleFilterSections() {
+    document.querySelectorAll('.filter-section-header').forEach(header => {
+      header.addEventListener('click', (e) => {
+        e.preventDefault();
+        const section = header.closest('.sidebar-filter-section');
+        if (section) {
+          const isCollapsed = section.classList.toggle('collapsed');
+          header.setAttribute('aria-expanded', !isCollapsed);
+        }
+      });
+    });
+  }
+
   // ========================================================================
-  // FILTERING LOGIC: SEMENTES DE FUTURO
+  // FILTERING LOGIC: SEMENTES DE FUTURO (MULTI-SELECT)
   // ========================================================================
   function applySfFilters() {
     const q = removeAccents(state.filters.search.trim());
-    const fEixo = state.filters.eixo;
-    const fClass = state.filters.classificacao;
-    const fPestel = state.filters.pestel;
-    const fTopico = state.filters.topico;
-    const fRev = state.filters.revisada;
+    const fStatus = state.filters.status;
+    const fEixos = state.filters.eixos;
+    const fClass = state.filters.classificacoes;
+    const fPestels = state.filters.pestels;
+    const fTopicos = state.filters.topicos;
 
     state.filteredSementes = state.rawSementes.filter(sf => {
-      // 1. Text Search (ID, Title, Description, Implications, Topic, Indicators, Justification, or author mentions)
+      // 1. Text Search (ID, Title, Description, Implications, Topic, Indicators, Justification, Lineage, or author mentions)
       if (q) {
         const matches = 
           removeAccents(sf.id).includes(q) ||
@@ -500,28 +668,26 @@ document.addEventListener('DOMContentLoaded', () => {
           removeAccents(sf.topico).includes(q) ||
           removeAccents(sf.indicadores || '').includes(q) ||
           removeAccents(sf.justificativa || '').includes(q) ||
+          removeAccents(sf.origemDivisao || '').includes(q) ||
+          (sf.divisaoIds && sf.divisaoIds.some(d => removeAccents(d).includes(q))) ||
           removeAccents(sf.referenciasResumidas).includes(q);
         if (!matches) return false;
       }
 
-      // 2. Eixo Filter
-      if (fEixo && sf.eixo !== fEixo) return false;
+      // 2. Status Filter (Multi-select OR: sf matches if in selected status list)
+      if (fStatus.length > 0 && !fStatus.includes(sf.statusTipo)) return false;
 
-      // 3. Classificação Filter
-      if (fClass && sf.classificacao !== fClass) return false;
+      // 3. Eixo Filter (Multi-select OR: sf matches if its eixo is in selected eixos)
+      if (fEixos.length > 0 && !fEixos.includes(sf.eixo)) return false;
 
-      // 4. PESTEL Filter
-      if (fPestel && !sf.pestel.includes(fPestel)) return false;
+      // 4. Classificação Filter (Multi-select OR: sf matches if in selected classificacoes)
+      if (fClass.length > 0 && !fClass.includes(sf.classificacao)) return false;
 
-      // 5. Tópico Filter
-      if (fTopico && sf.topico !== fTopico) return false;
+      // 5. PESTEL Filter (Multi-select: sf contains AT LEAST ONE selected dimension)
+      if (fPestels.length > 0 && !sf.pestel.some(p => fPestels.includes(p))) return false;
 
-      // 6. Revisada / Status Filter
-      if (fRev === 'pendente' && sf.statusTipo !== 'pendente') return false;
-      if (fRev === 'revisada' && !sf.revisada) return false;
-      if (fRev === 'revisada-ok' && sf.statusTipo !== 'ok') return false;
-      if (fRev === 'revisada-descartada' && sf.statusTipo !== 'descartada') return false;
-      if (fRev === 'revisada-mesclada' && sf.statusTipo !== 'mesclada') return false;
+      // 6. Tópico Filter (Multi-select OR: sf matches if in selected topicos)
+      if (fTopicos.length > 0 && !fTopicos.includes(sf.topico)) return false;
 
       return true;
     });
@@ -548,14 +714,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     state.filteredSementes.sort((a, b) => {
       if (sortVal === 'id-asc') {
+        const catA = a.id.startsWith('SF') && !a.id.startsWith('SFQ') && !a.id.startsWith('SFS') ? 0 : (a.id.startsWith('SFQ') ? 1 : 2);
+        const catB = b.id.startsWith('SF') && !b.id.startsWith('SFQ') && !b.id.startsWith('SFS') ? 0 : (b.id.startsWith('SFQ') ? 1 : 2);
+        if (catA !== catB) return catA - catB;
         const nA = parseInt(a.id.replace(/\D/g, ''), 10) || 0;
         const nB = parseInt(b.id.replace(/\D/g, ''), 10) || 0;
-        return nA - nB;
+        if (nA !== nB) return nA - nB;
+        return a.id.localeCompare(b.id);
       }
       if (sortVal === 'id-desc') {
+        const catA = a.id.startsWith('SF') && !a.id.startsWith('SFQ') && !a.id.startsWith('SFS') ? 0 : (a.id.startsWith('SFQ') ? 1 : 2);
+        const catB = b.id.startsWith('SF') && !b.id.startsWith('SFQ') && !b.id.startsWith('SFS') ? 0 : (b.id.startsWith('SFQ') ? 1 : 2);
+        if (catA !== catB) return catB - catA;
         const nA = parseInt(a.id.replace(/\D/g, ''), 10) || 0;
         const nB = parseInt(b.id.replace(/\D/g, ''), 10) || 0;
-        return nB - nA;
+        if (nA !== nB) return nB - nA;
+        return b.id.localeCompare(a.id);
       }
       if (sortVal === 'artigos-desc') {
         return b.qtdArtigos - a.qtdArtigos;
@@ -608,12 +782,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (sf.statusTipo === 'mesclada') {
         const justTitle = sf.justificativa ? `Justificativa: ${sf.justificativa}` : `Mesclada com ${sf.fusaoId || ''}`;
         statusBadge = `<span class="badge-status-subtle badge-status-fundida" title="${escapeHtml(justTitle)}"><i class="fa-solid fa-code-merge"></i> Mesclada</span>`;
+      } else if (sf.statusTipo === 'dividida') {
+        const justTitle = sf.justificativa ? `Justificativa: ${sf.justificativa}` : `Dividida em ${sf.divisaoIds ? sf.divisaoIds.join(', ') : ''}`;
+        statusBadge = `<span class="badge-status-subtle badge-status-dividida" title="${escapeHtml(justTitle)}"><i class="fa-solid fa-scissors"></i> Dividida</span>`;
       } else if (sf.statusTipo === 'descartada') {
         const justTitle = sf.justificativa ? `Justificativa: ${sf.justificativa}` : 'Descartada na revisão';
         statusBadge = `<span class="badge-status-subtle badge-status-descartada" title="${escapeHtml(justTitle)}"><i class="fa-solid fa-ban"></i> Descartada</span>`;
       } else if (sf.statusTipo === 'ok') {
         const justTitle = sf.justificativa ? `Justificativa: ${sf.justificativa}` : 'Revisada (OK)';
-        statusBadge = `<span class="icon-reviewed-subtle" title="${escapeHtml(justTitle)}"><i class="fa-solid fa-circle-check"></i></span>`;
+        const childBadge = sf.origemDivisao ? `<span class="badge-status-subtle badge-status-filha" title="Desmembrada a partir de ${escapeHtml(sf.origemDivisao)}"><i class="fa-solid fa-code-branch"></i> da ${escapeHtml(sf.origemDivisao)}</span> ` : '';
+        statusBadge = `${childBadge}<span class="icon-reviewed-subtle" title="${escapeHtml(justTitle)}"><i class="fa-solid fa-circle-check"></i></span>`;
       } else {
         statusBadge = `<span class="icon-pending-subtle" title="Em revisão"><i class="fa-regular fa-clock"></i></span>`;
       }
@@ -691,10 +869,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let reviewedBadge = '';
     if (sf.statusTipo === 'mesclada') {
       reviewedBadge = `<span class="badge-status-dossier badge-dossier-fundida"><i class="fa-solid fa-code-merge"></i> Revisada (Mesclada)${sf.fusaoId ? ' → ' + escapeHtml(sf.fusaoId) : ''}</span>`;
+    } else if (sf.statusTipo === 'dividida') {
+      reviewedBadge = `<span class="badge-status-dossier badge-dossier-dividida"><i class="fa-solid fa-scissors"></i> Revisada (Dividida)${sf.divisaoIds && sf.divisaoIds.length ? ' → ' + escapeHtml(sf.divisaoIds.join(', ')) : ''}</span>`;
     } else if (sf.statusTipo === 'descartada') {
       reviewedBadge = `<span class="badge-status-dossier badge-dossier-descartada"><i class="fa-solid fa-ban"></i> Revisada (Descartada)</span>`;
     } else if (sf.statusTipo === 'ok') {
-      reviewedBadge = `<span class="badge-reviewed" style="font-size: 0.74rem; padding: 3px 8px;"><i class="fa-solid fa-check-circle"></i> Revisada (OK)</span>`;
+      const childTag = sf.origemDivisao ? ` <span class="badge-child-tag" title="Originada da divisão de ${escapeHtml(sf.origemDivisao)}">(da ${escapeHtml(sf.origemDivisao)})</span>` : '';
+      reviewedBadge = `<span class="badge-reviewed" style="font-size: 0.74rem; padding: 3px 8px;"><i class="fa-solid fa-check-circle"></i> Revisada (OK)${childTag}</span>`;
     } else {
       reviewedBadge = `<span class="badge-pending" style="font-size: 0.74rem; padding: 3px 8px;"><i class="fa-regular fa-clock"></i> Em revisão</span>`;
     }
@@ -706,7 +887,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const descFormatted = highlightNumericCitations(sf.descricao);
 
-    // Banner contextual de status (Mesclada, Descartada, Incorporadora)
+    // Banner contextual de status (Mesclada, Dividida, Filha de Divisão, Descartada, Incorporadora)
     let statusBannerHtml = '';
     if (sf.statusTipo === 'mesclada') {
       const targetSf = sf.fusaoId ? state.rawSementes.find(s => s.id === sf.fusaoId) : null;
@@ -728,6 +909,49 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           </div>
           ${sf.fusaoId ? `<button class="btn-banner-jump" data-jump-sf="${escapeHtml(sf.fusaoId)}"><i class="fa-solid fa-arrow-right"></i> Ver ${escapeHtml(sf.fusaoId)}</button>` : ''}
+        </div>
+      `;
+    } else if (sf.statusTipo === 'dividida') {
+      const childrenLinks = (sf.divisaoIds || []).map(childId => {
+        const childSf = state.rawSementes.find(s => s.id === childId);
+        return `<a href="javascript:void(0)" class="banner-sf-link" data-jump-sf="${escapeHtml(childId)}"><strong>${escapeHtml(childId)}</strong>${childSf ? ' — ' + escapeHtml(childSf.titulo) : ''}</a>`;
+      }).join(' e ');
+      const jumpButtons = (sf.divisaoIds || []).map(childId => {
+        return `<button class="btn-banner-jump" data-jump-sf="${escapeHtml(childId)}"><i class="fa-solid fa-arrow-right"></i> Ver ${escapeHtml(childId)}</button>`;
+      }).join(' ');
+
+      statusBannerHtml = `
+        <div class="dossier-status-banner banner-dividida">
+          <div class="status-banner-icon"><i class="fa-solid fa-scissors"></i></div>
+          <div class="status-banner-body">
+            <div class="status-banner-title">Semente Revisada (Dividida)</div>
+            ${sf.justificativa ? `
+              <div class="status-banner-justificativa">
+                <i class="fa-solid fa-circle-info"></i> <span><strong>Justificativa metodológica:</strong> ${escapeHtml(sf.justificativa)}</span>
+              </div>
+            ` : ''}
+            <div class="status-banner-text">
+              Esta semente foi desmembrada em novas sementes autônomas na revisão prospectiva: ${childrenLinks}. Seus dados originais e referências associadas permanecem arquivados nesta plataforma para histórico científico e rastreabilidade metodológica.
+            </div>
+          </div>
+          ${jumpButtons ? `<div class="banner-jump-group">${jumpButtons}</div>` : ''}
+        </div>
+      `;
+    } else if (sf.origemDivisao) {
+      const parentSf = state.rawSementes.find(s => s.id === sf.origemDivisao);
+      statusBannerHtml = `
+        <div class="dossier-status-banner banner-origem-divisao">
+          <div class="status-banner-icon"><i class="fa-solid fa-code-branch"></i></div>
+          <div class="status-banner-body">
+            <div class="status-banner-title">Semente Resultante de Divisão Metodológica</div>
+            <div class="status-banner-text">
+              Esta semente resultou do desmembramento e aprofundamento analítico da semente 
+              <a href="javascript:void(0)" class="banner-sf-link" data-jump-sf="${escapeHtml(sf.origemDivisao)}">
+                <strong>${escapeHtml(sf.origemDivisao)}</strong>${parentSf ? ' — ' + escapeHtml(parentSf.titulo) : ''}
+              </a>.
+            </div>
+          </div>
+          <button class="btn-banner-jump" data-jump-sf="${escapeHtml(sf.origemDivisao)}"><i class="fa-solid fa-arrow-left"></i> Ver semente original (${escapeHtml(sf.origemDivisao)})</button>
         </div>
       `;
     } else if (sf.statusTipo === 'descartada') {
@@ -928,6 +1152,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (sf.justificativa) {
         copyText += `\nJustificativa: ${sf.justificativa}`;
       }
+      if (sf.origemDivisao) {
+        copyText += `\nOrigem: Desmembrada a partir de ${sf.origemDivisao}`;
+      }
+      if (sf.divisaoIds && sf.divisaoIds.length > 0) {
+        copyText += `\nDivisões resultantes: ${sf.divisaoIds.join(', ')}`;
+      }
       copyText += `\n\nDescrição:\n${sf.descricao}`;
       if (rawIndicadores && rawIndicadores.toUpperCase() !== 'N/A') {
         copyText += `\n\nIndicadores:\n${rawIndicadores}`;
@@ -1011,8 +1241,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========================================================================
   // ACTIVE TAGS BAR
   // ========================================================================
+  function uncheckFilter(groupName, value) {
+    const checkboxes = document.querySelectorAll(`input[name="${groupName}"]`);
+    checkboxes.forEach(cb => {
+      if (cb.value === value) {
+        cb.checked = false;
+        const parentLabel = cb.closest('.filter-checkbox-label');
+        if (parentLabel) parentLabel.classList.remove('is-checked');
+      }
+    });
+    syncFilterStateFromDOM();
+    applySfFilters();
+  }
+
   function renderActiveFilterTags() {
     const container = document.getElementById('active-tags-container');
+    if (!container) return;
     container.innerHTML = '';
 
     const addTag = (label, removeCallback) => {
@@ -1029,56 +1273,66 @@ document.addEventListener('DOMContentLoaded', () => {
     if (state.filters.search) {
       addTag(`"${state.filters.search}"`, () => {
         state.filters.search = '';
-        document.getElementById('sf-search-input').value = '';
-        document.getElementById('sf-search-clear').style.display = 'none';
+        const searchInput = document.getElementById('sf-search-input');
+        if (searchInput) searchInput.value = '';
+        const searchClear = document.getElementById('sf-search-clear');
+        if (searchClear) searchClear.style.display = 'none';
         applySfFilters();
       });
     }
 
-    if (state.filters.eixo) {
-      addTag(`Eixo: ${state.filters.eixo.split('-')[0].trim()}`, () => {
-        state.filters.eixo = '';
-        document.getElementById('filter-eixo').value = '';
-        applySfFilters();
-      });
-    }
+    // Status Tags
+    const statusLabelMap = {
+      'pendente': 'Status: Em revisão',
+      'ok': 'Status: Revisada (OK)',
+      'dividida': 'Status: Revisada (Dividida)',
+      'mesclada': 'Status: Revisada (Mesclada)',
+      'descartada': 'Status: Revisada (Descartada)'
+    };
+    (state.filters.status || []).forEach(val => {
+      const label = statusLabelMap[val] || `Status: ${val}`;
+      addTag(label, () => uncheckFilter('filter-status', val));
+    });
 
-    if (state.filters.classificacao) {
-      addTag(`${state.filters.classificacao}`, () => {
-        state.filters.classificacao = '';
-        document.getElementById('filter-classificacao').value = '';
-        applySfFilters();
-      });
-    }
+    // Eixos Tags
+    (state.filters.eixos || []).forEach(e => {
+      const shortEixo = e.length > 25 ? e.substring(0, 23) + '...' : e;
+      addTag(`Eixo: ${shortEixo}`, () => uncheckFilter('filter-eixo', e));
+    });
 
-    if (state.filters.pestel) {
-      addTag(`${state.filters.pestel}`, () => {
-        state.filters.pestel = '';
-        document.getElementById('filter-pestel').value = '';
-        applySfFilters();
-      });
-    }
+    // Classificação Tags
+    (state.filters.classificacoes || []).forEach(c => {
+      addTag(`${c}`, () => uncheckFilter('filter-classificacao', c));
+    });
 
-    if (state.filters.topico) {
-      addTag(`Tópico: ${state.filters.topico.substring(0, 18)}...`, () => {
-        state.filters.topico = '';
-        document.getElementById('filter-topico').value = '';
-        applySfFilters();
-      });
-    }
+    // PESTEL Tags
+    (state.filters.pestels || []).forEach(p => {
+      addTag(`PESTEL: ${p}`, () => uncheckFilter('filter-pestel', p));
+    });
 
-    if (state.filters.revisada) {
-      let revLabel = 'Status: Em revisão';
-      if (state.filters.revisada === 'revisada') revLabel = 'Status: Revisada';
-      else if (state.filters.revisada === 'revisada-ok') revLabel = 'Status: Revisada (OK)';
-      else if (state.filters.revisada === 'revisada-descartada') revLabel = 'Status: Revisada (Descartada)';
-      else if (state.filters.revisada === 'revisada-mesclada') revLabel = 'Status: Revisada (Mesclada)';
-      else if (state.filters.revisada === 'pendente') revLabel = 'Status: Em revisão';
-      addTag(`${revLabel}`, () => {
-        state.filters.revisada = '';
-        document.getElementById('filter-revisada').value = '';
-        applySfFilters();
+    // Tópicos Tags
+    (state.filters.topicos || []).forEach(t => {
+      const shortTopico = t.length > 22 ? t.substring(0, 20) + '...' : t;
+      addTag(`Tópico: ${shortTopico}`, () => uncheckFilter('filter-topico', t));
+    });
+
+    // Botão Limpar Filtros se houver 2 ou mais critérios
+    const totalActiveCount = (state.filters.search ? 1 : 0) +
+      (state.filters.status ? state.filters.status.length : 0) +
+      (state.filters.eixos ? state.filters.eixos.length : 0) +
+      (state.filters.classificacoes ? state.filters.classificacoes.length : 0) +
+      (state.filters.pestels ? state.filters.pestels.length : 0) +
+      (state.filters.topicos ? state.filters.topicos.length : 0);
+
+    if (totalActiveCount >= 2) {
+      const clearBtn = document.createElement('button');
+      clearBtn.type = 'button';
+      clearBtn.className = 'filter-tag-clear-all';
+      clearBtn.innerHTML = '<i class="fa-solid fa-rotate-left"></i> Limpar filtros';
+      clearBtn.addEventListener('click', () => {
+        resetSfFilters();
       });
+      container.appendChild(clearBtn);
     }
   }
 
@@ -1093,6 +1347,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalAprovadas = state.rawSementes.filter(s => s.statusTipo === 'ok').length;
     const totalMescladas = state.rawSementes.filter(s => s.statusTipo === 'mesclada').length;
     const totalDescartadas = state.rawSementes.filter(s => s.statusTipo === 'descartada').length;
+    const totalDivididas = state.rawSementes.filter(s => s.statusTipo === 'dividida').length;
 
     document.getElementById('kpi-total-sf').textContent = totalSF;
     document.getElementById('kpi-artigos-citados').textContent = artigosCitados;
@@ -1101,7 +1356,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const kpiRev = document.getElementById('kpi-revisadas');
     if (kpiRev) {
       kpiRev.textContent = totalRevisadas;
-      kpiRev.title = `${totalRevisadas} revisadas (${totalAprovadas} OK, ${totalMescladas} Mesclada, ${totalDescartadas} Descartada)`;
+      kpiRev.title = `${totalRevisadas} revisadas (${totalAprovadas} OK, ${totalMescladas} Mesclada, ${totalDivididas} Dividida, ${totalDescartadas} Descartada)`;
     }
 
     document.getElementById('badge-total-sf').textContent = totalSF;
@@ -1561,47 +1816,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const sfSearchInput = document.getElementById('sf-search-input');
     const sfSearchClear = document.getElementById('sf-search-clear');
 
-    sfSearchInput.addEventListener('input', (e) => {
-      state.filters.search = e.target.value;
-      sfSearchClear.style.display = state.filters.search ? 'block' : 'none';
-      debouncedApplySfFilters();
-    });
+    if (sfSearchInput) {
+      sfSearchInput.addEventListener('input', (e) => {
+        state.filters.search = e.target.value;
+        if (sfSearchClear) sfSearchClear.style.display = state.filters.search ? 'block' : 'none';
+        debouncedApplySfFilters();
+      });
+    }
 
-    sfSearchClear.addEventListener('click', () => {
-      sfSearchInput.value = '';
-      state.filters.search = '';
-      sfSearchClear.style.display = 'none';
-      applySfFilters();
-    });
+    if (sfSearchClear) {
+      sfSearchClear.addEventListener('click', () => {
+        if (sfSearchInput) sfSearchInput.value = '';
+        state.filters.search = '';
+        sfSearchClear.style.display = 'none';
+        applySfFilters();
+      });
+    }
 
-    document.getElementById('filter-eixo').addEventListener('change', (e) => {
-      state.filters.eixo = e.target.value;
-      applySfFilters();
-    });
+    // Checkbox delegation for all SF filters in sidebar
+    const sidebarBody = document.querySelector('.sidebar-body');
+    if (sidebarBody) {
+      sidebarBody.addEventListener('change', (e) => {
+        if (e.target && e.target.classList.contains('filter-checkbox')) {
+          syncFilterStateFromDOM();
+          applySfFilters();
+        }
+      });
+    }
 
-    document.getElementById('filter-classificacao').addEventListener('change', (e) => {
-      state.filters.classificacao = e.target.value;
-      applySfFilters();
-    });
-
-    document.getElementById('filter-pestel').addEventListener('change', (e) => {
-      state.filters.pestel = e.target.value;
-      applySfFilters();
-    });
-
-    document.getElementById('filter-topico').addEventListener('change', (e) => {
-      state.filters.topico = e.target.value;
-      applySfFilters();
-    });
-
-    document.getElementById('filter-revisada').addEventListener('change', (e) => {
-      state.filters.revisada = e.target.value;
-      applySfFilters();
-    });
-
-    document.getElementById('btn-clear-filters').addEventListener('click', () => {
-      resetSfFilters();
-    });
+    const btnClearFilters = document.getElementById('btn-clear-filters');
+    if (btnClearFilters) {
+      btnClearFilters.addEventListener('click', () => {
+        resetSfFilters();
+      });
+    }
 
     // 4. SF List Sorting Selector
     document.getElementById('sf-list-sort').addEventListener('change', (e) => {
@@ -1722,19 +1970,28 @@ document.addEventListener('DOMContentLoaded', () => {
   function resetSfFilters() {
     state.filters = {
       search: '',
-      eixo: '',
-      classificacao: '',
-      pestel: '',
-      topico: '',
-      revisada: ''
+      status: [],
+      eixos: [],
+      classificacoes: [],
+      pestels: [],
+      topicos: []
     };
-    document.getElementById('sf-search-input').value = '';
-    document.getElementById('sf-search-clear').style.display = 'none';
-    document.getElementById('filter-eixo').value = '';
-    document.getElementById('filter-classificacao').value = '';
-    document.getElementById('filter-pestel').value = '';
-    document.getElementById('filter-topico').value = '';
-    document.getElementById('filter-revisada').value = '';
+    const sfSearchInput = document.getElementById('sf-search-input');
+    if (sfSearchInput) sfSearchInput.value = '';
+    const sfSearchClear = document.getElementById('sf-search-clear');
+    if (sfSearchClear) sfSearchClear.style.display = 'none';
+
+    document.querySelectorAll('.filter-checkbox').forEach(cb => {
+      cb.checked = false;
+    });
+    document.querySelectorAll('.filter-checkbox-label').forEach(lbl => {
+      lbl.classList.remove('is-checked');
+    });
+
+    ['status', 'eixo', 'classificacao', 'pestel', 'topico'].forEach(group => {
+      updateActiveCountBadge(group, 0);
+    });
+
     applySfFilters();
   }
 

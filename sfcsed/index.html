@@ -207,7 +207,7 @@
             <div class="sidebar-body">
               
               <!-- Busca Textual -->
-              <div class="sidebar-filter-group">
+              <div class="sidebar-filter-group sidebar-search-group">
                 <label for="sf-search-input"><i class="fa-solid fa-magnifying-glass"></i> Busca Textual</label>
                 <div class="sidebar-search-box">
                   <input type="text" id="sf-search-input" placeholder="ID, termo, autor..." autocomplete="off">
@@ -217,49 +217,109 @@
                 </div>
               </div>
 
-              <!-- Eixo Estratégico -->
-              <div class="sidebar-filter-group">
-                <label for="filter-eixo"><i class="fa-solid fa-layer-group"></i> Eixo Estratégico</label>
-                <select id="filter-eixo" class="sidebar-select">
-                  <option value="">Todos os Eixos (5)</option>
-                </select>
+              <div class="filter-divider"></div>
+
+              <!-- Status de Revisão (Colapsável) -->
+              <div class="sidebar-filter-section collapsed" id="section-filter-status" data-filter-group="status">
+                <button type="button" class="filter-section-header" aria-expanded="false" title="Recolher / Expandir Status de Revisão">
+                  <div class="filter-section-title">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Status de Revisão</span>
+                  </div>
+                  <div class="filter-section-meta">
+                    <span class="filter-active-count" id="active-count-status" style="display: none;">0</span>
+                    <i class="fa-solid fa-chevron-down filter-toggle-icon"></i>
+                  </div>
+                </button>
+                <div class="filter-section-content">
+                  <div class="filter-checkbox-list" id="filter-status-options">
+                    <!-- Checkboxes de status gerados dinamicamente -->
+                  </div>
+                </div>
               </div>
 
-              <!-- Tipologia Prospectiva -->
-              <div class="sidebar-filter-group">
-                <label for="filter-classificacao"><i class="fa-solid fa-bolt"></i> Tipologia Prospectiva</label>
-                <select id="filter-classificacao" class="sidebar-select">
-                  <option value="">Todas as Tipologias</option>
-                </select>
+              <div class="filter-divider"></div>
+
+              <!-- Eixo Estratégico (Colapsável) -->
+              <div class="sidebar-filter-section collapsed" id="section-filter-eixo" data-filter-group="eixo">
+                <button type="button" class="filter-section-header" aria-expanded="false" title="Recolher / Expandir Eixo Estratégico">
+                  <div class="filter-section-title">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Eixo Estratégico</span>
+                  </div>
+                  <div class="filter-section-meta">
+                    <span class="filter-active-count" id="active-count-eixo" style="display: none;">0</span>
+                    <i class="fa-solid fa-chevron-down filter-toggle-icon"></i>
+                  </div>
+                </button>
+                <div class="filter-section-content">
+                  <div class="filter-checkbox-list" id="filter-eixo-options">
+                    <!-- Checkboxes de Eixo gerados dinamicamente -->
+                  </div>
+                </div>
               </div>
 
-              <!-- Dimensões -->
-              <div class="sidebar-filter-group">
-                <label for="filter-pestel"><i class="fa-solid fa-cubes"></i> Dimensões</label>
-                <select id="filter-pestel" class="sidebar-select">
-                  <option value="">Todas as Dimensões</option>
-                </select>
+              <div class="filter-divider"></div>
+
+              <!-- Tipologia Prospectiva (Colapsável) -->
+              <div class="sidebar-filter-section collapsed" id="section-filter-classificacao" data-filter-group="classificacao">
+                <button type="button" class="filter-section-header" aria-expanded="false" title="Recolher / Expandir Tipologia Prospectiva">
+                  <div class="filter-section-title">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Tipologia Prospectiva</span>
+                  </div>
+                  <div class="filter-section-meta">
+                    <span class="filter-active-count" id="active-count-classificacao" style="display: none;">0</span>
+                    <i class="fa-solid fa-chevron-down filter-toggle-icon"></i>
+                  </div>
+                </button>
+                <div class="filter-section-content">
+                  <div class="filter-checkbox-list" id="filter-classificacao-options">
+                    <!-- Checkboxes de Classificação gerados dinamicamente -->
+                  </div>
+                </div>
               </div>
 
-              <!-- Tópico Padronizado -->
-              <div class="sidebar-filter-group">
-                <label for="filter-topico"><i class="fa-solid fa-tags"></i> Tópico Padronizado</label>
-                <select id="filter-topico" class="sidebar-select">
-                  <option value="">Todos os Tópicos</option>
-                </select>
+              <div class="filter-divider"></div>
+
+              <!-- Dimensões PESTEL (Colapsável) -->
+              <div class="sidebar-filter-section collapsed" id="section-filter-pestel" data-filter-group="pestel">
+                <button type="button" class="filter-section-header" aria-expanded="false" title="Recolher / Expandir Dimensões">
+                  <div class="filter-section-title">
+                    <i class="fa-solid fa-cubes"></i>
+                    <span>Dimensões</span>
+                  </div>
+                  <div class="filter-section-meta">
+                    <span class="filter-active-count" id="active-count-pestel" style="display: none;">0</span>
+                    <i class="fa-solid fa-chevron-down filter-toggle-icon"></i>
+                  </div>
+                </button>
+                <div class="filter-section-content">
+                  <div class="filter-checkbox-list" id="filter-pestel-options">
+                    <!-- Checkboxes de Dimensões gerados dinamicamente -->
+                  </div>
+                </div>
               </div>
 
-              <!-- Status de Revisão -->
-              <div class="sidebar-filter-group">
-                <label for="filter-revisada"><i class="fa-solid fa-circle-check"></i> Status</label>
-                <select id="filter-revisada" class="sidebar-select">
-                  <option value="">Todos os Status</option>
-                  <option value="pendente">Em revisão</option>
-                  <option value="revisada">Revisada</option>
-                  <option value="revisada-ok">Revisada (OK)</option>
-                  <option value="revisada-descartada">Revisada (Descartada)</option>
-                  <option value="revisada-mesclada">Revisada (Mesclada)</option>
-                </select>
+              <div class="filter-divider"></div>
+
+              <!-- Tópico Padronizado (Colapsável) -->
+              <div class="sidebar-filter-section collapsed" id="section-filter-topico" data-filter-group="topico">
+                <button type="button" class="filter-section-header" aria-expanded="false" title="Recolher / Expandir Tópico Padronizado">
+                  <div class="filter-section-title">
+                    <i class="fa-solid fa-tags"></i>
+                    <span>Tópico Padronizado</span>
+                  </div>
+                  <div class="filter-section-meta">
+                    <span class="filter-active-count" id="active-count-topico" style="display: none;">0</span>
+                    <i class="fa-solid fa-chevron-down filter-toggle-icon"></i>
+                  </div>
+                </button>
+                <div class="filter-section-content">
+                  <div class="filter-checkbox-list scrollable-checkbox-list" id="filter-topico-options">
+                    <!-- Checkboxes de Tópico gerados dinamicamente -->
+                  </div>
+                </div>
               </div>
 
             </div>
@@ -426,21 +486,6 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="app-footer">
-      <div class="footer-container">
-        <div class="footer-left">
-          <span><strong>SFCSED</strong> — Plataforma Prospectiva</span>
-          <span class="footer-dot">•</span>
-          <span>Cenários para a Educação Superior 2040</span>
-          <span class="footer-dot">•</span>
-          <span id="footer-source-info">Fonte: SF CSED.xlsx</span>
-        </div>
-        <div class="footer-right">
-          <span>Visualização Executiva Integrada (Leitor Prospectivo)</span>
-        </div>
-      </div>
-    </footer>
 
   </div>
 

@@ -2,15 +2,16 @@
 const sfData = {
   "metadata": {
     "sourceFile": "SF CSED.xlsx",
-    "totalSF": 70,
-    "totalArticles": 339,
+    "totalSF": 72,
+    "totalArticles": 340,
     "totalArticlesCited": 315,
-    "totalRevisadas": 15,
-    "totalAprovadas": 13,
+    "totalRevisadas": 20,
+    "totalAprovadas": 17,
     "totalMescladas": 1,
     "totalDescartadas": 1,
-    "totalPendentes": 55,
-    "generatedAt": "14/10/2026 15:46:24"
+    "totalDivididas": 1,
+    "totalPendentes": 52,
+    "generatedAt": "17/10/2026 18:30:10"
   },
   "sementes": [
     {
@@ -52,69 +53,9 @@ const sfData = {
       "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
-      "incorporadas": []
-    },
-    {
-      "id": "SFQ01",
-      "fonte": "Clarice",
-      "topico": "Empregabilidade, Futuro do Trabalho e Novas Competências",
-      "titulo": "Letramento Quântico (Quantum Literacy) e Formação Antecipatória de Competências para a Economia Quântica",
-      "descricao": "Observa-se o crescimento acelerado de políticas governamentais e diretrizes institucionais voltadas ao desenvolvimento de competências em tecnologias quânticas bem antes da ampla disponibilidade comercial do hardware (382, 384). Mapeamentos acadêmicos recentes documentam a consolidação de um campo pedagógico próprio com estratégias didáticas empíricas para o ensino de conceitos quânticos em cursos STEM e Ciência de Dados (388, 389), acompanhado pelos primeiros movimentos no mercado brasileiro de formação profissional, como o lançamento de programas de pós-graduação pioneiros voltados à engenharia e tecnologia (393). Esse movimento sinaliza uma trajetória na qual o letramento quântico ('Quantum Literacy') deixa de ser nicho restrito da física teórica e passa a ser demandado como competência transversal em diversas áreas, como finanças, logística, química computacional e cibersegurança (383, 388), forçando as IES a anteciparem a reformulação curricular para evitar um apagão de mão de obra especializada no horizonte 2030–2040 (382, 384)",
-      "descricaoApa": "N/A",
-      "classificacao": "Sinal Fraco",
-      "pestel": [
-        "Tecnológico",
-        "Social",
-        "Econômico"
-      ],
-      "eixo": "5 - Transformação Tecnológica",
-      "qtdArtigos": 6,
-      "artigosIds": [
-        382,
-        383,
-        384,
-        388,
-        389,
-        393
-      ],
-      "referenciasResumidas": "[382] OECD (2025) - A quantum technologies policy primer | [383] OECD (2025) - An overview of national strategies and policies for quantum technologies | [384] European Commission (2025) - Quantum Europe Strategy: Building a world-leading quantum ecosystem in Europe | [388] López-Meneses E. (2025) - Quantum Computing in Data Science and STEM Education: Mapping Academic Trends and Analyzing Practical Tools | [389] Donhauser A. (2024) - Empirical insights into the effects of research-based teaching strategies in quantum education | [393] MCTI (2026) - Iniciativa Brasileira de Tecnologias Quânticas (IBQuântica), Hub Nacional de Campinas e Pós-Graduação UniSENAI-SP",
-      "implicacoes": "Oportunidade para liderar a oferta de cursos curtos de extensão, nanodegrees e especializações lato sensu em fundamentos de computação quântica aplicada (finanças quânticas, otimização e cibersegurança) em parceria com provedores em nuvem, preparando o terreno antes que as graduações tradicionais de computação e engenharias tornem essa formação obrigatória nas DCNs",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "ok",
-      "statusRevisao": "OK",
-      "statusLabel": "Revisada (OK)",
-      "justificativa": "",
-      "fusaoId": "",
-      "incorporadas": []
-    },
-    {
-      "id": "SFS01",
-      "fonte": "Vinicius",
-      "topico": "Modelos Pedagógicos, Aprendizagem Híbrida e EAD",
-      "titulo": "Reconfiguração Demográfica da Demanda — Adultização Discente e Bifurcação entre Presencial e EAD Flexível",
-      "descricao": "A combinação entre a contínua expansão da educação a distância e a retração moderada dos cursos de graduação presenciais evidencia uma reconfiguração demográfica e funcional da demanda pelo ensino superior privado, marcada pela crescente hegemonia de estudantes adultos (381). Ao contrário do público jovem recém-egresso do ensino médio, esse contingente ingressa nas IES pressionado pela necessidade de conciliar estudos com jornadas de trabalho e encargos familiares (381).",
-      "descricaoApa": "A combinação entre a contínua expansão da educação a distância e a retração moderada dos cursos de graduação presenciais evidencia uma reconfiguração demográfica e funcional da demanda pelo ensino superior privado, marcada pela crescente hegemonia de estudantes adultos (SEMESP, 2026, p. 7). Ao contrário do público jovem recém-egresso do ensino médio, esse contingente ingressa nas IES pressionado pela necessidade de conciliar estudos com jornadas de trabalho e encargos familiares.",
-      "classificacao": "Incerteza",
-      "pestel": [
-        "Social",
-        "Econômico",
-        "Político"
-      ],
-      "eixo": "3 - Dinâmicas Sociodemográficas",
-      "qtdArtigos": 1,
-      "artigosIds": [
-        381
-      ],
-      "referenciasResumidas": "[381] Semesp (2026) - Mapa do Ensino Superior no Brasil 2026 (16ª edição)",
-      "implicacoes": "Necessidade de diferenciação clara da proposta de valor. Os campi presenciais precisam ser ressignificados como centros de experiência, convivência e práticas laboratoriais complexas, enquanto a esteira de EAD e semipresencial deve investir em flexibilidade assíncrona, microcertificações e suporte à retenção de alunos com pouco tempo disponível.",
-      "indicadores": "Proporção de matrículas de ingressantes com mais de 25 anos; Taxa de crescimento do EAD vs. taxa de retração do presencial por turno (diurno/noturno); Ticket médio por modalidade.",
-      "revisada": true,
-      "statusTipo": "ok",
-      "statusRevisao": "OK",
-      "statusLabel": "Revisada (OK)",
-      "justificativa": "",
-      "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -146,72 +87,10 @@ const sfData = {
       "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
-    },
-    {
-      "id": "SFQ02",
-      "fonte": "Clarice",
-      "topico": "Gestão Institucional, Análise de Dados e Inteligência Operacional",
-      "titulo": "Ameaça de segurança de dados e Adequação dos Protocolos de segurança nas IES",
-      "descricao": "A demonstração matemática de que computadores quânticos futuros serão capazes de quebrar os algoritmos clássicos de criptografia de chave pública (como RSA e curvas elípticas) desencadeou a publicação oficial dos primeiros padrões internacionais de Criptografia Pós-Quântica pelo NIST entre 2024 e 2026 (390). Soma-se a isso a prática já observada de espionagem digital 'Harvest Now, Decrypt Later' (captura massiva de dados criptografados hoje para decifração quando o computador quântico estiver maduro), criando riscos retroativos para registros acadêmicos perenes, pesquisas com patentes e dados sensíveis de estudantes (382, 390). Esse contexto transforma a migração para infraestruturas imunes a ataques quânticos em uma necessidade institucional com longo ciclo de implantação, levando as universidades a reestruturarem seus protocolos de cibersegurança e conformidade de dados anos antes da consolidação física da computação quântica (382, 390).",
-      "descricaoApa": "N/A",
-      "classificacao": "Surpresa inevitável",
-      "pestel": [
-        "Tecnológico",
-        "Legal",
-        "Econômico"
-      ],
-      "eixo": "5 - Transformação Tecnológica",
-      "qtdArtigos": 2,
-      "artigosIds": [
-        382,
-        390
-      ],
-      "referenciasResumidas": "[382] OECD (2025) - A quantum technologies policy primer | [390] NIST (2024) - Post-Quantum Cryptography Standardization (FIPS 203, FIPS 204, FIPS 205)",
-      "implicacoes": "Exigirá auditoria e atualização gradual dos sistemas de registro acadêmico, diplomas digitais, prontuários de clínicas-escola e bases de dados corporativas da CSED para criptografia pós-quântica (PQC). A instituição que atrasar essa transição enfrentará passivos regulatórios perante a LGPD e risco de obsolescência de sua infraestrutura de confiança digital.",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "ok",
-      "statusRevisao": "OK",
-      "statusLabel": "Revisada (OK)",
-      "justificativa": "",
-      "fusaoId": "",
-      "incorporadas": []
-    },
-    {
-      "id": "SFS02",
-      "fonte": "Vinicius",
-      "topico": "Financiamento, Mercantilização e Modelos de Negócio",
-      "titulo": "Reconfiguração Organizacional e Assimetria Espacial - Ascensão dos Centros Universitários e a Emergência de Desertos Educacionais",
-      "descricao": "Transformações regulatórias e de mercado consolidadas no Brasil a partir da LDB de 1996 estabeleceram os Centros Universitários como a organização predominante e mais adaptada à expansão em escala da graduação privada, em detrimento do modelo de Faculdades isoladas, historicamente vitais para a interiorização e a fixação de talentos locais (381). Pressionadas pelos ganhos de escala das grandes redes e pela expansão de polos de EAD de baixo custo, o recuo acelerado dessas faculdades locais compromete a diversidade do sistema e aprofunda uma assimetria territorial que a literatura empírica internacional classifica como a polarização entre 'oásis' (hiperconcentração e saturação institucional nas capitais) e 'desertos educacionais' (vazios territoriais desprovidos de alternativas formativas presenciais de qualidade) (3, 381). Evidências globais demonstram que a mera dispersão de ensino puramente remoto não sana essas fraturas espaciais, demandando estratégias deliberadas de engajamento comunitário (outreach) e adequação curricular para evitar que cidades do interior permaneçam isoladas das cadeias de formação profissional contemporâneas (3, 379), configurando uma tendência de empobrecimento da presença física regional que tensiona futuros marcos de regulação e admissão (87, 262).",
-      "descricaoApa": "Transformações regulatórias e de mercado consolidadas no Brasil a partir da LDB de 1996 estabeleceram os Centros Universitários como a organização predominante e mais adaptada à expansão em escala da graduação privada, em detrimento do modelo de Faculdades isoladas, historicamente vitais para a interiorização e a fixação de talentos locais (SEMESP, 2026). Pressionadas pelos ganhos de escala das grandes redes e pela expansão de polos de EAD de baixo custo, o recuo acelerado dessas faculdades locais compromete a diversidade do sistema e aprofunda uma assimetria territorial que a literatura empírica internacional classifica como a polarização entre 'oásis' (hiperconcentração e saturação institucional nas capitais) e 'desertos educacionais' (vazios territoriais desprovidos de alternativas formativas presenciais de qualidade) (Ram et al., 2022; SEMESP, 2026). Evidências globais demonstram que a mera dispersão de ensino puramente remoto não sana essas fraturas espaciais, demandando estratégias deliberadas de engajamento comunitário (outreach) e adequação curricular para evitar que cidades do interior permaneçam isoladas das cadeias de formação profissional contemporâneas (Ram et al., 2022; Stewart et al., 2024), configurando uma tendência de empobrecimento da presença física regional que tensiona futuros marcos de regulação e admissão (Haj et al., 2018; Salmi, 2018).",
-      "classificacao": "Tendência",
-      "pestel": [
-        "Econômico",
-        "Social",
-        "Legal"
-      ],
-      "eixo": "4 - Economia e Mercado de Trabalho",
-      "qtdArtigos": 5,
-      "artigosIds": [
-        3,
-        87,
-        262,
-        379,
-        381
-      ],
-      "referenciasResumidas": "[3] Ram M.P. (2022) - Deserts and Oases: Geospatial Analytics of Higher Education Access | [87] Salmi J. (2018) - Social Dimension Within a Quality Oriented Higher Education System | [262] Haj C.M. (2018) - A Typology of Admission Systems Across Europe and Their Impact on the Equity of Access, Progression and Completion in Higher Education | [379] Stewart A. (2024) - Building an outreach culture for fairer access to higher education in Haryana, India: A ‘bottom up’ contribution to policy implementation | [381] Semesp (2026) - Mapa do Ensino Superior no Brasil 2026 (16ª edição)",
-      "implicacoes": "O recuo das faculdades isoladas e a saturação dos grandes centros urbanos indicam que as vias de expansão sustentável para mantenedoras privadas até 2040 migram para o preenchimento qualificado dos desertos educacionais no interior. A oportunidade reside em superar o modelo de polos virtuais precários e implantar unidades descentralizadas multisserviços e modelos híbridos com forte presença física e laboratorial, ancorados nas demandas produtivas regionais (como polos agroindustriais, de saúde regional e novas tecnologias).",
-      "indicadores": "Participação relativa de Centros Universitários versus Faculdades isoladas no total de IES e matrículas; Densidade de cursos e vagas presenciais em municípios fora das regiões metropolitanas (mapeamento de \"desertos educacionais\"); Número de polos de EAD instalados em municípios de médio porte desprovidos de oferta presencial qualificada.",
-      "revisada": true,
-      "statusTipo": "ok",
-      "statusRevisao": "OK",
-      "statusLabel": "Revisada (OK)",
-      "justificativa": "",
-      "fusaoId": "",
-      "incorporadas": [
-        "SF22"
-      ]
     },
     {
       "id": "SF03",
@@ -244,64 +123,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
-      "incorporadas": []
-    },
-    {
-      "id": "SFQ03",
-      "fonte": "Clarice",
-      "topico": "Gestão Institucional, Análise de Dados e Inteligência Operacional",
-      "titulo": "Otimização Quântica Híbrida (Quantum Annealing) na Resolução de Gargalos Operacionais Complexos da Universidade",
-      "descricao": "Experiências empíricas pioneiras com processadores quânticos híbridos (como annealers acoplados a sistemas de computação clássica) demonstraram viabilidade prática na resolução de problemas complexos de otimização combinatória universitária, como o escalonamento simultâneo de milhares de exames, disciplinas e salas para turmas massivas sem conflitos de horários (387). Esse sinal indica que a primeira porta de entrada da computação quântica no cotidiano educacional pode não ocorrer na sala de aula, mas nas operações logísticas de retaguarda ('back-office'), onde o cálculo combinatório de alocação de turmas, rotas de transporte, ensalamento dinâmico e retenção discente em grandes redes multicampi atinge limites matemáticos para algoritmos puramente convencionais (387, 392).",
-      "descricaoApa": "N/A",
-      "classificacao": "Sinal Fraco",
-      "pestel": [
-        "Tecnológico",
-        "Econômico"
-      ],
-      "eixo": "5 - Transformação Tecnológica",
-      "qtdArtigos": 2,
-      "artigosIds": [
-        387,
-        392
-      ],
-      "referenciasResumidas": "[387] Zhou Z. (2025) - Hybrid quantum annealing for large-scale exam scheduling: Validation in real-world educational scenarios | [392] IBM Quantum (2026) - IBM Quantum Technology Atlas and Development Roadmap",
-      "implicacoes": "Para grandes conglomerados educacionais com centenas de milhares de alunos e múltiplos polos, a utilização de serviços híbridos de otimização quântica em nuvem poderá destravar ganhos de eficiência operacional no uso de prédios, laboratórios e alocação de docentes, reduzindo o custo por aluno e a ociosidade física",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "ok",
-      "statusRevisao": "OK",
-      "statusLabel": "Revisada (OK)",
-      "justificativa": "",
-      "fusaoId": "",
-      "incorporadas": []
-    },
-    {
-      "id": "SFS03",
-      "fonte": "Vinicius",
-      "topico": "Papel Social, Democracia e Missão Cívica da Universidade",
-      "titulo": "Apesar do alto custo regulatório é a autonomia da categoria de universidade que promove a expansão da EAD, atraindo especialmente estudantes de faixas etária mais elevada, que ingressam no Ensino Superior em em fases posteriores da vida, e têm trajetória educacional diferente, pois buscam conciliar estudos, trabalho e responsabilidades familiares. \"Essa contradição do sistema (onde a universidade, vocacionada para a pesquisa e formação integral, torna-se o principal canal de acesso à graduação via EAD para quem entra mais tarde no sistema) tensiona o papel histórico dessas instituições e levanta debates sobre a qualidade da formação e a articulação entre as diferentes funções acadêmicas\" (SAMESP, 2026, p. 74, grifo nosso).",
-      "descricao": "Apesar do alto custo regulatório é a autonomia da categoria de universidade que promove a expansão da EAD, atraindo especialmente estudantes de faixas etária mais elevada, que ingressam no Ensino Superior em em fases posteriores da vida, e têm trajetória educacional diferente, pois buscam conciliar estudos, trabalho e responsabilidades familiares. \"Essa contradição do sistema (onde a universidade, vocacionada para a pesquisa e formação integral, torna-se o principal canal de acesso à graduação via EAD para quem entra mais tarde no sistema) tensiona o papel histórico dessas instituições e levanta debates sobre a qualidade da formação e a articulação entre as diferentes funções acadêmicas\" (381).",
-      "descricaoApa": "Apesar do alto custo regulatório é a autonomia da categoria de universidade que promove a expansão da EAD, atraindo especialmente estudantes de faixas etária mais elevada, que ingressam no Ensino Superior em em fases posteriores da vida, e têm trajetória educacional diferente, pois buscam conciliar estudos, trabalho e responsabilidades familiares. \"Essa contradição do sistema (onde a universidade, vocacionada para a pesquisa e formação integral, torna-se o principal canal de acesso à graduação via EAD para quem entra mais tarde no sistema) tensiona o papel histórico dessas instituições e levanta debates sobre a qualidade da formação e a articulação entre as diferentes funções acadêmicas\" (SAMESP, 2026, p. 74).",
-      "classificacao": "Incerteza",
-      "pestel": [
-        "Econômico",
-        "Social",
-        "Legal"
-      ],
-      "eixo": "4 - Economia e Mercado de Trabalho",
-      "qtdArtigos": 1,
-      "artigosIds": [
-        381
-      ],
-      "referenciasResumidas": "[381] Semesp (2026) - Mapa do Ensino Superior no Brasil 2026 (16ª edição)",
-      "implicacoes": "Instituições de ensino superior organizadas sob o status de Universidade enfrentam o dilema estratégico de legitimar sua autonomia perante os órgãos reguladores e a sociedade: mantenedoras que utilizarem essa prerrogativa exclusivamente para escalar cursos massificados de EAD desprovidos de densidade acadêmica e pesquisa aplicada tendem a enfrentar aperto regulatório do MEC e perda de prestígio de suas marcas; por outro lado, grupos que articularem pesquisa aplicada, inovação e extensão qualificada à sua capilaridade digital criarão um diferencial competitivo de sustentabilidade e reputação inalcançável por modelos puramente conteudistas.",
-      "indicadores": "Proporção de matrículas em EAD sobre o total de alunos nas Universidades privadas; Relação entre investimentos em pesquisa/pós-graduação stricto sensu e receita de polos de EAD; Índices regulatórios de qualidade (CPC/IGC) comparativos entre presencial e EAD em universidades privadas.",
-      "revisada": true,
-      "statusTipo": "ok",
-      "statusRevisao": "OK",
-      "statusLabel": "Revisada (OK)",
-      "justificativa": "",
-      "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -335,35 +159,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
-      "incorporadas": []
-    },
-    {
-      "id": "SFQ04",
-      "fonte": "Clarice",
-      "topico": "Inteligência Artificial e Tecnologias Emergentes no Ensino",
-      "titulo": "Convergência entre Algoritmos Quânticos e Educação 5.0 para a Hiperpersonalização da Aprendizagem",
-      "descricao": "O Conceito de Educação 5.0 (caracterizada pelo foco no desenvolvimento humano integral apoiado por tecnologias avançadas) encontra um novo vetor de aceleração em pesquisas que combinam Inteligência Artificial e Computação Quântica (Quantum Machine Learning - QML) (386). Enquanto as plataformas atuais se limitam a adaptar conteúdos a partir de métricas básicas de acertos e erros, os modelos quânticos experimentais demonstram capacidade matemática de processar simultaneamente centenas de variáveis do perfil do estudante (ritmo cognitivo, lacunas conceituais prévias, engajamento e preferências de aprendizagem) para criar trilhas de ensino dinâmicas e hiperpersonalizadas em tempo real (386). Embora revisões sistemáticas apontem que a tecnologia ainda opera em fase laboratorial com limitações de hardware e taxas de ruído (391), esse movimento estabelece as bases teóricas para que as instituições transitem de sistemas de tutoria padronizados para ecossistemas de aprendizagem adaptativa com profundidade sem precedentes até 2040 (386, 391).",
-      "descricaoApa": "N/A",
-      "classificacao": "Sinal Fraco",
-      "pestel": [
-        "Tecnológico",
-        "Social"
-      ],
-      "eixo": "5 - Transformação Tecnológica",
-      "qtdArtigos": 2,
-      "artigosIds": [
-        386,
-        391
-      ],
-      "referenciasResumidas": "[386] Rosales Huamani J.A. (2026) - A Systematic Review of Quantum Machine Learning in Education 5.0: Applications and Future Research Directions | [391] Rodríguez-Díaz F. (2025) - A Survey of Quantum Machine Learning: Foundations, Algorithms, Frameworks, Data and Applications",
-      "implicacoes": "Sinal de longo prazo para monitoramento tecnológico. Não demanda investimentos imediatos de capital, mas sugere que a equipe de P&D educacional e Data Analytics da Cruzeiro acompanhe a evolução de bibliotecas de QML híbridas disponibilizadas em nuvem para casos onde os modelos preditivos tradicionais de evasão encontrem limites computacionais.",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "ok",
-      "statusRevisao": "OK",
-      "statusLabel": "Revisada (OK)",
-      "justificativa": "",
-      "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -396,37 +194,9 @@ const sfData = {
       "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
-      "incorporadas": []
-    },
-    {
-      "id": "SFQ05",
-      "fonte": "Clarice",
-      "topico": "Governança, Políticas Públicas e Regulação",
-      "titulo": "Hegemonia da 'Computação Quântica como Serviço' (QCaaS) e Tensões de Soberania Tecnológica Acadêmica",
-      "descricao": "O modelo de viabilização da computação quântica tem se estruturado predominantemente por plataformas de acesso remoto em nuvem geridas por grandes conglomerados de tecnologia (QCaaS), eliminando a necessidade de investimento institucional em hardware próprio (que envolve estruturas criogênicas), mas concentrando a infraestrutura de ponta no setor privado do Norte Global (382). Alertas recentes da UNESCO destacam o risco de aprofundamento das assimetrias educacionais e científicas entre países centrais e emergentes (385), o que já impulsiona reações locais no Brasil com propostas de criação de ecossistemas cooperativos e hubs nacionais de tecnologias quânticas (393). A incerteza está em como se dará a divisão entre a dependência comercial de fornecedores proprietários globais ou a participação em consórcios acadêmico-governamentais de tecnologia aberta (382, 385, 393).",
-      "descricaoApa": "N/A",
-      "classificacao": "Incerteza",
-      "pestel": [
-        "Político",
-        "Tecnológico",
-        "Econômico"
-      ],
-      "eixo": "2 - Evolução Histórica e Marcos Regulatórios dos últimos 10 anos",
-      "qtdArtigos": 3,
-      "artigosIds": [
-        382,
-        385,
-        393
-      ],
-      "referenciasResumidas": "[382] OECD (2025) - A quantum technologies policy primer | [385] UNESCO (2025) - 2025 International Year of Quantum Science and Technology (IYQ) | [393] MCTI (2026) - Iniciativa Brasileira de Tecnologias Quânticas (IBQuântica), Hub Nacional de Campinas e Pós-Graduação UniSENAI-SP",
-      "implicacoes": "Alerta para que as IES privadas evitem contratos de exclusividade tecnológica prematuros com provedores internacionais, priorizando parcerias com ecossistemas regionais de inovação e polos de pesquisa aplicada (como o Hub de Campinas e EMBRAPII), posicionando-se como centros aplicadores e difusores da tecnologia no Brasil.",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "ok",
-      "statusRevisao": "OK",
-      "statusLabel": "Revisada (OK)",
-      "justificativa": "",
-      "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -459,6 +229,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -495,6 +268,9 @@ const sfData = {
       "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -528,6 +304,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -562,6 +341,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -595,6 +377,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -628,6 +413,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -661,6 +449,9 @@ const sfData = {
       "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -696,6 +487,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -728,6 +522,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -761,6 +558,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -792,6 +592,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -824,6 +627,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -856,6 +662,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -888,6 +697,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -919,6 +731,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -927,7 +742,7 @@ const sfData = {
       "topico": "Equidade, Inclusão Social e Acesso",
       "titulo": "O Aluno-Trabalhador e as Barreiras Estruturais de Permanência das Classes Populares: Mitigação do Abandono e Repensar da Jornada Acadêmica",
       "descricao": "A massificação do ensino superior sem a necessária reestruturação socioeconômica revelou o fenômeno da 'reestratificação acadêmica', na qual jovens e adultos de baixa renda têm acesso frágil à universidade, mas enfrentam barreiras severas para concluir seus cursos (24, 36, 212). O perfil do estudante contemporâneo é predominantemente marcado pelo aluno-trabalhador, que concilia rotinas laborais extenuantes com o estudo e sofre com o acúmulo de desvantagens estruturais e a precariedade digital (55, 306). Esse contingente — que inclui um contingente crescente de adultos em transição de meia-idade (79) — exige que as IES abandonem designs institucionais engessados e adotem métricas contextuais de apoio, horários altamente flexíveis e programas robustos de suporte socioacadêmico voltados ao combate sistemático da evasão (279, 372).",
-      "descricaoApa": "N/A",
+      "descricaoApa": "A massificação do ensino superior sem a necessária reestruturação socioeconômica revelou o fenômeno da 'reestratificação acadêmica', na qual jovens e adultos de baixa renda têm acesso frágil à universidade, mas enfrentam barreiras severas para concluir seus cursos (24, 36, 212). O perfil do estudante contemporâneo é predominantemente marcado pelo aluno-trabalhador, que concilia rotinas laborais extenuantes com o estudo e sofre com o acúmulo de desvantagens estruturais e a precariedade digital (55, 306). Esse contingente — que inclui um contingente crescente de adultos em transição de meia-idade (79) — exige que as IES abandonem designs institucionais engessados e adotem métricas contextuais de apoio, horários altamente flexíveis e programas robustos de suporte socioacadêmico voltados ao combate sistemático da evasão (279, 372).",
       "classificacao": "Fato predeterminado",
       "pestel": [
         "Social",
@@ -955,6 +770,9 @@ const sfData = {
       "statusLabel": "Revisada (Descartada)",
       "justificativa": "Não comunica SF",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -963,7 +781,7 @@ const sfData = {
       "topico": "Equidade, Inclusão Social e Acesso",
       "titulo": "Georreferenciamento de Desertos e Oásis Educacionais: Expansão Territorial Focalizada e Interiorização do Acesso",
       "descricao": "Análises geoespaciais evidenciam disparidades gritantes na distribuição territorial de oportunidades no ensino superior, identificando vastos 'desertos educacionais' desprovidos de alternativas de formação de qualidade lado a lado com 'oásis' de alta concentração institucional (3). Esse diagnóstico demanda a transição de estratégias expansionistas predatórias para políticas de expansão geográfica socialmente referenciadas e orientadas por dados, amparadas em culturas ativas de extensão e atração comunitária (outreach) que levem polos híbridos e campi descentralizados a regiões historicamente desassistidas (87, 379). Essa reorganização do mapa educacional dialoga diretamente com os mecanismos regulatórios e as políticas sistêmicas de admissão adotadas para reduzir abismos territoriais (262).",
-      "descricaoApa": "N/A",
+      "descricaoApa": "Investigações empíricas internacionais revelam que o território físico exerce um papel condicionante decisivo nas oportunidades de acesso ao ensino superior, evidenciando a persistência de assimetrias espaciais caracterizadas pela coexistência de \"oásis educacionais\" (zonas metropolitanas com hiperconcentração e saturação institucional) e extensos \"desertos educacionais\", áreas desprovidas de alternativas formativas presenciais de qualidade (Ram et al., 2022). Evidências oriundas de sistemas educacionais emergentes e desenvolvidos (como Índia e Europa) documentam que a simples expansão desregulada ou o acesso puramente remoto não eliminam por si sós essas disparidades geográficas, demandando estratégias ativas de atração comunitária (*outreach*) e desenhos institucionais contextualizados para mitigar o isolamento regional (Ram et al., 2022; Stewart et al., 2024). Esse fenômeno global oferece uma referência para o contexto brasileiro: sinaliza a exaustão dos modelos focados na disputa predatória de praças metropolitanas saturadas e aponta para a inevitabilidade de políticas de interiorização que enfrentem os vazios educacionais existentes em cidades de menor porte e regiões distantes dos grandes eixos econômicos (Haj et al., 2018; Salmi, 2018).",
       "classificacao": "Tendência",
       "pestel": [
         "Social",
@@ -983,10 +801,15 @@ const sfData = {
       "indicadores": "",
       "revisada": true,
       "statusTipo": "mesclada",
-      "statusRevisao": "Fusão (SFS02)",
+      "statusRevisao": "Fundida",
       "statusLabel": "Revisada (Mesclada: SFS02)",
       "justificativa": "Assunto muito próximo",
       "fusaoId": "SFS02",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [
+        "SFS02"
+      ],
       "incorporadas": []
     },
     {
@@ -1021,6 +844,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1056,6 +882,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1095,6 +924,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1102,33 +934,37 @@ const sfData = {
       "fonte": "Scopus",
       "topico": "Governança, Políticas Públicas e Regulação",
       "titulo": "Harmonização Supranacional, Descentralização Regulatória e Tensões de Soberania Institucional (Processo de Bolonha / EHEA / Mercosul)",
-      "descricao": "A integração transfronteiriça de sistemas universitários orientada pelo paradigma do Processo de Bolonha e do Espaço Europeu de Ensino Superior (EHEA) segue exercendo poderoso efeito indutor global, estabelecendo referências de comparabilidade de ciclos formativos, créditos acadêmicos e acreditação mútua (15, 16, 149). Contudo, esse movimento gera recorrentes tensões de soberania e arbitragem política interna entre ministérios da educação, legislações nacionais protecionistas e instâncias supranacionais (15, 238). Paralelamente, em economias emergentes, a necessidade de flexibilização competitiva acelera processos de descentralização regulatória e maior autonomia operacional para as universidades responderem com velocidade às transformações tecnológicas e produtivas (302, 348).",
-      "descricaoApa": "N/A",
-      "classificacao": "Tendência",
+      "descricao": "No Brasil e no contexto latino-americano, as tentativas de integração acadêmica transfronteiriça via Mercosul materializam-se no Sistema de Acreditação Regional de Cursos de Graduação do Mercosul (Arcu-Sur) (394), um processo semelhante ao Espaço Europeu de Ensino Superior (EHEA), que é fundamentado em três pilares: (1) A Arquitetura 3+2, que instituiu a graduação básica em 3 anos (focada em empregabilidade), seguida por 1 a 2 anos de mestrado profissionalizante e depois doutorado; (2) Um sistema de transferência de créditos no qual as disciplinas deixam de ser medidas apenas em horas-aula em sala e passam a considerar outros esforços (estudo individual, projetos, aulas), tornando-se acumuláveis, transferíveis e aceitos em qualquer universidade do bloco; e (3) O Suplemento ao Diploma e Qualidade Comum, um documento padronizado que descreve com clareza as competências adquiridas pelo estudante, permitindo que ele seja contratado em qualquer país sem precisar passar por lentos processos burocráticos de revalidação (16, 149, 302). O Arcu-Sur, entretanto, anda a passos lentos e sua realização plena é incerta. Sua consolidação implicaria em mudanças que podem ser simultaneamente benéficas e desafiadoras, como a experiência europeia registra. Por um lado, é uma oportunidade para promover a criação de cursos de graduação mais curtos e atrativos, internacionalização curricular (lógica de créditos e dupla titulação) e esteiras contínuas de aprendizagem ao longo da vida (_Lifelong Learning_). Por outro, gera atritos crônicos entre instâncias supranacionais de integração e legislações nacionais protecionistas que resistem à perda de soberania regulatória e buscam manter reservas de mercado corporativas (15, 16, 238, 348).",
+      "descricaoApa": "No Brasil e no contexto latino-americano, as tentativas de integração acadêmica transfronteiriça via Mercosul materializam-se no Sistema de Acreditação Regional de Cursos de Graduação do Mercosul (Arcu-Sur) (Souza & Real, 2020), um processo semelhante ao Espaço Europeu de Ensino Superior (EHEA), que é fundamentado em três pilares: (1) A Arquitetura 3+2, que instituiu a graduação básica em 3 anos (focada em empregabilidade), seguida por 1 a 2 anos de mestrado profissionalizante e depois doutorado; (2) Um sistema de transferência de créditos no qual as disciplinas deixam de ser medidas apenas em horas-aula em sala e passam a considerar outros esforços (estudo individual, projetos, aulas), tornando-se acumuláveis, transferíveis e aceitos em qualquer universidade do bloco; e (3) O Suplemento ao Diploma e Qualidade Comum, um documento padronizado que descreve com clareza as competências adquiridas pelo estudante, permitindo que ele seja contratado em qualquer país sem precisar passar por lentos processos burocráticos de revalidação (Erdogan, 2015; Teichler, 2015; Toderas & Stăvaru, 2018). O Arcu-Sur, entretanto, anda a passos lentos e sua realização plena é incerta. Sua consolidação implicaria em mudanças que podem ser simultaneamente benéficas e desafiadoras, como a experiência europeia registra. Por um lado, é uma oportunidade para promover a criação de cursos de graduação mais curtos e atrativos, internacionalização curricular (lógica de créditos e dupla titulação) e esteiras contínuas de aprendizagem ao longo da vida (_Lifelong Learning_). Por outro, gera atritos crônicos entre instâncias supranacionais de integração e legislações nacionais protecionistas que resistem à perda de soberania regulatória e buscam manter reservas de mercado corporativas (Kushnir & Yazgan, 2025a, 2025b; Nguyen, 2026; Toderas & Stăvaru, 2018).",
+      "classificacao": "Incerteza",
       "pestel": [
         "Político",
         "Legal",
         "Social"
       ],
       "eixo": "2 - Evolução Histórica e Marcos Regulatórios dos últimos 10 anos",
-      "qtdArtigos": 6,
+      "qtdArtigos": 7,
       "artigosIds": [
         15,
         16,
         149,
         238,
         302,
-        348
+        348,
+        394
       ],
-      "referenciasResumidas": "[15] Kushnir I. (2025) - Italyʼs Membership in the European Higher Education Area: Coordinating Cooperation in Higher Education While Attempting to Stay Apolitical | [16] Toderas N. (2018) - The Impact of the Bologna Process on the Governance of Higher Education Systems in Eastern Partnership Countries | [149] Erdogan A. (2015) - Current and Future Prospects for the Bologna Process in the Turkish Higher Education System | [238] Kushnir I. (2025) - Franceʼs Membership in the European Higher Education Area: (Still) ‘Moderatingʼ the Leading of Europe | [302] Teichler U. (2015) - Higher Education Research in Europe | ... (+1 artigos)",
+      "referenciasResumidas": "[15] Kushnir I. (2025) - Italyʼs Membership in the European Higher Education Area: Coordinating Cooperation in Higher Education While Attempting to Stay Apolitical | [16] Toderas N. (2018) - The Impact of the Bologna Process on the Governance of Higher Education Systems in Eastern Partnership Countries | [149] Erdogan A. (2015) - Current and Future Prospects for the Bologna Process in the Turkish Higher Education System | [238] Kushnir I. (2025) - Franceʼs Membership in the European Higher Education Area: (Still) ‘Moderatingʼ the Leading of Europe | [302] Teichler U. (2015) - Higher Education Research in Europe | [348] Nguyen V.-T. (2026) - Higher Education Governance in Vietnam | [394] Souza M. P. de (2020) - Potencialidades do Sistema Arcu-Sul para a Construção do Modelo regional de Reconhecimento de Títulos",
       "implicacoes": "Induzirá a reforma das Diretrizes Curriculares Nacionais (DCNs) no Brasil em direção ao sistema de créditos flexíveis e acumuláveis compatíveis com Mercosul e Europa, permitindo às IES privadas acelerar a internacionalização de currículos e dupla titulação.",
-      "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "indicadores": "Número de cursos de graduação brasileiros acreditados no Sistema ARCU-SUR do Mercosul; Volume de acordos bilaterais de reconhecimento mútuo de créditos e dupla titulação regional; Alterações nas Diretrizes Curriculares Nacionais (DCNs) em direção à modularidade por créditos; Medidas de restrição ou abertura emitidas por conselhos profissionais (CFM, OAB, etc.) sobre titulações transfronteiriças.",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1162,6 +998,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1200,6 +1039,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1236,6 +1078,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1275,6 +1120,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1303,12 +1151,95 @@ const sfData = {
       "referenciasResumidas": "[23] Santhi M. (2021) - Challenges and Prospects of Higher Education in India | [101] Le T.T. (2022) - Investigating Vietnamese undergraduate students’ willingness to pay for higher education under the cost-sharing context | [109] Chattopadhyay A. (2022) - Fireside Chat with Three Vice Chancellors from Three Continents: Re-imagining Higher Education in Emerging Economies | [129] Ahmed S. (2022) - Exploring faculty perception on the COVID-19 imposed shift in higher education of Bangladesh: A neoliberal analysis | [161] Santa R. (2018) - The Future of European Higher Education in an Age of Demographic Headwinds: The Impact of Demographic Decline on Higher Education System Structures Funding in Romania Poland Russia | ... (+2 artigos)",
       "implicacoes": "Fim da viabilidade econômica da estratégia de 'volume a qualquer custo' no Brasil. Com a estabilização e declínio da população jovem de 18 a 24 anos até 2040, as IES privadas que competirem apenas por guerra de preços entrarão em processo de consolidação forçada, falência ou aquisição hostil.",
       "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "revisada": true,
+      "statusTipo": "dividida",
+      "statusRevisao": "Dividida",
+      "statusLabel": "Revisada (Dividida: SF31a, SF31b)",
+      "justificativa": "Continha duas SF distintas",
+      "fusaoId": "",
+      "divisaoIds": [
+        "SF31a",
+        "SF31b"
+      ],
+      "origemDivisao": "",
+      "vinculo": [
+        "SF31a",
+        "SF31b"
+      ],
+      "incorporadas": []
+    },
+    {
+      "id": "SF31a",
+      "fonte": "Scopus",
+      "topico": "Financiamento, Mercantilização e Modelos de Negócio",
+      "titulo": "Disposição a Pagar Compensatória - Transferência de Custos Formativos às Famílias diante das Falhas da Educação Mercantilizada",
+      "descricao": "Experiências internacionais revelam que elevadas taxas de disposição para pagar (*Willingness to Pay*) pelo ensino superior não sinalizam necessariamente reconhecimento de excelência acadêmica ou bonança econômica, mas sim uma estratégia das famílias para compensar as falhas formativas de um modelo mercantilizado que frequentemente sacrifica a qualidade em favor da receita (101, 129, 270). Compelidos a garantir empregabilidade em mercados de trabalho altamente competitivos, estudantes de contextos emergentes (e suas famílias) assumem custos adicionais com a aquisição de cursos, certificações, habilidades e competências complementares, negligenciadas pela graduação regular (101). Especialmente no Sul Global, esse mecanismo transfere o ônus do custeio formativo para famílias de menor renda, aprofundando o endividamento e esvaziando a percepção do diploma como vetor de ascensão social (129). A incerteza crítica para o futuro do setor reside na sustentabilidade dessa sobrecarga: à medida que os orçamentos domésticos atingem seus limites de endividamento e a correlação entre diplomação e retorno salarial se enfraquece, resta em aberto se (e até que ponto) os estudantes continuarão dispostos a absorver esse duplo custo educacional ou se haverá uma ruptura na demanda com migração direta para credenciais alternativas de mercado.",
+      "descricaoApa": "Experiências internacionais revelam que elevadas taxas de disposição para pagar (_Willingness to Pay_) pelo ensino superior não sinalizam necessariamente reconhecimento de excelência acadêmica ou bonança econômica, mas sim uma estratégia das famílias para compensar as falhas formativas de um modelo mercantilizado que frequentemente sacrifica a qualidade em favor da receita (Le et al., 2022; Ahmed, 2022; Maisuria & Cole, 2017). Compelidos a garantir empregabilidade em mercados de trabalho altamente competitivos, estudantes de contextos emergentes (e suas famílias) assumem custos adicionais com a aquisição de cursos, certificações, habilidades e competências complementares, negligenciadas pela graduação regular (Le et al., 2022). Especialmente no Sul Global, esse mecanismo transfere o ônus do custeio formativo para famílias de menor renda, aprofundando o endividamento e esvaziando a percepção do diploma como vetor de ascensão social (Ahmed, 2022). A incerteza crítica para o futuro do setor reside na sustentabilidade dessa sobrecarga: à medida que os orçamentos domésticos atingem seus limites de endividamento e a correlação entre diplomação e retorno salarial se enfraquece, resta em aberto se (e até que ponto) os estudantes continuarão dispostos a absorver esse duplo custo educacional ou se haverá uma ruptura na demanda com migração direta para credenciais alternativas de mercado.",
+      "classificacao": "Incerteza",
+      "pestel": [
+        "Econômico",
+        "Social"
+      ],
+      "eixo": "4 - Economia e Mercado de Trabalho",
+      "qtdArtigos": 3,
+      "artigosIds": [
+        101,
+        129,
+        270
+      ],
+      "referenciasResumidas": "[101] Le T.T. (2022) - Investigating Vietnamese undergraduate students’ willingness to pay for higher education under the cost-sharing context | [129] Ahmed S. (2022) - Exploring faculty perception on the COVID-19 imposed shift in higher education of Bangladesh: A neoliberal analysis | [270] Maisuria A. (2017) - The Neoliberalization of Higher Education in England: An Alternative is Possible",
+      "implicacoes": "O fato de os estudantes das classes populares estarem dispostos a despender recursos extras para complementar sua formação indica que o mercado não busca apenas um diploma barato, mas segurança de empregabilidade. Contudo, a dependência da receita institucional ancorada no endividamento e no sacrifício desmedido das famílias representa uma vulnerabilidade estrutural severa para as mantenedoras privadas. Se os cursos continuarem operando como esteiras burocráticas de créditos que forçam o estudante a pagar por fora para aprender conteúdos aplicáveis, a percepção de custo-benefício da graduação tradicional entrará em colapso.",
+      "indicadores": "Comprometimento percentual da renda familiar com despesas educacionais diretas e indiretas; Volume de gastos estudantis com formação extracurricular; Taxas de endividamento familiar e inadimplência em mensalidades do ensino superior privado; Taxa de evasão por inviabilidade financeira, Índice de percepção discente sobre a suficiência do currículo da graduação.",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "SF31",
+      "vinculo": [
+        "SF31"
+      ],
+      "incorporadas": []
+    },
+    {
+      "id": "SF31b",
+      "fonte": "Scopus",
+      "topico": "Financiamento, Mercantilização e Modelos de Negócio",
+      "titulo": "Esgotamento do Modelo de Mercantilização Universitária - Fragilidade Sistêmica, Métricas Artificiais e Risco de Corrosão Reputacional",
+      "descricao": "Investigações internacionais sugerem que modelos institucionais dependentes de estratégias de mercantilização agressiva e captação em massa de matrículas atingem limites estruturais de sustentabilidade financeira e legitimidade social (129, 270). A gestão orientada prioritariamente à extração contínua de margens e ao cumprimento de metas acionárias induz à proliferação de métricas artificiais de desempenho, à inflação de notas e à fragilização dos controles acadêmicos, elevando o risco de fraudes e corroendo a função pública e formativa da universidade (270). Em economias emergentes, essa dinâmica de mercantilização excessiva transfere o ônus financeiro para famílias de classe mais baixa, que buscam compensar as lacunas de ensino com cursos e capacitações complementares (101). Isso reduz a experiência universitária a uma espécie de compra de diplomas e reduz a capacidade da IES de responder às desigualdades socioeconômicas estruturais (23, 129). Estudos demonstram que esse esgotamento pode ser precipitado em contextos de declínio demográfico e redução sustentada de estudantes e graduados, o que esvazia a base tradicional de recrutamento universitário e acirra a disputa institucional por um contingente populacional decrescente (109, 161, 233). Esse conjunto de fatores sugere uma surpresa inevitável: as vulnerabilidades pedagógicas e financeiras crescem de forma latente e velada enquanto os fluxos contínuos de novas matrículas mascaram uma degradação interna. A eclosão pode ser desencadeada por gatilhos como regulações e auditorias mais punitivas, saturação demográfica ou o colapso da reputação de diplomas desvalorizados pelo próprio mercado de trabalho.",
+      "descricaoApa": "Investigações internacionais sugerem que modelos institucionais dependentes de estratégias de mercantilização agressiva e captação em massa de matrículas atingem limites estruturais de sustentabilidade financeira e legitimidade social (Ahmed, 2022; Maisuria & Cole, 2017). A gestão orientada prioritariamente à extração contínua de margens e ao cumprimento de metas acionárias induz à proliferação de métricas artificiais de desempenho, à inflação de notas e à fragilização dos controles acadêmicos, elevando o risco de fraudes e corroendo a função pública e formativa da universidade (Maisuria & Cole, 2017). Em economias emergentes, essa dinâmica de mercantilização excessiva transfere o ônus financeiro para famílias de classe mais baixa, que buscam compensar as lacunas de ensino com cursos e capacitações complementares (Le et al., 2022). Isso reduz a experiência universitária a uma espécie de compra de diplomas e reduz a capacidade da IES de responder às desigualdades socioeconômicas estruturais (Santhi & Adilakshmi, 2021; Ahmed, 2022). Estudos demonstram que esse esgotamento pode ser precipitado em contextos de declínio demográfico e redução sustentada de estudantes e graduados, o que esvazia a base tradicional de recrutamento universitário e acirra a disputa institucional por um contingente populacional decrescente (Chattopadhyay et al., 2022; Santa, 2018; Jyothifrederick, 2021). Esse conjunto de fatores sugere uma surpresa inevitável: as vulnerabilidades pedagógicas e financeiras crescem de forma latente e velada enquanto os fluxos contínuos de novas matrículas mascaram uma degradação interna. A eclosão pode ser desencadeada por gatilhos como regulações e auditorias mais punitivas, saturação demográfica ou o colapso da reputação de diplomas desvalorizados pelo próprio mercado de trabalho.",
+      "classificacao": "Surpresa inevitável",
+      "pestel": [
+        "Econômico",
+        "Social",
+        "Político"
+      ],
+      "eixo": "4 - Economia e Mercado de Trabalho",
+      "qtdArtigos": 6,
+      "artigosIds": [
+        23,
+        109,
+        129,
+        161,
+        233,
+        270
+      ],
+      "referenciasResumidas": "[23] Santhi M. (2021) - Challenges and Prospects of Higher Education in India | [109] Chattopadhyay A. (2022) - Fireside Chat with Three Vice Chancellors from Three Continents: Re-imagining Higher Education in Emerging Economies | [129] Ahmed S. (2022) - Exploring faculty perception on the COVID-19 imposed shift in higher education of Bangladesh: A neoliberal analysis | [161] Santa R. (2018) - The Future of European Higher Education in an Age of Demographic Headwinds: The Impact of Demographic Decline on Higher Education System Structures Funding in Romania Poland Russia | [233] Jyothifrederick M.R. (2021) - Impact of Globalization on Higher Education-A Comparative Study Between Public and Private Universities | [270] Maisuria A. (2017) - The Neoliberalization of Higher Education in England: An Alternative is Possible",
+      "implicacoes": "Redes de ensino que sustentarem suas operações exclusivamente em cortes operacionais sucessivos e na burocratização de metas de curto prazo podem enfrentar desgaste de marca, desengajamento discente e intensificação da fiscalização regulatória. A expansão desmedida e a redução predatória de custos acadêmicos acumulam passivos reputacionais e financeiros, por vezes ocultos, que colocam em risco a sobrevivência de grandes mantenedoras privadas.",
+      "indicadores": "Margem operacional líquida de mantenedoras dependentes de graduação massificada; Dispersão de métricas internas de avaliação e notas discentes versus resultados em exames nacionais externos; Nível de judicialização e denúncias de fraudes em sistemas de compliance acadêmico; Variação demográfica da coorte jovem de 18 a 24 anos.",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "SF31",
+      "vinculo": [
+        "SF31"
+      ],
       "incorporadas": []
     },
     {
@@ -1343,6 +1274,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1374,6 +1308,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1404,6 +1341,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1411,8 +1351,8 @@ const sfData = {
       "fonte": "Scopus",
       "topico": "Gestão Institucional, Análise de Dados e Inteligência Operacional",
       "titulo": "Learning Analytics Preditivo, Mineração de Dados Educacionais e Intervenção Precoce na Evasão Discente",
-      "descricao": "A fusão de técnicas de Mineração de Dados Educacionais (EDM) com algoritmos preditivos e aprendizagem de máquina revoluciona a capacidade institucional de prever e conter o abandono discente em seus estágios mais embrionários (71, 209, 377). O monitoramento contínuo da pegada digital dos alunos nos ambientes virtuais (web intelligence) permite rastrear oscilações sutis de engajamento, desempenho em tarefas intermediárias e frequência de acessos, viabilizando intervenções pedagógicas e psicossociais tempestivas (251, 322). Essa telemetria em tempo real supera a ineficácia dos tradicionais questionários burocráticos de satisfação discente aplicados ao final dos períodos letivos, transformando a gestão da permanência em uma disciplina operacional contínua e orientada a dados (325).",
-      "descricaoApa": "N/A",
+      "descricao": "A fusão de técnicas de Mineração de Dados Educacionais (EDM) com algoritmos preditivos e aprendizagem de máquina transforma a capacidade institucional de antecipar trajetórias acadêmicas e mitigar o abandono discente em seus estágios mais embrionários (71, 209, 377). O rastreamento contínuo da pegada digital dos estudantes nos Ambientes Virtuais de Aprendizagem (web intelligence) permite identificar oscilações sutis de engajamento, frequência de acessos e padrões de entrega de atividades, viabilizando intervenções pedagógicas e psicossociais preventivas antes da consolidação do desengajamento (209, 251, 322). Essa telemetria comportamental contínua supera as limitações intrínsecas das avaliações institucionais e questionários de satisfação tradicionais, que, por serem pontuais e retrospectivos, mostram-se ineficazes para orientar ações de retenção tempestivas (325). A governança de dados eleva a gestão da permanência a uma disciplina operacional estratégica, amparada por modelos computacionais que correlacionam múltiplas variáveis de desempenho para assegurar a sustentabilidade acadêmica e a retenção de matrículas (377).",
+      "descricaoApa": "A fusão de técnicas de Mineração de Dados Educacionais (EDM) com algoritmos preditivos e aprendizagem de máquina transforma a capacidade institucional de antecipar trajetórias acadêmicas e mitigar o abandono discente em seus estágios mais embrionários (Liu, 2026; Celik et al., 2023; Job & Pandey, 2020). O rastreamento contínuo da pegada digital dos estudantes nos Ambientes Virtuais de Aprendizagem (web intelligence) permite identificar oscilações sutis de engajamento, frequência de acessos e padrões de entrega de atividades, viabilizando intervenções pedagógicas e psicossociais preventivas antes da consolidação do desengajamento (Celik et al., 2023; Maia et al., 2018; Boosalis et al., 2017). Essa telemetria comportamental contínua supera as limitações intrínsecas das avaliações institucionais e questionários de satisfação tradicionais, que, por serem pontuais e retrospectivos, mostram-se ineficazes para orientar ações de retenção tempestivas (Sankaranarayana Rao, 2021). A governança de dados eleva a gestão da permanência a uma disciplina operacional estratégica, amparada por modelos computacionais que correlacionam múltiplas variáveis de desempenho para assegurar a sustentabilidade acadêmica e a retenção de matrículas (Job & Pandey, 2020).",
       "classificacao": "Tendência",
       "pestel": [
         "Tecnológico",
@@ -1420,24 +1360,26 @@ const sfData = {
         "Social"
       ],
       "eixo": "5 - Transformação Tecnológica",
-      "qtdArtigos": 6,
+      "qtdArtigos": 5,
       "artigosIds": [
-        71,
         209,
         251,
         322,
         325,
         377
       ],
-      "referenciasResumidas": "[71] Liu G. (2026) - SSQIE&T-F: A Comprehensive Framework for Evaluating Higher Education Systems | [209] Celik I. (2023) - Response of learning analytics to the online education challenges during pandemic: Opportunities and key examples in higher education | [251] Maia A. (2018) - Web intelligence in higher education: A study on the usage of business intelligence techniques in education | [322] Boosalis C.N. (2017) - Creating powerful dashboards and visualizations of direct and indirect SLOs measures using Google's Dataset Publishing Language (DPSL) and Google's Public Data Explorer (GPDE) to advance assessment practices in institutional research at institutions of higher education | [325] Sankaranarayana Rao G. (2021) - Can a Student Feedback Provide Correct Opinion on Teaching-Learning Process in Higher Education Institutes? | ... (+1 artigos)",
+      "referenciasResumidas": "[209] Celik I. (2023) - Response of learning analytics to the online education challenges during pandemic: Opportunities and key examples in higher education | [251] Maia A. (2018) - Web intelligence in higher education: A study on the usage of business intelligence techniques in education | [322] Boosalis C.N. (2017) - Creating powerful dashboards and visualizations of direct and indirect SLOs measures using Google's Dataset Publishing Language (DPSL) and Google's Public Data Explorer (GPDE) to advance assessment practices in institutional research at institutions of higher education | [325] Sankaranarayana Rao G. (2021) - Can a Student Feedback Provide Correct Opinion on Teaching-Learning Process in Higher Education Institutes? | ... (+1 artigos)",
       "implicacoes": "Transforma os Centros de Inteligência e Retenção das IES privadas em centrais ativas de intervenção preditiva com IA, disparando mentorias personalizadas, socorro acadêmico imediato e renegociação financeira antes que o estudante decida trancar o curso.",
       "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1473,6 +1415,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1507,6 +1452,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1541,6 +1489,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1571,6 +1522,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1606,6 +1560,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1638,6 +1595,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1674,6 +1634,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1704,6 +1667,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1742,6 +1708,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1777,6 +1746,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1807,6 +1779,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1837,6 +1812,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1869,6 +1847,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1900,6 +1881,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1930,6 +1914,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1961,6 +1948,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1991,6 +1981,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -2024,6 +2017,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -2057,6 +2053,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -2087,6 +2086,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -2118,6 +2120,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -2148,6 +2153,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -2177,6 +2185,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -2210,6 +2221,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -2241,6 +2255,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -2271,6 +2288,9 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -2301,6 +2321,281 @@ const sfData = {
       "statusLabel": "Em revisão",
       "justificativa": "",
       "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
+      "incorporadas": []
+    },
+    {
+      "id": "SFQ01",
+      "fonte": "Clarice",
+      "topico": "Empregabilidade, Futuro do Trabalho e Novas Competências",
+      "titulo": "Letramento Quântico (Quantum Literacy) e Formação Antecipatória de Competências para a Economia Quântica",
+      "descricao": "Observa-se o crescimento acelerado de políticas governamentais e diretrizes institucionais voltadas ao desenvolvimento de competências em tecnologias quânticas bem antes da ampla disponibilidade comercial do hardware (382, 384). Mapeamentos acadêmicos recentes documentam a consolidação de um campo pedagógico próprio com estratégias didáticas empíricas para o ensino de conceitos quânticos em cursos STEM e Ciência de Dados (388, 389), acompanhado pelos primeiros movimentos no mercado brasileiro de formação profissional, como o lançamento de programas de pós-graduação pioneiros voltados à engenharia e tecnologia (393). Esse movimento sinaliza uma trajetória na qual o letramento quântico ('Quantum Literacy') deixa de ser nicho restrito da física teórica e passa a ser demandado como competência transversal em diversas áreas, como finanças, logística, química computacional e cibersegurança (383, 388), forçando as IES a anteciparem a reformulação curricular para evitar um apagão de mão de obra especializada no horizonte 2030–2040 (382, 384)",
+      "descricaoApa": "N/A",
+      "classificacao": "Sinal Fraco",
+      "pestel": [
+        "Tecnológico",
+        "Social",
+        "Econômico"
+      ],
+      "eixo": "5 - Transformação Tecnológica",
+      "qtdArtigos": 6,
+      "artigosIds": [
+        382,
+        383,
+        384,
+        388,
+        389,
+        393
+      ],
+      "referenciasResumidas": "[382] OECD (2025) - A quantum technologies policy primer | [383] OECD (2025) - An overview of national strategies and policies for quantum technologies | [384] European Commission (2025) - Quantum Europe Strategy: Building a world-leading quantum ecosystem in Europe | [388] López-Meneses E. (2025) - Quantum Computing in Data Science and STEM Education: Mapping Academic Trends and Analyzing Practical Tools | [389] Donhauser A. (2024) - Empirical insights into the effects of research-based teaching strategies in quantum education | [393] MCTI (2026) - Iniciativa Brasileira de Tecnologias Quânticas (IBQuântica), Hub Nacional de Campinas e Pós-Graduação UniSENAI-SP",
+      "implicacoes": "Oportunidade para liderar a oferta de cursos curtos de extensão, nanodegrees e especializações lato sensu em fundamentos de computação quântica aplicada (finanças quânticas, otimização e cibersegurança) em parceria com provedores em nuvem, preparando o terreno antes que as graduações tradicionais de computação e engenharias tornem essa formação obrigatória nas DCNs",
+      "indicadores": "",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
+      "incorporadas": []
+    },
+    {
+      "id": "SFQ02",
+      "fonte": "Clarice",
+      "topico": "Gestão Institucional, Análise de Dados e Inteligência Operacional",
+      "titulo": "Ameaça de segurança de dados e Adequação dos Protocolos de segurança nas IES",
+      "descricao": "A demonstração matemática de que computadores quânticos futuros serão capazes de quebrar os algoritmos clássicos de criptografia de chave pública (como RSA e curvas elípticas) desencadeou a publicação oficial dos primeiros padrões internacionais de Criptografia Pós-Quântica pelo NIST entre 2024 e 2026 (390). Soma-se a isso a prática já observada de espionagem digital 'Harvest Now, Decrypt Later' (captura massiva de dados criptografados hoje para decifração quando o computador quântico estiver maduro), criando riscos retroativos para registros acadêmicos perenes, pesquisas com patentes e dados sensíveis de estudantes (382, 390). Esse contexto transforma a migração para infraestruturas imunes a ataques quânticos em uma necessidade institucional com longo ciclo de implantação, levando as universidades a reestruturarem seus protocolos de cibersegurança e conformidade de dados anos antes da consolidação física da computação quântica (382, 390).",
+      "descricaoApa": "N/A",
+      "classificacao": "Surpresa inevitável",
+      "pestel": [
+        "Tecnológico",
+        "Legal",
+        "Econômico"
+      ],
+      "eixo": "5 - Transformação Tecnológica",
+      "qtdArtigos": 2,
+      "artigosIds": [
+        382,
+        390
+      ],
+      "referenciasResumidas": "[382] OECD (2025) - A quantum technologies policy primer | [390] NIST (2024) - Post-Quantum Cryptography Standardization (FIPS 203, FIPS 204, FIPS 205)",
+      "implicacoes": "Exigirá auditoria e atualização gradual dos sistemas de registro acadêmico, diplomas digitais, prontuários de clínicas-escola e bases de dados corporativas da CSED para criptografia pós-quântica (PQC). A instituição que atrasar essa transição enfrentará passivos regulatórios perante a LGPD e risco de obsolescência de sua infraestrutura de confiança digital.",
+      "indicadores": "",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
+      "incorporadas": []
+    },
+    {
+      "id": "SFQ03",
+      "fonte": "Clarice",
+      "topico": "Gestão Institucional, Análise de Dados e Inteligência Operacional",
+      "titulo": "Otimização Quântica Híbrida (Quantum Annealing) na Resolução de Gargalos Operacionais Complexos da Universidade",
+      "descricao": "Experiências empíricas pioneiras com processadores quânticos híbridos (como annealers acoplados a sistemas de computação clássica) demonstraram viabilidade prática na resolução de problemas complexos de otimização combinatória universitária, como o escalonamento simultâneo de milhares de exames, disciplinas e salas para turmas massivas sem conflitos de horários (387). Esse sinal indica que a primeira porta de entrada da computação quântica no cotidiano educacional pode não ocorrer na sala de aula, mas nas operações logísticas de retaguarda ('back-office'), onde o cálculo combinatório de alocação de turmas, rotas de transporte, ensalamento dinâmico e retenção discente em grandes redes multicampi atinge limites matemáticos para algoritmos puramente convencionais (387, 392).",
+      "descricaoApa": "N/A",
+      "classificacao": "Sinal Fraco",
+      "pestel": [
+        "Tecnológico",
+        "Econômico"
+      ],
+      "eixo": "5 - Transformação Tecnológica",
+      "qtdArtigos": 2,
+      "artigosIds": [
+        387,
+        392
+      ],
+      "referenciasResumidas": "[387] Zhou Z. (2025) - Hybrid quantum annealing for large-scale exam scheduling: Validation in real-world educational scenarios | [392] IBM Quantum (2026) - IBM Quantum Technology Atlas and Development Roadmap",
+      "implicacoes": "Para grandes conglomerados educacionais com centenas de milhares de alunos e múltiplos polos, a utilização de serviços híbridos de otimização quântica em nuvem poderá destravar ganhos de eficiência operacional no uso de prédios, laboratórios e alocação de docentes, reduzindo o custo por aluno e a ociosidade física",
+      "indicadores": "",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
+      "incorporadas": []
+    },
+    {
+      "id": "SFQ04",
+      "fonte": "Clarice",
+      "topico": "Inteligência Artificial e Tecnologias Emergentes no Ensino",
+      "titulo": "Convergência entre Algoritmos Quânticos e Educação 5.0 para a Hiperpersonalização da Aprendizagem",
+      "descricao": "O Conceito de Educação 5.0 (caracterizada pelo foco no desenvolvimento humano integral apoiado por tecnologias avançadas) encontra um novo vetor de aceleração em pesquisas que combinam Inteligência Artificial e Computação Quântica (Quantum Machine Learning - QML) (386). Enquanto as plataformas atuais se limitam a adaptar conteúdos a partir de métricas básicas de acertos e erros, os modelos quânticos experimentais demonstram capacidade matemática de processar simultaneamente centenas de variáveis do perfil do estudante (ritmo cognitivo, lacunas conceituais prévias, engajamento e preferências de aprendizagem) para criar trilhas de ensino dinâmicas e hiperpersonalizadas em tempo real (386). Embora revisões sistemáticas apontem que a tecnologia ainda opera em fase laboratorial com limitações de hardware e taxas de ruído (391), esse movimento estabelece as bases teóricas para que as instituições transitem de sistemas de tutoria padronizados para ecossistemas de aprendizagem adaptativa com profundidade sem precedentes até 2040 (386, 391).",
+      "descricaoApa": "N/A",
+      "classificacao": "Sinal Fraco",
+      "pestel": [
+        "Tecnológico",
+        "Social"
+      ],
+      "eixo": "5 - Transformação Tecnológica",
+      "qtdArtigos": 2,
+      "artigosIds": [
+        386,
+        391
+      ],
+      "referenciasResumidas": "[386] Rosales Huamani J.A. (2026) - A Systematic Review of Quantum Machine Learning in Education 5.0: Applications and Future Research Directions | [391] Rodríguez-Díaz F. (2025) - A Survey of Quantum Machine Learning: Foundations, Algorithms, Frameworks, Data and Applications",
+      "implicacoes": "Sinal de longo prazo para monitoramento tecnológico. Não demanda investimentos imediatos de capital, mas sugere que a equipe de P&D educacional e Data Analytics da Cruzeiro acompanhe a evolução de bibliotecas de QML híbridas disponibilizadas em nuvem para casos onde os modelos preditivos tradicionais de evasão encontrem limites computacionais.",
+      "indicadores": "",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
+      "incorporadas": []
+    },
+    {
+      "id": "SFQ05",
+      "fonte": "Clarice",
+      "topico": "Governança, Políticas Públicas e Regulação",
+      "titulo": "Hegemonia da 'Computação Quântica como Serviço' (QCaaS) e Tensões de Soberania Tecnológica Acadêmica",
+      "descricao": "O modelo de viabilização da computação quântica tem se estruturado predominantemente por plataformas de acesso remoto em nuvem geridas por grandes conglomerados de tecnologia (QCaaS), eliminando a necessidade de investimento institucional em hardware próprio (que envolve estruturas criogênicas), mas concentrando a infraestrutura de ponta no setor privado do Norte Global (382). Alertas recentes da UNESCO destacam o risco de aprofundamento das assimetrias educacionais e científicas entre países centrais e emergentes (385), o que já impulsiona reações locais no Brasil com propostas de criação de ecossistemas cooperativos e hubs nacionais de tecnologias quânticas (393). A incerteza está em como se dará a divisão entre a dependência comercial de fornecedores proprietários globais ou a participação em consórcios acadêmico-governamentais de tecnologia aberta (382, 385, 393).",
+      "descricaoApa": "N/A",
+      "classificacao": "Incerteza",
+      "pestel": [
+        "Político",
+        "Tecnológico",
+        "Econômico"
+      ],
+      "eixo": "2 - Evolução Histórica e Marcos Regulatórios dos últimos 10 anos",
+      "qtdArtigos": 3,
+      "artigosIds": [
+        382,
+        385,
+        393
+      ],
+      "referenciasResumidas": "[382] OECD (2025) - A quantum technologies policy primer | [385] UNESCO (2025) - 2025 International Year of Quantum Science and Technology (IYQ) | [393] MCTI (2026) - Iniciativa Brasileira de Tecnologias Quânticas (IBQuântica), Hub Nacional de Campinas e Pós-Graduação UniSENAI-SP",
+      "implicacoes": "Alerta para que as IES privadas evitem contratos de exclusividade tecnológica prematuros com provedores internacionais, priorizando parcerias com ecossistemas regionais de inovação e polos de pesquisa aplicada (como o Hub de Campinas e EMBRAPII), posicionando-se como centros aplicadores e difusores da tecnologia no Brasil.",
+      "indicadores": "",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
+      "incorporadas": []
+    },
+    {
+      "id": "SFS01",
+      "fonte": "Vinicius",
+      "topico": "Modelos Pedagógicos, Aprendizagem Híbrida e EAD",
+      "titulo": "Reconfiguração Demográfica da Demanda — Adultização Discente e Bifurcação entre Presencial e EAD Flexível",
+      "descricao": "A combinação entre a contínua expansão da educação a distância e a retração moderada dos cursos de graduação presenciais evidencia uma reconfiguração demográfica e funcional da demanda pelo ensino superior privado, marcada pela crescente hegemonia de estudantes adultos (381). Ao contrário do público jovem recém-egresso do ensino médio, esse contingente ingressa nas IES pressionado pela necessidade de conciliar estudos com jornadas de trabalho e encargos familiares (381).",
+      "descricaoApa": "A combinação entre a contínua expansão da educação a distância e a retração moderada dos cursos de graduação presenciais evidencia uma reconfiguração demográfica e funcional da demanda pelo ensino superior privado, marcada pela crescente hegemonia de estudantes adultos (SEMESP, 2026, p. 7). Ao contrário do público jovem recém-egresso do ensino médio, esse contingente ingressa nas IES pressionado pela necessidade de conciliar estudos com jornadas de trabalho e encargos familiares.",
+      "classificacao": "Incerteza",
+      "pestel": [
+        "Social",
+        "Econômico",
+        "Político"
+      ],
+      "eixo": "3 - Dinâmicas Sociodemográficas",
+      "qtdArtigos": 1,
+      "artigosIds": [
+        381
+      ],
+      "referenciasResumidas": "[381] Semesp (2026) - Mapa do Ensino Superior no Brasil 2026 (16ª edição)",
+      "implicacoes": "Necessidade de diferenciação clara da proposta de valor. Os campi presenciais precisam ser ressignificados como centros de experiência, convivência e práticas laboratoriais complexas, enquanto a esteira de EAD e semipresencial deve investir em flexibilidade assíncrona, microcertificações e suporte à retenção de alunos com pouco tempo disponível.",
+      "indicadores": "Proporção de matrículas de ingressantes com mais de 25 anos; Taxa de crescimento do EAD vs. taxa de retração do presencial por turno (diurno/noturno); Ticket médio por modalidade.",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
+      "incorporadas": []
+    },
+    {
+      "id": "SFS02",
+      "fonte": "Vinicius",
+      "topico": "Financiamento, Mercantilização e Modelos de Negócio",
+      "titulo": "Reconfiguração Organizacional e Assimetria Espacial - Ascensão dos Centros Universitários e a Emergência de Desertos Educacionais",
+      "descricao": "Transformações regulatórias e de mercado consolidadas no Brasil a partir da LDB de 1996 estabeleceram os Centros Universitários como a organização predominante e mais adaptada à expansão em escala da graduação privada, em detrimento do modelo de Faculdades isoladas, historicamente vitais para a interiorização e a fixação de talentos locais (381). Pressionadas pelos ganhos de escala das grandes redes e pela expansão de polos de EAD de baixo custo, o recuo acelerado dessas faculdades locais compromete a diversidade do sistema e aprofunda uma assimetria territorial que a literatura empírica internacional classifica como a polarização entre 'oásis' (hiperconcentração e saturação institucional nas capitais) e 'desertos educacionais' (vazios territoriais desprovidos de alternativas formativas presenciais de qualidade) (3, 381). Evidências globais demonstram que a mera dispersão de ensino puramente remoto não sana essas fraturas espaciais, demandando estratégias deliberadas de engajamento comunitário (outreach) e adequação curricular para evitar que cidades do interior permaneçam isoladas das cadeias de formação profissional contemporâneas (3, 379), configurando uma tendência de empobrecimento da presença física regional que tensiona futuros marcos de regulação e admissão (87, 262).",
+      "descricaoApa": "Transformações regulatórias e de mercado consolidadas no Brasil a partir da LDB de 1996 estabeleceram os Centros Universitários como a organização predominante e mais adaptada à expansão em escala da graduação privada, em detrimento do modelo de Faculdades isoladas, historicamente vitais para a interiorização e a fixação de talentos locais (SEMESP, 2026). Pressionadas pelos ganhos de escala das grandes redes e pela expansão de polos de EAD de baixo custo, o recuo acelerado dessas faculdades locais compromete a diversidade do sistema e aprofunda uma assimetria territorial que a literatura empírica internacional classifica como a polarização entre 'oásis' (hiperconcentração e saturação institucional nas capitais) e 'desertos educacionais' (vazios territoriais desprovidos de alternativas formativas presenciais de qualidade) (Ram et al., 2022; SEMESP, 2026). Evidências globais demonstram que a mera dispersão de ensino puramente remoto não sana essas fraturas espaciais, demandando estratégias deliberadas de engajamento comunitário (outreach) e adequação curricular para evitar que cidades do interior permaneçam isoladas das cadeias de formação profissional contemporâneas (Ram et al., 2022; Stewart et al., 2024), configurando uma tendência de empobrecimento da presença física regional que tensiona futuros marcos de regulação e admissão (Haj et al., 2018; Salmi, 2018).",
+      "classificacao": "Tendência",
+      "pestel": [
+        "Econômico",
+        "Social",
+        "Legal"
+      ],
+      "eixo": "4 - Economia e Mercado de Trabalho",
+      "qtdArtigos": 5,
+      "artigosIds": [
+        3,
+        87,
+        262,
+        379,
+        381
+      ],
+      "referenciasResumidas": "[3] Ram M.P. (2022) - Deserts and Oases: Geospatial Analytics of Higher Education Access | [87] Salmi J. (2018) - Social Dimension Within a Quality Oriented Higher Education System | [262] Haj C.M. (2018) - A Typology of Admission Systems Across Europe and Their Impact on the Equity of Access, Progression and Completion in Higher Education | [379] Stewart A. (2024) - Building an outreach culture for fairer access to higher education in Haryana, India: A ‘bottom up’ contribution to policy implementation | [381] Semesp (2026) - Mapa do Ensino Superior no Brasil 2026 (16ª edição)",
+      "implicacoes": "O recuo das faculdades isoladas e a saturação dos grandes centros urbanos indicam que as vias de expansão sustentável para mantenedoras privadas até 2040 migram para o preenchimento qualificado dos desertos educacionais no interior. A oportunidade reside em superar o modelo de polos virtuais precários e implantar unidades descentralizadas multisserviços e modelos híbridos com forte presença física e laboratorial, ancorados nas demandas produtivas regionais (como polos agroindustriais, de saúde regional e novas tecnologias).",
+      "indicadores": "Participação relativa de Centros Universitários versus Faculdades isoladas no total de IES e matrículas; Densidade de cursos e vagas presenciais em municípios fora das regiões metropolitanas (mapeamento de \"desertos educacionais\"); Número de polos de EAD instalados em municípios de médio porte desprovidos de oferta presencial qualificada.",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [
+        "SF22"
+      ],
+      "incorporadas": [
+        "SF22"
+      ]
+    },
+    {
+      "id": "SFS03",
+      "fonte": "Vinicius",
+      "topico": "Papel Social, Democracia e Missão Cívica da Universidade",
+      "titulo": "O \"Paradoxo da Complexidade\" -  Tensão entre a Missão Universitária Clássica e a Escala Massificada do EAD para Adultos'",
+      "descricao": "Apesar do alto custo regulatório é a autonomia da categoria de universidade que promove a expansão da EAD, atraindo especialmente estudantes de faixas etária mais elevada, que ingressam no Ensino Superior em em fases posteriores da vida, e têm trajetória educacional diferente, pois buscam conciliar estudos, trabalho e responsabilidades familiares. \"Essa contradição do sistema (onde a universidade, vocacionada para a pesquisa e formação integral, torna-se o principal canal de acesso à graduação via EAD para quem entra mais tarde no sistema) tensiona o papel histórico dessas instituições e levanta debates sobre a qualidade da formação e a articulação entre as diferentes funções acadêmicas\" (381).",
+      "descricaoApa": "Apesar do alto custo regulatório é a autonomia da categoria de universidade que promove a expansão da EAD, atraindo especialmente estudantes de faixas etária mais elevada, que ingressam no Ensino Superior em em fases posteriores da vida, e têm trajetória educacional diferente, pois buscam conciliar estudos, trabalho e responsabilidades familiares. \"Essa contradição do sistema (onde a universidade, vocacionada para a pesquisa e formação integral, torna-se o principal canal de acesso à graduação via EAD para quem entra mais tarde no sistema) tensiona o papel histórico dessas instituições e levanta debates sobre a qualidade da formação e a articulação entre as diferentes funções acadêmicas\" (SAMESP, 2026, p. 74).",
+      "classificacao": "Incerteza",
+      "pestel": [
+        "Econômico",
+        "Social",
+        "Legal"
+      ],
+      "eixo": "4 - Economia e Mercado de Trabalho",
+      "qtdArtigos": 1,
+      "artigosIds": [
+        381
+      ],
+      "referenciasResumidas": "[381] Semesp (2026) - Mapa do Ensino Superior no Brasil 2026 (16ª edição)",
+      "implicacoes": "Instituições de ensino superior organizadas sob o status de Universidade enfrentam o dilema estratégico de legitimar sua autonomia perante os órgãos reguladores e a sociedade: mantenedoras que utilizarem essa prerrogativa exclusivamente para escalar cursos massificados de EAD desprovidos de densidade acadêmica e pesquisa aplicada tendem a enfrentar aperto regulatório do MEC e perda de prestígio de suas marcas; por outro lado, grupos que articularem pesquisa aplicada, inovação e extensão qualificada à sua capilaridade digital criarão um diferencial competitivo de sustentabilidade e reputação inalcançável por modelos puramente conteudistas.",
+      "indicadores": "Proporção de matrículas em EAD sobre o total de alunos nas Universidades privadas; Relação entre investimentos em pesquisa/pós-graduação stricto sensu e receita de polos de EAD; Índices regulatórios de qualidade (CPC/IGC) comparativos entre presencial e EAD em universidades privadas.",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "",
+      "vinculo": [],
       "incorporadas": []
     }
   ],
@@ -2688,7 +2983,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF31"
+        "SF31",
+        "SF31b"
       ]
     },
     {
@@ -3385,9 +3681,7 @@ const sfData = {
       "authorKeywords": "Analytic Hierarchy Process; Entropy Weight Method; Higher Education System; Random Forest Model; Time-Series Algorithm",
       "indexKeywords": "Entropy; Learning systems; Scales (weighing instruments); Sustainable development; Time series; Analytic hierarchy; Entropy weight method; Hierarchy process; High educations; Higher education system; National development; Pressung; Random forest modeling; Scientific evaluations; Time series algorithms; Analytic hierarchy process",
       "documentType": "Conference paper",
-      "associatedSFs": [
-        "SF35"
-      ]
+      "associatedSFs": []
     },
     {
       "id": 72,
@@ -3843,7 +4137,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF31"
+        "SF31",
+        "SF31a"
       ]
     },
     {
@@ -3886,7 +4181,7 @@ const sfData = {
       "authors": "Chakrapati K.",
       "title": "Performance of Higher Education in India",
       "year": 2021,
-      "sourceTitle": "Assessment, Accreditation and Ranking Methods for Higher Education Institutes in India:Current Findings and Future Challenges",
+      "sourceTitle": "Assessment, Accreditation and Ranking Methods for Higher Education Institutes in India: Current Findings and Future Challenges",
       "doi": "10.2174/9781681088174121010015",
       "doiLink": "https://doi.org/10.2174/9781681088174121010015",
       "abstract": "Education is the most powerful weapon to change the social, economic, and cultural, backwardness. Particularly higher education with research and development drives the country towards a good economic position in all aspects. India occupies the second position regarding the highest populated countries in the world. At the same time, India also enjoys the advantage of demographic dividend occupying the top place with respect to the youth population. Keeping pace with the global developments, if effective measures are implemented in the field of education, Indias manpower can be transformed into quality human resources. As a developing country, India has been prioritizing universalization of education, resulting in its horizontal growth. Now India should also focus on vertical growth with skill-oriented education especially at higher levels. India is the second-highest population country but first place in the younger (youth) generation. This paper mainly focuses on the overall performance of the higher education system in India. It also identifies required solutions and plans to be used for the improvement of quality in higher education in India. © 2024, Bentham Books imprint. Published by Bentham Science Publishers – Sharjah, UAE. All Rights Reserved.",
@@ -3962,7 +4257,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF31"
+        "SF31",
+        "SF31b"
       ]
     },
     {
@@ -4220,7 +4516,9 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF31"
+        "SF31",
+        "SF31a",
+        "SF31b"
       ]
     },
     {
@@ -4654,7 +4952,7 @@ const sfData = {
       "authors": "Venkata Murali Mohan G.",
       "title": "Higher Education In India - Issues and Challenges",
       "year": 2021,
-      "sourceTitle": "Assessment, Accreditation and Ranking Methods for Higher Education Institutes in India:Current Findings and Future Challenges",
+      "sourceTitle": "Assessment, Accreditation and Ranking Methods for Higher Education Institutes in India: Current Findings and Future Challenges",
       "doi": "10.2174/9781681088174121010016",
       "doiLink": "https://doi.org/10.2174/9781681088174121010016",
       "abstract": "The vision and aims of higher education in India are grand- to tap the inviolate demographic resources of the country and equip them with enough opportunities so as to ensure nation-building and development. Ever since the countrys independence, all the policies and programs aimed at the redemption of higher education of India have been aiming at this particular issue. This sector has always provided innumerable opportunities for national development but is also marred with a lot of challenges and practical difficulties that delay the progress. Education is not only a tool for social progress, but also the means to achieve political and economic freedom. Though there are a plethora of policies which envisage a proper structure and progress for higher development, inadequate stress on the quality of education has been one of the biggest issues concerning the sector. This research paper discusses the various challenges and issues faced by higher education in India and the way ahead. © 2024, Bentham Books imprint. Published by Bentham Science Publishers – Sharjah, UAE. All Rights Reserved.",
@@ -4713,7 +5011,8 @@ const sfData = {
       "indexKeywords": "Economics; Education computing; Open access; Population dynamics; Students; Central and Eastern Europe; Demographic transition; Fundings; High education funding; High educations; Higher education system; Romania; Social issues; Student populations; Systems Structure; Population statistics",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF31"
+        "SF31",
+        "SF31b"
       ]
     },
     {
@@ -5334,7 +5633,7 @@ const sfData = {
       "authors": "Kumar P.; Shukla B.; Passey D.",
       "title": "Leveraging ICT for Excellence in Higher Education Institutions using Standards and Criteria of Accreditation and Ranking",
       "year": 2021,
-      "sourceTitle": "Assessment, Accreditation and Ranking Methods for Higher Education Institutes in India:Current Findings and Future Challenges",
+      "sourceTitle": "Assessment, Accreditation and Ranking Methods for Higher Education Institutes in India: Current Findings and Future Challenges",
       "doi": "10.2174/9781681088174121010012",
       "doiLink": "https://doi.org/10.2174/9781681088174121010012",
       "abstract": "Knowledge and its application by the workforce is a critical factor for sustainable and economic developments. In order to gain competitive advantages, it is important for an organization to rely on manpower that has relevant skills and competencies to deliver expected results within stipulated time-frames and available resources. Higher Education (HE) plays a vital role in developing such competencies and moving industry-ready talent into a human resource. Information and Communication Technology (ICT) is a key enabler for functional efforts in the context, including quality assurance and enhancement in higher education. ICT is being used for improving the quality of education all over the world due to its numerous advantages. Our study is focused on unearthing the vital role of ICT for achieving excellence in higher education institutions (HEIs) using standards/criteria of various accreditation and ranking bodies. A survey was conducted using a Likert scale-based questionnaire including an open-ended question related to usage and importance of ICT for improving the quality of higher education. The results show that leveraging ICT can help higher education institutions (HEIs) to enhance overall quality through benchmarking institutional data, implementation and monitoring of best practices in pursuit of excellence. © 2024, Bentham Books imprint. Published by Bentham Science Publishers – Sharjah, UAE. All Rights Reserved.",
@@ -5708,7 +6007,7 @@ const sfData = {
       "authors": "Kasiratnam T.; Goldina R.S.",
       "title": "Prominence of Student Support and Progression in the NAAC Assessment for Quality Augmentation in Higher Education Institutions of Andhra Pradesh India",
       "year": 2021,
-      "sourceTitle": "Assessment, Accreditation and Ranking Methods for Higher Education Institutes in India:Current Findings and Future Challenges",
+      "sourceTitle": "Assessment, Accreditation and Ranking Methods for Higher Education Institutes in India: Current Findings and Future Challenges",
       "doi": "10.2174/9781681088174121010007",
       "doiLink": "https://doi.org/10.2174/9781681088174121010007",
       "abstract": "In India, the quality and performance of its higher education institutes are continuously monitored by the University Grants Commission, the National Assessment and Accreditation Council, and the national institutional ranking framework. The universities are assessed and accredited based on seven criteria that carry 1000 marks. Out of the seven criteria, student support and progression have a 14% weightage for universities and autonomous colleges; for affiliated colleges, this is 10%, carrying 100 marks. This study considers the colleges in the Srikakulam district of Andhra Pradesh, where only one government college and two private colleges are accredited with an ‘A’ grade by the national assessment and accreditation council. The remaining institutes are yet to catch up to the quality benchmark and good grades. To achieve this, it is essential for all such institutes to improve their student support and progression performance. This chapter analyses the performance of such institutes and offers suggestions to improve their performance in the assessment process. © 2024, Bentham Books imprint. Published by Bentham Science Publishers – Sharjah, UAE. All Rights Reserved.",
@@ -5759,7 +6058,7 @@ const sfData = {
       "authors": "Jyothifrederick M.R.",
       "title": "Impact of Globalization on Higher Education-A Comparative Study Between Public and Private Universities",
       "year": 2021,
-      "sourceTitle": "Assessment, Accreditation and Ranking Methods for Higher Education Institutes in India:Current Findings and Future Challenges",
+      "sourceTitle": "Assessment, Accreditation and Ranking Methods for Higher Education Institutes in India: Current Findings and Future Challenges",
       "doi": "10.2174/9781681088174121010013",
       "doiLink": "https://doi.org/10.2174/9781681088174121010013",
       "abstract": "Today, higher education is no more constrained by geographical boundaries. Innovative forms of translocation and transnational education have become a possibility. In India, higher education reforms are emerging in isolated niches in higher education institutions. Globalization has been attracting considerable attention from higher education institutions both in government and private sectors and discussed at national seminars and conferences. The main aim of this study was to find the impact of globalization on higher education. The data is collected from the faculty members of Public and Private Universities and comparative analysis has been done between these two groups. Perceptive score differences were observed between the teaching faculty of GITAM university and Andhra University on the impact of globalization on higher education. Significant differences were found in innovations, quality measures, external exposure, and policy measures. It is also observed that the services of GITAM University are more satisfactory than Andhra University. Whereas the faculty members of Andhra University felt more satisfaction than GITAM University in faculty-related quality measures, external exposure, and policy matters. © 2024, Bentham Books imprint. Published by Bentham Science Publishers – Sharjah, UAE. All Rights Reserved.",
@@ -5767,7 +6066,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF31"
+        "SF31",
+        "SF31b"
       ]
     },
     {
@@ -6262,7 +6562,9 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF31"
+        "SF31",
+        "SF31a",
+        "SF31b"
       ]
     },
     {
@@ -7035,7 +7337,7 @@ const sfData = {
       "authors": "Sankaranarayana Rao G.",
       "title": "Can a Student Feedback Provide Correct Opinion on Teaching-Learning Process in Higher Education Institutes?",
       "year": 2021,
-      "sourceTitle": "Assessment, Accreditation and Ranking Methods for Higher Education Institutes in India:Current Findings and Future Challenges",
+      "sourceTitle": "Assessment, Accreditation and Ranking Methods for Higher Education Institutes in India: Current Findings and Future Challenges",
       "doi": "10.2174/9781681088174121010005",
       "doiLink": "https://doi.org/10.2174/9781681088174121010005",
       "abstract": "The relevance of student feedback to the quality of higher education institutes is highlighted in this chapter. Different student feedback formats and processes are reviewed. The importance of this process in enhancing the academic performance of the colleges is discussed in the Indian context. The popular feedback surveys are studied and their merits and drawbacks are mentioned. Student feedback data in electronic format is collected from a college in Andhra Pradesh, India, for 2019. The data is analyzed in light of the academic performance of the college. The study tries to find out whether the outcome of student feedback (SFB) provides the correct opinion of the students about the teaching-learning process of the higher education institutes (HEI). Results show that students have not given the true picture of teachinglearning of the institute. Possible reasons are discussed and suggestions are mentioned to make the SFB a relevant process in improving the academic grade and rank of HEI. © 2024, Bentham Books imprint. Published by Bentham Science Publishers – Sharjah, UAE. All Rights Reserved.",
@@ -8050,6 +8352,23 @@ const sfData = {
       "associatedSFs": [
         "SFQ01",
         "SFQ05"
+      ]
+    },
+    {
+      "id": 394,
+      "fonte": "Busca",
+      "authors": "Souza M. P. de; Real G. C. M.",
+      "title": "Potencialidades do Sistema Arcu-Sul para a Construção do Modelo regional de Reconhecimento de Títulos",
+      "year": 2020,
+      "sourceTitle": "Educação em Revista",
+      "doi": "10.1590/0102-4698216226",
+      "doiLink": "https://doi.org/10.1590/0102-4698216226",
+      "abstract": "O presente trabalho tem como objetivo investigar as potencialidades da política regional de avaliação, configurada no Sistema de Acreditação de Cursos Universitários do Mercosul, para a construção de um modelo de reconhecimento de títulos. Metodologicamente, trata-se de uma pesquisa documental. Em que pesem indefinições acerca de questões importantes para a implementação da política regional, os dados evidenciam que os Estados Partes progrediram na construção de um mecanismo permanente de reconhecimento de títulos. Em síntese, o Sistema regional constitui uma estratégia de indução eficiente, uma vez que relaciona os resultados da acreditação com a regulação de diplomas. Desse modo, o Sistema do Mercosul possui potencial para determinar qualidade na educação superior e, consequentemente, induzir o reconhecimento de títulos nos países, a partir de um modelo regional.",
+      "authorKeywords": "Mercosul; Qualidade Educacional; Acreditação; Regulação",
+      "indexKeywords": "",
+      "documentType": "Article",
+      "associatedSFs": [
+        "SF26"
       ]
     }
   ]

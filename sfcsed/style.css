@@ -777,11 +777,11 @@ a:hover {
 }
 
 .sidebar-body {
-  padding: 12px;
+  padding: 10px 12px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 4px;
   flex: 1;
 }
 
@@ -842,21 +842,241 @@ a:hover {
   color: var(--text-primary);
 }
 
-.sidebar-select {
+/* ==========================================================================
+   SIDEBAR COLLAPSIBLE CHECKBOX FILTER GROUPS & SEPARATORS
+   ========================================================================== */
+
+.filter-divider {
+  height: 1px;
+  background-color: var(--border-subtle);
+  margin: 6px 0;
   width: 100%;
-  background-color: var(--bg-input);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-xs);
-  color: var(--text-primary);
-  padding: 6px 8px;
-  font-size: 0.76rem;
-  outline: none;
-  cursor: pointer;
-  transition: var(--transition);
 }
 
-.sidebar-select:focus {
+.sidebar-filter-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-section-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 4px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 0.71rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: var(--transition);
+  user-select: none;
+}
+
+.filter-section-header:hover {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+}
+
+.filter-section-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.filter-section-title i {
+  color: var(--accent-primary);
+  font-size: 0.72rem;
+  width: 14px;
+  text-align: center;
+}
+
+.filter-section-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-active-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  border-radius: 9px;
+  font-size: 0.64rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.filter-toggle-icon {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-filter-section.collapsed .filter-toggle-icon {
+  transform: rotate(-90deg);
+}
+
+.filter-section-content {
+  margin-top: 4px;
+}
+
+.sidebar-filter-section.collapsed .filter-section-content {
+  display: none;
+}
+
+/* Checkbox Lists */
+.filter-checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.scrollable-checkbox-list {
+  max-height: 190px;
+  overflow-y: auto;
+  padding-right: 3px;
+}
+
+.filter-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  border-radius: var(--radius-xs);
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.filter-checkbox-label:hover {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+}
+
+.filter-checkbox-label.is-checked {
+  background-color: var(--accent-subtle);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.filter-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--border-medium);
+  border-radius: 3px;
+  outline: none;
+  background-color: var(--bg-input);
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.12s ease;
+  margin: 0;
+}
+
+.filter-checkbox:hover {
   border-color: var(--border-focus);
+}
+
+.filter-checkbox:checked {
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.filter-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 3.5px;
+  top: 1px;
+  width: 3.5px;
+  height: 7px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.filter-dot-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.filter-label-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.filter-item-count {
+  font-size: 0.67rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  padding: 1px 5px;
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.filter-checkbox-label.is-checked .filter-item-count {
+  background-color: var(--bg-surface);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  font-weight: 700;
+}
+
+/* Category Dot Colors */
+.filter-dot-ruptura { background-color: var(--badge-ruptura-text, #ef4444); }
+.filter-dot-tendencia { background-color: var(--badge-tendencia-text, #3b82f6); }
+.filter-dot-sinal-fraco { background-color: var(--badge-sinal-text, #a855f7); }
+.filter-dot-incerteza { background-color: var(--badge-incerteza-text, #f59e0b); }
+.filter-dot-fato-predeterminado { background-color: var(--badge-fato-text, #94a3b8); }
+.filter-dot-surpresa-inevitavel { background-color: var(--badge-surpresa-text, #f97316); }
+
+.filter-dot-politico { background-color: var(--pestel-pol, #fb7185); }
+.filter-dot-economico { background-color: var(--pestel-eco, #fbbf24); }
+.filter-dot-social { background-color: var(--pestel-soc, #60a5fa); }
+.filter-dot-tecnologico { background-color: var(--pestel-tec, #a78bfa); }
+.filter-dot-ambiental { background-color: var(--pestel-amb, #34d399); }
+.filter-dot-legal { background-color: var(--pestel-leg, #94a3b8); }
+
+.filter-dot-status-pendente { background-color: var(--text-muted); }
+.filter-dot-status-ok { background-color: #10b981; }
+.filter-dot-status-dividida { background-color: #06b6d4; }
+.filter-dot-status-mesclada { background-color: #a855f7; }
+.filter-dot-status-descartada { background-color: #ef4444; }
+
+.filter-tag-clear-all {
+  background: transparent;
+  border: none;
+  color: var(--accent-primary);
+  font-size: 0.68rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 1px 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  text-decoration: underline;
+}
+
+.filter-tag-clear-all:hover {
+  opacity: 0.8;
 }
 
 .sidebar-footer {
@@ -1676,6 +1896,51 @@ a:hover {
   color: #7e22ce;
 }
 
+/* Variante: Dividida */
+.banner-dividida {
+  background-color: rgba(6, 182, 212, 0.08);
+  border-left-color: #06b6d4;
+}
+.banner-dividida .status-banner-icon {
+  color: #22d3ee;
+}
+.banner-dividida .status-banner-title {
+  color: #22d3ee;
+}
+[data-theme="light"] .banner-dividida {
+  background-color: #ecfeff;
+  border-left-color: #0891b2;
+}
+[data-theme="light"] .banner-dividida .status-banner-title {
+  color: #0e7490;
+}
+
+/* Variante: Origem de Divisão (Sementes Filhas) */
+.banner-origem-divisao {
+  background-color: rgba(99, 102, 241, 0.08);
+  border-left-color: #6366f1;
+}
+.banner-origem-divisao .status-banner-icon {
+  color: #818cf8;
+}
+.banner-origem-divisao .status-banner-title {
+  color: #818cf8;
+}
+[data-theme="light"] .banner-origem-divisao {
+  background-color: #eef2ff;
+  border-left-color: #4f46e5;
+}
+[data-theme="light"] .banner-origem-divisao .status-banner-title {
+  color: #3730a3;
+}
+
+.banner-jump-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
 /* Variante: Descartada */
 .banner-descartada {
   background-color: rgba(239, 68, 68, 0.08);
@@ -1734,6 +1999,22 @@ a:hover {
   color: #7e22ce;
   border-color: #d8b4fe;
 }
+.badge-dossier-dividida {
+  background-color: rgba(6, 182, 212, 0.15);
+  color: #67e8f9;
+  border: 1px solid rgba(103, 232, 249, 0.3);
+}
+[data-theme="light"] .badge-dossier-dividida {
+  background-color: #cffafe;
+  color: #0e7490;
+  border-color: #a5f3fc;
+}
+.badge-child-tag {
+  font-size: 0.68rem;
+  font-weight: 500;
+  opacity: 0.85;
+  margin-left: 2px;
+}
 .badge-dossier-descartada {
   background-color: rgba(239, 68, 68, 0.15);
   color: #fca5a5;
@@ -1763,6 +2044,22 @@ a:hover {
   background-color: #f3e8ff;
   color: #7e22ce;
 }
+.badge-status-dividida {
+  background-color: rgba(6, 182, 212, 0.12);
+  color: #22d3ee;
+}
+[data-theme="light"] .badge-status-dividida {
+  background-color: #ecfeff;
+  color: #0891b2;
+}
+.badge-status-filha {
+  background-color: rgba(99, 102, 241, 0.12);
+  color: #a5b4fc;
+}
+[data-theme="light"] .badge-status-filha {
+  background-color: #eef2ff;
+  color: #4f46e5;
+}
 .badge-status-descartada {
   background-color: rgba(239, 68, 68, 0.12);
   color: #f87171;
@@ -1772,7 +2069,7 @@ a:hover {
   color: #b91c1c;
 }
 
-/* Opacidade no card da lista para descartadas/fundidas */
+/* Opacidade no card da lista para descartadas/fundidas/divididas */
 .inbox-item.item-descartada {
   opacity: 0.72;
 }
@@ -1781,6 +2078,9 @@ a:hover {
 }
 .inbox-item.item-fundida {
   border-left-color: #a855f7;
+}
+.inbox-item.item-dividida {
+  border-left-color: #06b6d4;
 }
 
 /* Articles Evidence List */
@@ -2423,37 +2723,6 @@ a:hover {
   background-color: var(--bg-surface-hover);
 }
 
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
-
-.app-footer {
-  background-color: var(--bg-surface);
-  border-top: 1px solid var(--border-subtle);
-  padding: 8px 0;
-  font-size: 0.7rem;
-  color: var(--text-muted);
-}
-
-.footer-container {
-  max-width: 1740px;
-  margin: 0 auto;
-  padding: 0 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.footer-left, .footer-right {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.footer-dot {
-  color: var(--border-medium);
-}
 
 /* ==========================================================================
    RESPONSIVE DESIGN (BREAKPOINTS)

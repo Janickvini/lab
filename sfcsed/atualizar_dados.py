@@ -153,29 +153,49 @@ for row in sf_rows[1:]:
     raw_revisada_str = str(raw_revisada).strip()
     status_lower = raw_revisada_str.lower()
 
+    # Tratar campo Vínculo (NOVA COLUNA DEDICADA)
+    raw_vinculo = str(get_field(item, ["Vínculo", "Vinculo", "Vínculo SF", "Vinculo SF", "SFs Relacionadas", "SF Relacionada", "Vínculos"], "")).strip()
+    vinculo_list = []
+    if raw_vinculo and raw_vinculo.upper() not in ["N/A", "NAN", "NONE", "0", ""]:
+        vinculo_list = [v.strip() for v in re.split(r"[,;]+", raw_vinculo) if v.strip()]
+
     # Tratar campo justificativa
     raw_justificativa = str(get_field(item, ["Justificativa", "Justificativa Metodológica", "Motivo"], "")).strip()
     justificativa_val = "" if raw_justificativa.upper() in ["N/A", "NAN", "NONE", ""] else raw_justificativa
 
     status_tipo = "pendente"
     fusao_id = ""
+    divisao_ids = []
     is_revisada = False
 
-    if status_lower in ["ok", "1", "sim", "true", "s", "revisada", "revisado", "aprovada", "aprovado"] or "ok" in status_lower:
-        status_tipo = "ok"
+    if any(k in status_lower for k in ["divid", "desmembr", "separ", "divis"]):
+        status_tipo = "dividida"
         is_revisada = True
-    elif "mescl" in status_lower or "fus" in status_lower or "fundid" in status_lower:
+        if vinculo_list:
+            divisao_ids = [d for d in vinculo_list if d.upper() != sf_id.upper()]
+        else:
+            m = re.search(r"\((.*?)\)", raw_revisada_str)
+            target_text = m.group(1) if m else raw_revisada_str
+            extracted = re.findall(r"(SF[A-Za-z0-9]+)", target_text, re.IGNORECASE)
+            divisao_ids = [d for d in extracted if d.upper() != sf_id.upper()]
+    elif any(k in status_lower for k in ["mescl", "fus", "fundid"]):
         status_tipo = "mesclada"
         is_revisada = True
-        m = re.search(r"\((.*?)\)", raw_revisada_str)
-        if m:
-            fusao_id = m.group(1).strip()
+        if vinculo_list:
+            fusao_id = vinculo_list[0]
         else:
-            m2 = re.search(r"(SF[A-Z0-9]+)", raw_revisada_str, re.IGNORECASE)
-            if m2:
-                fusao_id = m2.group(1).strip()
+            m = re.search(r"\((.*?)\)", raw_revisada_str)
+            if m:
+                fusao_id = m.group(1).strip()
+            else:
+                m2 = re.search(r"(SF[A-Z0-9]+)", raw_revisada_str, re.IGNORECASE)
+                if m2:
+                    fusao_id = m2.group(1).strip()
     elif "descart" in status_lower:
         status_tipo = "descartada"
+        is_revisada = True
+    elif status_lower in ["ok", "1", "sim", "true", "s", "revisada", "revisado", "aprovada", "aprovado"] or "ok" in status_lower:
+        status_tipo = "ok"
         is_revisada = True
     else:
         status_tipo = "pendente"
@@ -187,6 +207,8 @@ for row in sf_rows[1:]:
         status_label = f"Revisada (Mesclada: {fusao_id})" if fusao_id else "Revisada (Mesclada)"
     elif status_tipo == "descartada":
         status_label = "Revisada (Descartada)"
+    elif status_tipo == "dividida":
+        status_label = f"Revisada (Dividida: {', '.join(divisao_ids)})" if divisao_ids else "Revisada (Dividida)"
     else:
         status_label = "Em revisão"
 
@@ -222,23 +244,45 @@ for row in sf_rows[1:]:
         "statusLabel": status_label,
         "justificativa": justificativa_val,
         "fusaoId": fusao_id,
+        "divisaoIds": divisao_ids,
+        "origemDivisao": "",
+        "vinculo": vinculo_list,
         "incorporadas": []
     }
     sementes_list.append(sf_obj)
 
-# Mapeamento reverso de incorporações (ex: SFS02 incorpora SF22)
-sf_map = {s["id"]: s for s in sementes_list}
+# Mapeamento reverso de incorporações (ex: SFS02 incorpora SF22) e linhagem de divisões (ex: SF31a/b originam de SF31)
+sf_map = {s["id"].upper(): s for s in sementes_list}
 for s in sementes_list:
-    if s["fusaoId"] and s["fusaoId"] in sf_map:
-        target = sf_map[s["fusaoId"]]
+    if s["fusaoId"] and s["fusaoId"].upper() in sf_map:
+        target = sf_map[s["fusaoId"].upper()]
         if s["id"] not in target["incorporadas"]:
             target["incorporadas"].append(s["id"])
+    if s["divisaoIds"]:
+        s["divisaoIds"] = [sf_map[d.upper()]["id"] if d.upper() in sf_map else d for d in s["divisaoIds"]]
+        for child_id in s["divisaoIds"]:
+            if child_id.upper() in sf_map:
+                child = sf_map[child_id.upper()]
+                child["origemDivisao"] = s["id"]
+    if s["vinculo"]:
+        for v in s["vinculo"]:
+            v_up = v.upper()
+            if v_up in sf_map:
+                related = sf_map[v_up]
+                if related["statusTipo"] == "dividida" and not s["origemDivisao"]:
+                    s["origemDivisao"] = related["id"]
+                    if s["id"] not in related["divisaoIds"]:
+                        related["divisaoIds"].append(s["id"])
+                elif related["statusTipo"] == "mesclada" and related["id"] not in s["incorporadas"]:
+                    s["incorporadas"].append(related["id"])
 
-# Ordenar SFs numericamente (ex: SF01, SF02... SF62)
+# Ordenar SFs numericamente (ex: SF01, SF02... SF31, SF31a, SF31b... SF62, SFQ, SFS)
 def sf_sort_key(sf):
     code = sf["id"]
     digits = "".join([c for c in code if c.isdigit()])
-    return int(digits) if digits else 9999
+    d_int = int(digits) if digits else 9999
+    cat = 0 if code.startswith("SF") and not code.startswith("SFQ") and not code.startswith("SFS") else (1 if code.startswith("SFQ") else 2)
+    return (cat, d_int, code)
 
 sementes_list.sort(key=sf_sort_key)
 
@@ -253,6 +297,7 @@ data_payload = {
         "totalAprovadas": len([sf for sf in sementes_list if sf["statusTipo"] == "ok"]),
         "totalMescladas": len([sf for sf in sementes_list if sf["statusTipo"] == "mesclada"]),
         "totalDescartadas": len([sf for sf in sementes_list if sf["statusTipo"] == "descartada"]),
+        "totalDivididas": len([sf for sf in sementes_list if sf["statusTipo"] == "dividida"]),
         "totalPendentes": len([sf for sf in sementes_list if sf["statusTipo"] == "pendente"]),
         "generatedAt": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     },
