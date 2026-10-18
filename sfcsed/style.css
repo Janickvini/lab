@@ -72,6 +72,10 @@
   --badge-surpresa-text: #f97316;
   --badge-surpresa-border: rgba(249, 115, 22, 0.28);
 
+  --badge-achado-bg: rgba(20, 184, 166, 0.12);
+  --badge-achado-text: #14b8a6;
+  --badge-achado-border: rgba(20, 184, 166, 0.28);
+
   /* PESTEL (Dark Mode) */
   --pestel-pol: #fb7185;
   --pestel-pol-bg: rgba(244, 63, 94, 0.1);
@@ -136,6 +140,10 @@
   --badge-surpresa-bg: #ffedd5;
   --badge-surpresa-text: #c2410c;
   --badge-surpresa-border: #fdba74;
+
+  --badge-achado-bg: #ccfbf1;
+  --badge-achado-text: #0f766e;
+  --badge-achado-border: #99f6e4;
 
   /* PESTEL (Light Mode) */
   --pestel-pol: #be123c;
@@ -1047,6 +1055,7 @@ a:hover {
 .filter-dot-incerteza { background-color: var(--badge-incerteza-text, #f59e0b); }
 .filter-dot-fato-predeterminado { background-color: var(--badge-fato-text, #94a3b8); }
 .filter-dot-surpresa-inevitavel { background-color: var(--badge-surpresa-text, #f97316); }
+.filter-dot-achado-empirico { background-color: var(--badge-achado-text, #14b8a6); }
 
 .filter-dot-politico { background-color: var(--pestel-pol, #fb7185); }
 .filter-dot-economico { background-color: var(--pestel-eco, #fbbf24); }
@@ -1353,6 +1362,12 @@ a:hover {
   background-color: var(--badge-surpresa-bg);
   color: var(--badge-surpresa-text);
   border-color: var(--badge-surpresa-border);
+}
+
+.badge-typology.achado-empírico, .badge-typology.achado-empirico, .badge-typology.achado_empirico {
+  background-color: var(--badge-achado-bg);
+  color: var(--badge-achado-text);
+  border-color: var(--badge-achado-border);
 }
 
 /* 4. Ícone Sutil de Revisão */

@@ -2,16 +2,16 @@
 const sfData = {
   "metadata": {
     "sourceFile": "SF CSED.xlsx",
-    "totalSF": 72,
+    "totalSF": 74,
     "totalArticles": 340,
     "totalArticlesCited": 315,
-    "totalRevisadas": 20,
-    "totalAprovadas": 17,
+    "totalRevisadas": 26,
+    "totalAprovadas": 22,
     "totalMescladas": 1,
     "totalDescartadas": 1,
-    "totalDivididas": 1,
-    "totalPendentes": 52,
-    "generatedAt": "17/10/2026 18:30:10"
+    "totalDivididas": 2,
+    "totalPendentes": 48,
+    "generatedAt": "18/10/2026 14:17:59"
   },
   "sementes": [
     {
@@ -241,7 +241,7 @@ const sfData = {
       "titulo": "Superação do EAD Massificado de Baixo Custo: Profissionalização, Qualidade Multidimensional e Abordagem Institucional Integrada (Whole-Institution)",
       "descricao": "Desgaste e perda progressiva de eficácia dos modelos de educação a distância puramente transmissivos e de baixo investimento pedagógico, fenômeno historicamente evidenciado pelo rápido ciclo de obsolescência de formatos massificados e pelas elevadas taxas de abandono discente diante de repositórios estáticos de conteúdo (117, 214). Investigações empíricas recentes sobre a experiência estudantil em contextos de expansão digital revelam que a permanência e a fidelização discente não decorrem do mero acesso à plataforma tecnológica, mas de uma percepção de qualidade condicionada a múltiplos fatores, como suporte acadêmico contínuo e rápido, mediação docente ativa, atenção institucional a desigualdades técnicas, plataformas intuitivas e relevância do currículo (103, 240, 353). Como sinal emergente dessa dinâmica, observa-se a transição de ações remotas fragmentadas para abordagens institucionais sistêmicas (whole-institution approach), acompanhadas pelo avanço de formatos híbridos de aprendizagem que registram resultados pedagógicos superiores ao combinarem flexibilidade digital com momentos deliberados de interação orientada (84, 118, 187). Esse conjunto de fatores aponta para uma potencial bifurcação de trajetórias no setor: de um lado, a vulnerabilidade e o desgaste reputacional de instituições que sustentam sua oferta exclusivamente no corte de custos e na entrega passiva; de outro, a consolidação de ecossistemas digitais de alta densidade relacional, nos quais a sustentabilidade do modelo decorre do equilíbrio entre arquitetura tecnológica avançada e presença humana qualificada (84, 103, 187).\"",
       "descricaoApa": "Desgaste e perda progressiva de eficácia dos modelos de educação a distância puramente transmissivos e de baixo investimento pedagógico, fenômeno historicamente evidenciado pelo rápido ciclo de obsolescência de formatos massificados e pelas elevadas taxas de abandono discente diante de repositórios estáticos de conteúdo (Prasetya et al., 2019; Wang & Ellington, 2022). Investigações empíricas recentes sobre a experiência estudantil em contextos de expansão digital revelam que a permanência e a fidelização discente não decorrem do mero acesso à plataforma tecnológica, mas de uma percepção de qualidade condicionada a múltiplos fatores, como suporte acadêmico contínuo e rápido, mediação docente ativa, atenção institucional a desigualdades técnicas, plataformas intuitivas e relevância do currículo (Le et al., 2026; Nguyen-Anh et al., 2023; Upadhayay et al., 2022). Já se pode observar episódios de transição de ações remotas fragmentadas para abordagens institucionais sistêmicas (whole-institution approach), acompanhadas pelo avanço de formatos híbridos de aprendizagem que registram resultados pedagógicos superiores ao combinarem flexibilidade digital com momentos deliberados de interação orientada (Filback et al., 2026; Thinh, 2026; Yancey, 2026). Esse conjunto de fatores aponta para uma potencial bifurcação de trajetórias no setor: de um lado, a vulnerabilidade e o desgaste reputacional de instituições que sustentam sua oferta exclusivamente no corte de custos e na entrega passiva; de outro, a consolidação de ecossistemas digitais de alta densidade relacional, nos quais a sustentabilidade do modelo decorre do equilíbrio entre arquitetura tecnológica avançada e presença humana qualificada (Filback et al., 2026; Le et al., 2026; Yancey, 2026).",
-      "classificacao": "Sinal fraco",
+      "classificacao": "Sinal Fraco",
       "pestel": [
         "Econômico",
         "Tecnológico",
@@ -709,7 +709,7 @@ const sfData = {
       "titulo": "Alfabetização em Futuros (Futures Literacy) e Foresight Participativo como Competências Profissionais Essenciais",
       "descricao": "Em um ambiente global de hipercomplexidade, volatilidade geopolítica e rupturas tecnológicas disruptivas, o planejamento linear tradicional torna-se inoperante, demandando a capacitação intencional de estudantes e gestores em alfabetização em futuros (Futures Literacy) e métodos participativos de foresight (111, 138). Essa capacidade de antecipar múltiplos cenários plausíveis, interpretar sinais fracos e tomar decisões estratégicas informadas pela incerteza desponta como uma das metacompetências mais distintivas e valorizadas para as lideranças das próximas décadas (138, 380).",
       "descricaoApa": "N/A",
-      "classificacao": "Sinal fraco",
+      "classificacao": "Sinal Fraco",
       "pestel": [
         "Social",
         "Econômico",
@@ -1532,9 +1532,9 @@ const sfData = {
       "fonte": "Scopus",
       "topico": "Mobilidade Estudantil e Internacionalização",
       "titulo": "Internacionalização Sul-Sul, Descentralização Geopolítica e Formação de Novos Polos Regionais",
-      "descricao": "Os fluxos mundiais de mobilidade acadêmica passam por uma descentralização geopolítica sem precedentes, rompendo com a rota unilateral exclusiva em direção às capitais e grandes universidades do Norte Global (26, 316). Emerge a força da 'Internacionalização Sul-Sul', marcada pelo fortalecimento de polos regionais de atração de estudantes em países emergentes da Ásia, África e América Latina, amparados em acordos bilaterais estratégicos e cursos vocacionados para os desafios do desenvolvimento regional compartilhado (41, 174, 252, 359). Essa reconfiguração desafia as assimetrias históricas da periferia acadêmica e fomenta redes solidárias de produção e circulação de conhecimento científico (92).",
-      "descricaoApa": "N/A",
-      "classificacao": "Tendência",
+      "descricao": "Evidências emergentes no Sul Global, com destaque para a Ásia e a África, apontam para a formação de fluxos alternativos de mobilidade acadêmica que começam a desafiar a histórica dependência unilateral em relação às universidades do Norte Global (26, 316). Embora ainda incipiente e geograficamente delimitado, esse movimento opera como um sinal fraco de descentralização geopolítica do ensino superior: países em desenvolvimento como Vietnã, Índia, Filipinas e nações da África Subsaariana vêm estruturando políticas para se converterem em polos regionais de atração estudantil (26, 41, 92, 174). Esse processo apoia-se em acordos bilaterais de cooperação, integração em blocos regionais (como a ASEAN) e na oferta de cursos voltados a nichos específicos de desenvolvimento local compartilhado, com custos mais acessíveis e menor barreira migratória em relação aos polos tradicionais ocidentais (92, 252, 359). A experiência desses países emerge como uma referência prospectiva relevante para o Sul Global, sinalizando como ecossistemas acadêmicos periféricos podem construir redes próprias de atração discente e cooperação técnica sem depender exclusivamente de modelos e validações metropolitanas (41, 92).",
+      "descricaoApa": "Evidências emergentes no Sul Global, com destaque para a Ásia e a África, apontam para a formação de fluxos alternativos de mobilidade acadêmica que começam a desafiar a histórica dependência unilateral em relação às universidades do Norte Global (Kim Khanh & Ngoc, 2023; Gao, 2025). Embora ainda incipiente e geograficamente delimitado, esse movimento opera como um sinal fraco de descentralização geopolítica do ensino superior: países em desenvolvimento como Vietnã, Índia, Filipinas e nações da África Subsaariana vêm estruturando políticas para se converterem em polos regionais de atração estudantil (Kim Khanh & Ngoc, 2023; Ngao et al., 2026; Castulo & Marasigan, 2026; Prachi, 2026). Esse processo apoia-se em acordos bilaterais de cooperação, integração em blocos regionais (como a ASEAN) e na oferta de cursos voltados a nichos específicos de desenvolvimento local compartilhado, com custos mais acessíveis e menor barreira migratória em relação aos polos tradicionais ocidentais (Castulo & Marasigan, 2026; Likoko & Wu, 2025; Aung & Aye, 2024). A experiência desses países emerge como uma referência prospectiva relevante para o Sul Global, sinalizando como ecossistemas acadêmicos periféricos podem construir redes próprias de atração discente e cooperação técnica sem depender exclusivamente de modelos e validações metropolitanas (Ngao et al., 2026; Castulo & Marasigan, 2026).",
+      "classificacao": "Sinal Fraco",
       "pestel": [
         "Social",
         "Político",
@@ -1553,11 +1553,11 @@ const sfData = {
       ],
       "referenciasResumidas": "[26] Kim Khanh M.T. (2023) - Attracting international students to a developing Asian country: Push–pull factors for a niche market, the case of a Vietnamese higher education institution | [41] Ngao A.I. (2026) - Internationalization and Development of Higher Education in Sub-Saharan Africa: A Meta-ethnography | [92] Castulo N.J. (2026) - Mapping the Internationalisation of Higher Education in the Philippines Within ASEAN: Cluster(s) of Future Studies: Past and Futures; Humanity at the Limen; Internationalisation (new) | [174] Prachi D. (2026) - India and Select Asian Policies for Internationalisation of Higher Education: Cluster(s) of Future Studies: Post Normality and Complexity | [252] Likoko H.M. (2025) - A study on Tanzania foreign language education policies and its impact on the development of Chinese language in Tanzania higher education | ... (+2 artigos)",
       "implicacoes": "Oportunidade para as universidades brasileiras privadas se consolidarem como hub de destino educacional de excelência para estudantes da América do Sul e de países lusófonos africanos, desenvolvendo programas vocacionados para saúde tropical, agronegócio e sustentabilidade.",
-      "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "indicadores": "Volume de matrículas e intercâmbios de estudantes internacionais entre países do Sul Global; Acordos bilaterais de mobilidade acadêmica e reconhecimento de créditos firmados fora do eixo tradicional com o Norte Global; Número de programas de graduação e pós-graduação desenhados para atender demandas regionais compartilhadas por economias emergentes; Monitoramento de políticas públicas de internacionalização em países em desenvolvimento voltadas à atração de alunos de nações vizinhas.",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
@@ -1740,15 +1740,94 @@ const sfData = {
       "referenciasResumidas": "[20] Porzionato M. (2015) - Excellence and Diversification of Higher Education Institutions’ Missions | [75] Gupta M.K. (2026) - The Role of Higher Education Institutions in Promoting Sustainable Development in Pharmaceutical Research | [80] Chandel R. (2024) - Principles and Approach Towards Sustainability in Higher Education Institutions | [124] Guilherme P. (2023) - Governance for Sustainability in Higher Education Institutions: A Systematic Review Aiming at the Implementation of the Green Campus | [160] Foo Ng T. (2023) - Implementing Sustainability Strategies, Programs, and Practices for the Communities in Higher Education Institutions: Case Study in USM, Malaysia | ... (+2 artigos)",
       "implicacoes": "Empresas de capital aberto do setor educacional (como a CSED) com relatórios ESG transparentes e auditados terão menor custo de capital em emissões de debêntures e atração de fundos internacionais dedicados à transição ecológica justa.",
       "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "revisada": true,
+      "statusTipo": "dividida",
+      "statusRevisao": "Dividida",
+      "statusLabel": "Revisada (Dividida: SF45a, SF45b)",
+      "justificativa": "Continha duas SF distintas",
+      "fusaoId": "",
+      "divisaoIds": [
+        "SF45a",
+        "SF45b"
+      ],
+      "origemDivisao": "",
+      "vinculo": [
+        "SF45a",
+        "SF45b"
+      ],
+      "incorporadas": []
+    },
+    {
+      "id": "SF45a",
+      "fonte": "Scopus",
+      "topico": "Sustentabilidade, Mudanças Climáticas e ESG",
+      "titulo": "Institucionalização da Governança Socioambiental (ESG), Métricas ODS e Liderança Estratégica",
+      "descricao": "As demandas crescentes por responsabilidade corporativa forçam as instituições de ensino superior a superarem ações retóricas pontuais para institucionalizarem a governança socioambiental e climática em seus níveis mais estratégicos (75, 80). Essa transição fundamenta-se na incorporação sistemática dos Objetivos de Desenvolvimento Sustentável (ODS) da Agenda 2030 nos planos diretores e no planejamento de longo prazo, redefinindo as métricas tradicionais de excelência e prestígio acadêmico em direção a critérios multidimensionais de impacto social e integridade ecológica (20, 80, 320). A literatura internacional enfatiza que a sustentabilidade deixa de ser um projeto setorial ou discurso de marketing para se consolidar como missão institucional reitora — a universidade sustentável sistêmica —, exigindo estruturas formais de transparência, prestação de contas (*accountability*) e direcionamento de recursos para a transição socioecológica justa (320, 335).",
+      "descricaoApa": "As demandas crescentes por responsabilidade corporativa forçam as instituições de ensino superior a superarem ações retóricas pontuais para institucionalizarem a governança socioambiental e climática em seus níveis mais estratégicos (Gupta et al., 2026; Chandel & Chandel, 2024). Essa transição fundamenta-se na incorporação sistemática dos Objetivos de Desenvolvimento Sustentável (ODS) da Agenda 2030 nos planos diretores e no planejamento de longo prazo, redefinindo as métricas tradicionais de excelência e prestígio acadêmico em direção a critérios multidimensionais de impacto social e integridade ecológica (Porzionato & De Marco, 2015; Chandel & Chandel, 2024; Intraprasert et al., 2026). A literatura internacional enfatiza que a sustentabilidade deixa de ser um projeto setorial ou discurso de marketing para se consolidar como missão institucional reitora — a universidade sustentável sistêmica —, exigindo estruturas formais de transparência, prestação de contas (*accountability*) e direcionamento de recursos para a transição socioecológica justa (Intraprasert et al., 2026; Beynaghi et al., 2014).",
+      "classificacao": "Tendência",
+      "pestel": [
+        "Ambiental",
+        "Social",
+        "Econômico"
+      ],
+      "eixo": "6 - Fatores Ambientais (ESG e Clima): eventos climáticos, requisitos de sustentabilidade do Inep/Sinaes, responsabilidade social corporativa",
+      "qtdArtigos": 5,
+      "artigosIds": [
+        20,
+        75,
+        80,
+        320,
+        335
+      ],
+      "referenciasResumidas": "[20] Porzionato M. (2015) - Excellence and Diversification of Higher Education Institutions’ Missions | [75] Gupta M.K. (2026) - The Role of Higher Education Institutions in Promoting Sustainable Development in Pharmaceutical Research | [80] Chandel R. (2024) - Principles and Approach Towards Sustainability in Higher Education Institutions | [320] Intraprasert D. (2026) - Higher Education Governance and the Country’s Sustainable Development Agenda | [335] Beynaghi A. (2014) - Towards an orientation of higher education in the post Rio+20 process: How is the game changing?",
+      "implicacoes": "Para as mantenedoras privadas de ensino superior, sobretudo aquelas com atuação no mercado de capitais ou dependentes de financiamento bancário estruturado, a governança ESG auditável consolida-se como condição de atratividade financeira e solvência regulatória. Grupos educacionais que comprovam compromissos materiais com eficiência operacional, inclusão social e governança ética reduzem custos de captação de dívida, mitigam riscos de sanções regulatórias e preservam seu valor de mercado perante investidores institucionais.",
+      "indicadores": "",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
-      "origemDivisao": "",
-      "vinculo": [],
+      "origemDivisao": "SF45",
+      "vinculo": [
+        "SF45"
+      ],
+      "incorporadas": []
+    },
+    {
+      "id": "SF45b",
+      "fonte": "Scopus",
+      "topico": "Sustentabilidade, Mudanças Climáticas e ESG",
+      "titulo": "Green Campuses - Gestão Ambiental da Infraestrutura, Métricas Operacionais e Práticas Socioambientais",
+      "descricao": "O conceito de \"Green Campus\" (Campus Verde) é apresentado na literatura como uma materialização prática e relevante da sustentabilidade no ensino superior, estruturando-se a partir da articulação entre planejamento organizacional, execução de medidas práticas no espaço físico e mensuração contínua do desempenho ambiental das instituições (124). Essa dinâmica operacional envolve a implementação de ferramentas objetivas de monitoramento, tais como o cálculo da pegada de carbono (carbon footprint), a busca por certificações de eficiência energética em edifícios e o controle do consumo de recursos materiais nas rotinas universitárias (124). A relevância desse modelo reside na superação de compromissos meramente formais ou discursivos, exigindo que a universidade adeque a gestão de suas próprias instalações para atuar como agente de transformação e influenciar atitudes, comportamentos e competências sustentáveis em sua comunidade interna (124, 160). As investigações evidenciam que a concretização dessa proposta impõe desafios complexos de governança, historicamente limitados pela fragmentação departamental e pela carência de instrumentos periódicos de avaliação e prestação de contas (124). Sua viabilização requer o envolvimento direto da gestão institucional e o engajamento participativo de docentes, técnicos e estudantes na condução de programas que integrem as dimensões ambiental, social e econômica no cotidiano dos campi (124, 160).",
+      "descricaoApa": "O conceito de \"Green Campus\" (Campus Verde) é apresentado na literatura como uma materialização prática e relevante da sustentabilidade no ensino superior, estruturando-se a partir da articulação entre planejamento organizacional, execução de medidas práticas no espaço físico e mensuração contínua do desempenho ambiental das instituições (Guilherme et al., 2023). Essa dinâmica operacional envolve a implementação de ferramentas objetivas de monitoramento, tais como o cálculo da pegada de carbono (carbon footprint), a busca por certificações de eficiência energética em edifícios e o controle do consumo de recursos materiais nas rotinas universitárias (Guilherme et al., 2023). A relevância desse modelo reside na superação de compromissos meramente formais ou discursivos, exigindo que a universidade adeque a gestão de suas próprias instalações para atuar como agente de transformação e influenciar atitudes, comportamentos e competências sustentáveis em sua comunidade interna (Guilherme et al., 2023; Foo Ng et al., 2023). As investigações evidenciam que a concretização dessa proposta impõe desafios complexos de governança, historicamente limitados pela fragmentação departamental e pela carência de instrumentos periódicos de avaliação e prestação de contas (Guilherme et al., 2023). Sua viabilização requer o envolvimento direto da gestão institucional e o engajamento participativo de docentes, técnicos e estudantes na condução de programas que integrem as dimensões ambiental, social e econômica no cotidiano dos campi (Guilherme et al., 2023; Foo Ng et al., 2023).",
+      "classificacao": "Sinal Fraco",
+      "pestel": [
+        "Ambiental",
+        "Tecnológico",
+        "Social"
+      ],
+      "eixo": "6 - Fatores Ambientais (ESG e Clima): eventos climáticos, requisitos de sustentabilidade do Inep/Sinaes, responsabilidade social corporativa",
+      "qtdArtigos": 2,
+      "artigosIds": [
+        124,
+        160
+      ],
+      "referenciasResumidas": "[124] Guilherme P. (2023) - Governance for Sustainability in Higher Education Institutions: A Systematic Review Aiming at the Implementation of the Green Campus | [160] Foo Ng T. (2023) - Implementing Sustainability Strategies, Programs, and Practices for the Communities in Higher Education Institutions: Case Study in USM, Malaysia",
+      "implicacoes": "Para as mantenedoras privadas de ensino superior, o modelo de \"Green Campus\" opera como um sinal fraco de diferenciação competitiva e inovação na gestão de ativos físicos. Em um mercado no qual predominam instalações convencionais e controle rigoroso de custos de ocupação, a introdução progressiva de práticas de eficiência energética, controle de emissões e monitoramento do consumo predial pode gerar ganhos de eficiência operacional no médio e longo prazo. Adicionalmente, a materialização da sustentabilidade na infraestrutura visível fortalece a coerência entre a formação acadêmica e as práticas institucionais, ampliando o apelo institucional perante a comunidade acadêmica.",
+      "indicadores": "",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "SF45",
+      "vinculo": [
+        "SF45"
+      ],
       "incorporadas": []
     },
     {
@@ -1890,10 +1969,10 @@ const sfData = {
       "id": "SF50",
       "fonte": "Scopus",
       "topico": "Saúde Mental, Bem-Estar e Experiência do Estudante",
-      "titulo": "O Pertencimento Comunitário (Sense of Belonging) e Redes de Conexão Interpessoal como Escudo contra o Isolamento e o Abandono",
-      "descricao": "Pesquisas longitudinais comprovam que a percepção subjetiva de pertencimento institucional (sense of belonging) e a qualidade dos vínculos interpessoais estabelecidos entre estudantes, pares e professores constituem o mais robusto escudo protetor contra o sofrimento psíquico e a decisão de evasão (33, 179). Em contextos marcados por desterritorialização e massificação, a universidade precisa atuar deliberadamente como espaço de acolhimento e reconstrução identitária, fornecendo ambientes seguros para que os alunos construam propósitos existenciais compartilhados e redes de apoio mútuo (226).",
-      "descricaoApa": "N/A",
-      "classificacao": "Tendência",
+      "titulo": "Pertencimento Comunitário (Sense of Belonging), Segurança Psicológica e Redes Interpessoais na Prevenção do Abandono",
+      "descricao": "Investigações no ensino superior evidenciam que o sentimento de pertencimento institucional (sense of belonging) e a qualidade dos vínculos interpessoais estabelecidos entre estudantes, pares e docentes constituem fatores determinantes de proteção ao bem-estar subjetivo e à satisfação com a vida universitária (33). A literatura demonstra que a percepção de isolamento e a ausência de conexão comunitária correlacionam-se diretamente com sintomas de solidão, ansiedade e sofrimento psíquico, elevando o risco de desengajamento e abandono acadêmico (33). A viabilização desse sentimento de pertença requer, contudo, a consolidação de ambientes institucionais protegidos, demandando mecanismos sistemáticos de monitoramento e combate a práticas de violência interpessoal, assédio e discriminação que corroem a segurança psicológica no campus (179). Em contextos de massificação do ensino, a universidade precisa estruturar intencionalmente espaços de acolhimento e suporte mútuo, permitindo que os estudantes reconstruam suas trajetórias identitárias e desenvolvam propósitos formativos compartilhados (226).",
+      "descricaoApa": "Investigações no ensino superior evidenciam que o sentimento de pertencimento institucional (sense of belonging) e a qualidade dos vínculos interpessoais estabelecidos entre estudantes, pares e docentes constituem fatores determinantes de proteção ao bem-estar subjetivo e à satisfação com a vida universitária (Pleschová et al., 2026). A literatura demonstra que a percepção de isolamento e a ausência de conexão comunitária correlacionam-se diretamente com sintomas de solidão, ansiedade e sofrimento psíquico, elevando o risco de desengajamento e abandono acadêmico (Pleschová et al., 2026). A viabilização desse sentimento de pertença requer, contudo, a consolidação de ambientes institucionais protegidos, demandando mecanismos sistemáticos de monitoramento e combate a práticas de violência interpessoal, assédio e discriminação que corroem a segurança psicológica no campus (Guilherme et al., 2023). Em contextos de massificação do ensino, a universidade precisa estruturar intencionalmente espaços de acolhimento e suporte mútuo, permitindo que os estudantes reconstruam suas trajetórias identitárias e desenvolvam propósitos formativos compartilhados (Chopra & Dryden-Peterson, 2020).",
+      "classificacao": "Achado Empírico",
       "pestel": [
         "Social",
         "Econômico"
@@ -1906,12 +1985,12 @@ const sfData = {
         226
       ],
       "referenciasResumidas": "[33] Pleschová G. (2026) - Student belonging and well-being in higher education: Insights from five European universities | [179] Guilherme A.A. (2023) - The development and initial validation of an instrument measuring levels of violence suffered and practiced by students in higher education | [226] Chopra V. (2020) - Higher Education in Exile: Developing a Sense of Self, Belonging and Purpose for Newcomer Youth",
-      "implicacoes": "O maior desafio dos conglomerados educacionais no EAD e híbrido é evitar a sensação de desamparo e invisibilidade do aluno. Estratégias de tutoria humanizada, comunidades de prática e encontros experienciais presenciais regulares serão a principal blindagem contra a evasão.",
-      "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "implicacoes": "Nos modelos de ensino superior massificado e de expansão acelerada de cursos a distância e híbridos, o anonimato discente e a sensação de desamparo operam como as principais causas invisíveis da evasão no primeiro ano. Para os grupos educacionais privados, a institucionalização de canais ativos de tutoria humanizada, comunidades de acolhimento e políticas rígidas de combate à violência e ao preconceito deixa de ser um custo assistencial acessório para se converter na principal estratégia de blindagem contra a perda de matrículas, aumentando o ciclo de vida (LTV) do aluno e a reputação da marca.",
+      "indicadores": "Escores médios em escalas institucionais de pertencimento discente (*Sense of Belonging*) e percepção de suporte de pares e docentes; Indicadores de clima universitário e incidência de violência física, verbal ou psicológica aferidos por instrumentos padronizados; Taxa de engajamento discente em programas de tutoria humanizada, ligas acadêmicas, mentorias e comunidades de prática; Correlação entre o grau de isolamento social no primeiro ano letivo e a taxa de evasão voluntária de estudantes.",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
@@ -1923,10 +2002,10 @@ const sfData = {
       "id": "SF51",
       "fonte": "Scopus",
       "topico": "Saúde Mental, Bem-Estar e Experiência do Estudante",
-      "titulo": "Nexo Causal entre Eficiência Operacional dos Serviços Universitários, Custo de Permanência e Bem-Estar Psíquico",
-      "descricao": "Investigações sobre a experiência discente revelam uma correlação direta entre atritos burocráticos, falhas no atendimento acadêmico-financeiro e a escalada de ansiedade e depressão entre os estudantes universitários (44, 218). O estresse decorrente de cobranças incorretas, instabilidade em bolsas e falta de orientação tempestiva potencializa a vulnerabilidade mental preexistente, especialmente em públicos sub-representados ou sujeitos a estresse de adaptação cultural (108, 200). A modernização e humanização dos canais de suporte ao estudante configuram-se, assim, não apenas como medidas de eficiência, mas como imperativos de preservação do bem-estar psicológico.",
-      "descricaoApa": "N/A",
-      "classificacao": "Tendência",
+      "titulo": "Suporte Institucional, Aconselhamento e Satisfação com Serviços como Determinantes do Bem-Estar e da Motivação Discente",
+      "descricao": "Investigações empíricas no ensino superior evidenciam que a satisfação com a qualidade dos serviços institucionais exerce um impacto direto e positivo sobre o bem-estar psicológico e a saúde mental dos estudantes (44). Esse suporte torna-se ainda mais crítico ao se constatar que vulnerabilidades prévias  (como históricos de menor rendimento na educação básica) afetam negativamente a motivação acadêmica, diminuem a percepção de autoeficácia e elevam a ansiedade discente frente às exigências da graduação (218). Diante dos desafios de transição para o ambiente universitário e do estresse decorrente de adaptações socioculturais e institucionais (200), a literatura comprova que a oferta estruturada de serviços de aconselhamento estudantil (counselling), orientação psicossocial e mentoria de pares atua como fator decisivo de proteção (108). A modernização e humanização do atendimento universitário configuram-se, portanto, como um imperativo de acolhimento institucional indispensável para mitigar desajustes emocionais e sustentar a permanência acadêmica de grupos em situação de maior vulnerabilidade (44, 108).",
+      "descricaoApa": "Investigações empíricas no ensino superior evidenciam que a satisfação com a qualidade dos serviços institucionais exerce um impacto direto e positivo sobre o bem-estar psicológico e a saúde mental dos estudantes (Sirohi et al., 2026). Esse suporte torna-se ainda mais crítico ao se constatar que vulnerabilidades prévias (como históricos de menor rendimento na educação básica) afetam negativamente a motivação acadêmica, diminuem a percepção de autoeficácia e elevam a ansiedade discente frente às exigências da graduação (Rodríguez-Llorente et al., 2023). Diante dos desafios de transição para o ambiente universitário e do estresse decorrente de adaptações socioculturais e institucionais (Shafaei & Razak, 2016), a literatura comprova que a oferta estruturada de serviços de aconselhamento estudantil (counselling), orientação psicossocial e mentoria de pares atua como fator decisivo de proteção (Wulz et al., 2018). A modernização e humanização do atendimento universitário configuram-se, portanto, como um imperativo de acolhimento institucional indispensável para mitigar desajustes emocionais e sustentar a permanência acadêmica de grupos em situação de maior vulnerabilidade (Sirohi et al., 2026; Wulz et al., 2018).",
+      "classificacao": "Achado Empírico",
       "pestel": [
         "Social",
         "Econômico"
@@ -1940,12 +2019,12 @@ const sfData = {
         218
       ],
       "referenciasResumidas": "[44] Sirohi V. (2026) - Student Satisfaction and Wellbeing in Higher Education: A Study of Undergraduate Students in India | [108] Wulz J. (2018) - The Role of Student Counselling for Widening Participation of Underrepresented Groups in Higher Education | [200] Shafaei A. (2016) - Internationalisation of higher education: Conceptualising the antecedents and outcomes of cross-cultural adaptation | [218] Rodríguez-Llorente C. (2023) - Academic Motivation and Previous Academic Achievement in Higher Education",
-      "implicacoes": "Criação de Centrais de Experiência do Estudante com atendimento one-stop-shop digital sem fricção, inteligência preditiva para resolver pendências financeiras e atendimento psicológico multicanal preventivo.",
-      "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "implicacoes": "No ensino superior privado brasileiro, onde parcela expressiva dos estudantes ingressa com lacunas pedagógicas da educação básica e enfrenta severos desafios de adaptação à rotina acadêmica, canais de atendimento frios ou ineficazes potencializam a desmotivação e aceleram a evasão precoce. Para as mantenedoras privadas, estruturar centrais de relacionamento ágeis articuladas a núcleos de suporte psicopedagógico e programas de acolhimento de ingressantes (_counselling_) converte a experiência do estudante em uma ferramenta direta de retenção ativa, blindando a receita institucional contra o abandono decorrente do estresse de adaptação.",
+      "indicadores": "Índice de satisfação discente com a qualidade dos serviços acadêmicos e canais de suporte da instituição; Volume de atendimentos e taxa de cobertura dos serviços de aconselhamento estudantil (_counselling_) e apoio psicopedagógico; Escores médios de motivação acadêmica e autoeficácia percebida entre estudantes ingressantes; Taxa de retenção e rendimento acadêmico de discentes acompanhados por programas institucionais de mentoria e transição universitária.",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
@@ -1960,7 +2039,7 @@ const sfData = {
       "titulo": "O Paradoxo da Interação Remota e a Vigilância Digital: Fadiga de Telas, Ansiedade e Desconfiança Algorítmica",
       "descricao": "A transição acelerada para interações predominantemente virtuais gerou um novo espectro de adoecimento sociotécnico, sintetizado na fadiga crônica por videoconferência e na ansiedade social disparada pela exigência de câmeras abertas ininterruptas (webcam anxiety) (83, 294). A esse desgaste soma-se o ressentimento e a desconfiança estudantil provocados pela intensificação da vigilância algorítmica e sistemas invasivos de telemetria e controle comportamental em exames, fenômeno percebido como um verdadeiro 'panóptico digital' que corrói a relação de confiança entre estudante e instituição (177).",
       "descricaoApa": "N/A",
-      "classificacao": "Sinal fraco",
+      "classificacao": "Sinal Fraco",
       "pestel": [
         "Social",
         "Tecnológico"
@@ -2098,7 +2177,7 @@ const sfData = {
       "titulo": "Imaginação Radical, Cocriação do Futuro (Worldmaking) e Pedagogias da Incerteza e Não-Saber",
       "descricao": "Para romper com o fatalismo do 'realismo capitalista' e a sensação de impotência das novas gerações, ganham relevância metodologias de imaginação radical e pesquisa-ação comprometidas com a cocriação ativa de futuros (worldmaking) (169, 201). Essas abordagens apoiam-se na liderança colaborativa intermediária e em pedagogias do trabalho com a juventude que valorizam a 'importância de não saber', transformando a dúvida e o desaprender em motores de experimentação social e cidadania transformadora articuladas a princípios universais de sustentabilidade (125, 336).",
       "descricaoApa": "N/A",
-      "classificacao": "Sinal fraco",
+      "classificacao": "Sinal Fraco",
       "pestel": [
         "Social",
         "Político"
@@ -2132,7 +2211,7 @@ const sfData = {
       "titulo": "Soberania Epistêmica, Descolonização Curricular e Valorização de Conhecimentos Originários",
       "descricao": "Movimentos intelectuais descoloniais pressionam a academia a desmantelar a hegemonia eurocêntrica e monocultural que historicamente pautou os cânones científicos e as grades curriculares superiores (230, 268). Essa semente manifesta-se na incorporação sistemática de línguas e saberes dos povos originários nos meios de instrução e na validação epistemológica de cosmologias e técnicas ancestrais do Sul Global, inaugurando uma perspectiva de 'pluriversidade' dialógica e plural (62, 268).",
       "descricaoApa": "N/A",
-      "classificacao": "Sinal fraco",
+      "classificacao": "Sinal Fraco",
       "pestel": [
         "Social",
         "Político"
@@ -2934,7 +3013,8 @@ const sfData = {
       "indexKeywords": "Education computing; Sustainable development; Teaching; Back up; Colleges and universities; Higher education institutions; Higher education system; Policy making; Social support; Student supports; Student teachers; Teachers' support; World class; Students",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45"
+        "SF45",
+        "SF45a"
       ]
     },
     {
@@ -3732,7 +3812,8 @@ const sfData = {
       "indexKeywords": "Curricula; Economics; Research and development management; Sustainable city; Sustainable development goals; Civil society; Community OR; Development practices; Economic growths; Education for sustainable development; High educations; Higher education institutions; Pharmaceutical research; Public and private sector; Self-organised; Sustainable development",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45"
+        "SF45",
+        "SF45a"
       ]
     },
     {
@@ -3802,7 +3883,8 @@ const sfData = {
       "indexKeywords": "Decision making; Engineering education; Sustainable development goals; Basic principles; Decisions makings; Global sustainability; Higher education institutions; Principles of sustainability; Renewable energies; Sustainable practices; Sustainable technology; United nation SDG; United Nations; Green development",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45"
+        "SF45",
+        "SF45a"
       ]
     },
     {
@@ -4447,7 +4529,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45"
+        "SF45",
+        "SF45b"
       ]
     },
     {
@@ -4994,7 +5077,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45"
+        "SF45",
+        "SF45b"
       ]
     },
     {
@@ -7260,7 +7344,8 @@ const sfData = {
       "indexKeywords": "Economics; Environmental protection; Sustainable development goals; 5ws + 1h; Economic growths; Emerging economies; High educations; Higher education institutions; Quality education; Social equity; Sustainable development goal 4; Viet Nam; Vietnamese; Sustainable development",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45"
+        "SF45",
+        "SF45a"
       ]
     },
     {
@@ -7515,7 +7600,8 @@ const sfData = {
       "indexKeywords": "environmental planning; higher education; sustainable development; United Nations Conference on Environment and Development; university sector; conceptual framework; environmental economics; future prospect; socioeconomic impact; trend analysis; United Nations",
       "documentType": "Article",
       "associatedSFs": [
-        "SF45"
+        "SF45",
+        "SF45a"
       ]
     },
     {

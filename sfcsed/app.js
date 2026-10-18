@@ -68,9 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
         'Ruptura': '#ef4444',
         'Tendência': '#3b82f6',
         'Sinal fraco': '#a855f7',
+        'Sinal Fraco': '#a855f7',
         'Incerteza': '#f59e0b',
         'Fato predeterminado': '#94a3b8',
-        'Surpresa inevitável': '#f97316'
+        'Surpresa inevitável': '#f97316',
+        'Achado Empírico': '#14b8a6'
       },
       pestel: {
         'Político': '#f43f5e',
@@ -90,9 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
         'Ruptura': '#dc2626',
         'Tendência': '#2563eb',
         'Sinal fraco': '#9333ea',
+        'Sinal Fraco': '#9333ea',
         'Incerteza': '#d97706',
         'Fato predeterminado': '#475569',
-        'Surpresa inevitável': '#ea580c'
+        'Surpresa inevitável': '#ea580c',
+        'Achado Empírico': '#0d9488'
       },
       pestel: {
         'Político': '#e11d48',
