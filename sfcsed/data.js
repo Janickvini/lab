@@ -2,16 +2,16 @@
 const sfData = {
   "metadata": {
     "sourceFile": "SF CSED.xlsx",
-    "totalSF": 74,
+    "totalSF": 76,
     "totalArticles": 340,
     "totalArticlesCited": 315,
-    "totalRevisadas": 26,
-    "totalAprovadas": 22,
+    "totalRevisadas": 30,
+    "totalAprovadas": 25,
     "totalMescladas": 1,
     "totalDescartadas": 1,
-    "totalDivididas": 2,
-    "totalPendentes": 48,
-    "generatedAt": "18/10/2026 14:17:59"
+    "totalDivididas": 3,
+    "totalPendentes": 46,
+    "generatedAt": "19/10/2026 14:02:01"
   },
   "sementes": [
     {
@@ -1758,7 +1758,7 @@ const sfData = {
       "incorporadas": []
     },
     {
-      "id": "SF45a",
+      "id": "SF45",
       "fonte": "Scopus",
       "topico": "Sustentabilidade, Mudanças Climáticas e ESG",
       "titulo": "Institucionalização da Governança Socioambiental (ESG), Métricas ODS e Liderança Estratégica",
@@ -1789,14 +1789,14 @@ const sfData = {
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
-      "origemDivisao": "SF45",
+      "origemDivisao": "",
       "vinculo": [
         "SF45"
       ],
       "incorporadas": []
     },
     {
-      "id": "SF45b",
+      "id": "SF45",
       "fonte": "Scopus",
       "topico": "Sustentabilidade, Mudanças Climáticas e ESG",
       "titulo": "Green Campuses - Gestão Ambiental da Infraestrutura, Métricas Operacionais e Práticas Socioambientais",
@@ -1824,7 +1824,7 @@ const sfData = {
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
-      "origemDivisao": "SF45",
+      "origemDivisao": "",
       "vinculo": [
         "SF45"
       ],
@@ -2126,15 +2126,90 @@ const sfData = {
       "referenciasResumidas": "[17] Monteiro F. (2019) - Ethical education as a pillar of the future role of higher education: Analysing its presence in the curricula of engineering courses | [32] Pausits A. (2015) - The Knowledge Society and Diversification of Higher Education: From the Social Contract to the Mission of Universities | [269] Király G. (2021) - Having Nothing but Questions? The Social Discourse on Higher Education Institutions’ Legitimation Crisis | [328] Bertolin J.C.G. (2016) - Ideologies and perceptions of quality in higher education: From the dichotomy between social and economic aspects to the 'middle way' | [370] Sabouri A. (2026) - Unmasking the mirage: A critical examination of Iranian higher education policies on the educated person through Wilkinson’s Islamic critical realism",
       "implicacoes": "Permite a grupos privados como a Cruzeiro do Sul se posicionarem como IES de interesse público e impacto social comprovado, superando o estigma de 'empresa de venda de diplomas' e construindo reputação institucional sólida e duradoura.",
       "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "revisada": true,
+      "statusTipo": "dividida",
+      "statusRevisao": "Dividida",
+      "statusLabel": "Revisada (Dividida: SF54a, SF54b)",
+      "justificativa": "Associações e referências eram frágeis, porém, o tema era relevante",
+      "fusaoId": "",
+      "divisaoIds": [
+        "SF54a",
+        "SF54b"
+      ],
+      "origemDivisao": "",
+      "vinculo": [
+        "SF54a",
+        "SF54b"
+      ],
+      "incorporadas": []
+    },
+    {
+      "id": "SF54a",
+      "fonte": "Scopus",
+      "topico": "Papel Social, Democracia e Missão Cívica da Universidade",
+      "titulo": "Emergência do Modelo Híbrido e Ruptura da Dicotomia entre Eficiência Econômica e Bem Público",
+      "descricao": "A compreensão contemporânea sobre as finalidades e a qualidade da educação superior esteve historicamente polarizada entre duas matrizes conceituais antagônicas: de um lado, uma perspectiva social-humanista, que concebe a universidade prioritariamente como bem público e direito de cidadania (focada na igualdade de oportunidades, no pensamento crítico e na coesão social); de outro, uma perspectiva mercadológico-utilitarista, que a define como bem de investimento individual e serviço comercial transacionável (focada na eficiência econômica, na produtividade e no retorno financeiro imediato) (328). Configura-se uma ruptura de paradigma quando a literatura propõe a superação dessa antinomia por meio da emergência de um modelo híbrido, denominado caminho do meio ou terceira via (middle way) (328). Essa descontinuidade subverte a premissa de que a busca pela sustentabilidade financeira e a vocação pública emancipatória são mutuamente excludentes, postulando que a formação profissional e técnica e a educação humanística e ética não constituem polos inconciliáveis (328). Ao romper com a visão de que a qualidade acadêmica deve ter ênfase exclusivamente social ou exclusivamente econômica, a emergência do modelo híbrido redefine a arquitetura institucional do ensino superior, combinando liberdade de iniciativa, disciplina gerencial e capacidade de inovação com o compromisso inegociável de relevância social e desenvolvimento civilizatório (328).",
+      "descricaoApa": "A compreensão contemporânea sobre as finalidades e a qualidade da educação superior esteve historicamente polarizada entre duas matrizes conceituais antagônicas: de um lado, uma perspectiva social-humanista, que concebe a universidade prioritariamente como bem público e direito de cidadania (focada na igualdade de oportunidades, no pensamento crítico e na coesão social); de outro, uma perspectiva mercadológico-utilitarista, que a define como bem de investimento individual e serviço comercial transacionável (focada na eficiência econômica, na produtividade e no retorno financeiro imediato) (Bertolin, 2016). Configura-se uma ruptura de paradigma quando a literatura propõe a superação dessa antinomia por meio da emergência de um modelo híbrido, denominado caminho do meio ou terceira via (middle way) (Bertolin, 2016). Essa descontinuidade subverte a premissa de que a busca pela sustentabilidade financeira e a vocação pública emancipatória são mutuamente excludentes, postulando que a formação profissional e técnica e a educação humanística e ética não constituem polos inconciliáveis (Bertolin, 2016). Ao romper com a visão de que a qualidade acadêmica deve ter ênfase exclusivamente social ou exclusivamente econômica, a emergência do modelo híbrido redefine a arquitetura institucional do ensino superior, combinando liberdade de iniciativa, disciplina gerencial e capacidade de inovação com o compromisso inegociável de relevância social e desenvolvimento civilizatório (Bertolin, 2016).",
+      "classificacao": "Ruptura",
+      "pestel": [
+        "Social",
+        "Político",
+        "Econômico"
+      ],
+      "eixo": "3 - Dinâmicas Sociodemográficas",
+      "qtdArtigos": 1,
+      "artigosIds": [
+        328
+      ],
+      "referenciasResumidas": "[328] Bertolin J.C.G. (2016) - Ideologies and perceptions of quality in higher education: From the dichotomy between social and economic aspects to the 'middle way'",
+      "implicacoes": "Para as mantenedoras privadas de ensino superior no Brasil, a emergência do modelo híbrido pode representar uma oportunidade de ruptura com o estigma histórico de mercantilismo raso e precarização acadêmica. A capacidade de construir uma operação financeiramente disciplinada e escalável que entregue, simultaneamente, formação humanística densa e relevância social comprovada posiciona os grupos educacionais pioneiros em um patamar superior de reputação institucional. Esse equilíbrio atrai famílias e estudantes que rejeitam tanto a inércia de parte das universidades tradicionais quanto a superficialidade dos modelos puramente transacionais, blindando a marca institucional contra a comoditização do diploma.",
+      "indicadores": "",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
-      "origemDivisao": "",
-      "vinculo": [],
+      "origemDivisao": "SF54",
+      "vinculo": [
+        "SF54"
+      ],
+      "incorporadas": []
+    },
+    {
+      "id": "SF54b",
+      "fonte": "Scopus",
+      "topico": "Papel Social, Democracia e Missão Cívica da Universidade",
+      "titulo": "Dogmatização Religiosa no Ensino Superior e Emergência de um Terceiro Eixo na Disputa pela Formação Acadêmica",
+      "descricao": "A análise clássica sobre a governança e as políticas do ensino superior estruturou-se historicamente sobre uma arena de disputa bidimensional entre o controle estatal e as forças do mercado econômico (328, 370). Experiências internacionais, entretanto, registram que esses não são os únicos eixos que podem disputar a agenda do ensino superior, descrevendo a dogmatização religiosa e a disputa pelo conceito da pessoa educada (educated person) (370). Esse fenômeno projeta uma orientação religiosa que busca redefinir as finalidades da universidade, subordinando currículos, metodologias científicas e estruturas acadêmicas a fundamentos morais, doutrinários e teológicos (370). Ao impor uma visão confessional e ideológica sobre a produção do conhecimento, essa dinâmica entra em choque frontal tanto com a racionalidade laica e universalista da ciência moderna quanto com as próprias exigências de inovação e flexibilidade do mercado capitalista (370). A emergência desse terceiro eixo rompe com o paradigma iluminista da universidade secular, instaurando uma instabilidade sistêmica profunda e uma contradição de valores entre o imperativo de formar graduados empreendedores e competitivos e a exigência de doutrinação moral e submissão ideológica a dogmas de fé (370).",
+      "descricaoApa": "A análise clássica sobre a governança e as políticas do ensino superior estruturou-se historicamente sobre uma arena de disputa bidimensional entre o controle estatal e as forças do mercado econômico (Bertolin, 2016; Sabouri et al., 2026). Experiências internacionais, entretanto, registram que esses não são os únicos eixos que podem disputar a agenda do ensino superior, descrevendo a dogmatização religiosa e a disputa pelo conceito da pessoa educada (educated person) (Sabouri et al., 2026). Esse fenômeno projeta uma orientação religiosa que busca redefinir as finalidades da universidade, subordinando currículos, metodologias científicas e estruturas acadêmicas a fundamentos morais, doutrinários e teológicos (Sabouri et al., 2026). Ao impor uma visão confessional e ideológica sobre a produção do conhecimento, essa dinâmica entra em choque frontal tanto com a racionalidade laica e universalista da ciência moderna quanto com as próprias exigências de inovação e flexibilidade do mercado capitalista (Sabouri et al., 2026). A emergência desse terceiro eixo rompe com o paradigma iluminista da universidade secular, instaurando uma instabilidade sistêmica profunda e uma contradição de valores entre o imperativo de formar graduados empreendedores e competitivos e a exigência de doutrinação moral e submissão ideológica a dogmas de fé (Sabouri et al., 2026).",
+      "classificacao": "Ruptura",
+      "pestel": [
+        "Político",
+        "Social",
+        "Lega"
+      ],
+      "eixo": "2 - Evolução Histórica e Marcos Regulatórios dos últimos 10 anos",
+      "qtdArtigos": 2,
+      "artigosIds": [
+        328,
+        370
+      ],
+      "referenciasResumidas": "[328] Bertolin J.C.G. (2016) - Ideologies and perceptions of quality in higher education: From the dichotomy between social and economic aspects to the 'middle way' | [370] Sabouri A. (2026) - Unmasking the mirage: A critical examination of Iranian higher education policies on the educated person through Wilkinson’s Islamic critical realism",
+      "implicacoes": "No cenário do ensino superior brasileiro, a ascensão do fundamentalismo religioso e de agendas de guerra cultural projeta uma ruptura relevante na governança das IES privadas até 2040. Mantenedoras laicas passam a sofrer pressões crescentes de polarização sociopolítica que buscam cercear a autonomia pedagógica e fiscalizar conteúdos curriculares sensíveis (em áreas como saúde reprodutiva, direitos humanos, bioética e humanidades). Paralelamente, redes confessionais expandem sua presença no mercado captando públicos que demandam ambientes universitários moralmente alinhados às suas crenças. As lideranças de grupos privados laicos precisarão blindar ativamente a integridade científica e a liberdade de cátedra dos seus cursos, assegurando a legitimidade de seus diplomas perante um mercado de trabalho global e secularizado.",
+      "indicadores": "",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "SF54",
+      "vinculo": [
+        "SF54"
+      ],
       "incorporadas": []
     },
     {
@@ -2273,10 +2348,10 @@ const sfData = {
       "id": "SF59",
       "fonte": "Scopus",
       "topico": "Desenvolvimento Regional, Inovação e Ecossistemas de Parceria",
-      "titulo": "Redes Cooperativas de P&D Aplicado e Hélice Quádrupla no Desenvolvimento Regional Sustentável",
-      "descricao": "O isolamento acadêmico e a proliferação de pesquisas puramente teóricas descoladas da realidade dão lugar a redes densas de cooperação estruturadas no paradigma da Hélice Quádrupla — integrando universidade, indústria, governo e sociedade civil organizada (18, 208, 274). Evidencia-se que investimentos direcionados a polos de P&D aplicado geram retornos marginais crescentes para a produtividade e a inovação tecnológica territorial (315). A formalização desses arranjos por meio de Memorandos de Entendimento (MoUs) transparentes e duradouros viabiliza a execução de projetos consorciados de longo alcance para a resolução de desafios de infraestrutura e sustentabilidade regional (220).",
-      "descricaoApa": "N/A",
-      "classificacao": "Tendência",
+      "titulo": "Incerteza sobre a Viabilidade Econômica da participação em redes de cooperação para P&D e Inovação no Setor Privado",
+      "descricao": "Marcos regulatórios e políticas de ciência e tecnologia vêm estruturando incentivos legais para que o ensino superior supere o isolamento acadêmico e adote o paradigma do Triângulo do Conhecimento, estimulando a integração entre educação, pesquisa aplicada e inovação aberta em conexão com empresas e governos (18, 274). Estudos demonstram que a formalização desses arranjos por meio de Memorandos de Entendimento (MoUs) busca estabelecer governança e segurança jurídica para a transferência de tecnologia (220), mas alertam que a conversão efetiva de investimentos em P&D em retornos econômicos territoriais é altamente heterogênea e não automática (208, 315). A incerteza crítica para o futuro reside no comportamento e na sustentabilidade do setor privado frente a esse modelo: a estruturação de ecossistemas cooperativos de pesquisa demanda custos de transação e investimentos contínuos que pressionam diretamente as margens financeiras imediatas das mantenedoras (18, 315). Em contextos como o brasileiro, essa equação torna a viabilidade da pesquisa aplicada altamente dependente do apoio de agências de fomento como CAPES, CNPq e FAPs, permanecendo em aberto se as instituições particulares conseguirão absorver tais custos e captar recursos para atuar como polos de inovação regional, ou se a primazia do ensino de baixo custo limitará a cooperação a acordos meramente formais e desprovidos de densidade tecnológica (208, 315).",
+      "descricaoApa": "Marcos regulatórios e políticas de ciência e tecnologia vêm estruturando incentivos legais para que o ensino superior supere o isolamento acadêmico e adote o paradigma do Triângulo do Conhecimento, estimulando a integração entre educação, pesquisa aplicada e inovação aberta em conexão com empresas e governos (Blass & Hayward, 2014; Cervantes, 2017). Estudos demonstram que a formalização desses arranjos por meio de Memorandos de Entendimento (MoUs) busca estabelecer governança e segurança jurídica para a transferência de tecnologia (Sharma & Kaushik, 2022), mas alertam que a conversão efetiva de investimentos em P&D em retornos econômicos territoriais é altamente heterogênea e não automática (Chakrabarty & Singh, 2023; Xu et al., 2025). A incerteza crítica para o futuro reside no comportamento e na sustentabilidade do setor privado frente a esse modelo: a estruturação de ecossistemas cooperativos de pesquisa demanda custos de transação e investimentos contínuos que pressionam diretamente as margens financeiras imediatas das mantenedoras (Blass & Hayward, 2014; Xu et al., 2025). Em contextos como o brasileiro, essa equação torna a viabilidade da pesquisa aplicada altamente dependente do apoio de agências de fomento como CAPES, CNPq e FAPs, permanecendo em aberto se as instituições particulares conseguirão absorver tais custos e captar recursos para atuar como polos de inovação regional, ou se a primazia do ensino de baixo custo limitará a cooperação a acordos meramente formais e desprovidos de densidade tecnológica (Chakrabarty & Singh, 2023; Xu et al., 2025).",
+      "classificacao": "Incerteza",
       "pestel": [
         "Econômico",
         "Tecnológico",
@@ -2292,12 +2367,12 @@ const sfData = {
         315
       ],
       "referenciasResumidas": "[18] Blass E. (2014) - Innovation in higher education; will there be a role for “the academe/university” in 2025? | [208] Chakrabarty A. (2023) - Strategic Reforms in the Higher Education Research Ecosystem in India | [220] Sharma D.K. (2022) - A Study of Role and Importance of Academic Collaborations/Memorandum of Understanding in Higher Education Institutions | [274] Cervantes M. (2017) - Higher education institutions in the knowledge triangle | [315] Xu X. (2026) - The Marginal Benefits of R&D Investment in Chinese Higher Education and Implications for Resource Allocation",
-      "implicacoes": "Articulação de consórcios de inovação aberta liderados pela Cruzeiro do Sul com polos industriais e de agrotecnologia no interior de SP, Paraná, Centro-Oeste e Nordeste, atraindo recursos da Embrapii, Finep e fundos setoriais privados.",
-      "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "implicacoes": "Para as mantenedoras privadas no Brasil, a cooperação em P&D aplicado com a indústria impõe uma incerteza central de alocação de capital até 2040. Embora o Marco Legal de CT&I e editais de subvenção abram canais institucionais, o custo fixo de manter equipes dedicadas de pesquisa e estruturas de transferência tecnológica conflita frontalmente com a pressão por eficiência operacional em modelos de graduação massificada. A sustentabilidade dessas iniciativas depende criticamente da capacidade de articular recursos públicos de agências como CAPES, CNPq e FAPs estaduais com mecanismos de co-financiamento empresarial como Embrapii e Finep. As lideranças educacionais enfrentam a encruzilhada de assumir o risco de estruturar polos tecnológicos de maturação lenta ou permanecer restritas à operação tradicional de ensino, correndo o risco de obsolescência e perda de competitividade institucional frente a ecossistemas regionais mais integrados.",
+      "indicadores": "Proporção de Memorandos de Entendimento (MoUs) e acordos de cooperação técnica; Percentual de mantenedoras privadas que realizam aportes próprios contínuos em projetos consorciados de P&D aplicado com o setor produtivo; Grau de dependência de linhas públicas subsidiadas não reembolsáveis (como Embrapii, Finep, CAPES, CNPq e FAPs) para viabilizar iniciativas cooperativas de inovação.",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
@@ -3013,8 +3088,7 @@ const sfData = {
       "indexKeywords": "Education computing; Sustainable development; Teaching; Back up; Colleges and universities; Higher education institutions; Higher education system; Policy making; Social support; Student supports; Student teachers; Teachers' support; World class; Students",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45",
-        "SF45a"
+        "SF45"
       ]
     },
     {
@@ -3812,8 +3886,7 @@ const sfData = {
       "indexKeywords": "Curricula; Economics; Research and development management; Sustainable city; Sustainable development goals; Civil society; Community OR; Development practices; Economic growths; Education for sustainable development; High educations; Higher education institutions; Pharmaceutical research; Public and private sector; Self-organised; Sustainable development",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45",
-        "SF45a"
+        "SF45"
       ]
     },
     {
@@ -3883,8 +3956,7 @@ const sfData = {
       "indexKeywords": "Decision making; Engineering education; Sustainable development goals; Basic principles; Decisions makings; Global sustainability; Higher education institutions; Principles of sustainability; Renewable energies; Sustainable practices; Sustainable technology; United nation SDG; United Nations; Green development",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45",
-        "SF45a"
+        "SF45"
       ]
     },
     {
@@ -4529,8 +4601,7 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45",
-        "SF45b"
+        "SF45"
       ]
     },
     {
@@ -5077,8 +5148,7 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45",
-        "SF45b"
+        "SF45"
       ]
     },
     {
@@ -7344,8 +7414,7 @@ const sfData = {
       "indexKeywords": "Economics; Environmental protection; Sustainable development goals; 5ws + 1h; Economic growths; Emerging economies; High educations; Higher education institutions; Quality education; Social equity; Sustainable development goal 4; Viet Nam; Vietnamese; Sustainable development",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45",
-        "SF45a"
+        "SF45"
       ]
     },
     {
@@ -7481,7 +7550,9 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF54"
+        "SF54",
+        "SF54a",
+        "SF54b"
       ]
     },
     {
@@ -7600,8 +7671,7 @@ const sfData = {
       "indexKeywords": "environmental planning; higher education; sustainable development; United Nations Conference on Environment and Development; university sector; conceptual framework; environmental economics; future prospect; socioeconomic impact; trend analysis; United Nations",
       "documentType": "Article",
       "associatedSFs": [
-        "SF45",
-        "SF45a"
+        "SF45"
       ]
     },
     {
@@ -8037,7 +8107,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF54"
+        "SF54",
+        "SF54b"
       ]
     },
     {
