@@ -1,7 +1,7 @@
 # SFCSED — Plataforma de Sementes de Futuro
 ### Estudo Prospectivo: Cenários da Educação Superior 2040
 
-Protótipo executivo desenvolvido para visualização analítica, filtragem e curadoria das **Sementes de Futuro (SF)** e sua base de evidências bibliográficas (**Scopus**).
+Protótipo executivo desenvolvido para visualização analítica, filtragem e curadoria das **Sementes de Futuro (SF)** e sua base de evidências bibliográficas (**Referências**).
 
 ---
 
@@ -10,7 +10,7 @@ Protótipo executivo desenvolvido para visualização analítica, filtragem e cu
 * **`index.html`**: Interface web principal da plataforma (pronta para execução local ou hospedagem no GitHub Pages).
 * **`style.css`**: Folha de estilos corporativa e sóbria (suporte nativo a Tema Escuro Executivo e Tema Claro).
 * **`app.js`**: Mecanismo de renderização, busca em tempo real, filtros multifacetados, gráficos executivos (Chart.js) e modais de dossiê.
-* **`SF CSED.xlsx`**: Planilha fonte com as abas `SF (Scopus)` e `Scopus 3 (Limpo)`.
+* **`SF CSED.xlsx`**: Planilha fonte com as abas `Sementes` e `Referências`.
 * **`data.js`**: Banco de dados compilado para visualização offline local imediata (sem bloqueios de CORS).
 * **`atualizar_dados.py`**: Script de sincronização que lê o Excel e regera o `data.js`.
 * **`atualizar_dados.command`**: Executável de duplo clique para Mac que atualiza a base automaticamente.
@@ -40,24 +40,31 @@ Protótipo executivo desenvolvido para visualização analítica, filtragem e cu
 
 ## 🔍 Funcionalidades Disponíveis no Protótipo
 
-1. **Painel Executivo / KPIs:**
-   * Total de sementes (67), referências Scopus vinculadas (314), eixos estratégicos (5) e status de curadoria concluída.
-2. **Painel Analítico Recolhível (Gráficos):**
-   * Gráfico de rosca: Distribuição por Tipologia Prospectiva (*Ruptura, Tendência, Sinal Fraco, Incerteza, Fato Predeterminado, Surpresa Inevitável*).
+1. **Mapa Matricial das SF (Novo na v2.0.0):**
+   * Matriz cruzada de dupla entrada com **13 Tópicos Padronizados** (linhas) × **6 Dimensões PESTEL** (colunas: *Político, Econômico, Social, Tecnológico, Ambiental, Legal*).
+   * Interseção visual contendo badges interativos das Sementes de Futuro correspondentes a cada cruzamento (208 incidências distribuídas em 58 quadrantes ocupados de 78 no total).
+   * Barra de ferramentas com busca em tempo real, filtro rápido por Classificação, filtro por Status de Curadoria e métricas em tempo real.
+   * Cabeçalho e coluna lateral fixos (*sticky*) para navegação fluida em telas amplas.
+   * Modal de pré-visualização rápida ao clicar em qualquer badge, com metadados, descrição, implicações estratégicas para 2040 e botão com 1 clique para navegar até o dossiê completo na aba principal.
+   * Legenda de cores por classificação interativa (ao clicar em uma classificação na legenda, o mapa filtra instantaneamente os badges).
+2. **Painel Executivo / KPIs:**
+   * Total de sementes (76), referências citadas (315/340), eixos estratégicos e status de revisão concluída.
+3. **Painel Analítico Recolhível (Gráficos):**
+   * Gráfico de rosca: Distribuição por Classificação (*Ruptura, Tendência, Sinal Fraco, Incerteza, Fato Predeterminado, Surpresa Inevitável, Achado Empírico*).
    * Gráfico de barras: Incidência nas Dimensões PESTEL (*Político, Econômico, Social, Tecnológico, Ambiental, Legal*).
    * Gráfico horizontal: Concentração de sementes por Eixo Estratégico.
-3. **Filtros e Busca em Tempo Real:**
+4. **Filtros e Busca em Tempo Real:**
    * Busca textual instantânea (pesquisa por ID, termos de título, texto descritivo, implicações ou autores).
-   * Filtros combinados por Eixo, Tipologia, Dimensão PESTEL, Tópico Temático e Status de Curadoria.
-4. **Navegação Integrada em 3 Colunas (Estilo Leitor de E-mail):**
-   * **Coluna da Esquerda (Filtros):** Busca textual e seletores por Eixo, Tipologia, PESTEL, Tópico e Status de Curadoria.
+   * Filtros combinados por Eixo, Classificação, Dimensão PESTEL, Tópico Temático e Status de Curadoria via checkboxes colapsáveis.
+5. **Navegação Integrada em 3 Colunas (Estilo Leitor de E-mail):**
+   * **Coluna da Esquerda (Filtros):** Busca textual e seletores por Eixo, Classificação, PESTEL, Tópico e Status de Curadoria.
    * **Coluna Central (Lista de Sementes):** Relação scannável de todas as sementes encontradas com badges de identificação, ordenação dinâmica e indicador de seleção ativa.
-   * **Coluna da Direita (Área de Leitura Contínua):** Carrega o dossiê completo imediatamente ao clicar em qualquer semente, contendo narrativa com citações numéricas, implicações para 2040 e lista de referências Scopus fundamentadoras com expansão inline de Resumo.
-5. **Navegação Rápida por Teclado:**
-   * É possível usar as setas **↑** e **↓** do teclado para alternar entre as sementes da lista e realizar a leitura contínua de forma ágil e fluida durante reuniões executivas.
-6. **Aba de Artigos Scopus (Referências):**
-   * Navegação independente pelos artigos científicos rastreados (339), com busca por autor, periódico, ano e identificação das SFs que fundamentam.
-7. **Acessibilidade e Conforto Visual (Controle de Fonte A- / A / A+):**
+   * **Coluna da Direita (Área de Leitura Contínua):** Carrega o dossiê completo imediatamente ao clicar em qualquer semente, contendo narrativa com citações numéricas, implicações para 2040 e lista de referências fundamentadoras com expansão inline de Resumo.
+6. **Navegação Rápida por Teclado:**
+   * É possível usar as setas **↑** e **↓** do teclado para alternar entre as sementes da lista e realizar a leitura contínua de forma ágil e fluida durante reuniões executivas, além de tecla **Esc** para fechar modais.
+7. **Aba de Referências (Artigos):**
+   * Navegação independente pelos artigos científicos rastreados, com busca por autor, periódico, ano e identificação das SFs que fundamentam.
+8. **Acessibilidade e Conforto Visual (Controle de Fonte A- / A / A+):**
    * Botões no cabeçalho superior que permitem redimensionar todas as fontes em 5 níveis (de 90% a 130%), facilitando a leitura por longos períodos em reuniões ou apresentações com projetores, com persistência automática no navegador.
-8. **Alternância de Tema (Modo Escuro / Modo Claro):**
+9. **Alternância de Tema (Modo Escuro / Modo Claro):**
    * Paleta executiva e sóbria projetada para salas de reunião e leitura institucional.

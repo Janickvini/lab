@@ -143,9 +143,17 @@ for row in sf_rows[1:]:
             if art_num in articles_dict and sf_id not in articles_dict[art_num]["associatedSFs"]:
                 articles_dict[art_num]["associatedSFs"].append(sf_id)
 
-    # Processar PESTEL (lista limpa de dimensões)
+    # Processar PESTEL (lista limpa e normalizada de dimensões)
+    pestel_map = {
+        "politico": "Político", "político": "Político",
+        "economico": "Econômico", "econômico": "Econômico",
+        "social": "Social",
+        "tecnologico": "Tecnológico", "tecnológico": "Tecnológico",
+        "ambiental": "Ambiental",
+        "legal": "Legal", "lega": "Legal"
+    }
     raw_pestel = str(get_field(item, ["PESTEL", "Dimensões PESTEL", "Dimensoes PESTEL", "Dimensões"], ""))
-    pestel_list = [dim.strip() for dim in raw_pestel.replace(";", ",").split(",") if dim.strip()]
+    pestel_list = [pestel_map.get(dim.strip().lower(), dim.strip()) for dim in raw_pestel.replace(";", ",").split(",") if dim.strip()]
 
     # Tratar campo revisada / status
     import re
@@ -316,5 +324,5 @@ with open(data_js_path, "w", encoding="utf-8") as f:
 print(f"\n--- Sincronização Concluída com Sucesso ---")
 print(f"Arquivo lido: {target_excel}")
 print(f"Sementes de Futuro extraídas: {len(sementes_list)} (Revisadas: {data_payload['metadata']['totalRevisadas']})")
-print(f"Artigos Scopus mapeados: {len(articles_list)} (Artigos citados: {data_payload['metadata']['totalArticlesCited']})")
+print(f"Artigos / Referências mapeadas: {len(articles_list)} (Citadas em SFs: {data_payload['metadata']['totalArticlesCited']})")
 print(f"Arquivo gerado: {data_js_path}")

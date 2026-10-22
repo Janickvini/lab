@@ -5,13 +5,13 @@ const sfData = {
     "totalSF": 76,
     "totalArticles": 340,
     "totalArticlesCited": 315,
-    "totalRevisadas": 30,
-    "totalAprovadas": 25,
+    "totalRevisadas": 31,
+    "totalAprovadas": 26,
     "totalMescladas": 1,
     "totalDescartadas": 1,
     "totalDivididas": 3,
-    "totalPendentes": 46,
-    "generatedAt": "19/10/2026 14:02:01"
+    "totalPendentes": 45,
+    "generatedAt": "21/10/2026 20:32:58"
   },
   "sementes": [
     {
@@ -96,10 +96,10 @@ const sfData = {
       "id": "SF03",
       "fonte": "Scopus",
       "topico": "Corpo Docente, Carreira Acadêmica e Formação de Professores",
-      "titulo": "Gerencialismo Algorítmico, Cultura de Auditoria e Riscos de Erosão da Autonomia Docente",
-      "descricao": "A crescente penetração de sistemas preditivos de mensuração de desempenho docente baseados em inteligência artificial (FPMS) e métricas automatizadas de produtividade aprofunda a governamentalidade neoliberal e a 'cultura de auditoria' no ensino superior (134, 378). Esse fenômeno introduz mecanismos de controle e vigilância comportamental que tendem a homogeneizar as práticas pedagógicas e subordinar a liberdade acadêmica a metas corporativas de curto prazo, aprofundando o descompasso entre a autonomia gerencial da instituição e a autonomia intelectual do professor (289). Ademais, a dependência acrítica de métricas quantitativas e algoritmos de reconhecimento pode amplificar a homofilia acadêmica e perpetuar assimetrias históricas de gênero e raça nas redes de prestígio (7), gerando desprofissionalização, estresse sociotécnico e desempoderamento docente (207, 378).",
-      "descricaoApa": "N/A",
-      "classificacao": "Incerteza",
+      "titulo": "Disseminação de Sistemas Automatizados e Preditivos de Medição de Desempenho Docente",
+      "descricao": "A disseminação de sistemas de medição de desempenho docente baseados em inteligência artificial (FPMS) e a crescente sofisticação de métricas quantitativas de produtividade aprofundam a cultura de auditoria e a governamentalidade de mercado no ensino superior (134, 378). Esse aparato gerencial tem deslocado a governança acadêmica tradicional, consolidando o poder executivo das administrações institucionais enquanto restringe a liberdade acadêmica e a autonomia pedagógica do corpo docente (289). Estudos empíricos demonstram que a imposição de ferramentas digitais e o monitoramento contínuo provocam intensificação do trabalho, perda de controle sobre o próprio ofício e aumento do estresse ocupacional entre professores universitários (207). Ademais, a transposição acrítica de bases históricas para sistemas métricos corre o risco de automatizar vieses de homofilia e reprodução social que historicamente limitam a diversidade e a ascensão de perfis minorizados nas redes de reconhecimento acadêmico (7). A expansão desses sistemas projeta impactos sistêmicos de longo prazo para a carreira acadêmica, trazendo como riscos potenciais a desprofissionalização docente, a homogeneização curricular e o adoecimento, ao mesmo tempo em que desafia as instituições a construírem salvaguardas éticas contra a subordinação irrestrita da autonomia intelectual a metas operacionais de curto prazo (134, 207, 378).",
+      "descricaoApa": "A disseminação de sistemas de medição de desempenho docente baseados em inteligência artificial (FPMS) e a crescente sofisticação de métricas quantitativas de produtividade aprofundam a cultura de auditoria e a governamentalidade de mercado no ensino superior (Alakoum & Nica, 2025; Raaper & Olssen, 2015). Esse aparato gerencial tem deslocado a governança acadêmica tradicional, consolidando o poder executivo das administrações institucionais enquanto restringe a liberdade acadêmica e a autonomia pedagógica do corpo docente (Matei & Iwinska, 2018). Estudos empíricos demonstram que a imposição de ferramentas digitais e o monitoramento contínuo provocam intensificação do trabalho, perda de controle sobre o próprio ofício e aumento do estresse ocupacional entre professores universitários (Soomro et al., 2026). Ademais, a transposição acrítica de bases históricas para sistemas métricos corre o risco de automatizar vieses de homofilia e reprodução social que historicamente limitam a diversidade e a ascensão de perfis minorizados nas redes de reconhecimento acadêmico (Hartlep et al., 2017). A expansão desses sistemas projeta impactos sistêmicos de longo prazo para a carreira acadêmica, trazendo como riscos potenciais a desprofissionalização docente, a homogeneização curricular e o adoecimento, ao mesmo tempo em que desafia as instituições a construírem salvaguardas éticas contra a subordinação irrestrita da autonomia intelectual a metas operacionais de curto prazo (Alakoum & Nica, 2025; Raaper & Olssen, 2015; Soomro et al., 2026).",
+      "classificacao": "Sinal Fraco",
       "pestel": [
         "Social",
         "Tecnológico",
@@ -115,12 +115,12 @@ const sfData = {
         378
       ],
       "referenciasResumidas": "[7] Hartlep N.D. (2017) - Homophily in higher education: Historicizing the AERA member-to-fellow pipeline using theories of social reproduction and social networks | [134] Raaper R. (2015) - Mark olssen on neoliberalisation of higher education and academic lives: An interview | [207] Soomro S. (2026) - Artificial intelligence in higher education: faculty empowerment or future workplace stress | [289] Matei L. (2018) - Diverging Paths? Institutional Autonomy and Academic Freedom in the European Higher Education Area | [378] Alakoum A. (2025) - Artificial Intelligence and Performance Measurement Systems in Higher Education: Enhancing Faculty Evaluations and Organizational Outcomes",
-      "implicacoes": "O uso predatório de dashboards gerenciais e métricas automatizadas para punição e demissão de docentes pode deflagrar crises sindicais severas, rotatividade destrutiva de professores e perda de reputação de marca. Instituições líderes deverão equilibrar governança por dados com colegialidade, transparência nos algoritmos de avaliação e salvaguarda da liberdade pedagógica.",
+      "implicacoes": "Para as mantenedoras de ensino superior privado no Brasil, a disseminação incipiente de sistemas automatizados e preditivos de avaliação docente constitui um vetor tecnológico com profundos desdobramentos operacionais até 2040. Em um setor pressionado pela busca de eficiência de custos na graduação massificada e a utilização predatória de métricas algorítmicas, voltadas estritamente a monitorar horários, nivelar conteúdos pré-formatados e dispensar profissionais mais caros, tende a produzir passivos sindicais severos, desmotivação crônica e descolamento da qualidade acadêmica avaliada pelo MEC. O desafio estratégico para as lideranças do setor reside em absorver o ganho analítico dessas ferramentas de inteligência sem desidratar a autoridade pedagógica, estruturando modelos transparentes de avaliação formativa que utilizem os dados para apoiar o desenvolvimento do professor, em vez de consolidar uma vigilância punitiva que degrade o capital intelectual da instituição.",
       "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
@@ -2188,7 +2188,7 @@ const sfData = {
       "pestel": [
         "Político",
         "Social",
-        "Lega"
+        "Legal"
       ],
       "eixo": "2 - Evolução Histórica e Marcos Regulatórios dos últimos 10 anos",
       "qtdArtigos": 2,
@@ -2486,7 +2486,7 @@ const sfData = {
       "topico": "Empregabilidade, Futuro do Trabalho e Novas Competências",
       "titulo": "Letramento Quântico (Quantum Literacy) e Formação Antecipatória de Competências para a Economia Quântica",
       "descricao": "Observa-se o crescimento acelerado de políticas governamentais e diretrizes institucionais voltadas ao desenvolvimento de competências em tecnologias quânticas bem antes da ampla disponibilidade comercial do hardware (382, 384). Mapeamentos acadêmicos recentes documentam a consolidação de um campo pedagógico próprio com estratégias didáticas empíricas para o ensino de conceitos quânticos em cursos STEM e Ciência de Dados (388, 389), acompanhado pelos primeiros movimentos no mercado brasileiro de formação profissional, como o lançamento de programas de pós-graduação pioneiros voltados à engenharia e tecnologia (393). Esse movimento sinaliza uma trajetória na qual o letramento quântico ('Quantum Literacy') deixa de ser nicho restrito da física teórica e passa a ser demandado como competência transversal em diversas áreas, como finanças, logística, química computacional e cibersegurança (383, 388), forçando as IES a anteciparem a reformulação curricular para evitar um apagão de mão de obra especializada no horizonte 2030–2040 (382, 384)",
-      "descricaoApa": "N/A",
+      "descricaoApa": "Observa-se o crescimento acelerado de políticas governamentais e diretrizes institucionais voltadas ao desenvolvimento de competências em tecnologias quânticas bem antes da ampla disponibilidade comercial do hardware (European Commission, 2025; OECD, 2025a). Mapeamentos acadêmicos recentes documentam a consolidação de um campo pedagógico próprio com estratégias didáticas empíricas para o ensino de conceitos quânticos em cursos STEM e Ciência de Dados (Donhauser et al., 2024; López-Meneses et al., 2025), acompanhado pelos primeiros movimentos no mercado brasileiro de formação profissional, como o lançamento de programas de pós-graduação pioneiros voltados à engenharia e tecnologia (MCTI et al., 2026). Esse movimento sinaliza uma trajetória na qual o letramento quântico ('Quantum Literacy') deixa de ser nicho restrito da física teórica e passa a ser demandado como competência transversal em diversas áreas, como finanças, logística, química computacional e cibersegurança (López-Meneses et al., 2025; OECD, 2025b), forçando as IES a anteciparem a reformulação curricular para evitar um apagão de mão de obra especializada no horizonte 2030–2040 (European Commission, 2025; OECD, 2025a).",
       "classificacao": "Sinal Fraco",
       "pestel": [
         "Tecnológico",
@@ -2523,7 +2523,7 @@ const sfData = {
       "topico": "Gestão Institucional, Análise de Dados e Inteligência Operacional",
       "titulo": "Ameaça de segurança de dados e Adequação dos Protocolos de segurança nas IES",
       "descricao": "A demonstração matemática de que computadores quânticos futuros serão capazes de quebrar os algoritmos clássicos de criptografia de chave pública (como RSA e curvas elípticas) desencadeou a publicação oficial dos primeiros padrões internacionais de Criptografia Pós-Quântica pelo NIST entre 2024 e 2026 (390). Soma-se a isso a prática já observada de espionagem digital 'Harvest Now, Decrypt Later' (captura massiva de dados criptografados hoje para decifração quando o computador quântico estiver maduro), criando riscos retroativos para registros acadêmicos perenes, pesquisas com patentes e dados sensíveis de estudantes (382, 390). Esse contexto transforma a migração para infraestruturas imunes a ataques quânticos em uma necessidade institucional com longo ciclo de implantação, levando as universidades a reestruturarem seus protocolos de cibersegurança e conformidade de dados anos antes da consolidação física da computação quântica (382, 390).",
-      "descricaoApa": "N/A",
+      "descricaoApa": "A demonstração matemática de que computadores quânticos futuros serão capazes de quebrar os algoritmos clássicos de criptografia de chave pública (como RSA e curvas elípticas) desencadeou a publicação oficial dos primeiros padrões internacionais de Criptografia Pós-Quântica pelo NIST entre 2024 e 2026 (NIST, 2024). Soma-se a isso a prática já observada de espionagem digital 'Harvest Now, Decrypt Later' (captura massiva de dados criptografados hoje para decifração quando o computador quântico estiver maduro), criando riscos retroativos para registros acadêmicos perenes, pesquisas com patentes e dados sensíveis de estudantes (NIST, 2024; OECD, 2025). Esse contexto transforma a migração para infraestruturas imunes a ataques quânticos em uma necessidade institucional com longo ciclo de implantação, levando as universidades a reestruturarem seus protocolos de cibersegurança e conformidade de dados anos antes da consolidação física da computação quântica (NIST, 2024; OECD, 2025).",
       "classificacao": "Surpresa inevitável",
       "pestel": [
         "Tecnológico",
@@ -2556,7 +2556,7 @@ const sfData = {
       "topico": "Gestão Institucional, Análise de Dados e Inteligência Operacional",
       "titulo": "Otimização Quântica Híbrida (Quantum Annealing) na Resolução de Gargalos Operacionais Complexos da Universidade",
       "descricao": "Experiências empíricas pioneiras com processadores quânticos híbridos (como annealers acoplados a sistemas de computação clássica) demonstraram viabilidade prática na resolução de problemas complexos de otimização combinatória universitária, como o escalonamento simultâneo de milhares de exames, disciplinas e salas para turmas massivas sem conflitos de horários (387). Esse sinal indica que a primeira porta de entrada da computação quântica no cotidiano educacional pode não ocorrer na sala de aula, mas nas operações logísticas de retaguarda ('back-office'), onde o cálculo combinatório de alocação de turmas, rotas de transporte, ensalamento dinâmico e retenção discente em grandes redes multicampi atinge limites matemáticos para algoritmos puramente convencionais (387, 392).",
-      "descricaoApa": "N/A",
+      "descricaoApa": "Experiências empíricas pioneiras com processadores quânticos híbridos (como annealers acoplados a sistemas de computação clássica) demonstraram viabilidade prática na resolução de problemas complexos de otimização combinatória universitária, como o escalonamento simultâneo de milhares de exames, disciplinas e salas para turmas massivas sem conflitos de horários (Zhou et al., 2025). Esse sinal indica que a primeira porta de entrada da computação quântica no cotidiano educacional pode não ocorrer na sala de aula, mas nas operações logísticas de retaguarda ('back-office'), onde o cálculo combinatório de alocação de turmas, rotas de transporte, ensalamento dinâmico e retenção discente em grandes redes multicampi atinge limites matemáticos para algoritmos puramente convencionais (IBM Quantum, 2026; Zhou et al., 2025).",
       "classificacao": "Sinal Fraco",
       "pestel": [
         "Tecnológico",
@@ -2588,7 +2588,7 @@ const sfData = {
       "topico": "Inteligência Artificial e Tecnologias Emergentes no Ensino",
       "titulo": "Convergência entre Algoritmos Quânticos e Educação 5.0 para a Hiperpersonalização da Aprendizagem",
       "descricao": "O Conceito de Educação 5.0 (caracterizada pelo foco no desenvolvimento humano integral apoiado por tecnologias avançadas) encontra um novo vetor de aceleração em pesquisas que combinam Inteligência Artificial e Computação Quântica (Quantum Machine Learning - QML) (386). Enquanto as plataformas atuais se limitam a adaptar conteúdos a partir de métricas básicas de acertos e erros, os modelos quânticos experimentais demonstram capacidade matemática de processar simultaneamente centenas de variáveis do perfil do estudante (ritmo cognitivo, lacunas conceituais prévias, engajamento e preferências de aprendizagem) para criar trilhas de ensino dinâmicas e hiperpersonalizadas em tempo real (386). Embora revisões sistemáticas apontem que a tecnologia ainda opera em fase laboratorial com limitações de hardware e taxas de ruído (391), esse movimento estabelece as bases teóricas para que as instituições transitem de sistemas de tutoria padronizados para ecossistemas de aprendizagem adaptativa com profundidade sem precedentes até 2040 (386, 391).",
-      "descricaoApa": "N/A",
+      "descricaoApa": "A evolução da Educação 5.0 — caracterizada pelo foco no desenvolvimento humano integral apoiado por tecnologias avançadas — encontra um novo vetor de aceleração nas pesquisas pioneiras que combinam Inteligência Artificial e Computação Quântica (Quantum Machine Learning - QML) (Rosales Huamani et al., 2026). Enquanto as plataformas atuais se limitam a adaptar conteúdos a partir de métricas básicas de acertos e erros, os modelos quânticos experimentais demonstram capacidade matemática de processar simultaneamente centenas de variáveis do perfil do estudante (ritmo cognitivo, lacunas conceituais prévias, engajamento e preferências de aprendizagem) para criar trilhas de ensino dinâmicas e hiperpersonalizadas em tempo real (Rosales Huamani et al., 2026). Embora revisões sistemáticas apontem que a tecnologia ainda opera em fase laboratorial com limitações de hardware e taxas de ruído (Rodríguez-Díaz et al., 2025), esse movimento estabelece as bases teóricas para que as instituições transitem de sistemas de tutoria padronizados para ecossistemas de aprendizagem adaptativa com profundidade sem precedentes até 2040 (Rodríguez-Díaz et al., 2025; Rosales Huamani et al., 2026).",
       "classificacao": "Sinal Fraco",
       "pestel": [
         "Tecnológico",
@@ -2620,7 +2620,7 @@ const sfData = {
       "topico": "Governança, Políticas Públicas e Regulação",
       "titulo": "Hegemonia da 'Computação Quântica como Serviço' (QCaaS) e Tensões de Soberania Tecnológica Acadêmica",
       "descricao": "O modelo de viabilização da computação quântica tem se estruturado predominantemente por plataformas de acesso remoto em nuvem geridas por grandes conglomerados de tecnologia (QCaaS), eliminando a necessidade de investimento institucional em hardware próprio (que envolve estruturas criogênicas), mas concentrando a infraestrutura de ponta no setor privado do Norte Global (382). Alertas recentes da UNESCO destacam o risco de aprofundamento das assimetrias educacionais e científicas entre países centrais e emergentes (385), o que já impulsiona reações locais no Brasil com propostas de criação de ecossistemas cooperativos e hubs nacionais de tecnologias quânticas (393). A incerteza está em como se dará a divisão entre a dependência comercial de fornecedores proprietários globais ou a participação em consórcios acadêmico-governamentais de tecnologia aberta (382, 385, 393).",
-      "descricaoApa": "N/A",
+      "descricaoApa": "O modelo de viabilização da computação quântica tem se estruturado predominantemente por plataformas de acesso remoto em nuvem geridas por grandes conglomerados de tecnologia (QCaaS), eliminando a necessidade de investimento institucional em hardware próprio (que envolve estruturas criogênicas), mas concentrando a infraestrutura de ponta no setor privado do Norte Global (OECD, 2025). Alertas recentes da UNESCO destacam o risco de aprofundamento das assimetrias educacionais e científicas entre países centrais e emergentes (UNESCO, 2025), o que já impulsiona reações locais no Brasil com propostas de criação de ecossistemas cooperativos e hubs nacionais de tecnologias quânticas (MCTI et al., 2026). A incerteza está em como se dará a divisão entre a dependência comercial de fornecedores proprietários globais ou a participação em consórcios acadêmico-governamentais de tecnologia aberta (MCTI et al., 2026; OECD, 2025; UNESCO, 2025).",
       "classificacao": "Incerteza",
       "pestel": [
         "Político",

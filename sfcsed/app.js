@@ -42,9 +42,17 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
     // View & Layout
-    activeTab: 'sf', // 'sf' or 'scopus'
+    activeTab: 'sf', // 'sf', 'map' or 'scopus'
     analyticsExpanded: false,
     theme: 'dark',
+
+    // Matrix Map State
+    mapFilters: {
+      search: '',
+      classificacao: '',
+      status: ''
+    },
+    selectedMapSfId: null,
 
     // Scopus Sorting & Pagination
     sortingScopus: { column: 'id', direction: 'asc' },
@@ -135,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     applyScopusFilters();
     renderKPIs();
     renderCharts();
+    renderSfMatrixMap();
 
     hideLoadingOverlay();
   }
@@ -313,9 +322,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Parse PESTEL
+      // Parse PESTEL (normalizado)
+      const pestelNormMap = {
+        'politico': 'Político', 'político': 'Político',
+        'economico': 'Econômico', 'econômico': 'Econômico',
+        'social': 'Social',
+        'tecnologico': 'Tecnológico', 'tecnológico': 'Tecnológico',
+        'ambiental': 'Ambiental',
+        'legal': 'Legal', 'lega': 'Legal'
+      };
       const rawPestel = String(getRowVal(row, ['PESTEL', 'Dimensões PESTEL', 'Dimensoes PESTEL', 'Dimensões']) || '');
-      const pestelList = rawPestel.replace(/;/g, ',').split(',').map(d => d.trim()).filter(Boolean);
+      const pestelList = rawPestel.replace(/;/g, ',').split(',').map(d => {
+        const clean = d.trim();
+        return pestelNormMap[clean.toLowerCase()] || clean;
+      }).filter(Boolean);
 
       // Reviewed & status parsing
       const rawRev = getRowVal(row, ['Revisada', 'Status Revisão', 'Revisado', 'Status'], 0);
@@ -506,7 +526,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // 3. Tipologia Prospectiva (Classificação)
+    // 3. Classificação
     const containerClass = document.getElementById('filter-classificacao-options');
     if (containerClass) {
       containerClass.innerHTML = '';
@@ -1152,7 +1172,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('btn-copy-dossier').addEventListener('click', () => {
-      let copyText = `[${sf.id}] ${sf.titulo}\n\nStatus: ${sf.statusLabel || sf.statusRevisao} | Tipologia: ${sf.classificacao} | Eixo: ${sf.eixo}`;
+      let copyText = `[${sf.id}] ${sf.titulo}\n\nStatus: ${sf.statusLabel || sf.statusRevisao} | Classificação: ${sf.classificacao} | Eixo: ${sf.eixo}`;
       if (sf.justificativa) {
         copyText += `\nJustificativa: ${sf.justificativa}`;
       }
@@ -1346,6 +1366,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderKPIs() {
     const totalSF = state.rawSementes.length;
     const artigosCitados = state.rawArticles.filter(a => a.associatedSFs.length > 0).length;
+    const totalArtigos = state.rawArticles.length;
     const totalEixos = new Set(state.rawSementes.map(s => s.eixo).filter(Boolean)).size;
     const totalRevisadas = state.rawSementes.filter(s => s.revisada).length;
     const totalAprovadas = state.rawSementes.filter(s => s.statusTipo === 'ok').length;
@@ -1354,7 +1375,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalDivididas = state.rawSementes.filter(s => s.statusTipo === 'dividida').length;
 
     document.getElementById('kpi-total-sf').textContent = totalSF;
-    document.getElementById('kpi-artigos-citados').textContent = artigosCitados;
+    const kpiArtCitados = document.getElementById('kpi-artigos-citados');
+    if (kpiArtCitados) {
+      kpiArtCitados.textContent = `${artigosCitados}/${totalArtigos}`;
+      kpiArtCitados.title = `${artigosCitados} referências citadas de um total de ${totalArtigos} catalogadas na base`;
+    }
     document.getElementById('kpi-total-eixos').textContent = totalEixos;
     
     const kpiRev = document.getElementById('kpi-revisadas');
@@ -1364,7 +1389,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.getElementById('badge-total-sf').textContent = totalSF;
-    document.getElementById('badge-total-scopus').textContent = state.rawArticles.length;
+    const badgeMap = document.getElementById('badge-total-map');
+    if (badgeMap) badgeMap.textContent = totalSF;
+    document.getElementById('badge-total-scopus').textContent = totalArtigos;
   }
 
   // ========================================================================
@@ -1375,7 +1402,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const themeColors = PALETTE[state.theme];
 
-    // Chart 1: Tipologia Prospectiva (Doughnut)
+    // Chart 1: Classificação (Doughnut)
     const ctxClass = document.getElementById('chart-classificacao');
     if (ctxClass) {
       const counts = {};
@@ -1518,7 +1545,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeColors = PALETTE[state.theme];
     const sourceData = state.filteredSementes;
 
-    // 1. Tipologia
+    // 1. Classificação
     const counts = {};
     sourceData.forEach(s => {
       counts[s.classificacao] = (counts[s.classificacao] || 0) + 1;
@@ -1637,7 +1664,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }).join('') || '<span style="color: var(--text-muted); font-size: 0.74rem;">Sem vínculo direto</span>';
 
       const doiButton = art.doiLink 
-        ? `<a href="${art.doiLink}" target="_blank" rel="noopener noreferrer" class="btn-art-action" style="display: inline-flex;" title="Abrir DOI na Scopus / Editora"><i class="fa-solid fa-arrow-up-right-from-square"></i> DOI</a>`
+        ? `<a href="${art.doiLink}" target="_blank" rel="noopener noreferrer" class="btn-art-action" style="display: inline-flex;" title="Abrir DOI na Editora / Periódico"><i class="fa-solid fa-arrow-up-right-from-square"></i> DOI</a>`
         : '';
 
       tr.innerHTML = `
@@ -1708,7 +1735,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const modal = document.getElementById('modal-article');
 
-    document.getElementById('modal-art-id').textContent = `ID Scopus: ${art.id}`;
+    document.getElementById('modal-art-id').textContent = `ID: #${art.id}`;
     document.getElementById('modal-art-year').textContent = art.year || 'Ano não informado';
     document.getElementById('modal-art-type').textContent = art.documentType || 'Artigo';
 
@@ -1770,31 +1797,395 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ========================================================================
+  // MATRIX MAP: TÓPICOS PADRONIZADOS × DIMENSÕES PESTEL (TAB 2)
+  // ========================================================================
+  const PESTEL_ORDER = ['Político', 'Econômico', 'Social', 'Tecnológico', 'Ambiental', 'Legal'];
+  const PESTEL_CLASSES = {
+    'Político': 'pestel-col-politico',
+    'Econômico': 'pestel-col-economico',
+    'Social': 'pestel-col-social',
+    'Tecnológico': 'pestel-col-tecnologico',
+    'Ambiental': 'pestel-col-ambiental',
+    'Legal': 'pestel-col-legal'
+  };
+
+  function renderSfMatrixMap() {
+    const thead = document.getElementById('sf-matrix-thead');
+    const tbody = document.getElementById('sf-matrix-tbody');
+    const tfoot = document.getElementById('sf-matrix-tfoot');
+    if (!thead || !tbody || !tfoot) return;
+
+    thead.innerHTML = '';
+    tbody.innerHTML = '';
+    tfoot.innerHTML = '';
+
+    // Distinct topics sorted alphabetically
+    const topics = [...new Set(state.rawSementes.map(s => s.topico).filter(Boolean))].sort();
+
+    // 1. Build Thead
+    const headerTr = document.createElement('tr');
+    headerTr.innerHTML = `
+      <th class="matrix-corner-cell">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <span>Tópico Padronizado</span>
+          <span class="tab-badge" style="font-size: 0.65rem;">${topics.length} Tópicos</span>
+        </div>
+      </th>
+      ${PESTEL_ORDER.map(p => {
+        const count = state.rawSementes.filter(s => s.pestel && s.pestel.includes(p)).length;
+        const colClass = PESTEL_CLASSES[p] || '';
+        return `
+          <th class="pestel-header-cell ${colClass}">
+            <div class="pestel-header-inner">
+              <span class="pestel-header-title">${p}</span>
+              <span class="pestel-header-count">(${count})</span>
+            </div>
+          </th>
+        `;
+      }).join('')}
+      <th class="matrix-total-header">Total SF</th>
+    `;
+    thead.appendChild(headerTr);
+
+    // Matrix stats tracking
+    let occupiedQuadrants = 0;
+    let totalPlacements = 0;
+    const colTotals = {
+      'Político': 0,
+      'Econômico': 0,
+      'Social': 0,
+      'Tecnológico': 0,
+      'Ambiental': 0,
+      'Legal': 0
+    };
+
+    // 2. Build Tbody
+    topics.forEach((topic) => {
+      const sfsInTopic = state.rawSementes.filter(s => s.topico === topic);
+      const row = document.createElement('tr');
+
+      // Sticky Topic Header Cell
+      const thTopic = document.createElement('th');
+      thTopic.className = 'matrix-topic-cell';
+      thTopic.innerHTML = `
+        <div class="matrix-topic-content">
+          <i class="fa-solid fa-folder-open matrix-topic-icon"></i>
+          <div class="matrix-topic-info">
+            <span class="matrix-topic-name">${escapeHtml(topic)}</span>
+            <span class="matrix-topic-badge">${sfsInTopic.length} ${sfsInTopic.length === 1 ? 'semente' : 'sementes'}</span>
+          </div>
+        </div>
+      `;
+      row.appendChild(thTopic);
+
+      // PESTEL Columns
+      PESTEL_ORDER.forEach(p => {
+        const matchingSfs = sfsInTopic.filter(s => s.pestel && s.pestel.includes(p));
+        const td = document.createElement('td');
+        td.className = 'matrix-cell';
+        td.setAttribute('data-topic', topic);
+        td.setAttribute('data-pestel', p);
+
+        if (matchingSfs.length === 0) {
+          td.innerHTML = `<div class="matrix-empty-slot" title="Nenhuma semente no cruzamento ${escapeHtml(topic)} × ${p}">—</div>`;
+        } else {
+          occupiedQuadrants++;
+          totalPlacements += matchingSfs.length;
+          colTotals[p] += matchingSfs.length;
+
+          const chipsWrapper = document.createElement('div');
+          chipsWrapper.className = 'matrix-chips-wrapper';
+
+          matchingSfs.forEach(sf => {
+            const palette = PALETTE[state.theme] || PALETTE.dark;
+            const dotColor = (palette.typology && (palette.typology[sf.classificacao] || palette.typology['Tendência'])) || '#64748b';
+            const chip = document.createElement('button');
+            chip.type = 'button';
+            chip.className = 'matrix-sf-chip';
+            chip.setAttribute('data-sf-id', sf.id);
+            chip.setAttribute('data-typology', sf.classificacao);
+            chip.setAttribute('data-status-tipo', sf.statusTipo);
+            chip.setAttribute('data-revisada', sf.revisada ? 'true' : 'false');
+            chip.title = `[${sf.id}] ${sf.titulo}\nClassificação: ${sf.classificacao} | Status: ${sf.statusLabel}\nClique para ver detalhes`;
+
+            const okIcon = sf.statusTipo === 'ok' ? '<i class="fa-solid fa-check chip-ok-icon" title="Revisada (OK)"></i>' : '';
+            chip.innerHTML = `
+              <span class="chip-dot" style="background-color: ${dotColor};"></span>
+              <span>${escapeHtml(sf.id)}</span>
+              ${okIcon}
+            `;
+
+            chip.addEventListener('click', (e) => {
+              e.stopPropagation();
+              openSfPreviewModal(sf.id);
+            });
+
+            chipsWrapper.appendChild(chip);
+          });
+
+          td.appendChild(chipsWrapper);
+        }
+
+        row.appendChild(td);
+      });
+
+      // Row Total Cell
+      const tdRowTotal = document.createElement('td');
+      tdRowTotal.className = 'matrix-row-total';
+      tdRowTotal.textContent = sfsInTopic.length;
+      tdRowTotal.title = `${sfsInTopic.length} sementes no tópico: ${topic}`;
+      row.appendChild(tdRowTotal);
+
+      tbody.appendChild(row);
+    });
+
+    // 3. Build Tfoot (Summary totals row)
+    const tfootTr = document.createElement('tr');
+    tfootTr.innerHTML = `
+      <th class="matrix-footer-corner">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <span>Totais por Dimensão</span>
+          <span style="font-size: 0.68rem; color: var(--text-muted); font-weight: 500;">(Incidências)</span>
+        </div>
+      </th>
+      ${PESTEL_ORDER.map(p => {
+        const distinctSfCount = state.rawSementes.filter(s => s.pestel && s.pestel.includes(p)).length;
+        return `
+          <td class="matrix-footer-total">
+            <span title="${distinctSfCount} sementes distintas tocam a dimensão ${p}">${distinctSfCount}</span>
+          </td>
+        `;
+      }).join('')}
+      <td class="matrix-footer-grand-total" title="Total de Sementes de Futuro">
+        ${state.rawSementes.length}
+      </td>
+    `;
+    tfoot.appendChild(tfootTr);
+
+    // Update Toolbar Metrics
+    const totalQuadrants = topics.length * PESTEL_ORDER.length;
+    const elTopics = document.getElementById('map-total-topics');
+    const elIntersections = document.getElementById('map-total-intersections');
+    const elPlacements = document.getElementById('map-total-placements');
+    const badgeMap = document.getElementById('badge-total-map');
+
+    if (elTopics) elTopics.textContent = topics.length;
+    if (elIntersections) elIntersections.textContent = `${occupiedQuadrants}/${totalQuadrants}`;
+    if (elPlacements) elPlacements.textContent = totalPlacements;
+    if (badgeMap) badgeMap.textContent = state.rawSementes.length;
+
+    // Apply any active filters
+    applyMapFilters();
+  }
+
+  function applyMapFilters() {
+    const q = removeAccents((state.mapFilters.search || '').trim());
+    const fClass = state.mapFilters.classificacao;
+    const fStatus = state.mapFilters.status;
+
+    const chips = document.querySelectorAll('.matrix-sf-chip');
+    if (!chips.length) return;
+
+    chips.forEach(chip => {
+      const sfId = chip.getAttribute('data-sf-id');
+      const sf = state.rawSementes.find(s => s.id === sfId);
+      if (!sf) return;
+
+      let matches = true;
+
+      // 1. Text Search
+      if (q) {
+        const matchesQuery = 
+          removeAccents(sf.id).includes(q) ||
+          removeAccents(sf.titulo).includes(q) ||
+          removeAccents(sf.topico).includes(q) ||
+          removeAccents(sf.classificacao).includes(q) ||
+          removeAccents(sf.descricao).includes(q);
+        if (!matchesQuery) matches = false;
+      }
+
+      // 2. Classificação Filter
+      if (matches && fClass) {
+        if (sf.classificacao !== fClass) matches = false;
+      }
+
+      // 3. Status Filter
+      if (matches && fStatus) {
+        if (fStatus === 'revisada' && !sf.revisada) matches = false;
+        else if (fStatus === 'ok' && sf.statusTipo !== 'ok') matches = false;
+        else if (fStatus === 'dividida' && sf.statusTipo !== 'dividida') matches = false;
+        else if (fStatus === 'mesclada' && sf.statusTipo !== 'mesclada') matches = false;
+        else if (fStatus === 'pendente' && sf.statusTipo !== 'pendente') matches = false;
+      }
+
+      if (matches) {
+        chip.classList.remove('is-dimmed');
+        if (q || fClass || fStatus) {
+          chip.classList.add('is-highlighted');
+        } else {
+          chip.classList.remove('is-highlighted');
+        }
+      } else {
+        chip.classList.add('is-dimmed');
+        chip.classList.remove('is-highlighted');
+      }
+    });
+
+    // Update legend item active state
+    document.querySelectorAll('.map-legend-item').forEach(item => {
+      const typ = item.getAttribute('data-legend-typology');
+      if (fClass && typ === fClass) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+  }
+
+  function resetMapFilters() {
+    state.mapFilters = {
+      search: '',
+      classificacao: '',
+      status: ''
+    };
+
+    const mapSearch = document.getElementById('map-search-input');
+    const mapSearchClear = document.getElementById('map-search-clear');
+    const mapFilterClass = document.getElementById('map-filter-classificacao');
+    const mapFilterStatus = document.getElementById('map-filter-status');
+
+    if (mapSearch) mapSearch.value = '';
+    if (mapSearchClear) mapSearchClear.style.display = 'none';
+    if (mapFilterClass) mapFilterClass.value = '';
+    if (mapFilterStatus) mapFilterStatus.value = '';
+
+    document.querySelectorAll('.map-legend-item').forEach(item => item.classList.remove('active'));
+
+    applyMapFilters();
+  }
+
+  function openSfPreviewModal(sfId) {
+    const sf = state.rawSementes.find(s => s.id === sfId);
+    if (!sf) return;
+
+    state.selectedMapSfId = sfId;
+
+    const modal = document.getElementById('modal-sf-preview');
+    if (!modal) return;
+
+    // Header info
+    document.getElementById('modal-sf-id').textContent = sf.id;
+    
+    const typEl = document.getElementById('modal-sf-typology');
+    if (typEl) {
+      typEl.textContent = sf.classificacao;
+      typEl.className = `badge-typology ${cleanBadgeClass(sf.classificacao)}`;
+    }
+
+    const statusEl = document.getElementById('modal-sf-status');
+    if (statusEl) {
+      statusEl.textContent = sf.statusLabel;
+      statusEl.style.backgroundColor = sf.statusTipo === 'ok' ? 'rgba(16, 185, 129, 0.12)' : 'rgba(148, 163, 184, 0.12)';
+      statusEl.style.color = sf.statusTipo === 'ok' ? '#10b981' : 'var(--text-muted)';
+      statusEl.style.borderColor = sf.statusTipo === 'ok' ? 'rgba(16, 185, 129, 0.28)' : 'rgba(148, 163, 184, 0.28)';
+    }
+
+    const eixoEl = document.getElementById('modal-sf-eixo');
+    if (eixoEl) eixoEl.textContent = sf.eixo;
+
+    document.getElementById('modal-sf-title').textContent = sf.titulo;
+    document.getElementById('modal-sf-topic-text').textContent = sf.topico;
+
+    // PESTEL chips
+    const pestelContainer = document.getElementById('modal-sf-pestel-chips');
+    if (pestelContainer) {
+      pestelContainer.innerHTML = (sf.pestel || []).map(p => {
+        const cls = cleanBadgeClass(p);
+        return `<span class="pestel-chip ${cls}"><span class="chip-dot-pestel"></span> ${escapeHtml(p)}</span>`;
+      }).join('');
+    }
+
+    // Descrição
+    const descEl = document.getElementById('modal-sf-desc');
+    if (descEl) descEl.innerHTML = highlightNumericCitations(sf.descricao || 'Descrição em consolidação.');
+
+    // Implicações
+    const impEl = document.getElementById('modal-sf-implications');
+    if (impEl) impEl.textContent = sf.implicacoes || 'Sem implicações registradas.';
+
+    // Indicadores
+    const indSection = document.getElementById('modal-sf-indicators-section');
+    const indEl = document.getElementById('modal-sf-indicators');
+    if (sf.indicadores && sf.indicadores.toUpperCase() !== 'N/A') {
+      indSection.style.display = 'block';
+      indEl.textContent = sf.indicadores;
+    } else {
+      indSection.style.display = 'none';
+    }
+
+    // Referências vinculadas
+    const refsContainer = document.getElementById('modal-sf-refs-list');
+    if (refsContainer) {
+      if (sf.artigosIds && sf.artigosIds.length > 0) {
+        refsContainer.innerHTML = sf.artigosIds.map(artId => {
+          const art = state.articlesMap.get(artId);
+          const authorYear = art ? `${art.authors.split(';')[0]} (${art.year || 's.d.'})` : `#${artId}`;
+          return `<span class="sf-link-chip" title="${art ? escapeHtml(art.title) : ''}"><i class="fa-solid fa-book-bookmark"></i> #${artId} - ${escapeHtml(authorYear)}</span>`;
+        }).join('');
+      } else {
+        refsContainer.innerHTML = '<span style="color: var(--text-muted); font-size: 0.8rem;">Nenhum artigo científico vinculado diretamente.</span>';
+      }
+    }
+
+    modal.style.display = 'flex';
+  }
+
+  function closeSfPreviewModal() {
+    const modal = document.getElementById('modal-sf-preview');
+    if (modal) modal.style.display = 'none';
+  }
+
+  // ========================================================================
   // EVENT LISTENERS SETUP
   // ========================================================================
   function setupEventListeners() {
-    // 1. Tab Navigation
+    // 1. Tab Navigation (SF, Mapa das SF, Referências)
     const tabSf = document.getElementById('tab-btn-sf');
+    const tabMap = document.getElementById('tab-btn-map');
     const tabScopus = document.getElementById('tab-btn-scopus');
     const viewSf = document.getElementById('view-sf');
+    const viewMap = document.getElementById('view-map');
     const viewScopus = document.getElementById('view-scopus');
 
-    tabSf.addEventListener('click', () => {
-      tabSf.classList.add('active');
-      tabScopus.classList.remove('active');
-      viewSf.style.display = 'flex';
-      viewScopus.style.display = 'none';
-      state.activeTab = 'sf';
-    });
+    function switchTab(targetTab) {
+      state.activeTab = targetTab;
 
-    tabScopus.addEventListener('click', () => {
-      tabScopus.classList.add('active');
-      tabSf.classList.remove('active');
-      viewScopus.style.display = 'flex';
-      viewSf.style.display = 'none';
-      state.activeTab = 'scopus';
-      renderScopusTable();
-    });
+      if (tabSf) tabSf.classList.toggle('active', targetTab === 'sf');
+      if (tabMap) tabMap.classList.toggle('active', targetTab === 'map');
+      if (tabScopus) tabScopus.classList.toggle('active', targetTab === 'scopus');
+
+      if (viewSf) viewSf.style.display = targetTab === 'sf' ? 'flex' : 'none';
+      if (viewMap) viewMap.style.display = targetTab === 'map' ? 'flex' : 'none';
+      if (viewScopus) viewScopus.style.display = targetTab === 'scopus' ? 'flex' : 'none';
+
+      if (targetTab === 'scopus') {
+        renderScopusTable();
+      } else if (targetTab === 'map') {
+        renderSfMatrixMap();
+      }
+    }
+
+    if (tabSf) {
+      tabSf.addEventListener('click', () => switchTab('sf'));
+    }
+
+    if (tabMap) {
+      tabMap.addEventListener('click', () => switchTab('map'));
+    }
+
+    if (tabScopus) {
+      tabScopus.addEventListener('click', () => switchTab('scopus'));
+    }
 
     // 2. Analytics Collapsible Toggle
     const btnAnalytics = document.getElementById('btn-toggle-analytics');
@@ -1925,17 +2316,106 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // 6. Article Modal Close Handlers
+    // 6. Map Toolbar Controls & Filters
+    const mapSearchInput = document.getElementById('map-search-input');
+    const mapSearchClear = document.getElementById('map-search-clear');
+    const mapFilterClass = document.getElementById('map-filter-classificacao');
+    const mapFilterStatus = document.getElementById('map-filter-status');
+    const btnResetMap = document.getElementById('map-btn-reset-filters');
+
+    if (mapSearchInput) {
+      mapSearchInput.addEventListener('input', (e) => {
+        state.mapFilters.search = e.target.value;
+        if (mapSearchClear) mapSearchClear.style.display = state.mapFilters.search ? 'block' : 'none';
+        debouncedApplyMapFilters();
+      });
+    }
+
+    if (mapSearchClear) {
+      mapSearchClear.addEventListener('click', () => {
+        if (mapSearchInput) mapSearchInput.value = '';
+        state.mapFilters.search = '';
+        mapSearchClear.style.display = 'none';
+        applyMapFilters();
+      });
+    }
+
+    if (mapFilterClass) {
+      mapFilterClass.addEventListener('change', (e) => {
+        state.mapFilters.classificacao = e.target.value;
+        applyMapFilters();
+      });
+    }
+
+    if (mapFilterStatus) {
+      mapFilterStatus.addEventListener('change', (e) => {
+        state.mapFilters.status = e.target.value;
+        applyMapFilters();
+      });
+    }
+
+    if (btnResetMap) {
+      btnResetMap.addEventListener('click', () => {
+        resetMapFilters();
+      });
+    }
+
+    // Interactive Legend items toggle classificacao filter
+    document.querySelectorAll('.map-legend-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const typ = item.getAttribute('data-legend-typology');
+        if (state.mapFilters.classificacao === typ) {
+          state.mapFilters.classificacao = '';
+          if (mapFilterClass) mapFilterClass.value = '';
+        } else {
+          state.mapFilters.classificacao = typ;
+          if (mapFilterClass) mapFilterClass.value = typ;
+        }
+        applyMapFilters();
+      });
+    });
+
+    // 7. Modal SF Preview Handlers
+    const btnCloseSfModal = document.getElementById('btn-close-sf-modal');
+    const btnSfModalCloseFooter = document.getElementById('btn-sf-modal-close-footer');
+    const modalSfPreview = document.getElementById('modal-sf-preview');
+    const btnSfModalOpenDossier = document.getElementById('btn-sf-modal-open-dossier');
+
+    if (btnCloseSfModal) btnCloseSfModal.addEventListener('click', closeSfPreviewModal);
+    if (btnSfModalCloseFooter) btnSfModalCloseFooter.addEventListener('click', closeSfPreviewModal);
+    if (modalSfPreview) {
+      modalSfPreview.addEventListener('click', (e) => {
+        if (e.target.id === 'modal-sf-preview') closeSfPreviewModal();
+      });
+    }
+
+    if (btnSfModalOpenDossier) {
+      btnSfModalOpenDossier.addEventListener('click', () => {
+        const sfId = state.selectedMapSfId;
+        closeSfPreviewModal();
+        if (sfId) {
+          switchTab('sf');
+          selectSf(sfId);
+          const dossier = document.getElementById('reading-dossier');
+          if (dossier) {
+            dossier.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    }
+
+    // 8. Article Modal Close Handlers
     document.getElementById('btn-close-art-modal').addEventListener('click', closeArticleModal);
     document.getElementById('btn-art-modal-close-footer').addEventListener('click', closeArticleModal);
     document.getElementById('modal-article').addEventListener('click', (e) => {
       if (e.target.id === 'modal-article') closeArticleModal();
     });
 
-    // 7. Keyboard Navigation (Arrows Up / Down for SF Inbox reading)
+    // 9. Keyboard Navigation (Arrows Up / Down for SF Inbox reading & Esc to close modals)
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeArticleModal();
+        closeSfPreviewModal();
         return;
       }
 
@@ -2029,6 +2509,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     renderCharts();
+    if (state.activeTab === 'map') {
+      renderSfMatrixMap();
+    }
   }
 
   // ========================================================================
@@ -2256,6 +2739,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const debouncedApplySfFilters = debounce(() => applySfFilters(), 250);
   const debouncedApplyScopusFilters = debounce(() => applyScopusFilters(), 250);
+  const debouncedApplyMapFilters = debounce(() => applyMapFilters(), 200);
 
   // Execute initialization
   init();

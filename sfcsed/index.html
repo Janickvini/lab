@@ -58,12 +58,17 @@
             <button id="tab-btn-sf" class="tab-btn active" data-tab="sf" title="Visualizar Sementes de Futuro">
               <i class="fa-solid fa-seedling"></i>
               <span>Sementes de Futuro</span>
-              <span class="tab-badge" id="badge-total-sf">67</span>
+              <span class="tab-badge" id="badge-total-sf">76</span>
+            </button>
+            <button id="tab-btn-map" class="tab-btn" data-tab="map" title="Mapa Matricial das Sementes de Futuro (Tópicos × PESTEL)">
+              <i class="fa-solid fa-border-all"></i>
+              <span>Mapa das SF</span>
+              <span class="tab-badge" id="badge-total-map">76</span>
             </button>
             <button id="tab-btn-scopus" class="tab-btn" data-tab="scopus" title="Explorar Base de Referências">
               <i class="fa-solid fa-book-bookmark"></i>
               <span>Referências</span>
-              <span class="tab-badge" id="badge-total-scopus">339</span>
+              <span class="tab-badge" id="badge-total-scopus">340</span>
             </button>
           </div>
 
@@ -98,15 +103,15 @@
           <div class="stat-icon stat-icon-blue"><i class="fa-solid fa-dna"></i></div>
           <div class="stat-details">
             <div class="stat-label">Total de Sementes</div>
-            <div class="stat-value" id="kpi-total-sf">67</div>
+            <div class="stat-value" id="kpi-total-sf">76</div>
           </div>
         </div>
 
         <div class="stat-card">
           <div class="stat-icon stat-icon-indigo"><i class="fa-solid fa-diagram-project"></i></div>
           <div class="stat-details">
-            <div class="stat-label">Referências</div>
-            <div class="stat-value" id="kpi-artigos-citados">314</div>
+            <div class="stat-label">Referências Citadas</div>
+            <div class="stat-value" id="kpi-artigos-citados">315/340</div>
           </div>
         </div>
 
@@ -122,7 +127,7 @@
           <div class="stat-icon stat-icon-emerald"><i class="fa-solid fa-circle-check"></i></div>
           <div class="stat-details">
             <div class="stat-label">Revisadas</div>
-            <div class="stat-value" id="kpi-revisadas">10</div>
+            <div class="stat-value" id="kpi-revisadas">30</div>
           </div>
         </div>
 
@@ -143,7 +148,7 @@
         <div class="chart-box">
           <div class="chart-header">
             <div class="chart-title">
-              <i class="fa-solid fa-bolt"></i> Distribuição por Tipologia Prospectiva
+              <i class="fa-solid fa-bolt"></i> Distribuição por Classificação
             </div>
             <div class="chart-meta">Rupturas, Tendências, Sinais Fracos e Incertezas</div>
           </div>
@@ -261,12 +266,12 @@
 
               <div class="filter-divider"></div>
 
-              <!-- Tipologia Prospectiva (Colapsável) -->
+              <!-- Classificação (Colapsável) -->
               <div class="sidebar-filter-section collapsed" id="section-filter-classificacao" data-filter-group="classificacao">
-                <button type="button" class="filter-section-header" aria-expanded="false" title="Recolher / Expandir Tipologia Prospectiva">
+                <button type="button" class="filter-section-header" aria-expanded="false" title="Recolher / Expandir Classificação">
                   <div class="filter-section-title">
                     <i class="fa-solid fa-bolt"></i>
-                    <span>Tipologia Prospectiva</span>
+                    <span>Classificação</span>
                   </div>
                   <div class="filter-section-meta">
                     <span class="filter-active-count" id="active-count-classificacao" style="display: none;">0</span>
@@ -377,7 +382,7 @@
               </div>
               <h3 class="empty-state-title">Selecione uma Semente de Futuro</h3>
               <p class="empty-state-text">
-                Escolha uma semente na lista ao lado para carregar a descrição aprofundada do fenômeno, as implicações estratégicas para o Ensino Superior 2040 e os artigos Scopus de suporte.
+                Escolha uma semente na lista ao lado para carregar a descrição aprofundada do fenômeno, as implicações estratégicas para o Ensino Superior 2040 e os artigos de suporte.
               </p>
               <div class="empty-state-hint">
                 <i class="fa-regular fa-keyboard"></i> Dica: Você também pode navegar pelas sementes usando as teclas <strong>↑</strong> e <strong>↓</strong> do teclado.
@@ -396,7 +401,116 @@
       </section>
 
       <!-- ============================================== -->
-      <!-- TAB 2: SCOPUS REFERENCES MATRIX VIEW -->
+      <!-- TAB 2: MAPA DAS SF (MATRIZ TÓPICOS × PESTEL) -->
+      <!-- ============================================== -->
+      <section id="view-map" class="view-panel" style="display: none;">
+        
+        <div class="map-toolbar">
+          <div class="map-toolbar-top">
+            <div class="map-header-title-group">
+              <div class="map-icon-badge">
+                <i class="fa-solid fa-border-all"></i>
+              </div>
+              <div>
+                <h2 class="map-main-title">Mapa Matricial das Sementes de Futuro</h2>
+                <p class="map-main-subtitle">
+                  Distribuição cruzada de Sementes de Futuro por <strong>Tópico Padronizado (linhas)</strong> e <strong>Dimensões PESTEL (colunas)</strong>.
+                </p>
+              </div>
+            </div>
+
+            <div class="map-metrics-pill">
+              <span class="map-metric-item"><strong id="map-total-topics">13</strong> Tópicos</span>
+              <span class="map-metric-sep">•</span>
+              <span class="map-metric-item"><strong id="map-total-intersections">58/78</strong> Quadrantes</span>
+              <span class="map-metric-sep">•</span>
+              <span class="map-metric-item"><strong id="map-total-placements">208</strong> Ocorrências</span>
+            </div>
+          </div>
+
+          <div class="map-toolbar-controls">
+            <!-- Search in matrix -->
+            <div class="search-box map-search-box">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              <input type="text" id="map-search-input" placeholder="Destacar por ID, título da semente ou termo..." autocomplete="off">
+              <button id="map-search-clear" class="btn-clear-search" style="display: none;" title="Limpar busca">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+
+            <!-- Filters -->
+            <div class="map-filter-group">
+              <div class="filter-field filter-field-inline">
+                <label for="map-filter-classificacao">Classificação:</label>
+                <select id="map-filter-classificacao" class="form-select-sm">
+                  <option value="">Todas as Classificações</option>
+                  <option value="Ruptura">Ruptura</option>
+                  <option value="Tendência">Tendência</option>
+                  <option value="Sinal Fraco">Sinal Fraco</option>
+                  <option value="Incerteza">Incerteza</option>
+                  <option value="Fato predeterminado">Fato predeterminado</option>
+                  <option value="Surpresa inevitável">Surpresa inevitável</option>
+                  <option value="Achado Empírico">Achado Empírico</option>
+                </select>
+              </div>
+
+              <div class="filter-field filter-field-inline">
+                <label for="map-filter-status">Status:</label>
+                <select id="map-filter-status" class="form-select-sm">
+                  <option value="">Todos os Status</option>
+                  <option value="revisada">Apenas Revisadas</option>
+                  <option value="ok">Revisada (OK)</option>
+                  <option value="dividida">Revisada (Dividida)</option>
+                  <option value="mesclada">Revisada (Mesclada)</option>
+                  <option value="pendente">Em revisão</option>
+                </select>
+              </div>
+
+              <button id="map-btn-reset-filters" class="btn-sidebar-reset" title="Limpar filtros do mapa">
+                <i class="fa-solid fa-rotate-left"></i> Limpar
+              </button>
+            </div>
+          </div>
+
+          <!-- Interactive Legend -->
+          <div class="map-legend-bar">
+            <span class="map-legend-title"><i class="fa-solid fa-palette"></i> Legenda:</span>
+            <div class="map-legend-items">
+              <span class="map-legend-item" data-legend-typology="Ruptura"><span class="legend-dot filter-dot-ruptura"></span> Ruptura</span>
+              <span class="map-legend-item" data-legend-typology="Tendência"><span class="legend-dot filter-dot-tendencia"></span> Tendência</span>
+              <span class="map-legend-item" data-legend-typology="Sinal Fraco"><span class="legend-dot filter-dot-sinal-fraco"></span> Sinal Fraco</span>
+              <span class="map-legend-item" data-legend-typology="Incerteza"><span class="legend-dot filter-dot-incerteza"></span> Incerteza</span>
+              <span class="map-legend-item" data-legend-typology="Fato predeterminado"><span class="legend-dot filter-dot-fato-predeterminado"></span> Fato Predeterminado</span>
+              <span class="map-legend-item" data-legend-typology="Surpresa inevitável"><span class="legend-dot filter-dot-surpresa-inevitavel"></span> Surpresa Inevitável</span>
+              <span class="map-legend-item" data-legend-typology="Achado Empírico"><span class="legend-dot filter-dot-achado-empirico"></span> Achado Empírico</span>
+            </div>
+            <div class="map-legend-hint">
+              <i class="fa-solid fa-arrow-pointer"></i> Clique em qualquer SF para pré-visualizar ou abrir no dossiê.
+            </div>
+          </div>
+        </div>
+
+        <!-- Matrix Table Container -->
+        <div class="map-matrix-scroll-wrapper">
+          <div class="map-matrix-container">
+            <table class="map-matrix-table" id="sf-matrix-table">
+              <thead id="sf-matrix-thead">
+                <!-- Inserido dinamicamente -->
+              </thead>
+              <tbody id="sf-matrix-tbody">
+                <!-- Inserido dinamicamente -->
+              </tbody>
+              <tfoot id="sf-matrix-tfoot">
+                <!-- Inserido dinamicamente -->
+              </tfoot>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ============================================== -->
+      <!-- TAB 3: REFERENCES MATRIX VIEW -->
       <!-- ============================================== -->
       <section id="view-scopus" class="view-panel" style="display: none;">
         
@@ -415,8 +529,8 @@
               <div class="filter-field filter-field-inline">
                 <label for="scopus-filter-relation">Relação com SFs:</label>
                 <select id="scopus-filter-relation" class="form-select-sm">
-                  <option value="">Todos os Artigos (339)</option>
-                  <option value="linked" selected>Apenas com SFs Vinculadas (314)</option>
+                  <option value="">Todos os Artigos (340)</option>
+                  <option value="linked" selected>Apenas com SFs Vinculadas (315)</option>
                   <option value="unlinked">Sem SFs Vinculadas (25)</option>
                 </select>
               </div>
@@ -432,7 +546,7 @@
 
           <div class="filter-status-bar">
             <div class="results-counter">
-              Mostrando <strong id="scopus-filtered-count">314</strong> de <span id="scopus-total-count">339</span> Artigos Scopus
+              Mostrando <strong id="scopus-filtered-count">315</strong> de <span id="scopus-total-count">340</span> Artigos
             </div>
           </div>
 
@@ -490,7 +604,7 @@
   </div>
 
   <!-- ============================================== -->
-  <!-- MODAL: DETALHES DO ARTIGO SCOPUS / ABSTRACT -->
+  <!-- MODAL: DETALHES DO ARTIGO / ABSTRACT -->
   <!-- ============================================== -->
   <div id="modal-article" class="modal-backdrop" aria-hidden="true" style="display: none; z-index: 10001;">
     <div class="modal-dialog modal-dialog-md">
@@ -555,6 +669,98 @@
 
       <div class="modal-footer">
         <button id="btn-art-modal-close-footer" class="btn-secondary">Voltar</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL: VISÃO RÁPIDA DA SEMENTE DE FUTURO (MAPA) -->
+  <!-- ============================================== -->
+  <div id="modal-sf-preview" class="modal-backdrop" aria-hidden="true" style="display: none; z-index: 10002;">
+    <div class="modal-dialog modal-dialog-md">
+      
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="modal-meta-row">
+            <span class="modal-badge-id" id="modal-sf-id">SF01</span>
+            <span class="badge-typology" id="modal-sf-typology">Tendência</span>
+            <span class="badge-status-pill" id="modal-sf-status">Revisada (OK)</span>
+            <span class="badge-eixo-pill" id="modal-sf-eixo">Eixo 1</span>
+          </div>
+          <h3 class="modal-title" id="modal-sf-title">Título da Semente de Futuro</h3>
+          <div class="modal-topic-subtitle" id="modal-sf-topic">
+            <i class="fa-solid fa-tag"></i> <span id="modal-sf-topic-text">Tópico Padronizado</span>
+          </div>
+        </div>
+        <button id="btn-close-sf-modal" class="btn-close-modal" title="Fechar (Esc)">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <!-- PESTEL chips -->
+        <div class="modal-section">
+          <div class="section-title">
+            <i class="fa-solid fa-cubes"></i>
+            <span>Dimensões PESTEL:</span>
+          </div>
+          <div class="dossier-pestel-chips" id="modal-sf-pestel-chips">
+            <!-- PESTEL chips -->
+          </div>
+        </div>
+
+        <!-- Descrição -->
+        <div class="modal-section">
+          <div class="section-title">
+            <i class="fa-solid fa-align-left"></i>
+            <span>Descrição do Fenômeno:</span>
+          </div>
+          <div class="section-content text-abstract" id="modal-sf-desc">
+            <!-- Descrição -->
+          </div>
+        </div>
+
+        <!-- Implicações Estratégicas 2040 -->
+        <div class="modal-section" id="modal-sf-implications-section">
+          <div class="section-title">
+            <i class="fa-solid fa-compass"></i>
+            <span>Conexão e Implicações Estratégicas 2040:</span>
+          </div>
+          <div class="section-content text-implications" id="modal-sf-implications">
+            <!-- Implicações -->
+          </div>
+        </div>
+
+        <!-- Indicadores se houver -->
+        <div class="modal-section" id="modal-sf-indicators-section" style="display: none;">
+          <div class="section-title">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Indicadores de Monitoramento:</span>
+          </div>
+          <div class="section-content" id="modal-sf-indicators">
+            <!-- Indicadores -->
+          </div>
+        </div>
+
+        <!-- Referências vinculadas -->
+        <div class="modal-section" id="modal-sf-refs-section">
+          <div class="section-title">
+            <i class="fa-solid fa-book-bookmark"></i>
+            <span>Artigos / Referências Vinculadas:</span>
+          </div>
+          <div class="linked-sfs-chips" id="modal-sf-refs-list">
+            <!-- Articles count and citations -->
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="btn-sf-modal-close-footer" class="btn-secondary">Fechar</button>
+        <button id="btn-sf-modal-open-dossier" class="btn-primary" style="display: flex; align-items: center; gap: 7px;">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <span>Abrir no Dossiê Completo</span>
+        </button>
       </div>
 
     </div>
