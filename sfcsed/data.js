@@ -2,16 +2,16 @@
 const sfData = {
   "metadata": {
     "sourceFile": "SF CSED.xlsx",
-    "totalSF": 76,
+    "totalSF": 78,
     "totalArticles": 340,
     "totalArticlesCited": 315,
-    "totalRevisadas": 31,
-    "totalAprovadas": 26,
+    "totalRevisadas": 37,
+    "totalAprovadas": 31,
     "totalMescladas": 1,
     "totalDescartadas": 1,
-    "totalDivididas": 3,
-    "totalPendentes": 45,
-    "generatedAt": "21/10/2026 20:32:58"
+    "totalDivididas": 4,
+    "totalPendentes": 41,
+    "generatedAt": "22/10/2026 11:31:02"
   },
   "sementes": [
     {
@@ -132,9 +132,9 @@ const sfData = {
       "id": "SF04",
       "fonte": "Scopus",
       "topico": "Corpo Docente, Carreira Acadêmica e Formação de Professores",
-      "titulo": "Desagregação do Trabalho Acadêmico (Unbundling), Flexibilização Contratual e Crise de Sustentabilidade Humana na Docência",
-      "descricao": "As pressões econômicas de contenção de custos e a digitalização acelerada impulsionam a desagregação (unbundling) da função acadêmica tradicional, fragmentando o papel docente outrora integrado em funções hiperespecializadas e terceirizadas — como designers instrucionais, tutores remotos de engajamento e curadores de conteúdo (58). Esse movimento se articula à crescente substituição do regime de tempo integral por contratações flexíveis de professores-práticos e docentes horistas (78, 121), os quais vivenciam uma constante tensão entre sua identidade profissional de origem e o pertencimento acadêmico fragilizado (121). Tal flexibilização extrema, somada à sobrecarga de demandas corporativas sem a devida infraestrutura de suporte, intensifica o conflito entre trabalho e vida pessoal — especialmente para mulheres acadêmicas e média gestão (331) — e abre espaço para ambientes propensos ao assédio moral e à exaustão física e psicológica (199).",
-      "descricaoApa": "N/A",
+      "titulo": "Desagregação do Trabalho Acadêmico (Unbundling) e Flexibilização da Carreira Docente",
+      "descricao": "As pressões econômicas de contenção de custos e a digitalização acelerada impulsionam a desagregação (*unbundling*) da função acadêmica tradicional, fragmentando o papel docente outrora integrado em funções hiperespecializadas e terceirizadas — como designers instrucionais, tutores remotos de engajamento e curadores de conteúdo (58). Esse movimento se articula à crescente substituição do regime de tempo integral por contratações flexíveis de professores-práticos e docentes horistas (78, 121), os quais vivenciam uma constante tensão entre sua identidade profissional de origem e o pertencimento acadêmico fragilizado (121). Tal flexibilização extrema, somada à sobrecarga de demandas corporativas sem a devida infraestrutura de suporte, intensifica o conflito entre trabalho e vida pessoal — especialmente para mulheres acadêmicas e média gestão (331) — e abre espaço para ambientes propensos ao assédio moral e à exaustão física e psicológica (199).",
+      "descricaoApa": "As pressões econômicas de contenção de custos e a digitalização acelerada impulsionam a desagregação (*unbundling*) da função acadêmica tradicional, fragmentando o papel docente outrora integrado em funções hiperespecializadas e terceirizadas — como designers instrucionais, tutores remotos de engajamento e curadores de conteúdo (Blass et al., 2010). Esse movimento se articula à crescente substituição do regime de tempo integral por contratações flexíveis de professores-práticos e docentes horistas (Fletcher, 2022; Peri et al., 2024), os quais vivenciam uma constante tensão entre sua identidade profissional de origem e o pertencimento acadêmico fragilizado (Peri et al., 2024). Tal flexibilização extrema, somada à sobrecarga de demandas corporativas sem a devida infraestrutura de suporte, intensifica o conflito entre trabalho e vida pessoal — especialmente para mulheres acadêmicas e média gestão (Kjellstrand, 2026) — e abre espaço para ambientes propensos ao assédio moral e à exaustão física e psicológica (Hollis, 2022).",
       "classificacao": "Tendência",
       "pestel": [
         "Econômico",
@@ -151,12 +151,12 @@ const sfData = {
         331
       ],
       "referenciasResumidas": "[58] Blass E. (2010) - Visioning 2035: The future of the higher education sector in the UK | [78] Fletcher E.C., Jr. (2022) - Characteristics of Career and Technical Education Faculty across Institutions of Higher Education in the United States | [121] Peri E. (2024) - Who am I—Teacher or practitioner? Teacher-practitioners’ experience of identity in higher education—A phenomenological view | [199] Hollis L.P. (2022) - Universal Declaration of Human Rights: An argument for higher education to prohibit workplace bullying | [331] Kjellstrand I., Sr. (2026) - Middle manager mothers and fathers in academia: embracing and resisting traditional values in Kazakhstani higher education institutions",
-      "implicacoes": "O excesso de flexibilização e gig-economy docente trará passivos trabalhistas volumosos e perda de identidade institucional. Os grandes grupos precisarão desenhar contratos híbridos atrativos que valorizem especialistas de mercado sem precarizar o vínculo, garantindo políticas de conciliação familiar e acolhimento psicossocial.",
-      "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "implicacoes": "Para as mantenedoras do ensino superior privado no Brasil, a desagregação da atividade docente representa o principal vetor de eficiência de custos operacionais, mas carrega riscos estruturais de sustentabilidade até 2040. A hiperfragmentação do trabalho e a dependência excessiva de contratos horistas e tutores terceirizados comprometem o engajamento estudantil e fragilizam as notas de avaliação in loco do MEC, além de alimentar passivos trabalhistas volumosos decorrentes de desvio de função. As lideranças privadas precisarão equilibrar a flexibilidade operacional com modelos inovadores de retenção de talentos, desenhando trilhas de carreira atraentes para especialistas de mercado e garantindo suporte psicossocial e de conciliação familiar para a média gestão acadêmica, sob pena de perder a coesão pedagógica da instituição.",
+      "indicadores": "Proporção de docentes em regime de tempo integral versus contratos horistas, intermitentes ou terceirizados; Taxa de rotatividade (turnover) anual entre professores de mercado e tutores de plataformas virtuais; Número de ações trabalhistas versando sobre pejotização, desvio de função na tutoria EAD e assédio moral institucional; Índice de satisfação e bem-estar ocupacional dos coordenadores de curso e docentes da média gestão acadêmica.",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
@@ -203,30 +203,26 @@ const sfData = {
       "id": "SF06",
       "fonte": "Scopus",
       "topico": "Corpo Docente, Carreira Acadêmica e Formação de Professores",
-      "titulo": "Liderança Pedagógica Distribuída, Intelectualidade Pública Digital e Engajamento Socioecológico Docente",
-      "descricao": "Em contraposição aos modelos hierárquicos e verticais de comando, consolida-se o imperativo da liderança pedagógica sistêmica e distribuída, na qual o corpo docente assume protagonismo proativo na renovação curricular e na mediação das políticas institucionais em múltiplos níveis (145, 273). Essa renovação do papel social do professor ganha força com a emergência do 'intelectual público digital' (digital scholarship), caracterizado pela comunicação aberta da ciência, engajamento comunitário em plataformas digitais e tradução do saber acadêmico para o debate cívico amplo (297). Adicionalmente, constata-se que a incorporação efetiva dos Objetivos de Desenvolvimento Sustentável (ODS) e de temas ecológicos nas matrizes formativas depende diretamente do fortalecimento da autoeficácia docente e de uma liderança acadêmica sensível às urgências planetárias contemporâneas (94, 273).",
-      "descricaoApa": "N/A",
-      "classificacao": "Tendência",
+      "titulo": "Emergência do Intelectual Público Digital e a Prática Acadêmica Aberta (Digital Scholarship)",
+      "descricao": "O avanço da cultura participativa na internet e a crise de legitimidade da mediação científica tradicional impulsionam a emergência do 'intelectual público digital' (_digital scholarship_), caracterizado pela produção acadêmica aberta e pelo engajamento direto de docentes e pesquisadores na esfera pública digital (297). Em contraposição aos modelos convencionais de enclausuramento da pesquisa em periódicos fechados com barreiras comerciais de acesso, essa prática descentraliza a autoridade intelectual e utiliza redes sociais, mídias abertas e plataformas multimídia para democratizar o conhecimento, combater a desinformação e dialogar com públicos não acadêmicos (297). O fenômeno desponta como um sinal fraco de transformação no ofício acadêmico, instaurando o dilema do reconhecimento institucional: enquanto a sociedade demanda com urgência uma pedagogia pública e a tradução do saber para debates cívicos complexos, os sistemas vigentes de progressão na carreira docente e auditoria de produtividade permanecem atrelados a métricas tradicionais de indexação, ignorando o impacto social e a relevância territorial da atuação pública digital do professor (297).",
+      "descricaoApa": "O avanço da cultura participativa na internet e a crise de legitimidade da mediação científica tradicional impulsionam a emergência do 'intelectual público digital' (_digital scholarship_), caracterizado pela produção acadêmica aberta e pelo engajamento direto de docentes e pesquisadores na esfera pública digital (Murphy & Costa, 2019). Em contraposição aos modelos convencionais de enclausuramento da pesquisa em periódicos fechados com barreiras comerciais de acesso, essa prática descentraliza a autoridade intelectual e utiliza redes sociais, mídias abertas e plataformas multimídia para democratizar o conhecimento, combater a desinformação e dialogar com públicos não acadêmicos (Murphy & Costa, 2019). O fenômeno desponta como um sinal fraco de transformação no ofício acadêmico, instaurando o dilema do reconhecimento institucional: enquanto a sociedade demanda com urgência uma pedagogia pública e a tradução do saber para debates cívicos complexos, os sistemas vigentes de progressão na carreira docente e auditoria de produtividade permanecem atrelados a métricas tradicionais de indexação, ignorando o impacto social e a relevância territorial da atuação pública digital do professor (Murphy & Costa, 2019).",
+      "classificacao": "Sinal Fraco",
       "pestel": [
         "Social",
-        "Tecnológico",
-        "Ambiental"
+        "Tecnológico"
       ],
       "eixo": "3 - Dinâmicas Sociodemográficas",
-      "qtdArtigos": 4,
+      "qtdArtigos": 1,
       "artigosIds": [
-        94,
-        145,
-        273,
         297
       ],
-      "referenciasResumidas": "[94] Duran M.K.L. (2026) - Modeling Filipino Educators’ Intentions to Integrate Sustainability Topics in Higher Education Using a Hybrid SEM–ANN | [145] Pruikkonen A. (2026) - A Systemic Perspective on Pedagogical Leadership in Higher Education | [273] Jackson L. (2017) - Leaning Out in higher education: A structural, postcolonial perspective | [297] Murphy M. (2019) - Digital scholarship, higher education and the future of the public intellectual",
-      "implicacoes": "Professores com forte autoridade científica e presença pública digital serão os maiores ativos de branding e atração orgânica de alunos para as IES privadas. As instituições que incentivarem a divulgação científica e a liderança distribuída atrairão estudantes engajados e construirão diferenciais éticos decisivos.",
+      "referenciasResumidas": "[297] Murphy M. (2019) - Digital scholarship, higher education and the future of the public intellectual",
+      "implicacoes": "A emergência do intelectual público digital coloca uma oportunidade estratégica de diferenciação de marca e relevância institucional até 2040. Em um cenário de comoditização dos currículos e proliferação de conteúdos não certificados na internet, IES que incentivarem seus professores a atuar ativamente na esfera pública digital transformam seu corpo docente em âncoras de credibilidade, autoridade científica e atração orgânica de estudantes. Para capitalizar esse movimento, os grandes grupos educacionais precisarão revisar seus modelos rígidos de alocação horista e métricas convencionais de produtividade, incorporando o reconhecimento da divulgação científica, do combate à desinformação e da pedagogia pública como indicadores de valor acadêmico e reputacional.",
       "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
@@ -918,15 +914,99 @@ const sfData = {
       "referenciasResumidas": "[1] Villegas P.E. (2020) - ‘Now I Constantly Challenge Society by Bringing My Existence Forward’: Creating Counter-Spaces/Stories with Sanctuary Students Transitioning to Higher Education in Toronto | [5] Garland J.L. (2020) - Exploring Place: Indigenous Students in US Higher Education | [60] Ljosland R. (2022) - Scots and Nynorsk: A Comparison of Two Language Movements' Struggle for Recognition in Higher Education | [61] Aiston S.J. (2017) - ''Absent data, absent women'': Gender and higher education leadership | [130] Link R. (2023) - The voice of women in higher education: Current perspectives of students in Germany, Japan and Taiwan. A contrastive analysis of western and eastern perceptions of women empowerment and gender roles among students | ... (+6 artigos)",
       "implicacoes": "A atratividade de marcas educacionais para as novas gerações (Gen Z e Alfa) dependerá de métricas auditáveis de diversidade real: paridade de gênero na docência superior, liderança feminina em cursos tecnológicos e programas de bolsas afirmativas com mentoria de empregabilidade.",
       "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "revisada": true,
+      "statusTipo": "dividida",
+      "statusRevisao": "Dividida",
+      "statusLabel": "Revisada (Dividida: SF25a, SF25b)",
+      "justificativa": "Continha duas SF distintas",
+      "fusaoId": "",
+      "divisaoIds": [
+        "SF25a",
+        "SF25b"
+      ],
+      "origemDivisao": "",
+      "vinculo": [
+        "SF25a",
+        "SF25b"
+      ],
+      "incorporadas": []
+    },
+    {
+      "id": "SF25a",
+      "fonte": "Scopus",
+      "topico": "Equidade, Inclusão Social e Acesso",
+      "titulo": "Diversity Washing e Cobrança por Diversidade Real - Equidade de Gênero, Liderança Feminina e Mulheres em STEM",
+      "descricao": "Cresce a pressão da sociedade, de investidores e de órgãos reguladores para que as instituições de ensino superior abandonem discursos puramente publicitários de diversidade (*diversity washing*) e apresentem metas práticas com resultados comprovados (140, 172). Essa cobrança se concentra em duas frentes onde a desigualdade de gênero é historicamente crítica: a baixa proporção de mulheres em postos de alta governança, como reitorias e diretorias executivas (61, 273), e a persistente sub-representação feminina em cursos de ciências exatas, tecnologia e engenharias (STEM) (130, 365). Pesquisas apontam que iniciativas pontuais e discursos de autoajuda corporativa são ineficazes se a instituição não reformular seus processos de contratação e promoção, combater ambientes hostis de estudo e estruturar programas ativos de mentoria e apoio para formar e reter alunas e professoras nessas áreas (61, 273, 365).",
+      "descricaoApa": "Cresce a pressão da sociedade, de investidores e de órgãos reguladores para que as instituições de ensino superior abandonem discursos puramente publicitários de diversidade (*diversity washing*) e apresentem metas práticas com resultados comprovados (Lan, 2026; Lee & Cox, 2022). Essa cobrança se concentra em duas frentes onde a desigualdade de gênero é historicamente crítica: a baixa proporção de mulheres em postos de alta governança, como reitorias e diretorias executivas (Aiston & Yang, 2017; Jackson, 2017), e a persistente sub-representação feminina em cursos de ciências exatas, tecnologia e engenharias (STEM) (Hailu & Parra Gaete, 2024; Link et al., 2023). Pesquisas apontam que iniciativas pontuais e discursos de autoajuda corporativa são ineficazes se a instituição não reformular seus processos de contratação e promoção, combater ambientes hostis de estudo e estruturar programas ativos de mentoria e apoio para formar e reter alunas e professoras nessas áreas (Aiston & Yang, 2017; Hailu & Parra Gaete, 2024; Jackson, 2017).",
+      "classificacao": "Tendência",
+      "pestel": [
+        "Social",
+        "Político",
+        "Econômico"
+      ],
+      "eixo": "3 - Dinâmicas Sociodemográficas",
+      "qtdArtigos": 6,
+      "artigosIds": [
+        61,
+        130,
+        140,
+        172,
+        273,
+        365
+      ],
+      "referenciasResumidas": "[61] Aiston S.J. (2017) - ''Absent data, absent women'': Gender and higher education leadership | [130] Link R. (2023) - The voice of women in higher education: Current perspectives of students in Germany, Japan and Taiwan. A contrastive analysis of western and eastern perceptions of women empowerment and gender roles among students | [140] Lan H. (2026) - It does (not) get better: Critiquing neoliberal “betterment” and the transformative impacts of queer-inclusive spaces in higher education in Singapore | [172] Lee Y. (2022) - Decentering Whiteness: A Leadership Strategy for Diversity, Equity, and Inclusion in Higher Education | [273] Jackson L. (2017) - Leaning Out in higher education: A structural, postcolonial perspective | [365] Hailu M.F. (2024) - Sub-Saharan women in engineering higher education: A literature-informed research tool",
+      "implicacoes": "a exigência de equidade real de gênero tornou-se um indicador decisivo de governança e competitividade até 2040. Em um ambiente em que métricas ESG condicionam o acesso a capital e as novas gerações rejeitam campanhas cosméticas, faculdades com lideranças exclusivamente masculinas e cursos de tecnologia com turmas masculinizadas enfrentam perda de relevância e danos de imagem. Os grandes grupos precisarão estabelecer metas públicas de ascensão feminina na gestão, fechar parcerias com empresas de tecnologia para conceder bolsas com estágio a alunas de computação e engenharia, e manter canais confiáveis de combate ao assédio, transformando a igualdade de oportunidades em diferencial comercial e de reputação.",
+      "indicadores": "Percentual de mulheres em cargos de alta gestão acadêmica (reitorias, pró-reitorias e diretorias); Taxa de matrícula, retenção e diplomação feminina em cursos de ciências exatas, tecnologia e engenharias (STEM); Orçamento institucional auditável destinado a programas de equidade de gênero e combate ao assédio moral e sexual; Índice de conformidade e pontuação em avaliações externas de ESG e diversidade demandadas pelo mercado.",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
-      "origemDivisao": "",
-      "vinculo": [],
+      "origemDivisao": "SF25",
+      "vinculo": [
+        "SF25"
+      ],
+      "incorporadas": []
+    },
+    {
+      "id": "SF25b",
+      "fonte": "Scopus",
+      "topico": "Equidade, Inclusão Social e Acesso",
+      "titulo": "Ações Afirmativas Estruturadas e Políticas de Permanência para Grupos Vulnerabilizados",
+      "descricao": "As políticas de ação afirmativa e cotas no ensino superior passam por uma mudança de rumo, deixando de ser vistas como assistência pontual para se consolidarem como um direito de acesso e reparação social indispensável (217). Estudos internacionais comprovam que apenas reservar vagas ou conceder bolsas parciais não assegura a formatura de estudantes de baixa renda, negros, indígenas e comunidades marginalizadas (1, 5, 228). A conclusão desses cursos depende fundamentalmente da criação de políticas de permanência material que cubram custos básicos de transporte, moradia e alimentação, combinadas com apoio pedagógico contra preconceitos institucionais e o respeito às identidades culturais desses grupos dentro da universidade (1, 5, 60, 228).",
+      "descricaoApa": "As políticas de ação afirmativa e cotas no ensino superior passam por uma mudança de rumo, deixando de ser vistas como assistência pontual para se consolidarem como um direito de acesso e reparação social indispensável (Miranda-Molina & Leyton, 2025). Estudos internacionais comprovam que apenas reservar vagas ou conceder bolsas parciais não assegura a formatura de estudantes de baixa renda, negros, indígenas e comunidades marginalizadas (Garland et al., 2020; Matache et al., 2020; Villegas & Aberman, 2020). A conclusão desses cursos depende fundamentalmente da criação de políticas de permanência material que cubram custos básicos de transporte, moradia e alimentação, combinadas com apoio pedagógico contra preconceitos institucionais e o respeito às identidades culturais desses grupos dentro da universidade (Garland et al., 2020; Ljosland, 2022; Matache et al., 2020; Villegas & Aberman, 2020).",
+      "classificacao": "Tendência",
+      "pestel": [
+        "Social",
+        "Político",
+        "Legal"
+      ],
+      "eixo": "3 - Dinâmicas Sociodemográficas",
+      "qtdArtigos": 6,
+      "artigosIds": [
+        1,
+        5,
+        60,
+        196,
+        217,
+        228
+      ],
+      "referenciasResumidas": "[1] Villegas P.E. (2020) - ‘Now I Constantly Challenge Society by Bringing My Existence Forward’: Creating Counter-Spaces/Stories with Sanctuary Students Transitioning to Higher Education in Toronto | [5] Garland J.L. (2020) - Exploring Place: Indigenous Students in US Higher Education | [60] Ljosland R. (2022) - Scots and Nynorsk: A Comparison of Two Language Movements' Struggle for Recognition in Higher Education | [196] Smith S. (2022) - Gypsies, Travellers, and Roma in UK Higher Education A View from Inside the Academy | [217] Miranda-Molina R. (2025) - The discursive formation of the affirmative action policy in Chile: Right to higher education, public education, and deficit | [228] Matache M. (2020) - Roma in Higher Education Access Denied",
+      "implicacoes": "Taxa de evasão de estudantes bolsistas e cotistas em comparação com a média geral dos alunos pagantes; Volume de recursos institucionais destinados a auxílios de permanência material (transporte, alimentação e equipamentos); Quantidade de projetos institucionais de acolhimento psicopedagógico e nivelamento de conteúdos para estudantes em vulnerabilidade; Índice de empregabilidade e ingresso no mercado formal de graduados oriundos de ações afirmativas e do Prouni.",
+      "indicadores": "",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
+      "fusaoId": "",
+      "divisaoIds": [],
+      "origemDivisao": "SF25",
+      "vinculo": [
+        "SF25"
+      ],
       "incorporadas": []
     },
     {
@@ -1900,30 +1980,31 @@ const sfData = {
       "id": "SF48",
       "fonte": "Scopus",
       "topico": "Sustentabilidade, Mudanças Climáticas e ESG",
-      "titulo": "Transversalização Curricular da Sustentabilidade, Carta da Terra e Competências para o Futuro Planetário",
-      "descricao": "A formação universitária contemporânea é pressionada a superar a compartimentação disciplinar e incorporar de forma transversal a Educação para o Desenvolvimento Sustentável (EDS) e a Cidadania Global (GCED) em todas as áreas do conhecimento (231, 246). Essa renovação é inspirada pelos princípios éticos da Carta da Terra e pelo fomento de uma consciência ecológica planetária, direcionada à desconstrução de padrões predatórios de hiperconsumo e obsolescência planejada (29, 59). O desenvolvimento dessas metacompetências de sustentabilidade ganha aderência prática mediante a aplicação de microaprendizagens móveis e gamificação comportamental para o engajamento ecológico estudantil (318).",
-      "descricaoApa": "N/A",
+      "titulo": "Transversalização Curricular da Sustentabilidade e Formação em Competências ESG",
+      "descricao": "Percentual de matrizes curriculares de graduação com competências de sustentabilidade e ESG formalmente integradas aos Planos Pedagógicos de Curso (PPCs); Índice institucional de capacitação docente em metodologias e conteúdos de Educação para o Desenvolvimento Sustentável (EDS); Taxa de projetos de extensão universitária e trabalhos de conclusão de curso (TCCs) diretamente alinhados aos Objetivos de Desenvolvimento Sustentável (ODS); Grau de exigência de competências socioambientais e certificações ESG para egressos nas pesquisas de acompanhamento do mercado de trabalho.",
+      "descricaoApa": "Instituições de ensino superior enfrentam uma demanda crescente do mercado de trabalho e de órgãos reguladores para integrar conteúdos de sustentabilidade, governança socioambiental e cidadania em todos os cursos de graduação, superando o modelo tradicional de disciplinas isoladas (231, 246). Essa transformação exige a reformulação de currículos em áreas estratégicas como gestão, engenharia e negócios, preparando os futuros profissionais para tomadas de decisão alinhadas à transição ecológica, descarbonização e consumo responsável (29, 59). Para viabilizar essa mudança nas práticas de ensino presenciais e digitais, ganham relevância programas institucionais de capacitação continuada que apoiem os professores no desenho de aulas interdisciplinares (94), além de ferramentas tecnológicas como microaprendizagens móveis e recursos interativos que estimulam os estudantes a aplicar hábitos sustentáveis em sua rotina acadêmica (318).",
       "classificacao": "Tendência",
       "pestel": [
         "Ambiental",
         "Social"
       ],
       "eixo": "6 - Fatores Ambientais (ESG e Clima): eventos climáticos, requisitos de sustentabilidade do Inep/Sinaes, responsabilidade social corporativa",
-      "qtdArtigos": 5,
+      "qtdArtigos": 6,
       "artigosIds": [
         29,
         59,
+        94,
         231,
         246,
         318
       ],
-      "referenciasResumidas": "[29] Moraes S.E. (2025) - The Earth Charter and the Development of a Planetary Consciousness in Brazilian Higher Education Institutions | [59] Velez-Colby F. (2025) - Addressing the Era of Sustainability in Fashion Marketing Higher Education: A Radical Proposal for Change | [231] Njihia M. (2025) - Integrating ESD and GCED in Higher Education Curriculum: Perspectives from Kenyatta University, Kenya | [246] Rieckmann M. (2012) - Future-oriented higher education: Which key competencies should be fostered through university teaching and learning? | [318] Nunez M.E. (2023) - Students' Satisfaction and Recommendation of Sostek Application based on Sustainable Development Learning in Higher Education",
-      "implicacoes": "Formação obrigatória de todos os profissionais (de administradores e médicos a engenheiros e advogados) em justiça climática e regeneração ambiental, alinhando a Cruzeiro do Sul às demandas corporativas de descarbonização do mercado.",
+      "referenciasResumidas": "[29] Moraes S.E. (2025) - The Earth Charter and the Development of a Planetary Consciousness in Brazilian Higher Education Institutions | [59] Velez-Colby F. (2025) - Addressing the Era of Sustainability in Fashion Marketing Higher Education: A Radical Proposal for Change | [94] Duran M.K.L. (2026) - Modeling Filipino Educators’ Intentions to Integrate Sustainability Topics in Higher Education Using a Hybrid SEM–ANN | [231] Njihia M. (2025) - Integrating ESD and GCED in Higher Education Curriculum: Perspectives from Kenyatta University, Kenya | [246] Rieckmann M. (2012) - Future-oriented higher education: Which key competencies should be fostered through university teaching and learning? | [318] Nunez M.E. (2023) - Students' Satisfaction and Recommendation of Sostek Application based on Sustainable Development Learning in Higher Education",
+      "implicacoes": "A inserção obrigatória e transversal de competências socioambientais em todas as matrizes curriculares posiciona as instituições de ensino privado em conformidade com as diretrizes regulatórias e amplia a empregabilidade dos egressos, respondendo às exigências crescentes de empresas e investidores por profissionais capacitados em práticas ESG, gestão de riscos climáticos e sustentabilidade corporativa.",
       "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
@@ -2768,7 +2849,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF25"
+        "SF25",
+        "SF25b"
       ]
     },
     {
@@ -2837,7 +2919,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF25"
+        "SF25",
+        "SF25b"
       ]
     },
     {
@@ -3502,7 +3585,7 @@ const sfData = {
       "authors": "Shivany S.",
       "title": "Linkages with Micro Small Medium Enterprises (MSMEs) for Sustainable Higher Education in Management",
       "year": 2021,
-      "sourceTitle": "Future of Business and Finance",
+      "sourceTitle": "New Horizons in Management, Leadership and Sustainability",
       "doi": "10.1007/978-3-030-62171-1_19",
       "doiLink": "https://doi.org/10.1007/978-3-030-62171-1_19",
       "abstract": "This chapter explains the imperative of linking with micro small medium enterprises (MSMEs) as vital contributors to the process of commercialization of new knowledge discovered in the higher education sector. Higher education in management has the greatest challenge to equalize graduates’ knowledge and skills with existing employment opportunities. MSMEs are job creators in the economy and contributors to sustainable development. If the education system of higher education in management does not withstand future needs, this will impair the social, economic, and environmental conditions of the country. To sustain the balance in these three pillars of sustainability, management graduates who will be future managers should be educated well with the needed skills and knowledge through a sustainable curriculum, which can be enriched with the linkage with the MSMEs during study, a milestone for business startup, employment opportunities, and industry intakes. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2021.",
@@ -3682,7 +3765,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF25"
+        "SF25",
+        "SF25b"
       ]
     },
     {
@@ -3699,7 +3783,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF25"
+        "SF25",
+        "SF25a"
       ]
     },
     {
@@ -4191,7 +4276,7 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF06"
+        "SF48"
       ]
     },
     {
@@ -4610,7 +4695,7 @@ const sfData = {
       "authors": "Land M.; Lemke C.; Bracker J.; Crowell S.",
       "title": "Transformative Education and the Earth Charter: Enabling Sustainable Development Through Transformative Learning in Higher Education",
       "year": 2026,
-      "sourceTitle": "Future of Business and Finance",
+      "sourceTitle": "The Sustainable Organization – Volume 3",
       "doi": "10.1007/978-3-032-28949-0_5",
       "doiLink": "https://doi.org/10.1007/978-3-032-28949-0_5",
       "abstract": "Amidst the planetary polycrisis, it is perplexing how slowly significant transformation appears to occur. Despite growing awareness of planetary boundaries and social inequalities, the move toward just and sustainable futures remains disjointed. This indicates a deeper shortfall—not in knowledge, but in shared values based on common understanding and holistic perspectives, serving as an ethical foundation for sustainable development. Therefore, we question: why and how can we embed such an ethical foundation in education to promote a fundamental shift toward a sustainable future?This article presents the Earth Charter as a fundamental ethical framework for our thinking, actions, and coexistence. We argue from the perspective of the ideas of transformative learning and show approaches to how transformative education can succeed based on the principles of the Earth Charter. In doing so, we discuss some possible starting points for implementation, including in relation to the application of the three-pillar model concept underlying this edited volume. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2026.",
@@ -4689,7 +4774,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF25"
+        "SF25",
+        "SF25a"
       ]
     },
     {
@@ -4857,7 +4943,8 @@ const sfData = {
       "indexKeywords": "Singapore [Southeast Asia]; education policy; educational development; future prospect; higher education; neoliberalism; student",
       "documentType": "Article",
       "associatedSFs": [
-        "SF25"
+        "SF25",
+        "SF25a"
       ]
     },
     {
@@ -4883,7 +4970,7 @@ const sfData = {
       "authors": "Mehdian N.; Turi A.N.",
       "title": "AI-Powered Educational System: Challenges for Higher Education in Emerging Economies: Baseline Research",
       "year": 2025,
-      "sourceTitle": "Future of Business and Finance",
+      "sourceTitle": "Tech Transformation and AI Readiness",
       "doi": "10.1007/978-3-031-73639-1_7",
       "doiLink": "https://doi.org/10.1007/978-3-031-73639-1_7",
       "abstract": "As Artificial Intelligence (AI) is rapidly transforming many facets of our lives, universities worldwide strive to integrate Generative AI (GenAI) into their curriculum to enhance educational outcomes. AI-powered systems, including chatbots and virtual assistants, provide customized learning experiences and real-time student support and enhance cognitive engagement. However, emerging economies face unique challenges that hinder the effective adoption of these technologies. This chapter investigates the challenges of integrating AI in higher education within emerging economies. The primary objectives are to identify the challenges faced, examine faculty attitudes toward AI adoption, investigate the impact of facility conditions, perceived risk, performance and effort expectancy, and explore AI governance in the Global South. The chapter conceptually frames the relevant challenges using established theoretical models and provides empirical evidence through a comprehensive literature review. The benefits and misuse of AI in educational settings, as well as policy implications specific to the Global South, are also outlined. The findings aim to guide stakeholders and policymakers in the effective integration of AI in higher education in the Global South, advocating for inclusivity and ethical use to ensure enhanced learning experiences to better prepare students for a more equitable future. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2025.",
@@ -4943,8 +5030,7 @@ const sfData = {
       "indexKeywords": "Artificial intelligence; Continuous learning; High educations; Internationalisation; Leadership; Multilevels; Organizational factors; Pedagogical leadership; Pedagogy; Research questions; Student expectations; Teaching",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF01",
-        "SF06"
+        "SF01"
       ]
     },
     {
@@ -5326,7 +5412,7 @@ const sfData = {
       "authors": "Lee Y.; Cox T.",
       "title": "Decentering Whiteness: A Leadership Strategy for Diversity, Equity, and Inclusion in Higher Education",
       "year": 2022,
-      "sourceTitle": "Future of Business and Finance",
+      "sourceTitle": "Leading With Diversity, Equity and Inclusion",
       "doi": "10.1007/978-3-030-95652-3_18",
       "doiLink": "https://doi.org/10.1007/978-3-030-95652-3_18",
       "abstract": "Higher education institutions have typically approached the need for Diversity, Equity and Inclusion (DEI) efforts through technical solutions such as diversity statements, surface-level diversity training, or newly-created senior leadership roles such as a Chief Diversity Officer. However, such efforts can hinder genuine culture change without opportunities for dialogue and intentional efforts to decenter whiteness through critical reflection as a community of learners. This chapter explores the current efforts around DEI within higher education, examines why lasting change is often difficult in higher education institutions and offers tangible practices for dialogic practices to decenter whiteness at various levels of the institution to promote sustainable DEI change. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2022.",
@@ -5334,7 +5420,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF25"
+        "SF25",
+        "SF25a"
       ]
     },
     {
@@ -5712,7 +5799,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF25"
+        "SF25",
+        "SF25b"
       ]
     },
     {
@@ -6000,7 +6088,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF25"
+        "SF25",
+        "SF25b"
       ]
     },
     {
@@ -6152,7 +6241,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF25"
+        "SF25",
+        "SF25b"
       ]
     },
     {
@@ -6769,7 +6859,7 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF06"
+        "SF25a"
       ]
     },
     {
@@ -6864,7 +6954,7 @@ const sfData = {
       "authors": "Aboramadan M.; Dahleez K.",
       "title": "Inclusive Leadership in Higher Education: An Approach to Encourage Management Innovation and a Climate for Creativity",
       "year": 2022,
-      "sourceTitle": "Future of Business and Finance",
+      "sourceTitle": "Leading With Diversity, Equity and Inclusion",
       "doi": "10.1007/978-3-030-95652-3_17",
       "doiLink": "https://doi.org/10.1007/978-3-030-95652-3_17",
       "abstract": "Leadership in higher education institutions faces several challenges. To meet these challenges, management practices must address diversity among academic workforces. Middle managers in higher education can foster an inclusive workplace by adopting inclusive leadership in their daily management philosophy, ensuring effective operations, and boosting positive work-related outcomes among staff members. This chapter’s proposed model highlights the effects of inclusive leadership, including the encouragement of management-level innovation in academic units and establishment of a climate for creativity. Furthermore, this chapter proposes a proactive diversity strategy as a boundary condition, fortifying the relationship between inclusive leadership and innovation and creativity outcomes. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2022.",
@@ -8056,7 +8146,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF25"
+        "SF25",
+        "SF25a"
       ]
     },
     {
