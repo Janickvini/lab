@@ -2,16 +2,16 @@
 const sfData = {
   "metadata": {
     "sourceFile": "SF CSED.xlsx",
-    "totalSF": 78,
-    "totalArticles": 340,
-    "totalArticlesCited": 312,
-    "totalRevisadas": 69,
-    "totalAprovadas": 52,
-    "totalMescladas": 1,
-    "totalDescartadas": 12,
-    "totalDivididas": 4,
-    "totalPendentes": 9,
-    "generatedAt": "26/10/2026 22:39:27"
+    "totalSF": 61,
+    "totalArticles": 247,
+    "totalArticlesCited": 247,
+    "totalRevisadas": 61,
+    "totalAprovadas": 61,
+    "totalMescladas": 0,
+    "totalDescartadas": 0,
+    "totalDivididas": 0,
+    "totalPendentes": 0,
+    "generatedAt": "27/10/2026 19:35:26"
   },
   "sementes": [
     {
@@ -99,7 +99,7 @@ const sfData = {
       "titulo": "Disseminação de Sistemas Automatizados e Preditivos de Medição de Desempenho Docente",
       "descricao": "A disseminação de sistemas de medição de desempenho docente baseados em inteligência artificial (FPMS) e a crescente sofisticação de métricas quantitativas de produtividade aprofundam a cultura de auditoria e a governamentalidade de mercado no ensino superior (134, 378). Esse aparato gerencial tem deslocado a governança acadêmica tradicional, consolidando o poder executivo das administrações institucionais enquanto restringe a liberdade acadêmica e a autonomia pedagógica do corpo docente (289). Estudos empíricos demonstram que a imposição de ferramentas digitais e o monitoramento contínuo provocam intensificação do trabalho, perda de controle sobre o próprio ofício e aumento do estresse ocupacional entre professores universitários (207). Ademais, a transposição acrítica de bases históricas para sistemas métricos corre o risco de automatizar vieses de homofilia e reprodução social que historicamente limitam a diversidade e a ascensão de perfis minorizados nas redes de reconhecimento acadêmico (7). A expansão desses sistemas projeta impactos sistêmicos de longo prazo para a carreira acadêmica, trazendo como riscos potenciais a desprofissionalização docente, a homogeneização curricular e o adoecimento, ao mesmo tempo em que desafia as instituições a construírem salvaguardas éticas contra a subordinação irrestrita da autonomia intelectual a metas operacionais de curto prazo (134, 207, 378).",
       "descricaoApa": "A disseminação de sistemas de medição de desempenho docente baseados em inteligência artificial (FPMS) e a crescente sofisticação de métricas quantitativas de produtividade aprofundam a cultura de auditoria e a governamentalidade de mercado no ensino superior (Alakoum & Nica, 2025; Raaper & Olssen, 2015). Esse aparato gerencial tem deslocado a governança acadêmica tradicional, consolidando o poder executivo das administrações institucionais enquanto restringe a liberdade acadêmica e a autonomia pedagógica do corpo docente (Matei & Iwinska, 2018). Estudos empíricos demonstram que a imposição de ferramentas digitais e o monitoramento contínuo provocam intensificação do trabalho, perda de controle sobre o próprio ofício e aumento do estresse ocupacional entre professores universitários (Soomro et al., 2026). Ademais, a transposição acrítica de bases históricas para sistemas métricos corre o risco de automatizar vieses de homofilia e reprodução social que historicamente limitam a diversidade e a ascensão de perfis minorizados nas redes de reconhecimento acadêmico (Hartlep et al., 2017). A expansão desses sistemas projeta impactos sistêmicos de longo prazo para a carreira acadêmica, trazendo como riscos potenciais a desprofissionalização docente, a homogeneização curricular e o adoecimento, ao mesmo tempo em que desafia as instituições a construírem salvaguardas éticas contra a subordinação irrestrita da autonomia intelectual a metas operacionais de curto prazo (Alakoum & Nica, 2025; Raaper & Olssen, 2015; Soomro et al., 2026).",
-      "classificacao": "Sinal Fraco",
+      "classificacao": "Fato Portador de Futuro",
       "pestel": [
         "Social",
         "Tecnológico",
@@ -206,7 +206,7 @@ const sfData = {
       "titulo": "Emergência do Intelectual Público Digital e a Prática Acadêmica Aberta (Digital Scholarship)",
       "descricao": "O avanço da cultura participativa na internet e a crise de legitimidade da mediação científica tradicional impulsionam a emergência do 'intelectual público digital' (_digital scholarship_), caracterizado pela produção acadêmica aberta e pelo engajamento direto de docentes e pesquisadores na esfera pública digital (297). Em contraposição aos modelos convencionais de enclausuramento da pesquisa em periódicos fechados com barreiras comerciais de acesso, essa prática descentraliza a autoridade intelectual e utiliza redes sociais, mídias abertas e plataformas multimídia para democratizar o conhecimento, combater a desinformação e dialogar com públicos não acadêmicos (297). O fenômeno desponta como um sinal fraco de transformação no ofício acadêmico, instaurando o dilema do reconhecimento institucional: enquanto a sociedade demanda com urgência uma pedagogia pública e a tradução do saber para debates cívicos complexos, os sistemas vigentes de progressão na carreira docente e auditoria de produtividade permanecem atrelados a métricas tradicionais de indexação, ignorando o impacto social e a relevância territorial da atuação pública digital do professor (297).",
       "descricaoApa": "O avanço da cultura participativa na internet e a crise de legitimidade da mediação científica tradicional impulsionam a emergência do 'intelectual público digital' (_digital scholarship_), caracterizado pela produção acadêmica aberta e pelo engajamento direto de docentes e pesquisadores na esfera pública digital (Murphy & Costa, 2019). Em contraposição aos modelos convencionais de enclausuramento da pesquisa em periódicos fechados com barreiras comerciais de acesso, essa prática descentraliza a autoridade intelectual e utiliza redes sociais, mídias abertas e plataformas multimídia para democratizar o conhecimento, combater a desinformação e dialogar com públicos não acadêmicos (Murphy & Costa, 2019). O fenômeno desponta como um sinal fraco de transformação no ofício acadêmico, instaurando o dilema do reconhecimento institucional: enquanto a sociedade demanda com urgência uma pedagogia pública e a tradução do saber para debates cívicos complexos, os sistemas vigentes de progressão na carreira docente e auditoria de produtividade permanecem atrelados a métricas tradicionais de indexação, ignorando o impacto social e a relevância territorial da atuação pública digital do professor (Murphy & Costa, 2019).",
-      "classificacao": "Sinal Fraco",
+      "classificacao": "Fato Portador de Futuro",
       "pestel": [
         "Social",
         "Tecnológico"
@@ -276,7 +276,7 @@ const sfData = {
       "titulo": "Avaliação Autêntica Habilitada por IA (AAA) e Superação de Exames Memorísticos",
       "descricao": "A rápida difusão de assistentes de inteligência artificial generativa desafia a eficácia e a confiabilidade dos modelos tradicionais de avaliação somativa baseados em memorização e reprodução textual padronizada, ao mesmo tempo em que evidencia as limitações operacionais e a rejeição ética aos softwares de vigilância remota (proctoring) (263, 303). Esse cenário estimula o surgimento da Avaliação Autêntica Habilitada por IA (AAA - Authentic AI-Enabled Assessment), proposta emergente que busca reorientar a aferição da aprendizagem para o processo cognitivo de raciocínio, a resolução contextualizada de problemas reais e a defesa oral de projetos (63, 263). O modelo apoia-se na avaliação construtiva e na definição de padrões claros de proficiência, explorando o potencial da tecnologia para transformar a checagem pontual de conteúdo em ciclos dialógicos de feedback formativo (213, 280).",
       "descricaoApa": "A rápida difusão de assistentes de inteligência artificial generativa desafia a eficácia e a confiabilidade dos modelos tradicionais de avaliação somativa baseados em memorização e reprodução textual padronizada, ao mesmo tempo em que evidencia as limitações operacionais e a rejeição ética aos softwares de vigilância remota (proctoring) (Attiat, 2024; Gedera, 2026). Esse cenário estimula o surgimento da Avaliação Autêntica Habilitada por IA (AAA - Authentic AI-Enabled Assessment), proposta emergente que busca reorientar a aferição da aprendizagem para o processo cognitivo de raciocínio, a resolução contextualizada de problemas reais e a defesa oral de projetos (Gedera, 2026; Zhu et al., 2026). O modelo apoia-se na avaliação construtiva e na definição de padrões claros de proficiência, explorando o potencial da tecnologia para transformar a checagem pontual de conteúdo em ciclos dialógicos de feedback formativo (Aguayo-Hernández et al., 2025; Khatimin et al., 2015).",
-      "classificacao": "Sinal Fraco",
+      "classificacao": "Fato Portador de Futuro",
       "pestel": [
         "Tecnológico"
       ],
@@ -297,43 +297,6 @@ const sfData = {
       "statusRevisao": "OK",
       "statusLabel": "Revisada (OK)",
       "justificativa": "",
-      "fusaoId": "",
-      "divisaoIds": [],
-      "origemDivisao": "",
-      "vinculo": [],
-      "incorporadas": []
-    },
-    {
-      "id": "SF09",
-      "fonte": "Scopus",
-      "topico": "Modelos Pedagógicos, Aprendizagem Híbrida e EAD",
-      "titulo": "Modelos Híbridos Ativos, Sala de Aula Invertida 2.0 e Reconfiguração da Presencialidade Experiencial",
-      "descricao": "A saturação gerada pela transmissão síncrona expositiva remota e a consequente 'fadiga de telas' aceleraram a necessidade de ressignificar radicalmente o valor da presencialidade física nos campi universitários (22, 163). Emerge o modelo de Sala de Aula Invertida de Segunda Geração (Flipped Classroom 2.0), no qual a absorção prévia de conteúdos assíncronos é potencializada por trilhas digitais personalizadas, liberando o tempo do encontro presencial para dinâmicas colaborativas de alta densidade relacional, debates socráticos e dinâmicas interativas (social learning) (9, 255). Esse redesenho redefine a própria infraestrutura imobiliária das IES, impulsionando a superação do campus tradicional em favor de espaços ubíquos e adaptáveis de aprendizagem que integram seamless as dimensões física e digital (173, 183).",
-      "descricaoApa": "A saturação gerada pela transmissão síncrona expositiva remota e a consequente 'fadiga de telas' aceleraram a necessidade de ressignificar radicalmente o valor da presencialidade física nos campi universitários (22, 163). Emerge o modelo de Sala de Aula Invertida de Segunda Geração (Flipped Classroom 2.0), no qual a absorção prévia de conteúdos assíncronos é potencializada por trilhas digitais personalizadas, liberando o tempo do encontro presencial para dinâmicas colaborativas de alta densidade relacional, debates socráticos e dinâmicas interativas (social learning) (9, 255). Esse redesenho redefine a própria infraestrutura imobiliária das IES, impulsionando a superação do campus tradicional em favor de espaços ubíquos e adaptáveis de aprendizagem que integram seamless as dimensões física e digital (173, 183).",
-      "classificacao": "Tendência",
-      "pestel": [
-        "Social",
-        "Tecnológico",
-        "Econômico"
-      ],
-      "eixo": "3 - Dinâmicas Sociodemográficas",
-      "qtdArtigos": 6,
-      "artigosIds": [
-        9,
-        22,
-        163,
-        173,
-        183,
-        255
-      ],
-      "referenciasResumidas": "[9] Verma B.K. (2026) - Optimizing academic performance in hybrid learning via clustering-guided with data mining techniques in higher education system | [22] Namboodiri S. (2022) - Zoom-ing Past “the New Normal”? Understanding Students’ Engagement with Online Learning in Higher Education during the COVID-19 Pandemic | [163] Spence A. (2015) - Using interactive technology for lectures in higher education information technology | [173] Ashour S. (2021) - Post-pandemic Higher Education: Perspectives from University Leaders and Educational Experts in the United Arab Emirates | [183] Oginni Y. (2022) - Reimagining the Place of Physical Buildings in Higher Education in Developing Countries in a Post-COVID- 19 Era | ... (+1 artigos)",
-      "implicacoes": "O estudante não pagará deslocamento e mensalidade presencial para assistir a aulas que poderiam ser gravadas. As IES privadas precisam reformar prédios, eliminando fileiras de carteiras em favor de estúdios de cocriação, laboratórios de prototipagem e arenas de resolução de casos complexos.",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "descartada",
-      "statusRevisao": "Descartada",
-      "statusLabel": "Revisada (Descartada)",
-      "justificativa": "Não comunica SF (debate sobre metodologias de ensino)",
       "fusaoId": "",
       "divisaoIds": [],
       "origemDivisao": "",
@@ -368,42 +331,6 @@ const sfData = {
       "statusRevisao": "OK",
       "statusLabel": "Revisada (OK)",
       "justificativa": "",
-      "fusaoId": "",
-      "divisaoIds": [],
-      "origemDivisao": "",
-      "vinculo": [],
-      "incorporadas": []
-    },
-    {
-      "id": "SF11",
-      "fonte": "Scopus",
-      "topico": "Modelos Pedagógicos, Aprendizagem Híbrida e EAD",
-      "titulo": "Desconstrução da Temporalidade Linear Semestral e Plataformas LMS Preditivas Centradas no Estudante",
-      "descricao": "Questiona-se cada vez mais a rigidez do calendário acadêmico semestral uniforme ('life without clocks'), abrindo caminho para a desconstrução temporal do ensino superior em favor de trilhas formativas assíncronas, modulares e ajustadas ao ritmo individual de cada estudante (47, 327). Nesse movimento, os Ambientes Virtuais de Aprendizagem (LMS) deixam de atuar como meros repositórios passivos de arquivos em formato PDF para se consolidarem como ecossistemas dinâmicos, preditivos e orientados à experiência do usuário, integrando análise comportamental em tempo real e novos profissionais de mediação da informação para maximizar o engajamento e a conclusão das etapas de estudo (51, 86, 312).",
-      "descricaoApa": "Questiona-se cada vez mais a rigidez do calendário acadêmico semestral uniforme ('life without clocks'), abrindo caminho para a desconstrução temporal do ensino superior em favor de trilhas formativas assíncronas, modulares e ajustadas ao ritmo individual de cada estudante (47, 327). Nesse movimento, os Ambientes Virtuais de Aprendizagem (LMS) deixam de atuar como meros repositórios passivos de arquivos em formato PDF para se consolidarem como ecossistemas dinâmicos, preditivos e orientados à experiência do usuário, integrando análise comportamental em tempo real e novos profissionais de mediação da informação para maximizar o engajamento e a conclusão das etapas de estudo (51, 86, 312).",
-      "classificacao": "Incerteza",
-      "pestel": [
-        "Tecnológico",
-        "Social",
-        "Econômico"
-      ],
-      "eixo": "5 - Transformação Tecnológica",
-      "qtdArtigos": 5,
-      "artigosIds": [
-        47,
-        51,
-        86,
-        312,
-        327
-      ],
-      "referenciasResumidas": "[47] Géring Z. (2018) - Vision(s) of the university. Applying participatory backcasting to study the future of higher education | [51] Vassilakaki E. (2017) - New Trends in Higher Education: Can Information Professionals Rise to the Challenge? | [86] Padayachee I. (2022) - Factors Influencing Virtual Learning System Usage in Higher Education | [312] Veluvali P. (2022) - Learning Management System for Greater Learner Engagement in Higher Education—A Review | [327] Bradley L. (2026) - Life without Clocks: Experimental autoethnography for strange-ing time and queering futures, in and through Higher Education",
-      "implicacoes": "Desafiará os sistemas de gestão acadêmica e contratos semestrais, permitindo que alunos concluam disciplinas em tempos flexíveis (aceleração para talentos rápidos, desaceleração com tutoria adaptativa para alunos com déficits prévios), aumentando radicalmente o LTV e reduzindo a evasão por frustração.",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "descartada",
-      "statusRevisao": "Descartada",
-      "statusLabel": "Revisada (Descartada)",
-      "justificativa": "Não comunica SF",
       "fusaoId": "",
       "divisaoIds": [],
       "origemDivisao": "",
@@ -520,76 +447,6 @@ const sfData = {
       "incorporadas": []
     },
     {
-      "id": "SF15",
-      "fonte": "Scopus",
-      "topico": "Inteligência Artificial e Tecnologias Emergentes no Ensino",
-      "titulo": "Governança Multinível, Bioética Algorítmica e Human-Centered AI (HCAI) Explicável nas IES",
-      "descricao": "Diante dos perigos de opacidade decisória, alucinações factuais e reprodução de vieses discriminatórios, as instituições de ensino superior são pressionadas a transitar de uma fase de experimentação amadora e desregulada para a institucionalização de estruturas formais de governança ética de IA (224, 373). Essa postura envolve a implantação de políticas de conformidade alinhadas a frameworks internacionais como o INTEGRITY-AI e a adoção de sistemas de Inteligência Artificial Centrada no Ser Humano (HCAI) auditáveis e explicáveis (XAI) (283, 373). A formulação estratégica dessas diretrizes precisa endereçar tanto a proteção à privacidade dos dados quanto as graves barreiras de infraestrutura e assimetrias de poder presentes nos ecossistemas educacionais do Sul Global (142, 350).",
-      "descricaoApa": "Diante dos perigos de opacidade decisória, alucinações factuais e reprodução de vieses discriminatórios, as instituições de ensino superior são pressionadas a transitar de uma fase de experimentação amadora e desregulada para a institucionalização de estruturas formais de governança ética de IA (224, 373). Essa postura envolve a implantação de políticas de conformidade alinhadas a frameworks internacionais como o INTEGRITY-AI e a adoção de sistemas de Inteligência Artificial Centrada no Ser Humano (HCAI) auditáveis e explicáveis (XAI) (283, 373). A formulação estratégica dessas diretrizes precisa endereçar tanto a proteção à privacidade dos dados quanto as graves barreiras de infraestrutura e assimetrias de poder presentes nos ecossistemas educacionais do Sul Global (142, 350).",
-      "classificacao": "Tendência",
-      "pestel": [
-        "Tecnológico",
-        "Legal",
-        "Político"
-      ],
-      "eixo": "5 - Transformação Tecnológica",
-      "qtdArtigos": 5,
-      "artigosIds": [
-        142,
-        224,
-        283,
-        350,
-        373
-      ],
-      "referenciasResumidas": "[142] Mehdian N. (2025) - AI-Powered Educational System: Challenges for Higher Education in Emerging Economies: Baseline Research | [224] AbouElgheit E. (2026) - Responsible generative AI enablement for learning futures in higher education: a qualitative integrative review and bounded institutional illustration | [283] Tawara A.A. (2025) - Systematic Review and Comprehensive Analysis of Integrating Human-Centered AI in Higher Education: Enhancing Teaching, Learning, and Ethics | [350] Berisha Qehaja A. (2025) - Strategic integration of artificial intelligence solutions to transform teaching practices in higher education | [373] Chan M.A.M. (2026) - INTEGRITY-AI: Integrating Ethical AI Governance for Responsibility, Innovation, and Transparency in Higher Education",
-      "implicacoes": "Exige que os grupos educacionais criem Comitês Permanentes de Governança de IA e Ética de Dados, mitigando riscos regulatórios perante a LGPD e o futuro Marco Legal da IA no Brasil, e garantindo que decisões acadêmicas automatizadas sejam explicáveis e transparentes.",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "descartada",
-      "statusRevisao": "Descartada",
-      "statusLabel": "Revisada (Descartada)",
-      "justificativa": "Não comunica SF",
-      "fusaoId": "",
-      "divisaoIds": [],
-      "origemDivisao": "",
-      "vinculo": [],
-      "incorporadas": []
-    },
-    {
-      "id": "SF16",
-      "fonte": "Scopus",
-      "topico": "Inteligência Artificial e Tecnologias Emergentes no Ensino",
-      "titulo": "Tecnologias Emergentes de Infraestrutura: Blockchain para Registros e Microcredenciais Descentralizadas e Ambientes Virtuais de Baixo Custo",
-      "descricao": "A busca por segurança cibernética, soberania de dados do estudante e interoperabilidade global impulsiona a exploração de tecnologias de registro distribuído (blockchain) e contratos inteligentes na autenticação inviolável de históricos, diplomas e microcredenciais universitárias (219, 304). Paralelamente, após expectativas exageradas sobre o metaverso imersivo, as instituições refinam suas estratégias tecnológicas, priorizando a adoção seletiva e pragmática de soluções de realidade virtual acessíveis e orientadas a casos pedagógicos de alto risco ou inviabilidade física (195), sinalizando que a inovação tecnológica no ensino superior dependerá cada vez mais da sustentabilidade financeira e da eficácia didática comprovada.",
-      "descricaoApa": "A busca por segurança cibernética, soberania de dados do estudante e interoperabilidade global impulsiona a exploração de tecnologias de registro distribuído (blockchain) e contratos inteligentes na autenticação inviolável de históricos, diplomas e microcredenciais universitárias (219, 304). Paralelamente, após expectativas exageradas sobre o metaverso imersivo, as instituições refinam suas estratégias tecnológicas, priorizando a adoção seletiva e pragmática de soluções de realidade virtual acessíveis e orientadas a casos pedagógicos de alto risco ou inviabilidade física (195), sinalizando que a inovação tecnológica no ensino superior dependerá cada vez mais da sustentabilidade financeira e da eficácia didática comprovada.",
-      "classificacao": "Incerteza",
-      "pestel": [
-        "Tecnológico",
-        "Legal",
-        "Econômico"
-      ],
-      "eixo": "5 - Transformação Tecnológica",
-      "qtdArtigos": 3,
-      "artigosIds": [
-        195,
-        219,
-        304
-      ],
-      "referenciasResumidas": "[195] Gautama A. (2024) - Metaverse Adoption in Higher Education Institutions (HEIs): A Systematic Literature Review | [219] Kistaubayev Y. (2023) - Ethereum-Based Information System for Digital Higher Education Registry and Verification of Student Achievement Documents | [304] Daniela L. (2018) - How to Predict the Unpredictable: Technology-enhanced Learning and Learning Innovations in Higher Education",
-      "implicacoes": "Redução drástica de fraudes em diplomas e desintermediação do processo de validação acadêmica entre universidades e empresas via registros descentralizados, barateando custos operacionais de secretaria e emitindo credenciais verificáveis instantaneamente.",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "descartada",
-      "statusRevisao": "Descartada",
-      "statusLabel": "Revisada (Descartada)",
-      "justificativa": "Não comunica SF",
-      "fusaoId": "",
-      "divisaoIds": [],
-      "origemDivisao": "",
-      "vinculo": [],
-      "incorporadas": []
-    },
-    {
       "id": "SF17",
       "fonte": "Scopus",
       "topico": "Empregabilidade, Futuro do Trabalho e Novas Competências",
@@ -694,116 +551,6 @@ const sfData = {
       "incorporadas": []
     },
     {
-      "id": "SF20",
-      "fonte": "Scopus",
-      "topico": "Empregabilidade, Futuro do Trabalho e Novas Competências",
-      "titulo": "Alfabetização em Futuros (Futures Literacy) e Foresight Participativo como Competências Profissionais Essenciais",
-      "descricao": "Em um ambiente global de hipercomplexidade, volatilidade geopolítica e rupturas tecnológicas disruptivas, o planejamento linear tradicional torna-se inoperante, demandando a capacitação intencional de estudantes e gestores em alfabetização em futuros (Futures Literacy) e métodos participativos de foresight (111, 138). Essa capacidade de antecipar múltiplos cenários plausíveis, interpretar sinais fracos e tomar decisões estratégicas informadas pela incerteza desponta como uma das metacompetências mais distintivas e valorizadas para as lideranças das próximas décadas (138, 380).",
-      "descricaoApa": "Em um ambiente global de hipercomplexidade, volatilidade geopolítica e rupturas tecnológicas disruptivas, o planejamento linear tradicional torna-se inoperante, demandando a capacitação intencional de estudantes e gestores em alfabetização em futuros (Futures Literacy) e métodos participativos de foresight (111, 138). Essa capacidade de antecipar múltiplos cenários plausíveis, interpretar sinais fracos e tomar decisões estratégicas informadas pela incerteza desponta como uma das metacompetências mais distintivas e valorizadas para as lideranças das próximas décadas (138, 380).",
-      "classificacao": "Sinal Fraco",
-      "pestel": [
-        "Social",
-        "Econômico",
-        "Tecnológico"
-      ],
-      "eixo": "3 - Dinâmicas Sociodemográficas",
-      "qtdArtigos": 3,
-      "artigosIds": [
-        111,
-        138,
-        380
-      ],
-      "referenciasResumidas": "[111] Kazemier E.M. (2021) - Mastering futures literacy in higher education: An evaluation of learning outcomes and instructional design of a faculty development program | [138] Gáspár J. (2021) - Future in the Present: Participatory Futures Research Methods in Economic Higher Education – The Development of Future Competencies | [380] Hammershøj L.G. (2019) - The perfect storm scenario for the university: Diagnosing converging tendencies in higher education",
-      "implicacoes": "Incorporação de disciplinas transversais de estudos do futuro e cenarização estratégica em cursos de graduação e pós-graduação executiva, posicionando os estudantes como tomadores de decisão resilientes e visionários no ambiente de negócios brasileiro.",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "descartada",
-      "statusRevisao": "Descartada",
-      "statusLabel": "Revisada (Descartada)",
-      "justificativa": "Não comunica SF",
-      "fusaoId": "",
-      "divisaoIds": [],
-      "origemDivisao": "",
-      "vinculo": [],
-      "incorporadas": []
-    },
-    {
-      "id": "SF21",
-      "fonte": "Scopus",
-      "topico": "Equidade, Inclusão Social e Acesso",
-      "titulo": "O Aluno-Trabalhador e as Barreiras Estruturais de Permanência das Classes Populares: Mitigação do Abandono e Repensar da Jornada Acadêmica",
-      "descricao": "A massificação do ensino superior sem a necessária reestruturação socioeconômica revelou o fenômeno da 'reestratificação acadêmica', na qual jovens e adultos de baixa renda têm acesso frágil à universidade, mas enfrentam barreiras severas para concluir seus cursos (24, 36, 212). O perfil do estudante contemporâneo é predominantemente marcado pelo aluno-trabalhador, que concilia rotinas laborais extenuantes com o estudo e sofre com o acúmulo de desvantagens estruturais e a precariedade digital (55, 306). Esse contingente — que inclui um contingente crescente de adultos em transição de meia-idade (79) — exige que as IES abandonem designs institucionais engessados e adotem métricas contextuais de apoio, horários altamente flexíveis e programas robustos de suporte socioacadêmico voltados ao combate sistemático da evasão (279, 372).",
-      "descricaoApa": "A massificação do ensino superior sem a necessária reestruturação socioeconômica revelou o fenômeno da 'reestratificação acadêmica', na qual jovens e adultos de baixa renda têm acesso frágil à universidade, mas enfrentam barreiras severas para concluir seus cursos (24, 36, 212). O perfil do estudante contemporâneo é predominantemente marcado pelo aluno-trabalhador, que concilia rotinas laborais extenuantes com o estudo e sofre com o acúmulo de desvantagens estruturais e a precariedade digital (55, 306). Esse contingente — que inclui um contingente crescente de adultos em transição de meia-idade (79) — exige que as IES abandonem designs institucionais engessados e adotem métricas contextuais de apoio, horários altamente flexíveis e programas robustos de suporte socioacadêmico voltados ao combate sistemático da evasão (279, 372).",
-      "classificacao": "Fato predeterminado",
-      "pestel": [
-        "Social",
-        "Econômico",
-        "Político"
-      ],
-      "eixo": "3 - Dinâmicas Sociodemográficas",
-      "qtdArtigos": 8,
-      "artigosIds": [
-        24,
-        36,
-        55,
-        79,
-        212,
-        279,
-        306,
-        372
-      ],
-      "referenciasResumidas": "[24] Kazis R. (2020) - Inequities in US Higher Education Access and Success: Obstacles and Opportunities for Marginal Populations | [36] Soudien C. (2020) - Continuing Inequalities in South African Higher Education: The Changing Complexities of Race and Class | [55] Macheka M.T. (2022) - Emergency Remote Instruction (ERI) in Times of COVID-19 Pandemic: Experiences of Educators at Zimbabwean Higher Education Institutions | [79] Chadwick A. (2022) - Higher Education as an Additional Mid-Life Transition: Motivations and Challenges of Older Female Students | [212] Navani M.T. (2020) - Transition to HE and Equitable Learning Outcomes: Challenges for Indian Higher Education | ... (+3 artigos)",
-      "implicacoes": "No Brasil, a sustentabilidade da Cruzeiro do Sul e de seus concorrentes dependerá da capacidade de atender com excelência o aluno de classes C e D que trabalha durante o dia. Exige modelos curriculares noturnos e híbridos assíncronos que não punam ausências com reprovação automática por faltas, mas apoiem a progressão por proficiência comprovada.",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "descartada",
-      "statusRevisao": "Descartada",
-      "statusLabel": "Revisada (Descartada)",
-      "justificativa": "Não comunica SF",
-      "fusaoId": "",
-      "divisaoIds": [],
-      "origemDivisao": "",
-      "vinculo": [],
-      "incorporadas": []
-    },
-    {
-      "id": "SF22",
-      "fonte": "Scopus",
-      "topico": "Equidade, Inclusão Social e Acesso",
-      "titulo": "Georreferenciamento de Desertos e Oásis Educacionais: Expansão Territorial Focalizada e Interiorização do Acesso",
-      "descricao": "Análises geoespaciais evidenciam disparidades gritantes na distribuição territorial de oportunidades no ensino superior, identificando vastos 'desertos educacionais' desprovidos de alternativas de formação de qualidade lado a lado com 'oásis' de alta concentração institucional (3). Esse diagnóstico demanda a transição de estratégias expansionistas predatórias para políticas de expansão geográfica socialmente referenciadas e orientadas por dados, amparadas em culturas ativas de extensão e atração comunitária (outreach) que levem polos híbridos e campi descentralizados a regiões historicamente desassistidas (87, 379). Essa reorganização do mapa educacional dialoga diretamente com os mecanismos regulatórios e as políticas sistêmicas de admissão adotadas para reduzir abismos territoriais (262).",
-      "descricaoApa": "Investigações empíricas internacionais revelam que o território físico exerce um papel condicionante decisivo nas oportunidades de acesso ao ensino superior, evidenciando a persistência de assimetrias espaciais caracterizadas pela coexistência de \"oásis educacionais\" (zonas metropolitanas com hiperconcentração e saturação institucional) e extensos \"desertos educacionais\", áreas desprovidas de alternativas formativas presenciais de qualidade (Ram et al., 2022). Evidências oriundas de sistemas educacionais emergentes e desenvolvidos (como Índia e Europa) documentam que a simples expansão desregulada ou o acesso puramente remoto não eliminam por si sós essas disparidades geográficas, demandando estratégias ativas de atração comunitária (*outreach*) e desenhos institucionais contextualizados para mitigar o isolamento regional (Ram et al., 2022; Stewart et al., 2024). Esse fenômeno global oferece uma referência para o contexto brasileiro: sinaliza a exaustão dos modelos focados na disputa predatória de praças metropolitanas saturadas e aponta para a inevitabilidade de políticas de interiorização que enfrentem os vazios educacionais existentes em cidades de menor porte e regiões distantes dos grandes eixos econômicos (Haj et al., 2018; Salmi, 2018).",
-      "classificacao": "Tendência",
-      "pestel": [
-        "Social",
-        "Econômico",
-        "Político"
-      ],
-      "eixo": "3 - Dinâmicas Sociodemográficas",
-      "qtdArtigos": 4,
-      "artigosIds": [
-        3,
-        87,
-        262,
-        379
-      ],
-      "referenciasResumidas": "[3] Ram M.P. (2022) - Deserts and Oases: Geospatial Analytics of Higher Education Access | [87] Salmi J. (2018) - Social Dimension Within a Quality Oriented Higher Education System | [262] Haj C.M. (2018) - A Typology of Admission Systems Across Europe and Their Impact on the Equity of Access, Progression and Completion in Higher Education | [379] Stewart A. (2024) - Building an outreach culture for fairer access to higher education in Haryana, India: A ‘bottom up’ contribution to policy implementation",
-      "implicacoes": "O crescimento futuro das IES não virá da saturação das capitais do Sudeste, mas da interiorização inteligente via polos multisserviços em cidades médias do Centro-Oeste, Norte e Nordeste, articulados com governos locais para formar mão de obra indispensável ao agronegócio e serviços essenciais.",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "mesclada",
-      "statusRevisao": "Fundida",
-      "statusLabel": "Revisada (Mesclada: SFS02)",
-      "justificativa": "Assunto muito próximo",
-      "fusaoId": "SFS02",
-      "divisaoIds": [],
-      "origemDivisao": "",
-      "vinculo": [
-        "SFS02"
-      ],
-      "incorporadas": []
-    },
-    {
       "id": "SF23",
       "fonte": "Scopus",
       "topico": "Equidade, Inclusão Social e Acesso",
@@ -879,54 +626,6 @@ const sfData = {
       "incorporadas": []
     },
     {
-      "id": "SF25",
-      "fonte": "Scopus",
-      "topico": "Equidade, Inclusão Social e Acesso",
-      "titulo": "Ações Afirmativas Estruturadas, Equidade de Gênero (STEM) e Desmantelamento do 'Diversity Washing'",
-      "descricao": "Consolida-se uma crítica profunda aos discursos corporativos superficiais de diversidade que utilizam o pertencimento identitário como mera estratégia de relações públicas (diversity washing), demandando políticas estruturais autênticas de reparação e redistribuição (140, 172). Esse imperativo se materializa na consolidação de ações afirmativas rigorosas e contra-espaços institucionais que asseguram não apenas o ingresso, mas a retenção de mulheres em carreiras de ciências exatas, tecnologia e engenharias (STEM), onde a sub-representação histórica e o teto de vidro acadêmico persistem (61, 130, 365). O movimento abrange ainda o desmantelamento de racismos institucionais e a criação de pedagogias culturalmente referenciadas para povos indígenas e comunidades hipervulnerabilizadas (1, 5, 60, 196, 217, 228).",
-      "descricaoApa": "Consolida-se uma crítica profunda aos discursos corporativos superficiais de diversidade que utilizam o pertencimento identitário como mera estratégia de relações públicas (diversity washing), demandando políticas estruturais autênticas de reparação e redistribuição (140, 172). Esse imperativo se materializa na consolidação de ações afirmativas rigorosas e contra-espaços institucionais que asseguram não apenas o ingresso, mas a retenção de mulheres em carreiras de ciências exatas, tecnologia e engenharias (STEM), onde a sub-representação histórica e o teto de vidro acadêmico persistem (61, 130, 365). O movimento abrange ainda o desmantelamento de racismos institucionais e a criação de pedagogias culturalmente referenciadas para povos indígenas e comunidades hipervulnerabilizadas (1, 5, 60, 196, 217, 228).",
-      "classificacao": "Tendência",
-      "pestel": [
-        "Social",
-        "Político",
-        "Econômico"
-      ],
-      "eixo": "3 - Dinâmicas Sociodemográficas",
-      "qtdArtigos": 11,
-      "artigosIds": [
-        1,
-        5,
-        60,
-        61,
-        130,
-        140,
-        172,
-        196,
-        217,
-        228,
-        365
-      ],
-      "referenciasResumidas": "[1] Villegas P.E. (2020) - ‘Now I Constantly Challenge Society by Bringing My Existence Forward’: Creating Counter-Spaces/Stories with Sanctuary Students Transitioning to Higher Education in Toronto | [5] Garland J.L. (2020) - Exploring Place: Indigenous Students in US Higher Education | [60] Ljosland R. (2022) - Scots and Nynorsk: A Comparison of Two Language Movements' Struggle for Recognition in Higher Education | [61] Aiston S.J. (2017) - ''Absent data, absent women'': Gender and higher education leadership | [130] Link R. (2023) - The voice of women in higher education: Current perspectives of students in Germany, Japan and Taiwan. A contrastive analysis of western and eastern perceptions of women empowerment and gender roles among students | ... (+6 artigos)",
-      "implicacoes": "A atratividade de marcas educacionais para as novas gerações (Gen Z e Alfa) dependerá de métricas auditáveis de diversidade real: paridade de gênero na docência superior, liderança feminina em cursos tecnológicos e programas de bolsas afirmativas com mentoria de empregabilidade.",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "dividida",
-      "statusRevisao": "Dividida",
-      "statusLabel": "Revisada (Dividida: SF25a, SF25b)",
-      "justificativa": "Continha duas SF distintas",
-      "fusaoId": "",
-      "divisaoIds": [
-        "SF25a",
-        "SF25b"
-      ],
-      "origemDivisao": "",
-      "vinculo": [
-        "SF25a",
-        "SF25b"
-      ],
-      "incorporadas": []
-    },
-    {
       "id": "SF25a",
       "fonte": "Scopus",
       "topico": "Equidade, Inclusão Social e Acesso",
@@ -959,7 +658,7 @@ const sfData = {
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
-      "origemDivisao": "SF25",
+      "origemDivisao": "",
       "vinculo": [
         "SF25"
       ],
@@ -998,7 +697,7 @@ const sfData = {
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
-      "origemDivisao": "SF25",
+      "origemDivisao": "",
       "vinculo": [
         "SF25"
       ],
@@ -1049,7 +748,7 @@ const sfData = {
       "titulo": "Isomorfismo Regulatório, Rankings Globais e a Pressão Coercitiva sobre a Identidade Institucional",
       "descricao": "Estudos empíricos internacionais comprovam que a onipresença dos rankings universitários e ferramentas públicas de transparência atua como um potente vetor de isomorfismo institucional mimético e normativo no ensino superior (64, 284, 362). Ao padronizarem métricas globais de prestígio balizadas quase exclusivamente no modelo de universidades de pesquisa de elite (research-intensive universities), essas classificações compelem instituições com missões vocacionais, docentes ou comunitárias a adotarem comportamentos miméticos para obter legitimidade perante o mercado e órgãos reguladores (64, 284). Esse alinhamento forçado induz à canalização de recursos expressivos para a produção de artigos acadêmicos e conformidade a índices bibliométricos restritos, drenando investimentos que poderiam ser aplicados na inovação do ensino de graduação, no suporte discente e na resolução de demandas econômicas regionais imediatas (329, 362). Como achado empírico recorrente, a literatura atesta que a corrida por rankings corrói a singularidade institucional, restringindo a autonomia acadêmica necessária para desenvolver modelos pedagógicos e profissionais aderentes aos desafios da Quarta Revolução Industrial (308).",
       "descricaoApa": "Estudos empíricos internacionais comprovam que a onipresença dos rankings universitários e ferramentas públicas de transparência atua como um potente vetor de isomorfismo institucional mimético e normativo no ensino superior (Hoang & Nguyen, 2026; Kováts, 2015; Morris, 2018). Ao padronizarem métricas globais de prestígio balizadas quase exclusivamente no modelo de universidades de pesquisa de elite (research-intensive universities), essas classificações compelem instituições com missões vocacionais, docentes ou comunitárias a adotarem comportamentos miméticos para obter legitimidade perante o mercado e órgãos reguladores (Hoang & Nguyen, 2026; Kováts, 2015). Esse alinhamento forçado induz à canalização de recursos expressivos para a produção de artigos acadêmicos e conformidade a índices bibliométricos restritos, drenando investimentos que poderiam ser aplicados na inovação do ensino de graduação, no suporte discente e na resolução de demandas econômicas regionais imediatas (Morris, 2018; Ratanawijitrasin, 2015). Como achado empírico recorrente, a literatura atesta que a corrida por rankings corrói a singularidade institucional, restringindo a autonomia acadêmica necessária para desenvolver modelos pedagógicos e profissionais aderentes aos desafios da Quarta Revolução Industrial (Paul & Rena, 2025).",
-      "classificacao": "Achado Empírico",
+      "classificacao": "Fato Portador de Futuro",
       "pestel": [
         "Político",
         "Econômico",
@@ -1164,7 +863,7 @@ const sfData = {
       "titulo": "Erosão da Confiança Social no Ensino Superior - Ceticismo das Novas Gerações e Exigência de Transparência",
       "descricao": "Pesquisas internacionais indicam uma crise generalizada de confiança da sociedade nas instituições de ensino superior, provocada pela perda do caráter de bem público gratuito e pela proliferação de escândalos de integridade acadêmica, como venda de diplomas, plágio e facilitação de notas (192, 272, 276). Por se tratar de um serviço cujo valor real não pode ser testado pelo estudante antes da compra, a sobrevivência de uma instituição universitária depende inteiramente de sua reputação e da credibilidade pública de seus títulos (369). Quando essa confiança é abalada, o impacto atinge em cheio as novas gerações: os jovens e suas famílias passam a se comportar como consumidores céticos, questionando abertamente se o tempo e as mensalidades dedicados a uma graduação tradicional de quatro ou cinco anos realmente garantem retorno financeiro e empregabilidade condizente (276, 369). Caso percebam que o diploma não assegura ascensão social, o interesse pela faculdade desaba, estimulando a fuga para cursos rápidos de qualificação, plataformas digitais, ensino a distância de baixo custo ou a entrada precoce no mercado informal (369). Para tentar frear essa perda de alunos e a intervenção punitiva de órgãos governamentais (181), as universidades são forçadas a adotar uma transparência radical de resultados, abrindo dados públicos de salários de seus formandos, instituindo canais rígidos de combate a fraudes e compartilhando suas decisões com estudantes e com a comunidade para reconstruir sua autoridade social (40, 45, 57, 236, 275).",
       "descricaoApa": "Pesquisas internacionais indicam uma crise generalizada de confiança da sociedade nas instituições de ensino superior, provocada pela perda do caráter de bem público gratuito e pela proliferação de escândalos de integridade acadêmica, como venda de diplomas, plágio e facilitação de notas (Denisova-Schmidt, 2018; Eriksson & Frisk, 2022; Hoang et al., 2026). Por se tratar de um serviço cujo valor real não pode ser testado pelo estudante antes da compra, a sobrevivência de uma instituição universitária depende inteiramente de sua reputação e da credibilidade pública de seus títulos (Jongbloed et al., 2018). Quando essa confiança é abalada, o impacto atinge em cheio as novas gerações: os jovens e suas famílias passam a se comportar como consumidores céticos, questionando abertamente se o tempo e as mensalidades dedicados a uma graduação tradicional de quatro ou cinco anos realmente garantem retorno financeiro e empregabilidade condizente (Hoang et al., 2026; Jongbloed et al., 2018). Caso percebam que o diploma não assegura ascensão social, o interesse pela faculdade desaba, estimulando a fuga para cursos rápidos de qualificação, plataformas digitais, ensino a distância de baixo custo ou a entrada precoce no mercado informal (Jongbloed et al., 2018). Para tentar frear essa perda de alunos e a intervenção punitiva de órgãos governamentais (Kováts, 2018), as universidades são forçadas a adotar uma transparência radical de resultados, abrindo dados públicos de salários de seus formandos, instituindo canais rígidos de combate a fraudes e compartilhando suas decisões com estudantes e com a comunidade para reconstruir sua autoridade social (Al-Qaimari, 2021; Hasanin et al., 2026; Huang, 2018; Logermann & Leišyte, 2015; Vukasovic et al., 2018).",
-      "classificacao": "Achado Empírico",
+      "classificacao": "Fato Portador de Futuro",
       "pestel": [
         "Social",
         "Político",
@@ -1200,49 +899,6 @@ const sfData = {
       "incorporadas": []
     },
     {
-      "id": "SF31",
-      "fonte": "Scopus",
-      "topico": "Financiamento, Mercantilização e Modelos de Negócio",
-      "titulo": "O Trilema da Massificação: Expansão de Vagas, Sustentabilidade Econômica e Erosão da Qualidade pelo Preço (Guerra de Preços)",
-      "descricao": "Sistemas de ensino superior massificados sem financiamento público estrutural enfrentam o agudo 'trilema da massificação': a impossibilidade matemática de conciliar expansão irrestrita de matrículas, mensalidades ultrabaixas e alta qualidade formativa sem gerar colapso econômico ou precarização pedagógica (23, 270). A corrida predatória por volume resulta em guerras desmedidas de preços que corroem a receita média por aluno (ticket médio) e a elasticidade de disposição a pagar dos estudantes (101, 129). Essa vulnerabilidade é agravada pelo 'inverno demográfico' decorrente da queda sustentada da taxa de natalidade, ameaçando a viabilidade de conglomerados que dependem exclusivamente da captação em massa de jovens para cursos convencionais de graduação (109, 161, 233).",
-      "descricaoApa": "Sistemas de ensino superior massificados sem financiamento público estrutural enfrentam o agudo 'trilema da massificação': a impossibilidade matemática de conciliar expansão irrestrita de matrículas, mensalidades ultrabaixas e alta qualidade formativa sem gerar colapso econômico ou precarização pedagógica (23, 270). A corrida predatória por volume resulta em guerras desmedidas de preços que corroem a receita média por aluno (ticket médio) e a elasticidade de disposição a pagar dos estudantes (101, 129). Essa vulnerabilidade é agravada pelo 'inverno demográfico' decorrente da queda sustentada da taxa de natalidade, ameaçando a viabilidade de conglomerados que dependem exclusivamente da captação em massa de jovens para cursos convencionais de graduação (109, 161, 233).",
-      "classificacao": "Tendência",
-      "pestel": [
-        "Econômico",
-        "Social"
-      ],
-      "eixo": "4 - Economia e Mercado de Trabalho",
-      "qtdArtigos": 7,
-      "artigosIds": [
-        23,
-        101,
-        109,
-        129,
-        161,
-        233,
-        270
-      ],
-      "referenciasResumidas": "[23] Santhi M. (2021) - Challenges and Prospects of Higher Education in India | [101] Le T.T. (2022) - Investigating Vietnamese undergraduate students’ willingness to pay for higher education under the cost-sharing context | [109] Chattopadhyay A. (2022) - Fireside Chat with Three Vice Chancellors from Three Continents: Re-imagining Higher Education in Emerging Economies | [129] Ahmed S. (2022) - Exploring faculty perception on the COVID-19 imposed shift in higher education of Bangladesh: A neoliberal analysis | [161] Santa R. (2018) - The Future of European Higher Education in an Age of Demographic Headwinds: The Impact of Demographic Decline on Higher Education System Structures Funding in Romania Poland Russia | ... (+2 artigos)",
-      "implicacoes": "Fim da viabilidade econômica da estratégia de 'volume a qualquer custo' no Brasil. Com a estabilização e declínio da população jovem de 18 a 24 anos até 2040, as IES privadas que competirem apenas por guerra de preços entrarão em processo de consolidação forçada, falência ou aquisição hostil.",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "dividida",
-      "statusRevisao": "Dividida",
-      "statusLabel": "Revisada (Dividida: SF31a, SF31b)",
-      "justificativa": "Continha duas SF distintas",
-      "fusaoId": "",
-      "divisaoIds": [
-        "SF31a",
-        "SF31b"
-      ],
-      "origemDivisao": "",
-      "vinculo": [
-        "SF31a",
-        "SF31b"
-      ],
-      "incorporadas": []
-    },
-    {
       "id": "SF31a",
       "fonte": "Scopus",
       "topico": "Financiamento, Mercantilização e Modelos de Negócio",
@@ -1271,7 +927,7 @@ const sfData = {
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
-      "origemDivisao": "SF31",
+      "origemDivisao": "",
       "vinculo": [
         "SF31"
       ],
@@ -1310,47 +966,10 @@ const sfData = {
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
-      "origemDivisao": "SF31",
+      "origemDivisao": "",
       "vinculo": [
         "SF31"
       ],
-      "incorporadas": []
-    },
-    {
-      "id": "SF32",
-      "fonte": "Scopus",
-      "topico": "Financiamento, Mercantilização e Modelos de Negócio",
-      "titulo": "Contratos de Financiamento por Desempenho (Performance Agreements), Financiamento Estudantil Condicionado e Novos Mecanismos de Retorno (ISA / PFS)",
-      "descricao": "Modelos históricos de subsídios estatais irrestritos ou financiamento estudantil a fundo perdido dão lugar a regimes rigorosos de financiamento baseado em desempenho (performance-based funding e performance agreements), nos quais o repasse de recursos fica condicionado a métricas auditadas de retenção e inserção profissional dos diplomados (25, 72, 323, 375). No âmbito discente, o peso crescente do endividamento e a instabilidade no pagamento de anuidades impulsionam a transição para contratos de compartilhamento de custos (cost-sharing) e instrumentos alternativos de pagamento contingente à renda, tais como Acordos de Compartilhamento de Renda (ISA) e Financiamento por Sucesso Social (PFS) (4, 242).",
-      "descricaoApa": "Modelos históricos de subsídios estatais irrestritos ou financiamento estudantil a fundo perdido dão lugar a regimes rigorosos de financiamento baseado em desempenho (performance-based funding e performance agreements), nos quais o repasse de recursos fica condicionado a métricas auditadas de retenção e inserção profissional dos diplomados (25, 72, 323, 375). No âmbito discente, o peso crescente do endividamento e a instabilidade no pagamento de anuidades impulsionam a transição para contratos de compartilhamento de custos (cost-sharing) e instrumentos alternativos de pagamento contingente à renda, tais como Acordos de Compartilhamento de Renda (ISA) e Financiamento por Sucesso Social (PFS) (4, 242).",
-      "classificacao": "Tendência",
-      "pestel": [
-        "Econômico",
-        "Político",
-        "Legal"
-      ],
-      "eixo": "4 - Economia e Mercado de Trabalho",
-      "qtdArtigos": 6,
-      "artigosIds": [
-        4,
-        25,
-        72,
-        242,
-        323,
-        375
-      ],
-      "referenciasResumidas": "[4] Kanaan T.H. (2018) - The political economy of higher education in Jordan: Cost-sharing revisited | [25] Matei L. (2018) - Governance and Funding of Universities in the European Higher Education Area: Times of Rupture | [72] Weingarten H.P. (2018) - Performance of the Ontario (Canada) Higher-education System: Measuring Only What Matters | [242] Kaša R. (2022) - Juggling the Costs of Higher Education Abroad: Voices of International Students from Latvia | [323] Jongbloed B. (2018) - Performance Agreements in Higher Education: A New Approach to Higher Education Funding | ... (+1 artigos)",
-      "implicacoes": "Reconfiguração dos programas estatais (ex.: FIES e PROUNI) vinculando a remuneração das mantenedoras à taxa de formandos empregados em suas respectivas áreas de formação, popularizando modelos de financiamento privado de ISA geridos em parceria com fintechs.",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "descartada",
-      "statusRevisao": "Descartada",
-      "statusLabel": "Revisada (Descartada)",
-      "justificativa": "A SF não se aplica ao contexto brasileiro",
-      "fusaoId": "",
-      "divisaoIds": [],
-      "origemDivisao": "",
-      "vinculo": [],
       "incorporadas": []
     },
     {
@@ -1495,79 +1114,6 @@ const sfData = {
       "incorporadas": []
     },
     {
-      "id": "SF37",
-      "fonte": "Scopus",
-      "topico": "Gestão Institucional, Análise de Dados e Inteligência Operacional",
-      "titulo": "Institucionalização do Foresight Estratégico Contínuo, Cenarização Departamental e Taxonomia de Transformação Digital",
-      "descricao": "Diante de cenários de volatilidade e choques exógenos frequentes, as abordagens lineares e retrospectivas de planejamento estratégico esgotam-se, ensejando a institucionalização do foresight tecnológico e de métodos participativos de cenarização como capacidades dinâmicas permanentes nas IES (154, 351, 358). Esse esforço de antecipação contínua articula-se a frameworks estruturados de maturidade digital, como a taxonomia multidimensional DTS-6D, que orienta lideranças executivas e conselhos na coordenação holística de pessoas, processos e tecnologias com foco na sustentabilidade de longo prazo (120, 326, 355).",
-      "descricaoApa": "Diante de cenários de volatilidade e choques exógenos frequentes, as abordagens lineares e retrospectivas de planejamento estratégico esgotam-se, ensejando a institucionalização do foresight tecnológico e de métodos participativos de cenarização como capacidades dinâmicas permanentes nas IES (154, 351, 358). Esse esforço de antecipação contínua articula-se a frameworks estruturados de maturidade digital, como a taxonomia multidimensional DTS-6D, que orienta lideranças executivas e conselhos na coordenação holística de pessoas, processos e tecnologias com foco na sustentabilidade de longo prazo (120, 326, 355).",
-      "classificacao": "Tendência",
-      "pestel": [
-        "Tecnológico",
-        "Político Econômico"
-      ],
-      "eixo": "5 - Transformação Tecnológica",
-      "qtdArtigos": 6,
-      "artigosIds": [
-        120,
-        154,
-        326,
-        351,
-        355,
-        358
-      ],
-      "referenciasResumidas": "[120] Hoseini Moghadam M. (2020) - Scientific excellency model in Iran’s higher education case study: Guilan university of medical sciences | [154] Blankesteijn M.L. (2025) - Embracing the digital horizon: Future scenarios for the Dutch higher education system | [326] Ithnin F. (2018) - Mapping the futures of Malaysian Higher Education: A meta - analysis of futures studies in the Malaysian Higher Education scenario | [351] Ayman M. (2021) - TECHNOLOGY FORESIGHT IN HIGHER EDUCATION INSTITUTIONS | [355] Obaid A.M.H. (2026) - DTS-6D as a Policy and Leadership-Oriented Taxonomy for Digital Transformation in Higher Education Institutions | ... (+1 artigos)",
-      "implicacoes": "Substituição dos tradicionais Planos de Desenvolvimento Institucional (PDIs) decenais e burocráticos por sistemas vivos de monitoramento prospectivo e comitês contínuos de cenários, garantindo capacidade de manobra frente a mudanças demográficas, regulatórias e tecnológicas.",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "descartada",
-      "statusRevisao": "Descartada",
-      "statusLabel": "Revisada (Descartada)",
-      "justificativa": "Não comunica SF (debate sobre metodologias de foresight)",
-      "fusaoId": "",
-      "divisaoIds": [],
-      "origemDivisao": "",
-      "vinculo": [],
-      "incorporadas": []
-    },
-    {
-      "id": "SF38",
-      "fonte": "Scopus",
-      "topico": "Gestão Institucional, Análise de Dados e Inteligência Operacional",
-      "titulo": "E-HRM, Gestão Algorítmica de Pessoas e Superação da Fratura Cultural Docente-Administrativa",
-      "descricao": "A modernização da gestão acadêmica demanda a superação da crônica fratura cultural e desconfiança mútua que historicamente opõe o corpo docente e os setores corporativo-administrativos nas universidades (49, 317). A introdução de plataformas de Gestão Eletrônica de Recursos Humanos (E-HRM) e modelos preditivos de alocação de carga de trabalho busca aperfeiçoar a eficiência técnica paramétrica e o dimensionamento das equipes (150, 285, 352). Contudo, a eficácia dessas ferramentas depende crucialmente do fortalecimento de estilos de liderança inclusiva e dialógica na média gestão universitária, essenciais para evitar que a gestão algorítmica seja percebida como fria coerção gerencialista (281).",
-      "descricaoApa": "Diante de cenários de volatilidade e choques exógenos frequentes, as abordagens lineares e retrospectivas de planejamento estratégico esgotam-se, ensejando a institucionalização do foresight tecnológico e de métodos participativos de cenarização como capacidades dinâmicas permanentes nas IES (154, 351, 358). Esse esforço de antecipação contínua articula-se a frameworks estruturados de maturidade digital, como a taxonomia multidimensional DTS-6D, que orienta lideranças executivas e conselhos na coordenação holística de pessoas, processos e tecnologias com foco na sustentabilidade de longo prazo (120, 326, 355).",
-      "classificacao": "Incerteza",
-      "pestel": [
-        "Social",
-        "Tecnológico",
-        "Econômico"
-      ],
-      "eixo": "3 - Dinâmicas Sociodemográficas",
-      "qtdArtigos": 6,
-      "artigosIds": [
-        49,
-        150,
-        281,
-        285,
-        317,
-        352
-      ],
-      "referenciasResumidas": "[49] Sharma P. (2022) - Role of Culture in Developing Transformative Leadership for Higher Education in Emerging Economies | [150] Kaur H. (2021) - Assessing Technical Efficiency of the Indian Higher Education: An Application of Data Envelopment Analysis Approach | [281] Aboramadan M. (2022) - Inclusive Leadership in Higher Education: An Approach to Encourage Management Innovation and a Climate for Creativity | [285] Kisahwan D. (2025) - E-HRM framework for sustainable performance in higher education | [317] Soto M.H. (2026) - Integration of ICT in Higher Education: Perceptions of Digitalisation and Technology at a Private University | ... (+1 artigos)",
-      "implicacoes": "Coordenadores de curso e gerentes acadêmicos precisarão ser formados como mediadores culturais de alta empatia, utilizando plataformas inteligentes de RH para equilibrar carga de trabalho e prevenir burnout de professores sem criar um ambiente orwelliano de vigilância.",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "descartada",
-      "statusRevisao": "Descartada",
-      "statusLabel": "Revisada (Descartada)",
-      "justificativa": "Não comunica SF (fala sobre plataformas de gestão de pessoal)",
-      "fusaoId": "",
-      "divisaoIds": [],
-      "origemDivisao": "",
-      "vinculo": [],
-      "incorporadas": []
-    },
-    {
       "id": "SF39",
       "fonte": "Scopus",
       "topico": "Gestão Institucional, Análise de Dados e Inteligência Operacional",
@@ -1607,7 +1153,7 @@ const sfData = {
       "titulo": "Internacionalização Sul-Sul, Descentralização Geopolítica e Formação de Novos Polos Regionais",
       "descricao": "Evidências emergentes no Sul Global, com destaque para a Ásia e a África, apontam para a formação de fluxos alternativos de mobilidade acadêmica que começam a desafiar a histórica dependência unilateral em relação às universidades do Norte Global (26, 316). Embora ainda incipiente e geograficamente delimitado, esse movimento opera como um sinal fraco de descentralização geopolítica do ensino superior: países em desenvolvimento como Vietnã, Índia, Filipinas e nações da África Subsaariana vêm estruturando políticas para se converterem em polos regionais de atração estudantil (26, 41, 92, 174). Esse processo apoia-se em acordos bilaterais de cooperação, integração em blocos regionais (como a ASEAN) e na oferta de cursos voltados a nichos específicos de desenvolvimento local compartilhado, com custos mais acessíveis e menor barreira migratória em relação aos polos tradicionais ocidentais (92, 252, 359). A experiência desses países emerge como uma referência prospectiva relevante para o Sul Global, sinalizando como ecossistemas acadêmicos periféricos podem construir redes próprias de atração discente e cooperação técnica sem depender exclusivamente de modelos e validações metropolitanas (41, 92).",
       "descricaoApa": "Evidências emergentes no Sul Global, com destaque para a Ásia e a África, apontam para a formação de fluxos alternativos de mobilidade acadêmica que começam a desafiar a histórica dependência unilateral em relação às universidades do Norte Global (Kim Khanh & Ngoc, 2023; Gao, 2025). Embora ainda incipiente e geograficamente delimitado, esse movimento opera como um sinal fraco de descentralização geopolítica do ensino superior: países em desenvolvimento como Vietnã, Índia, Filipinas e nações da África Subsaariana vêm estruturando políticas para se converterem em polos regionais de atração estudantil (Kim Khanh & Ngoc, 2023; Ngao et al., 2026; Castulo & Marasigan, 2026; Prachi, 2026). Esse processo apoia-se em acordos bilaterais de cooperação, integração em blocos regionais (como a ASEAN) e na oferta de cursos voltados a nichos específicos de desenvolvimento local compartilhado, com custos mais acessíveis e menor barreira migratória em relação aos polos tradicionais ocidentais (Castulo & Marasigan, 2026; Likoko & Wu, 2025; Aung & Aye, 2024). A experiência desses países emerge como uma referência prospectiva relevante para o Sul Global, sinalizando como ecossistemas acadêmicos periféricos podem construir redes próprias de atração discente e cooperação técnica sem depender exclusivamente de modelos e validações metropolitanas (Ngao et al., 2026; Castulo & Marasigan, 2026).",
-      "classificacao": "Sinal Fraco",
+      "classificacao": "Fato Portador de Futuro",
       "pestel": [
         "Social",
         "Político",
@@ -1674,51 +1220,12 @@ const sfData = {
       "incorporadas": []
     },
     {
-      "id": "SF42",
-      "fonte": "Scopus",
-      "topico": "Mobilidade Estudantil e Internacionalização",
-      "titulo": "Diplomacia Acadêmica, Harmonização Transfronteiriça e Espaços Educacionais Regionais Comuns",
-      "descricao": "A internacionalização da educação superior consolida-se como vetor de diplomacia acadêmica e construção de espaços educativos transfronteiriços integrados, inspirados pela trajetória e expansão do projeto europeu (184, 235). Essa cooperação exige acordos sólidos de interoperabilidade curricular, créditos equivalentes e circulação recíproca de pesquisas (167, 298), enfrentando os desafios de difusão de políticas em contextos nacionais diversos (53, 82, 100). O movimento precisa, simultaneamente, negociar instabilidades e rupturas geopolíticas recentes (como os desdobramentos do Brexit), reafirmando o papel da colaboração acadêmica como ponte diplomática indispensável em tempos de crise (374).",
-      "descricaoApa": "A internacionalização da educação superior consolida-se como vetor de diplomacia acadêmica e construção de espaços educativos transfronteiriços integrados, inspirados pela trajetória e expansão do projeto europeu (184, 235). Essa cooperação exige acordos sólidos de interoperabilidade curricular, créditos equivalentes e circulação recíproca de pesquisas (167, 298), enfrentando os desafios de difusão de políticas em contextos nacionais diversos (53, 82, 100). O movimento precisa, simultaneamente, negociar instabilidades e rupturas geopolíticas recentes (como os desdobramentos do Brexit), reafirmando o papel da colaboração acadêmica como ponte diplomática indispensável em tempos de crise (374).",
-      "classificacao": "Tendência",
-      "pestel": [
-        "Político",
-        "Social",
-        "Legal"
-      ],
-      "eixo": "2 - Evolução Histórica e Marcos Regulatórios dos últimos 10 anos",
-      "qtdArtigos": 8,
-      "artigosIds": [
-        53,
-        82,
-        100,
-        167,
-        184,
-        235,
-        298,
-        374
-      ],
-      "referenciasResumidas": "[53] Woldegiorgis E.T. (2018) - Policy Travel in Regionalisation of Higher Education: The Case of Bologna Process in Africa | [82] Perez-Encinas A. (2018) - A Collaborative Approach in the Internationalisation Cycle of Higher Education Institutions | [100] Crăciun D. (2018) - National Policies for Higher Education Internationalization: A Global Comparative Perspective | [167] Kushnir I. (2025) - European Cooperation in Higher Education and the Evolving Mission of the European Project (in the Early 2020s) | [184] Kushnir I. (2025) - Germanyʼs Membership in the European Higher Education Area: Leading Europe | ... (+3 artigos)",
-      "implicacoes": "Liderança ativa de grupos privados brasileiros na consolidação do Espaço Latino-Americano de Educação Superior (ENLACES/Mercosul Educacional), viabilizando diplomas automáticos e mobilidade facilitada de profissionais na região.",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "descartada",
-      "statusRevisao": "Descartada",
-      "statusLabel": "Revisada (Descartada)",
-      "justificativa": "Diplomacia acadêmica está fora do escopo do estudo",
-      "fusaoId": "",
-      "divisaoIds": [],
-      "origemDivisao": "",
-      "vinculo": [],
-      "incorporadas": []
-    },
-    {
       "id": "SF43",
       "fonte": "Scopus",
       "topico": "Mobilidade Estudantil e Internacionalização",
-      "titulo": "Refluxo Protecionista, Tensão da Anglonormatividade e Soberania Linguístico-Cultural",
-      "descricao": "Em choque direto com o ideal cosmopolita de internacionalização irrestrita, emergem movimentos de refluxo nacionalista e protecionismo regulatório em nações historicamente acolhedoras de fluxos estrangeiros (282). Esse fenômeno manifesta-se em pressões legais para limitar a proporção de disciplinas ministradas em inglês e proteger os idiomas e culturas nacionais contra a 'anglonormatividade' hegemônica nos campi universitários (135, 282). Trata-se de um sinal de alerta sobre as tensões entre as demandas de inserção nos mercados globais e a preservação da identidade cultural e da soberania sociolinguística das instituições.",
-      "descricaoApa": "N/A",
+      "titulo": "Refluxo Protecionista nos Polos Globais e Oportunidade de Atração do Excedente Estudantil pelo Brasil",
+      "descricao": "Em choque com o ideal cosmopolita de internacionalização, emergem movimentos de refluxo nacionalista, restrições a vistos e protecionismo regulatório em nações tradicionalmente receptoras de fluxos globais de estudantes, como por exemplo, a Holanda, o Canadá, o Reino Unido e a Austrália (282). Esse fenômeno resulta no endurecimento das políticas de imigração acadêmica, na imposição de tetos para matrículas de estrangeiros e em pressões legais para preservar idiomas e orçamentos públicos locais frente à sobrecarga de infraestruturas universitárias (135, 282). Esse fechamento gradual das fronteiras nos destinos tradicionais do Norte Global gera uma bifurcação nos fluxos migratórios acadêmicos, abrindo uma oportunidade inédita para nações emergentes como o Brasil absorverem o excedente de estudantes internacionais, particularmente oriundos da América Latina, África Lusófona e Sul Global, que buscam ensino superior de qualidade a custos acessíveis e ambientes de formação diversificados.",
+      "descricaoApa": "Em choque com o ideal cosmopolita de internacionalização, emergem movimentos de refluxo nacionalista, restrições a vistos e protecionismo regulatório em nações tradicionalmente receptoras de fluxos globais de estudantes, como por exemplo, a Holanda, o Canadá, o Reino Unido e a Austrália (Schiltmans, 2024). Esse fenômeno resulta no endurecimento das políticas de imigração acadêmica, na imposição de tetos para matrículas de estrangeiros e em pressões legais para preservar idiomas e orçamentos públicos locais frente à sobrecarga de infraestruturas universitárias (Saarinen & Rontu, 2022; Schiltmans, 2024). Esse fechamento gradual das fronteiras nos destinos tradicionais do Norte Global gera uma bifurcação nos fluxos migratórios acadêmicos, abrindo uma oportunidade inédita para nações emergentes como o Brasil absorverem o excedente de estudantes internacionais, particularmente oriundos da América Latina, África Lusófona e Sul Global, que buscam ensino superior de qualidade a custos acessíveis e ambientes de formação diversificados.",
       "classificacao": "Incerteza",
       "pestel": [
         "Social",
@@ -1732,12 +1239,12 @@ const sfData = {
         282
       ],
       "referenciasResumidas": "[135] Saarinen T. (2022) - What about Swedish?: Internationalisation, Societal Responsibility and National Languages in Finnish Higher Education | [282] Schiltmans J. (2024) - Dutch first in Dutch higher education policy",
-      "implicacoes": "Alerta estratégico para as IES brasileiras evitarem a simples cópia submissa de currículos anglófones, promovendo bilinguismo aditivo e valorizando o português e as identidades latino-americanas como potências culturais no cenário global.",
-      "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "implicacoes": "O fechamento de fronteiras nos grandes polos tradicionais (como Europa, América do Norte e Oceania) cria uma janela de oportunidade estratégica para que grupos educacionais privados brasileiros reposicionem sua oferta internacional. Em vez de atuarem apenas como emissores de estudantes, as mantenedoras podem capturar o excedente de demanda de mobilidade global, desenvolvendo programas de graduação e pós-graduação com trilhas bilíngues ou em português com acolhimento linguístico voltados para a América Latina e países do Sul Global. Essa estratégia diversifica as fontes de receita em moeda forte ou descorrelacionada da economia doméstica, eleva a densidade cultural dos campi universitários e fortalece a reputação institucional como polo educacional regional, desde que acompanhada de processos ágeis de validação de documentação estrangeira e suporte à permanência estudantil.",
+      "indicadores": "Volume e taxa de concessão de vistos de estudante para estrangeiros nos principais polos; Número de matrículas de estudantes internacionais de graduação e pós-graduação no ensino superior privado brasileiro, discriminado por país de origem; Percentual de cursos com disciplinas ofertadas em formato bilíngue (português e espanhol/inglês) ou com apoio pedagógico à integração linguística de estrangeiros; Índice de competitividade do custo formativo do ensino superior brasileiro frente a destinos concorrentes da América Latina e do Sul Global.",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
@@ -1746,87 +1253,76 @@ const sfData = {
       "incorporadas": []
     },
     {
-      "id": "SF44",
+      "id": "SF44a",
       "fonte": "Scopus",
       "topico": "Mobilidade Estudantil e Internacionalização",
-      "titulo": "Mercantilização do Recrutamento Internacional, Assimetrias Estruturais e eWOM / Reputação Digital",
-      "descricao": "O recrutamento discente internacional converteu-se em uma das frentes mais agressivas de mercantilização universitária, operando frequentemente como tábua de salvação financeira para instituições que cobram mensalidades inflacionadas de estudantes estrangeiros (43, 267). Esse modelo puramente transacional sofre crescente desgaste em decorrência de assimetrias estruturais, promessas não cumpridas de inserção laboral e o risco de reprodução de privilégios de classe (68, 96, 309). Nesse cenário, a decisão de matrícula dos alunos passa a ser guiada não mais por brochuras promocionais ou rankings tradicionais, mas por avaliações espontâneas nas redes sociais, reputação digital descentralizada (electronic word-of-mouth - eWOM) e percepções comunitárias de suporte humano e segurança (131, 148, 175, 244).",
-      "descricaoApa": "N/A",
+      "titulo": "Saturação do Modelo \"Cash Cow\" Internacional e Alerta contra a Mercantilização Predatória no Ensino Superior Brasileiro",
+      "descricao": "A experiência do ensino superior em países desenvolvidos evidencia a saturação e o desgaste acelerado do modelo de internacionalização baseado na lógica de \"cash cow\", caracterizado pelo recrutamento massivo de estudantes estrangeiros submetidos a mensalidades inflacionadas para cobrir déficits orçamentários institucionais (43, 267). Documentado amplamente em polos da América do Norte e Europa, esse modelo puramente transacional gerou severa perda de legitimidade devido a promessas não cumpridas de inserção no mercado de trabalho, custos de vida proibitivos e suporte acadêmico precário aos discentes (68, 175). Essa trajetória internacional funciona como uma referência antecipatória crucial para o Brasil: ela demonstra de forma empírica que estratégias voltadas a tratar a internacionalização como simples extração de receita dão sinais claros de fraqueza, indicando para as lideranças acadêmicas nacionais que essa abordagem não deve ser replicada no país, sob pena de rápida deterioração reputacional, judicialização e abandono estudantil (175, 309).",
+      "descricaoApa": "A experiência do ensino superior em países desenvolvidos evidencia a saturação e o desgaste acelerado do modelo de internacionalização baseado na lógica de \"cash cow\", caracterizado pelo recrutamento massivo de estudantes estrangeiros submetidos a mensalidades inflacionadas para cobrir déficits orçamentários institucionais (Matei et al., 2015; Taskoh, 2020). Documentado amplamente em polos da América do Norte e Europa, esse modelo puramente transacional gerou severa perda de legitimidade devido a promessas não cumpridas de inserção no mercado de trabalho, custos de vida proibitivos e suporte acadêmico precário aos discentes (Heringer, 2020; Schatz, 2016). Essa trajetória internacional funciona como uma referência antecipatória crucial para o Brasil: ela demonstra de forma empírica que estratégias voltadas a tratar a internacionalização como simples extração de receita dão sinais claros de fraqueza, indicando para as lideranças acadêmicas nacionais que essa abordagem não deve ser replicada no país, sob pena de rápida deterioração reputacional, judicialização e abandono estudantil (Baily, 2015; Schatz, 2016).",
       "classificacao": "Tendência",
       "pestel": [
         "Econômico",
         "Social",
-        "Tecnológico"
+        "Político"
       ],
       "eixo": "4 - Economia e Mercado de Trabalho",
-      "qtdArtigos": 10,
+      "qtdArtigos": 5,
       "artigosIds": [
         43,
-        56,
         68,
-        96,
-        131,
-        148,
         175,
-        244,
         267,
         309
       ],
-      "referenciasResumidas": "[43] Taskoh A.K. (2020) - Internationalization in Canadian Higher Education Institutions: Ontario | [56] Belousova T. (2019) - Internationalization of Higher Education in Kerala: A Performance Audit | [68] Heringer R. (2020) - From Enrolment Rates to Collaborative Knowledge Production: A Critique to the Internationalization of Higher Education in Canada | [96] Guri-Rosenblit S. (2015) - Internationalization of Higher Education: Navigating Between Contrasting Trends | [131] Yang X. (2024) - A study of cultural distance, eWOM and perceived risk in shaping higher education students' destination image and future travel plan | ... (+5 artigos)",
-      "implicacoes": "A reputação institucional das faculdades privadas dependerá de sua comunidade de alunos e egressos atuando como defensores espontâneos em fóruns globais, exigindo entrega real de valor, suporte ao estudante e empregabilidade, em detrimento de gastos inflacionados com marketing tradicional.",
+      "referenciasResumidas": "[43] Taskoh A.K. (2020) - Internationalization in Canadian Higher Education Institutions: Ontario | [68] Heringer R. (2020) - From Enrolment Rates to Collaborative Knowledge Production: A Critique to the Internationalization of Higher Education in Canada | [175] Schatz M. (2016) - Engines without fuel? - Empirical findings on Finnish higher education institutions as education exporters | [267] Matei L. (2015) - Patterns of Funding Internationalisation of Higher Education. A Conceptual Framework for the Study of Internationalisation | [309] Baily S. (2015) - Who gets left behind? The fate of the unrepresented in the wake of US-India higher education partnerships",
+      "implicacoes": "",
       "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
       "origemDivisao": "",
-      "vinculo": [],
+      "vinculo": [
+        "SF44"
+      ],
       "incorporadas": []
     },
     {
-      "id": "SF45",
+      "id": "SF44b",
       "fonte": "Scopus",
-      "topico": "Sustentabilidade, Mudanças Climáticas e ESG",
-      "titulo": "Institucionalização da Governança ESG, Métricas ODS e Condicionamento ao Mercado de Capitais e Crédito Verde",
-      "descricao": "As exigências de responsabilidade corporativa forçam as instituições de ensino superior a superarem discursos retóricos superficiais (greenwashing) para institucionalizarem a governança socioambiental e de governança (ESG) em todos os níveis decisórios (75, 80). A conformidade auditável com as metas da Agenda 2030 (ODS) passa a ser critério compulsório para obtenção de financiamentos subsidiados, linhas de crédito verde e captação de aportes junto a fundos de investimento institucionais (20, 124, 320). Esse cenário exige a implantação de modelos integrados de gestão sustentável que transformem os campi em laboratórios vivos de governança ecológica sistêmica (160, 335).",
-      "descricaoApa": "N/A",
+      "topico": "Mobilidade Estudantil e Internacionalização",
+      "titulo": "Descentralização da Escolha Universitária por Reputação Digital (eWOM) e Declínio do Marketing Institucional Tradicional",
+      "descricao": "A jornada de escolha e tomada de decisão dos estudantes de ensino superior passa por uma profunda descentralização informativa, esvaziando a capacidade de persuasão das campanhas publicitárias corporativas, brochuras promocionais e rankings acadêmicos genéricos (96, 148). Com a consolidação de redes sociais e plataformas interativas, a decisão de matrícula passa a ser regida pelo boca a boca eletrônico (electronic word-of-mouth ou eWOM), fóruns de discussão e relatos de experiência autênticos compartilhados por alunos e egressos (131). Nesse ecossistema transparente, fatores como suporte psicossocial tangível, custo real de vida, segurança no entorno do campus e clima de tolerância ganham peso decisivo na formação da imagem institucional, tornando ineficazes as promessas de marketing que não encontrem respaldo na experiência cotidiana vivida pela comunidade acadêmica (131, 148).",
+      "descricaoApa": "A jornada de escolha e tomada de decisão dos estudantes de ensino superior passa por uma profunda descentralização informativa, esvaziando a capacidade de persuasão das campanhas publicitárias corporativas, brochuras promocionais e rankings acadêmicos genéricos (de Wit et al., 2015; Guri-Rosenblit, 2015). Com a consolidação de redes sociais e plataformas interativas, a decisão de matrícula passa a ser regida pelo boca a boca eletrônico (electronic word-of-mouth ou eWOM), fóruns de discussão e relatos de experiência autênticos compartilhados por alunos e egressos (Yang et al., 2024). Nesse ecossistema transparente, fatores como suporte psicossocial tangível, custo real de vida, segurança no entorno do campus e clima de tolerância ganham peso decisivo na formação da imagem institucional, tornando ineficazes as promessas de marketing que não encontrem respaldo na experiência cotidiana vivida pela comunidade acadêmica (de Wit et al., 2015; Yang et al., 2024).",
       "classificacao": "Tendência",
       "pestel": [
-        "Ambiental",
+        "Tecnológico",
         "Social",
         "Econômico"
       ],
-      "eixo": "6 - Fatores Ambientais (ESG e Clima): eventos climáticos, requisitos de sustentabilidade do Inep/Sinaes, responsabilidade social corporativa",
-      "qtdArtigos": 7,
+      "eixo": "5 - Transformação Tecnológica",
+      "qtdArtigos": 3,
       "artigosIds": [
-        20,
-        75,
-        80,
-        124,
-        160,
-        320,
-        335
+        96,
+        131,
+        148
       ],
-      "referenciasResumidas": "[20] Porzionato M. (2015) - Excellence and Diversification of Higher Education Institutions’ Missions | [75] Gupta M.K. (2026) - The Role of Higher Education Institutions in Promoting Sustainable Development in Pharmaceutical Research | [80] Chandel R. (2024) - Principles and Approach Towards Sustainability in Higher Education Institutions | [124] Guilherme P. (2023) - Governance for Sustainability in Higher Education Institutions: A Systematic Review Aiming at the Implementation of the Green Campus | [160] Foo Ng T. (2023) - Implementing Sustainability Strategies, Programs, and Practices for the Communities in Higher Education Institutions: Case Study in USM, Malaysia | ... (+2 artigos)",
-      "implicacoes": "Empresas de capital aberto do setor educacional (como a CSED) com relatórios ESG transparentes e auditados terão menor custo de capital em emissões de debêntures e atração de fundos internacionais dedicados à transição ecológica justa.",
+      "referenciasResumidas": "[96] Guri-Rosenblit S. (2015) - Internationalization of Higher Education: Navigating Between Contrasting Trends | [131] Yang X. (2024) - A study of cultural distance, eWOM and perceived risk in shaping higher education students' destination image and future travel plan | [148] de Wit H. (2015) - Internationalization Strategies and Policies in Second-Tier Higher Education Institutions",
+      "implicacoes": "",
       "indicadores": "",
       "revisada": true,
-      "statusTipo": "dividida",
-      "statusRevisao": "Dividida",
-      "statusLabel": "Revisada (Dividida: SF45a, SF45b)",
-      "justificativa": "Continha duas SF distintas",
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
       "fusaoId": "",
-      "divisaoIds": [
-        "SF45a",
-        "SF45b"
-      ],
+      "divisaoIds": [],
       "origemDivisao": "",
       "vinculo": [
-        "SF45a",
-        "SF45b"
+        "SF44"
       ],
       "incorporadas": []
     },
@@ -1862,7 +1358,7 @@ const sfData = {
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
-      "origemDivisao": "SF45",
+      "origemDivisao": "",
       "vinculo": [
         "SF45"
       ],
@@ -1875,7 +1371,7 @@ const sfData = {
       "titulo": "Green Campuses - Gestão Ambiental da Infraestrutura, Métricas Operacionais e Práticas Socioambientais",
       "descricao": "O conceito de \"Green Campus\" (Campus Verde) é apresentado na literatura como uma materialização prática e relevante da sustentabilidade no ensino superior, estruturando-se a partir da articulação entre planejamento organizacional, execução de medidas práticas no espaço físico e mensuração contínua do desempenho ambiental das instituições (124). Essa dinâmica operacional envolve a implementação de ferramentas objetivas de monitoramento, tais como o cálculo da pegada de carbono (carbon footprint), a busca por certificações de eficiência energética em edifícios e o controle do consumo de recursos materiais nas rotinas universitárias (124). A relevância desse modelo reside na superação de compromissos meramente formais ou discursivos, exigindo que a universidade adeque a gestão de suas próprias instalações para atuar como agente de transformação e influenciar atitudes, comportamentos e competências sustentáveis em sua comunidade interna (124, 160). As investigações evidenciam que a concretização dessa proposta impõe desafios complexos de governança, historicamente limitados pela fragmentação departamental e pela carência de instrumentos periódicos de avaliação e prestação de contas (124). Sua viabilização requer o envolvimento direto da gestão institucional e o engajamento participativo de docentes, técnicos e estudantes na condução de programas que integrem as dimensões ambiental, social e econômica no cotidiano dos campi (124, 160).",
       "descricaoApa": "O conceito de \"Green Campus\" (Campus Verde) é apresentado na literatura como uma materialização prática e relevante da sustentabilidade no ensino superior, estruturando-se a partir da articulação entre planejamento organizacional, execução de medidas práticas no espaço físico e mensuração contínua do desempenho ambiental das instituições (Guilherme et al., 2023). Essa dinâmica operacional envolve a implementação de ferramentas objetivas de monitoramento, tais como o cálculo da pegada de carbono (carbon footprint), a busca por certificações de eficiência energética em edifícios e o controle do consumo de recursos materiais nas rotinas universitárias (Guilherme et al., 2023). A relevância desse modelo reside na superação de compromissos meramente formais ou discursivos, exigindo que a universidade adeque a gestão de suas próprias instalações para atuar como agente de transformação e influenciar atitudes, comportamentos e competências sustentáveis em sua comunidade interna (Guilherme et al., 2023; Foo Ng et al., 2023). As investigações evidenciam que a concretização dessa proposta impõe desafios complexos de governança, historicamente limitados pela fragmentação departamental e pela carência de instrumentos periódicos de avaliação e prestação de contas (Guilherme et al., 2023). Sua viabilização requer o envolvimento direto da gestão institucional e o engajamento participativo de docentes, técnicos e estudantes na condução de programas que integrem as dimensões ambiental, social e econômica no cotidiano dos campi (Guilherme et al., 2023; Foo Ng et al., 2023).",
-      "classificacao": "Sinal Fraco",
+      "classificacao": "Fato Portador de Futuro",
       "pestel": [
         "Ambiental",
         "Tecnológico",
@@ -1897,7 +1393,7 @@ const sfData = {
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
-      "origemDivisao": "SF45",
+      "origemDivisao": "",
       "vinculo": [
         "SF45"
       ],
@@ -1907,10 +1403,10 @@ const sfData = {
       "id": "SF46",
       "fonte": "Scopus",
       "topico": "Sustentabilidade, Mudanças Climáticas e ESG",
-      "titulo": "Descarbonização das Operações Universitárias, Mobilidade Discente e Gestão de Emissões de Escopo 3",
-      "descricao": "O compromisso com a neutralidade de carbono exige que as universidades realizem inventários rigorosos de emissões de gases de efeito estufa em suas operações físicas (345). Esse diagnóstico revela um paradoxo inescapável: a imensa maioria da pegada de carbono universitária não provém do consumo direto de energia dos prédios, mas sim das emissões indiretas de Escopo 3 geradas pelo deslocamento diário de milhares de estudantes e funcionários em transporte individual fóssil (345). A solução exige a articulação de alianças cooperativas em rede com governos municipais e operadores de mobilidade para impulsionar transporte limpo compartilhado e formatos híbridos que reduzam as viagens motorizadas compulsórias (256).",
-      "descricaoApa": "N/A",
-      "classificacao": "Tendência",
+      "titulo": "Gestão Estratégica de Emissões de Escopo 3 e Governança Colaborativa em Rede para a Descarbonização Universitária",
+      "descricao": "O avanço das metas globais de sustentabilidade e a regulação climática pressionam as instituições de ensino superior a implementarem inventários de gases de efeito estufa com base no Greenhouse Gas Protocol (GHG Protocol), padrão internacional que classifica as emissões em três níveis fundamentais (345). O Escopo 1 abrange as emissões diretas geradas por fontes próprias ou controladas pela universidade, como frotas de veículos institucionais e geradores a diesel; o Escopo 2 engloba as emissões indiretas associadas à geração da eletricidade adquirida da rede para abastecer os prédios e campi; e o Escopo 3 reúne todas as demais emissões indiretas ocorridas ao longo da cadeia de valor, com destaque para a logística de suprimentos e, sobretudo, o deslocamento diário de milhares de estudantes e colaboradores em veículos movidos a combustíveis fósseis (345). Estudos empíricos de ciclo de vida revelam que investimentos isolados na eficiência energética predial (Escopos 1 e 2) são insuficientes para atingir a neutralidade climática, pois o Escopo 3 costuma representar quase metade da pegada de carbono universitária total (345). Para enfrentar esse gargalo de mobilidade urbana sem prejudicar a formação acadêmica, universidades passam a adotar formatos de ensino híbrido que reduzem deslocamentos motorizados compulsórios e a constituir alianças colaborativas em rede com governos municipais e operadores de transporte, viabilizando soluções compartilhadas de mobilidade de baixo carbono e compras conjuntas de energia renovável (256, 345).",
+      "descricaoApa": "O avanço das metas globais de sustentabilidade e a regulação climática pressionam as instituições de ensino superior a implementarem inventários de gases de efeito estufa com base no Greenhouse Gas Protocol (GHG Protocol), padrão internacional que classifica as emissões em três níveis fundamentais (Moldovan et al., 2025). O Escopo 1 abrange as emissões diretas geradas por fontes próprias ou controladas pela universidade, como frotas de veículos institucionais e geradores a diesel; o Escopo 2 engloba as emissões indiretas associadas à geração da eletricidade adquirida da rede para abastecer os prédios e campi; e o Escopo 3 reúne todas as demais emissões indiretas ocorridas ao longo da cadeia de valor, com destaque para a logística de suprimentos e, sobretudo, o deslocamento diário de milhares de estudantes e colaboradores em veículos movidos a combustíveis fósseis (Moldovan et al., 2025). Estudos empíricos de ciclo de vida revelam que investimentos isolados na eficiência energética predial (Escopos 1 e 2) são insuficientes para atingir a neutralidade climática, pois o Escopo 3 costuma representar quase metade da pegada de carbono universitária total (Moldovan et al., 2025). Para enfrentar esse gargalo de mobilidade urbana sem prejudicar a formação acadêmica, universidades passam a adotar formatos de ensino híbrido que reduzem deslocamentos motorizados compulsórios e a constituir alianças colaborativas em rede com governos municipais e operadores de transporte, viabilizando soluções compartilhadas de mobilidade de baixo carbono e compras conjuntas de energia renovável (Mac-Lean et al., 2023; Moldovan et al., 2025).",
+      "classificacao": "Fato Portador de Futuro",
       "pestel": [
         "Ambiental",
         "Social",
@@ -1923,12 +1419,12 @@ const sfData = {
         345
       ],
       "referenciasResumidas": "[256] Mac-Lean C. (2023) - The Key Role of Alliances and Multi-stakeholder Collaboration for Climate Action Implementation Within Higher Education Institutions: A Chilean Experience | [345] Moldovan R.-P. (2025) - From assessment to action: A strategic approach to carbon management for climate neutrality in higher education",
-      "implicacoes": "Modelos semipresenciais e híbridos inteligentes serão reconhecidos como soluções ambientais diretas de redução de emissões urbanas, articulando planos de transporte compartilhado e infraestrutura cicloviária ao redor dos campi.",
+      "implicacoes": "A padronização internacional das métricas de emissão em Escopos 1, 2 e 3 conecta a gestão física dos campi diretamente às exigências de transparência do mercado de capitais e aos critérios de avaliação socioambiental do Inep/MEC. Enquanto os Escopos 1 e 2 podem ser controlados por meio de eficiência energética e migração para o Mercado Livre de energia renovável, o Escopo 3 expõe a vulnerabilidade do modelo presencial tradicional, que sobrecarrega os estudantes trabalhadores com horas de trânsito em veículos fósseis nos grandes centros urbanos. Grupos educacionais que adotam formatos semipresenciais e híbridos inteligentes convertem a diminuição desses deslocamentos diários em um indicador auditável de descarbonização de Escopo 3, qualificando a mantenedora para a emissão de títulos verdes (green bonds) e atração de fundos com mandatos ESG. Além disso, a estruturação de consórcios interinstitucionais e a interlocução com concessionárias de transporte público para criação de corredores e integração tarifária próxima aos campi reduzem custos de ocupação predial e fortalecem a reputação institucional rumo a 2040.",
       "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
@@ -1940,10 +1436,10 @@ const sfData = {
       "id": "SF47",
       "fonte": "Scopus",
       "topico": "Sustentabilidade, Mudanças Climáticas e ESG",
-      "titulo": "Pegada Ecológica, Hídrica e Energética Oculta da Infraestrutura Digital e Inteligência Artificial",
-      "descricao": "A narrativa hegemônica que associa a digitalização e o uso extensivo de computação em nuvem a uma transição 'limpa e desmaterializada' é progressivamente contestada pela evidenciação do seu massivo impacto ecológico oculto (95). O processamento intensivo de modelos generativos de inteligência artificial em centros de dados hiperdimensionados consome volumes colossais de água potável para resfriamento de servidores e demandas gigantescas de energia termoelétrica (307). As instituições começam a ser cobradas pelo desenvolvimento de políticas institucionais explícitas de TI Verde (Green Computing) e sobriedade digital, educando a comunidade sobre a pegada socioambiental das soluções tecnológicas adotadas (95, 307).",
-      "descricaoApa": "N/A",
-      "classificacao": "Surpresa inevitável",
+      "titulo": "Governança de Computação Verde (Green Computing) e Sobriedade Digital para Mitigação do Impacto Oculto da Inteligência Artificial e da Nuvem",
+      "descricao": "A narrativa de que a transformação digital e a computação em nuvem representam uma transição limpa e desmaterializada passa a ser crescentemente contestada pela evidenciação do seu massivo impacto ambiental oculto (95). O avanço acelerado do processamento intensivo de modelos de inteligência artificial generativa exige data centers hiperdimensionados, cuja operação consome quantidades gigantescas de energia elétrica e volumes colossais de água potável para o resfriamento de servidores (307). Esse consumo intensivo, frequentemente ignorado por usuários e gestores educacionais, transfere a pegada ambiental para as emissões indiretas da cadeia de suprimentos e serviços das instituições (95, 307). Em resposta a essas disparidades e à pressão regulatória, as universidades começam a ser cobradas pela implementação de políticas formais de computação verde (Green Computing) (95). Esse movimento engloba a adoção de compras sustentáveis de tecnologia, a reciclagem estruturada de lixo eletrônico, a seleção criteriosa de provedores de nuvem alimentados por energia renovável e o desenvolvimento de campanhas pedagógicas que promovam a sobriedade digital, incentivando estudantes e docentes a avaliarem a real necessidade do acionamento de ferramentas pesadas de inteligência artificial (95, 307).",
+      "descricaoApa": "A narrativa de que a transformação digital e a computação em nuvem representam uma transição limpa e desmaterializada passa a ser crescentemente contestada pela evidenciação do seu massivo impacto ambiental oculto (Ghantasala & Kolla, 2025). O avanço acelerado do processamento intensivo de modelos de inteligência artificial generativa exige data centers hiperdimensionados, cuja operação consome quantidades gigantescas de energia elétrica e volumes colossais de água potável para o resfriamento de servidores (Gibbons et al., 2025). Esse consumo intensivo, frequentemente ignorado por usuários e gestores educacionais, transfere a pegada ambiental para as emissões indiretas da cadeia de suprimentos e serviços das instituições (Ghantasala & Kolla, 2025; Gibbons et al., 2025). Em resposta a essas disparidades e à pressão regulatória, as universidades começam a ser cobradas pela implementação de políticas formais de computação verde (Green Computing) (Ghantasala & Kolla, 2025). Esse movimento engloba a adoção de compras sustentáveis de tecnologia, a reciclagem estruturada de lixo eletrônico, a seleção criteriosa de provedores de nuvem alimentados por energia renovável e o desenvolvimento de campanhas pedagógicas que promovam a sobriedade digital, incentivando estudantes e docentes a avaliarem a real necessidade do acionamento de ferramentas pesadas de inteligência artificial (Ghantasala & Kolla, 2025; Gibbons et al., 2025).",
+      "classificacao": "Fato Portador de Futuro",
       "pestel": [
         "Ambiental",
         "Tecnológico",
@@ -1956,12 +1452,12 @@ const sfData = {
         307
       ],
       "referenciasResumidas": "[95] Ghantasala G.S.P. (2025) - Global Disparities in Green Computing Policy Adoption in Higher Education: A Six-Region Survey | [307] Gibbons S. (2025) - Investigating awareness and behavioural intentions from AI water footprint digital posters in higher education settings",
-      "implicacoes": "Exigirá cláusulas de sustentabilidade na contratação de nuvem e serviços de IA (exigindo data centers movidos a energia renovável e baixo uso hídrico) e desenvolvimento de programas institucionais de sobriedade e ética digital.",
+      "implicacoes": "A aceleração da digitalização acadêmica, das plataformas de aprendizagem virtual e dos assistentes baseados em inteligência artificial gera um passivo ambiental invisível com repercussão direta nos custos operacionais e nos relatórios ESG. Como o setor privado brasileiro opera com milhões de acessos diários a sistemas em nuvem, a contratação descuidada de infraestrutura de TI terceirizada inflaciona a pegada hídrica e carbônica institucional na cadeia de fornecedores (Escopo 3). Grupos educacionais privados que adotam políticas proativas de TI verde passam a exigir cláusulas contratuais de sustentabilidade de seus parceiros de tecnologia (como Google, Microsoft e AWS), condicionando os contratos ao uso exclusivo de data centers movidos a energia renovável e com baixo consumo de água potável. Adicionalmente, a estruturação de protocolos certificados de logística reversa para o parque de computadores e a promoção da sobriedade digital nos cursos de graduação e pós-graduação blindam a instituição contra acusações de maquiagem verde (greenwashing), fortalecem a nota institucional nas comissões avaliadoras do MEC e agregam valor perante fundos de investimento orientados por métricas socioambientais auditáveis.",
       "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
@@ -2006,47 +1502,13 @@ const sfData = {
       "incorporadas": []
     },
     {
-      "id": "SF49",
-      "fonte": "Scopus",
-      "topico": "Sustentabilidade, Mudanças Climáticas e ESG",
-      "titulo": "Gestão Verde de Pessoas (Green HRM) e Economia Circular na Gestão dos Campi Físicos",
-      "descricao": "A sustentabilidade universitária ganha tração operacional por meio da integração de práticas de Gestão Verde de Recursos Humanos (Green HRM), que incorporam critérios ecológicos nos processos de recrutamento, avaliação de desempenho funcional e incentivos a colaboradores (193). Simultaneamente, os campi universitários reorientam suas rotinas de suprimentos e manutenção segundo as premissas da economia circular, implementando compostagem de resíduos orgânicos, logística reversa de eletroeletrônicos e compras sustentáveis compartilhadas com fornecedores locais (70, 296).",
-      "descricaoApa": "N/A",
-      "classificacao": "Tendência",
-      "pestel": [
-        "Ambiental",
-        "Social",
-        "Econômico"
-      ],
-      "eixo": "6 - Fatores Ambientais (ESG e Clima): eventos climáticos, requisitos de sustentabilidade do Inep/Sinaes, responsabilidade social corporativa",
-      "qtdArtigos": 3,
-      "artigosIds": [
-        70,
-        193,
-        296
-      ],
-      "referenciasResumidas": "[70] Bakry S.H. (2018) - Innovation in Higher Education: Towards Enhancing Sustainable Development | [193] Matura A. (2026) - Driving environmental stewardship: Exploring the impact of green HRM on voluntary green behaviors in higher education institutions | [296] Faitani N.G. (2023) - The Contribution of the Circular Economy to the Fulfillment of the 2030 Agenda in Higher Education Institutions",
-      "implicacoes": "Economia expressiva de OPEX por meio de eficiência energética, lixo zero em cantinas e instalações prediais, e consolidação de uma cultura interna de sustentabilidade corporativa que engaja funcionários e estudantes.",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "descartada",
-      "statusRevisao": "Descartada",
-      "statusLabel": "Revisada (Descartada)",
-      "justificativa": "Tema já contemplado na SF45b",
-      "fusaoId": "",
-      "divisaoIds": [],
-      "origemDivisao": "",
-      "vinculo": [],
-      "incorporadas": []
-    },
-    {
       "id": "SF50",
       "fonte": "Scopus",
       "topico": "Saúde Mental, Bem-Estar e Experiência do Estudante",
       "titulo": "Pertencimento Comunitário (Sense of Belonging), Segurança Psicológica e Redes Interpessoais na Prevenção do Abandono",
       "descricao": "Investigações no ensino superior evidenciam que o sentimento de pertencimento institucional (sense of belonging) e a qualidade dos vínculos interpessoais estabelecidos entre estudantes, pares e docentes constituem fatores determinantes de proteção ao bem-estar subjetivo e à satisfação com a vida universitária (33). A literatura demonstra que a percepção de isolamento e a ausência de conexão comunitária correlacionam-se diretamente com sintomas de solidão, ansiedade e sofrimento psíquico, elevando o risco de desengajamento e abandono acadêmico (33). A viabilização desse sentimento de pertença requer, contudo, a consolidação de ambientes institucionais protegidos, demandando mecanismos sistemáticos de monitoramento e combate a práticas de violência interpessoal, assédio e discriminação que corroem a segurança psicológica no campus (179). Em contextos de massificação do ensino, a universidade precisa estruturar intencionalmente espaços de acolhimento e suporte mútuo, permitindo que os estudantes reconstruam suas trajetórias identitárias e desenvolvam propósitos formativos compartilhados (226).",
       "descricaoApa": "Investigações no ensino superior evidenciam que o sentimento de pertencimento institucional (sense of belonging) e a qualidade dos vínculos interpessoais estabelecidos entre estudantes, pares e docentes constituem fatores determinantes de proteção ao bem-estar subjetivo e à satisfação com a vida universitária (Pleschová et al., 2026). A literatura demonstra que a percepção de isolamento e a ausência de conexão comunitária correlacionam-se diretamente com sintomas de solidão, ansiedade e sofrimento psíquico, elevando o risco de desengajamento e abandono acadêmico (Pleschová et al., 2026). A viabilização desse sentimento de pertença requer, contudo, a consolidação de ambientes institucionais protegidos, demandando mecanismos sistemáticos de monitoramento e combate a práticas de violência interpessoal, assédio e discriminação que corroem a segurança psicológica no campus (Guilherme et al., 2023). Em contextos de massificação do ensino, a universidade precisa estruturar intencionalmente espaços de acolhimento e suporte mútuo, permitindo que os estudantes reconstruam suas trajetórias identitárias e desenvolvam propósitos formativos compartilhados (Chopra & Dryden-Peterson, 2020).",
-      "classificacao": "Achado Empírico",
+      "classificacao": "Fato Portador de Futuro",
       "pestel": [
         "Social",
         "Econômico"
@@ -2079,7 +1541,7 @@ const sfData = {
       "titulo": "Suporte Institucional, Aconselhamento e Satisfação com Serviços como Determinantes do Bem-Estar e da Motivação Discente",
       "descricao": "Investigações empíricas no ensino superior evidenciam que a satisfação com a qualidade dos serviços institucionais exerce um impacto direto e positivo sobre o bem-estar psicológico e a saúde mental dos estudantes (44). Esse suporte torna-se ainda mais crítico ao se constatar que vulnerabilidades prévias  (como históricos de menor rendimento na educação básica) afetam negativamente a motivação acadêmica, diminuem a percepção de autoeficácia e elevam a ansiedade discente frente às exigências da graduação (218). Diante dos desafios de transição para o ambiente universitário e do estresse decorrente de adaptações socioculturais e institucionais (200), a literatura comprova que a oferta estruturada de serviços de aconselhamento estudantil (counselling), orientação psicossocial e mentoria de pares atua como fator decisivo de proteção (108). A modernização e humanização do atendimento universitário configuram-se, portanto, como um imperativo de acolhimento institucional indispensável para mitigar desajustes emocionais e sustentar a permanência acadêmica de grupos em situação de maior vulnerabilidade (44, 108).",
       "descricaoApa": "Investigações empíricas no ensino superior evidenciam que a satisfação com a qualidade dos serviços institucionais exerce um impacto direto e positivo sobre o bem-estar psicológico e a saúde mental dos estudantes (Sirohi et al., 2026). Esse suporte torna-se ainda mais crítico ao se constatar que vulnerabilidades prévias (como históricos de menor rendimento na educação básica) afetam negativamente a motivação acadêmica, diminuem a percepção de autoeficácia e elevam a ansiedade discente frente às exigências da graduação (Rodríguez-Llorente et al., 2023). Diante dos desafios de transição para o ambiente universitário e do estresse decorrente de adaptações socioculturais e institucionais (Shafaei & Razak, 2016), a literatura comprova que a oferta estruturada de serviços de aconselhamento estudantil (counselling), orientação psicossocial e mentoria de pares atua como fator decisivo de proteção (Wulz et al., 2018). A modernização e humanização do atendimento universitário configuram-se, portanto, como um imperativo de acolhimento institucional indispensável para mitigar desajustes emocionais e sustentar a permanência acadêmica de grupos em situação de maior vulnerabilidade (Sirohi et al., 2026; Wulz et al., 2018).",
-      "classificacao": "Achado Empírico",
+      "classificacao": "Fato Portador de Futuro",
       "pestel": [
         "Social",
         "Econômico"
@@ -2107,46 +1569,13 @@ const sfData = {
       "incorporadas": []
     },
     {
-      "id": "SF52",
-      "fonte": "Scopus",
-      "topico": "Saúde Mental, Bem-Estar e Experiência do Estudante",
-      "titulo": "O Paradoxo da Interação Remota e a Vigilância Digital: Fadiga de Telas, Ansiedade e Desconfiança Algorítmica",
-      "descricao": "A transição acelerada para interações predominantemente virtuais gerou um novo espectro de adoecimento sociotécnico, sintetizado na fadiga crônica por videoconferência e na ansiedade social disparada pela exigência de câmeras abertas ininterruptas (webcam anxiety) (83, 294). A esse desgaste soma-se o ressentimento e a desconfiança estudantil provocados pela intensificação da vigilância algorítmica e sistemas invasivos de telemetria e controle comportamental em exames, fenômeno percebido como um verdadeiro 'panóptico digital' que corrói a relação de confiança entre estudante e instituição (177).",
-      "descricaoApa": "N/A",
-      "classificacao": "Sinal Fraco",
-      "pestel": [
-        "Social",
-        "Tecnológico"
-      ],
-      "eixo": "3 - Dinâmicas Sociodemográficas",
-      "qtdArtigos": 3,
-      "artigosIds": [
-        83,
-        177,
-        294
-      ],
-      "referenciasResumidas": "[83] Groß M. (2026) - The webcam strikes a balance: The light and dark sides of webcam use in higher education policies | [177] Elif Kutlugun H. (2026) - The Ambivalent Gaze: Student Perspectives on Surveillance in Higher Education | [294] Novara C. (2022) - Distance Learning during the COVID-19 Pandemic: Resources, Obstacles, and Emotional Implications for Italian Students in Higher Education",
-      "implicacoes": "Estabelecimento de diretrizes claras de etiqueta digital e respeito à privacidade estudantil nas plataformas virtuais, superando exigências coercitivas de câmera aberta e sistemas biométricos desumanizadores.",
-      "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
-      "justificativa": "",
-      "fusaoId": "",
-      "divisaoIds": [],
-      "origemDivisao": "",
-      "vinculo": [],
-      "incorporadas": []
-    },
-    {
       "id": "SF53",
       "fonte": "Scopus",
       "topico": "Saúde Mental, Bem-Estar e Experiência do Estudante",
-      "titulo": "A 'Virada Psicológica' no Ensino Superior: Medicalização versus Pedagogias Afetivas, Mindfulness e Esperança no Futuro",
-      "descricao": "Constata-se uma preocupante tendência à medicalização e patologização individualizante de angústias e frustrações discentes decorrentes de pressões sociais e econômicas estruturais (a chamada 'virada psicológica') (126, 333). Em contraposição a intervenções puramente psiquiátricas, ganham força abordagens pedagógicas intencionalmente orientadas à afetividade, incorporação de práticas contemplativas (mindfulness) e inteligência socioemocional nas rotinas de aprendizagem (30, 210, 341). Essa reorientação busca promover 'regimes de futuridade afetiva' que ajudem os jovens a reconstruir horizontes de esperança e agência diante da incerteza existencial contemporânea (292).",
-      "descricaoApa": "N/A",
-      "classificacao": "Tendência",
+      "titulo": "Incorporação de Práticas de Acolhimento Socioemocional e Flexibilização Curricular para a Permanência Estudantil",
+      "descricao": "Diante do aumento expressivo de queixas de esgotamento e sofrimento psíquico entre os estudantes, as instituições de ensino superior passam por uma transformação em seus modelos de governança, conhecida na literatura como a \"virada psicológica\" (126). Pesquisas apontam que esse movimento carrega uma contradição crítica: ao focar exclusivamente em métricas individuais de bem-estar, muitas universidades tendem a patologizar e medicalizar frustrações, dúvidas e desafios que são inerentes ao processo formativo, transformando pressões econômicas e pedagógicas estruturais em diagnósticos clínicos individuais (126). Como resposta a esse modelo puramente psiquiátrico, emergem práticas que tratam a saúde mental como responsabilidade institucional e coletiva (333). Esse movimento abrange desde a criação de acomodações curriculares formais para estudantes com deficiências psicossociais e neurodivergências, garantindo condições de permanência e conclusão de curso (333), até o desenho de práticas pedagógicas que acolhem a dimensão emocional da aprendizagem e ajudam os jovens a reconstruir o sentimento de esperança e agência profissional frente à incerteza sobre o futuro do mercado de trabalho (30, 210, 292).",
+      "descricaoApa": "Diante do aumento expressivo de queixas de esgotamento e sofrimento psíquico entre os estudantes, as instituições de ensino superior passam por uma transformação em seus modelos de governança, conhecida na literatura como a \"virada psicológica\" (Sarauw et al., 2024). Pesquisas apontam que esse movimento carrega uma contradição crítica: ao focar exclusivamente em métricas individuais de bem-estar, muitas universidades tendem a patologizar e medicalizar frustrações, dúvidas e desafios que são inerentes ao processo formativo, transformando pressões econômicas e pedagógicas estruturais em diagnósticos clínicos individuais (Sarauw et al., 2024). Como resposta a esse modelo puramente psiquiátrico, emergem práticas que tratam a saúde mental como responsabilidade institucional e coletiva (Mahomed, 2020). Esse movimento abrange desde a criação de acomodações curriculares formais para estudantes com deficiências psicossociais e neurodivergências, garantindo condições de permanência e conclusão de curso (Mahomed, 2020), até o desenho de práticas pedagógicas que acolhem a dimensão emocional da aprendizagem e ajudam os jovens a reconstruir o sentimento de esperança e agência profissional frente à incerteza sobre o futuro do mercado de trabalho (Garcia et al., 2023; Aktan & Kaplan, 2023; Zembylas, 2025).",
+      "classificacao": "Fato Portador de Futuro",
       "pestel": [
         "Social",
         "Tecnológico"
@@ -2162,59 +1591,17 @@ const sfData = {
         341
       ],
       "referenciasResumidas": "[30] Garcia G.M.R. (2023) - Improving Learning Experiences of Business Students in the Classroom Through Emotions in Higher Education | [126] Sarauw L.L. (2024) - The psychological turn in higher education and the new taxonomy of attitudes and emotions: Denmark as a case study | [210] Aktan D. (2023) - Re-designing Higher Education for Mindfulness: Conceptualization and Communication | [292] Zembylas M. (2025) - Theorizing ‘the future’ in higher education: A framework for studying affective futurity | [333] Mahomed F. (2020) - ‘Invisible’ Disabilities in South Africa’s Higher Education Sector: An Analysis of the Inclusion of Persons with Psychosocial and Intellectual Disabilities | ... (+1 artigos)",
-      "implicacoes": "Programas institucionais de mentoria socioemocional e pedagogias da esperança que ajudem o estudante a gerenciar a ansiedade de futuro gerada pelo impacto da IA no emprego e pelas crises climáticas.",
+      "implicacoes": "Para as mantenedoras do ensino superior privado no Brasil, a saúde mental discente consolidou-se como um dos principais fatores ocultos de evasão escolar, inadimplência e perda de receita. A base de estudantes do setor privado é composta predominantemente por jovens trabalhadores que enfrentam sobrecarga de trabalho, restrição financeira e descompasso entre sua formação prévia e o rigor universitário. Diante desse cenário, grupos educacionais que limitam suas ações a campanhas pontuais de conscientização ou encaminhamentos externos falham em combater a desistência nos primeiros semestres. Esse sinal fraco aponta para a necessidade de incorporação de suporte psicopedagógico na própria rotina acadêmica, incluindo a capacitação de coordenadores e professores para acolhimento de neurodivergências e dificuldades de adaptação, além de tutorias voltadas à orientação de carreira. Instituições privadas que estruturam uma rede ativa de apoio socioemocional e flexibilização de prazos acadêmicos reduzem significativamente o abandono precoce de alunos pagantes, protegem o fluxo de caixa das mensalidades e fortalecem sua reputação como instituições comprometidas com o sucesso real de seus estudantes.",
       "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
       "origemDivisao": "",
       "vinculo": [],
-      "incorporadas": []
-    },
-    {
-      "id": "SF54",
-      "fonte": "Scopus",
-      "topico": "Papel Social, Democracia e Missão Cívica da Universidade",
-      "titulo": "A Terceira Via Universitária: Conciliação entre Eficiência Operacional e a Missão Pública Emancipatória",
-      "descricao": "Diante da acentuada polarização entre a universidade clássica estritamente pública e o modelo mercadológico puramente corporativo, desenha-se a emergência de uma 'terceira via' institucional capaz de equilibrar rigor gerencial e viabilidade econômico-financeira com uma autêntica vocação emancipadora de bem público (32, 328). Esse reposicionamento exige que as instituições enfrentem sua crise de legitimação social resgatando a centralidade da formação ética, dos valores humanistas e da responsabilidade cívica, evitando o conformismo com diretrizes que reduzem o papel acadêmico ao treinamento operacional imediato (17, 269, 370).",
-      "descricaoApa": "N/A",
-      "classificacao": "Incerteza",
-      "pestel": [
-        "Social",
-        "Político",
-        "Econômico"
-      ],
-      "eixo": "3 - Dinâmicas Sociodemográficas",
-      "qtdArtigos": 5,
-      "artigosIds": [
-        17,
-        32,
-        269,
-        328,
-        370
-      ],
-      "referenciasResumidas": "[17] Monteiro F. (2019) - Ethical education as a pillar of the future role of higher education: Analysing its presence in the curricula of engineering courses | [32] Pausits A. (2015) - The Knowledge Society and Diversification of Higher Education: From the Social Contract to the Mission of Universities | [269] Király G. (2021) - Having Nothing but Questions? The Social Discourse on Higher Education Institutions’ Legitimation Crisis | [328] Bertolin J.C.G. (2016) - Ideologies and perceptions of quality in higher education: From the dichotomy between social and economic aspects to the 'middle way' | [370] Sabouri A. (2026) - Unmasking the mirage: A critical examination of Iranian higher education policies on the educated person through Wilkinson’s Islamic critical realism",
-      "implicacoes": "Permite a grupos privados como a Cruzeiro do Sul se posicionarem como IES de interesse público e impacto social comprovado, superando o estigma de 'empresa de venda de diplomas' e construindo reputação institucional sólida e duradoura.",
-      "indicadores": "",
-      "revisada": true,
-      "statusTipo": "dividida",
-      "statusRevisao": "Dividida",
-      "statusLabel": "Revisada (Dividida: SF54a, SF54b)",
-      "justificativa": "Associações e referências eram frágeis, porém, o tema era relevante",
-      "fusaoId": "",
-      "divisaoIds": [
-        "SF54a",
-        "SF54b"
-      ],
-      "origemDivisao": "",
-      "vinculo": [
-        "SF54a",
-        "SF54b"
-      ],
       "incorporadas": []
     },
     {
@@ -2245,7 +1632,7 @@ const sfData = {
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
-      "origemDivisao": "SF54",
+      "origemDivisao": "",
       "vinculo": [
         "SF54"
       ],
@@ -2280,7 +1667,7 @@ const sfData = {
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
-      "origemDivisao": "SF54",
+      "origemDivisao": "",
       "vinculo": [
         "SF54"
       ],
@@ -2290,13 +1677,14 @@ const sfData = {
       "id": "SF55",
       "fonte": "Scopus",
       "topico": "Papel Social, Democracia e Missão Cívica da Universidade",
-      "titulo": "A Universidade como Fortaleza Democrática contra a Desinformação, Negacionismo e Polarização Social",
-      "descricao": "Em uma conjuntura social marcada pela fragmentação do debate público, desinformação em massa e intolerância ideológica, a universidade reassume sua missão essencial de salvaguarda democrática e fórum plural de racionalidade comunicativa (254, 290). Essa tarefa envolve a mediação pedagógica paciente entre rigor científico e crenças plurais, capacitando a comunidade acadêmica e a sociedade para o exercício da coragem cívica, checagem crítica de fatos e diálogo despolarizado perante narrativas extremistas (93).",
-      "descricaoApa": "N/A",
-      "classificacao": "Tendência",
+      "titulo": "A Universidade frente à Desinformação em Massa - Incerteza nos Impactos Reputacionais e Estratégias de Posicionamento Cívico-Institucional",
+      "descricao": "O avanço e a proliferação de campanhas de desinformação em massa, potencializados por dinâmicas de pós-verdade e polarização algorítmica em redes sociais, constituem um movimento amplamente consolidado e documentado em escala global (254). Esse fenômeno gera impactos profundos e crescentes sobre a imagem, a autoridade epistêmica e a credibilidade pública das Instituições de Ensino Superior (IES) (254). Configura-se uma incerteza crítica, entretanto, quanto à magnitude exata desses impactos institucionais e ao modo como as universidades devem se posicionar estrategicamente frente a esse ecossistema informacional degradado (254). De um lado, projeta-se o risco de deslegitimação acadêmica, no qual a universidade é tragada pela polarização populista e por disputas dogmáticas que colidem diretamente com o método científico na sala de aula, levando instituições a adotarem posturas de recuo, omissão ou mercantilização asséptica por receio de atritos e perda de matrículas (93, 254). De outro lado, emerge a oportunidade de reposicionamento institucional ativo, em que as IES reassumem sua missão cívica e democrática, transformando-se em fortalezas de mediação pedagógica, salvaguarda do debate empírico e fóruns de racionalidade comunicativa (93, 254), ampliando a cocriação de conhecimento e a inclusão emancipatória na esfera pública em parceria com a sociedade civil (290).",
+      "descricaoApa": "O avanço e a proliferação de campanhas de desinformação em massa, potencializados por dinâmicas de pós-verdade e polarização algorítmica em redes sociais, constituem um movimento amplamente consolidado e documentado em escala global (Gallagher, 2018). Esse fenômeno gera impactos profundos e crescentes sobre a imagem, a autoridade epistêmica e a credibilidade pública das Instituições de Ensino Superior (IES) (Gallagher, 2018). Configura-se uma incerteza crítica, entretanto, quanto à magnitude exata desses impactos institucionais e ao modo como as universidades devem se posicionar estrategicamente frente a esse ecossistema informacional degradado (Gallagher, 2018). De um lado, projeta-se o risco de deslegitimação acadêmica, no qual a universidade é tragada pela polarização populista e por disputas dogmáticas que colidem diretamente com o método científico na sala de aula, levando instituições a adotarem posturas de recuo, omissão ou mercantilização asséptica por receio de atritos e perda de matrículas (Guessoum, 2018; Gallagher, 2018). De outro lado, emerge a oportunidade de reposicionamento institucional ativo, em que as IES reassumem sua missão cívica e democrática, transformando-se em fortalezas de mediação pedagógica, salvaguarda do debate empírico e fóruns de racionalidade comunicativa (Guessoum, 2018; Gallagher, 2018), ampliando a cocriação de conhecimento e a inclusão emancipatória na esfera pública em parceria com a sociedade civil (Rajaram, 2020).",
+      "classificacao": "Incerteza",
       "pestel": [
         "Social",
-        "Político"
+        "Político",
+        "Tecnológico"
       ],
       "eixo": "3 - Dinâmicas Sociodemográficas",
       "qtdArtigos": 3,
@@ -2306,47 +1694,13 @@ const sfData = {
         290
       ],
       "referenciasResumidas": "[93] Guessoum N. (2018) - Science and religion issues in higher education | [254] Gallagher T. (2018) - Promoting the Civic and Democratic Role of Higher Education: The Next Challenge for the EHEA? | [290] Rajaram P.K. (2020) - Providing Access to Higher Education for Refugees in Europe: An Opportunity to Rethink the University and Its Role in the Public Sphere",
-      "implicacoes": "Criação de observatórios regionais de combate à desinformação e agências de checagem coordenadas por cursos de jornalismo, direito e tecnologia da informação, prestando serviços cívicos vitais para as comunidades locais.",
-      "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
-      "justificativa": "",
-      "fusaoId": "",
-      "divisaoIds": [],
-      "origemDivisao": "",
-      "vinculo": [],
-      "incorporadas": []
-    },
-    {
-      "id": "SF56",
-      "fonte": "Scopus",
-      "topico": "Papel Social, Democracia e Missão Cívica da Universidade",
-      "titulo": "Imaginação Radical, Cocriação do Futuro (Worldmaking) e Pedagogias da Incerteza e Não-Saber",
-      "descricao": "Para romper com o fatalismo do 'realismo capitalista' e a sensação de impotência das novas gerações, ganham relevância metodologias de imaginação radical e pesquisa-ação comprometidas com a cocriação ativa de futuros (worldmaking) (169, 201). Essas abordagens apoiam-se na liderança colaborativa intermediária e em pedagogias do trabalho com a juventude que valorizam a 'importância de não saber', transformando a dúvida e o desaprender em motores de experimentação social e cidadania transformadora articuladas a princípios universais de sustentabilidade (125, 336).",
-      "descricaoApa": "N/A",
-      "classificacao": "Sinal Fraco",
-      "pestel": [
-        "Social",
-        "Político"
-      ],
-      "eixo": "3 - Dinâmicas Sociodemográficas",
-      "qtdArtigos": 4,
-      "artigosIds": [
-        125,
-        169,
-        201,
-        336
-      ],
-      "referenciasResumidas": "[125] Land M. (2026) - Transformative Education and the Earth Charter: Enabling Sustainable Development Through Transformative Learning in Higher Education | [169] Gayá P. (2017) - Carpe the academy: Dismantling higher education and prefiguring critical utopias through action research | [201] Murphy J.C. (2025) - WORLDMAKING AND LEADING FROM THE MIDDLE: Collaborative Leadership in Higher Education | [336] Andersson Å. (2025) - Youth work pedagogy in higher education and the importance of not-knowing",
-      "implicacoes": "Laboratórios de Inovação Social e Cívica integrando extensão universitária obrigatória (10% da carga horária no Brasil) à solução participativa de dilemas urbanos reais com prefeituras e comunidades periféricas.",
+      "implicacoes": "A incerteza em torno da autoridade epistêmica exige uma reavaliação profunda da gestão de marca, da governança acadêmica e da extensão universitária. Em um mercado altamente concorrencial e marcado por intensa polarização política e desconfiança nas instituições tradicionais, a adoção de uma postura meramente transacional ou omissa expõe as instituições ao risco de comoditização e desvalorização social de seus diplomas. Grupos educacionais privados que se posicionam como agentes ativos de letramento científico e mediação cívica constroem barreiras sólidas de reputação e diferenciação de mercado. No horizonte até 2040, a consolidação de núcleos de checagem de fatos, observatórios de políticas públicas e projetos de extensão curricular voltados à resolução de problemas comunitários fortalece o valor percebido da formação superior, protege a instituição contra crises de imagem geradas por desinformação e atrai estudantes e famílias que buscam formação profissional pautada pelo rigor ético e pela credibilidade científica.",
       "indicadores": "",
       "revisada": true,
-      "statusTipo": "descartada",
-      "statusRevisao": "Descartada",
-      "statusLabel": "Revisada (Descartada)",
-      "justificativa": "Não comunica SF (trata de metodologias de ensino)",
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
+      "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
       "origemDivisao": "",
@@ -2357,13 +1711,14 @@ const sfData = {
       "id": "SF57",
       "fonte": "Scopus",
       "topico": "Papel Social, Democracia e Missão Cívica da Universidade",
-      "titulo": "Soberania Epistêmica, Descolonização Curricular e Valorização de Conhecimentos Originários",
-      "descricao": "Movimentos intelectuais descoloniais pressionam a academia a desmantelar a hegemonia eurocêntrica e monocultural que historicamente pautou os cânones científicos e as grades curriculares superiores (230, 268). Essa semente manifesta-se na incorporação sistemática de línguas e saberes dos povos originários nos meios de instrução e na validação epistemológica de cosmologias e técnicas ancestrais do Sul Global, inaugurando uma perspectiva de 'pluriversidade' dialógica e plural (62, 268).",
-      "descricaoApa": "N/A",
-      "classificacao": "Sinal Fraco",
+      "titulo": "Descolonização Curricular e Inclusão de Saberes Tradicionais e Regionais no Ensino Superior",
+      "descricao": "Em diferentes países do Sul Global, cresce a pressão para que o ensino superior deixe de ensinar apenas conteúdos baseados em modelos tradicionais ocidentais e passe a valorizar os conhecimentos, a história e as culturas locais (230, 268). Esse movimento, conhecido como descolonização curricular, defende que a formação universitária deve incluir os saberes de povos indígenas e comunidades tradicionais nas salas de aula e nos projetos de pesquisa (230, 268). Pesquisas mostram que, para democratizar o acesso à universidade e apoiar o desenvolvimento local, é fundamental valorizar as línguas e a realidade cultural de cada país, superando o uso exclusivo de referências importadas (62). No entanto, transformar esse princípio em realidade ainda é um grande desafio prático: muitas instituições apenas criam comitês ou incluem conteúdos de forma superficial no papel, enfrentando dificuldades concretas para capacitar professores e reformular as aulas (230). Quando bem aplicada, essa mudança conecta o ensino universitário às necessidades do território onde a instituição atua, resgatando memórias locais e formando profissionais mais preparados para lidar com os desafios reais da sociedade (268).",
+      "descricaoApa": "Em diferentes países do Sul Global, cresce a pressão para que o ensino superior deixe de ensinar apenas conteúdos baseados em modelos tradicionais ocidentais e passe a valorizar os conhecimentos, a história e as culturas locais (Longkumer, 2025; Gamliel & Davies, 2026). Esse movimento, conhecido como descolonização curricular, defende que a formação universitária deve incluir os saberes de povos indígenas e comunidades tradicionais nas salas de aula e nos projetos de pesquisa (Longkumer, 2025; Gamliel & Davies, 2026). Pesquisas mostram que, para democratizar o acesso à universidade e apoiar o desenvolvimento local, é fundamental valorizar as línguas e a realidade cultural de cada país, superando o uso exclusivo de referências importadas (ResCue & van Pinxteren, 2023). No entanto, transformar esse princípio em realidade ainda é um grande desafio prático: muitas instituições apenas criam comitês ou incluem conteúdos de forma superficial no papel, enfrentando dificuldades concretas para capacitar professores e reformular as aulas (Longkumer, 2025). Quando bem aplicada, essa mudança conecta o ensino universitário às necessidades do território onde a instituição atua, resgatando memórias locais e formando profissionais mais preparados para lidar com os desafios reais da sociedade (Gamliel & Davies, 2026).",
+      "classificacao": "Fato Portador de Futuro",
       "pestel": [
         "Social",
-        "Político"
+        "Político",
+        "Legal"
       ],
       "eixo": "3 - Dinâmicas Sociodemográficas",
       "qtdArtigos": 3,
@@ -2373,12 +1728,12 @@ const sfData = {
         268
       ],
       "referenciasResumidas": "[62] ResCue E. (2023) - The policy relevance of indigenous languages for higher education in Africa: A Ghanaian perspective | [230] Longkumer I.W. (2025) - Decolonizing Higher Education Curricula: Perspectives from Teaching Indigenous Literature | [268] Gamliel O. (2026) - Decolonial Pedagogies and South Asian Studies: Knowledge Production, Erasure and Recovery in Higher Education",
-      "implicacoes": "Abertura de licenciaturas e cursos de extensão interculturais para comunidades indígenas, quilombolas e populações tradicionais, enriquecendo o patrimônio epistemológico da instituição.",
+      "implicacoes": "A valorização de saberes locais e tradicionais representa uma oportunidade prática de diferenciar seus cursos e fortalecer a relação com a comunidade. Historicamente, muitas faculdades privadas adotam currículos padronizados e genéricos, cumprindo as exigências do MEC sobre educação étnico-racial apenas por meio de disciplinas optativas ou cursos rápidos à distância, sem conexão real com a prática. No entanto, instituições que atuam em regiões do Norte, Nordeste e Centro-Oeste, ou em grandes periferias urbanas, podem utilizar os conhecimentos locais para enriquecer cursos como enfermagem e farmácia (saúde comunitária e fitoterápicos), agronomia (práticas agrícolas sustentáveis), direito (direitos territoriais e mediação de conflitos) e licenciaturas. Essa abordagem prática torna as aulas mais atrativas, melhora o acolhimento e a permanência de estudantes indígenas, quilombolas e de origens diversas, fortalece os indicadores sociais exigidos pelo MEC e diferencia a instituição em um mercado saturado de diplomas padronizados.",
       "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
@@ -2390,13 +1745,14 @@ const sfData = {
       "id": "SF58",
       "fonte": "Scopus",
       "topico": "Papel Social, Democracia e Missão Cívica da Universidade",
-      "titulo": "Ativismo Estudantil, Crítica ao Pós-Neoliberalismo e Reinvenção dos Imaginários Acadêmicos",
-      "descricao": "A insurgência e o ativismo político dos movimentos estudantis contemporâneos recusam a condição de meros 'clientes' ou 'consumidores passivos' de serviços educacionais, desafiando a governança neoliberal e os altos custos de acesso (132, 227). Esse ativismo articula pautas de justiça climática, gratuidade, democratização decisória e antirracismo, forçando as reitorias a reavaliarem prioridades de investimento e reafirmando o estudante como co-autor ativo da vida universitária (227).",
-      "descricaoApa": "N/A",
+      "titulo": "Ativismo Estudantil contra a Mercantilização da Educação: Pressão por Transparência, Participação e Compromisso Social",
+      "descricao": "Investigações sobre a governança universitária revelam uma transformação na postura dos estudantes frente às instituições de ensino superior. Em mercados educacionais com forte cobrança de mensalidades, como nos Estados Unidos, movimentos estudantis passam a contestar abertamente a lógica que os reduz a meros clientes ou consumidores passivos, articulando cobranças por transparência financeira, participação nas decisões e compromisso com a justiça social (227). Por sua vez, estudos sobre o Sul Global, incluindo o Brasil, apontam que crises econômicas e a redução de suporte institucional aprofundam as desigualdades discentes e elevam o estresse de adaptação, evidenciando a necessidade de as universidades trabalharem em estreita articulação com suas representações estudantis (132). Esse contexto sugere uma incerteza sobre o futuro dessa relação institucional: de um lado, instituições privadas que mantêm uma gestão estritamente comercial e fechada à escuta discente enfrentam o risco de desgaste reputacional, mobilizações em redes sociais e evasão; de outro lado, universidades que estruturam canais legítimos de diálogo, transparência e acolhimento conseguem engajar os estudantes como parceiros na melhoria acadêmica e na retenção discente (132, 227).",
+      "descricaoApa": "Investigações sobre a governança universitária revelam uma transformação na postura dos estudantes frente às instituições de ensino superior. Em mercados educacionais com forte cobrança de mensalidades, como nos Estados Unidos, movimentos estudantis passam a contestar abertamente a lógica que os reduz a meros clientes ou consumidores passivos, articulando cobranças por transparência financeira, participação nas decisões e compromisso com a justiça social (Cole & Heinecke, 2020). Por sua vez, estudos sobre o Sul Global, incluindo o Brasil, apontam que crises econômicas e a redução de suporte institucional aprofundam as desigualdades discentes e elevam o estresse de adaptação, evidenciando a necessidade de as universidades trabalharem em estreita articulação com suas representações estudantis (Husain, 2022). Esse contexto sugere uma incerteza sobre o futuro dessa relação institucional: de um lado, instituições privadas que mantêm uma gestão estritamente comercial e fechada à escuta discente enfrentam o risco de desgaste reputacional, mobilizações em redes sociais e evasão; de outro lado, universidades que estruturam canais legítimos de diálogo, transparência e acolhimento conseguem engajar os estudantes como parceiros na melhoria acadêmica e na retenção discente (Husain, 2022; Cole & Heinecke, 2020).",
       "classificacao": "Incerteza",
       "pestel": [
         "Social",
-        "Político"
+        "Político",
+        "Econômico"
       ],
       "eixo": "3 - Dinâmicas Sociodemográficas",
       "qtdArtigos": 2,
@@ -2405,12 +1761,12 @@ const sfData = {
         227
       ],
       "referenciasResumidas": "[132] Husain M.M. (2022) - COVID-19 and crises of higher education: Responses and intensifying inequalities in the Global South | [227] Cole R.M. (2020) - Higher education after neoliberalism: Student activism as a guiding light",
-      "implicacoes": "Exige que a gestão universitária estabeleça canais institucionais autênticos de diálogo e cocriação com coletivos e representações estudantis, evitando conflitos destrutivos e canalizando o engajamento juvenil em prol de causas institucionais.",
+      "implicacoes": "Grupos educacionais que tratam o estudante apenas como uma métrica de receita ou número de matrícula enfrentam vulnerabilidade crescente a mobilizações digitais coordenadas e crises de imagem, amplificadas pela facilidade com que jovens organizam campanhas de denúncia em redes sociais sobre aumentos de mensalidade, precarização de instalações ou falhas no atendimento acadêmico. A incerteza reside na capacidade de transição do modelo tradicional de atendimento reativo para uma governança de escuta ativa e diálogo institucional. Grupos privados que criam canais formais de interlocução com lideranças estudantis, comitês de transparência e conselhos consultivos de campus conseguem antecipar insatisfações, mitigar conflitos antes que ganhem repercussão pública e construir um sentimento real de pertencimento. Essa integração direta melhora os índices de retenção e transforma os estudantes em defensores voluntários da reputação da instituição no mercado.",
       "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
@@ -2529,7 +1885,7 @@ const sfData = {
       "titulo": "Institucionalização de Science Shops Universitários como Interfaces de Pesquisa Cidadã e Inovação Social",
       "descricao": "Investigações internacionais demonstram a emergência das chamadas Science Shops como estruturas institucionais de transição entre o meio acadêmico e a sociedade civil organizada, operando como balcões de mediação que acolhem demandas reais de ONGs, coletivos e comunidades vulneráveis para solucioná-las em cocriação com docentes e estudantes (354). Ao invés de práticas pontuais de voluntariado ou assistencialismo, a Science Shop incorpora as demandas comunitárias diretamente aos projetos curriculares e às práticas de ensino e aprendizagem, promovendo a aprendizagem transformacional e o reconhecimento da equivalência entre o conhecimento técnico-científico e o saber popular (354). No ensino superior, esse modelo funciona como um vetor de reconfiguração da relação da universidade com seu entorno territorial, confrontando a lógica estritamente mercantil e capacitando os estudantes a enfrentarem dilemas éticos, desigualdades e desafios complexos de sustentabilidade por meio da pesquisa cidadã participativa.",
       "descricaoApa": "Investigações internacionais demonstram a emergência das chamadas Science Shops como estruturas institucionais de transição entre o meio acadêmico e a sociedade civil organizada, operando como balcões de mediação que acolhem demandas reais de ONGs, coletivos e comunidades vulneráveis para solucioná-las em cocriação com docentes e estudantes (Toarniczky et al., 2019). Ao invés de práticas pontuais de voluntariado ou assistencialismo, a Science Shop incorpora as demandas comunitárias diretamente aos projetos curriculares e às práticas de ensino e aprendizagem, promovendo a aprendizagem transformacional e o reconhecimento da equivalência entre o conhecimento técnico-científico e o saber popular (Toarniczky et al., 2019). No ensino superior, esse modelo funciona como um vetor de reconfiguração da relação da universidade com seu entorno territorial, confrontando a lógica estritamente mercantil e capacitando os estudantes a enfrentarem dilemas éticos, desigualdades e desafios complexos de sustentabilidade por meio da pesquisa cidadã participativa.",
-      "classificacao": "Sinal Fraco",
+      "classificacao": "Fato Portador de Futuro",
       "pestel": [
         "Social",
         "Tecnológico"
@@ -2560,7 +1916,7 @@ const sfData = {
       "titulo": "Letramento Quântico (Quantum Literacy) e Formação Antecipatória de Competências para a Economia Quântica",
       "descricao": "Observa-se o crescimento acelerado de políticas governamentais e diretrizes institucionais voltadas ao desenvolvimento de competências em tecnologias quânticas bem antes da ampla disponibilidade comercial do hardware (382, 384). Mapeamentos acadêmicos recentes documentam a consolidação de um campo pedagógico próprio com estratégias didáticas empíricas para o ensino de conceitos quânticos em cursos STEM e Ciência de Dados (388, 389), acompanhado pelos primeiros movimentos no mercado brasileiro de formação profissional, como o lançamento de programas de pós-graduação pioneiros voltados à engenharia e tecnologia (393). Esse movimento sinaliza uma trajetória na qual o letramento quântico ('Quantum Literacy') deixa de ser nicho restrito da física teórica e passa a ser demandado como competência transversal em diversas áreas, como finanças, logística, química computacional e cibersegurança (383, 388), forçando as IES a anteciparem a reformulação curricular para evitar um apagão de mão de obra especializada no horizonte 2030–2040 (382, 384)",
       "descricaoApa": "Observa-se o crescimento acelerado de políticas governamentais e diretrizes institucionais voltadas ao desenvolvimento de competências em tecnologias quânticas bem antes da ampla disponibilidade comercial do hardware (European Commission, 2025; OECD, 2025a). Mapeamentos acadêmicos recentes documentam a consolidação de um campo pedagógico próprio com estratégias didáticas empíricas para o ensino de conceitos quânticos em cursos STEM e Ciência de Dados (Donhauser et al., 2024; López-Meneses et al., 2025), acompanhado pelos primeiros movimentos no mercado brasileiro de formação profissional, como o lançamento de programas de pós-graduação pioneiros voltados à engenharia e tecnologia (MCTI et al., 2026). Esse movimento sinaliza uma trajetória na qual o letramento quântico ('Quantum Literacy') deixa de ser nicho restrito da física teórica e passa a ser demandado como competência transversal em diversas áreas, como finanças, logística, química computacional e cibersegurança (López-Meneses et al., 2025; OECD, 2025b), forçando as IES a anteciparem a reformulação curricular para evitar um apagão de mão de obra especializada no horizonte 2030–2040 (European Commission, 2025; OECD, 2025a).",
-      "classificacao": "Sinal Fraco",
+      "classificacao": "Fato Portador de Futuro",
       "pestel": [
         "Tecnológico",
         "Social",
@@ -2630,7 +1986,7 @@ const sfData = {
       "titulo": "Otimização Quântica Híbrida (Quantum Annealing) na Resolução de Gargalos Operacionais Complexos da Universidade",
       "descricao": "Experiências empíricas pioneiras com processadores quânticos híbridos (como annealers acoplados a sistemas de computação clássica) demonstraram viabilidade prática na resolução de problemas complexos de otimização combinatória universitária, como o escalonamento simultâneo de milhares de exames, disciplinas e salas para turmas massivas sem conflitos de horários (387). Esse sinal indica que a primeira porta de entrada da computação quântica no cotidiano educacional pode não ocorrer na sala de aula, mas nas operações logísticas de retaguarda ('back-office'), onde o cálculo combinatório de alocação de turmas, rotas de transporte, ensalamento dinâmico e retenção discente em grandes redes multicampi atinge limites matemáticos para algoritmos puramente convencionais (387, 392).",
       "descricaoApa": "Experiências empíricas pioneiras com processadores quânticos híbridos (como annealers acoplados a sistemas de computação clássica) demonstraram viabilidade prática na resolução de problemas complexos de otimização combinatória universitária, como o escalonamento simultâneo de milhares de exames, disciplinas e salas para turmas massivas sem conflitos de horários (Zhou et al., 2025). Esse sinal indica que a primeira porta de entrada da computação quântica no cotidiano educacional pode não ocorrer na sala de aula, mas nas operações logísticas de retaguarda ('back-office'), onde o cálculo combinatório de alocação de turmas, rotas de transporte, ensalamento dinâmico e retenção discente em grandes redes multicampi atinge limites matemáticos para algoritmos puramente convencionais (IBM Quantum, 2026; Zhou et al., 2025).",
-      "classificacao": "Sinal Fraco",
+      "classificacao": "Fato Portador de Futuro",
       "pestel": [
         "Tecnológico",
         "Econômico"
@@ -2662,7 +2018,7 @@ const sfData = {
       "titulo": "Convergência entre Algoritmos Quânticos e Educação 5.0 para a Hiperpersonalização da Aprendizagem",
       "descricao": "O Conceito de Educação 5.0 (caracterizada pelo foco no desenvolvimento humano integral apoiado por tecnologias avançadas) encontra um novo vetor de aceleração em pesquisas que combinam Inteligência Artificial e Computação Quântica (Quantum Machine Learning - QML) (386). Enquanto as plataformas atuais se limitam a adaptar conteúdos a partir de métricas básicas de acertos e erros, os modelos quânticos experimentais demonstram capacidade matemática de processar simultaneamente centenas de variáveis do perfil do estudante (ritmo cognitivo, lacunas conceituais prévias, engajamento e preferências de aprendizagem) para criar trilhas de ensino dinâmicas e hiperpersonalizadas em tempo real (386). Embora revisões sistemáticas apontem que a tecnologia ainda opera em fase laboratorial com limitações de hardware e taxas de ruído (391), esse movimento estabelece as bases teóricas para que as instituições transitem de sistemas de tutoria padronizados para ecossistemas de aprendizagem adaptativa com profundidade sem precedentes até 2040 (386, 391).",
       "descricaoApa": "A evolução da Educação 5.0 — caracterizada pelo foco no desenvolvimento humano integral apoiado por tecnologias avançadas — encontra um novo vetor de aceleração nas pesquisas pioneiras que combinam Inteligência Artificial e Computação Quântica (Quantum Machine Learning - QML) (Rosales Huamani et al., 2026). Enquanto as plataformas atuais se limitam a adaptar conteúdos a partir de métricas básicas de acertos e erros, os modelos quânticos experimentais demonstram capacidade matemática de processar simultaneamente centenas de variáveis do perfil do estudante (ritmo cognitivo, lacunas conceituais prévias, engajamento e preferências de aprendizagem) para criar trilhas de ensino dinâmicas e hiperpersonalizadas em tempo real (Rosales Huamani et al., 2026). Embora revisões sistemáticas apontem que a tecnologia ainda opera em fase laboratorial com limitações de hardware e taxas de ruído (Rodríguez-Díaz et al., 2025), esse movimento estabelece as bases teóricas para que as instituições transitem de sistemas de tutoria padronizados para ecossistemas de aprendizagem adaptativa com profundidade sem precedentes até 2040 (Rodríguez-Díaz et al., 2025; Rosales Huamani et al., 2026).",
-      "classificacao": "Sinal Fraco",
+      "classificacao": "Fato Portador de Futuro",
       "pestel": [
         "Tecnológico",
         "Social"
@@ -2789,9 +2145,7 @@ const sfData = {
       "vinculo": [
         "SF22"
       ],
-      "incorporadas": [
-        "SF22"
-      ]
+      "incorporadas": []
     },
     {
       "id": "SFS03",
@@ -2841,7 +2195,6 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF25",
         "SF25b"
       ]
     },
@@ -2876,25 +2229,7 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF22",
         "SFS02"
-      ]
-    },
-    {
-      "id": 4,
-      "fonte": "Scopus",
-      "authors": "Kanaan T.H.",
-      "title": "The political economy of higher education in Jordan: Cost-sharing revisited",
-      "year": 2018,
-      "sourceTitle": "Universities in Arab Countries: An Urgent Need for Change: Underpinning the Transition to a Peaceful and Prosperous Future",
-      "doi": "10.1007/978-3-319-73111-7_14",
-      "doiLink": "https://doi.org/10.1007/978-3-319-73111-7_14",
-      "abstract": "This study analyzes the financing pattern of higher education in Jordan, identifying its strengths and weaknesses in light of the increasing scarcity of government resources and the foreseeable future challenges. It explores the extent to which the current system is adequate, efficient, and equitable, and concludes by suggesting alternative strategies for resolving problems in financing higher education in Jordan. Under the current arrangements, the Jordanian higher education system is facing a number of constraints, which affect the adequacy, efficiency, and equity of funding. Public expenditure on higher education is relatively low and diminishing with increasing reliance on households pressured to compensate for this deficiency through private expenditure. Although expenditure on university education has been rising over time, it has hardly kept pace with the volume of enrolled students thus compromising the quality of education. Public universities have been put under pressure to devise alternative options to generate the resources to meet the rising demand on their services. Within public universities recourse has been made to the so-called \"parallel programs\", whereby students who could not be admitted to the universities or academic faculties of their choice on the strength of their scores in \"Tawjihi\" (secondary school) examination, may obtain admission by paying substantially higher tuition fees. External to public universities, a cost-sharing mechanism has been created through giving license to the private sector to establish private universities as business ventures. These, unlike public universities, enjoy considerable discretion to set tuition fees that cover the full cost of their services. Making them more expensive to attend than public universities. Although both mechanisms have led to the generation of much-needed financial resources, they have also raised questions of equity as they make it more difficult for students from poorer backgrounds to gain access to university education. Moreover, questions can be raised regarding the adverse effects of the profit-motive characterizing commercially oriented private universities on the quality of education. The data and analyses presented in this study serve as a basis for a proposed new approach to public, private and civil society partnership. Here innovative arrangements are proposed to generate adequate financial resources to meet the increasing demand on higher education, with no or minimal compromise on quality, and with maximal attention to considerations of equity. The proposal includes efforts to stimulate the role of civil society through reformation of the culture of social responsibility currently prevailing in Jordan. A culture of social responsibility is arguably the true essence of Arab-Islamic values as evident in the religious duty of Zakat and the institution of Awqaf. Unfortunately, discharging the Zakat obligation and executing Awqaf donations has been narrowly interpreted with an over-emphasis on religious bequests. What is needed is a redirection of the donations from the mosque (Jame') to the university (Jami'a). If implemented, this proposal could enable public universities and other non-profit higher education institutions to become financially bankable and independent by augmenting their income-generating capabilities. The new approach, while taking due account of market forces (demand, supply and prices), remains faithful to the basic proposition of seeing higher education as a \"public good\", the provision of which is subordinate to social objectives. © Springer International Publishing AG, part of Springer Nature 2018. All rights reserved.",
-      "authorKeywords": "Cost-sharing; Financing students education; Higher education; Jordan; Student tuition",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF32"
       ]
     },
     {
@@ -2911,24 +2246,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF25",
         "SF25b"
       ]
-    },
-    {
-      "id": 6,
-      "fonte": "Scopus",
-      "authors": "Duan W.; Liu S.",
-      "title": "An study on the evaluation model of the higher education informatization",
-      "year": 2010,
-      "sourceTitle": "2010 International Conference on Future Information Technology and Management Engineering, FITME 2010",
-      "doi": "10.1109/FITME.2010.5656320",
-      "doiLink": "https://doi.org/10.1109/FITME.2010.5656320",
-      "abstract": "Based on the special feature and the research and analysis to the higher education informatization evaluation, this paper take quantitative and qualitative methods as practice to construct the index system to the higher education informatization evaluation. And based on this index system, a multi-objective ranking is established for the analysis model via methods and formulas of AHP and DEA. And by evaluating and analyzing the higher education informatization, this paper uses this model to explore a new approach for evaluation to the higher education informatization. © 2010 IEEE.",
-      "authorKeywords": "AHP; DEA; Evaluation model; Higher education informatization",
-      "indexKeywords": "Hierarchical systems; Information technology; AHP; Analysis models; DEA; Evaluation models; Higher education; Index systems; Informatization; Multi-objective ranking; New approaches; Quantitative and qualitative methods; Research and analysis; Education",
-      "documentType": "Conference paper",
-      "associatedSFs": []
     },
     {
       "id": 7,
@@ -2965,23 +2284,6 @@ const sfData = {
       ]
     },
     {
-      "id": 9,
-      "fonte": "Scopus",
-      "authors": "Verma B.K.; Srivastav N.; Bharti A.K.",
-      "title": "Optimizing academic performance in hybrid learning via clustering-guided with data mining techniques in higher education system",
-      "year": 2026,
-      "sourceTitle": "Recent Trends in Data Analytics and Computing: Exploring Emerging Technologies and Future Directions, A proceeding of ICADAC – 2025",
-      "doi": "10.1201/9781003724995-8",
-      "doiLink": "https://doi.org/10.1201/9781003724995-8",
-      "abstract": "The hybrid learning model — a combination of online and in-person instruction, became increasingly popular in higher education. Still, applying inventive measures becomes crucial to ensure maximum academic achievement in this evolving environment. This research addresses the utilization of clustering-guided data mining methods for enhancing academic performance in hybrid learning environments, based on the need for exploration. A large dataset is analyzed, composed of behavioral, performance and engagement indicators, and students are classified into meaningful groups based on commonalities. These clusters reflect trends that inform interventions for customized learning, helping teachers tailor their pedagogy to the diverse needs of students. Data mining and clustering methods for better performance in an online–offline hybrid learning environment. The results highlight the utility of data mining and clustering methods for improving student performance, optimizing resource utilization, and providing serious insights about successful hybrid learning methodologies. According to the study, machine learning technology in the classroom can help create more inclusive, effective, and information-knowledge capable learning and teaching environments for both individuals and groups. This will ultimately improve academic performance in higher education. © 2026 CRC Press.",
-      "authorKeywords": "Clustering algorithms; Data mining; Higher education; Hybrid learning; Learning analytics; Machine learning student engagement; Predictive modelling",
-      "indexKeywords": "Cluster analysis; Clustering algorithms; Computer aided instruction; E-learning; Education computing; Engineering education; Large datasets; Learning algorithms; Learning systems; Predictive analytics; Students; Teaching; Academic performance; Clusterings; Data mining methods; High educations; Hybrid learning; Learning analytic; Machine learning student engagement; Machine-learning; Predictive models; Student engagement; Data mining",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF09"
-      ]
-    },
-    {
       "id": 10,
       "fonte": "Scopus",
       "authors": "Badran A.",
@@ -2997,21 +2299,6 @@ const sfData = {
       "associatedSFs": [
         "SF28"
       ]
-    },
-    {
-      "id": 11,
-      "fonte": "Scopus",
-      "authors": "Li X.; Zhao J.",
-      "title": "On construction mechanism innovation of teaching staff in higher education institutions",
-      "year": 2009,
-      "sourceTitle": "2009 2nd International Conference on Future Information Technology and Management Engineering, FITME 2009",
-      "doi": "10.1109/FITME.2009.91",
-      "doiLink": "https://doi.org/10.1109/FITME.2009.91",
-      "abstract": "Innovations in the construction mechanism of teaching staff are the essential assurance measures for strengthening the core competence and promoting the sustainable development of higher education institutions. This paper makes scientific classification of management system of teaching staff in higher education institutions, discusses the feedback and amendment system of construction of teaching staff, after which is being effectively carried out. Therefore, it aims to form an operating mechanism based on the system's establishment, implementation, feedback and improvement. © 2009 IEEE.",
-      "authorKeywords": "Construction of teaching staff; Feedback and amendment; Innovation; Mechanism",
-      "indexKeywords": "Information technology; Innovation; Societies and institutions; Strategic planning; Core competence; Higher education institutions; Management systems; Operating mechanism; Teaching staff; Teaching",
-      "documentType": "Conference paper",
-      "associatedSFs": []
     },
     {
       "id": 12,
@@ -3099,23 +2386,6 @@ const sfData = {
       ]
     },
     {
-      "id": 17,
-      "fonte": "Scopus",
-      "authors": "Monteiro F.; Leite C.; Rocha C.",
-      "title": "Ethical education as a pillar of the future role of higher education: Analysing its presence in the curricula of engineering courses",
-      "year": 2019,
-      "sourceTitle": "Futures",
-      "doi": "10.1016/j.futures.2018.02.004",
-      "doiLink": "https://doi.org/10.1016/j.futures.2018.02.004",
-      "abstract": "Currently, higher education has lost part of its historical role, and its mission has been substantially altered, as it has focused on providing services to the economic sector. Contemporary challenges and characteristics and the prediction of future challenges demand new roles and missions for higher education. Faced with the challenges of the present and the challenges foreseen in the future, the role of engineering and technology stands out. This study highlights the need for ethical education as a pillar of higher education in and towards the future, particularly in the field of engineering, and describes the main characteristics that this education component needs. The aim of the study was to investigate whether the characteristics of ethical education in the future and towards the future are already contemplated in the curricular units of Portuguese engineering higher education courses with an ethical component. It was possible to conclude that, although ethical education is somewhat present in engineering courses, it is only found in a few courses and still does not present the necessary characteristics of ethical education defended in this paper. © 2018 Elsevier Ltd",
-      "authorKeywords": "Engineering education; Ethical education; Future; Higher education; Technology",
-      "indexKeywords": "Portugal; curriculum; education; engineering; ethics; future prospect; higher education; technological development",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF54"
-      ]
-    },
-    {
       "id": 18,
       "fonte": "Scopus",
       "authors": "Blass E.; Hayward P.",
@@ -3163,40 +2433,7 @@ const sfData = {
       "indexKeywords": "Education computing; Sustainable development; Teaching; Back up; Colleges and universities; Higher education institutions; Higher education system; Policy making; Social support; Student supports; Student teachers; Teachers' support; World class; Students",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45",
         "SF45a"
-      ]
-    },
-    {
-      "id": 21,
-      "fonte": "Scopus",
-      "authors": "Reichel A.",
-      "title": "Tourism and hospitality higher education in Israel",
-      "year": 2006,
-      "sourceTitle": "Global Tourism Higher Education: Past, Present, and Future",
-      "doi": "10.1300/J172v05n01_04",
-      "doiLink": "https://doi.org/10.1300/J172v05n01_04",
-      "abstract": "This paper presents the past and present of higher education in tourism and hospitality management in Israel. The paper discusses the growth of higher education in hospitality and tourism through local initiatives and by franchising and extensions from foreign institutions. The nature of the higher education system in Israel and the accreditation processes of local academic programs is discussed. The case of Ben-Gurion University is introduced to illustrate the development of an academic program in hospitality and tourism management. The paper also compares the current state of the available academic programs to the year of 2000, at the eve of the Palestinian uprising. The paper analyses the complex relations between the Israeli hospitality industry and the higher education programs, as well as the challenges of future graduate programs and industry-academe relationships. © 2005 by The Haworth Press, Inc. All rights reserved.",
-      "authorKeywords": "Higher education; Hospitality training; Israel; Tourism training",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": []
-    },
-    {
-      "id": 22,
-      "fonte": "Scopus",
-      "authors": "Namboodiri S.",
-      "title": "Zoom-ing Past “the New Normal”? Understanding Students’ Engagement with Online Learning in Higher Education during the COVID-19 Pandemic",
-      "year": 2022,
-      "sourceTitle": "Re-imagining Educational Futures in Developing Countries: Lessons from Global Health Crises",
-      "doi": "10.1007/978-3-030-88234-1_8",
-      "doiLink": "https://doi.org/10.1007/978-3-030-88234-1_8",
-      "abstract": "Although higher education institutes were the early adopters of remote learning through virtual, synchronous classrooms during the pandemic, the efficacy of this medium has received mixed reactions. Engaging online learners still remains a major challenge for instructors and institutions in general. Amidst variety of distractions at home, achieving positive learning outcomes and student engagement during the class is imperative for a quality learning experience. Achieving the same level of success with online learning requires overcoming the barriers of the modality while promoting collaboration, discussion and engagement, which encapsulate the essence of a great learning ecosystem. This demands our attention to acquire a comprehensive understanding of student engagement with online learning. Hence, the present chapter aims to provide a holistic view of student engagement from a stakeholders’ perspective. The framework offers practical and actionable insights into the key stakeholders in enhancing students’ engagement and offering quality online education during and post pandemic periods. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2022.",
-      "authorKeywords": "COVID-19 pandemic; Emerging economies; Higher education; Online learning; Students’ engagement; Zoom",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF09"
       ]
     },
     {
@@ -3213,42 +2450,7 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF31",
         "SF31b"
-      ]
-    },
-    {
-      "id": 24,
-      "fonte": "Scopus",
-      "authors": "Kazis R.",
-      "title": "Inequities in US Higher Education Access and Success: Obstacles and Opportunities for Marginal Populations",
-      "year": 2020,
-      "sourceTitle": "A Better Future: The Role of Higher Education for Displaced and Marginalised People",
-      "doi": "10.1017/9781108655101.007",
-      "doiLink": "https://doi.org/10.1017/9781108655101.007",
-      "abstract": "In the United States, deep, persistent disparities in higher education outcomes exist by race/ethnicity and income. Inequities in college and university enrolment by race and ethnicity have narrowed, but access to economic opportunity is increasingly determined by programme of study and completion of recognised credentials, where serious disparities remain. Stratification of higher education opportunity by race and ethnicity and by income has been on the rise, exacerbating group differences in outcomes: elite, selective colleges are becoming less diverse while African American and Latino students are increasingly concentrated in non-selective two- and four-year institutions. Despite these dispiriting trends, there are reasons for optimism. Researchers and practitioners have made significant progress in testing and identifying institutional practices that can improve outcomes for students from marginalised populations. In addition, public and policymaker concerns about college cost, student debt and institutional performance are creating new openings for consideration of policies that can mitigate current trends. © Cambridge University Press 2020.",
-      "authorKeywords": "College access and success; Evidence-based reforms; Higher education; Policy options; Stratification; United States",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF21"
-      ]
-    },
-    {
-      "id": 25,
-      "fonte": "Scopus",
-      "authors": "Matei L.",
-      "title": "Governance and Funding of Universities in the European Higher Education Area: Times of Rupture",
-      "year": 2018,
-      "sourceTitle": "European Higher Education Area: The Impact of Past and Future Policies",
-      "doi": "10.1007/978-3-319-77407-7_35",
-      "doiLink": "https://doi.org/10.1007/978-3-319-77407-7_35",
-      "abstract": "This chapter discusses why governance and funding are currently serious matters of concern for public policy in the European Higher Education Area (EHEA). It argues that discussions about governance are particularly intense in times of major change in the world around higher education, and that we are once again traversing such a period in Europe. External ruptures in society at-large and changing trends in higher education, which influence the policy discussions and reform initiatives on governance are summarized. The chapter puts forward a synopsis of some of the most important developments in governance and funding since the start of the Bologna Process and launch of the EHEA, and points to important current challenges. Finally, it introduces the papers of the governance and funding section of this volume. © The Editor(s) (if applicable) and The Author(s) 2018. This book is an open access publication.",
-      "authorKeywords": "EHEA; Governance and funding of higher education",
-      "indexKeywords": "Open access; Public policy; 'current; Bologna process; Changing trends; European Higher Education Area; Fundings; Governance and funding of high education; High educations; Policy discussion; Policy reforms; Finance",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF32"
       ]
     },
     {
@@ -3303,38 +2505,6 @@ const sfData = {
       ]
     },
     {
-      "id": 31,
-      "fonte": "Scopus",
-      "authors": "Harper J.; Jenkins H.",
-      "title": "Confronting horror, embracing fantasy: A conversation about Lovecraft Country and radical imagination in higher education",
-      "year": 2022,
-      "sourceTitle": "Policy Futures in Education",
-      "doi": "10.1177/14782103211031505",
-      "doiLink": "https://doi.org/10.1177/14782103211031505",
-      "abstract": "Higher education is at a pivotal point of reflection due to the forces of neoliberalism, anti-Blackness, and the ongoing COVID-19 pandemic. In the past, higher education has overlooked the university’s far future, opting to focus on readily conspicuous change. Along with this disregarded conversation, these crises present higher education faculty, administrators, and staff an opportunity to critically re-think the future of higher education given what we know now and what we do not. In this dialogic essay between a higher education policy doctoral student and a tenured media and communications professor, the authors peer into the hit HBO series Lovecraft Country and its underlying themes of horror, fantasy, and historical reality to extract vital lessons for higher education. The authors further participate in conversations about utilizing world and storymaking tactics to help higher education envision the university of the future—a future that is radical and boundless. © The Author(s) 2021.",
-      "authorKeywords": "Higher education; horror; imagination; Lovecraft Country; policy; science fiction",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": []
-    },
-    {
-      "id": 32,
-      "fonte": "Scopus",
-      "authors": "Pausits A.",
-      "title": "The Knowledge Society and Diversification of Higher Education: From the Social Contract to the Mission of Universities",
-      "year": 2015,
-      "sourceTitle": "The European Higher Education Area: Between Critical Reflections and Future Policies",
-      "doi": "10.1007/978-3-319-20877-0_18",
-      "doiLink": "https://doi.org/10.1007/978-3-319-20877-0_18",
-      "abstract": "A further opening of universities towards social stakeholder groups is a part of the modernization agenda in the European Higher Education Area. This ambition is often overwritten with the concept of ‘Third Mission’. The third mission bundles all activities outside the academic environment and promotes interaction with other target groups. Typical areas of the third mission are continuing education, technology transfer and innovation, and the social engagement of the university as an institution. Future positioning of higher education institutions will take place more over their third mission strategies and activities. This article considers the third mission as a widening of teaching and research, introduces possible activities and calls for a systematic and strategic examination of the subject as well as for an integration into rankings. Furthermore, the article aims to stimulate critical reflection on the third mission indicators, so that the third mission becomes a more relevant part of the social contract. © The Editor(s) (if applicable) and The Author(s) 2015. The book is published with open access at SpringerLink.com.",
-      "authorKeywords": "",
-      "indexKeywords": "Contracts; Engineering education; Knowledge organization; Academic environment; Continuing education; Education technology; European Higher Education Area; High educations; Knowledge diversification; Knowledge society; Social contract; Stakeholder groups; Target group; Technology transfer",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF54"
-      ]
-    },
-    {
       "id": 33,
       "fonte": "Scopus",
       "authors": "Pleschová G.; Hajdúk M.; Simon E.; Januška J.; Zemandl E.; Nyikes N.; Kurowski M.; Košatková M.; Vidláková J.",
@@ -3366,23 +2536,6 @@ const sfData = {
       "documentType": "Book chapter",
       "associatedSFs": [
         "SF41"
-      ]
-    },
-    {
-      "id": 36,
-      "fonte": "Scopus",
-      "authors": "Soudien C.",
-      "title": "Continuing Inequalities in South African Higher Education: The Changing Complexities of Race and Class",
-      "year": 2020,
-      "sourceTitle": "A Better Future: The Role of Higher Education for Displaced and Marginalised People",
-      "doi": "10.1017/9781108655101.006",
-      "doiLink": "https://doi.org/10.1017/9781108655101.006",
-      "abstract": "Using higher education sociologist Martin Trow’s analytic framework, the South African system became a mass system in 2013 when 16. 3 per cent of the eligible cohort among people classified African enrolled in higher education. The purpose of this contribution is to critically engage with the important achievement of massification in South African higher education and to understand the changing nature of inequality. The question is whether inequality is still primarily racial, or is it, as the sociologist David Cooper suggests, taking a different form? His argument is that with massification has come what he calls ‘restratification’ of the social character of the South African university. Race remains pertinent as a social determinant in his analysis but class, which was always a factor in the South African social dynamic, has become significantly more important in the post- apartheid period. This chapter argues that this development has not significantly been assimilated into and made part of higher education analyses or commentary on the changing form of the higher education system and how policy should be developed to deal with access. © Cambridge University Press 2020.",
-      "authorKeywords": "Class; Gender; Race; Racism; South African higher education",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF21"
       ]
     },
     {
@@ -3484,7 +2637,7 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF44"
+        "SF44a"
       ]
     },
     {
@@ -3539,40 +2692,6 @@ const sfData = {
       ]
     },
     {
-      "id": 47,
-      "fonte": "Scopus",
-      "authors": "Géring Z.; Király G.; Csillag S.; Kováts G.; Köves A.; Gáspár T.",
-      "title": "Vision(s) of the university. Applying participatory backcasting to study the future of higher education",
-      "year": 2018,
-      "sourceTitle": "Journal of Futures Studies",
-      "doi": "10.6531/JFS.201806.22(4).0005",
-      "doiLink": "https://doi.org/10.6531/JFS.201806.22(4).0005",
-      "abstract": "The future of the higher education sector in general, and that of higher education institutions in particular is both troubling and uncertain. At the moment, it seems that there are several social, political, economic and technological trends which really test the sector's and the institutions' adaptive capacities. These challenges have brought forth a number of papers and reports about the changing role and organisational structure of these institutions. We would like to contribute to this discussion by summarising the results of our participatory project concerning the future of higher education. The project started in 2014 and included two participatory backcasting workshops involving lecturers and students. The aim of our paper is to discuss the results of the participatory research project that involved key stakeholders on envisioning the future of higher education. The differences between the views of the lecturers and the students stress the importance of involving different stakeholder groups in the discussion about the future of higher education. As far as the different perspectives are concerned, two key points are worth highlighting: the open vs closed nature of higher education and in relation to this an inward looking, organisational vs an outward looking, network-focused perspective. These opposing viewpoints not only show differing visions of the future but also reveal current tensions between key stakeholders about what role should higher education institutions play in the social and economic environments. © 2018 Journal of Futures Studies.",
-      "authorKeywords": "Backcasting; Differences between student and lecturer perspectives; Future of higher education; Participation; Participatory research",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF11"
-      ]
-    },
-    {
-      "id": 49,
-      "fonte": "Scopus",
-      "authors": "Sharma P.; Jain V.",
-      "title": "Role of Culture in Developing Transformative Leadership for Higher Education in Emerging Economies",
-      "year": 2022,
-      "sourceTitle": "Re-imagining Educational Futures in Developing Countries: Lessons from Global Health Crises",
-      "doi": "10.1007/978-3-030-88234-1_13",
-      "doiLink": "https://doi.org/10.1007/978-3-030-88234-1_13",
-      "abstract": "The cultural fabric of the institutions plays a significant role in interweaving different ideas and breakthroughs. Navigating cultural fabric in the present pandemic scenario can be challenging, especially for higher education institutions. Institutions have to take the risk of separating the history, traditions, beliefs, and norms that are beginning to contradict modern-day values and practices. However, it is equally essential to communicate their cultural fabric that honors the vision and mission and captures the future aspirations of stakeholders focusing on the changing world order through transformational leadership, agile structures, and procedures under a dynamic leader’s stewardship. Hence, transformational leadership can assist higher education institutions to attain their purpose, focusing on integrated learning, collective goals, community-oriented objectives, and collective wellbeing. The present chapter will provide a framework to understand the role of the cultural fabric of higher educational institutions through transformational leadership. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2022.",
-      "authorKeywords": "Culture; Emerging economies; Higher education; Transformative leadership",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF38"
-      ]
-    },
-    {
       "id": 50,
       "fonte": "Scopus",
       "authors": "Shivany S.",
@@ -3587,23 +2706,6 @@ const sfData = {
       "documentType": "Book chapter",
       "associatedSFs": [
         "SF61"
-      ]
-    },
-    {
-      "id": 51,
-      "fonte": "Scopus",
-      "authors": "Vassilakaki E.",
-      "title": "New Trends in Higher Education: Can Information Professionals Rise to the Challenge?",
-      "year": 2017,
-      "sourceTitle": "The End of Wisdom?: The Future of Libraries in a Digital Age",
-      "doi": "10.1016/B978-0-08-100142-4.00012-9",
-      "doiLink": "https://doi.org/10.1016/B978-0-08-100142-4.00012-9",
-      "abstract": "The landscape in higher education is experiencing, for the past few years, some radical changes mainly due to technological developments. Specifically, the incorporation of virtual learning environments, the implementation of course management systems and the offering of Massive Open Online Courses have introduced a new, dynamic and globalised way of promoting teaching and research. In this ever-changing environment the need for academic libraries and information professionals to rise to the challenge and continue meeting their distant learners' needs is becoming even more important. This paper aims to discuss the role(s) that librarians need to embrace to keep up with the changes in higher education. © 2017 E. Vassilakaki Published by Elsevier Ltd All rights reserved.",
-      "authorKeywords": "Academia; Academic libraries; Higher education; Information literacy; Information professionals; Massive open online courses (MOOCs)",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF11"
       ]
     },
     {
@@ -3625,23 +2727,6 @@ const sfData = {
       ]
     },
     {
-      "id": 53,
-      "fonte": "Scopus",
-      "authors": "Woldegiorgis E.T.",
-      "title": "Policy Travel in Regionalisation of Higher Education: The Case of Bologna Process in Africa",
-      "year": 2018,
-      "sourceTitle": "European Higher Education Area: The Impact of Past and Future Policies",
-      "doi": "10.1007/978-3-319-77407-7_4",
-      "doiLink": "https://doi.org/10.1007/978-3-319-77407-7_4",
-      "abstract": "There has been a growing interest among scholars of International Relations and Comparative Public Policy on issues of policy travel since the 1990s. Even though regional higher education policies are developed within certain intergovernmental policy settings encompassing shared interests among states of regional groupings, they tend to travel across continents impacting other regions, sometimes in quite different contexts. In this regard, the policy travel of the Bologna process of Europe into other regions could be a very good example as one of the pioneers of higher education policy harmonisation initiative. Since its inception in 1998, the policy has managed to attract the attention of other regions, including Africa, reshaping higher education policies at national sub-regional and continental levels. Explaining similar scenarios, a considerable number of literatures on the inter-regional movement of ideas and practices in social policy has been developed over the last twenty years through various concepts including ‘policy transfer’, ‘policy diffusion’, ‘cross-national attraction’, ‘policy borrowing’ and ‘policy convergence’. This particular paper explores the notion of policy travel through the conceptions of ‘policy transfer’ and ‘policy diffusion’ and addresses the underlying question of how the Bologna process of Europe travelled to the various sub-regions of Africa. © The Editor(s) (if applicable) and The Author(s) 2018. This book is an open access publication.",
-      "authorKeywords": "Bologna process; Harmonisation of higher education systems; Policy travel",
-      "indexKeywords": "Information use; Public policy; Regional planning; Bologna process; Education policies; Harmonisation; Harmonization of high education system; High educations; Higher education system; Policy diffusions; Policy transfer; Policy travel; Regionalisation; Open access",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF42"
-      ]
-    },
-    {
       "id": 54,
       "fonte": "Scopus",
       "authors": "Upadhayay R.; Kaushik H.; Verma K.",
@@ -3656,40 +2741,6 @@ const sfData = {
       "documentType": "Conference paper",
       "associatedSFs": [
         "SF01"
-      ]
-    },
-    {
-      "id": 55,
-      "fonte": "Scopus",
-      "authors": "Macheka M.T.; Taru J.; Sibanda F.",
-      "title": "Emergency Remote Instruction (ERI) in Times of COVID-19 Pandemic: Experiences of Educators at Zimbabwean Higher Education Institutions",
-      "year": 2022,
-      "sourceTitle": "Re-imagining Educational Futures in Developing Countries: Lessons from Global Health Crises",
-      "doi": "10.1007/978-3-030-88234-1_12",
-      "doiLink": "https://doi.org/10.1007/978-3-030-88234-1_12",
-      "abstract": "As part of COVID-19 containment measures, the government of Zimbabwe declared a state of emergency on 17 March 2020 and higher education institutions closed by 24 March 2020. Against this background, this chapter seeks to examine the experiences and preparedness of educators in adopting, and adapting to, emergency remote instruction (ERI) on one hand, and availability of infrastructure that facilitates ERI on the other hand. Our study was prompted by the prevailing challenges faced by educators in transitioning from conventional face-to-face teaching to ERI through Google Classroom, Zoom teaching, and other platforms. This qualitative research adopted an exploratory research design. Data was gathered through telephone interviews, Zoom and Skype meetings, and online questionnaires. Purposive and convenient samplings were utilized for the selection of six key informants and 30 educators from six higher education institutions in Zimbabwe. The findings reveal that the majority of the educators were not ready to adopt ERI in performing their duties. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2022.",
-      "authorKeywords": "COVID-19; Emergency remote instruction; Higher education; Inequalities; Zimbabwe",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF21"
-      ]
-    },
-    {
-      "id": 56,
-      "fonte": "Scopus",
-      "authors": "Belousova T.",
-      "title": "Internationalization of Higher Education in Kerala: A Performance Audit",
-      "year": 2019,
-      "sourceTitle": "Higher Education for the Future",
-      "doi": "10.1177/2347631118802647",
-      "doiLink": "https://doi.org/10.1177/2347631118802647",
-      "abstract": "The article aims at investigating the current scenario of internationalization of higher education (IoHE) in Kerala, particularly in the area of inbound student mobility. It analyses the issues of foreign students enrolled in different programmes across the state. The study includes the in-depth analysis of the current challenges faced by Kerala in the era of growing internationalization trends worldwide. Notably, these challenges encapsulate a larger picture of IoHE in India which makes this article relevant in a broader context. The conducted study enables further policy suggestions which may prove to be useful for the state authorities and lawmakers. © 2018 The Kerala State Higher Education Council.",
-      "authorKeywords": "inbound student mobility; Indian Council for Cultural Relations (ICCR); international students; internationalization of higher education; Kerala",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF44"
       ]
     },
     {
@@ -3758,7 +2809,6 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF25",
         "SF25b"
       ]
     },
@@ -3776,7 +2826,6 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF25",
         "SF25a"
       ]
     },
@@ -3863,7 +2912,7 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF44"
+        "SF44a"
       ]
     },
     {
@@ -3884,38 +2933,6 @@ const sfData = {
       ]
     },
     {
-      "id": 70,
-      "fonte": "Scopus",
-      "authors": "Bakry S.H.",
-      "title": "Innovation in Higher Education: Towards Enhancing Sustainable Development",
-      "year": 2018,
-      "sourceTitle": "The Future of Innovation and Technology in Education: Policies and Practices for Teaching and Learning Excellence",
-      "doi": "10.1108/978-1-78756-555-520181007",
-      "doiLink": "https://doi.org/10.1108/978-1-78756-555-520181007",
-      "abstract": "This chapter is concerned with three main integrated issues. It looks forward towards enhancing ‘sustainable development’, using ‘innovation’, enabled by ‘higher education’ institutions. Therefore, sustainable development is the ‘target’; innovation is the ‘mean’; and higher education (HE) is the ‘enabler’ of the mean for achieving the target. The chapter starts by addressing the ‘target’ through explaining the ‘long time scale’ and the ‘wide scope of issues’ of sustainable development, in addition to elaborating on the past efforts, and considering the current directions expressed by the ‘sustainable development goals’. It then moves on to the ‘mean’ that is the innovation that drives sustainable development, considering its various types and its correlated components given by the ‘global innovation index’. HE, as an important enabler of innovation, is then addressed by considering its impact, its missions and their contribution to innovation, in addition to its challenges and the future development. The chapter finally emphasises views on the future role of ‘HE’ in promoting ‘innovation’ towards enhancing ‘sustainable development’. © 2019 Emerald Publishing Limited.",
-      "authorKeywords": "Higher education; innovation; research and development; society; strategic unit; sustainable development",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF49"
-      ]
-    },
-    {
-      "id": 71,
-      "fonte": "Scopus",
-      "authors": "Liu G.",
-      "title": "SSQIE&T-F: A Comprehensive Framework for Evaluating Higher Education Systems",
-      "year": 2026,
-      "sourceTitle": "Proceedings of 2025 2nd International Conference on Artificial Intelligence and Future Education, AIFE 2025",
-      "doi": "10.1145/3785987.3786109",
-      "doiLink": "https://doi.org/10.1145/3785987.3786109",
-      "abstract": "As higher education becomes increasingly essential to national development, the scientific evaluation of its systemic health is a pressing global challenge. Addressing this, this study proposes a comprehensive framework, SSQIE&T-F, designed to measure and forecast the performance of national higher education systems. The framework comprises two distinct models. The first, SSQIE, is an evaluation-oriented model that assesses the current health of a higher education system. It synthesizes fourteen key indicators across five dimensions (Supply, Scale, Quality, Internationalization, and Equity), with indicator weights determined through a hybrid Analytic Hierarchy Process (AHP) and Entropy Weight Method (EWM) to ensure both subjective expertise and objective data distribution are considered. The second model, T-F, is a forward-looking tool for measuring systemic sustainability. It integrates the time-series algorithm with random forest model to predict the trajectory of the system’s health score. This hybrid approach enhances predictive accuracy by capturing both temporal dependencies and the influence of external factors. To validate its utility, the framework is applied to 30 countries, with select cases analyzed in-depth to generate targeted policy recommendations. © 2025 Copyright held by the owner/author(s).",
-      "authorKeywords": "Analytic Hierarchy Process; Entropy Weight Method; Higher Education System; Random Forest Model; Time-Series Algorithm",
-      "indexKeywords": "Entropy; Learning systems; Scales (weighing instruments); Sustainable development; Time series; Analytic hierarchy; Entropy weight method; Hierarchy process; High educations; Higher education system; National development; Pressung; Random forest modeling; Scientific evaluations; Time series algorithms; Analytic hierarchy process",
-      "documentType": "Conference paper",
-      "associatedSFs": []
-    },
-    {
       "id": 72,
       "fonte": "Scopus",
       "authors": "Weingarten H.P.; Hicks M.",
@@ -3929,7 +2946,6 @@ const sfData = {
       "indexKeywords": "Benchmarking; Education computing; Open access; Public policy; Students; Sustainable development; Community college; Equity of access; High educations; Higher education system; Ontario; Performance; Performance measurements; Quality; Skill measurement; Transparency tool; Image quality",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF32",
         "SF28"
       ]
     },
@@ -3964,7 +2980,6 @@ const sfData = {
       "indexKeywords": "Curricula; Economics; Research and development management; Sustainable city; Sustainable development goals; Civil society; Community OR; Development practices; Economic growths; Education for sustainable development; High educations; Higher education institutions; Pharmaceutical research; Public and private sector; Self-organised; Sustainable development",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45",
         "SF45a"
       ]
     },
@@ -4005,23 +3020,6 @@ const sfData = {
       ]
     },
     {
-      "id": 79,
-      "fonte": "Scopus",
-      "authors": "Chadwick A.",
-      "title": "Higher Education as an Additional Mid-Life Transition: Motivations and Challenges of Older Female Students",
-      "year": 2022,
-      "sourceTitle": "Critical Issues in the Future of Learning and Teaching",
-      "doi": "10.1163/9789004506428_011",
-      "doiLink": "https://doi.org/10.1163/9789004506428_011",
-      "abstract": "Older female students form an important contribution to higher education in the UK given the propensity for older cohorts to be largely made up of women (UCAS, 2018). This narrative case study explores the experiences of a group of female students aged 39–55 at a satellite campus of a university in the North-West of England who have entered higher education for the first time as non-traditional students and manage multiple roles in addition to their student status. The findings suggest that this group of women are motivated to study and achieve by a desire to remain active in a professional environment and to prove their capabilities to themselves and others. However, these motivations are challenged by transitional events relating not only to the process of becoming a student but to mid-life stages, events which may not currently be recognised or supported by higher education institutions. © koninklijke brill nv, leiden, 2022.",
-      "authorKeywords": "challenge; female students; higher education; midlife transition; motivation; older students",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF21"
-      ]
-    },
-    {
       "id": 80,
       "fonte": "Scopus",
       "authors": "Chandel R.; Chandel S.S.",
@@ -4035,57 +3033,7 @@ const sfData = {
       "indexKeywords": "Decision making; Engineering education; Sustainable development goals; Basic principles; Decisions makings; Global sustainability; Higher education institutions; Principles of sustainability; Renewable energies; Sustainable practices; Sustainable technology; United nation SDG; United Nations; Green development",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45",
         "SF45a"
-      ]
-    },
-    {
-      "id": 81,
-      "fonte": "Scopus",
-      "authors": "Buchen I.H.",
-      "title": "The future of higher education and professional training",
-      "year": 2005,
-      "sourceTitle": "Foresight",
-      "doi": "10.1108/14636680510611804",
-      "doiLink": "https://doi.org/10.1108/14636680510611804",
-      "abstract": "Purpose - To identify emerging education alternatives to traditional higher education. Design/methodology/approach - To survey and examine three types of alternative providers. Findings - To demonstrate that there are now at least two major providers of professional development in the market. Originality/value - To posit a more complicated and competitive future for higher education but also to note the prospect of convergence. © Emerald Group Publishing Limited.",
-      "authorKeywords": "Futures markets; Higher education; Professional education; Training",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": []
-    },
-    {
-      "id": 82,
-      "fonte": "Scopus",
-      "authors": "Perez-Encinas A.",
-      "title": "A Collaborative Approach in the Internationalisation Cycle of Higher Education Institutions",
-      "year": 2018,
-      "sourceTitle": "European Higher Education Area: The Impact of Past and Future Policies",
-      "doi": "10.1007/978-3-319-77407-7_8",
-      "doiLink": "https://doi.org/10.1007/978-3-319-77407-7_8",
-      "abstract": "This paper reflects on the need for a collaborative approach among all stakeholders and service providers at universities to promote and enhance their internationalisation efforts within higher education institutions. As outlined by the last addition to the internationalisation cycle presented by De Wit (Internationalisation of higher education in the United States of America and Europe: A historical, comparative, and conceptual analysis. Greenwood Publishers, Westport, CT, 2002), a supportive culture that will facilitate the integration of internationalisation into all aspects of institutions is critical to success. It is emphasized that internationalisation is not a goal in itself but a means to enhance the quality of education, research and service function of the university. Further, internationalisation may be enhanced by adding a collaborative component into all university services, thereby engaging key stakeholders. This paper offers a fresh and innovative approach linking formal and informal services inside higher education institutions, in order to formulate the best strategies to integrate collaborative services and approaches into the regular activities of formal or institutional services. © The Editor(s) (if applicable) and The Author(s) 2018. This book is an open access publication.",
-      "authorKeywords": "Collaborative approach; Internationalisation cycle; Stakeholders; Support services",
-      "indexKeywords": "Collaborative learning; Distributed computer systems; Information services; Information systems; Collaborative approach; Higher education institutions; Historical analysis; Internationalisation; Internationalization cycle; Internationalization of higher educations; Service provider; Stakeholder; Support services; United States of America; Open access",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF42"
-      ]
-    },
-    {
-      "id": 83,
-      "fonte": "Scopus",
-      "authors": "Groß M.; Fries A.",
-      "title": "The webcam strikes a balance: The light and dark sides of webcam use in higher education policies",
-      "year": 2026,
-      "sourceTitle": "Policy Futures in Education",
-      "doi": "10.1177/14782103251408923",
-      "doiLink": "https://doi.org/10.1177/14782103251408923",
-      "abstract": "The widespread adoption of videoconferencing in higher education has transformed digital learning, offering new opportunities for engagement while at the same time creating challenges related to student well-being. This underlying study examines these dual effects of webcam use in online education—its “light” side, which promotes social academic integration and engagement, and its “dark” side, which contributes to videoconferencing fatigue and potential cognitive overload. Applying the Online Engagement Framework, we used mediation analysis via Hayes’ PROCESS macro and structural equation modeling in Mplus to examine how webcam use affects academic performance through these competing mechanisms. Using survey data from 1134 students at five European universities, we find that webcam use improves academic performance primarily by enhancing social academic integration. Unexpectedly, videoconferencing fatigue is also positively correlated with performance, suggesting that students develop compensatory cognitive strategies to maintain engagement despite fatigue. These findings highlight the need for balanced webcam policies that encourage social interaction while mitigating cognitive load. Rather than enforcing strict regulations, institutions should adopt flexible policies to optimize engagement without compromising well-being. By striking a balance between the light and dark sides of webcam use, universities can foster effective and inclusive digital learning environments that support both interaction and academic success. © The Author(s) 2025",
-      "authorKeywords": "academic performance; computer-supported collaborative learning (CSCL); higher education policy; social academic integration; videoconferencing fatigue; webcam use",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF52"
       ]
     },
     {
@@ -4123,23 +3071,6 @@ const sfData = {
       ]
     },
     {
-      "id": 86,
-      "fonte": "Scopus",
-      "authors": "Padayachee I.",
-      "title": "Factors Influencing Virtual Learning System Usage in Higher Education",
-      "year": 2022,
-      "sourceTitle": "Research Anthology on Remote Teach. and Learning and the Future of Online Education: Volumes 1-4",
-      "doi": "10.4018/978-1-6684-7540-9.ch100",
-      "doiLink": "https://doi.org/10.4018/978-1-6684-7540-9.ch100",
-      "abstract": "Virtual learning systems (VLSs), commonly referred to as learning or course management systems, have been formally adopted at many higher education institutions. However, knowledge of the actual usage of VLSs is limited in terms of what specific functional and non-functional characteristics are deemed useful and how this influences system usage. Furthermore, little is known about the role of other non-system-related factors related to VLS usage, such as pedagogic, organisational, and individual difference factors. This chapter proposes and describes the virtual learning system usage model (VLSUM), which represents the factors influencing VLS usage in higher education institutions. The VLSUM is based on a conceptual framework integrating multiple dimensions and is confirmed by the results of an empirical study. A mixed-methods research design was adopted in the development of the VSLUM. This model is valuable to educational technologists, instructional designers, and software designers for VLS imple-mentation in higher education. © 2023 by IGI Global. All rights reserved.",
-      "authorKeywords": "",
-      "indexKeywords": "Computer aided instruction; Curricula; Learning systems; Course management systems; Functional characteristics; Functionals; High educations; Higher education institutions; Learning management system; Non-functional; System usages; Usage modeling; Virtual learning; E-learning",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF11"
-      ]
-    },
-    {
       "id": 87,
       "fonte": "Scopus",
       "authors": "Salmi J.",
@@ -4153,24 +3084,8 @@ const sfData = {
       "indexKeywords": "Education computing; Open access; Admission system; Bologna process; Equity; European Countries; High educations; Higher education system; Quality of teaching; Refugee education; Social dimensions; Teaching and researches; Students",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF22",
         "SFS02"
       ]
-    },
-    {
-      "id": 88,
-      "fonte": "Scopus",
-      "authors": "Smidt H.",
-      "title": "European Quality Assurance-A European Higher Education Area Success Story [Overview Paper]",
-      "year": 2015,
-      "sourceTitle": "The European Higher Education Area: Between Critical Reflections and Future Policies",
-      "doi": "10.1007/978-3-319-20877-0_40",
-      "doiLink": "https://doi.org/10.1007/978-3-319-20877-0_40",
-      "abstract": "The development and implementation of a Europe of knowledge or the European Higher Education Area has led at institutional, regional, national and European level to a wave or a tsunami of changes to policies, strategies and legal frameworks in a strive for balancing European collaboration and global competition. © The Editor(s) (if applicable) and The Author(s) 2015. The book is published with open access at SpringerLink.com.",
-      "authorKeywords": "",
-      "indexKeywords": "International cooperation; European Higher Education Area; European levels; Global competition; Legal frameworks; National level; Policy framework; Policy strategies; Regional levels; Quality assurance",
-      "documentType": "Book chapter",
-      "associatedSFs": []
     },
     {
       "id": 89,
@@ -4305,23 +3220,8 @@ const sfData = {
       "indexKeywords": "Education computing; Information systems; Knowledge transfer; Open access; Education networks; Global knowledge; Harmonisation; Higher education institutions; Higher education system; International higher education; Internationalization of higher educations; Knowledge networks; Operational strategies; Property; Knowledge organization",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF44"
+        "SF44b"
       ]
-    },
-    {
-      "id": 97,
-      "fonte": "Scopus",
-      "authors": "Zhou J.",
-      "title": "Research on management capability of higher education teachers",
-      "year": 2010,
-      "sourceTitle": "2010 International Conference on Future Information Technology and Management Engineering, FITME 2010",
-      "doi": "10.1109/FITME.2010.5654710",
-      "doiLink": "https://doi.org/10.1109/FITME.2010.5654710",
-      "abstract": "By analyzing the change of environment of higher education China, the article draw a conclusion that managerial ability of teacher in higher education has become the key factor in the improvement of the quality of higher education. In this article, the author points out that management capability of teacher in higher education is comprised of planning, organizational, communicative, motivational, leadershipand control capabilities, and proposes several measures to raise the standard of management capability of teacher in higher education: upgrading of teaching professionals' theoretical and methodological knowledge, the intensification teachers' practical experience in the various sub-capabilities, and the enhancement of competency evaluation systems. © 2010 IEEE.",
-      "authorKeywords": "Control capacity; Higher education teachers; Leadership; Management capability",
-      "indexKeywords": "Information technology; Planning; Change of environment; Competency evaluation; Control capabilities; Higher education; Key factors; Leadership; Methodological knowledge; Practical experience; Teaching",
-      "documentType": "Conference paper",
-      "associatedSFs": []
     },
     {
       "id": 99,
@@ -4341,23 +3241,6 @@ const sfData = {
       ]
     },
     {
-      "id": 100,
-      "fonte": "Scopus",
-      "authors": "Crăciun D.",
-      "title": "National Policies for Higher Education Internationalization: A Global Comparative Perspective",
-      "year": 2018,
-      "sourceTitle": "European Higher Education Area: The Impact of Past and Future Policies",
-      "doi": "10.1007/978-3-319-77407-7_7",
-      "doiLink": "https://doi.org/10.1007/978-3-319-77407-7_7",
-      "abstract": "The internationalization of higher education is widely considered as a strategic priority for governments around the world because of the economic, political, social, and academic benefits associated with it. Starting from the premise that the nation-state plays a central role in the process of internationalizing higher education, the paper argues that it is important to take stock of the current state of affairs and ask: what are nation-states doing to internationalize higher education? The paper presents original data on the spread of national internationalization policies around the world. It finds that strategic thinking about internationalization is a relatively new phenomenon with limited coverage. In terms of the number of countries that adopt national policies, the analysis finds a world dominated by scattered efforts when it comes to higher education internationalization. Why is the absence of a national strategy problematic? In countries where universities are largely dependent on public money, having no coherent direction for internationalization at the national level can limit the scope and undermine the effectiveness of internationalization strategies at the institutional level. © The Editor(s) (if applicable) and The Author(s) 2018. This book is an open access publication.",
-      "authorKeywords": "Comparative; Content analysis; Higher education; Internationalization; National strategies; Public policy",
-      "indexKeywords": "Information systems; Open access; Comparative; Content analysis; Economic benefits; High educations; Internationalisation; Internationalization of higher educations; National strategies; National-policy; Political benefits; Social benefits; Public policy",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF42"
-      ]
-    },
-    {
       "id": 101,
       "fonte": "Scopus",
       "authors": "Le T.T.; Nguyen T.L.; Trinh M.T.; Le V.T.; Pham H.-H.",
@@ -4371,7 +3254,6 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF31",
         "SF31a"
       ]
     },
@@ -4427,21 +3309,6 @@ const sfData = {
       ]
     },
     {
-      "id": 105,
-      "fonte": "Scopus",
-      "authors": "Bento B.C.; Linhares E.",
-      "title": "Using a Problem-Based Learning Approach to Develop Sustainability Competencies in Higher Education Students",
-      "year": 2023,
-      "sourceTitle": "Handbook of Sustainability Science in the Future",
-      "doi": "10.1007/978-3-031-04560-8_86",
-      "doiLink": "https://doi.org/10.1007/978-3-031-04560-8_86",
-      "abstract": "A major goal of higher education is to prepare future environmental educators for the challenges of sustainable development. This work presents a study of problem-based learning (PBL) to develop sustainability competencies in students of higher education. The participants, who were enrolled in an environmental educational and ecotourism program, were divided into four working groups. Starting with a specific sustainability-related problem chosen by them, each group of students had to produce a webpage with their work arranged in the phases of orientation, conceptualization, investigation, conclusion, and discussion. Students’ production, interviews with students, and teachers’ fieldnotes were collected. A data analysis assessed the sustainability competencies developed and showed that the participants mostly developed sustainability competencies related with the “Innovation” and “Connections” categories of complexity, and “Learning to know” and “Learning to do” competencies. Expert and Advanced were the most common classifications of the competencies attained, which suggests that the PBL approach was useful in developing a high order of sustainability competencies in future environmental educators. However, the development of some categories of complexity and levels of sustainability competencies needs more attention in the future implementation of PBL. © Springer Nature Switzerland AG 2023.",
-      "authorKeywords": "Education for sustainable development; Higher education; Problem-based learning; Sustainability competencies",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": []
-    },
-    {
       "id": 106,
       "fonte": "Scopus",
       "authors": "WANGUI K.; GILES W.",
@@ -4489,7 +3356,6 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF31",
         "SF31b"
       ]
     },
@@ -4507,8 +3373,7 @@ const sfData = {
       "indexKeywords": "complexity; future prospect; higher education; machine learning; strategic approach",
       "documentType": "Article",
       "associatedSFs": [
-        "SF02",
-        "SF20"
+        "SF02"
       ]
     },
     {
@@ -4615,23 +3480,6 @@ const sfData = {
       ]
     },
     {
-      "id": 120,
-      "fonte": "Scopus",
-      "authors": "Hoseini Moghadam M.; Heidarzadeh A.; Bashiri H.; Khoshrang H.; Dadgaran I.",
-      "title": "Scientific excellency model in Iran’s higher education case study: Guilan university of medical sciences",
-      "year": 2020,
-      "sourceTitle": "Foresight",
-      "doi": "10.1108/FS-10-2019-0088",
-      "doiLink": "https://doi.org/10.1108/FS-10-2019-0088",
-      "abstract": "Purpose: The purpose of this paper is to answer the question of how scientific excellency can be achieved. The origin of scientific excellency in Iran, national and international experiences concerning the subject has been investigated to review the literature. The authors also designed a process and then a model to test the course. Guilan University of Medical Sciences was selected as a case study for the research. Design/methodology/approach: The approach used in this paper is from Future Studies, with emphasis on the “Participatory Learning and Action” method. It means that different stakeholders, including the strategic council members, managers, faculty members, students, alumni and non-academic staff, have been involved in different parts of the process. Findings: After semantic analysis of scientific excellency in the theoretical field; the examination of national and international experiences in universities; the analysis of higher-level documents of the Ministry of Health and Medical Education as well as strategic documents of the university; the determination of the strengths and weaknesses of the Guilan University of Medical Sciences in online survey; the completion of the scientific excellency canvas in the expert panel and finally obtaining other stakeholders, a conceptual model was designed for achieving scientific excellency. Practical implications: The study of the actions, policies and trends of pioneering universities indicates that it is important to consider issues such as the internationalization of education and research and the modification of university structures. To achieve a superior national and international status, the university must specifically enhance a range of different aspects, from intangible aspects, such as motivation of employees to tangible aspects, such as human resources, structure and facilities. Originality/value: Scientific excellency is going to be one of main streams between universities to attract top students and researchers from all over the world. There has been little academic attempt on scientific excellency. In this research, first the authors examined the concept of scientific excellency, criteria and measurement in higher education, then based on that case study and participatory action learning method, a conceptual framework to achieve scientific excellency in Iran’s higher education system was proposed. © 2020, Emerald Publishing Limited.",
-      "authorKeywords": "Futures Studies; Guilan University of Medical Sciences; Higher Education; Participatory Learning and Action; Scientific Excellency",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF37"
-      ]
-    },
-    {
       "id": 121,
       "fonte": "Scopus",
       "authors": "Peri E.; Jõgi L.; Remmik M.",
@@ -4651,21 +3499,6 @@ const sfData = {
       ]
     },
     {
-      "id": 122,
-      "fonte": "Scopus",
-      "authors": "Sadlak J.",
-      "title": "Seeking Excellence, Practicing Rankings, and Aiming at Diversification of Higher Education Institutions’ Mission in the European Higher Education Area [Overview Paper]",
-      "year": 2015,
-      "sourceTitle": "The European Higher Education Area: Between Critical Reflections and Future Policies",
-      "doi": "10.1007/978-3-319-20877-0_16",
-      "doiLink": "https://doi.org/10.1007/978-3-319-20877-0_16",
-      "abstract": "Over the past decade or so, higher education has experience a variety of transformations that brought foreword in policy agenda and institutional governance renewed attention to academic excellence and diversification of mission of higher education institutions. Emergence and influence of university rankings, especially the global ones, has been one of the consequences of those paradigm-shifting developments. They respond to the need for evidence-based and accessible to various stakeholders information. The main purpose of this paper is to present and assess how excellence, diversification and university rankings have found its place in the context of the Bologna Process and the European Higher Education Area. © The Editor(s) (if applicable) and The Author(s) 2015. The book is published with open access at SpringerLink.com.",
-      "authorKeywords": "",
-      "indexKeywords": "Information systems; Academic excellence; Bologna process; European Higher Education Area; Evidence-based; High educations; Higher education institutions; Open access",
-      "documentType": "Book chapter",
-      "associatedSFs": []
-    },
-    {
       "id": 124,
       "fonte": "Scopus",
       "authors": "Guilherme P.; Buhr E.A.S.; De Aguiar Dutra A.R.; Birch R.S.; Osório de Andrade Guerra J.B.S.",
@@ -4679,25 +3512,7 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45",
         "SF45b"
-      ]
-    },
-    {
-      "id": 125,
-      "fonte": "Scopus",
-      "authors": "Land M.; Lemke C.; Bracker J.; Crowell S.",
-      "title": "Transformative Education and the Earth Charter: Enabling Sustainable Development Through Transformative Learning in Higher Education",
-      "year": 2026,
-      "sourceTitle": "The Sustainable Organization – Volume 3",
-      "doi": "10.1007/978-3-032-28949-0_5",
-      "doiLink": "https://doi.org/10.1007/978-3-032-28949-0_5",
-      "abstract": "Amidst the planetary polycrisis, it is perplexing how slowly significant transformation appears to occur. Despite growing awareness of planetary boundaries and social inequalities, the move toward just and sustainable futures remains disjointed. This indicates a deeper shortfall—not in knowledge, but in shared values based on common understanding and holistic perspectives, serving as an ethical foundation for sustainable development. Therefore, we question: why and how can we embed such an ethical foundation in education to promote a fundamental shift toward a sustainable future?This article presents the Earth Charter as a fundamental ethical framework for our thinking, actions, and coexistence. We argue from the perspective of the ideas of transformative learning and show approaches to how transformative education can succeed based on the principles of the Earth Charter. In doing so, we discuss some possible starting points for implementation, including in relation to the application of the three-pillar model concept underlying this edited volume. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2026.",
-      "authorKeywords": "Education for Sustainable Development; Higher Education Institutions (HEIs); The Earth Charter; Transformative Education; Transformative learning",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF56"
       ]
     },
     {
@@ -4749,7 +3564,6 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF31",
         "SF31a",
         "SF31b"
       ]
@@ -4768,7 +3582,6 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF25",
         "SF25a"
       ]
     },
@@ -4786,7 +3599,7 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF44"
+        "SF44b"
       ]
     },
     {
@@ -4875,38 +3688,6 @@ const sfData = {
       ]
     },
     {
-      "id": 137,
-      "fonte": "Scopus",
-      "authors": "Tucker J.P.; Gentry G.R.",
-      "title": "Developing an e-learning strategy in higher education",
-      "year": 2009,
-      "sourceTitle": "Foresight",
-      "doi": "10.1108/14636680910950147",
-      "doiLink": "https://doi.org/10.1108/14636680910950147",
-      "abstract": "Purpose: This paper aims to clarify the challenges faced by higher education institutions such as budget cuts and the pressure to offer accessible, affordable anytime/anyplace learning and offer a solution in the form of the development of an e-learning strategy. Design/methodology/approach: The paper explores recent research on higher education and e-learning strategies in an effort to offer a participatory pedagogy coupled with cost effective technology as a solution to overcoming the increase in market demand and socioeconomic pressures facing higher education institutions. Findings: The paper provides pragmatic insights about the five stages of developing an e-learning strategy, including determining the delivery method and technology, making curriculum and development decisions, integrating implementation and roll out strategies and monitoring and evaluating the new e-programs. Research limitations/implications: The chosen research offers an approach as a starting point for developing an e-learning strategy. Further research may be needed to generalize and apply the suggestions to individual higher education institutions. Practical implications: The paper includes implications for higher education institutions and other organizations wishing to explore the option of e-learning as a delivery system for knowledge, training and instruction. Originality/value: This paper fulfils an identified need to study the implications of technology on learning. © Emerald Group Publishing Limited.",
-      "authorKeywords": "E-learning; Education; Higher education; Learning organizations",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": []
-    },
-    {
-      "id": 138,
-      "fonte": "Scopus",
-      "authors": "Gáspár J.; Hideg É.; Köves A.",
-      "title": "Future in the Present: Participatory Futures Research Methods in Economic Higher Education – The Development of Future Competencies",
-      "year": 2021,
-      "sourceTitle": "Journal of Futures Studies",
-      "doi": "10.6531/JFS.202112_26(2).0001",
-      "doiLink": "https://doi.org/10.6531/JFS.202112_26(2).0001",
-      "abstract": "To discuss how participatory futures methods can contribute to the development of skills and competences of students, this paper introduces three examples of different participatory futures/foresight methods used in education: (1) horizon scanning in a ‘Futures Studies’ course; (2) forward looking thinking for decision making in a so-called ‘Decision techniques’ course; and (3) backcasting in the ‘Sustainable future of sport’ course. The courses are meant to raise awareness and induce the feeling of responsibility for the future by offering the students concepts, and methods to become active and reflective citizens. © 2021 Tamkang University, All rights reserved.",
-      "authorKeywords": "Competencies; Foresight; Higher education; Participatory methods",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF20"
-      ]
-    },
-    {
       "id": 139,
       "fonte": "Scopus",
       "authors": "Pnevmatikos D.",
@@ -4937,7 +3718,6 @@ const sfData = {
       "indexKeywords": "Singapore [Southeast Asia]; education policy; educational development; future prospect; higher education; neoliberalism; student",
       "documentType": "Article",
       "associatedSFs": [
-        "SF25",
         "SF25a"
       ]
     },
@@ -4956,23 +3736,6 @@ const sfData = {
       "documentType": "Book chapter",
       "associatedSFs": [
         "SF13"
-      ]
-    },
-    {
-      "id": 142,
-      "fonte": "Scopus",
-      "authors": "Mehdian N.; Turi A.N.",
-      "title": "AI-Powered Educational System: Challenges for Higher Education in Emerging Economies: Baseline Research",
-      "year": 2025,
-      "sourceTitle": "Tech Transformation and AI Readiness",
-      "doi": "10.1007/978-3-031-73639-1_7",
-      "doiLink": "https://doi.org/10.1007/978-3-031-73639-1_7",
-      "abstract": "As Artificial Intelligence (AI) is rapidly transforming many facets of our lives, universities worldwide strive to integrate Generative AI (GenAI) into their curriculum to enhance educational outcomes. AI-powered systems, including chatbots and virtual assistants, provide customized learning experiences and real-time student support and enhance cognitive engagement. However, emerging economies face unique challenges that hinder the effective adoption of these technologies. This chapter investigates the challenges of integrating AI in higher education within emerging economies. The primary objectives are to identify the challenges faced, examine faculty attitudes toward AI adoption, investigate the impact of facility conditions, perceived risk, performance and effort expectancy, and explore AI governance in the Global South. The chapter conceptually frames the relevant challenges using established theoretical models and provides empirical evidence through a comprehensive literature review. The benefits and misuse of AI in educational settings, as well as policy implications specific to the Global South, are also outlined. The findings aim to guide stakeholders and policymakers in the effective integration of AI in higher education in the Global South, advocating for inclusivity and ethical use to ensure enhanced learning experiences to better prepare students for a more equitable future. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2025.",
-      "authorKeywords": "AI governance; AI-powered education; Emerging economies; GenAI; Global South; Higher education",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF15"
       ]
     },
     {
@@ -5075,7 +3838,7 @@ const sfData = {
       "indexKeywords": "Open access; Community college; Comparative analyzes; Global perspective; Higher education institutions; Internationalisation; Netherlands; Secondary sources; Student populations; University of applied science; Students",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF44"
+        "SF44b"
       ]
     },
     {
@@ -5093,23 +3856,6 @@ const sfData = {
       "documentType": "Book chapter",
       "associatedSFs": [
         "SF26"
-      ]
-    },
-    {
-      "id": 150,
-      "fonte": "Scopus",
-      "authors": "Kaur H.",
-      "title": "Assessing Technical Efficiency of the Indian Higher Education: An Application of Data Envelopment Analysis Approach",
-      "year": 2021,
-      "sourceTitle": "Higher Education for the Future",
-      "doi": "10.1177/23476311211011932",
-      "doiLink": "https://doi.org/10.1177/23476311211011932",
-      "abstract": "Due to resource constraints in the Indian education sector, efficiency assessment of the higher education is more essential for the proper allocation and the effective utilization of financial and human resources. Moreover, much of the research in the higher education sector has mainly focused on the quality of education and ignored the role of efficiency. Therefore, the present study analyzes the technical efficiency of the higher education in the Indian states. Secondary data for the study were collected from reports of the Ministry of Human Resource Development (MHRD), UGC Reports, Economic Survey of India and Reports of the All India Survey on Higher Education (AISHE). Data Envelopment Analysis was used to analyze the data. The efficiency results suggest that the states analyzed in this study are operating at a moderate level of efficiency relative to each other. © 2021 The Kerala State Higher Education Council.",
-      "authorKeywords": "Allocation; higher education; Indian states; resources; technical efficiency",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF38"
       ]
     },
     {
@@ -5144,23 +3890,6 @@ const sfData = {
       "documentType": "Book chapter",
       "associatedSFs": [
         "SF23"
-      ]
-    },
-    {
-      "id": 154,
-      "fonte": "Scopus",
-      "authors": "Blankesteijn M.L.; Ghorbani A.",
-      "title": "Embracing the digital horizon: Future scenarios for the Dutch higher education system",
-      "year": 2025,
-      "sourceTitle": "Futures",
-      "doi": "10.1016/j.futures.2025.103702",
-      "doiLink": "https://doi.org/10.1016/j.futures.2025.103702",
-      "abstract": "Traditional teacher-oriented education models are becoming obsolete, digital technologies are reshaping the landscape of higher education, and governments are cutting university budgets. Dutch university leaders, as a global leaders in higher education, must consider these profound changes to ensure organizational resilience. Scenario planning is a valuable technique for identifying future drivers and envisioning possible futures. This paper aims to elaborate future scenarios of Dutch higher education in horizon 2040. By combination of scenario archetypes method and quantitative text analysis techniques, we analyzed 80 future-oriented documents and identified eight driving forces that shape the future of Dutch higher education system: (1) digital transformation; (2) demographic changes; (3) globalization and internationalization; (4) economic and labor market needs; (5) Sustainability and climate change; (6) funding challenges; (7) societal and cultural shifts; and (8) policy and governance. Based on these drivers, we outlined four distinct scenarios: (1) \"Digital Horizons: Navigating the Future of AI-Driven Higher Education\"; (2) \"The Great Decline: The Collapse of Higher Education Systems\"; (3) \"Guardians of Sustainability: A Disciplined Approach to Higher Education\"; and (4) “Beyond Degrees: The Rise of Lifelong, Personalized Education.” Scenario 1 is the most probable scenario (55 %), while scenario 2 is the least probable scenario (1 %). Theoretically, quantitative text analysis can offer promising methodology for futures studies by exponential growth of textual data. Practically, these drivers and scenarios provide Dutch university leaders with a holistic framework to design strategic planning, and initiatives, ensuring their universities remain resilience in evolving landscape. © 2025 The Authors",
-      "authorKeywords": "Higher education; Quantitative text analysis; Scenario planning; The Netherlands; University",
-      "indexKeywords": "Netherlands; higher education; planning system; quantitative analysis; scenario analysis; university sector",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF37"
       ]
     },
     {
@@ -5228,7 +3957,6 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45",
         "SF45b"
       ]
     },
@@ -5246,7 +3974,6 @@ const sfData = {
       "indexKeywords": "Economics; Education computing; Open access; Population dynamics; Students; Central and Eastern Europe; Demographic transition; Fundings; High education funding; High educations; Higher education system; Romania; Social issues; Student populations; Systems Structure; Population statistics",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF31",
         "SF31b"
       ]
     },
@@ -5268,23 +3995,6 @@ const sfData = {
       ]
     },
     {
-      "id": 163,
-      "fonte": "Scopus",
-      "authors": "Spence A.; McKenzie S.",
-      "title": "Using interactive technology for lectures in higher education information technology",
-      "year": 2015,
-      "sourceTitle": "Proceedings of IEEE International Conference on Teaching, Assessment and Learning for Engineering: Learning for the Future Now, TALE 2014",
-      "doi": "10.1109/TALE.2014.7062626",
-      "doiLink": "https://doi.org/10.1109/TALE.2014.7062626",
-      "abstract": "The demographics of the modern day student (shorter attention span, multimodal access to learning resources, growing reliance on technology) and highlighted concerns of the traditional teaching methods, such as a lecture, demonstrate a need for a more innovative teaching practice. The traditional lecture in higher education is often delivered in single-directional 'transmission' style with the information presented with little to no interactivity between teacher and student. This study looks at the utilization of interactive technologies within lectures, and looks at the effects that these may have on students' perceptions of lectures, lecture effectiveness, and preferences. Students completing an Information Technology degree at Deakin University, Australia, were chosen for the trial run of two different interactive technologies. To provide comparisons of student's opinions and expectations a subject within Information Technology that did not utilise interactive technology was also included as a site for data collection. © 2014 IEEE.",
-      "authorKeywords": "",
-      "indexKeywords": "Students; Data collection; Higher education; Innovative teaching practices; Interactive technology; Interactivity; Learning resource; Multi-modal access; Teaching methods; Engineering education",
-      "documentType": "Conference paper",
-      "associatedSFs": [
-        "SF09"
-      ]
-    },
-    {
       "id": 164,
       "fonte": "Scopus",
       "authors": "Bhushan S.; Mathew A.",
@@ -5302,38 +4012,6 @@ const sfData = {
       ]
     },
     {
-      "id": 166,
-      "fonte": "Scopus",
-      "authors": "Shimada S.; Shimamoto M.",
-      "title": "Higher education in management: The case of Japan",
-      "year": 2017,
-      "sourceTitle": "The Future of Management Education: Volume 2: Differentiation Strategies for Business Schools",
-      "doi": "10.1057/978-1-137-56104-6_6",
-      "doiLink": "https://doi.org/10.1057/978-1-137-56104-6_6",
-      "abstract": "his chapter depicts a fairly new and evolving business studies in Japanese higher education. It presents the main suppliers, the typical programs offered, the corresponding fees and the current pedagogy development. The Business Model of Business Administration for institutions is introduced in regard to the ongoing incorporation of national universities. The doctoral program and the faculty’s career steps, its salary level, the related evaluation and the teaching load are also presented. The relatively limited demand for these business programs is discussed in relation to the Japanese firms’ employment habits, before dealing with the higher education regulatory body. The chapter concludes by accentuating the need for Japanese institutions to find their own model with consideration to the specific social rules and society’s demands. © The Author(s) 2018.",
-      "authorKeywords": "Business administration; Higher education; Japan; Management; Mba",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": []
-    },
-    {
-      "id": 167,
-      "fonte": "Scopus",
-      "authors": "Kushnir I.",
-      "title": "European Cooperation in Higher Education and the Evolving Mission of the European Project (in the Early 2020s)",
-      "year": 2025,
-      "sourceTitle": "European Cooperation in Higher Education: Shaping the Future of Europe",
-      "doi": "10.1108/978-1-83753-516-320251021",
-      "doiLink": "https://doi.org/10.1108/978-1-83753-516-320251021",
-      "abstract": "This chapter integrates and further discusses the findings from the previous four chapters regarding the perspectives of key higher education actors in the founding countries of the European Higher Education Area (Germany, France, Italy and the United Kingdom) on the strategic significance of their memberships in this Area for them, as well as for the European region. This chapter builds on these findings to analyse the role of European cooperation in higher education for the developing mission of the European project, particularly in the early 2020s period. In doing so, this chapter summarises and develops explicit answers to the key research questions that this book set out to answer. The discussion in this chapter relies on the theoretical and empirical literature outlined earlier in the book and demonstrates how this book addresses relevant gaps in the scholarship on European higher education and the European project. © 2025 Iryna Kushnir.",
-      "authorKeywords": "EHEA; European cooperation; European Higher Education Area; European project; Europeanisation; Higher education",
-      "indexKeywords": "EHEA; Empirical literature; European cooperation; European Higher Education Area; European program; European regions; Europeanization; High educations; Research questions; United kingdom; Engineering education",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF42"
-      ]
-    },
-    {
       "id": 168,
       "fonte": "Scopus",
       "authors": "Bhat A.Z.; Mir A.W.; Pandey J.; Singh A.V.",
@@ -5348,23 +4026,6 @@ const sfData = {
       "documentType": "Conference paper",
       "associatedSFs": [
         "SF10"
-      ]
-    },
-    {
-      "id": 169,
-      "fonte": "Scopus",
-      "authors": "Gayá P.; Brydon-Miller M.",
-      "title": "Carpe the academy: Dismantling higher education and prefiguring critical utopias through action research",
-      "year": 2017,
-      "sourceTitle": "Futures",
-      "doi": "10.1016/j.futures.2016.10.005",
-      "doiLink": "https://doi.org/10.1016/j.futures.2016.10.005",
-      "abstract": "This paper engages with the challenge of re-imagining higher education. We start from the position that the ascent of the increasingly corporatized university is deeply problematic precisely because of the neoliberal realist position on ‘the future’ that it assumes and perpetuates: the view that there is no alternative to neoliberal capitalist market principles, that present and future realities can diverge only to the extent permitted by existing market forces and rationales (Amsler, 2011). In this context, ‘education’ takes the form of preparing and socializing the next generation of workers: a future focus severely limited in the possibilities it considers. Thus we are faced with a mutually-constitutive relationship where constrained visions of future needs and demands serve to constrain present educational offerings; a dynamic which becomes self-reinforcing and which admits little disruption. In this paper, we draw on the concrete body of practice known as action research to consider how we might prize open spaces for thinking much more expansively about what ‘the future’ might entail, and what forms of education and organization are necessary in the present to keep open, rather than shut down, diverse possibilities and democratic debate around this. We focus on critical utopian action research and systemic action research as illustrative of key qualities of prefigurative and critical utopian engagement with educational presents and futures. We conclude that the capture of the university by neoliberal logics can be resisted and challenged through radical methodologies, like action research, which explicitly set out to be ongoingly anti-hegemonic, critical, self-reflexive, pluralistic, and non-recuperative (Firth, 2013; Garforth, 2009). © 2016 Elsevier Ltd",
-      "authorKeywords": "Action research; Critical utopianism; Higher education futures; Neoliberal university; Organizing resistance; Prefigurative politics",
-      "indexKeywords": "action research; higher education; methodology; university sector",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF56"
       ]
     },
     {
@@ -5415,25 +4076,7 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF25",
         "SF25a"
-      ]
-    },
-    {
-      "id": 173,
-      "fonte": "Scopus",
-      "authors": "Ashour S.; El-Refae G.A.; Zaitoun E.A.",
-      "title": "Post-pandemic Higher Education: Perspectives from University Leaders and Educational Experts in the United Arab Emirates",
-      "year": 2021,
-      "sourceTitle": "Higher Education for the Future",
-      "doi": "10.1177/23476311211007261",
-      "doiLink": "https://doi.org/10.1177/23476311211007261",
-      "abstract": "The COVID-19 pandemic has presented an opportunity to rethink higher education. This study focused on analysing experiences from three higher education institutions (HEIs) in the United Arab Emirates (UAE) since the onset of the crisis and explored how university leaders and professors in these institutions imagine post-COVID-19 higher education. The study aimed to find out whether the pandemic has been a factor that has helped to legitimize online teaching and learning as a universal mode of delivery across different fields of studies, or if the Zoom fatigue has shown its limitations. In addition, the research investigated what transformations university experts predict and their vision for the future of higher education. The study found that many lessons learnt during the period of forced adoption of distance education will be used by universities to enhance and expand online learning provisions. This shift will be driven by the investments the universities have made in distance education and the increased familiarity of the students, staff and institutions with e-learning. The study participants foresee that more sophisticated forms of hybrid campuses will be a more appropriate model for the future, if face-to-face (F2F) classrooms do not return. © 2021 The Kerala State Higher Education Council.",
-      "authorKeywords": "academic staff; blended (hybrid) learning; Coronavirus pandemic; distance higher education; future",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF09"
       ]
     },
     {
@@ -5467,7 +4110,7 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF44"
+        "SF44a"
       ]
     },
     {
@@ -5486,38 +4129,6 @@ const sfData = {
       "associatedSFs": [
         "SF19"
       ]
-    },
-    {
-      "id": 177,
-      "fonte": "Scopus",
-      "authors": "Elif Kutlugun H.; Rakhimova D.; Atkhamova A.; Mirzaev A.",
-      "title": "The Ambivalent Gaze: Student Perspectives on Surveillance in Higher Education",
-      "year": 2026,
-      "sourceTitle": "ICFNDS 2025 - 2025 the 9th International Conference on Future Networks and Distributed Systems",
-      "doi": "10.1145/3789692.3789842",
-      "doiLink": "https://doi.org/10.1145/3789692.3789842",
-      "abstract": "This qualitative study investigates how surveillance is perceived and experienced within higher education and its implications for trust, fairness, and institutional culture. Data were collected through semi-structured interviews with 15 undergraduate students aged 18-21 from diverse academic departments at a private university in Tashkent, Uzbekistan. The research explores students' interpretations of surveillance practices, their perceived purposes and functions, and the ways these practices influence behavior, autonomy, and ethical judgments. Findings reveal an ambivalent relationship: students conceptualize surveillance as both protective and controlling. While valued for promoting safety, property protection, and academic integrity, surveillance also fosters self-censorship, behavioral regulation, and constrained autonomy. Cameras were generally accepted when implemented transparently and for security purposes, reinforcing trust and perceptions of fairness. However, audio recording and monitoring in sensitive spaces were viewed as intrusive and unethical. Participants advocated for ethical, transparent, and proportionate surveillance policies that respect privacy while ensuring safety. These insights underscore the dual role of surveillance as enabling and disciplinary, shaped by cultural norms and governance practices, and highlight the need for institutional frameworks that balance security with autonomy in higher education.  © 2025 Copyright held by the owner/author(s).",
-      "authorKeywords": "educational surveillance; foucault's panopticon; student monitoring systems; surveillance and trust; surveillance in higher education",
-      "indexKeywords": "Behavioral research; Copyrights; Education computing; Ethical technology; Human engineering; Security systems; Space surveillance; Educational surveillance; Foucault panopticon; High educations; Monitoring system; Panopticon; Student monitoring; Student monitoring system; Student perspectives; Surveillance and trust; Surveillance in high education; Students",
-      "documentType": "Conference paper",
-      "associatedSFs": [
-        "SF52"
-      ]
-    },
-    {
-      "id": 178,
-      "fonte": "Scopus",
-      "authors": "Martínez-Canton A.E.; Ubici V.; Diliegros-Godines C.J.; Tienda-Vázquez M.A.",
-      "title": "A new way to evaluate the impact of Research-Based Learning (RBL) and develop competencies in higher education",
-      "year": 2025,
-      "sourceTitle": "2025 Institute for the Future of Education Conference, IFE 2025",
-      "doi": "10.1109/IFE63672.2025.11024953",
-      "doiLink": "https://doi.org/10.1109/IFE63672.2025.11024953",
-      "abstract": "Within the existing teaching-learning strategies, Research-Based Learning (RBL) promises to be a robust alternative for developing competencies, such as research. This study proposes a new way to evaluate the RBL model for developing both transversal and technical competencies. One hundred twenty-two students from different university careers were assessed through surveys at the beginning and end of the course, analyzing the level of development of various competencies from each student's perspective and validated by the teachers. The results were significant for scientific thinking (52%), correct use of mathematical tools (46%), written communication (45%), and identification of relevant information (38%). We observed two essential conditions for the proper functioning of RBL: effective and immediate feedback on activities by the teacher and commitment from the students. Under these conditions, it was concluded that the activities designed under the RBL methodology allowed students to develop and perceive their competencies better. © 2025 IEEE.",
-      "authorKeywords": "competency development; educational innovation; higher education; professional education; Research-Based Learning (RBL)",
-      "indexKeywords": "Curricula; Education computing; Educational technology; Engineering education; Learning systems; Professional aspects; Teaching; Competency development; Condition; Educational innovations; High educations; Learning models; Professional education; Research-based learning; Strategy research; Teachers'; Teaching/learning strategy; Students",
-      "documentType": "Conference paper",
-      "associatedSFs": []
     },
     {
       "id": 179,
@@ -5571,21 +4182,6 @@ const sfData = {
       ]
     },
     {
-      "id": 182,
-      "fonte": "Scopus",
-      "authors": "Auer L.; Juntunen J.; Ojala P.",
-      "title": "Open source project as a pedagogical tool in higher education",
-      "year": 2011,
-      "sourceTitle": "Proceedings of the 15th International Academic MindTrek Conference: Envisioning Future Media Environments, MindTrek 2011",
-      "doi": "10.1145/2181037.2181073",
-      "doiLink": "https://doi.org/10.1145/2181037.2181073",
-      "abstract": "Nowadays open source is widely used approach to software development. In Finland the government is also encouraging communities to use open source software instead of closed software. Requirements for the future professionals are becoming more complex and transforming rapidly. Internet and Web 2.0 are changing the way people learn and work. Higher education has to take this into account in order to improve teaching and study methodologies. School of Business and Information Management, a school part of Oulu University of Applied Sciences (OUAS), is launching an open source project called OpixProject to support education and research related to information processing science. Software under development will be a project management application that can be used to manage traditional and agile projects. The purpose of this project is to use an open source project as a pedagogical tool within the context of computer science education. © 2011 ACM.",
-      "authorKeywords": "higher education; learning; open source; pedagogy",
-      "indexKeywords": "Data processing; Information management; Project management; Software design; Applied science; Computer Science Education; Finland; Government IS; Higher education; learning; Management applications; Open source projects; Open Source Software; Open sources; Pedagogical tools; pedagogy; Web 2.0; Education",
-      "documentType": "Conference paper",
-      "associatedSFs": []
-    },
-    {
       "id": 183,
       "fonte": "Scopus",
       "authors": "Oginni Y.; Mogaji E.; Nguyen N.P.",
@@ -5599,56 +4195,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF39",
-        "SF09"
+        "SF39"
       ]
-    },
-    {
-      "id": 184,
-      "fonte": "Scopus",
-      "authors": "Kushnir I.",
-      "title": "Germanyʼs Membership in the European Higher Education Area: Leading Europe",
-      "year": 2025,
-      "sourceTitle": "European Cooperation in Higher Education: Shaping the Future of Europe",
-      "doi": "10.1108/978-1-83753-516-320251011",
-      "doiLink": "https://doi.org/10.1108/978-1-83753-516-320251011",
-      "abstract": "This chapter places Germany, as one of the four founders of the European Higher Education Area (EHEA), at the centre of attention and analyses its Bologna stakeholdersʼ perspectives on the role of European higher education (HE) represented by the case of the EHEA in the evolving mission of the European project, which is seen here as the Europeanisation project transcending the borders of the EU. The period of the early 2020s is the focus here. The analysis rests on the ideas of neo-institutionalism and is based on in-depth interviews with key German EHEA-related stakeholders and a selection of key official communications. The findings demonstrate that German Bologna stakeholders view Germanyʼs EHEA membership largely as a tool for generating and maintaining political stability in the European region, and Germany takes an active leading role in this process. © 2025 Iryna Kushnir.",
-      "authorKeywords": "Bologna Process; EHEA; Europe; European Higher Education Area; Europeanisation; Germany; Neo-institutionalism; Policy; Politics",
-      "indexKeywords": "Bologna process; Europe; European Higher Education Area; European program; Europeanization; Germany; High educations; Neo-institutionalism; Politic",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF42"
-      ]
-    },
-    {
-      "id": 185,
-      "fonte": "Scopus",
-      "authors": "Chye T.C.",
-      "title": "A Regional Institute of Higher Education and Development in South-East Asia",
-      "year": 2013,
-      "sourceTitle": "Universities Facing the Future",
-      "doi": "10.4324/9780203080542-16",
-      "doiLink": "https://doi.org/10.4324/9780203080542-16",
-      "abstract": "In 1959, Unesco and the IAU formed a Joint Steering Committee with the collaboration of the Ford Foundation to make a study on the ‘Role of Institutions of Higher Education in the Development of Countries in South-East Asia’. These studies, which were begun in September 1961 and concluded in April 1965, were embodied in three volumes, being the Director’s Report, Country Profiles, High Level Manpower and Language Policy. One of the recommendations made by the Committee was the establishment of an Institute of Higher Education and Development. © 1972 Evan’s Brothers and Named Contributors.",
-      "authorKeywords": "",
-      "indexKeywords": "High educations; Institutions of higher educations; Southeast Asia; Steering committee",
-      "documentType": "Book chapter",
-      "associatedSFs": []
-    },
-    {
-      "id": 186,
-      "fonte": "Scopus",
-      "authors": "Király G.; Géring Z.",
-      "title": "Editorial: Introduction to ‘Futures of Higher Education’ special issue",
-      "year": 2019,
-      "sourceTitle": "Futures",
-      "doi": "10.1016/j.futures.2019.03.004",
-      "doiLink": "https://doi.org/10.1016/j.futures.2019.03.004",
-      "abstract": "One of the main missions of higher education is to prepare the young (but not exclusively them) for future challenges. It not only has the potential to change individual lives but it can also make the social fabric more resilient and adaptive. However, presently this future is highly uncertain and fraught with risks. This radical uncertainty makes it difficult to identify future-proof knowledge, skills and capacities. Moreover, it also raises questions about the possible roles higher education should play in future societies. We argue that higher education should be an active agent in shaping future society. In order to fulfil its potential as such, this type of agency-orientation should transcend its core activities, like research and teaching, currently built into its institutional settings. This special issue highlights certain possible directions for change as far as HEIs are concerned. These future possibilities are in relation to learning, ethics, fairness, community involvement and the role of research at institutions which were formerly teaching-oriented. These can be seen as first steps towards understanding what organisational changes are needed for HEIs to maintain their social relevance and to actively shape their environment. © 2019 Elsevier Ltd",
-      "authorKeywords": "Futures of higher education; Global challenges; Higher education institution; Higher education research",
-      "indexKeywords": "curriculum; future prospect; higher education; research; teaching",
-      "documentType": "Article",
-      "associatedSFs": []
     },
     {
       "id": 187,
@@ -5668,66 +4216,6 @@ const sfData = {
       ]
     },
     {
-      "id": 188,
-      "fonte": "Scopus",
-      "authors": "Ghozzi H.; Mezghani L.",
-      "title": "Higher education in management: The case of Tunisia",
-      "year": 2017,
-      "sourceTitle": "The Future of Management Education: Volume 2: Differentiation Strategies for Business Schools",
-      "doi": "10.1057/978-1-137-56104-6_9",
-      "doiLink": "https://doi.org/10.1057/978-1-137-56104-6_9",
-      "abstract": "The Tunisian higher education system has long followed the French Education model. It has been widely praised for its inclusiveness (coverage of the population) and its sophistication in the wider context of North Africa. While Tunisia can claim the existence of a large number of public higher management education providers, a private system is also emerging. However, high unemployment rates among graduates demonstrate that the reforms are becoming vital. At the same time, the increasing budgetary constraints urge public policy to redefine orientations and programmes. This chapter discusses how quality in higher education in general can be largely enhanced by the alignment to international standards through international accreditations as well as the reinforcement of the linkages with the industry that remain weak. © The Author(s) 2018.",
-      "authorKeywords": "Business education; Higher education system; Management education; Private education; Public education; Tunisia",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": []
-    },
-    {
-      "id": 189,
-      "fonte": "Scopus",
-      "authors": "Gries T.; Veit D.",
-      "title": "Higher education courses in textile science: Present and future",
-      "year": 2012,
-      "sourceTitle": "The Global Textile and Clothing Industry: Technological Advances and Future Challenges",
-      "doi": "10.1533/9780857095626.89",
-      "doiLink": "https://doi.org/10.1533/9780857095626.89",
-      "abstract": "After a general overview, the effects of the Bologna Agreement on the textile course programmes in higher education in selected European countries are explained. Structure, content and funding of bachelor, master and PhD programmes are described for selected countries worldwide. The globalization of textile production has led to an internationalization of textile degree programmes everywhere. The ever-increasing range of non-garment textile applications necessitates more interdisciplinary subjects. The diversity and constant change of products and markets requires life-long learning from professionals in the textile industry (many of whom do not have a background in textiles but come from a wide range of different fields); there will be an increasing demand for a master degree for graduates already working in industry. The chapter concludes with a look at qualification requirements and sources of further information. © 2012 Woodhead Publishing Limited. All rights reserved.",
-      "authorKeywords": "Career progression; Degree; Globalization; Higher education",
-      "indexKeywords": "Textiles; Career progression; Degree; European Countries; Globalization; Higher education; Life long learning; Textile applications; Textile production; Textile industry",
-      "documentType": "Book chapter",
-      "associatedSFs": []
-    },
-    {
-      "id": 190,
-      "fonte": "Scopus",
-      "authors": "Bloomquist C.D.; West K.",
-      "title": "Using Poetic Re-Presentation to Study Trust in Higher Education",
-      "year": 2020,
-      "sourceTitle": "Critical Issues in the Future of Learning and Teaching",
-      "doi": "10.1163/9789004436657_005",
-      "doiLink": "https://doi.org/10.1163/9789004436657_005",
-      "abstract": "In this chapter, we explore the use of poetic re-presentation to contemplate the role trust plays in fostering a positive learning environment within higher education. To introduce this chapter, we go backward before going forward. We begin with a brief story of why we chose to explore the topic of trust in higher education using the alternative qualitative method of poetic re-presentation. We demonstrate how poetic re-presentation has helped us frame our role more explicitly as researchers and has helped us more deeply listen to our participants' words and ideas. We tell the story of how poetry and poetic representation has shaped our study of trust within higher education. We then share a selection of poems with the reader that encapsulate fundamental concepts of trust gleaned from our use of poetic re-presentation. The chapter includes an analysis of poetic re-presentation as a method of inquiry for research in higher education. Finally, we conclude the chapter with a call to action for readers to critically reflect on the vital role trust plays in higher education and consider how poetic re-presentation can be used in their Scholarship of Teaching and Learning in higher education research. © koninklijke brill nv, leideN, 2020.",
-      "authorKeywords": "graduate student teaching; higher education; poetic re-presentation; poetry; qualitative inquiry; trust",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": []
-    },
-    {
-      "id": 191,
-      "fonte": "Scopus",
-      "authors": "Mourtada H.",
-      "title": "The syrian higher-education sector: Past, present, and future",
-      "year": 2018,
-      "sourceTitle": "Universities in Arab Countries: An Urgent Need for Change: Underpinning the Transition to a Peaceful and Prosperous Future",
-      "doi": "10.1007/978-3-319-73111-7_17",
-      "doiLink": "https://doi.org/10.1007/978-3-319-73111-7_17",
-      "abstract": "The story of the Syrian Higher-Education Sector (SHES) is the story of the war itself that has swept over the country for the last six years. The decade preceding the war witnessed significant strides in the sector that included major regulatory reforms, a burgeoning quality-assurance system, a proactive approach to internationalization, improvements in the curricula and human capacity building, an increased awareness of the importance of relevance to society and market needs, and sweeping expansions in higher-education outlets and course offerings across Syria. Not only did the war bring the promise of the past to a complete halt, but it also resulted in a process of agonizing deterioration in the sector due to a host of factors. SHES became one of the victims of the Syrian War. The predicament of the sector is such that many facets of its development have been reversed. Currently, SHES administration has entered into crisis management mode dealing with such issues as demographic shifts, brain drain, decreased resources, and damaged infrastructure. As the war enters its seventh year, visions for the period of post-war reconstruction begin to surface providing a glimpse of the tremendous challenges ahead. © Springer International Publishing AG, part of Springer Nature 2018. All rights reserved.",
-      "authorKeywords": "Brain drain; Post-war requirements; Quality assurance and accreditation; Syria; Syrian higher-education sector; Syrian war; Vocational education training",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": []
-    },
-    {
       "id": 192,
       "fonte": "Scopus",
       "authors": "Eriksson A.-M.; Frisk S.",
@@ -5745,40 +4233,6 @@ const sfData = {
       ]
     },
     {
-      "id": 193,
-      "fonte": "Scopus",
-      "authors": "Matura A.; Singh R.",
-      "title": "Driving environmental stewardship: Exploring the impact of green HRM on voluntary green behaviors in higher education institutions",
-      "year": 2026,
-      "sourceTitle": "Sustainable Futures",
-      "doi": "10.1016/j.sftr.2026.101766",
-      "doiLink": "https://doi.org/10.1016/j.sftr.2026.101766",
-      "abstract": "The rise in business activities comes at the cost of environmental degradation. Past research endorses the implementation of Green Human Resource Management (GHRM) to encourage sustainability in organizations. This study assesses the influence of GHRM on employees’ voluntary workplace green behavior (VWGB) with the mediating role of environmental awareness (EA) and green perceived organizational support (GPOS). To achieve our objectives, we surveyed 186 employees working in Indian private and government Higher Education Institutions (HEIs) using a closed-ended structured questionnaire. The structural equation modeling (SEM) results indicate no direct impact of GHRM on VWGB; however, an indirect relationship through EA and GPOS was established. Specifically, GPOS was found to be a strong predictor of VWGB compared to EA. The study provides a roadmap to HR managers and top management in HEIs on how GHRM can lead to VWGB and thus contribute to greening the organization. Further, the study provided evidence of the key role of GPOS in enabling discretionary green behavior; therefore, policymakers should prioritize and invest in developing GPOS through relevant green practices. The study investigates the novel underlying psychological and social mechanisms (i.e., GPOS and EA) and contributes to the green corpus. © 2026 The Authors. Published by Elsevier Ltd. This is an open access article under the CC BY license. http://creativecommons.org/licenses/by/4.0/",
-      "authorKeywords": "Environmental awareness; Green human resource management; Green perceived organizational support; Higher education institutions; Voluntary workplace green behavior",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF49"
-      ]
-    },
-    {
-      "id": 195,
-      "fonte": "Scopus",
-      "authors": "Gautama A.; Hasim H.; Iwansaputra R.; Kristin D.M.",
-      "title": "Metaverse Adoption in Higher Education Institutions (HEIs): A Systematic Literature Review",
-      "year": 2024,
-      "sourceTitle": "11th International Conference on ICT for Smart Society: Integrating Data and Artificial Intelligence for a Resilient and Sustainable Future Living, ICISS 2024 - Proceeding",
-      "doi": "10.1109/ICISS62896.2024.10750997",
-      "doiLink": "https://doi.org/10.1109/ICISS62896.2024.10750997",
-      "abstract": "In recent years following the evolution of the technological era, Metaverse has expanded and grown around the world. The concept of the Metaverse has exceeded into its origins and emerged as a genuine reality. There is a lack of information regarding the influencing factors from adoption of the Metaverse in education. Therefore, this study focused on the question 'What is the most influential factor in Metaverse adoption in higher education institutions (HEIs)?'. This study aims to encourage the use of Metaverse in education and understand the factors that influence its adoption. It also serves as a guide for future research. This study also works to conduct developers in Metaverse based in education, which offer insight into the evolving of Metaverse technologies. By implementing a Systematic Literature Review methodology, insights from diverse authors and sources were collected to seek the influential factors of Metaverse in education. The focus spanned studies published between 2014 until 2024. The comprehensive literature review revealed 38 factors across 25 scholarly articles, categorized into six latent variables: Human, Enjoyment, Technology Capability, External, Human Expectancy, Risk. This finding has the potential to enhance progress, facilitate and assist the adoption of Metaverse in education. This study also offers insight into the development of Metaverse in education. However, this study has a limitation that only 25 studies were analyzed, indicating that other influencing factors may still be unexplored. For future studies, extensive research is needed to explore new factors that can influence the adoption of Metaverse for higher education institutions. © 2024 IEEE.",
-      "authorKeywords": "Education; HEIs; Higher Education Institutions; Metaverse; Systematic Literature Review",
-      "indexKeywords": "Higher education institutions; Influential factors; Latent variable; Literature reviews; Metaverses; Scholarly articles; Systematic literature review",
-      "documentType": "Conference paper",
-      "associatedSFs": [
-        "SF16"
-      ]
-    },
-    {
       "id": 196,
       "fonte": "Scopus",
       "authors": "Smith S.; Greenfields M.; Rochon R.",
@@ -5792,24 +4246,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF25",
         "SF25b"
       ]
-    },
-    {
-      "id": 197,
-      "fonte": "Scopus",
-      "authors": "Mafu M.",
-      "title": "Leveraging Disruptive Technologies and Systems Thinking Approach at Higher Education Institutions",
-      "year": 2023,
-      "sourceTitle": "The Sustainable University of the Future: Reimagining Higher Education and Research",
-      "doi": "10.1007/978-3-031-20186-8_2",
-      "doiLink": "https://doi.org/10.1007/978-3-031-20186-8_2",
-      "abstract": "[No abstract available]",
-      "authorKeywords": "Disruptive technology; Higher education institutions; Predictive learning analytics; Systems thinking; University of the future",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": []
     },
     {
       "id": 199,
@@ -5843,23 +4281,6 @@ const sfData = {
       "documentType": "Article",
       "associatedSFs": [
         "SF51"
-      ]
-    },
-    {
-      "id": 201,
-      "fonte": "Scopus",
-      "authors": "Murphy J.C.",
-      "title": "WORLDMAKING AND LEADING FROM THE MIDDLE: Collaborative Leadership in Higher Education",
-      "year": 2025,
-      "sourceTitle": "Strategic Shakespeare: Transformative Leadership for the Future of Higher Education",
-      "doi": "10.4324/9781003467298-20",
-      "doiLink": "https://doi.org/10.4324/9781003467298-20",
-      "abstract": "The second scene of William Shakespeare’s A Midsummer Night’s Dream introduces us to the Artisans, a small group of craftsmen from Athens who are working together on a play to present to the duke’s court if chosen. 1 Peter Quince, the producer/director who also penned the play, “The Most Lamentable Comedy and Most Cruel Death of Pyramus and Thisbe,” takes attendance and assigns the roles. Throughout the scene, Quince listens to input from the artisans and strives to help them understand the importance of their roles. As the play demonstrates, theatrical practice and performance requires the work, thought, and attention of a variety of people. As Jonathan Bate writes, “Theatre is unique among the arts of the word in the degree to which it is public, collaborative, multidimensional and unpredictable.” 2 The Artisans’ first scene gives us a glimpse into theatre as collaborative worldmaking and serves a good example of the “collaborative, multidimensional and unpredictable” aspects of theatre. The choice to pursue higher education is likewise a choice to enter a worldmaking space. Danielle Allen, James Bryant Conant University Professor and Director of the Allen Lab for Democracy Renovation at Harvard University, argues that institutions of higher education are unique because they are spaces designed precisely for us all to come together to think together and understand each other across divides. 3 Both theatre and higher education leadership require creating a collaborative space in which ideas can be tested by a variety of interconnected stakeholders and failures can occur safely. © 2025 selection and editorial matter, Ariane M. Balizet, Natalie K. Eschenbaum, and Marcela Kostihová.",
-      "authorKeywords": "",
-      "indexKeywords": "Collaborative spaces; Harvard University; High educations; Institutions of higher educations; Performance; Shakespeare; Theater educations; Williams",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF56"
       ]
     },
     {
@@ -5983,23 +4404,6 @@ const sfData = {
       ]
     },
     {
-      "id": 212,
-      "fonte": "Scopus",
-      "authors": "Navani M.T.",
-      "title": "Transition to HE and Equitable Learning Outcomes: Challenges for Indian Higher Education",
-      "year": 2020,
-      "sourceTitle": "Higher Education for the Future",
-      "doi": "10.1177/2347631120930537",
-      "doiLink": "https://doi.org/10.1177/2347631120930537",
-      "abstract": "Indian higher education (HE) system has undergone rapid expansion over the last two decades, emerging as one of the largest HE systems in the world. Expansion is accompanied by the challenge of ensuring comparable quality education across a diverse institutional spectrum. Simultaneously, academic reforms in the sphere of general HE have been pursued in recent years to align HE with global quality assurance frameworks. This creates an intrinsic pull in the system where international benchmarks juxtapose against demands made on HE institutions (HEIs) to meet the needs of and support first-generation learners coming from disadvantaged backgrounds to enable them to transition successfully to academic cultures of colleges. This article addresses the challenge for equity and institutional challenge to find ways to engender the pedagogical and scaffolding processes accountable to the ‘educational outcomes’ through ensuring attainment of specified graduate attributes. © 2020 The Kerala State Higher Education Council.",
-      "authorKeywords": "diversity; equity; Indian higher education (HE); learning outcomes; massification; quality",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF21"
-      ]
-    },
-    {
       "id": 213,
       "fonte": "Scopus",
       "authors": "Khatimin N.; Zaharim A.; Aziz A.A.",
@@ -6081,7 +4485,6 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF25",
         "SF25b"
       ]
     },
@@ -6116,8 +4519,7 @@ const sfData = {
       "indexKeywords": "Blockchain; Cost benefit analysis; Curricula; Digital storage; E-learning; Electronic data interchange; Ethereum; Students; Block-chain; Digitisation; Educational management; Evaluation; High educations; Modern technologies; Performance; Research areas; Student achievement; Transaction cost; Smart contract",
       "documentType": "Article",
       "associatedSFs": [
-        "SF17",
-        "SF16"
+        "SF17"
       ]
     },
     {
@@ -6153,38 +4555,6 @@ const sfData = {
       "associatedSFs": [
         "SF18"
       ]
-    },
-    {
-      "id": 224,
-      "fonte": "Scopus",
-      "authors": "AbouElgheit E.",
-      "title": "Responsible generative AI enablement for learning futures in higher education: a qualitative integrative review and bounded institutional illustration",
-      "year": 2026,
-      "sourceTitle": "Learning Futures and Emerging Technologies",
-      "doi": "10.1108/LFET-06-2026-0073",
-      "doiLink": "https://doi.org/10.1108/LFET-06-2026-0073",
-      "abstract": "Purpose – This paper aims to examine how higher education institutions can move from fragmented generative artificial intelligence (GenAI) experimentation toward responsible institutional enablement for learning futures. Design/methodology/approach – A qualitative integrative review was reconstructed through a retrospective audit of a 48-record working library, reconciliation with sources already used in the manuscript and a targeted August 2026 update. Forty-one sources were retained and synthesized using a multilevel lens combining technology-adoption theory with a relational socio-technical perspective. A bounded institutional illustration was mapped to the resulting provisional framework. Findings – The synthesis identifies six recurring institutional capability domains: governance, faculty capability-building, pedagogical redesign, research enablement, infrastructure and access and evaluation. These domains are organized into a provisional Responsible Institutional Enablement Framework. The institutional illustration documents capacity-building activities and descriptive reach, but not behavioral, educational or institutional outcomes. Practical implications – Institutions can use the provisional framework to audit gaps, sequence capability-building and design evaluation plans while adapting expectations to local resources, governance and disciplinary contexts. Originality/value – The contribution lies in integrating literature streams that are commonly separated, distinguishing capacity-building activity from measured outcomes and making the evidentiary status of the proposed framework explicit. The framework is offered as a review-derived organizing synthesis requiring independent validation, not as a validated or wholly novel theory. © 2026 Emerald Publishing Limited",
-      "authorKeywords": "AI literacy; Educational technology; Generative AI; Higher education; Institutional capacity; Learning futures; Responsible innovation; Technology adoption",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF15"
-      ]
-    },
-    {
-      "id": 225,
-      "fonte": "Scopus",
-      "authors": "Boonen A.; Bijnens H.",
-      "title": "The UNIQUe label: Supporting a culture of innovation and quality in higher education",
-      "year": 2010,
-      "sourceTitle": "Changing Cultures in Higher Education: Moving Ahead to Future Learning",
-      "doi": "10.1007/978-3-642-03582-1_36",
-      "doiLink": "https://doi.org/10.1007/978-3-642-03582-1_36",
-      "abstract": "European higher education institutions will need significant reforms, in order to guarantee their leading role in a globalized knowledge economy. These reforms can be enhanced by improving the way in which traditional universities integrate new technologies both in their educational activities and throughout their strategic and operational processes. The UNIQUe institutional accreditation scheme, analyzed and described in this chapter, intends to support this process of integrating the use of new technologies in higher education. With its specific open approach to quality in e-Learning, UNIQUe emphasizes innovation and creativity in a process that includes self-assessment and constructive dialog with peers and stakeholders involved. UNIQUe intends to use the institutional quality label as a catalyst for continuous improvement and change while setting up collaborative bench learning processes among universities for the adoption and integration of e-Learning. © 2010 Springer-Verlag Berlin Heidelberg.",
-      "authorKeywords": "",
-      "indexKeywords": "Adversarial machine learning; Collaborative learning; Contrastive Learning; Culture of innovations; E - learning; Educational activities; High educations; Higher education institutions; Institutional accreditation; Knowledge economy; Operational process; Strategic process; Traditional universities; Federated learning",
-      "documentType": "Book chapter",
-      "associatedSFs": []
     },
     {
       "id": 226,
@@ -6234,7 +4604,6 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF25",
         "SF25b"
       ]
     },
@@ -6303,7 +4672,6 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF31",
         "SF31b"
       ]
     },
@@ -6322,23 +4690,6 @@ const sfData = {
       "documentType": "Article",
       "associatedSFs": [
         "SF23"
-      ]
-    },
-    {
-      "id": 235,
-      "fonte": "Scopus",
-      "authors": "Kushnir I.",
-      "title": "The European Project and European Higher Education",
-      "year": 2025,
-      "sourceTitle": "European Cooperation in Higher Education: Shaping the Future of Europe",
-      "doi": "10.1108/978-1-83753-516-320251009",
-      "doiLink": "https://doi.org/10.1108/978-1-83753-516-320251009",
-      "abstract": "This chapter maps the landscape of existing research on the European project and European higher education initiatives, focusing predominantly on the European Higher Education Area (EHEA). This literature explores key debates around the borders of the European project, analyses it as a space of meaning, the balance between unity and diversity within it, and its evolving mission, before delving into the relationship between the European project and the EHEA. This chapter also points out a few major gaps in that research. © 2025 Iryna Kushnir.",
-      "authorKeywords": "Borders; Europe; European Higher Education Area; Europeanisation; Higher education; Space of meaning; The European project",
-      "indexKeywords": "Border; Europe; European Higher Education Area; Europeanization; High educations; Project analysis; Space of meaning; The european project; Engineering education",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF42"
       ]
     },
     {
@@ -6410,23 +4761,6 @@ const sfData = {
       ]
     },
     {
-      "id": 242,
-      "fonte": "Scopus",
-      "authors": "Kaša R.",
-      "title": "Juggling the Costs of Higher Education Abroad: Voices of International Students from Latvia",
-      "year": 2022,
-      "sourceTitle": "Reimagining Mobility in Higher Education: For the Future Generations of International Students",
-      "doi": "10.1007/978-3-030-93865-9_6",
-      "doiLink": "https://doi.org/10.1007/978-3-030-93865-9_6",
-      "abstract": "This chapter examines how international students from Latvia fund their higher education abroad. Evidence in this chapter comes from 20 qualitative semistructured interviews with international undergraduate and graduate students from Latvia who pursued higher education degrees in Great Britain, the Netherlands, Germany, Belgium, France, Poland, Sweden, and the United States. Each of these countries has a different higher education tuition policy, offering insights on how international students navigate through higher education systems with different costs. Findings reveal that most international students from Latvia combine several sources of funding at once because of the absence of a single sufficiently large source of money. To fund their higher education abroad, they draw on scholarships, family resources, loans, and personal earnings. The socioeconomic background of students presents a framework within which they strategize about covering higher education costs abroad. Findings confirm that even free higher education costs money as students need to provide for their living expenses. What matters, however, is the affordability of these costs and possibilities for students to access sources of funding. The chapter concludes with a discussion about how international student mobility re-sets the socioeconomic constraints students may face accessing higher education and what does this mean for the education system of a sending country. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2022.",
-      "authorKeywords": "Equity; Europe; Higher education access; Higher education finance; International students",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF32"
-      ]
-    },
-    {
       "id": 243,
       "fonte": "Scopus",
       "authors": "Rodzi N.A.H.M.; Othman M.S.; Yusuf L.M.",
@@ -6441,23 +4775,6 @@ const sfData = {
       "documentType": "Conference paper",
       "associatedSFs": [
         "SF36"
-      ]
-    },
-    {
-      "id": 244,
-      "fonte": "Scopus",
-      "authors": "Samier E.A.",
-      "title": "The globalization of higher education as a societal and cultural security problem",
-      "year": 2015,
-      "sourceTitle": "Policy Futures in Education",
-      "doi": "10.1177/1478210315579558",
-      "doiLink": "https://doi.org/10.1177/1478210315579558",
-      "abstract": "In this article, I propose a theory of the globalization of higher education as societal and cultural security problems for many regions of the world. The first section examines the field of security studies for theoretical frameworks appropriate to critiquing globalized higher education, including critical human, societal and cultural security critiques of the Copenhagen, Aberystwyth and Paris schools, and their relationship to the educational sector, with a focus on the university's role in the security studies field. The second section examines the effect of globalization on education as societal and cultural security problems related to neoliberalism, colonization, internationalization of curriculum and cross-cultural management studies. © Author(s) 2015.",
-      "authorKeywords": "Cultural security; Globalization of education; Higher education; Neoliberalism; Security studies",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF44"
       ]
     },
     {
@@ -6581,23 +4898,6 @@ const sfData = {
       ]
     },
     {
-      "id": 255,
-      "fonte": "Scopus",
-      "authors": "Hernández S.I.V.; Paredes S.G.",
-      "title": "New realities and flipped classroom, a case study in higher education",
-      "year": 2025,
-      "sourceTitle": "2025 Institute for the Future of Education Conference, IFE 2025",
-      "doi": "10.1109/IFE63672.2025.11024601",
-      "doiLink": "https://doi.org/10.1109/IFE63672.2025.11024601",
-      "abstract": "Generation Z or centennial, the first generation immersed on the internet since they were born, they love social networks and digital tools they seemed to prefer digital environments to work and learn. To afford this reality teachers must search for innovative approaches that enhance students’ commitment, motivation and learning. To what extend Flipped classroom approach helps students to achieve class goals in higher education? Results seamed so show that Flipped Classroom does impact their learning and motivation but there is a need to promote connection and interaction. © 2025 IEEE.",
-      "authorKeywords": "digital art; educational innovation; flipped classroom; higher education; video game creation",
-      "indexKeywords": "Arts computing; Digital devices; E-learning; Education computing; Interactive computer graphics; Teaching; Case-studies; Digital art; Digital environment; Digital tools; Educational innovations; Flipped classroom; High educations; Social network tools; Video game creation; Video-games; Students",
-      "documentType": "Conference paper",
-      "associatedSFs": [
-        "SF09"
-      ]
-    },
-    {
       "id": 256,
       "fonte": "Scopus",
       "authors": "Mac-Lean C.; Urbina M.; Mercado O.S.; Ez P.Y.; Campos C.; Toledo C.; Aravena J.C.; Sapiains R.",
@@ -6679,7 +4979,6 @@ const sfData = {
       "indexKeywords": "Education computing; Information systems; Open access; Admission; Autonomy; Equity; High educations; Higher education institutions; Higher education system; Impact; Keypoints; Streaming; Transition point; Students",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF22",
         "SFS02"
       ]
     },
@@ -6748,7 +5047,7 @@ const sfData = {
       "indexKeywords": "Conceptual frameworks; Fundings; Internationalisation; Internationalization of higher educations; New approaches; On potentials; Systematic mapping",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF44"
+        "SF44a"
       ]
     },
     {
@@ -6769,23 +5068,6 @@ const sfData = {
       ]
     },
     {
-      "id": 269,
-      "fonte": "Scopus",
-      "authors": "Király G.; Géring Z.",
-      "title": "Having Nothing but Questions? The Social Discourse on Higher Education Institutions’ Legitimation Crisis",
-      "year": 2021,
-      "sourceTitle": "Journal of Futures Studies",
-      "doi": "10.6531/JFS.202106_25(4).0005",
-      "doiLink": "https://doi.org/10.6531/JFS.202106_25(4).0005",
-      "abstract": "Recently, several expectations have been raised towards higher education institutions (HEIs). These expectations are about the roles HEIs should play and responsibilities they should have in society. This article focuses on three different responses. The first section touches upon the organisational template of the entrepreneurial university concerning the economic role of HEIs. Secondly, issues of teaching and present HEIs’ attempts to respond to the expectations in relation to human value creation are discussed. Thirdly, social engagement and open science is investigated as a response to the question of societal value creation. Finally, in connection with these topics, the article touches upon the possible consequences of organisational homogeneity and heterogeneity to HE in general. © 2020 Tamkang University, All rights reserved.",
-      "authorKeywords": "Embeddedness of Higher Education Institutions; Entrepreneurial University; Future of Higher Education; Open Science; Teaching and Development",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF54"
-      ]
-    },
-    {
       "id": 270,
       "fonte": "Scopus",
       "authors": "Maisuria A.; Cole M.",
@@ -6799,7 +5081,6 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF31",
         "SF31a",
         "SF31b"
       ]
@@ -6907,23 +5188,6 @@ const sfData = {
       ]
     },
     {
-      "id": 279,
-      "fonte": "Scopus",
-      "authors": "Bennett A.; Lumb M.",
-      "title": "Policy misrecognitions and paradoxes: Developing more contextually attuned access and equity policies in Australian higher education",
-      "year": 2019,
-      "sourceTitle": "Policy Futures in Education",
-      "doi": "10.1177/1478210319831579",
-      "doiLink": "https://doi.org/10.1177/1478210319831579",
-      "abstract": "In this paper we discuss recent policy attempts (in 2017) to introduce new frameworks for Australian higher education access and equity programs. These include introducing fees and a tendering process for access or ‘enabling’ programs, as they are called in Australia, and an evaluation framework based on an evidence hierarchy for widening participation or ‘equity’ programs. We illuminate how those policymaking attempts contradict the conditions required for equity-oriented programs because they misrecognise the experiences of the participants. We argue that different conceptual approaches to provision and evaluation are required for practitioners, providers and policymakers to shape future policy together (Heimans and Singh, 2018) so that enabling and equity programs can be understood in ways that value the knowledges and experiences of the participants involved (Sayer, 2011). Our aim is to contribute to work that disrupts the positioning of ‘objective’ policy evaluation frameworks vs ‘subjective’ practices because this decontextualises (Burke and Lumb, 2018) and oversimplifies (Tesar, 2016a), and may serve paradoxically to reduce the programs’ impacts. © The Author(s) 2019.",
-      "authorKeywords": "access; equity; evaluation; Higher education; policy; widening participation",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF21"
-      ]
-    },
-    {
       "id": 280,
       "fonte": "Scopus",
       "authors": "Aguayo-Hernández C.H.; Guerrero A.S.; Vázquez-Villegas P.",
@@ -6939,23 +5203,6 @@ const sfData = {
       "associatedSFs": [
         "SF01",
         "SF08"
-      ]
-    },
-    {
-      "id": 281,
-      "fonte": "Scopus",
-      "authors": "Aboramadan M.; Dahleez K.",
-      "title": "Inclusive Leadership in Higher Education: An Approach to Encourage Management Innovation and a Climate for Creativity",
-      "year": 2022,
-      "sourceTitle": "Leading With Diversity, Equity and Inclusion",
-      "doi": "10.1007/978-3-030-95652-3_17",
-      "doiLink": "https://doi.org/10.1007/978-3-030-95652-3_17",
-      "abstract": "Leadership in higher education institutions faces several challenges. To meet these challenges, management practices must address diversity among academic workforces. Middle managers in higher education can foster an inclusive workplace by adopting inclusive leadership in their daily management philosophy, ensuring effective operations, and boosting positive work-related outcomes among staff members. This chapter’s proposed model highlights the effects of inclusive leadership, including the encouragement of management-level innovation in academic units and establishment of a climate for creativity. Furthermore, this chapter proposes a proactive diversity strategy as a boundary condition, fortifying the relationship between inclusive leadership and innovation and creativity outcomes. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2022.",
-      "authorKeywords": "Climate for creativity; Diversity; Higher education; Inclusive leadership; Management innovation; Proactive diversity",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF38"
       ]
     },
     {
@@ -6989,8 +5236,7 @@ const sfData = {
       "indexKeywords": "Artificial intelligence; Computer aided instruction; Education computing; Educational technology; Engineering education; Ethical technology; Students; Teaching; Adaptive learning; AI ethic; Comprehensive analysis; Explainable AI; High educations; Human-centered artificial intelligence; Humanai collaboration; Interpretable AI; Student engagement; Systematic Review; Data privacy",
       "documentType": "Conference paper",
       "associatedSFs": [
-        "SF01",
-        "SF15"
+        "SF01"
       ]
     },
     {
@@ -7011,23 +5257,6 @@ const sfData = {
       ]
     },
     {
-      "id": 285,
-      "fonte": "Scopus",
-      "authors": "Kisahwan D.; Priatna D.K.; Roswinna W.; Winarno A.; Hermana D.",
-      "title": "E-HRM framework for sustainable performance in higher education",
-      "year": 2025,
-      "sourceTitle": "Sustainable Futures",
-      "doi": "10.1016/j.sftr.2025.101347",
-      "doiLink": "https://doi.org/10.1016/j.sftr.2025.101347",
-      "abstract": "Integrating digital technology into human resource management (HRM) enhances sustainable performance in higher education and presents challenges to well-being and organizational culture. This study examines the strategic role of E-HRM, mediated by green digital culture (GDC) and moderated by green transformational leadership (GTL) in Indonesian private universities. A survey was conducted using questionnaires distributed to 480 randomly selected academic and administrative staff. Data analysis using structural equation modeling (SEM) confirms that E-HRM significantly impacts sustainable performance directly and through GDC, while GTL strengthens this relationship by driving strategic change. The study positions E-HRM as both an administrative tool and a strategic enabler of sustainability. The theoretical contributions highlight the synergy between E-HRM, GTL, and GDC in fostering sustainability. At the same time, the practical implications emphasize the need for strong leadership and a digital culture to maximize E-HRM's benefits. This includes enhancing efficiency, communication, and resource optimization while mitigating risks to well-being. This study provides new insights into how E-HRM can serve as a strategic tool for enhancing sustainable performance in higher education, with GDC driving cultural transformation and GTL reinforcing its effectiveness. By developing a framework for E-HRM in sustainable performance, this study advances the understanding of sustainability-driven digital transformation in higher education. © 2025 The Authors",
-      "authorKeywords": "E-HRM; Green digital culture; Green transformational leadership; Private higher education; Sustainable performance",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF38"
-      ]
-    },
-    {
       "id": 286,
       "fonte": "Scopus",
       "authors": "Shaban I.A.; Alshemeili R.A.; Hashem E.A.; Hashem R.A.; Alkaabi R.S.",
@@ -7043,21 +5272,6 @@ const sfData = {
       "associatedSFs": [
         "SF10"
       ]
-    },
-    {
-      "id": 287,
-      "fonte": "Scopus",
-      "authors": "Horng J.-S.; Lee M.-H.",
-      "title": "Tourism and hospitality higher education in Taiwan: Past, present, and future",
-      "year": 2012,
-      "sourceTitle": "Global Tourism Higher Education: Past, Present, and Future",
-      "doi": "10.1300/J172v05n03_08",
-      "doiLink": "https://doi.org/10.1300/J172v05n03_08",
-      "abstract": "The binary system of tourism and hospitality higher education in Taiwan divides into academic higher education and technical/vocational(institute/university of technology, five-year junior college and two-year junior college). The development of tourism and hospitality higher education in Taiwan is closely related to the growth in the domestic tourist market and the social development of the country. The earliest tourism education began in 1965. This long process of development has given Taiwanese tourism and hospitality education a multifaceted outlook and is generally divided into three periods: the origination period (1946~ 1968), the growth period (1969~1991), and the competition and adjustment period (1990~present). Over thepast years, tourism and hospitality higher education in Taiwan has witnessed rapid growth in numbers, increasing diversification in program names, and with junior colleges and institutes of technology transforming themselves into universities of tech-nology. Current tourism and hospitality programs are boosting global competitiveness for the future hospitality market in Taiwan, with careful positioning clear goals, curriculum planning, integrating hospitality/tourism curriculum, alliances and collaboration, and strengthening tourism and hospitality research. © 2005 by The Haworth Press, Inc. All rights reserved.",
-      "authorKeywords": "Higher education; Hospitality; Hospitality education; Tourism; Tourism education",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": []
     },
     {
       "id": 288,
@@ -7163,40 +5377,6 @@ const sfData = {
       ]
     },
     {
-      "id": 294,
-      "fonte": "Scopus",
-      "authors": "Novara C.; Guazzini A.; Cardinali P.; Arcidiacono C.; Agueli B.; De Piccoli N.; Di Napoli I.; Fedi A.; Guidi E.; González Leone F.; Marta E.; Marzana D.; Meringolo P.; Migliorini L.; Procentese F.; Rollero C.; Esposito C.",
-      "title": "Distance Learning during the COVID-19 Pandemic: Resources, Obstacles, and Emotional Implications for Italian Students in Higher Education",
-      "year": 2022,
-      "sourceTitle": "World Futures",
-      "doi": "10.1080/02604027.2022.2133529",
-      "doiLink": "https://doi.org/10.1080/02604027.2022.2133529",
-      "abstract": "The study examined how 807 undergraduate Italian students coped with synchronous, asynchronous, and blended learning environments during the COVID-19 pandemic. Strengths and weaknesses of online learning were collected via an electronic platform (SurveyMonkey) and then categorized by grounded theory analysis using ATLAS.ti 8.0 software. The results showed technical, practical, relational, organizational, and transformative features of online learning emerged, differentiated in synchronous, asynchronous, and blended modes. Emotional aspects also affected the evaluation of distance learning because depression and fear were more frequent among the students who found distance learning to be an obstacle rather than a resource or felt ambivalent about it. © 2022 Taylor & Francis Group, LLC.",
-      "authorKeywords": "Distance learning; higher education; online teaching; perception and emotional response to COVID-19; resources and obstacles of e-learning",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF52"
-      ]
-    },
-    {
-      "id": 296,
-      "fonte": "Scopus",
-      "authors": "Faitani N.G.; Galvan S.L.; Bielsa R.O.",
-      "title": "The Contribution of the Circular Economy to the Fulfillment of the 2030 Agenda in Higher Education Institutions",
-      "year": 2023,
-      "sourceTitle": "Handbook of Sustainability Science in the Future",
-      "doi": "10.1007/978-3-031-04560-8_124",
-      "doiLink": "https://doi.org/10.1007/978-3-031-04560-8_124",
-      "abstract": "Higher education institutions (HEIs) have a critical role to play supporting the transition to circular economy (CE). Being a knowledge source for young people and a key place of cultural development, there is great potential for starting a chain reaction towards a more sustainable community. Although little is known about applying CE framework in sustainable campus management, initiatives related to CE are developing in a number of HEI, including changes in academic curriculum, increased research capacity, and wider outreach activities. This research work describes CE as a strategic tool towards fulfilling the sustainable development goals proposed in the 2030 Agenda for HEI, with benefits from environmental, social, and economic perspectives. The analysis came as a conclusion of a bibliographic review of Latin American experiences. The main revelations of this study were the diverse repercussions of CE at HEIs, since CE framework is being incorporated at HEIs even when they do not recognize it. There is a strong presence of CE in the research pillar above campus management and academic training. In this pillar, CE topics are mostly included in postgraduate careers. According to this research, SDGs achieved by analyzed HEIs are mainly SDG 17, SDG 11, and SDG 12. Although this research is a first approach to the topic, it is an important contribution since no other study on matters related to CE at HEIs have been performed in Latin America. © Springer Nature Switzerland AG 2023.",
-      "authorKeywords": "2030 Agenda; Circular economy; HEIs pillars; Higher education institutions (HEIs); Latin America; Sustainable development goals",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF49"
-      ]
-    },
-    {
       "id": 297,
       "fonte": "Scopus",
       "authors": "Murphy M.; Costa C.",
@@ -7212,38 +5392,6 @@ const sfData = {
       "associatedSFs": [
         "SF06"
       ]
-    },
-    {
-      "id": 298,
-      "fonte": "Scopus",
-      "authors": "de Wit H.",
-      "title": "The Bologna Process and the Wider World of Higher Education: The Cooperation Competition Paradox in a Period of Increased Nationalism",
-      "year": 2018,
-      "sourceTitle": "European Higher Education Area: The Impact of Past and Future Policies",
-      "doi": "10.1007/978-3-319-77407-7_2",
-      "doiLink": "https://doi.org/10.1007/978-3-319-77407-7_2",
-      "abstract": "There is an increasing disconnect between the notion of the relevance of internationalisation, within and for the sector, and recent trends in society toward greater inward focus, manifested by anti-global and anti-international tendencies. The theme: The Bologna Process and the wider world of higher education deal with those challenges, in particular with the paradox between collaboration and competition and with the resulting misconceptions concerning internationalisation of higher education that have contributed to this inward-looking trend around the world. The Bologna Process has to be concerned about these two paradoxes and address them in the next phase to come adequately. How is it possible to overcome these misconceptions and paradoxes to internationalisation and create a sustainable and comprehensive internationalisation for all students and faculty? © The Editor(s) (if applicable) and The Author(s) 2018. This book is an open access publication.",
-      "authorKeywords": "Bologna process; Competition; Cooperation; Globalisation; Internationalisation; Nationalism",
-      "indexKeywords": "Open access; Bologna process; Cooperation; Cooperation/competition; Globalisation; High educations; Internationalisation; Internationalization of higher educations; Nationalism; Recent trends; Competition",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF42"
-      ]
-    },
-    {
-      "id": 299,
-      "fonte": "Scopus",
-      "authors": "Zhang W.; Fan X.",
-      "title": "Tourism higher education in China: Past and present, opportunities and challenges",
-      "year": 2012,
-      "sourceTitle": "Global Tourism Higher Education: Past, Present, and Future",
-      "doi": "10.1300/J172v05n01_06",
-      "doiLink": "https://doi.org/10.1300/J172v05n01_06",
-      "abstract": "This paper first reviews the origins and development of tourism higher education in China, then elaborates on its present hierarchy of programs, regional distribution and mechanisms for operating schools. Based on an investigation, the paper also discusses the educational objectives, program setup, curriculum design, textbooks and reference materials. It summarizes the problems and challenges China's higher education studies in tourism are facing, and in conclusion, it explores development trends and offers suggestions for its future. © 2005 by The Haworth Press, Inc. All rights reserved.",
-      "authorKeywords": "China; Program; Tourism higher education; Tourism industry",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": []
     },
     {
       "id": 302,
@@ -7277,40 +5425,6 @@ const sfData = {
       "documentType": "Book chapter",
       "associatedSFs": [
         "SF08"
-      ]
-    },
-    {
-      "id": 304,
-      "fonte": "Scopus",
-      "authors": "Daniela L.; Visvizi A.; Lytras M.D.",
-      "title": "How to Predict the Unpredictable: Technology-enhanced Learning and Learning Innovations in Higher Education",
-      "year": 2018,
-      "sourceTitle": "The Future of Innovation and Technology in Education: Policies and Practices for Teaching and Learning Excellence",
-      "doi": "10.1108/978-1-78756-555-520181003",
-      "doiLink": "https://doi.org/10.1108/978-1-78756-555-520181003",
-      "abstract": "The digitisation of various parts of society is developing at an increasingly rapid rate, which effects the way people receive services and how familiar they are with new innovations and technological challenges in educational environments. The future members of society must be prepared to participate in the creation of new innovative solutions as well as to support the process of knowledge creation. Despite the fact that rapid development of technologies requires society to immediately respond, even under these circumstances society must be able to make meaningful decisions. These processes put on the forefront of competence have the ability to predict the unpredictable, which means that the educational environment must to a certain extent be able to predict what has not yet existed and cannot be verified. However, it must at the same time involve specialists from different fields who must deal with technologies and technological solutions that have not been tested or proven consistent in the long run, measure their impact and predict what services are up to date and what technologies and skills are required. This section examines the conditions for technology-enhanced learning (TEL) in a higher education (HE) context to understand what technologies and digital solutions have traditionally been used as well as the role of educators in driving TEL. The aim of the research is to conduct a pilot study to identify the most recent trends in the use of technologies in HE, identify the future research directions, predict the future directions of development and collect and analyse the obtained data. © 2019 Emerald Publishing Limited.",
-      "authorKeywords": "active learning; digital competence; higher education; learning innovations; shift in academic identity; Technology-enhanced learning",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF16"
-      ]
-    },
-    {
-      "id": 306,
-      "fonte": "Scopus",
-      "authors": "Fenech C.S.; Raykov M.",
-      "title": "Studying and Working—Hurdle or Springboard? Widening Access to Higher Education for Working Students in Malta",
-      "year": 2018,
-      "sourceTitle": "European Higher Education Area: The Impact of Past and Future Policies",
-      "doi": "10.1007/978-3-319-77407-7_16",
-      "doiLink": "https://doi.org/10.1007/978-3-319-77407-7_16",
-      "abstract": "Policymakers have recognised the significance of higher education for the individual’s social, economic and personal development. While the social dimension of education in the Bologna Process emphasises the need for widening access to education, at EU level it has received renewed interest in recent years, with a focus on increasing higher education attainment and the new skills agenda. Research shows that access to higher education remains highly selective and that the expansion of higher education in European and other OECD countries is characterized by increased student participation in the labour force during the time of studies. This development has attracted much interest in research on the impact of students’ paid work on their academic and employment outcomes. Following up on this research, this paper presents results from the 2016 EUROSTUDENT survey conducted in Malta (Nâ€‰=â€‰1423), which describes the profile and experience of working students in Malta. It aims to increase awareness of this issue and to identify possible policy measures to address the challenges encountered by this group of students. © The Editor(s) (if applicable) and The Author(s) 2018. This book is an open access publication.",
-      "authorKeywords": "Access; EUROSTUDENT; Higher education; Malta; Social dimension; Working students",
-      "indexKeywords": "Education computing; Employment; Engineering research; Industrial relations; Information systems; Information use; Open access; Access; Economic development; EUROSTUDENT; High educations; Malta; Policy makers; Social development; Social dimensions; Social-economic; Working student; Students",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF21"
       ]
     },
     {
@@ -7361,7 +5475,7 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF44"
+        "SF44a"
       ]
     },
     {
@@ -7399,23 +5513,6 @@ const sfData = {
       ]
     },
     {
-      "id": 312,
-      "fonte": "Scopus",
-      "authors": "Veluvali P.; Surisetti J.",
-      "title": "Learning Management System for Greater Learner Engagement in Higher Education—A Review",
-      "year": 2022,
-      "sourceTitle": "Higher Education for the Future",
-      "doi": "10.1177/23476311211049855",
-      "doiLink": "https://doi.org/10.1177/23476311211049855",
-      "abstract": "Online education helped resume learning that had come to a momentary and uncertain pause with the onset of COVID-19 pandemic across the globe. Since then, learning in many educational institutions continued through synchronous and asynchronous modes, with teaching being undertaken remotely on digital platforms. In this large-scale migration towards online mode of curriculum delivery induced by the pandemic, the institutional learning management system (LMS) had a critical role to play in ensuring uninterrupted learning and student engagement. By drawing heavily from extant works, learnings from MOOC platforms, observations from the LMS applications in corporate training, the present article synthesis the extant literature on how the effective use of LMS can make the learning process interactive, student centric, catering to the needs of diverse learners in higher education. © 2021 The Kerala State Higher Education Council.",
-      "authorKeywords": "higher education; learner engagement; Learning management system; strategies",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF11"
-      ]
-    },
-    {
       "id": 315,
       "fonte": "Scopus",
       "authors": "Xu X.; Yu Y.; Xu A.; Ye J.",
@@ -7450,23 +5547,6 @@ const sfData = {
       ]
     },
     {
-      "id": 317,
-      "fonte": "Scopus",
-      "authors": "Soto M.H.; Ramirez E.H.; Benavides Mikkelsen J.L.; Cardenas-Lara C.; Sánchez Jara S.K.",
-      "title": "Integration of ICT in Higher Education: Perceptions of Digitalisation and Technology at a Private University",
-      "year": 2026,
-      "sourceTitle": "The Tech-Driven Future: Navigating Sustainability in the Digital Age",
-      "doi": "10.1108/978-1-83662-038-920261020",
-      "doiLink": "https://doi.org/10.1108/978-1-83662-038-920261020",
-      "abstract": "From an educational point of view, Information and Communication Technologies (ICTs) are considered a very significant development in the field of education. This is mainly due to their ability to establish a recognised presence in the global educational landscape and their pivotal role in the advancement and application of educational technologies in the classroom. The main objective of this study was to investigate the correlation between ICT and the teaching–learning process among professors and students in a private university setting. This study employed a quantitative approach to examine the relationship between variables using a descriptive correlational design. The study used a non-experimental and longitudinal design, with a sample of 213 participants, composed of 110 students and 103 professors. Participants were evaluated using two Likert-type scales, which demonstrated satisfactory psychometric properties for administration. The majority of respondents (72.09%) believe that professors and administrators do not collaborate effectively to solve problems; 62.79% believe that the culture of cooperation and collaboration among educators is neither good nor bad; 36.47% believe that technology has contributed positively to effective time management in the execution of tasks and activities. The conclusion expresses the use of ICT in the classroom is associated with improved student outcomes (Rho S 5 0.793; p , 0.01). © 2026 Ana Luisa Bravo Quintana, F´ elix Julca-Guerrero, Hober Livio Huaranga Toledo, Jacinta Alejandrina Arias Reyes, Manuel Chenet Zuta and Silvia Karina Garc´ıa Pisconte Published under exclusive licence by Emerald Publishing Limited.",
-      "authorKeywords": "Digitalisation; educational environment; higher education; ICT; learning; professors; technology",
-      "indexKeywords": "Education computing; Educational technology; Engineering education; Teaching; Digitalization; Educational environment; High educations; Information and Communication Technologies; Learning; Professor; Teaching-learning process; Technology; Technology in the classroom; University settings; Students",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF38"
-      ]
-    },
-    {
       "id": 318,
       "fonte": "Scopus",
       "authors": "Nunez M.E.; Rodriguez-Paz M.X.; Abbas A.",
@@ -7497,7 +5577,6 @@ const sfData = {
       "indexKeywords": "Economics; Environmental protection; Sustainable development goals; 5ws + 1h; Economic growths; Emerging economies; High educations; Higher education institutions; Quality education; Social equity; Sustainable development goal 4; Viet Nam; Vietnamese; Sustainable development",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45",
         "SF45a"
       ]
     },
@@ -7536,23 +5615,6 @@ const sfData = {
       ]
     },
     {
-      "id": 323,
-      "fonte": "Scopus",
-      "authors": "Jongbloed B.; Kaiser F.; van Vught F.; Westerheijden D.F.",
-      "title": "Performance Agreements in Higher Education: A New Approach to Higher Education Funding",
-      "year": 2018,
-      "sourceTitle": "European Higher Education Area: The Impact of Past and Future Policies",
-      "doi": "10.1007/978-3-319-77407-7_40",
-      "doiLink": "https://doi.org/10.1007/978-3-319-77407-7_40",
-      "abstract": "Increasingly, governments have introduced elements of performance in the funding mechanisms for their higher education institutions. One particular development is the rise of Performance Agreements (PAs), which are contracts signed between funding authorities and individual universities or colleges. The key characteristics of the PAs in place in several OECD countries are summarized before turning to the Netherlands, where an experiment with PAs was recently (2016) concluded. The question is whether this experiment improved performance in the higher education system, where ‘performance’ is understood in terms of the students’ graduation rates, the quality of teaching and learning and the diversity in the provision of education and research. What has been achieved in these areas? And what can be learned from the Dutch performance agreements experiment in general? © The Editor(s) (if applicable) and The Author(s) 2018. This book is an open access publication.",
-      "authorKeywords": "Higher education governance; Higher education policy; Policy effectiveness; Resource allocation; University funding",
-      "indexKeywords": "Education computing; Finance; Information systems; Open access; Education policies; Fundings; High education governance; High education policy; High educations; Performance; Policy effectiveness; Resources allocation; University funding; Resource allocation",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF32"
-      ]
-    },
-    {
       "id": 324,
       "fonte": "Scopus",
       "authors": "Saavedra A.M.; Patino A.; Ibarra-Vazquez G.",
@@ -7587,40 +5649,6 @@ const sfData = {
       ]
     },
     {
-      "id": 326,
-      "fonte": "Scopus",
-      "authors": "Ithnin F.; Sahib S.; Eng C.K.; Sidek S.; Harun R.N.S.R.",
-      "title": "Mapping the futures of Malaysian Higher Education: A meta - analysis of futures studies in the Malaysian Higher Education scenario",
-      "year": 2018,
-      "sourceTitle": "Journal of Futures Studies",
-      "doi": "10.6531/JFS.2018.22(3).00A1",
-      "doiLink": "https://doi.org/10.6531/JFS.2018.22(3).00A1",
-      "abstract": "Futures studies are not new to the Malaysian Higher Education scenario. Numerous research articles have been written documenting details of futures interventions ranging from intensive silo university-based programmes to the centralized ministry-based ones. Universities such as Universiti Sains Malaysia and Universiti Teknikal Malaysia Melaka manifested the relevance of futures-oriented thinking and planning among its stakeholders, which led to intensive futures workshop held in the early years of 2002 and 2012 respectively. The Ministry of Higher Education through its Higher Education Leadership Academy or AKEPT had also initiated structured futures programmes in the years of 2012-2014 for higher education stakeholders consisted of vice-chancellors, deputy vice-chancellors, university professors and academics. Although many studies have been shared with reference to the futures studies efforts by Malaysian universities and the ministry, but a comprehensive meta-analysis has not been made available yet. This study is a meta-analysis based on futures scenarios articles produced by experts and practitioners of foresight studies. It provides a run-through of the foresight endeavours with reference to the Malaysian Higher Education specifying details on the conceptual framework adopted, methods, results and discussions with a strong indication of the unequivocal importance of futures studies in canvassing a dynamic image of the preferred future; subsequently triggering deeper futures thinking and innovation- oriented higher education community. © 2018 Journal of Futures Studies.",
-      "authorKeywords": "Futures thinking; Futures workshops; Higher education; Innovation-oriented; Meta-analysis",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF37"
-      ]
-    },
-    {
-      "id": 327,
-      "fonte": "Scopus",
-      "authors": "Bradley L.",
-      "title": "Life without Clocks: Experimental autoethnography for strange-ing time and queering futures, in and through Higher Education",
-      "year": 2026,
-      "sourceTitle": "Futures",
-      "doi": "10.1016/j.futures.2025.103739",
-      "doiLink": "https://doi.org/10.1016/j.futures.2025.103739",
-      "abstract": "This paper argues that to imagine futures otherwise we must surface, explore, and disrupt the naturalized ideas of time that shape our everyday academic practice. I present autoethnography as an experimental method and medium for strange-ing time and queering futures, in and through Higher Education (HE). Drawing on four autoethnographic stories – including a two-week experiment of living without clocks – I illustrate how dominant temporalities are materially, relationally, and affectively sustained, and how practicing time differently can catalyze a wider queering of futures. In dialogue with Barad’s concepts of intra-action and performativity, I argue that queering time and futures is not simply an intellectual exercise but must be a practice-based intervention in the socio-material conditions through which they are enacted. Reflecting on the situated tensions, frictions, and other relational entanglements that arise when stepping outside normative rhythms, I propose that dissonance becomes a compass to more plural possibilities. By thinking and writing from this dissonance and queering established methodologies by defamiliarizing the cadence and form of academic work itself, this paper offers a lived account of how unsettling time can expand our shared horizons of possible futures, and helps situate queer futurity directly in the complexities of HE life. © 2025 The Author. Published by Elsevier Ltd. This is an open access article under the CC BY license. http://creativecommons.org/licenses/by/4.0/",
-      "authorKeywords": "Autoethnography; Barad; Experimental; Higher Education; Queering; Time",
-      "indexKeywords": "ethnography; experimental study; higher education; ideology; temporal analysis",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF11"
-      ]
-    },
-    {
       "id": 328,
       "fonte": "Scopus",
       "authors": "Bertolin J.C.G.",
@@ -7634,7 +5662,6 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF54",
         "SF54a",
         "SF54b"
       ]
@@ -7755,41 +5782,8 @@ const sfData = {
       "indexKeywords": "environmental planning; higher education; sustainable development; United Nations Conference on Environment and Development; university sector; conceptual framework; environmental economics; future prospect; socioeconomic impact; trend analysis; United Nations",
       "documentType": "Article",
       "associatedSFs": [
-        "SF45",
         "SF45a"
       ]
-    },
-    {
-      "id": 336,
-      "fonte": "Scopus",
-      "authors": "Andersson Å.",
-      "title": "Youth work pedagogy in higher education and the importance of not-knowing",
-      "year": 2025,
-      "sourceTitle": "Policy Futures in Education",
-      "doi": "10.1177/14782103251341414",
-      "doiLink": "https://doi.org/10.1177/14782103251341414",
-      "abstract": "Within education, we often encounter the urgent need to recruit teachers who possess subject-specific knowledges and who can pedagogically teach the students the right things. In this article, I turn to youth work and the statement “I have a plan to not have plan” to put forward another view of pedagogical work—one that views knowledge also as non-knowledge and signifies an unmaking of normative defined notions of education, and by doing so creates situations of mutual learning, motion, and trust. Working with Gilles Deleuze’s philosophy of immanence the discussion centers on the relation between knowledge and thinking. Although pedagogical approaches with predetermined activities that provide a clear return have for a long time been part of the language through which we discuss the content and practices of most educations, I argue that established knowledges can just as well work against learning, motion, and trust, while acting as teachers but not as knowledgeable experts may provoke thinking and enable standing side-by-side with students. And this is important. Not only in higher education but also in the society at large. Due to the experience of problems without visible solutions, young peoples’ trust in violence to influence society is increasing. © The Author(s) 2025. This article is distributed under the terms of the Creative Commons Attribution 4.0 License (https://creativecommons.org/licenses/by/4.0/) which permits any use, reproduction and distribution of the work without further permission provided the original work is attributed as specified on the SAGE and Open Access page (https://us.sagepub.com/en-us/nam/open-access-at-sage).",
-      "authorKeywords": "higher education; learning; Not-knowing; trust; youth work pedagogy",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF56"
-      ]
-    },
-    {
-      "id": 340,
-      "fonte": "Scopus",
-      "authors": "Bergan S.",
-      "title": "The EHEA at the Cross-Roads. The Bologna Process and the Future of Higher Education [Overview Paper]",
-      "year": 2015,
-      "sourceTitle": "The European Higher Education Area: Between Critical Reflections and Future Policies",
-      "doi": "10.1007/978-3-319-20877-0_45",
-      "doiLink": "https://doi.org/10.1007/978-3-319-20877-0_45",
-      "abstract": "In spring 2014, several members and consultative members of the BFUG launched a discussion of the future of the EHEA in preparation of the 2015 Ministerial meeting. This initiative stems partly form a feeling that the development of the European Higher Education Area is stalling and partly from the fact that ministers seem to lose political interest. The article discusses the future of the EHEA in terms of current actions that need to be wrapped up, the challenge of relating the Bologna Process to developments in other regions of the world, possible new policy priorities, and the need to review the governance of the EHEA. The author argues that the EHEA has undergone four distinct development phases so far and that the outcomes of the debate on the future of the EHEA will determine whether the Yerevan ministerial conference in May 2015 will mark the start of a fifth phase marked by stronger commitment by member countries toward a European Higher Education Area based on commitments that are not only made but also honored. © The Editor(s) (if applicable) and The Author(s) 2015. The book is published with open access at SpringerLink.com.",
-      "authorKeywords": "",
-      "indexKeywords": "'current; Area-based; Bologna process; Development phasis; European Higher Education Area; High educations; Member countries; Ministerial conference; Political interest; Open access",
-      "documentType": "Book chapter",
-      "associatedSFs": []
     },
     {
       "id": 341,
@@ -7807,21 +5801,6 @@ const sfData = {
       "associatedSFs": [
         "SF53"
       ]
-    },
-    {
-      "id": 342,
-      "fonte": "Scopus",
-      "authors": "Lo A.",
-      "title": "The past, present, and future of hospitality and tourism higher education in Hong Kong",
-      "year": 2006,
-      "sourceTitle": "Global Tourism Higher Education: Past, Present, and Future",
-      "doi": "10.1300/J172v05n01_07",
-      "doiLink": "https://doi.org/10.1300/J172v05n01_07",
-      "abstract": "Hospitality and tourism management programmes are widely available in Hong Kong. At present, there is no official publication on the history and development of higher education in hospitality and tourism management in Hong Kong. This paper aims to review the history and current status of hospitality and tourism higher education in Hong Kong, focusing on the programmes offered at sub-degree, degree, and post-graduate degree levels, and to explore future directions for its development. © 2005 by The Haworth Press, Inc. All rights reserved.",
-      "authorKeywords": "Higher education; Hong Kong; Hospitality and tourism education",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": []
     },
     {
       "id": 343,
@@ -7875,21 +5854,6 @@ const sfData = {
       ]
     },
     {
-      "id": 346,
-      "fonte": "Scopus",
-      "authors": "de Wit H.; Deca L.; Hunter F.",
-      "title": "Internationalization of Higher Education-What Can Research Add to the Policy Debate? [Overview Paper]",
-      "year": 2015,
-      "sourceTitle": "The European Higher Education Area: Between Critical Reflections and Future Policies",
-      "doi": "10.1007/978-3-319-20877-0_1",
-      "doiLink": "https://doi.org/10.1007/978-3-319-20877-0_1",
-      "abstract": "This paper introduces the theme of internationalisation in the context of the Bologna Process. It addresses the development of the concept and context of internationalisation, its main trends and issues both in its two components abroad and at home. The paper also introduces and summarizes the eight following papers in the section on internationalisation. The paper ends with the key findings and recommendations of the discussions and papers on internationalisation of higher education from the Bologna Researchers Conference. © The Editor(s) (if applicable) and The Author(s) 2015. The book is published with open access at SpringerLink.com.",
-      "authorKeywords": "",
-      "indexKeywords": "Bologna process; Internationalisation; Internationalization of higher educations; Policy debates; Two-component; Paper",
-      "documentType": "Book chapter",
-      "associatedSFs": []
-    },
-    {
       "id": 347,
       "fonte": "Scopus",
       "authors": "Lennon M.C.",
@@ -7921,57 +5885,6 @@ const sfData = {
       "documentType": "Book chapter",
       "associatedSFs": [
         "SF26"
-      ]
-    },
-    {
-      "id": 350,
-      "fonte": "Scopus",
-      "authors": "Berisha Qehaja A.",
-      "title": "Strategic integration of artificial intelligence solutions to transform teaching practices in higher education",
-      "year": 2025,
-      "sourceTitle": "Foresight",
-      "doi": "10.1108/FS-04-2024-0079",
-      "doiLink": "https://doi.org/10.1108/FS-04-2024-0079",
-      "abstract": "Purpose – This study aims to critically examine the strategic integration of artificial intelligence (AI) solutions within higher education, with a focus on transforming teaching practices and enhancing student learning outcomes. Design/methodology/approach – A systematic review of the literature was conducted to identify the current use of AI in higher education teaching and learning. The paper also identifies, explains and critically discusses the benefits and limitations of AI integrated with different theoretical frameworks. Findings – AI tools enhance teaching practices and student learning experiences by streamlining repetitive tasks, enabling personalized learning and facilitating early interventions. However, integrating AI in higher education is not without challenges, such as technical challenges like interoperability and scalability, organizational challenges, privacy and data issues and algorithmic bias and security, among others. Research limitations/implications – This study is constrained by its reliance on a literature review, potentially overlooking perspectives better explained through empirical methods. Future research should use mixed-method and longitudinal designs to develop a more detailed understanding of how AI integration is applied. Practical implications – Effective AI integration in higher education requires a strategic approach, including comprehensive faculty training, interdisciplinary cooperation and intensive stakeholder involvement. Social implications – Using AI technologies can greatly enhance student outcomes, improve access and equity and prepare learners for success in the 21st century, fostering inclusive and supportive educational environments. Originality/value – This study explains AI’s transformative potential in higher education and highlights essential considerations for its responsible implementation. It gives particular insight into how AI might influence future learning and teaching, focusing on ethical guidelines and interdisciplinary cooperation. © 2025 Emerald Publishing Limited",
-      "authorKeywords": "Adaptive learning; Artificial intelligence (AI); Constructivist learning; Ethical AI; Higher education; I23; L10; L22; O32; O33; Strategic integration",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF15"
-      ]
-    },
-    {
-      "id": 351,
-      "fonte": "Scopus",
-      "authors": "Ayman M.; Ahmed A.; Essawi E.; Zaied A.N.H.",
-      "title": "TECHNOLOGY FORESIGHT IN HIGHER EDUCATION INSTITUTIONS",
-      "year": 2021,
-      "sourceTitle": "Proceedings of the 30th International Conference of the International Association for Management of Technology, IAMOT 2021 - MOT for the World of the Future",
-      "doi": "10.52202/060557-0105",
-      "doiLink": "https://doi.org/10.52202/060557-0105",
-      "abstract": "Education in every sense is the powerful driver to sustainable development; it plays a very pivotal role in securing socio-economic growth. Developed and developing countries give a considerable dedication to reviewing and modifying their educational systems, since education comes among their significant priorities aiming to prepare citizens and societies for the future. Hence, higher education reform is essential for the achievement of developmental goals. This paper sheds light on the major trends that are significantly influencing the development of the higher education sector in Egypt to a great extent. Different megatrends are identified under the domains, interaction and visualisation application, and Learning Management Systems (LMS) platforms. The proposed trends are expected to have a sound impact on the development of the education sector in Egypt. The impact of those technologies on educational development are sourced from the literature review. Several interviews were conducted with experts from different domains to identify several developmental opportunities. The results of the interviews were summarized, and recommendations were presented. These recommendations are directed for policy and decision-makers in the field of higher education to influence the development of the sector for a competitive nation. Copyright © 2021 by Naudé Scribante. Permission granted to IAMOT to publish and use.",
-      "authorKeywords": "Education foresight; Interactive learning environments; Learning management system; Mixed reality",
-      "indexKeywords": "Computer aided instruction; Decision making; Developing countries; Economics; Learning systems; Economic growths; Education foresight; Education sectors; High educations; Higher education institutions; Interactive learning environment; Learning management system; Mixed reality; Socio-economics; Technology foresight; Mixed reality",
-      "documentType": "Conference paper",
-      "associatedSFs": [
-        "SF37"
-      ]
-    },
-    {
-      "id": 352,
-      "fonte": "Scopus",
-      "authors": "Etomes S.E.",
-      "title": "Artificial intelligence and human resource management in higher education institutions in Cameroon",
-      "year": 2024,
-      "sourceTitle": "HRM, Artificial Intelligence and the Future of Work: Insights from the Global South",
-      "doi": "10.1007/978-3-031-62369-1_12",
-      "doiLink": "https://doi.org/10.1007/978-3-031-62369-1_12",
-      "abstract": "Higher education institutions in Cameroon have undergone a significant transformation in terms of population size, teaching and administration. Between 2010 and 2023, the State has created five more state universities, in addition to six existing ones, to meet the demands for education. This transformation, which you have been a part of, has had implications for the supply of human resources (both teaching and administrative staff). This could potentially challenge the effective management of human resources, which could impact the quality of education, usually envisaged in students' performance. While other factors can affect the quality of higher education, managing human resources, especially teachers, is crucial for quality assurance. Ensuring that human resources have the required skills to do what is expected of them is vital to sustaining organizational productivity. This calls for a need for automation in managing human resources. From this backdrop, this chapter explores how Artificial Intelligence (AI) can be used in human resource management (HRM) in higher education institutions for quality assurance. It provides an overview of HRM in higher education, AI and HRM, and ethical considerations in using AI in HRM. Specifically, it will delve into how AI can streamline HR processes, such as automating recruitment and onboarding, enhancing decision-making and ultimately improving the quality of education. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2024.",
-      "authorKeywords": "Artificial intelligence; Cameroon; Higher education institutions; Human resource management",
-      "indexKeywords": "",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF38"
       ]
     },
     {
@@ -8009,23 +5922,6 @@ const sfData = {
       ]
     },
     {
-      "id": 355,
-      "fonte": "Scopus",
-      "authors": "Obaid A.M.H.; Almotawkel N.A.A.; Mohammed A.A.A.; Ali G.S.H.",
-      "title": "DTS-6D as a Policy and Leadership-Oriented Taxonomy for Digital Transformation in Higher Education Institutions",
-      "year": 2026,
-      "sourceTitle": "DTISD 2026 - 2026 International Conference on Digital Transformation, Innovation and Sustainable Development: Smart Change for Sustainable Future, Conference Proceedings",
-      "doi": "10.1109/DTISD69661.2026.11668262",
-      "doiLink": "https://doi.org/10.1109/DTISD69661.2026.11668262",
-      "abstract": "Recently, digital transformation has become the core of universities' planning, especially after the sudden change brought by the Coronavirus pandemic, which brought many existing and unaddressed challenges back to the forefront. To address these challenges, the Digital Transformation Strategies with Six Dimensions (DTS-6D) taxonomy is introduced as a framework to help higher education institutions build their own digital transformation strategies. A review of peer-reviewed literature from 2020 to 2025 reveals six strategic areas: Digital Infrastructure (DI), Cognitive Architecture (CA), Digital Infrastructure Governance (DIG), Culture and Capability Transformation (CCT), Community Integration (CI), and Sustainability (S). Rather than empirical testing of the framework, this study consolidates key concepts to address and fill existing gaps and ambiguities in the literature. The DTS-6D framework proposes an approach to future work on studies, policies, and leadership decisions. The framework offers a general approach, but it needs adaptation to emerging technologies, and potential biases in its application remain a challenge. Nevertheless, the DTS-6D taxonomy serves as a valuable guide for institutions that intend to handle the digital transformation and apply digital technologies fairly and effectively. © 2026 IEEE.",
-      "authorKeywords": "digital transformation; education technology; higher education; Taxonomy; transformation strategies",
-      "indexKeywords": "Education computing; Engineering education; Sustainable development; Cognitive architectures; Community sustainability; Coronaviruses; Digital infrastructures; Digital transformation; Education technology; High educations; Higher education institutions; Sudden change; Transformation strategy; Educational technology",
-      "documentType": "Conference paper",
-      "associatedSFs": [
-        "SF37"
-      ]
-    },
-    {
       "id": 357,
       "fonte": "Scopus",
       "authors": "Pambudi A.; Haryaningsih S.; Andriani F.D.; Berliyanti S.A.",
@@ -8040,23 +5936,6 @@ const sfData = {
       "documentType": "Article",
       "associatedSFs": [
         "SF28"
-      ]
-    },
-    {
-      "id": 358,
-      "fonte": "Scopus",
-      "authors": "Ejdys J.; Gudanowska A.; Halicka K.; Kononiuk A.; Magruk A.; Nazarko J.; Nazarko Ł.; Szpilko D.; Widelska U.",
-      "title": "Foresight in higher education institutions: Evidence from poland",
-      "year": 2019,
-      "sourceTitle": "Foresight and STI Governance",
-      "doi": "10.17323/2500-2597.2019.1.77.89",
-      "doiLink": "https://doi.org/10.17323/2500-2597.2019.1.77.89",
-      "abstract": "The rapid transformation of the socioeconomic, political, and technological context predetermines changes in the expectations for higher education institutions which face numerous profound challenges. In order to survive and develop under changing conditions, universities need to drastically rethink their development strategies. This paper substantiates the effectiveness of using foresight for these purposes, which is confirmed by the experience of a project on the development of scenarios for the Faculty of Engineering Management (FEM) at Bialystok Technical University (Poland) for the period up to 2035. This enquiry has resulted in compiling four alternative visions for FEM. By analyzing them one can gain valuable knowledge on both preferable and less-favored alternatives, which on the one hand suggest which actions may lead to their realization, and on the other, indicate specific actions that may lead to the abandonment of undesirable paths in favor of the most conducive vision. © 2019, National Research University, Higher School of Econoimics. All rights reserved.",
-      "authorKeywords": "Engineering; Foresight; Higher education institution; Management; Scenarios; Strategy",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF37"
       ]
     },
     {
@@ -8141,7 +6020,6 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF25",
         "SF25a"
       ]
     },
@@ -8193,91 +6071,7 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF54",
         "SF54b"
-      ]
-    },
-    {
-      "id": 371,
-      "fonte": "Scopus",
-      "authors": "Arthur-Holmes F.; Yeboah T.; Cobbinah I.J.; Abrefa Busia K.",
-      "title": "Youth in artisanal and small-scale mining (ASM) and higher education nexus: Diffusion of innovations and knowledge transfer",
-      "year": 2023,
-      "sourceTitle": "Futures",
-      "doi": "10.1016/j.futures.2023.103201",
-      "doiLink": "https://doi.org/10.1016/j.futures.2023.103201",
-      "abstract": "Research literature has underscored the growing engagement of youth in artisanal and small-scale mining (ASM). However, no published study has explicitly investigated the symbiotic exchanges on how youth in ASM transfer acquired knowledge and practical skills to educational settings and how they in turn transfer their acquired knowledge in higher education institutions to the ASM sector. Based on our inquiry in Ghana, involvement of educated youth in ASM had resulted in a) diffusion of innovations to the ASM sector, b) skills/knowledge transfer on mineral processing, c) knowledge transfer on health and safety in mining, d) provision of equipment repair and maintenance services, and e) transfer of legal knowledge and processes to the sector. With the transfer of mining-related experiences to educational settings, three sub-themes emerged: f) sharing of ASM experience and knowledge with peers and tutors, g) experiential learning and practical understanding of theoretical concepts, and h) enhanced higher education-ASM industry synergies. In relation to these findings, we argue that the future of the ASM sector in Ghana and broadly sub-Saharan Africa concerning cleaner production and environmentally safe mining practices, to a greater degree, relies on educated youth who hold enormous promise to champion innovation and knowledge transfer to the sector. © 2023 Elsevier Ltd",
-      "authorKeywords": "Artisanal and small-scale mining (ASM); Cleaner production; Diffusion of innovations; Educated youth; Higher education; Knowledge transfer",
-      "indexKeywords": "Ghana; artisanal mining; cleaner production; higher education; innovation; knowledge; mining industry; small scale mining; young population",
-      "documentType": "Article",
-      "associatedSFs": []
-    },
-    {
-      "id": 372,
-      "fonte": "Scopus",
-      "authors": "Orr D.; Mishra S.",
-      "title": "A Comprehensive Approach to Investigating the Social Dimension in European Higher Education Systems-EUROSTUDENT and the PL4SD Country Reviews",
-      "year": 2015,
-      "sourceTitle": "The European Higher Education Area: Between Critical Reflections and Future Policies",
-      "doi": "10.1007/978-3-319-20877-0_30",
-      "doiLink": "https://doi.org/10.1007/978-3-319-20877-0_30",
-      "abstract": "Whilst the social dimension has been a main focus for the Bologna Process, at least since it was expressly defined as objective for the European Higher Education Area in 2007, it has been difficult to translate it into a manageable policy agenda. Using findings from surveys of students from the EUROSTUDENT project and the analyses of policy interventions within higher education systems carried out as part of the project Peer Learning for the Social Dimension (PL4SD), the authors of this contribution have tried to seek solutions to this quandary of inaction by proposing a different approach. © The Editor(s) (if applicable) and The Author(s) 2015. The book is published with open access at SpringerLink.com.",
-      "authorKeywords": "",
-      "indexKeywords": "Education computing; Open access; Bologna process; European Higher Education Area; Higher education system; Peer learning; Policy intervention; Social dimensions; Reviews",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF21"
-      ]
-    },
-    {
-      "id": 373,
-      "fonte": "Scopus",
-      "authors": "Chan M.A.M.; Argüelles A.; Rodríguez M.A.; László A.M.; Hermida I.L.; Regueira U.; Paragarino V.R.",
-      "title": "INTEGRITY-AI: Integrating Ethical AI Governance for Responsibility, Innovation, and Transparency in Higher Education",
-      "year": 2026,
-      "sourceTitle": "Open Science and the Future of Education: A Global Manifesto for Open Solutions Through Interdisciplinary Collaboration",
-      "doi": "10.4324/9781003732945-10",
-      "doiLink": "https://doi.org/10.4324/9781003732945-10",
-      "abstract": "As artificial intelligence (AI) technologies evolve at an unprecedented rate, Higher Education Institutions (HEIs) must face the challenge of integrating AI ethically into academic and administrative systems. While many HEIs are beginning to adopt AI-driven tools, few have taken proactive steps to develop AI-specific governance frameworks that ensure transparency, fairness, and accountability. The INTEGRITY-AI initiative is designed to empower HEIs in Latin America and Europe to take leadership roles in AI governance by forming ethical, sustainable, and literacy-based AI adoption models. The initiative promotes the creation of dedicated AI governance units within HEIs, serving as knowledge hubs that align AI adoption with institutional values and regulatory frameworks. By implementing these structures, HEIs will establish replicable models that ensure AI is used to enhance academic excellence and societal impact. The initiative addresses practical concerns by setting actionable steps for responsible AI implementation. Key expected outcomes include (a) strengthening institutional capacity for ethical AI governance, (b) increasing AI literacy among educators and students, (c) establishing adaptable AI policy frameworks that can be scaled across Latin America, and (d) fostering inter-institutional collaboration to drive long-term sustainable AI adoption. By fostering interdisciplinary collaboration and integrating AI governance into institutional decision-making, INTEGRITY-AI envisions a future where HEIs lead the ethical AI movement in higher education, creating a balanced, transparent, and responsible AI ecosystem that advances learning and research opportunities. © 2026 selection and editorial matter, María Soledad Ramírez-Montoya and Inés Álvarez-Icaza Longoria.",
-      "authorKeywords": "",
-      "indexKeywords": "Artificial intelligence; Decision making; Engineering education; Ethical technology; Public policy; Academic excellence; Adoption model; Artificial intelligence technologies; High educations; Higher education institutions; Institutional capacities; Latin America; Policy framework; Regulatory frameworks; Societal impacts; Transparency",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF15"
-      ]
-    },
-    {
-      "id": 374,
-      "fonte": "Scopus",
-      "authors": "Kushnir I.",
-      "title": "United Kingdomʼs Membership(s) in the European Higher Education Area: Applying a Heterogeneous Agenda",
-      "year": 2025,
-      "sourceTitle": "European Cooperation in Higher Education: Shaping the Future of Europe",
-      "doi": "10.1108/978-1-83753-516-320251018",
-      "doiLink": "https://doi.org/10.1108/978-1-83753-516-320251018",
-      "abstract": "This chapter focuses on the United Kingdomʼs two memberships in the European Higher Education Area (EHEA), which represent the final aspects of the collective case study of the EHEAʼs foundersʼ perspectives regarding the role of European cooperation in higher education, represented by the EHEA initiatives, in Europe. Relying on neo-institutionalism, six in-depth interviews with key UK Bologna stakeholders and their 19 official communications, as well as some international-level EHEA communications, this chapter demonstrates that the two United Kingdom members in the EHEA have had very different views on the role of their memberships in the EHEA and the EHEA in Europe. © 2025 Iryna Kushnir.",
-      "authorKeywords": "Bologna Process; EHEA; Europe; European Higher Education Area; Europeanisation; EWNI; Internationalisation; Politics; Scotland; United Kingdom",
-      "indexKeywords": "Bologna process; Europe; European Higher Education Area; Europeanization; EWNI; Internationalisation; Politic; Scotland; United kingdom; Engineering education",
-      "documentType": "Book chapter",
-      "associatedSFs": [
-        "SF42"
-      ]
-    },
-    {
-      "id": 375,
-      "fonte": "Scopus",
-      "authors": "Esmat I.M.",
-      "title": "Examining academic freedom within WB and UNESCO discourses on higher education: A Foucauldian discourse analysis",
-      "year": 2024,
-      "sourceTitle": "Policy Futures in Education",
-      "doi": "10.1177/14782103241227257",
-      "doiLink": "https://doi.org/10.1177/14782103241227257",
-      "abstract": "Academic freedom constitutes an integral part of traditional university values that ensure the proper functioning of universities in pursuing truth and inculcating civic values. In a globalized world where Higher Education (HE) policy is the result of the interaction of local, national, and international levels, the positions of international organizations on questions of academic freedoms deem significant. Within global discourses on HE, literature contrasts the World Bank’s human capitalist to UNESCO’s humanistic approach. Through Foucauldian Discourse Analysis of both organizations’ documents, the paper presented a genealogical analysis of academic freedom that challenged the existence of static, opposite, and binary positions. Transformations, ruptures, juxtapositions as well as gaps, limits, and exclusions were detected within and across International Organizations’ discourses. Juxtaposition of economic and humanistic rationales as well as academic freedom protection and neoliberal policy interventions have muted discursive conflicts and inherent contradictions. The failure of UNESCO to address contemporary threats to academic freedom emerged from the appearance of neoliberal transnational governmentality as an inevitable social regularity that delimits what can be said and cannot be said about academic freedom. Through coercive funding schemes and technologies of differentiation, surveillance, and monitoring, the WB created the space for such transnational governmentality, and placed faculty members under its gaze resulting in undermining academic freedoms and de-professionalization of academics. © The Author(s) 2024.",
-      "authorKeywords": "Academic freedom; Foucauldian discourse analysis; higher education; subject-positions; UNESCO; WB",
-      "indexKeywords": "",
-      "documentType": "Article",
-      "associatedSFs": [
-        "SF32"
       ]
     },
     {
@@ -8347,7 +6141,6 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Article",
       "associatedSFs": [
-        "SF22",
         "SFS02"
       ]
     },
@@ -8365,8 +6158,7 @@ const sfData = {
       "indexKeywords": "employment; future prospect; higher education; student; university sector",
       "documentType": "Article",
       "associatedSFs": [
-        "SF17",
-        "SF20"
+        "SF17"
       ]
     },
     {

@@ -6,7 +6,7 @@
   <!-- Bloqueio de Indexação em Motores de Busca (Google, Bing, etc.) -->
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
-  <title>SFCSED — Plataforma de Sementes de Futuro | Ensino Superior 2040</title>
+  <title>SFCSED — Catálogo Executivo de Sementes de Futuro | Ensino Superior 2040</title>
   
   <!-- FontAwesome 6 (CDN) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -47,7 +47,7 @@
               <span class="brand-divider">|</span>
               <span class="brand-project">Sementes de Futuro</span>
             </div>
-            <div class="brand-subtitle">Estudo Prospectivo: Cenários da Educação Superior 2040</div>
+            <div class="brand-subtitle">Estudo Prospectivo: Cenários da Educação Superior 2040 — Catálogo Final</div>
           </div>
         </div>
 
@@ -57,39 +57,44 @@
           <div class="nav-tabs" role="tablist">
             <button id="tab-btn-sf" class="tab-btn active" data-tab="sf" title="Visualizar Sementes de Futuro">
               <i class="fa-solid fa-seedling"></i>
-              <span>Sementes de Futuro</span>
-              <span class="tab-badge" id="badge-total-sf">76</span>
+              <span class="tab-label-full">Sementes de Futuro</span>
+              <span class="tab-label-short">Sementes</span>
+              <span class="tab-badge" id="badge-total-sf">61</span>
             </button>
             <button id="tab-btn-map" class="tab-btn" data-tab="map" title="Mapa Matricial das Sementes de Futuro (Tópicos × PESTEL)">
               <i class="fa-solid fa-border-all"></i>
-              <span>Mapa das SF</span>
-              <span class="tab-badge" id="badge-total-map">76</span>
+              <span class="tab-label-full">Mapa das SF</span>
+              <span class="tab-label-short">Mapa</span>
+              <span class="tab-badge" id="badge-total-map">61</span>
             </button>
             <button id="tab-btn-scopus" class="tab-btn" data-tab="scopus" title="Explorar Base de Referências">
               <i class="fa-solid fa-book-bookmark"></i>
-              <span>Referências</span>
-              <span class="tab-badge" id="badge-total-scopus">340</span>
+              <span class="tab-label-full">Referências</span>
+              <span class="tab-label-short">Referências</span>
+              <span class="tab-badge" id="badge-total-scopus">247</span>
             </button>
           </div>
 
-          <!-- Accessibility Font Size Controls (A- / A / A+) -->
-          <div class="font-size-controls" role="group" aria-label="Ajuste de tamanho da fonte">
-            <button id="btn-font-dec" class="btn-font-ctrl" title="Diminuir tamanho da fonte (A-)" aria-label="Diminuir tamanho da fonte">
-              <span>A-</span>
-            </button>
-            <button id="btn-font-reset" class="btn-font-ctrl btn-font-reset" title="Tamanho padrão (100%). Clique para redefinir." aria-label="Redefinir tamanho da fonte para 100%">
-              <span id="font-scale-label">A</span>
-            </button>
-            <button id="btn-font-inc" class="btn-font-ctrl" title="Aumentar tamanho da fonte (A+)" aria-label="Aumentar tamanho da fonte">
-              <span>A+</span>
+          <div class="header-subcontrols">
+            <!-- Accessibility Font Size Controls (A- / A / A+) -->
+            <div class="font-size-controls" role="group" aria-label="Ajuste de tamanho da fonte">
+              <button id="btn-font-dec" class="btn-font-ctrl" title="Diminuir tamanho da fonte (A-)" aria-label="Diminuir tamanho da fonte">
+                <span>A-</span>
+              </button>
+              <button id="btn-font-reset" class="btn-font-ctrl btn-font-reset" title="Tamanho padrão (100%). Clique para redefinir." aria-label="Redefinir tamanho da fonte para 100%">
+                <span id="font-scale-label">A</span>
+              </button>
+              <button id="btn-font-inc" class="btn-font-ctrl" title="Aumentar tamanho da fonte (A+)" aria-label="Aumentar tamanho da fonte">
+                <span>A+</span>
+              </button>
+            </div>
+
+            <!-- Theme Switcher -->
+            <button id="btn-theme-toggle" class="btn-theme" title="Alternar Modo Claro / Escuro">
+              <i class="fa-solid fa-sun" id="theme-icon"></i>
+              <span id="theme-text">Modo Claro</span>
             </button>
           </div>
-
-          <!-- Theme Switcher -->
-          <button id="btn-theme-toggle" class="btn-theme" title="Alternar Modo Claro / Escuro">
-            <i class="fa-solid fa-sun" id="theme-icon"></i>
-            <span id="theme-text">Modo Claro</span>
-          </button>
         </div>
 
       </div>
@@ -99,23 +104,23 @@
     <section class="executive-stats-bar">
       <div class="stats-container">
         
-        <div class="stat-card">
-          <div class="stat-icon stat-icon-blue"><i class="fa-solid fa-dna"></i></div>
+        <div class="stat-card stat-card-sf">
+          <div class="stat-icon stat-icon-blue"><i class="fa-solid fa-seedling"></i></div>
           <div class="stat-details">
-            <div class="stat-label">Total de Sementes</div>
-            <div class="stat-value" id="kpi-total-sf">76</div>
+            <div class="stat-label">Sementes Consolidadas</div>
+            <div class="stat-value" id="kpi-total-sf">61</div>
           </div>
         </div>
 
-        <div class="stat-card">
-          <div class="stat-icon stat-icon-indigo"><i class="fa-solid fa-diagram-project"></i></div>
+        <div class="stat-card stat-card-ref">
+          <div class="stat-icon stat-icon-indigo"><i class="fa-solid fa-book-bookmark"></i></div>
           <div class="stat-details">
             <div class="stat-label">Referências Citadas</div>
-            <div class="stat-value" id="kpi-artigos-citados">315/340</div>
+            <div class="stat-value" id="kpi-artigos-citados">247</div>
           </div>
         </div>
 
-        <div class="stat-card">
+        <div class="stat-card stat-card-eixos">
           <div class="stat-icon stat-icon-slate"><i class="fa-solid fa-layer-group"></i></div>
           <div class="stat-details">
             <div class="stat-label">Eixos Estratégicos</div>
@@ -123,11 +128,11 @@
           </div>
         </div>
 
-        <div class="stat-card">
-          <div class="stat-icon stat-icon-emerald"><i class="fa-solid fa-circle-check"></i></div>
+        <div class="stat-card stat-card-topicos">
+          <div class="stat-icon stat-icon-emerald"><i class="fa-solid fa-folder-tree"></i></div>
           <div class="stat-details">
-            <div class="stat-label">Revisadas</div>
-            <div class="stat-value" id="kpi-revisadas">30</div>
+            <div class="stat-label">Tópicos Padronizados</div>
+            <div class="stat-value" id="kpi-total-topicos">13</div>
           </div>
         </div>
 
@@ -197,16 +202,21 @@
           <!-- ===================================================== -->
           <!-- COLUNA 1 (ESQUERDA): SIDEBAR DE FILTROS PROSPECTIVOS -->
           <!-- ===================================================== -->
-          <aside class="sf-filters-sidebar">
+          <aside class="sf-filters-sidebar" id="sf-filters-sidebar">
             
             <div class="sidebar-header">
               <div class="sidebar-title">
                 <i class="fa-solid fa-sliders"></i>
                 <span>Filtros</span>
               </div>
-              <button id="btn-clear-filters" class="btn-sidebar-reset" title="Redefinir todos os filtros aplicados">
-                <i class="fa-solid fa-rotate-left"></i> Limpar
-              </button>
+              <div class="sidebar-header-actions">
+                <button id="btn-clear-filters" class="btn-sidebar-reset" title="Redefinir todos os filtros aplicados">
+                  <i class="fa-solid fa-rotate-left"></i> Limpar
+                </button>
+                <button type="button" id="btn-close-mobile-filters" class="btn-close-mobile-filters" title="Fechar filtros" aria-label="Fechar painel de filtros">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
             </div>
 
             <div class="sidebar-body">
@@ -219,27 +229,6 @@
                   <button id="sf-search-clear" class="btn-clear-inline" style="display: none;" title="Limpar busca">
                     <i class="fa-solid fa-xmark"></i>
                   </button>
-                </div>
-              </div>
-
-              <div class="filter-divider"></div>
-
-              <!-- Status de Revisão (Colapsável) -->
-              <div class="sidebar-filter-section collapsed" id="section-filter-status" data-filter-group="status">
-                <button type="button" class="filter-section-header" aria-expanded="false" title="Recolher / Expandir Status de Revisão">
-                  <div class="filter-section-title">
-                    <i class="fa-solid fa-circle-check"></i>
-                    <span>Status de Revisão</span>
-                  </div>
-                  <div class="filter-section-meta">
-                    <span class="filter-active-count" id="active-count-status" style="display: none;">0</span>
-                    <i class="fa-solid fa-chevron-down filter-toggle-icon"></i>
-                  </div>
-                </button>
-                <div class="filter-section-content">
-                  <div class="filter-checkbox-list" id="filter-status-options">
-                    <!-- Checkboxes de status gerados dinamicamente -->
-                  </div>
                 </div>
               </div>
 
@@ -332,11 +321,16 @@
             <!-- Sidebar Footer / Status -->
             <div class="sidebar-footer">
               <div class="sidebar-counter">
-                Mostrando <strong id="sf-filtered-count">62</strong> de <span id="sf-total-count">62</span>
+                Mostrando <strong id="sf-filtered-count">61</strong> de <span id="sf-total-count">61</span>
               </div>
+              <button type="button" id="btn-mobile-apply-filters" class="btn-mobile-apply-filters">
+                <i class="fa-solid fa-check"></i> <span>Ver Sementes Filtradas</span>
+              </button>
             </div>
 
           </aside>
+          <!-- Backdrop para fechar drawer no mobile -->
+          <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
 
           <!-- ===================================================== -->
           <!-- COLUNA 2 (MEIO): LISTA DE SEMENTES SELECIONÁVEIS (INBOX) -->
@@ -346,15 +340,22 @@
             <div class="inbox-header">
               <div class="inbox-title-box">
                 <span class="inbox-title">Sementes de Futuro</span>
-                <span class="inbox-counter-badge" id="list-count-badge">62</span>
+                <span class="inbox-counter-badge" id="list-count-badge">61</span>
               </div>
-              <div class="inbox-sort-wrapper">
-                <select id="sf-list-sort" class="inbox-sort-select" title="Ordenar lista">
-                  <option value="id-asc">ID (SF01 → SF62)</option>
-                  <option value="id-desc">ID (SF62 → SF01)</option>
-                  <option value="artigos-desc">Mais Artigos</option>
-                  <option value="titulo-asc">Título (A-Z)</option>
-                </select>
+              <div class="inbox-actions-right">
+                <button type="button" id="btn-mobile-filter-toggle" class="btn-mobile-filter-toggle" title="Abrir filtros de pesquisa" aria-label="Abrir filtros">
+                  <i class="fa-solid fa-filter"></i>
+                  <span>Filtros</span>
+                  <span class="mobile-filter-badge" id="mobile-filter-badge" style="display: none;">0</span>
+                </button>
+                <div class="inbox-sort-wrapper">
+                  <select id="sf-list-sort" class="inbox-sort-select" title="Ordenar lista">
+                    <option value="id-asc">ID (SF01 → SF62)</option>
+                    <option value="id-desc">ID (SF62 → SF01)</option>
+                    <option value="artigos-desc">Mais Referências</option>
+                    <option value="titulo-asc">Título (A-Z)</option>
+                  </select>
+                </div>
               </div>
             </div>
 
@@ -414,7 +415,7 @@
               <div>
                 <h2 class="map-main-title">Mapa Matricial das Sementes de Futuro</h2>
                 <p class="map-main-subtitle">
-                  Distribuição cruzada de Sementes de Futuro por <strong>Tópico Padronizado (linhas)</strong> e <strong>Dimensões PESTEL (colunas)</strong>.
+                  Distribuição cruzada das 61 Sementes de Futuro por <strong>Tópico Padronizado (linhas)</strong> e <strong>Dimensões PESTEL (colunas)</strong>.
                 </p>
               </div>
             </div>
@@ -422,9 +423,9 @@
             <div class="map-metrics-pill">
               <span class="map-metric-item"><strong id="map-total-topics">13</strong> Tópicos</span>
               <span class="map-metric-sep">•</span>
-              <span class="map-metric-item"><strong id="map-total-intersections">58/78</strong> Quadrantes</span>
+              <span class="map-metric-item"><strong id="map-total-intersections">56/78</strong> Quadrantes</span>
               <span class="map-metric-sep">•</span>
-              <span class="map-metric-item"><strong id="map-total-placements">208</strong> Ocorrências</span>
+              <span class="map-metric-item"><strong id="map-total-placements">162</strong> Ocorrências</span>
             </div>
           </div>
 
@@ -444,25 +445,12 @@
                 <label for="map-filter-classificacao">Classificação:</label>
                 <select id="map-filter-classificacao" class="form-select-sm">
                   <option value="">Todas as Classificações</option>
-                  <option value="Ruptura">Ruptura</option>
                   <option value="Tendência">Tendência</option>
-                  <option value="Sinal Fraco">Sinal Fraco</option>
+                  <option value="Fato Portador de Futuro">Fato Portador de Futuro</option>
                   <option value="Incerteza">Incerteza</option>
-                  <option value="Fato predeterminado">Fato predeterminado</option>
+                  <option value="Ruptura">Ruptura</option>
                   <option value="Surpresa inevitável">Surpresa inevitável</option>
-                  <option value="Achado Empírico">Achado Empírico</option>
-                </select>
-              </div>
-
-              <div class="filter-field filter-field-inline">
-                <label for="map-filter-status">Status:</label>
-                <select id="map-filter-status" class="form-select-sm">
-                  <option value="">Todos os Status</option>
-                  <option value="revisada">Apenas Revisadas</option>
-                  <option value="ok">Revisada (OK)</option>
-                  <option value="dividida">Revisada (Dividida)</option>
-                  <option value="mesclada">Revisada (Mesclada)</option>
-                  <option value="pendente">Em revisão</option>
+                  <option value="Wild Card">Wild Card</option>
                 </select>
               </div>
 
@@ -476,18 +464,22 @@
           <div class="map-legend-bar">
             <span class="map-legend-title"><i class="fa-solid fa-palette"></i> Legenda:</span>
             <div class="map-legend-items">
-              <span class="map-legend-item" data-legend-typology="Ruptura"><span class="legend-dot filter-dot-ruptura"></span> Ruptura</span>
               <span class="map-legend-item" data-legend-typology="Tendência"><span class="legend-dot filter-dot-tendencia"></span> Tendência</span>
-              <span class="map-legend-item" data-legend-typology="Sinal Fraco"><span class="legend-dot filter-dot-sinal-fraco"></span> Sinal Fraco</span>
+              <span class="map-legend-item" data-legend-typology="Fato Portador de Futuro"><span class="legend-dot filter-dot-fato-portador-de-futuro"></span> Fato Portador de Futuro</span>
               <span class="map-legend-item" data-legend-typology="Incerteza"><span class="legend-dot filter-dot-incerteza"></span> Incerteza</span>
-              <span class="map-legend-item" data-legend-typology="Fato predeterminado"><span class="legend-dot filter-dot-fato-predeterminado"></span> Fato Predeterminado</span>
+              <span class="map-legend-item" data-legend-typology="Ruptura"><span class="legend-dot filter-dot-ruptura"></span> Ruptura</span>
               <span class="map-legend-item" data-legend-typology="Surpresa inevitável"><span class="legend-dot filter-dot-surpresa-inevitavel"></span> Surpresa Inevitável</span>
-              <span class="map-legend-item" data-legend-typology="Achado Empírico"><span class="legend-dot filter-dot-achado-empirico"></span> Achado Empírico</span>
+              <span class="map-legend-item" data-legend-typology="Wild Card"><span class="legend-dot filter-dot-wild-card"></span> Wild Card</span>
             </div>
             <div class="map-legend-hint">
               <i class="fa-solid fa-arrow-pointer"></i> Clique em qualquer SF para pré-visualizar ou abrir no dossiê.
             </div>
           </div>
+        </div>
+
+        <!-- Dica de navegação por toque em smartphones -->
+        <div class="mobile-scroll-hint mobile-only">
+          <i class="fa-solid fa-arrows-left-right"></i> Deslize para navegar pelas dimensões PESTEL
         </div>
 
         <!-- Matrix Table Container -->
@@ -527,16 +519,7 @@
 
             <div class="layout-controls">
               <div class="filter-field filter-field-inline">
-                <label for="scopus-filter-relation">Relação com SFs:</label>
-                <select id="scopus-filter-relation" class="form-select-sm">
-                  <option value="">Todos os Artigos (340)</option>
-                  <option value="linked" selected>Apenas com SFs Vinculadas (315)</option>
-                  <option value="unlinked">Sem SFs Vinculadas (25)</option>
-                </select>
-              </div>
-
-              <div class="filter-field filter-field-inline">
-                <label for="scopus-filter-year">Ano:</label>
+                <label for="scopus-filter-year"><i class="fa-solid fa-calendar"></i> Ano:</label>
                 <select id="scopus-filter-year" class="form-select-sm">
                   <option value="">Todos os Anos</option>
                 </select>
@@ -546,10 +529,15 @@
 
           <div class="filter-status-bar">
             <div class="results-counter">
-              Mostrando <strong id="scopus-filtered-count">315</strong> de <span id="scopus-total-count">340</span> Artigos
+              Mostrando <strong id="scopus-filtered-count">247</strong> de <span id="scopus-total-count">247</span> Referências Citadas
             </div>
           </div>
 
+        </div>
+
+        <!-- Dica de navegação por toque em smartphones -->
+        <div class="mobile-scroll-hint mobile-only">
+          <i class="fa-solid fa-arrows-left-right"></i> Deslize para visualizar autores, periódico e evidências
         </div>
 
         <!-- Scopus Table Container -->
@@ -685,7 +673,6 @@
           <div class="modal-meta-row">
             <span class="modal-badge-id" id="modal-sf-id">SF01</span>
             <span class="badge-typology" id="modal-sf-typology">Tendência</span>
-            <span class="badge-status-pill" id="modal-sf-status">Revisada (OK)</span>
             <span class="badge-eixo-pill" id="modal-sf-eixo">Eixo 1</span>
           </div>
           <h3 class="modal-title" id="modal-sf-title">Título da Semente de Futuro</h3>

@@ -234,11 +234,11 @@ for row in sf_rows[1:]:
     sf_obj = {
         "id": sf_id,
         "fonte": get_field(item, ["Fonte", "Origem"], ""),
-        "topico": get_field(item, ["Tópico", "Tópico Mais Amplo Padronizado", "Topico"], "Geral"),
-        "titulo": get_field(item, ["Título SF", "Título da Semente de Futuro", "Titulo SF", "Título", "Titulo"], "Sem título"),
+        "topico": str(get_field(item, ["Tópico", "Tópico Mais Amplo Padronizado", "Topico"], "Geral")).strip(),
+        "titulo": str(get_field(item, ["Título SF", "Título da Semente de Futuro", "Titulo SF", "Título", "Titulo"], "Sem título")).strip(),
         "descricao": get_field(item, ["Descrição (Ref N)", "Descrição Global do Fenômeno (com Citações Numéricas)", "Descricao (Ref N)", "Descrição", "Descricao"], ""),
         "descricaoApa": get_field(item, ["Descrição (Ref APA)", "Descricao (Ref APA)"], ""),
-        "classificacao": get_field(item, ["Classificação", "Classificação Prospectiva", "Classificacao"], "Não classificada"),
+        "classificacao": str(get_field(item, ["Classificação", "Classificação Prospectiva", "Classificacao"], "Não classificada")).strip(),
         "pestel": pestel_list,
         "eixo": get_field(item, ["Eixo", "Eixo CSED", "Eixo Temático"], "Não categorizado"),
         "qtdArtigos": len(parsed_art_ids) if parsed_art_ids else qtd_art_num,
@@ -294,13 +294,17 @@ def sf_sort_key(sf):
 
 sementes_list.sort(key=sf_sort_key)
 
+# Filtrar apenas referências citadas diretamente em Sementes de Futuro
+articles_cited_list = [a for a in articles_list if len(a["associatedSFs"]) > 0]
+articles_cited_list.sort(key=lambda a: int(a["id"]) if isinstance(a["id"], int) or str(a["id"]).isdigit() else 999999)
+
 # Consolidar dados globais e estatísticas
 data_payload = {
     "metadata": {
         "sourceFile": target_excel,
         "totalSF": len(sementes_list),
-        "totalArticles": len(articles_list),
-        "totalArticlesCited": len([a for a in articles_list if len(a["associatedSFs"]) > 0]),
+        "totalArticles": len(articles_cited_list),
+        "totalArticlesCited": len(articles_cited_list),
         "totalRevisadas": len([sf for sf in sementes_list if sf["revisada"]]),
         "totalAprovadas": len([sf for sf in sementes_list if sf["statusTipo"] == "ok"]),
         "totalMescladas": len([sf for sf in sementes_list if sf["statusTipo"] == "mesclada"]),
@@ -310,7 +314,7 @@ data_payload = {
         "generatedAt": datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     },
     "sementes": sementes_list,
-    "artigos": articles_list
+    "artigos": articles_cited_list
 }
 
 # Salvar como data.js
@@ -323,6 +327,6 @@ with open(data_js_path, "w", encoding="utf-8") as f:
 
 print(f"\n--- Sincronização Concluída com Sucesso ---")
 print(f"Arquivo lido: {target_excel}")
-print(f"Sementes de Futuro extraídas: {len(sementes_list)} (Revisadas: {data_payload['metadata']['totalRevisadas']})")
-print(f"Artigos / Referências mapeadas: {len(articles_list)} (Citadas em SFs: {data_payload['metadata']['totalArticlesCited']})")
+print(f"Sementes de Futuro extraídas: {len(sementes_list)}")
+print(f"Referências citadas: {len(articles_cited_list)}")
 print(f"Arquivo gerado: {data_js_path}")

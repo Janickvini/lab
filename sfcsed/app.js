@@ -27,17 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
       eixos: [],
       classificacoes: [],
       pestels: [],
-      topicos: [],
-      status: []
+      topicos: []
     },
 
     // Sort order for Sementes List
     listSort: 'id-asc',
 
-    // Filters for Scopus Articles
+    // Filters for Referências
     scopusFilters: {
       search: '',
-      relation: 'linked', // '', 'linked', 'unlinked'
       year: ''
     },
 
@@ -49,8 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Matrix Map State
     mapFilters: {
       search: '',
-      classificacao: '',
-      status: ''
+      classificacao: ''
     },
     selectedMapSfId: null,
 
@@ -73,13 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
       textStrong: '#f8fafc',
       grid: 'rgba(255, 255, 255, 0.07)',
       typology: {
-        'Ruptura': '#ef4444',
         'Tendência': '#3b82f6',
+        'Fato Portador de Futuro': '#10b981',
+        'Incerteza': '#f59e0b',
+        'Ruptura': '#ef4444',
+        'Surpresa inevitável': '#f97316',
+        'Wild Card': '#a855f7',
         'Sinal fraco': '#a855f7',
         'Sinal Fraco': '#a855f7',
-        'Incerteza': '#f59e0b',
         'Fato predeterminado': '#94a3b8',
-        'Surpresa inevitável': '#f97316',
         'Achado Empírico': '#14b8a6'
       },
       pestel: {
@@ -97,13 +96,15 @@ document.addEventListener('DOMContentLoaded', () => {
       textStrong: '#0f172a',
       grid: '#e2e8f0',
       typology: {
-        'Ruptura': '#dc2626',
         'Tendência': '#2563eb',
+        'Fato Portador de Futuro': '#047857',
+        'Incerteza': '#d97706',
+        'Ruptura': '#dc2626',
+        'Surpresa inevitável': '#ea580c',
+        'Wild Card': '#7e22ce',
         'Sinal fraco': '#9333ea',
         'Sinal Fraco': '#9333ea',
-        'Incerteza': '#d97706',
         'Fato predeterminado': '#475569',
-        'Surpresa inevitável': '#ea580c',
         'Achado Empírico': '#0d9488'
       },
       pestel: {
@@ -122,30 +123,34 @@ document.addEventListener('DOMContentLoaded', () => {
   // INITIALIZATION
   // ========================================================================
   async function init() {
-    setupEventListeners();
-    setupTheme();
-    setupFontScale();
+    try {
+      setupEventListeners();
+      setupTheme();
+      setupFontScale();
 
-    // Load data from Excel (via SheetJS) or fallback to data.js
-    const loaded = await loadDataPipeline();
-    if (!loaded) {
-      console.error('Falha crítica no carregamento de dados.');
-      updateLoadingStatus('Erro ao carregar dados. Verifique o arquivo SF CSED.xlsx ou data.js.');
-      return;
+      // Load data from Excel (via SheetJS) or fallback to data.js
+      const loaded = await loadDataPipeline();
+      if (!loaded) {
+        console.error('Falha crítica no carregamento de dados.');
+        updateLoadingStatus('Erro ao carregar dados. Verifique o arquivo SF CSED.xlsx ou data.js.');
+        return;
+      }
+
+      // Populate Checkbox Filters & Collapsible Sections
+      buildFilterCheckboxLists();
+      setupCollapsibleFilterSections();
+
+      // Initial Filter & Render
+      applySfFilters();
+      applyScopusFilters();
+      renderKPIs();
+      renderCharts();
+      renderSfMatrixMap();
+    } catch (err) {
+      console.error('Erro na inicialização da plataforma:', err);
+    } finally {
+      hideLoadingOverlay();
     }
-
-    // Populate Checkbox Filters & Collapsible Sections
-    buildFilterCheckboxLists();
-    setupCollapsibleFilterSections();
-
-    // Initial Filter & Render
-    applySfFilters();
-    applyScopusFilters();
-    renderKPIs();
-    renderCharts();
-    renderSfMatrixMap();
-
-    hideLoadingOverlay();
   }
 
   // ========================================================================
@@ -415,13 +420,13 @@ document.addEventListener('DOMContentLoaded', () => {
       state.rawSementes.push({
         id: sfId,
         fonte: String(getRowVal(row, ['Fonte', 'Origem'], '')).trim(),
-        topico: getRowVal(row, ['Tópico', 'Tópico Mais Amplo Padronizado', 'Topico'], 'Geral'),
-        titulo: getRowVal(row, ['Título SF', 'Título da Semente de Futuro', 'Titulo SF', 'Título', 'Titulo'], 'Sem título'),
+        topico: String(getRowVal(row, ['Tópico', 'Tópico Mais Amplo Padronizado', 'Topico'], 'Geral')).trim(),
+        titulo: String(getRowVal(row, ['Título SF', 'Título da Semente de Futuro', 'Titulo SF', 'Título', 'Titulo'], 'Sem título')).trim(),
         descricao: getRowVal(row, ['Descrição (Ref N)', 'Descrição Global do Fenômeno (com Citações Numéricas)', 'Descricao (Ref N)', 'Descrição', 'Descricao'], ''),
         descricaoApa: getRowVal(row, ['Descrição (Ref APA)', 'Descricao (Ref APA)'], ''),
-        classificacao: getRowVal(row, ['Classificação', 'Classificação Prospectiva', 'Classificacao'], 'Não classificada'),
+        classificacao: String(getRowVal(row, ['Classificação', 'Classificação Prospectiva', 'Classificacao'], 'Não classificada')).trim(),
         pestel: pestelList,
-        eixo: getRowVal(row, ['Eixo', 'Eixo CSED', 'Eixo Temático'], 'Não categorizado'),
+        eixo: String(getRowVal(row, ['Eixo', 'Eixo CSED', 'Eixo Temático'], 'Não categorizado')).trim(),
         qtdArtigos: artIds.length || (isNaN(parsedQtd) ? 0 : parsedQtd),
         artigosIds: artIds,
         referenciasResumidas: getRowVal(row, ['Referências', 'Referências Bibliográficas Resumidas (Autores, Ano, Título)', 'Referencias'], ''),
@@ -429,7 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
         indicadores: indVal,
         revisada: isRev,
         statusTipo: statusTipo,
-        statusRevisao: (rawRevStr && rawRevStr !== '0') ? rawRevStr : 'Em revisão',
+        statusRevisao: (rawRevStr && rawRevStr !== '0') ? rawRevStr : 'Consolidada',
         statusLabel: statusLabel,
         justificativa: justVal,
         fusaoId: fusaoId,
@@ -477,6 +482,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // Filtrar apenas artigos/referências citadas diretamente em SFs
+    state.rawArticles = state.rawArticles.filter(a => a.associatedSFs && a.associatedSFs.length > 0);
+    state.rawArticles.sort((a, b) => (parseInt(a.id, 10) || 0) - (parseInt(b.id, 10) || 0));
+
     // Sort SFs numerically & alphanumeric (ex: SF01..SF31, SF31a, SF31b..SF62, SFQ, SFS)
     state.rawSementes.sort((a, b) => {
       const catA = a.id.startsWith('SF') && !a.id.startsWith('SFQ') && !a.id.startsWith('SFS') ? 0 : (a.id.startsWith('SFQ') ? 1 : 2);
@@ -494,25 +503,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // CHECKBOX FILTERS & COLLAPSIBLE SECTIONS GENERATION
   // ========================================================================
   function buildFilterCheckboxLists() {
-    // 1. Status de Revisão
-    const containerStatus = document.getElementById('filter-status-options');
-    if (containerStatus) {
-      containerStatus.innerHTML = '';
-      const statusOptions = [
-        { val: 'pendente', label: 'Em revisão', dotClass: 'filter-dot-status-pendente', icon: 'fa-regular fa-clock' },
-        { val: 'ok', label: 'Revisada (OK)', dotClass: 'filter-dot-status-ok' },
-        { val: 'dividida', label: 'Revisada (Dividida)', dotClass: 'filter-dot-status-dividida' },
-        { val: 'mesclada', label: 'Revisada (Mesclada)', dotClass: 'filter-dot-status-mesclada' },
-        { val: 'descartada', label: 'Revisada (Descartada)', dotClass: 'filter-dot-status-descartada' }
-      ];
-      statusOptions.forEach(opt => {
-        const count = state.rawSementes.filter(s => s.statusTipo === opt.val).length;
-        const item = createCheckboxItem('filter-status', opt.val, opt.label, count, opt.dotClass, opt.icon);
-        containerStatus.appendChild(item);
-      });
-    }
-
-    // 2. Eixos Estratégicos
+    // 1. Eixos Estratégicos
     const containerEixo = document.getElementById('filter-eixo-options');
     if (containerEixo) {
       containerEixo.innerHTML = '';
@@ -582,9 +573,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const linkedCount = state.rawArticles.filter(a => a.associatedSFs.length > 0).length;
       const unlinkedCount = state.rawArticles.length - linkedCount;
       selectRel.innerHTML = `
-        <option value="">Todos os Artigos (${state.rawArticles.length})</option>
-        <option value="linked" selected>Apenas com SFs Vinculadas (${linkedCount})</option>
-        <option value="unlinked">Sem SFs Vinculadas (${unlinkedCount})</option>
+        <option value="linked" selected>Apenas Referências Citadas (${linkedCount})</option>
+        <option value="unlinked">Não Citadas Diretamente (${unlinkedCount})</option>
+        <option value="">Todas as Referências (${state.rawArticles.length})</option>
       `;
     }
   }
@@ -618,14 +609,12 @@ document.addEventListener('DOMContentLoaded', () => {
       return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(cb => cb.value);
     }
 
-    state.filters.status = getChecked('filter-status');
     state.filters.eixos = getChecked('filter-eixo');
     state.filters.classificacoes = getChecked('filter-classificacao');
     state.filters.pestels = getChecked('filter-pestel');
     state.filters.topicos = getChecked('filter-topico');
 
     // Update active count badges on headers
-    updateActiveCountBadge('status', state.filters.status.length);
     updateActiveCountBadge('eixo', state.filters.eixos.length);
     updateActiveCountBadge('classificacao', state.filters.classificacoes.length);
     updateActiveCountBadge('pestel', state.filters.pestels.length);
@@ -675,7 +664,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========================================================================
   function applySfFilters() {
     const q = removeAccents(state.filters.search.trim());
-    const fStatus = state.filters.status;
     const fEixos = state.filters.eixos;
     const fClass = state.filters.classificacoes;
     const fPestels = state.filters.pestels;
@@ -698,10 +686,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!matches) return false;
       }
 
-      // 2. Status Filter (Multi-select OR: sf matches if in selected status list)
-      if (fStatus.length > 0 && !fStatus.includes(sf.statusTipo)) return false;
-
-      // 3. Eixo Filter (Multi-select OR: sf matches if its eixo is in selected eixos)
+      // 2. Eixo Filter (Multi-select OR: sf matches if its eixo is in selected eixos)
       if (fEixos.length > 0 && !fEixos.includes(sf.eixo)) return false;
 
       // 4. Classificação Filter (Multi-select OR: sf matches if in selected classificacoes)
@@ -793,39 +778,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     state.filteredSementes.forEach(sf => {
+      const typClass = cleanBadgeClass(sf.classificacao);
       const item = document.createElement('div');
-      item.className = 'inbox-item' + (sf.statusTipo ? ' item-' + sf.statusTipo : '');
+      item.className = `inbox-item item-typology-${typClass}`;
       item.setAttribute('data-sf-id', sf.id);
       if (state.selectedSfId === sf.id) {
         item.classList.add('active');
       }
 
-      const typClass = cleanBadgeClass(sf.classificacao);
-
-      let statusBadge = '';
-      if (sf.statusTipo === 'mesclada') {
-        const justTitle = sf.justificativa ? `Justificativa: ${sf.justificativa}` : `Mesclada com ${sf.fusaoId || ''}`;
-        statusBadge = `<span class="badge-status-subtle badge-status-fundida" title="${escapeHtml(justTitle)}"><i class="fa-solid fa-code-merge"></i> Mesclada</span>`;
-      } else if (sf.statusTipo === 'dividida') {
-        const justTitle = sf.justificativa ? `Justificativa: ${sf.justificativa}` : `Dividida em ${sf.divisaoIds ? sf.divisaoIds.join(', ') : ''}`;
-        statusBadge = `<span class="badge-status-subtle badge-status-dividida" title="${escapeHtml(justTitle)}"><i class="fa-solid fa-scissors"></i> Dividida</span>`;
-      } else if (sf.statusTipo === 'descartada') {
-        const justTitle = sf.justificativa ? `Justificativa: ${sf.justificativa}` : 'Descartada na revisão';
-        statusBadge = `<span class="badge-status-subtle badge-status-descartada" title="${escapeHtml(justTitle)}"><i class="fa-solid fa-ban"></i> Descartada</span>`;
-      } else if (sf.statusTipo === 'ok') {
-        const justTitle = sf.justificativa ? `Justificativa: ${sf.justificativa}` : 'Revisada (OK)';
-        const childBadge = sf.origemDivisao ? `<span class="badge-status-subtle badge-status-filha" title="Desmembrada a partir de ${escapeHtml(sf.origemDivisao)}"><i class="fa-solid fa-code-branch"></i> da ${escapeHtml(sf.origemDivisao)}</span> ` : '';
-        statusBadge = `${childBadge}<span class="icon-reviewed-subtle" title="${escapeHtml(justTitle)}"><i class="fa-solid fa-circle-check"></i></span>`;
-      } else {
-        statusBadge = `<span class="icon-pending-subtle" title="Em revisão"><i class="fa-regular fa-clock"></i></span>`;
-      }
+      const lineageOrigin = sf.origemDivisao || (sf.vinculo && sf.vinculo.length > 0 ? sf.vinculo[0] : '');
+      const lineageBadge = lineageOrigin
+        ? `<span class="badge-status-subtle badge-status-filha" title="Linhagem metodológica: derivada de ${escapeHtml(lineageOrigin)}"><i class="fa-solid fa-code-branch"></i> da ${escapeHtml(lineageOrigin)}</span>`
+        : '';
 
       const pestelChips = sf.pestel.map(p => {
         return `<span class="pestel-chip pestel-chip-neutral">${escapeHtml(p)}</span>`;
       }).join('');
 
       item.innerHTML = `
-        <div class="inbox-item-title">${escapeHtml(sf.titulo)}</div>
+        <div class="inbox-item-header">
+          <div class="inbox-item-title">${escapeHtml(sf.titulo)}</div>
+          <span class="inbox-item-active-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+        </div>
 
         <div class="inbox-item-topic" title="${escapeHtml(sf.topico)}">
           <i class="fa-solid fa-tag"></i> <span>${escapeHtml(sf.topico)}</span>
@@ -834,7 +808,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="inbox-item-meta-row">
           <span class="badge-id-neutral">${sf.id}</span>
           <span class="badge-typology ${typClass}">${escapeHtml(sf.classificacao)}</span>
-          ${statusBadge}
+          ${lineageBadge}
           <span class="inbox-art-count" title="${sf.qtdArtigos} referências vinculadas">
             <i class="fa-solid fa-book-open"></i> ${sf.qtdArtigos} ref.
           </span>
@@ -886,23 +860,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Rola para o topo do dossiê
     const readingPane = document.getElementById('sf-reading-pane');
-    readingPane.scrollTop = 0;
+    if (readingPane) readingPane.scrollTop = 0;
+
+    // Suporte mobile: ativa visualização do dossiê em tela cheia no smartphone
+    const layout = document.querySelector('.sf-email-layout');
+    if (layout) {
+      layout.classList.add('mobile-reading-active');
+    }
+    if (window.innerWidth <= 768) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
     const typClass = cleanBadgeClass(sf.classificacao);
 
-    let reviewedBadge = '';
-    if (sf.statusTipo === 'mesclada') {
-      reviewedBadge = `<span class="badge-status-dossier badge-dossier-fundida"><i class="fa-solid fa-code-merge"></i> Revisada (Mesclada)${sf.fusaoId ? ' → ' + escapeHtml(sf.fusaoId) : ''}</span>`;
-    } else if (sf.statusTipo === 'dividida') {
-      reviewedBadge = `<span class="badge-status-dossier badge-dossier-dividida"><i class="fa-solid fa-scissors"></i> Revisada (Dividida)${sf.divisaoIds && sf.divisaoIds.length ? ' → ' + escapeHtml(sf.divisaoIds.join(', ')) : ''}</span>`;
-    } else if (sf.statusTipo === 'descartada') {
-      reviewedBadge = `<span class="badge-status-dossier badge-dossier-descartada"><i class="fa-solid fa-ban"></i> Revisada (Descartada)</span>`;
-    } else if (sf.statusTipo === 'ok') {
-      const childTag = sf.origemDivisao ? ` <span class="badge-child-tag" title="Originada da divisão de ${escapeHtml(sf.origemDivisao)}">(da ${escapeHtml(sf.origemDivisao)})</span>` : '';
-      reviewedBadge = `<span class="badge-reviewed" style="font-size: 0.74rem; padding: 3px 8px;"><i class="fa-solid fa-check-circle"></i> Revisada (OK)${childTag}</span>`;
-    } else {
-      reviewedBadge = `<span class="badge-pending" style="font-size: 0.74rem; padding: 3px 8px;"><i class="fa-regular fa-clock"></i> Em revisão</span>`;
-    }
+    const lineageOrigin = sf.origemDivisao || (sf.vinculo && sf.vinculo.length > 0 ? sf.vinculo[0] : '');
+    const lineageChip = lineageOrigin
+      ? `<span class="badge-eixo-lg" title="Linhagem metodológica: derivada de ${escapeHtml(lineageOrigin)}"><i class="fa-solid fa-code-branch"></i> da ${escapeHtml(lineageOrigin)}</span>`
+      : '';
 
     const pestelChips = sf.pestel.map(p => {
       const pClass = cleanBadgeClass(p);
@@ -911,103 +885,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const descFormatted = highlightNumericCitations(sf.descricao);
 
-    // Banner contextual de status (Mesclada, Dividida, Filha de Divisão, Descartada, Incorporadora)
-    let statusBannerHtml = '';
-    if (sf.statusTipo === 'mesclada') {
-      const targetSf = sf.fusaoId ? state.rawSementes.find(s => s.id === sf.fusaoId) : null;
-      statusBannerHtml = `
-        <div class="dossier-status-banner banner-fundida">
-          <div class="status-banner-icon"><i class="fa-solid fa-code-merge"></i></div>
-          <div class="status-banner-body">
-            <div class="status-banner-title">Semente Revisada (Mesclada)</div>
-            ${sf.justificativa ? `
-              <div class="status-banner-justificativa">
-                <i class="fa-solid fa-circle-info"></i> <span><strong>Justificativa metodológica:</strong> ${escapeHtml(sf.justificativa)}</span>
-              </div>
-            ` : ''}
-            <div class="status-banner-text">
-              Esta semente foi integrada e sintetizada na semente 
-              <a href="javascript:void(0)" class="banner-sf-link" data-jump-sf="${escapeHtml(sf.fusaoId)}">
-                <strong>${escapeHtml(sf.fusaoId)}</strong>${targetSf ? ' — ' + escapeHtml(targetSf.titulo) : ''}
-              </a>. Seus dados e referências originais permanecem arquivados aqui para fins de rastreabilidade.
-            </div>
-          </div>
-          ${sf.fusaoId ? `<button class="btn-banner-jump" data-jump-sf="${escapeHtml(sf.fusaoId)}"><i class="fa-solid fa-arrow-right"></i> Ver ${escapeHtml(sf.fusaoId)}</button>` : ''}
-        </div>
-      `;
-    } else if (sf.statusTipo === 'dividida') {
-      const childrenLinks = (sf.divisaoIds || []).map(childId => {
-        const childSf = state.rawSementes.find(s => s.id === childId);
-        return `<a href="javascript:void(0)" class="banner-sf-link" data-jump-sf="${escapeHtml(childId)}"><strong>${escapeHtml(childId)}</strong>${childSf ? ' — ' + escapeHtml(childSf.titulo) : ''}</a>`;
-      }).join(' e ');
-      const jumpButtons = (sf.divisaoIds || []).map(childId => {
-        return `<button class="btn-banner-jump" data-jump-sf="${escapeHtml(childId)}"><i class="fa-solid fa-arrow-right"></i> Ver ${escapeHtml(childId)}</button>`;
-      }).join(' ');
-
-      statusBannerHtml = `
-        <div class="dossier-status-banner banner-dividida">
-          <div class="status-banner-icon"><i class="fa-solid fa-scissors"></i></div>
-          <div class="status-banner-body">
-            <div class="status-banner-title">Semente Revisada (Dividida)</div>
-            ${sf.justificativa ? `
-              <div class="status-banner-justificativa">
-                <i class="fa-solid fa-circle-info"></i> <span><strong>Justificativa metodológica:</strong> ${escapeHtml(sf.justificativa)}</span>
-              </div>
-            ` : ''}
-            <div class="status-banner-text">
-              Esta semente foi desmembrada em novas sementes autônomas na revisão prospectiva: ${childrenLinks}. Seus dados originais e referências associadas permanecem arquivados nesta plataforma para histórico científico e rastreabilidade metodológica.
-            </div>
-          </div>
-          ${jumpButtons ? `<div class="banner-jump-group">${jumpButtons}</div>` : ''}
-        </div>
-      `;
-    } else if (sf.origemDivisao) {
-      const parentSf = state.rawSementes.find(s => s.id === sf.origemDivisao);
-      statusBannerHtml = `
-        <div class="dossier-status-banner banner-origem-divisao">
-          <div class="status-banner-icon"><i class="fa-solid fa-code-branch"></i></div>
-          <div class="status-banner-body">
-            <div class="status-banner-title">Semente Resultante de Divisão Metodológica</div>
-            <div class="status-banner-text">
-              Esta semente resultou do desmembramento e aprofundamento analítico da semente 
-              <a href="javascript:void(0)" class="banner-sf-link" data-jump-sf="${escapeHtml(sf.origemDivisao)}">
-                <strong>${escapeHtml(sf.origemDivisao)}</strong>${parentSf ? ' — ' + escapeHtml(parentSf.titulo) : ''}
-              </a>.
-            </div>
-          </div>
-          <button class="btn-banner-jump" data-jump-sf="${escapeHtml(sf.origemDivisao)}"><i class="fa-solid fa-arrow-left"></i> Ver semente original (${escapeHtml(sf.origemDivisao)})</button>
-        </div>
-      `;
-    } else if (sf.statusTipo === 'descartada') {
-      statusBannerHtml = `
-        <div class="dossier-status-banner banner-descartada">
-          <div class="status-banner-icon"><i class="fa-solid fa-ban"></i></div>
-          <div class="status-banner-body">
-            <div class="status-banner-title">Semente Revisada (Descartada)</div>
-            ${sf.justificativa ? `
-              <div class="status-banner-justificativa">
-                <i class="fa-solid fa-circle-exclamation"></i> <span><strong>Justificativa metodológica:</strong> ${escapeHtml(sf.justificativa)}</span>
-              </div>
-            ` : ''}
-            <div class="status-banner-text">
-              Esta semente foi descontinuada na revisão metodológica de cenários. Seus artigos e metadados permanecem preservados nesta base para histórico e auditoria científica.
-            </div>
-          </div>
-        </div>
-      `;
-    } else if (sf.incorporadas && sf.incorporadas.length > 0) {
-      statusBannerHtml = `
-        <div class="dossier-status-banner banner-incorporadora">
-          <div class="status-banner-icon"><i class="fa-solid fa-object-group"></i></div>
-          <div class="status-banner-body">
-            <div class="status-banner-title">Síntese de Consolidação Metodológica</div>
-            <div class="status-banner-text">
-              Esta semente incorpora e expande os achados de: 
-              ${sf.incorporadas.map(incId => {
-                const incSf = state.rawSementes.find(s => s.id === incId);
-                return `<a href="javascript:void(0)" class="banner-sf-link" data-jump-sf="${escapeHtml(incId)}" title="${incSf ? escapeHtml(incSf.titulo) : ''}"><strong>${escapeHtml(incId)}</strong></a>`;
-              }).join(', ')}.
-            </div>
+    // Banner de linhagem se houver
+    let lineageBannerHtml = '';
+    if (lineageOrigin) {
+      const parentSf = state.rawSementes.find(s => s.id === lineageOrigin);
+      lineageBannerHtml = `
+        <div class="dossier-lineage-banner">
+          <i class="fa-solid fa-code-branch"></i>
+          <div>
+            <strong>Nota Metodológica de Linhagem:</strong> Semente derivada/desmembrada de <strong>${escapeHtml(lineageOrigin)}</strong>${parentSf ? ' (' + escapeHtml(parentSf.titulo) + ')' : ''} para maior especificidade analítica no estudo prospectivo.
           </div>
         </div>
       `;
@@ -1089,13 +975,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     dossier.innerHTML = `
+      <!-- Mobile Top Navigation Bar (Visível apenas em smartphones) -->
+      <div class="mobile-reading-nav mobile-only">
+        <button type="button" class="btn-mobile-back-to-list" id="btn-mobile-back-to-list" title="Voltar à lista de sementes">
+          <i class="fa-solid fa-arrow-left"></i> <span>Voltar à Lista</span>
+        </button>
+        <span class="badge-id" style="font-size: 0.85rem; padding: 4px 10px;">${sf.id}</span>
+      </div>
+
       <!-- Barra Superior do Dossiê -->
       <div class="dossier-top-bar">
         <div class="dossier-meta-group">
           <span class="badge-id" style="font-size: 0.85rem; padding: 3px 8px;">${sf.id}</span>
-          <span class="badge-eixo-lg" title="${escapeHtml(sf.eixo)}">${escapeHtml(sf.eixo)}</span>
           <span class="badge-typology ${typClass}">${sf.classificacao}</span>
-          ${reviewedBadge}
+          <span class="badge-eixo-lg" title="${escapeHtml(sf.eixo)}">${escapeHtml(sf.eixo)}</span>
+          ${lineageChip}
         </div>
         <div class="dossier-actions">
           <button class="btn-dossier-action" id="btn-copy-dossier" title="Copiar resumo da semente">
@@ -1107,7 +1001,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
 
-      ${statusBannerHtml}
+      ${lineageBannerHtml}
 
       <!-- Título Executivo -->
       <h2 class="dossier-title">${escapeHtml(sf.titulo)}</h2>
@@ -1167,12 +1061,19 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     // Event listeners dos botões internos do dossiê
+    const btnMobileBack = document.getElementById('btn-mobile-back-to-list');
+    if (btnMobileBack) {
+      btnMobileBack.addEventListener('click', () => {
+        deselectSf();
+      });
+    }
+
     document.getElementById('btn-close-reading').addEventListener('click', () => {
       deselectSf();
     });
 
     document.getElementById('btn-copy-dossier').addEventListener('click', () => {
-      let copyText = `[${sf.id}] ${sf.titulo}\n\nStatus: ${sf.statusLabel || sf.statusRevisao} | Classificação: ${sf.classificacao} | Eixo: ${sf.eixo}`;
+      let copyText = `[${sf.id}] ${sf.titulo}\n\nClassificação: ${sf.classificacao} | Eixo: ${sf.eixo} | Tópico: ${sf.topico}`;
       if (sf.justificativa) {
         copyText += `\nJustificativa: ${sf.justificativa}`;
       }
@@ -1260,6 +1161,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.inbox-item').forEach(el => el.classList.remove('active'));
     document.getElementById('reading-empty-state').style.display = 'flex';
     document.getElementById('reading-dossier').style.display = 'none';
+
+    // Suporte mobile: desativa visualização do dossiê e retorna à lista de sementes
+    const layout = document.querySelector('.sf-email-layout');
+    if (layout) {
+      layout.classList.remove('mobile-reading-active');
+    }
   }
 
   // ========================================================================
@@ -1305,19 +1212,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Status Tags
-    const statusLabelMap = {
-      'pendente': 'Status: Em revisão',
-      'ok': 'Status: Revisada (OK)',
-      'dividida': 'Status: Revisada (Dividida)',
-      'mesclada': 'Status: Revisada (Mesclada)',
-      'descartada': 'Status: Revisada (Descartada)'
-    };
-    (state.filters.status || []).forEach(val => {
-      const label = statusLabelMap[val] || `Status: ${val}`;
-      addTag(label, () => uncheckFilter('filter-status', val));
-    });
-
     // Eixos Tags
     (state.filters.eixos || []).forEach(e => {
       const shortEixo = e.length > 25 ? e.substring(0, 23) + '...' : e;
@@ -1342,11 +1236,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Botão Limpar Filtros se houver 2 ou mais critérios
     const totalActiveCount = (state.filters.search ? 1 : 0) +
-      (state.filters.status ? state.filters.status.length : 0) +
       (state.filters.eixos ? state.filters.eixos.length : 0) +
       (state.filters.classificacoes ? state.filters.classificacoes.length : 0) +
       (state.filters.pestels ? state.filters.pestels.length : 0) +
       (state.filters.topicos ? state.filters.topicos.length : 0);
+
+    const mobileBadge = document.getElementById('mobile-filter-badge');
+    if (mobileBadge) {
+      if (totalActiveCount > 0) {
+        mobileBadge.textContent = totalActiveCount;
+        mobileBadge.style.display = 'inline-flex';
+      } else {
+        mobileBadge.style.display = 'none';
+      }
+    }
 
     if (totalActiveCount >= 2) {
       const clearBtn = document.createElement('button');
@@ -1365,33 +1268,34 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========================================================================
   function renderKPIs() {
     const totalSF = state.rawSementes.length;
-    const artigosCitados = state.rawArticles.filter(a => a.associatedSFs.length > 0).length;
-    const totalArtigos = state.rawArticles.length;
+    const artigosCitados = state.rawArticles.length;
     const totalEixos = new Set(state.rawSementes.map(s => s.eixo).filter(Boolean)).size;
-    const totalRevisadas = state.rawSementes.filter(s => s.revisada).length;
-    const totalAprovadas = state.rawSementes.filter(s => s.statusTipo === 'ok').length;
-    const totalMescladas = state.rawSementes.filter(s => s.statusTipo === 'mesclada').length;
-    const totalDescartadas = state.rawSementes.filter(s => s.statusTipo === 'descartada').length;
-    const totalDivididas = state.rawSementes.filter(s => s.statusTipo === 'dividida').length;
+    const totalTopicos = new Set(state.rawSementes.map(s => s.topico).filter(Boolean)).size;
 
-    document.getElementById('kpi-total-sf').textContent = totalSF;
+    const elTotalSf = document.getElementById('kpi-total-sf');
+    if (elTotalSf) elTotalSf.textContent = totalSF;
+
     const kpiArtCitados = document.getElementById('kpi-artigos-citados');
     if (kpiArtCitados) {
-      kpiArtCitados.textContent = `${artigosCitados}/${totalArtigos}`;
-      kpiArtCitados.title = `${artigosCitados} referências citadas de um total de ${totalArtigos} catalogadas na base`;
-    }
-    document.getElementById('kpi-total-eixos').textContent = totalEixos;
-    
-    const kpiRev = document.getElementById('kpi-revisadas');
-    if (kpiRev) {
-      kpiRev.textContent = totalRevisadas;
-      kpiRev.title = `${totalRevisadas} revisadas (${totalAprovadas} OK, ${totalMescladas} Mesclada, ${totalDivididas} Dividida, ${totalDescartadas} Descartada)`;
+      kpiArtCitados.textContent = artigosCitados;
+      kpiArtCitados.title = `${artigosCitados} referências científicas citadas diretamente nas Sementes de Futuro`;
     }
 
-    document.getElementById('badge-total-sf').textContent = totalSF;
+    const elTotalEixos = document.getElementById('kpi-total-eixos');
+    if (elTotalEixos) elTotalEixos.textContent = totalEixos;
+    
+    const kpiTopicos = document.getElementById('kpi-total-topicos');
+    if (kpiTopicos) {
+      kpiTopicos.textContent = totalTopicos;
+      kpiTopicos.title = `${totalTopicos} tópicos padronizados estruturando as ${totalSF} sementes consolidadas`;
+    }
+
+    const badgeSf = document.getElementById('badge-total-sf');
+    if (badgeSf) badgeSf.textContent = totalSF;
     const badgeMap = document.getElementById('badge-total-map');
     if (badgeMap) badgeMap.textContent = totalSF;
-    document.getElementById('badge-total-scopus').textContent = totalArtigos;
+    const badgeScopus = document.getElementById('badge-total-scopus');
+    if (badgeScopus) badgeScopus.textContent = artigosCitados;
   }
 
   // ========================================================================
@@ -1688,9 +1592,12 @@ document.addEventListener('DOMContentLoaded', () => {
         </td>
       `;
 
-      tr.querySelector('.btn-open-abstract').addEventListener('click', () => {
-        openArticleModal(art.id);
-      });
+      const btnAbstract = tr.querySelector('.btn-open-abstract');
+      if (btnAbstract) {
+        btnAbstract.addEventListener('click', () => {
+          openArticleModal(art.id);
+        });
+      }
 
       tr.querySelectorAll('.badge-id[data-sf-id]').forEach(chip => {
         chip.addEventListener('click', (e) => {
@@ -1719,7 +1626,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const end = Math.min(page * size, total);
 
     document.getElementById('scopus-pagination-info').textContent = 
-      `Exibindo ${start} a ${end} de ${total} artigos`;
+      `Exibindo ${start} a ${end} de ${total} referências`;
 
     document.getElementById('scopus-page-current').textContent = `${page} / ${totalPages}`;
     document.getElementById('scopus-page-prev').disabled = (page <= 1);
@@ -1904,15 +1811,11 @@ document.addEventListener('DOMContentLoaded', () => {
             chip.className = 'matrix-sf-chip';
             chip.setAttribute('data-sf-id', sf.id);
             chip.setAttribute('data-typology', sf.classificacao);
-            chip.setAttribute('data-status-tipo', sf.statusTipo);
-            chip.setAttribute('data-revisada', sf.revisada ? 'true' : 'false');
-            chip.title = `[${sf.id}] ${sf.titulo}\nClassificação: ${sf.classificacao} | Status: ${sf.statusLabel}\nClique para ver detalhes`;
+            chip.title = `[${sf.id}] ${sf.titulo}\nClassificação: ${sf.classificacao} | Tópico: ${sf.topico}\nClique para ver detalhes`;
 
-            const okIcon = sf.statusTipo === 'ok' ? '<i class="fa-solid fa-check chip-ok-icon" title="Revisada (OK)"></i>' : '';
             chip.innerHTML = `
               <span class="chip-dot" style="background-color: ${dotColor};"></span>
               <span>${escapeHtml(sf.id)}</span>
-              ${okIcon}
             `;
 
             chip.addEventListener('click', (e) => {
@@ -1981,7 +1884,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function applyMapFilters() {
     const q = removeAccents((state.mapFilters.search || '').trim());
     const fClass = state.mapFilters.classificacao;
-    const fStatus = state.mapFilters.status;
 
     const chips = document.querySelectorAll('.matrix-sf-chip');
     if (!chips.length) return;
@@ -2009,18 +1911,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (sf.classificacao !== fClass) matches = false;
       }
 
-      // 3. Status Filter
-      if (matches && fStatus) {
-        if (fStatus === 'revisada' && !sf.revisada) matches = false;
-        else if (fStatus === 'ok' && sf.statusTipo !== 'ok') matches = false;
-        else if (fStatus === 'dividida' && sf.statusTipo !== 'dividida') matches = false;
-        else if (fStatus === 'mesclada' && sf.statusTipo !== 'mesclada') matches = false;
-        else if (fStatus === 'pendente' && sf.statusTipo !== 'pendente') matches = false;
-      }
-
       if (matches) {
         chip.classList.remove('is-dimmed');
-        if (q || fClass || fStatus) {
+        if (q || fClass) {
           chip.classList.add('is-highlighted');
         } else {
           chip.classList.remove('is-highlighted');
@@ -2045,19 +1938,16 @@ document.addEventListener('DOMContentLoaded', () => {
   function resetMapFilters() {
     state.mapFilters = {
       search: '',
-      classificacao: '',
-      status: ''
+      classificacao: ''
     };
 
     const mapSearch = document.getElementById('map-search-input');
     const mapSearchClear = document.getElementById('map-search-clear');
     const mapFilterClass = document.getElementById('map-filter-classificacao');
-    const mapFilterStatus = document.getElementById('map-filter-status');
 
     if (mapSearch) mapSearch.value = '';
     if (mapSearchClear) mapSearchClear.style.display = 'none';
     if (mapFilterClass) mapFilterClass.value = '';
-    if (mapFilterStatus) mapFilterStatus.value = '';
 
     document.querySelectorAll('.map-legend-item').forEach(item => item.classList.remove('active'));
 
@@ -2080,14 +1970,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typEl) {
       typEl.textContent = sf.classificacao;
       typEl.className = `badge-typology ${cleanBadgeClass(sf.classificacao)}`;
-    }
-
-    const statusEl = document.getElementById('modal-sf-status');
-    if (statusEl) {
-      statusEl.textContent = sf.statusLabel;
-      statusEl.style.backgroundColor = sf.statusTipo === 'ok' ? 'rgba(16, 185, 129, 0.12)' : 'rgba(148, 163, 184, 0.12)';
-      statusEl.style.color = sf.statusTipo === 'ok' ? '#10b981' : 'var(--text-muted)';
-      statusEl.style.borderColor = sf.statusTipo === 'ok' ? 'rgba(16, 185, 129, 0.28)' : 'rgba(148, 163, 184, 0.28)';
     }
 
     const eixoEl = document.getElementById('modal-sf-eixo');
@@ -2246,39 +2128,76 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    // Mobile Drawer de Filtros
+    const btnMobileFilters = document.getElementById('btn-mobile-filter-toggle');
+    const btnCloseMobileFilters = document.getElementById('btn-close-mobile-filters');
+    const btnApplyMobileFilters = document.getElementById('btn-mobile-apply-filters');
+    const sidebar = document.getElementById('sf-filters-sidebar');
+    const backdrop = document.getElementById('sidebar-backdrop');
+
+    function openMobileFilters() {
+      if (sidebar) sidebar.classList.add('mobile-open');
+      if (backdrop) backdrop.classList.add('active');
+      document.body.classList.add('mobile-drawer-open');
+    }
+
+    function closeMobileFilters() {
+      if (sidebar) sidebar.classList.remove('mobile-open');
+      if (backdrop) backdrop.classList.remove('active');
+      document.body.classList.remove('mobile-drawer-open');
+    }
+
+    if (btnMobileFilters) btnMobileFilters.addEventListener('click', openMobileFilters);
+    if (btnCloseMobileFilters) btnCloseMobileFilters.addEventListener('click', closeMobileFilters);
+    if (btnApplyMobileFilters) btnApplyMobileFilters.addEventListener('click', closeMobileFilters);
+    if (backdrop) backdrop.addEventListener('click', closeMobileFilters);
+
     // 4. SF List Sorting Selector
-    document.getElementById('sf-list-sort').addEventListener('change', (e) => {
-      state.listSort = e.target.value;
-      sortFilteredSementes();
-      renderSfInboxList();
-    });
+    const sfListSort = document.getElementById('sf-list-sort');
+    if (sfListSort) {
+      sfListSort.addEventListener('change', (e) => {
+        state.listSort = e.target.value;
+        sortFilteredSementes();
+        renderSfInboxList();
+      });
+    }
 
     // 5. Scopus Filters Handlers
     const scopusSearchInput = document.getElementById('scopus-search-input');
     const scopusSearchClear = document.getElementById('scopus-search-clear');
 
-    scopusSearchInput.addEventListener('input', (e) => {
-      state.scopusFilters.search = e.target.value;
-      scopusSearchClear.style.display = state.scopusFilters.search ? 'block' : 'none';
-      debouncedApplyScopusFilters();
-    });
+    if (scopusSearchInput) {
+      scopusSearchInput.addEventListener('input', (e) => {
+        state.scopusFilters.search = e.target.value;
+        if (scopusSearchClear) scopusSearchClear.style.display = state.scopusFilters.search ? 'block' : 'none';
+        debouncedApplyScopusFilters();
+      });
+    }
 
-    scopusSearchClear.addEventListener('click', () => {
-      scopusSearchInput.value = '';
-      state.scopusFilters.search = '';
-      scopusSearchClear.style.display = 'none';
-      applyScopusFilters();
-    });
+    if (scopusSearchClear) {
+      scopusSearchClear.addEventListener('click', () => {
+        if (scopusSearchInput) scopusSearchInput.value = '';
+        state.scopusFilters.search = '';
+        scopusSearchClear.style.display = 'none';
+        applyScopusFilters();
+      });
+    }
 
-    document.getElementById('scopus-filter-relation').addEventListener('change', (e) => {
-      state.scopusFilters.relation = e.target.value;
-      applyScopusFilters();
-    });
+    const scopusFilterRel = document.getElementById('scopus-filter-relation');
+    if (scopusFilterRel) {
+      scopusFilterRel.addEventListener('change', (e) => {
+        state.scopusFilters.relation = e.target.value;
+        applyScopusFilters();
+      });
+    }
 
-    document.getElementById('scopus-filter-year').addEventListener('change', (e) => {
-      state.scopusFilters.year = e.target.value;
-      applyScopusFilters();
-    });
+    const scopusFilterYear = document.getElementById('scopus-filter-year');
+    if (scopusFilterYear) {
+      scopusFilterYear.addEventListener('change', (e) => {
+        state.scopusFilters.year = e.target.value;
+        applyScopusFilters();
+      });
+    }
 
     document.getElementById('scopus-page-size').addEventListener('change', (e) => {
       state.paginationScopus.pageSize = e.target.value;
@@ -2320,7 +2239,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const mapSearchInput = document.getElementById('map-search-input');
     const mapSearchClear = document.getElementById('map-search-clear');
     const mapFilterClass = document.getElementById('map-filter-classificacao');
-    const mapFilterStatus = document.getElementById('map-filter-status');
     const btnResetMap = document.getElementById('map-btn-reset-filters');
 
     if (mapSearchInput) {
@@ -2343,13 +2261,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mapFilterClass) {
       mapFilterClass.addEventListener('change', (e) => {
         state.mapFilters.classificacao = e.target.value;
-        applyMapFilters();
-      });
-    }
-
-    if (mapFilterStatus) {
-      mapFilterStatus.addEventListener('change', (e) => {
-        state.mapFilters.status = e.target.value;
         applyMapFilters();
       });
     }
@@ -2454,7 +2365,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function resetSfFilters() {
     state.filters = {
       search: '',
-      status: [],
       eixos: [],
       classificacoes: [],
       pestels: [],
@@ -2472,9 +2382,12 @@ document.addEventListener('DOMContentLoaded', () => {
       lbl.classList.remove('is-checked');
     });
 
-    ['status', 'eixo', 'classificacao', 'pestel', 'topico'].forEach(group => {
+    ['eixo', 'classificacao', 'pestel', 'topico'].forEach(group => {
       updateActiveCountBadge(group, 0);
     });
+
+    const mobileBadge = document.getElementById('mobile-filter-badge');
+    if (mobileBadge) mobileBadge.style.display = 'none';
 
     applySfFilters();
   }
@@ -2720,6 +2633,7 @@ document.addEventListener('DOMContentLoaded', () => {
       overlay.style.pointerEvents = 'none';
       setTimeout(() => {
         overlay.style.visibility = 'hidden';
+        overlay.style.display = 'none';
       }, 350);
     }
   }
@@ -2740,6 +2654,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const debouncedApplySfFilters = debounce(() => applySfFilters(), 250);
   const debouncedApplyScopusFilters = debounce(() => applyScopusFilters(), 250);
   const debouncedApplyMapFilters = debounce(() => applyMapFilters(), 200);
+
+  // Temporizador de segurança: garante que a tela de carregamento nunca fique travada
+  setTimeout(() => {
+    hideLoadingOverlay();
+  }, 2500);
 
   // Execute initialization
   init();
