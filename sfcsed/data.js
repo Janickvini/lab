@@ -5,13 +5,13 @@ const sfData = {
     "totalSF": 78,
     "totalArticles": 340,
     "totalArticlesCited": 312,
-    "totalRevisadas": 65,
-    "totalAprovadas": 51,
+    "totalRevisadas": 69,
+    "totalAprovadas": 52,
     "totalMescladas": 1,
-    "totalDescartadas": 9,
+    "totalDescartadas": 12,
     "totalDivididas": 4,
-    "totalPendentes": 13,
-    "generatedAt": "26/10/2026 21:44:52"
+    "totalPendentes": 9,
+    "generatedAt": "26/10/2026 22:39:27"
   },
   "sementes": [
     {
@@ -237,7 +237,7 @@ const sfData = {
       "titulo": "Superação do EAD Massificado de Baixo Custo: Profissionalização, Qualidade Multidimensional e Abordagem Institucional Integrada (Whole-Institution)",
       "descricao": "Desgaste e perda progressiva de eficácia dos modelos de educação a distância puramente transmissivos e de baixo investimento pedagógico, fenômeno historicamente evidenciado pelo rápido ciclo de obsolescência de formatos massificados e pelas elevadas taxas de abandono discente diante de repositórios estáticos de conteúdo (117, 214). Investigações empíricas recentes sobre a experiência estudantil em contextos de expansão digital revelam que a permanência e a fidelização discente não decorrem do mero acesso à plataforma tecnológica, mas de uma percepção de qualidade condicionada a múltiplos fatores, como suporte acadêmico contínuo e rápido, mediação docente ativa, atenção institucional a desigualdades técnicas, plataformas intuitivas e relevância do currículo (103, 240, 353). Como sinal emergente dessa dinâmica, observa-se a transição de ações remotas fragmentadas para abordagens institucionais sistêmicas (whole-institution approach), acompanhadas pelo avanço de formatos híbridos de aprendizagem que registram resultados pedagógicos superiores ao combinarem flexibilidade digital com momentos deliberados de interação orientada (84, 118, 187). Esse conjunto de fatores aponta para uma potencial bifurcação de trajetórias no setor: de um lado, a vulnerabilidade e o desgaste reputacional de instituições que sustentam sua oferta exclusivamente no corte de custos e na entrega passiva; de outro, a consolidação de ecossistemas digitais de alta densidade relacional, nos quais a sustentabilidade do modelo decorre do equilíbrio entre arquitetura tecnológica avançada e presença humana qualificada (84, 103, 187).\"",
       "descricaoApa": "Desgaste e perda progressiva de eficácia dos modelos de educação a distância puramente transmissivos e de baixo investimento pedagógico, fenômeno historicamente evidenciado pelo rápido ciclo de obsolescência de formatos massificados e pelas elevadas taxas de abandono discente diante de repositórios estáticos de conteúdo (Prasetya et al., 2019; Wang & Ellington, 2022). Investigações empíricas recentes sobre a experiência estudantil em contextos de expansão digital revelam que a permanência e a fidelização discente não decorrem do mero acesso à plataforma tecnológica, mas de uma percepção de qualidade condicionada a múltiplos fatores, como suporte acadêmico contínuo e rápido, mediação docente ativa, atenção institucional a desigualdades técnicas, plataformas intuitivas e relevância do currículo (Le et al., 2026; Nguyen-Anh et al., 2023; Upadhayay et al., 2022). Já se pode observar episódios de transição de ações remotas fragmentadas para abordagens institucionais sistêmicas (whole-institution approach), acompanhadas pelo avanço de formatos híbridos de aprendizagem que registram resultados pedagógicos superiores ao combinarem flexibilidade digital com momentos deliberados de interação orientada (Filback et al., 2026; Thinh, 2026; Yancey, 2026). Esse conjunto de fatores aponta para uma potencial bifurcação de trajetórias no setor: de um lado, a vulnerabilidade e o desgaste reputacional de instituições que sustentam sua oferta exclusivamente no corte de custos e na entrega passiva; de outro, a consolidação de ecossistemas digitais de alta densidade relacional, nos quais a sustentabilidade do modelo decorre do equilíbrio entre arquitetura tecnológica avançada e presença humana qualificada (Filback et al., 2026; Le et al., 2026; Yancey, 2026).",
-      "classificacao": "Sinal Fraco",
+      "classificacao": "Incerteza",
       "pestel": [
         "Econômico",
         "Tecnológico",
@@ -1571,7 +1571,7 @@ const sfData = {
       "id": "SF39",
       "fonte": "Scopus",
       "topico": "Gestão Institucional, Análise de Dados e Inteligência Operacional",
-      "titulo": "Sem título",
+      "titulo": "Racionalização e Retrofit de Ativos Físicos frente à Ociosidade Estrutural de Campi Universitários",
       "descricao": "A migração de contingentes expressivos de estudantes para modalidades a distância e híbridas acentuou uma ociosidade física sem precedentes em prédios universitários convencionais e salas de aula monouso (183). Essa contração de demanda presencial transforma a infraestrutura física de ativo estratégico em centro de custos fixos desproporcionais, forçando as instituições multicampi a reavaliarem a função do espaço construído (183). Como resposta a esse cenário, dissemina-se a utilização de metodologias e ferramentas analíticas de capacidade adaptativa predial (como a metodologia ACAT), orientadas a mensurar a flexibilidade e o potencial de reuso adaptativo das edificações existentes (249). Esse movimento consolida uma tendência de racionalização imobiliária, combinando a desmobilização de imóveis alugados excedentes, a redução da pegada predial por aluno e o retrofit de edifícios próprios para convertê-los em instalações multiuso, flexíveis e energeticamente eficientes, adaptadas a ecossistemas híbridos de aprendizagem (183, 249).",
       "descricaoApa": "A migração de contingentes expressivos de estudantes para modalidades a distância e híbridas acentuou uma ociosidade física sem precedentes em prédios universitários convencionais e salas de aula monouso (Oginni et al., 2022). Essa contração de demanda presencial transforma a infraestrutura física de ativo estratégico em centro de custos fixos desproporcionais, forçando as instituições multicampi a reavaliarem a função do espaço construído (Oginni et al., 2022). Como resposta a esse cenário, dissemina-se a utilização de metodologias e ferramentas analíticas de capacidade adaptativa predial (como a metodologia ACAT), orientadas a mensurar a flexibilidade e o potencial de reuso adaptativo das edificações existentes (Murray & Coffelt, 2025). Esse movimento consolida uma tendência de racionalização imobiliária, combinando a desmobilização de imóveis alugados excedentes, a redução da pegada predial por aluno e o retrofit de edifícios próprios para convertê-los em instalações multiuso, flexíveis e energeticamente eficientes, adaptadas a ecossistemas híbridos de aprendizagem (Murray & Coffelt, 2025; Oginni et al., 2022).",
       "classificacao": "Tendência",
@@ -1642,9 +1642,9 @@ const sfData = {
       "id": "SF41",
       "fonte": "Scopus",
       "topico": "Mobilidade Estudantil e Internacionalização",
-      "titulo": "Democratização da Internacionalização em Casa (IaH), Aprendizagem Colaborativa Online Internacional (COIL) e Salas de Aula Globais",
-      "descricao": "Reconhecendo que a mobilidade física internacional atende a uma fração elitizada e marginal do alunado (inferior a 2%), as IES avançam na democratização da Internacionalização em Casa (Internationalisation at Home - IaH) (35, 114). A espinha dorsal dessa transformação é o modelo de Aprendizagem Colaborativa Online Internacional (COIL), que conecta turmas de diferentes países em ambientes digitais para a resolução conjunta de projetos interdisciplinares (35, 376). Essa abordagem integra a competência intercultural de forma transversal nos currículos cotidianos, preparando a totalidade dos estudantes para a atuação profissional em ecossistemas globais sem exigir custos proibitivos de viagem (90).",
-      "descricaoApa": "N/A",
+      "titulo": "Democratização da Internacionalização em Casa (IaH), Aprendizagem Colaborativa Online (COIL) e Salas de Aula Globais",
+      "descricao": "Diante da constatação empírica de que a mobilidade acadêmica física internacional beneficia historicamente uma parcela elitizada e marginal do alunado (inferior a 2% no Brasil), as instituições de ensino superior aceleram a adoção de estratégias de Internacionalização em Casa (Internationalisation at Home, IaH) apoiadas em tecnologias digitais (35, 114). A espinha dorsal dessa transição é a disseminação de modelos de Aprendizagem Colaborativa Online Internacional (Collaborative Online International Learning, COIL), nos quais docentes e turmas de universidades de diferentes países cocriam projetos interdisciplinares e resolvem desafios práticos compartilhados em salas de aula virtuais integradas (35, 376). No contexto de economias emergentes como o Brasil, essa modalidade rompe as barreiras socioeconômicas do intercâmbio físico tradicional, democratizando o desenvolvimento de competências interculturais e comunicacionais diretamente na matriz curricular ordinária de graduação (90, 114). Essa integração transversal prepara a totalidade dos estudantes para atuar em ecossistemas de trabalho globalizados e equipes remotas multinacionais, sem impor os custos proibitivos de passagens aéreas e manutenção no exterior (35, 90).",
+      "descricaoApa": "Diante da constatação empírica de que a mobilidade acadêmica física internacional beneficia historicamente uma parcela elitizada e marginal do alunado (inferior a 2% no Brasil), as instituições de ensino superior aceleram a adoção de estratégias de Internacionalização em Casa (Internationalisation at Home, IaH) apoiadas em tecnologias digitais (Chasi, 2022; Woicolesco et al., 2022). A espinha dorsal dessa transição é a disseminação de modelos de Aprendizagem Colaborativa Online Internacional (Collaborative Online International Learning, COIL), nos quais docentes e turmas de universidades de diferentes países cocriam projetos interdisciplinares e resolvem desafios práticos compartilhados em salas de aula virtuais integradas (Chasi, 2022; Miller et al., 2021). No contexto de economias emergentes como o Brasil, essa modalidade rompe as barreiras socioeconômicas do intercâmbio físico tradicional, democratizando o desenvolvimento de competências interculturais e comunicacionais diretamente na matriz curricular ordinária de graduação (Hofmeyr, 2022; Woicolesco et al., 2022). Essa integração transversal prepara a totalidade dos estudantes para atuar em ecossistemas de trabalho globalizados e equipes remotas multinacionais, sem impor os custos proibitivos de passagens aéreas e manutenção no exterior (Chasi, 2022; Hofmeyr, 2022).",
       "classificacao": "Tendência",
       "pestel": [
         "Social",
@@ -1660,12 +1660,12 @@ const sfData = {
         376
       ],
       "referenciasResumidas": "[35] Chasi S. (2022) - Re-imagining International Higher Education Partnerships in the Aftermath of COVID-19 | [90] Hofmeyr A.S. (2022) - Incorporating Intercultural Competence into EFL Classrooms: The Case of Japanese Higher Education Institutions | [114] Woicolesco V.G. (2022) - COVID-19 and the crisis in the internationalization of higher education in emerging contexts | [376] Miller E. (2021) - Industry 4.0 and International Collaborative Online Learning in a Higher Education Course on Machine Learning",
-      "implicacoes": "Inclusão obrigatória de disciplinas com módulos COIL em 100% dos cursos de graduação, permitindo que estudantes das periferias brasileiras trabalhem em equipes virtuais internacionais durante a graduação, gerando diferencial competitivo de empregabilidade.",
+      "implicacoes": "Para as mantenedoras do ensino superior privado no Brasil, cujas bases discentes pertencem majoritariamente às classes B, C e D, o intercâmbio físico no exterior nunca foi um produto escalável ou economicamente viável para a massa de alunos. A incorporação estruturada de módulos COIL e salas de aula virtuais compartilhadas permite aos grupos educacionais democratizar a vivência internacional como um forte atributo comercial de captação e diferenciação curricular, sem elevar despesas operacionais expressivas. Recomenda-se a formalização de convênios multilaterais com IES parceiras da América Latina, de países de língua portuguesa e de outras regiões emergentes, integrando projetos práticos internacionais em disciplinas da graduação e em atividades de extensão universitária curricularizada. Essa política viabiliza que estudantes trabalhadores e de polos remotos vivenciem interações multiculturais e fortaleçam seus currículos, elevando a percepção de empregabilidade perante o mercado e blindando a instituição contra a comoditização do diploma.",
       "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
+      "revisada": true,
+      "statusTipo": "ok",
+      "statusRevisao": "OK",
+      "statusLabel": "Revisada (OK)",
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
@@ -1679,7 +1679,7 @@ const sfData = {
       "topico": "Mobilidade Estudantil e Internacionalização",
       "titulo": "Diplomacia Acadêmica, Harmonização Transfronteiriça e Espaços Educacionais Regionais Comuns",
       "descricao": "A internacionalização da educação superior consolida-se como vetor de diplomacia acadêmica e construção de espaços educativos transfronteiriços integrados, inspirados pela trajetória e expansão do projeto europeu (184, 235). Essa cooperação exige acordos sólidos de interoperabilidade curricular, créditos equivalentes e circulação recíproca de pesquisas (167, 298), enfrentando os desafios de difusão de políticas em contextos nacionais diversos (53, 82, 100). O movimento precisa, simultaneamente, negociar instabilidades e rupturas geopolíticas recentes (como os desdobramentos do Brexit), reafirmando o papel da colaboração acadêmica como ponte diplomática indispensável em tempos de crise (374).",
-      "descricaoApa": "N/A",
+      "descricaoApa": "A internacionalização da educação superior consolida-se como vetor de diplomacia acadêmica e construção de espaços educativos transfronteiriços integrados, inspirados pela trajetória e expansão do projeto europeu (184, 235). Essa cooperação exige acordos sólidos de interoperabilidade curricular, créditos equivalentes e circulação recíproca de pesquisas (167, 298), enfrentando os desafios de difusão de políticas em contextos nacionais diversos (53, 82, 100). O movimento precisa, simultaneamente, negociar instabilidades e rupturas geopolíticas recentes (como os desdobramentos do Brexit), reafirmando o papel da colaboração acadêmica como ponte diplomática indispensável em tempos de crise (374).",
       "classificacao": "Tendência",
       "pestel": [
         "Político",
@@ -1701,11 +1701,11 @@ const sfData = {
       "referenciasResumidas": "[53] Woldegiorgis E.T. (2018) - Policy Travel in Regionalisation of Higher Education: The Case of Bologna Process in Africa | [82] Perez-Encinas A. (2018) - A Collaborative Approach in the Internationalisation Cycle of Higher Education Institutions | [100] Crăciun D. (2018) - National Policies for Higher Education Internationalization: A Global Comparative Perspective | [167] Kushnir I. (2025) - European Cooperation in Higher Education and the Evolving Mission of the European Project (in the Early 2020s) | [184] Kushnir I. (2025) - Germanyʼs Membership in the European Higher Education Area: Leading Europe | ... (+3 artigos)",
       "implicacoes": "Liderança ativa de grupos privados brasileiros na consolidação do Espaço Latino-Americano de Educação Superior (ENLACES/Mercosul Educacional), viabilizando diplomas automáticos e mobilidade facilitada de profissionais na região.",
       "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
-      "justificativa": "",
+      "revisada": true,
+      "statusTipo": "descartada",
+      "statusRevisao": "Descartada",
+      "statusLabel": "Revisada (Descartada)",
+      "justificativa": "Diplomacia acadêmica está fora do escopo do estudo",
       "fusaoId": "",
       "divisaoIds": [],
       "origemDivisao": "",
@@ -1831,7 +1831,7 @@ const sfData = {
       "incorporadas": []
     },
     {
-      "id": "SF45",
+      "id": "SF45a",
       "fonte": "Scopus",
       "topico": "Sustentabilidade, Mudanças Climáticas e ESG",
       "titulo": "Institucionalização da Governança Socioambiental (ESG), Métricas ODS e Liderança Estratégica",
@@ -1862,14 +1862,14 @@ const sfData = {
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
-      "origemDivisao": "",
+      "origemDivisao": "SF45",
       "vinculo": [
         "SF45"
       ],
       "incorporadas": []
     },
     {
-      "id": "SF45",
+      "id": "SF45b",
       "fonte": "Scopus",
       "topico": "Sustentabilidade, Mudanças Climáticas e ESG",
       "titulo": "Green Campuses - Gestão Ambiental da Infraestrutura, Métricas Operacionais e Práticas Socioambientais",
@@ -1897,7 +1897,7 @@ const sfData = {
       "justificativa": "",
       "fusaoId": "",
       "divisaoIds": [],
-      "origemDivisao": "",
+      "origemDivisao": "SF45",
       "vinculo": [
         "SF45"
       ],
@@ -2028,11 +2028,11 @@ const sfData = {
       "referenciasResumidas": "[70] Bakry S.H. (2018) - Innovation in Higher Education: Towards Enhancing Sustainable Development | [193] Matura A. (2026) - Driving environmental stewardship: Exploring the impact of green HRM on voluntary green behaviors in higher education institutions | [296] Faitani N.G. (2023) - The Contribution of the Circular Economy to the Fulfillment of the 2030 Agenda in Higher Education Institutions",
       "implicacoes": "Economia expressiva de OPEX por meio de eficiência energética, lixo zero em cantinas e instalações prediais, e consolidação de uma cultura interna de sustentabilidade corporativa que engaja funcionários e estudantes.",
       "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
-      "justificativa": "",
+      "revisada": true,
+      "statusTipo": "descartada",
+      "statusRevisao": "Descartada",
+      "statusLabel": "Revisada (Descartada)",
+      "justificativa": "Tema já contemplado na SF45b",
       "fusaoId": "",
       "divisaoIds": [],
       "origemDivisao": "",
@@ -2258,7 +2258,7 @@ const sfData = {
       "titulo": "Dogmatização Religiosa no Ensino Superior e Emergência de um Terceiro Eixo na Disputa pela Formação Acadêmica",
       "descricao": "A análise clássica sobre a governança e as políticas do ensino superior estruturou-se historicamente sobre uma arena de disputa bidimensional entre o controle estatal e as forças do mercado econômico (328, 370). Experiências internacionais, entretanto, registram que esses não são os únicos eixos que podem disputar a agenda do ensino superior, descrevendo a dogmatização religiosa e a disputa pelo conceito da pessoa educada (educated person) (370). Esse fenômeno projeta uma orientação religiosa que busca redefinir as finalidades da universidade, subordinando currículos, metodologias científicas e estruturas acadêmicas a fundamentos morais, doutrinários e teológicos (370). Ao impor uma visão confessional e ideológica sobre a produção do conhecimento, essa dinâmica entra em choque frontal tanto com a racionalidade laica e universalista da ciência moderna quanto com as próprias exigências de inovação e flexibilidade do mercado capitalista (370). A emergência desse terceiro eixo rompe com o paradigma iluminista da universidade secular, instaurando uma instabilidade sistêmica profunda e uma contradição de valores entre o imperativo de formar graduados empreendedores e competitivos e a exigência de doutrinação moral e submissão ideológica a dogmas de fé (370).",
       "descricaoApa": "A análise clássica sobre a governança e as políticas do ensino superior estruturou-se historicamente sobre uma arena de disputa bidimensional entre o controle estatal e as forças do mercado econômico (Bertolin, 2016; Sabouri et al., 2026). Experiências internacionais, entretanto, registram que esses não são os únicos eixos que podem disputar a agenda do ensino superior, descrevendo a dogmatização religiosa e a disputa pelo conceito da pessoa educada (educated person) (Sabouri et al., 2026). Esse fenômeno projeta uma orientação religiosa que busca redefinir as finalidades da universidade, subordinando currículos, metodologias científicas e estruturas acadêmicas a fundamentos morais, doutrinários e teológicos (Sabouri et al., 2026). Ao impor uma visão confessional e ideológica sobre a produção do conhecimento, essa dinâmica entra em choque frontal tanto com a racionalidade laica e universalista da ciência moderna quanto com as próprias exigências de inovação e flexibilidade do mercado capitalista (Sabouri et al., 2026). A emergência desse terceiro eixo rompe com o paradigma iluminista da universidade secular, instaurando uma instabilidade sistêmica profunda e uma contradição de valores entre o imperativo de formar graduados empreendedores e competitivos e a exigência de doutrinação moral e submissão ideológica a dogmas de fé (Sabouri et al., 2026).",
-      "classificacao": "Wild Card",
+      "classificacao": "Incerteza",
       "pestel": [
         "Político",
         "Social",
@@ -2342,11 +2342,11 @@ const sfData = {
       "referenciasResumidas": "[125] Land M. (2026) - Transformative Education and the Earth Charter: Enabling Sustainable Development Through Transformative Learning in Higher Education | [169] Gayá P. (2017) - Carpe the academy: Dismantling higher education and prefiguring critical utopias through action research | [201] Murphy J.C. (2025) - WORLDMAKING AND LEADING FROM THE MIDDLE: Collaborative Leadership in Higher Education | [336] Andersson Å. (2025) - Youth work pedagogy in higher education and the importance of not-knowing",
       "implicacoes": "Laboratórios de Inovação Social e Cívica integrando extensão universitária obrigatória (10% da carga horária no Brasil) à solução participativa de dilemas urbanos reais com prefeituras e comunidades periféricas.",
       "indicadores": "",
-      "revisada": false,
-      "statusTipo": "pendente",
-      "statusRevisao": "Em revisão",
-      "statusLabel": "Em revisão",
-      "justificativa": "",
+      "revisada": true,
+      "statusTipo": "descartada",
+      "statusRevisao": "Descartada",
+      "statusLabel": "Revisada (Descartada)",
+      "justificativa": "Não comunica SF (trata de metodologias de ensino)",
       "fusaoId": "",
       "divisaoIds": [],
       "origemDivisao": "",
@@ -2728,7 +2728,7 @@ const sfData = {
       "titulo": "Reconfiguração Demográfica da Demanda — Adultização Discente e Bifurcação entre Presencial e EAD Flexível",
       "descricao": "A combinação entre a contínua expansão da educação a distância e a retração moderada dos cursos de graduação presenciais evidencia uma reconfiguração demográfica e funcional da demanda pelo ensino superior privado, marcada pela crescente hegemonia de estudantes adultos (381). Ao contrário do público jovem recém-egresso do ensino médio, esse contingente ingressa nas IES pressionado pela necessidade de conciliar estudos com jornadas de trabalho e encargos familiares (381).",
       "descricaoApa": "A combinação entre a contínua expansão da educação a distância e a retração moderada dos cursos de graduação presenciais evidencia uma reconfiguração demográfica e funcional da demanda pelo ensino superior privado, marcada pela crescente hegemonia de estudantes adultos (SEMESP, 2026, p. 7). Ao contrário do público jovem recém-egresso do ensino médio, esse contingente ingressa nas IES pressionado pela necessidade de conciliar estudos com jornadas de trabalho e encargos familiares.",
-      "classificacao": "Incerteza",
+      "classificacao": "Tendência",
       "pestel": [
         "Social",
         "Econômico",
@@ -3163,7 +3163,8 @@ const sfData = {
       "indexKeywords": "Education computing; Sustainable development; Teaching; Back up; Colleges and universities; Higher education institutions; Higher education system; Policy making; Social support; Student supports; Student teachers; Teachers' support; World class; Students",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45"
+        "SF45",
+        "SF45a"
       ]
     },
     {
@@ -3963,7 +3964,8 @@ const sfData = {
       "indexKeywords": "Curricula; Economics; Research and development management; Sustainable city; Sustainable development goals; Civil society; Community OR; Development practices; Economic growths; Education for sustainable development; High educations; Higher education institutions; Pharmaceutical research; Public and private sector; Self-organised; Sustainable development",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45"
+        "SF45",
+        "SF45a"
       ]
     },
     {
@@ -4033,7 +4035,8 @@ const sfData = {
       "indexKeywords": "Decision making; Engineering education; Sustainable development goals; Basic principles; Decisions makings; Global sustainability; Higher education institutions; Principles of sustainability; Renewable energies; Sustainable practices; Sustainable technology; United nation SDG; United Nations; Green development",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45"
+        "SF45",
+        "SF45a"
       ]
     },
     {
@@ -4676,7 +4679,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45"
+        "SF45",
+        "SF45b"
       ]
     },
     {
@@ -5224,7 +5228,8 @@ const sfData = {
       "indexKeywords": "",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45"
+        "SF45",
+        "SF45b"
       ]
     },
     {
@@ -7492,7 +7497,8 @@ const sfData = {
       "indexKeywords": "Economics; Environmental protection; Sustainable development goals; 5ws + 1h; Economic growths; Emerging economies; High educations; Higher education institutions; Quality education; Social equity; Sustainable development goal 4; Viet Nam; Vietnamese; Sustainable development",
       "documentType": "Book chapter",
       "associatedSFs": [
-        "SF45"
+        "SF45",
+        "SF45a"
       ]
     },
     {
@@ -7749,7 +7755,8 @@ const sfData = {
       "indexKeywords": "environmental planning; higher education; sustainable development; United Nations Conference on Environment and Development; university sector; conceptual framework; environmental economics; future prospect; socioeconomic impact; trend analysis; United Nations",
       "documentType": "Article",
       "associatedSFs": [
-        "SF45"
+        "SF45",
+        "SF45a"
       ]
     },
     {
