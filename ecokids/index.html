@@ -58,13 +58,18 @@
     }
 
     .pop-in {
-      animation: popIn 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      animation: popIn 0.3s ease-out;
     }
 
     @keyframes popIn {
-      0% { transform: scale(0.6); opacity: 0; }
-      80% { transform: scale(1.05); }
+      0% { transform: scale(0.97); opacity: 0.9; }
       100% { transform: scale(1); opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pop-in {
+        animation: none !important;
+      }
     }
 
     .game-canvas-container {
@@ -77,8 +82,8 @@
       margin: 0 auto;
       border-radius: 0.75rem;
       overflow: hidden;
-      background-color: #0f172a;
-      box-shadow: 0 8px 0 rgba(15, 23, 42, 0.28);
+      background-color: #f8fafc;
+      box-shadow: 0 8px 16px -4px rgba(15, 23, 42, 0.12);
       flex-shrink: 0;
     }
 
@@ -118,22 +123,30 @@
       box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
     }
 
-    /* Diploma para impressão */
+    /* Diploma para impressão em cores */
     @media print {
+      body {
+        background: #ffffff !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
       body * {
         visibility: hidden;
       }
       #printableDiploma, #printableDiploma * {
-        visibility: visible;
+        visibility: visible !important;
       }
       #printableDiploma {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100vw;
-        height: 100vh;
-        margin: 0;
-        border: 12px double #15803d;
+        display: block !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        border: 8px solid #16a34a !important;
+        box-shadow: none !important;
+        page-break-inside: avoid !important;
       }
     }
   </style>
@@ -215,8 +228,16 @@
       </h2>
 
       <p class="text-slate-600 mt-3 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-        Você sabia que nossa cidade gera <b>650 toneladas de lixo por dia</b>, mas menos de 1% é reciclado? Ajude a salvar o <b>Aquífero Guarani</b> e apoie a <b>Cooperativa Mãos Dadas</b>!
+        Você sabia que nossa cidade gera <b>650 toneladas de lixo por dia</b>, mas menos de 1% é reciclado? Ajude a salvar o <b>Aquífero Guarani</b> e apoie a <b>Cooperativa de Reciclagem</b>!
       </p>
+
+      <!-- ROTEIRO DAS 4 FASES -->
+      <div class="mt-4 flex flex-wrap items-center justify-center gap-2 max-w-xl mx-auto">
+        <span class="bg-emerald-50 text-emerald-800 text-[11px] font-black px-2.5 py-1 rounded-full border border-emerald-200">🌱 1. Quintal Limpo</span>
+        <span class="bg-sky-50 text-sky-800 text-[11px] font-black px-2.5 py-1 rounded-full border border-sky-200">🚲 2. Eco-Bike</span>
+        <span class="bg-cyan-50 text-cyan-800 text-[11px] font-black px-2.5 py-1 rounded-full border border-cyan-200">💧 3. Aquífero</span>
+        <span class="bg-violet-50 text-violet-800 text-[11px] font-black px-2.5 py-1 rounded-full border border-violet-200">🧠 4. Eco-Quiz</span>
+      </div>
 
       <!-- ESCOLHA DO AVATAR (4 PERSONAGENS REPRESENTATIVOS) -->
       <div class="mt-8 bg-slate-50 p-6 rounded-3xl border-2 border-emerald-200 max-w-3xl mx-auto">
@@ -293,7 +314,7 @@
       <!-- CABEÇALHO DA FASE 1 COMPACTO -->
       <div class="w-full mb-2 flex items-center justify-between gap-2.5 bg-white/95 backdrop-blur px-3.5 py-1.5 md:py-2 rounded-xl shadow-sm border border-emerald-300">
         <div class="flex items-center gap-2 flex-wrap min-w-0">
-          <span class="bg-emerald-100 text-emerald-900 text-[11px] font-black uppercase px-2.5 py-0.5 rounded-full border border-emerald-200 shrink-0">Fase 1 • Quintal</span>
+          <span class="bg-emerald-100 text-emerald-900 text-[11px] font-black uppercase px-2.5 py-0.5 rounded-full border border-emerald-200 shrink-0">Fase 1/4 • Quintal</span>
           <h2 class="text-sm md:text-base font-black text-emerald-950 leading-tight truncate">O Quintal Limpo: Coleta e Separação</h2>
           <span class="hidden lg:inline text-xs text-slate-500 font-semibold">• Leve cada resíduo até a lixeira correta</span>
         </div>
@@ -331,11 +352,11 @@
             <!-- D-PAD VIRTUAL ERGONÔMICO -->
             <div class="grid grid-cols-3 gap-1.5 w-36 h-20 shrink-0">
               <div></div>
-              <button onpointerdown="startMove('up')" onpointerup="stopMove('up')" onpointerleave="stopMove('up')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-emerald-600">⬆️</button>
+              <button onpointerdown="startMove('up')" onpointerup="stopMove('up')" onpointerleave="stopMove('up')" onpointercancel="stopMove('up')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-emerald-600">⬆️</button>
               <div></div>
-              <button onpointerdown="startMove('left')" onpointerup="stopMove('left')" onpointerleave="stopMove('left')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-emerald-600">⬅️</button>
-              <button onpointerdown="startMove('down')" onpointerup="stopMove('down')" onpointerleave="stopMove('down')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-emerald-600">⬇️</button>
-              <button onpointerdown="startMove('right')" onpointerup="stopMove('right')" onpointerleave="stopMove('right')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-emerald-600">➡️</button>
+              <button onpointerdown="startMove('left')" onpointerup="stopMove('left')" onpointerleave="stopMove('left')" onpointercancel="stopMove('left')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-emerald-600">⬅️</button>
+              <button onpointerdown="startMove('down')" onpointerup="stopMove('down')" onpointerleave="stopMove('down')" onpointercancel="stopMove('down')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-emerald-600">⬇️</button>
+              <button onpointerdown="startMove('right')" onpointerup="stopMove('right')" onpointerleave="stopMove('right')" onpointercancel="stopMove('right')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-emerald-600">➡️</button>
             </div>
 
             <!-- BOTÃO DE AÇÃO COMPACTO -->
@@ -406,7 +427,7 @@
 
             <!-- 3. Verde: Vidro -->
             <div id="vsCard-vidro" onclick="onVsCardClick('vidro')" class="vs-bin-card cursor-pointer transition-all duration-300 bg-emerald-50/90 hover:scale-[1.02] border-2 border-emerald-400 rounded-2xl p-2.5 flex items-start gap-2.5 relative">
-              <span class="text-2xl shrink-0">🫙</span>
+              <span class="text-2xl shrink-0">🍯</span>
               <div class="flex-1 min-w-0">
                 <div class="flex items-center justify-between gap-1 h-5">
                   <span class="font-black text-xs md:text-sm text-emerald-900 truncate">Verde • Vidro</span>
@@ -465,62 +486,10 @@
           <!-- Dica Local Ribeirão Preto -->
           <div class="mt-1 bg-emerald-50 p-3 rounded-2xl border border-emerald-300 text-xs font-bold text-emerald-900 flex items-center gap-2.5">
             <span class="text-2xl shrink-0">🏙️</span>
-            <span class="leading-snug">Em Ribeirão Preto, a reciclagem abastece a <b>Cooperativa Mãos Dadas</b> e protege as águas puras do <b>Aquífero Guarani</b>!</span>
+            <span class="leading-snug">Em Ribeirão Preto, a reciclagem abastece as <b>Cooperativas de Reciclagem</b> e protege as águas puras do <b>Aquífero Guarani</b>!</span>
           </div>
         </aside>
 
-      </div>
-
-      <!-- MODAL EDUCATIVO DO ACERTO (QUADRINHO DA CRIANÇA FELIZ) -->
-      <div id="p1SuccessModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 pop-in">
-        <div class="bg-white rounded-3xl p-6 md:p-8 max-w-lg w-full border-4 border-amber-400 shadow-2xl text-center relative overflow-hidden">
-          
-          <!-- Efeito de topo com avatar feliz -->
-          <div class="flex items-center justify-center gap-4 mb-3">
-            <div id="modalKidAvatar" class="w-20 h-20 rounded-full bg-emerald-100 border-3 border-emerald-400 flex items-center justify-center text-5xl shadow-md animate-bounce shrink-0">
-              👧
-            </div>
-            <div class="text-left">
-              <span class="bg-amber-100 text-amber-950 text-xs md:text-sm font-black uppercase px-3.5 py-1 rounded-full border border-amber-300">
-                ⭐ Parabéns! +50 Pontos! ⭐
-              </span>
-              <h3 id="modalTitle" class="text-2xl md:text-3xl font-black text-slate-900 leading-tight mt-1">
-                Descarte Perfeito!
-              </h3>
-            </div>
-          </div>
-
-          <!-- Card de Detalhe do Resíduo -->
-          <div class="my-4 bg-slate-50 p-4 md:p-5 rounded-2xl border-2 border-slate-200 text-left">
-            <div class="flex items-center gap-3.5 border-b border-slate-200 pb-3 mb-3">
-              <span id="modalItemIcon" class="text-4xl md:text-5xl shrink-0">📦</span>
-              <div class="flex-1">
-                <div id="modalItemName" class="font-black text-lg md:text-xl text-slate-900 leading-snug">Caixa de Papelão Limpa</div>
-                <div id="modalBinBadge" class="text-sm font-black text-blue-600 mt-0.5">Destino: Lixeira Papel (Azul)</div>
-              </div>
-            </div>
-            <p id="modalExplanation" class="text-sm md:text-base text-slate-700 leading-relaxed font-semibold">
-              Explicação detalhada...
-            </p>
-          </div>
-
-          <!-- Outros Exemplos da Categoria -->
-          <div class="bg-emerald-50/80 p-4 rounded-2xl border border-emerald-200 text-left">
-            <div class="text-xs md:text-sm font-black text-emerald-950 uppercase tracking-wide mb-2.5 flex items-center gap-2">
-              <span class="text-base">✨</span>
-              <span>Outros exemplos que também vão nesta lixeira:</span>
-            </div>
-            <div id="modalExamplesGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              <!-- Injetado dinamicamente via JS -->
-            </div>
-          </div>
-
-          <!-- Botão Continuar -->
-          <button id="modalBtnContinue" onclick="closeP1Modal()" class="arcade-btn mt-5 w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xl py-4 rounded-2xl shadow-lg transition transform active:scale-95 flex items-center justify-center gap-2 border-2 border-emerald-700">
-            <span id="modalBtnText">Continuar Separando o Quintal! 🌿</span>
-          </button>
-
-        </div>
       </div>
 
     </section>
@@ -535,7 +504,7 @@
       <!-- CABEÇALHO DA FASE 2 COMPACTO (MESMA PROPORÇÃO DA FASE 1) -->
       <div class="w-full mb-2 flex items-center justify-between gap-2.5 bg-white/95 backdrop-blur px-3.5 py-1.5 md:py-2 rounded-xl shadow-sm border border-sky-300">
         <div class="flex items-center gap-2 flex-wrap min-w-0">
-          <span class="bg-sky-100 text-sky-900 text-[11px] font-black uppercase px-2.5 py-0.5 rounded-full border border-sky-200 shrink-0">Fase 2 • Eco-Bike</span>
+          <span class="bg-sky-100 text-sky-900 text-[11px] font-black uppercase px-2.5 py-0.5 rounded-full border border-sky-200 shrink-0">Fase 2/4 • Eco-Bike</span>
           <h2 class="text-sm md:text-base font-black text-sky-950 leading-tight truncate">Expedição Eco-Bike: Logística Reversa</h2>
           <span class="hidden lg:inline text-xs text-slate-500 font-semibold">• Leve cada resíduo especial ao estabelecimento correto</span>
         </div>
@@ -552,7 +521,7 @@
         <div class="w-full max-w-[830px] xl:w-[830px] xl:min-w-[830px] shrink-0 flex flex-col items-center mx-auto xl:mx-0">
           
           <!-- CANVAS GAME 2 -->
-          <div class="w-full game-canvas-container border-[3px] border-sky-500">
+          <div class="w-full game-canvas-container border-[3px] border-sky-500 relative">
             <canvas id="canvasPhase2" width="800" height="620"></canvas>
           </div>
 
@@ -573,18 +542,18 @@
             
             <div class="grid grid-cols-3 gap-1.5 w-36 h-20 shrink-0">
               <div></div>
-              <button onpointerdown="startMove('up')" onpointerup="stopMove('up')" onpointerleave="stopMove('up')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-sky-600">⬆️</button>
+              <button onpointerdown="startMove('up')" onpointerup="stopMove('up')" onpointerleave="stopMove('up')" onpointercancel="stopMove('up')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-sky-600">⬆️</button>
               <div></div>
-              <button onpointerdown="startMove('left')" onpointerup="stopMove('left')" onpointerleave="stopMove('left')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-sky-600">⬅️</button>
-              <button onpointerdown="startMove('down')" onpointerup="stopMove('down')" onpointerleave="stopMove('down')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-sky-600">⬇️</button>
-              <button onpointerdown="startMove('right')" onpointerup="stopMove('right')" onpointerleave="stopMove('right')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-sky-600">➡️</button>
+              <button onpointerdown="startMove('left')" onpointerup="stopMove('left')" onpointerleave="stopMove('left')" onpointercancel="stopMove('left')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-sky-600">⬅️</button>
+              <button onpointerdown="startMove('down')" onpointerup="stopMove('down')" onpointerleave="stopMove('down')" onpointercancel="stopMove('down')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-sky-600">⬇️</button>
+              <button onpointerdown="startMove('right')" onpointerup="stopMove('right')" onpointerleave="stopMove('right')" onpointercancel="stopMove('right')" class="arcade-btn bg-slate-800 text-white rounded-xl flex items-center justify-center font-black text-xl active:bg-sky-600">➡️</button>
             </div>
 
-            <button onclick="triggerP2Action()" class="arcade-btn flex-1 h-20 bg-amber-400 hover:bg-amber-300 text-amber-950 font-black rounded-2xl flex flex-row sm:flex-col items-center justify-center gap-2 sm:gap-0.5 shadow-md border-2 border-amber-500 px-3">
-              <span class="text-3xl">🔔</span>
+            <button id="p2ActionBtn" onclick="triggerP2Action()" class="arcade-btn flex-1 h-20 bg-amber-400 hover:bg-amber-300 text-amber-950 font-black rounded-2xl flex flex-row sm:flex-col items-center justify-center gap-2 sm:gap-0.5 shadow-md border-2 border-amber-500 px-3 transition-colors duration-200">
+              <span id="p2ActionBtnIcon" class="text-3xl">🔔</span>
               <div class="flex flex-col items-center">
-                <span class="text-sm md:text-base font-black tracking-wide leading-tight">ENTREGAR CARGA AQUI</span>
-                <span class="text-[10px] text-amber-950 font-bold uppercase opacity-80">(Ou barra de Espaço)</span>
+                <span id="p2ActionBtnText" class="text-sm md:text-base font-black tracking-wide leading-tight">ENTREGAR CARGA AQUI</span>
+                <span id="p2ActionBtnSub" class="text-[10px] text-amber-950 font-bold uppercase opacity-80">(Ou barra de Espaço)</span>
               </div>
             </button>
 
@@ -630,16 +599,16 @@
               </div>
             </div>
 
-            <!-- 2. Farmácia LOGMED -->
+            <!-- 2. Farmácia -->
             <div id="p2Card-farmacia" onclick="onP2CardClick('farmacia')" class="p2-station-card cursor-pointer transition-all duration-300 bg-sky-50/90 hover:scale-[1.02] border-2 border-sky-400 rounded-2xl p-3 flex items-start gap-2.5 relative">
               <span class="text-2xl shrink-0">➕</span>
               <div class="flex-1 min-w-0">
                 <div class="flex items-center justify-between gap-1 h-5">
-                  <span class="font-black text-xs md:text-sm text-sky-950 truncate">Farmácia • Cruz Vermelha</span>
+                  <span class="font-black text-xs md:text-sm text-sky-950 truncate">Farmácia • Cruz Verde</span>
                   <span class="p2-match-badge invisible opacity-0 bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-full animate-pulse shadow-sm shrink-0">👉 ENTREGUE AQUI!</span>
                 </div>
                 <p class="text-xs text-slate-700 font-medium leading-snug mt-0.5">
-                  Recebe <b>remédios, xaropes e cartelas vencidas</b>. Nunca jogue na pia ou vaso sanitário!
+                  Recebe <b>remédios, xaropes e cartelas vencidas</b> no totem Papa-Remédio. Nunca jogue na pia ou vaso sanitário!
                 </p>
               </div>
             </div>
@@ -678,7 +647,7 @@
               <div>
                 <span class="font-black text-xs md:text-sm text-slate-800">Guia Visual do Mapa</span>
                 <p class="text-xs text-slate-600 font-medium leading-snug mt-0.5">
-                  Observe a fachada de cada prédio: <b>Caçambas</b> (Ecoponto), <b>Cruz Vermelha</b> (Farmácia), <b>Carrinhos/Frutas</b> (Mercado) e <b>Tanques Amarelos</b> (Óleo).
+                  Observe a fachada de cada prédio: <b>Caçambas</b> (Ecoponto), <b>Cruz Verde</b> (Farmácia), <b>Carrinhos/Frutas</b> (Mercado) e <b>Tanques Amarelos</b> (Óleo).
                 </p>
               </div>
             </div>
@@ -704,15 +673,15 @@
     <section id="screenPhase3" class="hidden w-full max-w-[1260px] mx-auto flex flex-col items-center pop-in">
       
       <!-- CABEÇALHO DA FASE 3 COMPACTO -->
-      <div class="w-full mb-2 flex items-center justify-between gap-2.5 bg-slate-900 text-white px-3.5 py-1.5 md:py-2 rounded-xl shadow-md border border-cyan-400">
+      <div class="w-full mb-2 flex items-center justify-between gap-2.5 bg-white/95 backdrop-blur px-3.5 py-1.5 md:py-2 rounded-xl shadow-sm border border-cyan-300">
         <div class="flex items-center gap-2 flex-wrap min-w-0">
-          <span class="bg-cyan-400 text-cyan-950 text-[11px] font-black uppercase px-2.5 py-0.5 rounded-full shrink-0">Fase 3 • Aquífero</span>
-          <h2 class="text-sm md:text-base font-black text-cyan-200 leading-tight truncate">Guardião do Aquífero & Cooperativa Mãos Dadas</h2>
-          <span class="hidden lg:inline text-xs text-slate-300 font-semibold">• Resgate os recicláveis com a rede</span>
+          <span class="bg-cyan-100 text-cyan-900 text-[11px] font-black uppercase px-2.5 py-0.5 rounded-full border border-cyan-200 shrink-0">Fase 3/4 • Aquífero</span>
+          <h2 class="text-sm md:text-base font-black text-cyan-950 leading-tight truncate">Guardião do Aquífero & Cooperativa de Reciclagem</h2>
+          <span class="hidden lg:inline text-xs text-slate-500 font-semibold">• Resgate os recicláveis com a rede</span>
         </div>
-        <div class="flex items-center gap-1.5 bg-slate-800 px-2.5 py-0.5 rounded-lg border border-cyan-600 shrink-0">
-          <span class="text-[11px] text-cyan-300 font-black uppercase hidden sm:inline">Salvos:</span>
-          <span class="text-base md:text-lg font-black text-amber-300"><span id="p3ItemCount">0</span>/6</span>
+        <div class="flex items-center gap-1.5 bg-cyan-50 px-2.5 py-0.5 rounded-lg border border-cyan-200 shrink-0">
+          <span class="text-[11px] text-slate-500 font-black uppercase hidden sm:inline">🛡️ Salvos:</span>
+          <span class="text-base md:text-lg font-black text-cyan-700"><span id="p3ItemCount">0</span>/6</span>
         </div>
       </div>
 
@@ -723,24 +692,24 @@
         <div class="w-full max-w-[830px] xl:w-[830px] xl:min-w-[830px] shrink-0 flex flex-col items-center mx-auto xl:mx-0">
           
           <!-- CANVAS GAME 3 -->
-          <div class="w-full game-canvas-container border-[3px] border-cyan-400" style="background: #0f172a;">
+          <div class="w-full game-canvas-container border-[3px] border-cyan-500 relative">
             <canvas id="canvasPhase3" width="800" height="620"></canvas>
           </div>
 
           <!-- DICA DO AQUÍFERO (ALTURA FIXA ESTÁVEL PARA 2 LINHAS) -->
-          <div class="w-full mt-2 bg-slate-900 text-cyan-100 px-3 sm:px-4 py-2 rounded-2xl border-2 border-cyan-500 shadow-md flex items-center justify-between gap-2.5 sm:gap-3 text-xs md:text-sm font-bold min-h-[58px] sm:h-[58px] sm:max-h-[58px] overflow-hidden">
+          <div class="w-full mt-2 bg-white px-3 sm:px-4 py-2 rounded-2xl border-2 border-cyan-300 shadow-sm flex items-center justify-between gap-2.5 sm:gap-3 text-xs md:text-sm font-extrabold text-slate-800 min-h-[58px] sm:h-[58px] sm:max-h-[58px] overflow-hidden">
             <div class="flex items-center gap-2 sm:gap-2.5 min-w-0">
               <span class="text-2xl shrink-0">💧</span>
-              <span class="leading-snug">100% da água de Ribeirão Preto vem do Aquífero Guarani! Salve os materiais para a Cooperativa!</span>
+              <span class="leading-snug">100% da água de Ribeirão Preto vem do Aquífero Guarani! Salve os materiais para a Cooperativa de Reciclagem!</span>
             </div>
           </div>
 
           <!-- CONTROLES LATERAIS DA REDE DE RESGATE COMPACTOS -->
           <div class="w-full mt-2 flex items-stretch justify-center gap-3 px-0.5">
-            <button onpointerdown="startMove('left')" onpointerup="stopMove('left')" onpointerleave="stopMove('left')" class="arcade-btn flex-1 h-20 bg-cyan-600 hover:bg-cyan-500 text-white font-black text-sm sm:text-base md:text-lg rounded-2xl flex items-center justify-center gap-2 shadow-md border-2 border-cyan-400">
+            <button onpointerdown="startMove('left')" onpointerup="stopMove('left')" onpointerleave="stopMove('left')" onpointercancel="stopMove('left')" class="arcade-btn flex-1 h-20 bg-cyan-500 hover:bg-cyan-400 text-white font-black text-sm sm:text-base md:text-lg rounded-2xl flex items-center justify-center gap-2 shadow-md border-2 border-cyan-600 active:translate-y-1">
               <span>⬅️ MOVER ESQUERDA</span>
             </button>
-            <button onpointerdown="startMove('right')" onpointerup="stopMove('right')" onpointerleave="stopMove('right')" class="arcade-btn flex-1 h-20 bg-cyan-600 hover:bg-cyan-500 text-white font-black text-sm sm:text-base md:text-lg rounded-2xl flex items-center justify-center gap-2 shadow-md border-2 border-cyan-400">
+            <button onpointerdown="startMove('right')" onpointerup="stopMove('right')" onpointerleave="stopMove('right')" onpointercancel="stopMove('right')" class="arcade-btn flex-1 h-20 bg-cyan-500 hover:bg-cyan-400 text-white font-black text-sm sm:text-base md:text-lg rounded-2xl flex items-center justify-center gap-2 shadow-md border-2 border-cyan-600 active:translate-y-1">
               <span>MOVER DIREITA ➡️</span>
             </button>
           </div>
@@ -748,70 +717,238 @@
         </div>
 
         <!-- COLUNA DA DIREITA: PAINEL EDUCATIVO 'VOCÊ SABIA?' DESTACADO E LEGÍVEL -->
-        <aside class="w-full max-w-[830px] xl:w-[410px] xl:min-w-[410px] xl:max-w-[410px] xl:h-[796px] xl:min-h-[796px] xl:max-h-[796px] shrink-0 bg-slate-900 text-white rounded-3xl p-4 md:p-5 border-4 border-cyan-400 shadow-xl flex flex-col justify-between gap-2 text-left mx-auto xl:mx-0">
+        <aside class="w-full max-w-[830px] xl:w-[410px] xl:min-w-[410px] xl:max-w-[410px] xl:h-[796px] xl:min-h-[796px] xl:max-h-[796px] shrink-0 bg-white rounded-3xl p-4 md:p-5 border-4 border-cyan-400 shadow-xl flex flex-col justify-between gap-2 text-left mx-auto xl:mx-0">
           
-          <div class="flex items-center justify-between border-b-2 border-cyan-800 pb-2">
+          <div class="flex items-center justify-between border-b-2 border-cyan-200 pb-2">
             <div class="flex items-center gap-2.5">
               <span class="text-3xl">💧</span>
               <div>
-                <span class="bg-cyan-950 text-cyan-300 text-xs font-black uppercase px-2.5 py-0.5 rounded-full border border-cyan-700">
+                <span class="bg-cyan-100 text-cyan-950 text-xs font-black uppercase px-2.5 py-0.5 rounded-full border border-cyan-300">
                   Nosso Tesouro Hídrico
                 </span>
-                <h3 class="text-lg md:text-xl font-black text-cyan-100 leading-tight mt-0.5">
+                <h3 class="text-lg md:text-xl font-black text-slate-900 leading-tight mt-0.5">
                   Você Sabia?
                 </h3>
               </div>
             </div>
-            <span class="text-xs font-extrabold text-cyan-400 bg-slate-800 px-2 py-1 rounded-lg border border-cyan-700">Ribeirão Preto</span>
+            <span class="text-xs font-extrabold text-cyan-800 bg-cyan-50 px-2 py-1 rounded-lg border border-cyan-200">Ribeirão Preto</span>
           </div>
 
-          <p class="text-xs md:text-sm text-slate-300 font-semibold leading-relaxed">
+          <p class="text-xs md:text-sm text-slate-700 font-semibold leading-relaxed">
             Ribeirão Preto é uma das poucas grandes cidades do planeta abastecida <b>100% por águas subterrâneas puras</b>:
           </p>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 xl:flex xl:flex-col gap-2">
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:flex xl:flex-col gap-2.5">
             
-            <div class="bg-slate-800/90 border-2 border-cyan-500/50 rounded-2xl p-3 flex items-start gap-2.5">
+            <div class="bg-cyan-50/90 border-2 border-cyan-400 rounded-2xl p-3 flex items-start gap-2.5">
               <span class="text-2xl shrink-0">🌊</span>
               <div>
-                <span class="font-black text-xs md:text-sm text-cyan-300">Aquífero Guarani & Arenito</span>
-                <p class="text-xs text-slate-300 font-medium leading-snug mt-0.5">
+                <span class="font-black text-xs md:text-sm text-cyan-950">Aquífero Guarani & Arenito</span>
+                <p class="text-xs text-slate-700 font-medium leading-snug mt-0.5">
                   Nossa água brota do Arenito Botucatu a centenas de metros de profundidade, filtrada por séculos pela natureza.
                 </p>
               </div>
             </div>
 
-            <div class="bg-slate-800/90 border-2 border-amber-500/50 rounded-2xl p-3 flex items-start gap-2.5">
+            <div class="bg-amber-50/90 border-2 border-amber-400 rounded-2xl p-3 flex items-start gap-2.5">
               <span class="text-2xl shrink-0">⚠️</span>
               <div>
-                <span class="font-black text-xs md:text-sm text-amber-300">O Perigo do Chorume</span>
-                <p class="text-xs text-slate-300 font-medium leading-snug mt-0.5">
+                <span class="font-black text-xs md:text-sm text-amber-950">O Perigo do Chorume</span>
+                <p class="text-xs text-slate-700 font-medium leading-snug mt-0.5">
                   Lixo descartado no chão apodrece e gera chorume tóxico, que pode infiltrar no solo e contaminar o aquífero.
                 </p>
               </div>
             </div>
 
-            <div class="md:col-span-2 bg-slate-800/90 border-2 border-emerald-500/50 rounded-2xl p-3 flex items-start gap-2.5">
+            <div class="md:col-span-2 bg-emerald-50/90 border-2 border-emerald-400 rounded-2xl p-3 flex items-start gap-2.5">
               <span class="text-2xl shrink-0">🛻</span>
               <div>
-                <span class="font-black text-xs md:text-sm text-emerald-300">Cooperativa Mãos Dadas</span>
-                <p class="text-xs text-slate-300 font-medium leading-snug mt-0.5">
+                <span class="font-black text-xs md:text-sm text-emerald-950">Cooperativas de Reciclagem</span>
+                <p class="text-xs text-slate-700 font-medium leading-snug mt-0.5">
                   Em Ribeirão Preto, os cooperados separam e vendem os recicláveis, sustentando famílias com trabalho digno e sustentável!
+                </p>
+              </div>
+            </div>
+
+            <!-- Preservação Permanente -->
+            <div class="md:col-span-2 bg-sky-50 border-2 border-sky-300 rounded-2xl p-2.5 flex items-start gap-2.5">
+              <span class="text-2xl shrink-0">🛡️</span>
+              <div>
+                <span class="font-black text-xs md:text-sm text-sky-950">Preservação Permanente</span>
+                <p class="text-xs text-slate-700 font-medium leading-snug mt-0.5">
+                  Descartar o lixo no local correto protege a infiltração de água limpa no Arenito Botucatu, mantendo o Aquífero puro para as futuras gerações!
                 </p>
               </div>
             </div>
 
           </div>
 
-          <!-- Dica Local Ribeirão Preto - Preservação do Aquífero -->
-          <div class="mt-1 bg-slate-800/90 border-2 border-cyan-500/50 rounded-2xl p-3 flex items-start gap-2.5">
-            <span class="text-2xl shrink-0">🛡️</span>
+          <!-- Dica Local Ribeirão Preto - Aquífero -->
+          <div class="mt-1 bg-cyan-50 p-3 rounded-2xl border border-cyan-300 text-xs font-bold text-cyan-950 flex items-center gap-2.5">
+            <span class="text-2xl shrink-0">📍</span>
+            <span class="leading-snug">Economize água e separe os recicláveis em casa para preservar o Aquífero Guarani de Ribeirão Preto!</span>
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+
+    <!-- ---------------------------------------- -->
+    <!-- TELA 4: FASE 4 - O ECO-QUIZ DOS MESTRES  -->
+    <!-- ---------------------------------------- -->
+    <section id="screenPhase4" class="hidden w-full max-w-[1260px] mx-auto flex flex-col items-center pop-in">
+      
+      <!-- CABEÇALHO DA FASE 4 COMPACTO -->
+      <div class="w-full mb-2 flex items-center justify-between gap-2.5 bg-white/95 backdrop-blur px-3.5 py-1.5 md:py-2 rounded-xl shadow-sm border border-violet-300">
+        <div class="flex items-center gap-2 flex-wrap min-w-0">
+          <span class="bg-violet-100 text-violet-900 text-[11px] font-black uppercase px-2.5 py-0.5 rounded-full border border-violet-200 shrink-0">Fase 4/4 • Eco-Quiz</span>
+          <h2 class="text-sm md:text-base font-black text-violet-950 leading-tight truncate">Desafio dos Eco-Mestres: Quiz Perguntados</h2>
+          <span class="hidden lg:inline text-xs text-slate-500 font-semibold">• Mostre o que aprendeu e acerte 3 perguntas</span>
+        </div>
+        <div class="flex items-center gap-1.5 bg-violet-50 px-2.5 py-0.5 rounded-lg border border-violet-200 shrink-0">
+          <span class="text-[11px] text-slate-500 font-black uppercase hidden sm:inline">⭐ Acertos:</span>
+          <span class="text-base md:text-lg font-black text-violet-700"><span id="p4ScoreCount">0</span>/3</span>
+        </div>
+      </div>
+
+      <!-- CONTAINER PRINCIPAL: QUIZ NA ESQUERDA + PAINEL DE DICAS NA DIREITA -->
+      <div class="w-full flex flex-col xl:flex-row items-start justify-center gap-4 md:gap-5">
+        
+        <!-- COLUNA DO QUIZ -->
+        <div class="w-full max-w-[830px] xl:w-[830px] xl:min-w-[830px] shrink-0 flex flex-col items-center mx-auto xl:mx-0">
+          
+          <!-- CARD PRINCIPAL DO GAME SHOW (ESTILO PERGUNTADOS) -->
+          <div class="w-full bg-white rounded-3xl p-5 md:p-7 border-4 border-violet-400 shadow-xl flex flex-col justify-between min-h-[580px] relative overflow-hidden">
+            
+            <!-- TOPO: AVATAR + CATEGORIA + INDICADOR -->
             <div>
-              <span class="font-black text-xs md:text-sm text-cyan-200">Preservação Permanente</span>
-              <p class="text-xs text-slate-300 font-medium leading-snug mt-0.5">
-                Descartar o lixo no local correto protege a infiltração de água limpa no Arenito Botucatu, mantendo o Aquífero puro para as futuras gerações!
-              </p>
+              <div class="flex items-center justify-between border-b-2 border-violet-100 pb-3 mb-4 gap-2 flex-wrap">
+                <div class="flex items-center gap-2.5">
+                  <div id="p4AvatarBadge" class="w-11 h-11 rounded-full bg-violet-100 border-2 border-violet-300 flex items-center justify-center text-2xl shadow-inner">
+                    👧
+                  </div>
+                  <div>
+                    <div id="p4AvatarName" class="font-black text-violet-950 text-xs sm:text-sm">Gabi pergunta:</div>
+                    <span id="p4CategoryBadge" class="inline-block bg-violet-100 text-violet-900 font-black text-[10px] uppercase px-2.5 py-0.5 rounded-full border border-violet-200">
+                      🌿 Coleta Seletiva
+                    </span>
+                  </div>
+                </div>
+
+                <!-- 3 ESTRELAS DE PROGRESSO -->
+                <div class="flex items-center gap-1.5 bg-amber-50 px-3 py-1.5 rounded-2xl border border-amber-300 shadow-sm">
+                  <span class="text-[11px] font-black text-amber-900 mr-1">Progresso:</span>
+                  <div id="p4Star1" class="text-2xl opacity-25 transition-all duration-300 transform scale-90">⭐</div>
+                  <div id="p4Star2" class="text-2xl opacity-25 transition-all duration-300 transform scale-90">⭐</div>
+                  <div id="p4Star3" class="text-2xl opacity-25 transition-all duration-300 transform scale-90">⭐</div>
+                </div>
+              </div>
+
+              <!-- ENUNCIADO DA PERGUNTA -->
+              <div class="bg-gradient-to-r from-violet-50 to-indigo-50 border-2 border-violet-200 rounded-2xl p-4 md:p-6 shadow-sm mb-5 text-left">
+                <div class="flex items-center justify-between gap-2 mb-1">
+                  <span id="p4QuestionNumberBadge" class="text-[11px] font-black uppercase text-violet-600 tracking-wider">Pergunta 1</span>
+                  <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">EcoKids Quiz Show</span>
+                </div>
+                <h3 id="p4QuestionText" class="text-base sm:text-lg md:text-xl font-black text-slate-900 leading-snug">
+                  Carregando pergunta...
+                </h3>
+              </div>
+
+              <!-- GRADE DE 4 ALTERNATIVAS (ESTILO PERGUNTADOS) -->
+              <div id="p4OptionsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <!-- Injetado dinamicamente via JS -->
+              </div>
             </div>
+
+            <!-- FEEDBACK CARD (APARECE APÓS CLICAR) -->
+            <div id="p4FeedbackCard" class="hidden mt-4 p-4 md:p-5 rounded-2xl border-2 transition-all duration-300">
+              <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-left">
+                <div class="flex items-start gap-3 min-w-0">
+                  <span id="p4FeedbackIcon" class="text-3xl shrink-0">🎉</span>
+                  <div>
+                    <h4 id="p4FeedbackTitle" class="text-sm md:text-base font-black leading-tight">Correto!</h4>
+                    <p id="p4FeedbackDesc" class="text-xs md:text-sm font-bold text-slate-700 mt-0.5 leading-snug">
+                      Explicação pedagógica aqui...
+                    </p>
+                  </div>
+                </div>
+                <button id="p4NextBtn" onclick="nextP4Question()" class="arcade-btn shrink-0 w-full sm:w-auto bg-amber-400 hover:bg-amber-300 text-slate-900 font-black text-sm md:text-base px-6 py-3.5 rounded-2xl shadow-md border-2 border-amber-500 cursor-pointer flex items-center justify-center gap-2">
+                  <span id="p4NextBtnText">Próxima Pergunta ➔</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- RODAPÉ INFORMATIVO -->
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-400">
+              <span>⌨️ Teclas 1, 2, 3, 4 (ou A, B, C, D) para responder</span>
+              <span>Ribeirão Preto Sustentável 🏙️</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- COLUNA DA DIREITA: PAINEL DE DICAS E REGRAS DO QUIZ -->
+        <aside class="w-full max-w-[830px] xl:w-[410px] xl:min-w-[410px] xl:max-w-[410px] shrink-0 bg-white rounded-3xl p-4 md:p-5 border-4 border-violet-400 shadow-xl flex flex-col justify-between gap-3 text-left mx-auto xl:mx-0">
+          
+          <div class="flex items-center justify-between border-b-2 border-violet-200 pb-2">
+            <span class="text-[11px] font-black text-violet-800 uppercase tracking-wider">Central do Saber • EcoKids</span>
+            <span class="bg-violet-100 text-violet-900 text-[10px] font-black px-2 py-0.5 rounded-full">DESAFIO DOS MESTRES</span>
+          </div>
+
+          <!-- CARD: REGRAS AMIGÁVEIS -->
+          <div class="bg-violet-50/80 rounded-2xl p-3.5 border border-violet-200">
+            <h4 class="font-black text-violet-950 text-xs sm:text-sm flex items-center gap-1.5">
+              <span>🎯</span> Como Funciona o Quiz:
+            </h4>
+            <ul class="text-xs text-slate-600 mt-2 space-y-1.5 font-bold leading-snug">
+              <li class="flex items-start gap-1.5">
+                <span class="text-violet-600 font-black">•</span>
+                <span>Leia a pergunta com atenção e clique na alternativa que você acha certa.</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <span class="text-amber-600 font-black">•</span>
+                <span>Você só precisa de <b>3 acertos</b> para conquistar seu Diploma Oficial!</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <span class="text-emerald-600 font-black">•</span>
+                <span>Se errar uma pergunta, fique tranquilo: você não perde pontos e pode tentar outra!</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- RECAPITULAÇÃO DAS MISSÕES ANTERIORES -->
+          <div class="space-y-2">
+            <div class="bg-emerald-50 rounded-xl p-2.5 border border-emerald-200 flex items-center gap-2.5">
+              <span class="text-xl shrink-0">🌿</span>
+              <div class="text-[11px] leading-tight font-bold text-slate-700">
+                <b class="text-emerald-900">Fase 1:</b> Orgânicos no cesto marrom viram adubo. Plástico, papel, metal e vidro vão para a coleta seletiva!
+              </div>
+            </div>
+
+            <div class="bg-sky-50 rounded-xl p-2.5 border border-sky-200 flex items-center gap-2.5">
+              <span class="text-xl shrink-0">🚲</span>
+              <div class="text-[11px] leading-tight font-bold text-slate-700">
+                <b class="text-sky-900">Fase 2:</b> Pneus no Ecoponto contra a Dengue, remédios na farmácia e óleo de cozinha em pontos especiais!
+              </div>
+            </div>
+
+            <div class="bg-cyan-50 rounded-xl p-2.5 border border-cyan-200 flex items-center gap-2.5">
+              <span class="text-xl shrink-0">💧</span>
+              <div class="text-[11px] leading-tight font-bold text-slate-700">
+                <b class="text-cyan-900">Fase 3:</b> O Aquífero Guarani abastece nossa cidade através do filtro arenoso natural Botucatu!
+              </div>
+            </div>
+          </div>
+
+          <!-- RODAPÉ DO PAINEL -->
+          <div class="pt-2 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-violet-800">
+            <span class="text-xl shrink-0">🧠</span>
+            <span class="leading-tight">Aprender brincando é o jeito mais divertido de transformar o futuro de Ribeirão Preto!</span>
           </div>
 
         </aside>
@@ -837,7 +974,7 @@
       </h2>
 
       <p class="text-slate-600 max-w-lg mx-auto mt-2 text-sm md:text-base leading-relaxed">
-        Você dominou a separação em casa, utilizou os Ecopontos e salvou o Aquífero Guarani enviando resíduos à Cooperativa Mãos Dadas!
+        Você dominou a separação em casa, utilizou os Ecopontos, protegeu o Aquífero Guarani e gabaritou o Desafio dos Eco-Mestres!
       </p>
 
       <!-- GERADOR DE CERTIFICADO -->
@@ -869,7 +1006,7 @@
           <div class="text-xs font-black text-slate-400 uppercase tracking-widest">CERTIFICADO DE MÉRITO ECOLÓGICO</div>
           
           <h3 class="text-2xl md:text-3xl font-black text-emerald-800 mt-2 font-heading">
-            Guardião Ambiental Mirim
+            Guardião Ambiental
           </h3>
 
           <p class="text-xs text-slate-500 mt-3 max-w-md mx-auto">
@@ -881,7 +1018,7 @@
           </div>
 
           <p class="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
-            concluiu com êxito os desafios práticos do projeto <b>EcoKids Ribeirão: O Caminho do Resíduo</b>, aprendendo a segregação na fonte, a logística reversa nos Ecopontos e a preservação do <b>Aquífero Guarani</b>.
+            concluiu com êxito os desafios práticos do projeto <b>EcoKids Ribeirão: O Caminho do Resíduo</b>, aprendendo a segregação na fonte, a logística reversa nos Ecopontos, a preservação do <b>Aquífero Guarani</b> e o <b>Desafio dos Eco-Mestres (Quiz)</b>.
           </p>
 
           <div class="mt-3 flex flex-wrap items-center justify-center gap-2">
@@ -910,7 +1047,7 @@
 
       <!-- BOTÕES FINAIS -->
       <div class="mt-8 flex flex-wrap justify-center gap-4">
-        <button id="btnPrintDiploma" onclick="window.print()" class="hidden arcade-btn bg-sky-600 hover:bg-sky-500 text-white font-black px-6 py-3.5 rounded-2xl shadow-md transition items-center gap-2 cursor-pointer">
+        <button id="btnPrintDiploma" onclick="window.print()" class="hidden inline-flex arcade-btn bg-sky-600 hover:bg-sky-500 text-white font-black px-6 py-3.5 rounded-2xl shadow-md transition items-center gap-2 cursor-pointer">
           <span>🖨️ Imprimir / Salvar em PDF</span>
         </button>
         <button onclick="restartGame()" class="arcade-btn bg-slate-200 hover:bg-slate-300 text-slate-800 font-black px-6 py-3.5 rounded-2xl shadow-md transition cursor-pointer">
@@ -918,6 +1055,146 @@
         </button>
       </div>
     </section>
+
+    <!-- MODAL EDUCATIVO DO ACERTO (QUADRINHO DA CRIANÇA FELIZ - RESPONSIVO E SEGURO NO CELULAR) -->
+    <div id="p1SuccessModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/75 backdrop-blur-sm p-3 sm:p-4 overflow-y-auto" onclick="if(event.target===this) closeP1Modal()">
+      <div class="bg-white rounded-3xl p-4 sm:p-6 md:p-7 max-w-lg w-full max-h-[92dvh] flex flex-col border-4 border-amber-400 shadow-2xl text-center relative my-auto">
+        
+        <!-- Botão Fechar Rápido (X) Sempre Acessível no Topo Direito -->
+        <button type="button" onclick="closeP1Modal()" aria-label="Fechar janela" class="absolute top-2.5 right-2.5 sm:top-3.5 sm:right-3.5 z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-100 hover:bg-slate-200 active:scale-95 border-2 border-slate-300 text-slate-700 font-black text-lg sm:text-xl flex items-center justify-center transition cursor-pointer shadow-sm">
+          ✕
+        </button>
+
+        <!-- Corpo Rolável em Telas Curtas -->
+        <div class="overflow-y-auto pr-1 flex-1 space-y-3 -webkit-overflow-scrolling-touch text-left">
+          
+          <!-- Efeito de topo com avatar feliz -->
+          <div class="flex items-center justify-start gap-3.5 pt-1 pr-8">
+            <div id="modalKidAvatar" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-emerald-100 border-3 border-emerald-400 flex items-center justify-center text-4xl sm:text-5xl shadow-md shrink-0">
+              👧
+            </div>
+            <div class="text-left min-w-0">
+              <span class="bg-amber-100 text-amber-950 text-[11px] sm:text-xs font-black uppercase px-3 py-0.5 rounded-full border border-amber-300 inline-block">
+                ⭐ +50 Pontos! ⭐
+              </span>
+              <h3 id="modalTitle" class="text-xl sm:text-2xl md:text-3xl font-black text-slate-900 leading-tight mt-0.5 truncate">
+                Descarte Perfeito!
+              </h3>
+            </div>
+          </div>
+
+          <!-- Card de Detalhe do Resíduo -->
+          <div class="bg-slate-50 p-3.5 sm:p-4.5 rounded-2xl border-2 border-slate-200 text-left">
+            <div class="flex items-center gap-3 border-b border-slate-200 pb-2.5 mb-2.5">
+              <span id="modalItemIcon" class="text-3xl sm:text-4xl shrink-0">📦</span>
+              <div class="flex-1 min-w-0">
+                <div id="modalItemName" class="font-black text-base sm:text-lg text-slate-900 leading-snug">Caixa de Papelão Limpa</div>
+                <div id="modalBinBadge" class="text-xs sm:text-sm font-black text-blue-600 mt-0.5">Destino: Lixeira Papel (Azul)</div>
+              </div>
+            </div>
+            <p id="modalExplanation" class="text-xs sm:text-sm md:text-base text-slate-700 leading-relaxed font-semibold">
+              Explicação detalhada...
+            </p>
+          </div>
+
+          <!-- Outros Exemplos da Categoria -->
+          <div class="bg-emerald-50/80 p-3 sm:p-4 rounded-2xl border border-emerald-200 text-left">
+            <div class="text-[11px] sm:text-xs font-black text-emerald-950 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+              <span class="text-sm">✨</span>
+              <span>Outros exemplos que também vão nesta lixeira:</span>
+            </div>
+            <div id="modalExamplesGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <!-- Injetado dinamicamente via JS -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Botão Continuar Fixo no Rodapé do Modal (Sempre visível no celular) -->
+        <div class="shrink-0 pt-3 border-t border-slate-100 mt-2">
+          <button id="modalBtnContinue" onclick="closeP1Modal()" class="arcade-btn w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black text-lg sm:text-xl py-3.5 sm:py-4 rounded-2xl shadow-lg transition transform active:scale-95 flex items-center justify-center gap-2 border-2 border-emerald-700">
+            <span id="modalBtnText">Continuar Separando o Quintal! 🌿</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MODAL DE HISTORINHA / CHAMADO ECOLÓGICO DA FASE 2 (ECO-BIKE) -->
+    <div id="p2StoryModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/75 backdrop-blur-sm p-3 sm:p-4 overflow-y-auto">
+      <div class="bg-white rounded-3xl p-4 sm:p-6 md:p-7 max-w-lg w-full max-h-[92dvh] flex flex-col border-4 border-sky-400 shadow-2xl text-center relative my-auto pop-in">
+        
+        <!-- Topo com badge e contador -->
+        <div class="flex items-center justify-between border-b-2 border-sky-100 pb-2.5 mb-3">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl animate-pulse">📞</span>
+            <span class="bg-sky-100 text-sky-950 text-xs font-black uppercase px-3 py-1 rounded-full border border-sky-300">
+              Chamado Ecológico do Bairro
+            </span>
+          </div>
+          <span id="p2StoryMissionBadge" class="bg-amber-100 text-amber-950 text-xs font-black px-3 py-1 rounded-full border border-amber-300">
+            Missão 1 de 4
+          </span>
+        </div>
+
+        <!-- Corpo com Rolagem Segura em Telas Pequenas -->
+        <div class="overflow-y-auto pr-1 flex-1 space-y-3 -webkit-overflow-scrolling-touch text-left">
+          
+          <!-- Avatar da criança + Título do Chamado -->
+          <div class="flex items-center gap-3.5">
+            <div id="p2StoryKidAvatar" class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-sky-100 border-3 border-sky-400 flex items-center justify-center text-3xl sm:text-4xl shadow-md shrink-0">
+              👧
+            </div>
+            <div class="min-w-0 flex-1">
+              <span id="p2StoryCallerTag" class="text-[11px] font-black uppercase text-sky-700 tracking-wide block">
+                Ajuda na Vizinhança
+              </span>
+              <h3 id="p2StoryTitle" class="text-lg sm:text-xl md:text-2xl font-black text-slate-900 leading-tight">
+                Título do Chamado
+              </h3>
+            </div>
+          </div>
+
+          <!-- Balão de Fala da Historinha -->
+          <div class="bg-sky-50/90 p-3.5 sm:p-4 rounded-2xl border-2 border-sky-200 text-slate-700 text-xs sm:text-sm md:text-base font-semibold leading-relaxed relative">
+            <p id="p2StoryText">
+              Texto da historinha...
+            </p>
+          </div>
+
+          <!-- Card do Resíduo e Destino Seguro -->
+          <div class="bg-slate-50 p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200 flex items-center gap-3.5">
+            <div id="p2StoryItemIcon" class="w-14 h-14 rounded-2xl bg-white border-2 border-slate-300 flex items-center justify-center text-3xl sm:text-4xl shadow-inner shrink-0">
+              🛋️
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="text-[11px] font-black text-slate-400 uppercase tracking-wide">Carga da Eco-Bike:</div>
+              <div id="p2StoryItemName" class="font-black text-sm sm:text-base text-slate-900 leading-snug truncate">
+                Nome do Item
+              </div>
+              <div id="p2StoryTargetBadge" class="inline-flex items-center gap-1.5 text-xs font-black px-2.5 py-0.5 rounded-full mt-1 border">
+                📍 Destino: Ecoponto Municipal
+              </div>
+            </div>
+          </div>
+
+          <!-- Dica de Cidadania / Logística Reversa -->
+          <div class="bg-amber-50 p-3 rounded-2xl border border-amber-300 flex items-start gap-2.5 text-xs font-bold text-amber-950">
+            <span class="text-lg shrink-0">💡</span>
+            <span id="p2StoryTip" class="leading-snug">Dica pedagógica sobre descarte correto.</span>
+          </div>
+
+        </div>
+
+        <!-- Botão de Ação: Carregar na Eco-Bike e Partir -->
+        <div class="shrink-0 pt-3 border-t border-slate-100 mt-2">
+          <button id="p2BtnStartStory" onclick="startP2MissionFromStory()" class="arcade-btn w-full bg-sky-600 hover:bg-sky-500 active:bg-sky-700 text-white font-black text-base sm:text-lg py-3.5 sm:py-4 px-4 rounded-2xl shadow-lg transition transform active:scale-95 flex items-center justify-center gap-2 border-2 border-sky-700 cursor-pointer">
+            <span>🚴 Carregar na Eco-Bike e Ajudar! ➔</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
 
     <!-- MODAL DE CONFIRMAÇÃO: VOLTAR AO INÍCIO -->
     <div id="exitConfirmModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/75 backdrop-blur-sm p-4 pop-in">
@@ -937,6 +1214,78 @@
             Sim, Voltar 🏠
           </button>
         </div>
+      </div>
+    </div>
+
+    <!-- MODAL DE TRANSIÇÃO / VITÓRIA DE FASE (NUNCA PASSA AUTOMÁTICO - AGUARDA O CLIQUE DO JOGADOR) -->
+    <div id="phaseVictoryModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/80 backdrop-blur-md p-3 sm:p-4 overflow-y-auto">
+      <div class="bg-white rounded-3xl p-5 sm:p-7 max-w-lg w-full max-h-[92dvh] flex flex-col border-4 border-amber-400 shadow-2xl text-center relative my-auto pop-in">
+        
+        <!-- Ícone / Estrelas no Topo -->
+        <div class="flex items-center justify-center gap-1.5 text-3xl sm:text-4xl mb-1 animate-bounce">
+          <span id="pvmStar1">⭐</span>
+          <span id="pvmStar2" class="text-4xl sm:text-5xl">🏆</span>
+          <span id="pvmStar3">⭐</span>
+        </div>
+
+        <div class="overflow-y-auto pr-1 flex-1 space-y-3 -webkit-overflow-scrolling-touch text-left">
+          
+          <div class="text-center">
+            <span id="pvmBadge" class="bg-amber-100 text-amber-950 text-xs font-black uppercase px-3 py-1 rounded-full border border-amber-300 inline-block shadow-sm">
+              Fase 1 Concluída!
+            </span>
+            <h3 id="pvmTitle" class="text-2xl sm:text-3xl font-black text-slate-900 leading-tight mt-1.5 font-heading">
+              Quintal 100% Limpo!
+            </h3>
+            <p id="pvmDesc" class="text-xs sm:text-sm text-slate-600 font-semibold mt-1 leading-relaxed max-w-md mx-auto text-center">
+              Parabéns! Você separou todos os resíduos domésticos nas lixeiras corretas de coleta seletiva!
+            </p>
+          </div>
+
+          <!-- Estatísticas / Conquistas da Fase -->
+          <div class="bg-slate-50 p-3.5 sm:p-4 rounded-2xl border-2 border-slate-200 space-y-2">
+            <div class="flex items-center justify-between text-xs sm:text-sm font-extrabold text-slate-800 border-b border-slate-200 pb-2">
+              <span class="flex items-center gap-2">
+                <span id="pvmStatIcon1" class="text-xl">🎯</span>
+                <span id="pvmStatLabel1">Desafio:</span>
+              </span>
+              <span id="pvmStatVal1" class="font-black text-emerald-700">6 de 6 Separados</span>
+            </div>
+            <div class="flex items-center justify-between text-xs sm:text-sm font-extrabold text-slate-800 border-b border-slate-200 pb-2">
+              <span class="flex items-center gap-2">
+                <span class="text-xl">⭐</span>
+                <span>Pontuação Conquistada:</span>
+              </span>
+              <span id="pvmStatScore" class="font-black text-amber-600">+300 Pontos</span>
+            </div>
+            <div class="flex items-center justify-between text-xs sm:text-sm font-extrabold text-slate-800">
+              <span class="flex items-center gap-2">
+                <span id="pvmStatIcon3" class="text-xl">🌍</span>
+                <span id="pvmStatLabel3">Impacto Ecológico:</span>
+              </span>
+              <span id="pvmStatVal3" class="font-black text-sky-700">100% Reciclado</span>
+            </div>
+          </div>
+
+          <!-- Card Pedagógico de Transição -->
+          <div id="pvmNextPreview" class="bg-emerald-50 p-3 sm:p-3.5 rounded-2xl border-2 border-emerald-300 flex items-center gap-3">
+            <span id="pvmNextIcon" class="text-3xl sm:text-4xl shrink-0">🚲</span>
+            <div class="text-left min-w-0 flex-1">
+              <div class="text-[11px] font-black uppercase text-emerald-800">Próxima Etapa:</div>
+              <div id="pvmNextTitle" class="font-black text-xs sm:text-sm text-emerald-950 leading-snug">Fase 2: Expedição Eco-Bike</div>
+              <div id="pvmNextDesc" class="text-[11px] sm:text-xs text-slate-600 font-semibold leading-tight mt-0.5">Leve resíduos volumosos e especiais aos Ecopontos e farmácias!</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Botão Ir para a Próxima Fase (Fixo e Grande) -->
+        <div class="shrink-0 pt-3 border-t border-slate-100 mt-2">
+          <button id="pvmBtnNext" onclick="nextPhaseFromVictory()" class="arcade-btn w-full bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-black py-3.5 sm:py-4 px-6 rounded-2xl shadow-lg border-2 border-emerald-700 text-base sm:text-lg flex items-center justify-center gap-2.5 transition transform active:scale-95 cursor-pointer">
+            <span id="pvmBtnText">Ir para a Fase 2: Eco-Bike 🚲 ➔</span>
+          </button>
+        </div>
+
       </div>
     </div>
 
@@ -1064,6 +1413,11 @@
       }
 
       if (e.code === 'Escape' || e.key === 'Escape') {
+        const pvm = document.getElementById('phaseVictoryModal');
+        if (pvm && !pvm.classList.contains('hidden')) {
+          nextPhaseFromVictory();
+          return;
+        }
         const exitModal = document.getElementById('exitConfirmModal');
         if (exitModal && !exitModal.classList.contains('hidden')) {
           closeExitConfirmModal();
@@ -1074,8 +1428,33 @@
           closeP1Modal();
           return;
         }
-        if (STATE.phase >= 1 && STATE.phase <= 3) {
+        const p2StoryModal = document.getElementById('p2StoryModal');
+        if (p2StoryModal && !p2StoryModal.classList.contains('hidden')) {
+          startP2MissionFromStory();
+          return;
+        }
+        if (STATE.phase >= 1 && STATE.phase <= 4) {
           confirmExitToHome();
+          return;
+        }
+      }
+
+      // Atalhos numéricos e letras (1..4 ou A..D) para o Quiz da Fase 4
+      if (STATE.phase === 4 && typeof P4 !== 'undefined' && !P4.hasAnswered) {
+        if (e.code === 'Digit1' || e.key === '1' || e.code === 'KeyA' || e.key === 'a' || e.key === 'A') {
+          handleP4OptionClick(0);
+          return;
+        }
+        if (e.code === 'Digit2' || e.key === '2' || e.code === 'KeyB' || e.key === 'b' || e.key === 'B') {
+          handleP4OptionClick(1);
+          return;
+        }
+        if (e.code === 'Digit3' || e.key === '3' || e.code === 'KeyC' || e.key === 'c' || e.key === 'C') {
+          handleP4OptionClick(2);
+          return;
+        }
+        if (e.code === 'Digit4' || e.key === '4' || e.code === 'KeyD' || e.key === 'd' || e.key === 'D') {
+          handleP4OptionClick(3);
           return;
         }
       }
@@ -1093,10 +1472,29 @@
 
       // Evita disparos repetidos por segurar Espaço/Enter (e.repeat)
       if (!e.repeat && (e.code === 'Space' || e.key === ' ' || e.code === 'Enter' || e.key === 'Enter')) {
+        const pvm = document.getElementById('phaseVictoryModal');
+        if (pvm && !pvm.classList.contains('hidden')) {
+          nextPhaseFromVictory();
+          return;
+        }
+        const p1Modal = document.getElementById('p1SuccessModal');
+        if (p1Modal && !p1Modal.classList.contains('hidden')) {
+          closeP1Modal();
+          return;
+        }
+        const p2StoryModal = document.getElementById('p2StoryModal');
+        if (p2StoryModal && !p2StoryModal.classList.contains('hidden')) {
+          startP2MissionFromStory();
+          return;
+        }
         const exitModal = document.getElementById('exitConfirmModal');
         if (exitModal && !exitModal.classList.contains('hidden')) return;
         if (STATE.phase === 1) triggerP1Action();
         if (STATE.phase === 2) triggerP2Action();
+        if (STATE.phase === 4 && typeof P4 !== 'undefined' && P4.hasAnswered) {
+          nextP4Question();
+          return;
+        }
       }
     });
 
@@ -1129,6 +1527,31 @@
     }
     function stopMove(dir) {
       STATE.keys[dir] = false;
+    }
+
+    /* Sistema de Alertas e Toasts Pedagógicos Visíveis na Tela */
+    const _gameToastTimers = {};
+    function showGameError(phase, title, desc, duration = 3500) {
+      const toast = document.getElementById(`${phase}ErrorToast`);
+      const titleEl = document.getElementById(`${phase}ErrorTitle`);
+      const descEl = document.getElementById(`${phase}ErrorDesc`);
+      if (titleEl) titleEl.innerText = title;
+      if (descEl) descEl.innerText = desc;
+      if (toast) {
+        toast.classList.remove('hidden');
+        if (_gameToastTimers[phase]) clearTimeout(_gameToastTimers[phase]);
+        _gameToastTimers[phase] = setTimeout(() => {
+          toast.classList.add('hidden');
+        }, duration);
+      }
+    }
+    function hideGameError(phase) {
+      const toast = document.getElementById(`${phase}ErrorToast`);
+      if (toast) toast.classList.add('hidden');
+      if (_gameToastTimers[phase]) {
+        clearTimeout(_gameToastTimers[phase]);
+        delete _gameToastTimers[phase];
+      }
     }
 
     const AVATARS = {
@@ -1166,52 +1589,147 @@
       STATE.particles = [];
       STATE.phase = phase;
 
+      hideGameError('p1');
+      hideGameError('p2');
+      if (typeof P1 !== 'undefined') P1.errorAlert = null;
+      if (typeof P2 !== 'undefined') P2.errorAlert = null;
+
       document.getElementById('screenIntro').classList.add('hidden');
       document.getElementById('screenPhase1').classList.add('hidden');
       document.getElementById('screenPhase2').classList.add('hidden');
       document.getElementById('screenPhase3').classList.add('hidden');
+      document.getElementById('screenPhase4').classList.add('hidden');
       document.getElementById('screenWin').classList.add('hidden');
       const p1Modal = document.getElementById('p1SuccessModal');
       if (p1Modal) p1Modal.classList.add('hidden');
+      const p2StoryModal = document.getElementById('p2StoryModal');
+      if (p2StoryModal) p2StoryModal.classList.add('hidden');
+      const victoryModal = document.getElementById('phaseVictoryModal');
+      if (victoryModal) victoryModal.classList.add('hidden');
+      STATE.pendingVictoryPhase = null;
 
       const hudLabel = document.getElementById('hudPhaseLabel');
       const pBar = document.getElementById('globalProgressBar');
 
       if (phase === 0) {
         document.getElementById('screenIntro').classList.remove('hidden');
-        hudLabel.innerText = "Início";
+        hudLabel.innerText = "Apresentação";
+        document.getElementById('btnHome')?.classList.add('hidden');
         pBar.style.width = "0%";
         document.getElementById('printableDiploma')?.classList.add('hidden');
         document.getElementById('btnPrintDiploma')?.classList.add('hidden');
         document.getElementById('diplomaNameError')?.classList.add('hidden');
-      } else if (phase === 1) {
-        document.getElementById('screenPhase1').classList.remove('hidden');
-        hudLabel.innerText = "Fase 1/3: Quintal";
-        pBar.style.width = "33%";
-        initPhase1();
-      } else if (phase === 2) {
-        document.getElementById('screenPhase2').classList.remove('hidden');
-        hudLabel.innerText = "Fase 2/3: Eco-Bike";
-        pBar.style.width = "66%";
-        initPhase2();
-      } else if (phase === 3) {
-        document.getElementById('screenPhase3').classList.remove('hidden');
-        hudLabel.innerText = "Fase 3/3: Aquífero";
-        pBar.style.width = "100%";
-        initPhase3();
-      } else if (phase === 4) {
-        document.getElementById('screenWin').classList.remove('hidden');
-        hudLabel.innerText = "Concluído! 🏆";
-        pBar.style.width = "100%";
-        playSound('fanfare');
-        const scoreEl = document.getElementById('diplomaScorePlaceholder');
-        if (scoreEl) scoreEl.innerText = STATE.score;
-        scheduleGameTimeout(() => document.getElementById('finalStudentName')?.focus(), 150);
+      } else {
+        document.getElementById('btnHome')?.classList.remove('hidden');
+        if (phase === 1) {
+          document.getElementById('screenPhase1').classList.remove('hidden');
+          hudLabel.innerText = "Fase 1/4: Quintal";
+          pBar.style.width = "25%";
+          initPhase1();
+        } else if (phase === 2) {
+          document.getElementById('screenPhase2').classList.remove('hidden');
+          hudLabel.innerText = "Fase 2/4: Eco-Bike";
+          pBar.style.width = "50%";
+          initPhase2();
+        } else if (phase === 3) {
+          document.getElementById('screenPhase3').classList.remove('hidden');
+          hudLabel.innerText = "Fase 3/4: Aquífero";
+          pBar.style.width = "75%";
+          initPhase3();
+        } else if (phase === 4) {
+          document.getElementById('screenPhase4').classList.remove('hidden');
+          hudLabel.innerText = "Fase 4/4: Eco-Quiz";
+          pBar.style.width = "90%";
+          initPhase4();
+        } else if (phase === 5) {
+          document.getElementById('screenWin').classList.remove('hidden');
+          hudLabel.innerText = "Concluído! 🏆";
+          pBar.style.width = "100%";
+          playSound('fanfare');
+          const scoreEl = document.getElementById('diplomaScorePlaceholder');
+          if (scoreEl) scoreEl.innerText = STATE.score;
+          scheduleGameTimeout(() => document.getElementById('finalStudentName')?.focus(), 150);
+        }
       }
 
       if (phase >= 1 && phase <= 3) {
         requestAnimationFrame(() => syncGameCardHeight());
       }
+    }
+
+    /* Sistema de Vitória de Fase com Janela de Confirmação (Sem Transição Automática) */
+    function openPhaseVictoryModal(phase) {
+      STATE.pendingVictoryPhase = phase;
+      playSound('fanfare');
+
+      const modal = document.getElementById('phaseVictoryModal');
+      const badge = document.getElementById('pvmBadge');
+      const title = document.getElementById('pvmTitle');
+      const desc = document.getElementById('pvmDesc');
+      const statVal1 = document.getElementById('pvmStatVal1');
+      const statScore = document.getElementById('pvmStatScore');
+      const statVal3 = document.getElementById('pvmStatVal3');
+      const nextIcon = document.getElementById('pvmNextIcon');
+      const nextTitle = document.getElementById('pvmNextTitle');
+      const nextDesc = document.getElementById('pvmNextDesc');
+      const btnText = document.getElementById('pvmBtnText');
+
+      if (phase === 1) {
+        if (badge) badge.innerText = "Fase 1 Concluída!";
+        if (title) title.innerText = "Quintal 100% Limpo! 🌿";
+        if (desc) desc.innerText = "Excelente trabalho! Você separou corretamente todos os resíduos domésticos nas lixeiras oficiais de coleta seletiva.";
+        if (statVal1) statVal1.innerText = "6 de 6 Resíduos Separados";
+        if (statScore) statScore.innerText = "+300 Pontos";
+        if (statVal3) statVal3.innerText = "Coleta Seletiva em Casa Realizada";
+        if (nextIcon) nextIcon.innerText = "🚲";
+        if (nextTitle) nextTitle.innerText = "Fase 2: Expedição Eco-Bike";
+        if (nextDesc) nextDesc.innerText = "Pilote pela cidade e entregue itens especiais em Ecopontos e farmácias!";
+        if (btnText) btnText.innerText = "Ir para a Fase 2: Eco-Bike 🚲 ➔";
+      } else if (phase === 2) {
+        if (badge) badge.innerText = "Fase 2 Concluída!";
+        if (title) title.innerText = "Expedição Finalizada! 🚲";
+        if (desc) desc.innerText = "Missão cumprida! Você entregou pilhas, pneus, remédios e óleo usado nos pontos adequados de logística reversa.";
+        if (statVal1) statVal1.innerText = "4 de 4 Estabelecimentos Atendidos";
+        if (statScore) statScore.innerText = "+500 Pontos";
+        if (statVal3) statVal3.innerText = "Zero Contaminação Urbana e Dengue";
+        if (nextIcon) nextIcon.innerText = "💧";
+        if (nextTitle) nextTitle.innerText = "Fase 3: O Guardião do Aquífero";
+        if (nextDesc) nextDesc.innerText = "Proteja o Aquífero Guarani resgatando materiais para a reciclagem!";
+        if (btnText) btnText.innerText = "Ir para a Fase 3: Aquífero 💧 ➔";
+      } else if (phase === 3) {
+        if (badge) badge.innerText = "Fase 3 Concluída!";
+        if (title) title.innerText = "Aquífero 100% Protegido! 💧";
+        if (desc) desc.innerText = "Sensacional! Todos os recicláveis foram salvos para a Cooperativa de Reciclagem e as águas continuam puras!";
+        if (statVal1) statVal1.innerText = "6 de 6 Recicláveis Salvos";
+        if (statScore) statScore.innerText = "+900 Pontos";
+        if (statVal3) statVal3.innerText = "Aquífero Guarani 100% Puro";
+        if (nextIcon) nextIcon.innerText = "🧠";
+        if (nextTitle) nextTitle.innerText = "Fase 4: Desafio dos Eco-Mestres";
+        if (nextDesc) nextDesc.innerText = "Responda ao Quiz Perguntados e prove tudo o que você aprendeu!";
+        if (btnText) btnText.innerText = "Ir para a Fase 4: Eco-Quiz 🧠 ➔";
+      } else if (phase === 4) {
+        if (badge) badge.innerText = "Todas as 4 Fases Concluídas!";
+        if (title) title.innerText = "Mestre da Sustentabilidade! 🎓🌟";
+        if (desc) desc.innerText = "Você acertou as perguntas do Desafio dos Eco-Mestres e provou que é um verdadeiro Guardião de Ribeirão Preto!";
+        if (statVal1) statVal1.innerText = "3 de 3 Respostas Certas no Quiz";
+        if (statScore) statScore.innerText = "+600 Pontos";
+        if (statVal3) statVal3.innerText = "Gabaritou o Conhecimento Ecológico";
+        if (nextIcon) nextIcon.innerText = "📜";
+        if (nextTitle) nextTitle.innerText = "Diploma Oficial Escolar";
+        if (nextDesc) nextDesc.innerText = "Personalize e imprima seu certificado de Guardião Ambiental!";
+        if (btnText) btnText.innerText = "Ver Meu Diploma Oficial 📜 🏆 ➔";
+      }
+
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function nextPhaseFromVictory() {
+      const modal = document.getElementById('phaseVictoryModal');
+      if (modal) modal.classList.add('hidden');
+      const targetPhase = STATE.pendingVictoryPhase ? STATE.pendingVictoryPhase + 1 : 1;
+      STATE.pendingVictoryPhase = null;
+      playSound('pickup');
+      setPhase(targetPhase);
     }
 
     function startMission() {
@@ -1548,20 +2066,20 @@
       ],
       rejeito: [
         "....KKKKKKKK....",
-        "..KKFFFbbFFFKK..",
-        ".KFFFFFbBFFFFFK.",
-        "KFFFFFFFFFFFFFFK",
-        "KFFFFFFFFFFFFFFK",
-        "KFFKFFFFFFFFKFFK",
-        "KFFKWKKFFKWKKFFK",
-        "KFFKKKKFFKKKKFFK",
-        "KFFFFFFFFFFFFFFK",
-        "KFMMFFFCCFFFMMFK",
-        ".KFFFFCUUCFFFFK.",
-        ".KfffCCWWCCfffK.",
-        "..KffCCWWCCffK..",
-        "...KKffCCffKK...",
-        ".....KKKKKK.....",
+        "..KKWSSSSSSWKK..",
+        ".KWWSSSSSSSSWWK.",
+        "KCCWWWWWWWWWWCCK",
+        "KUUWWWWWWWWWWUUK",
+        "KCCWWWWWWWWWWCCK",
+        ".KWWWWWWWWWWWWK.",
+        ".KWWWSSSSSSWWWK.",
+        "..KWWSSSSSSWWK..",
+        "..KWWSSSSSSWWK..",
+        "...KWWSSSSWWK...",
+        "...KWWSSSSWWK...",
+        "....KWWSSWWK....",
+        "....KKWWWWKK....",
+        "......KKKK......",
         "................"
       ],
       lixeira_rejeito: [
@@ -1822,12 +2340,12 @@
       const icon = item.icon || '';
       const name = (item.name || '').toLowerCase();
       if (id === 'papel' || icon === '📦') return 'papel';
-      if (id === 'plastico' || icon === '🧴') return 'plastico';
-      if (id === 'vidro' || icon === '🫙') return 'vidro';
+      if (id === 'plastico' || icon === '🧴' || icon === '🍨') return 'plastico';
+      if (id === 'vidro' || icon === '🫙' || icon === '🍯' || icon === '🍶') return 'vidro';
       if (id === 'metal' || icon === '🥫') return 'metal';
       if (id === 'organico' || icon === '🍌' || icon === '🍎') return 'organico';
       if (icon === '🗑️') return 'lixeira_rejeito';
-      if (id === 'rejeito' || icon === '👶') return 'rejeito';
+      if (id === 'rejeito' || icon === '👶' || icon === '🧻') return 'rejeito';
       if (icon === '🍾' || name.includes('garrafa de vidro')) return 'garrafa_vidro';
       if (icon === '🗞️' || name.includes('revista') || name.includes('jornal')) return 'jornal';
       if (icon === '🛋️' || name.includes('sofá')) return 'sofa';
@@ -2123,7 +2641,7 @@
           binName: "Papel (Azul)",
           binColor: "#2563eb",
           x: 180,
-          y: 285,
+          y: 265,
           collected: false,
           sorted: false,
           explanation: "A caixa de papelão é feita de fibras de celulose limpas e secas. Quando descartada na lixeira Azul, ela segue para a reciclagem e pode virar novos cadernos, caixas e livros, poupando árvores e água!",
@@ -2143,7 +2661,7 @@
           binName: "Plástico (Vermelho)",
           binColor: "#dc2626",
           x: 400,
-          y: 285,
+          y: 255,
           collected: false,
           sorted: false,
           explanation: "O plástico pode demorar mais de 400 anos para se decompor na natureza! Na lixeira Vermelha, a garrafa PET é lavada, picada em flocos e reaproveitada para fazer novas embalagens, tecidos e brinquedos.",
@@ -2151,26 +2669,26 @@
             { icon: "🧴", name: "Frascos de Xampu" },
             { icon: "🛍️", name: "Sacolas de Mercado" },
             { icon: "🥤", name: "Copos Plásticos Limpos" },
-            { icon: "🪣", name: "Potes de Sorvete" }
+            { icon: "🍨", name: "Potes de Sorvete" }
           ]
         },
         {
           id: "vidro",
           name: "Pote de Vidro de Geleia",
           shortName: "Pote de Vidro",
-          icon: "🫙",
+          icon: "🍯",
           cat: "vidro",
           binName: "Vidro (Verde)",
           binColor: "#16a34a",
           x: 620,
-          y: 285,
+          y: 265,
           collected: false,
           sorted: false,
           explanation: "O vidro é 100% reciclável infinitas vezes sem perder a qualidade! Jogando na lixeira Verde, você evita a extração de areia e minerais da natureza e reduz a emissão de carbono.",
           examples: [
             { icon: "🍾", name: "Garrafas de Azeite e Suco" },
-            { icon: "🫙", name: "Potes de Maionese" },
-            { icon: "🍶", name: "Frascos de Perfume" },
+            { icon: "🍶", name: "Potes de Maionese" },
+            { icon: "🧪", name: "Frascos de Perfume e Remédio" },
             { icon: "🥛", name: "Copos de Vidro" }
           ]
         },
@@ -2218,7 +2736,7 @@
           id: "rejeito",
           name: "Fralda Descartável Usada",
           shortName: "Fralda Usada (Rejeito)",
-          icon: "👶",
+          icon: "🧻",
           cat: "rejeito",
           binName: "Rejeito (Cinza)",
           binColor: "#475569",
@@ -2226,10 +2744,10 @@
           y: 448,
           collected: false,
           sorted: false,
-          explanation: "Atenção máxima: fraldas usadas, papéis higiênicos e curativos contêm germes e sujeira. Eles NUNCA podem ser reciclados! Devem ir na lixeira Cinza de REJEITO e seguir protegidos para o aterro sanitário.",
+          explanation: "Atenção máxima: fraldas usadas, cotonetes e papéis higiênicos contêm germes e sujeira. Eles NUNCA podem ser reciclados! Devem ir na lixeira Cinza de REJEITO e seguir protegidos para o aterro sanitário.",
           examples: [
             { icon: "🧻", name: "Papel Higiênico Usado" },
-            { icon: "🍕", name: "Papel de Pizza Engordurado" },
+            { icon: "🧼", name: "Cotonetes e Fio Dental" },
             { icon: "🩹", name: "Curativos e Fitas Adesivas" },
             { icon: "🧽", name: "Esponjas de Pia Velhas" }
           ]
@@ -2239,7 +2757,7 @@
       bins: [
         { id: 'papel', name: 'PAPEL', icon: '📦', color: '#2563eb', x: 82, y: 52, w: 90, h: 104 },
         { id: 'plastico', name: 'PLÁSTICO', icon: '🧴', color: '#dc2626', x: 209, y: 52, w: 90, h: 104 },
-        { id: 'vidro', name: 'VIDRO', icon: '🫙', color: '#16a34a', x: 336, y: 52, w: 90, h: 104 },
+        { id: 'vidro', name: 'VIDRO', icon: '🍾', color: '#16a34a', x: 336, y: 52, w: 90, h: 104 },
         { id: 'metal', name: 'METAL', icon: '🥫', color: '#d97706', x: 463, y: 52, w: 90, h: 104 },
         { id: 'organico', name: 'ORGÂNICO', icon: '🍎', color: '#78350f', x: 590, y: 52, w: 90, h: 104 },
         { id: 'rejeito', name: 'REJEITO', icon: '🗑️', color: '#475569', x: 717, y: 52, w: 90, h: 104 }
@@ -2255,7 +2773,7 @@
       P1.carrying = null;
       highlightVoceSabia(null);
       P1.player.x = 400;
-      P1.player.y = 360;
+      P1.player.y = 375;
       P1.player.targetX = null;
       P1.player.targetY = null;
 
@@ -2401,6 +2919,8 @@
         if (nearestBin && minDist < 95) {
           if (P1.carrying.cat === nearestBin.id) {
             // Acertou!
+            hideGameError('p1');
+            P1.errorAlert = null;
             const itemSorted = P1.carrying;
             itemSorted.sorted = true;
             P1.itemsSorted++;
@@ -2419,7 +2939,17 @@
           } else {
             // Errou a lixeira
             playSound('bad');
-            document.getElementById('p1TipText').innerText = `❌ Ops! ${P1.carrying.shortName} não vai na lixeira ${nearestBin.name}! Procure a correta!`;
+            const wrongBin = nearestBin;
+            const item = P1.carrying;
+            P1.errorAlert = {
+              timer: 140,
+              binId: wrongBin.id,
+              wrongName: wrongBin.name,
+              correctName: item.binName,
+              itemName: item.shortName
+            };
+            showGameError('p1', '❌ Lixeira Incorreta!', `${item.name} NÃO vai na lixeira ${wrongBin.name}! Procure a lixeira ${item.binName}.`);
+            document.getElementById('p1TipText').innerText = `❌ Ops! ${item.shortName} não vai na lixeira ${wrongBin.name}! Procure a correta (${item.binName})!`;
           }
         } else {
           // Soltar o resíduo no chão longe das lixeiras
@@ -2428,6 +2958,8 @@
           droppedItem.x = Math.round(Math.max(80, Math.min((P1.w || 800) - 80, P1.player.x)));
           droppedItem.y = Math.round(Math.max(200, Math.min((P1.h || 620) - 40, P1.player.y + 12)));
           P1.carrying = null;
+          P1.errorAlert = null;
+          hideGameError('p1');
           highlightVoceSabia(null);
           playSound('pickup');
           document.getElementById('p1TipText').innerText = `Você soltou ${droppedItem.shortName} no chão. Pode pegá-lo novamente quando quiser!`;
@@ -2465,10 +2997,14 @@
       });
 
       if (P1.itemsSorted >= 6) {
-        btnTextEl.innerText = "Fase 1 Concluída! Ir para a Fase 2 🚲🚀";
+        btnTextEl.innerText = "Fase 1 Concluída! Ver Meu Desempenho 🏆";
       } else {
         btnTextEl.innerText = `Continuar Separando o Quintal (${P1.itemsSorted}/6) 🌿`;
       }
+
+      // Garante que o scroll do modal comece no topo em telas de celular
+      const scrollable = modal.querySelector('.overflow-y-auto');
+      if (scrollable) scrollable.scrollTop = 0;
 
       modal.classList.remove('hidden');
     }
@@ -2477,10 +3013,7 @@
       document.getElementById('p1SuccessModal').classList.add('hidden');
       highlightVoceSabia(null);
       if (P1.itemsSorted >= 6) {
-        playSound('fanfare');
-        scheduleGameTimeout(() => {
-          if (STATE.phase === 1) setPhase(2);
-        }, 500);
+        openPhaseVictoryModal(1);
       } else {
         document.getElementById('p1TipText').innerText = "Muito bem! Escolha outro resíduo no quintal para descartar!";
         document.getElementById('p1ActionLabel').innerText = "PEGAR ITEM";
@@ -2875,6 +3408,38 @@
       // 5. Partículas Hi-Bit Pixel Art
       drawParticles(ctx);
 
+      // 6. Alerta de Erro Visual na Lixeira (quando descarta na lixeira errada)
+      if (P1.errorAlert && P1.errorAlert.timer > 0) {
+        P1.errorAlert.timer--;
+        const wrongBin = P1.bins.find(b => b.id === P1.errorAlert.binId);
+        if (wrongBin) {
+          const blink = Math.floor(P1.errorAlert.timer / 8) % 2 === 0;
+          ctx.save();
+          ctx.translate(wrongBin.x, wrongBin.y - 24);
+          drawPixelCircle(ctx, 0, 0, 18, blink ? '#ef4444' : '#991b1b', '#ffffff', 2);
+          ctx.fillStyle = '#ffffff';
+          ctx.font = '900 18px "Fredoka", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('❌', 0, 1);
+          ctx.restore();
+        }
+
+        const bannerW = 560;
+        const bannerH = 48;
+        const bx = (w - bannerW) / 2;
+        const by = 168;
+        drawPixelBox(ctx, bx, by, bannerW, bannerH, 'rgba(153, 27, 27, 0.95)', '#f87171', 2, '#fca5a5', 'rgba(0,0,0,0.5)');
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '800 13px "Fredoka", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(`❌ LIXEIRA INCORRETA! "${P1.errorAlert.itemName}" não vai aqui!`, w / 2, by + 16);
+        ctx.fillStyle = '#fef08a';
+        ctx.font = '800 12px "Fredoka", sans-serif';
+        ctx.fillText(`Dica: descarte na lixeira ${P1.errorAlert.correctName}!`, w / 2, by + 33);
+      }
+
       ctx.restore();
     }
 
@@ -2893,40 +3458,153 @@
       isDelivering: false,
       animId: null,
       stations: [
-        { id: 'ecoponto', name: 'ECOPONTO MUNICIPAL', icon: '🟢', label: 'Caçambas: Móveis, Pneus e Entulho', x: 155, y: 126, w: 226, h: 112, color: '#10b981', delivered: false },
-        { id: 'farmacia', name: 'FARMÁCIA LOGMED', icon: '🏥', label: 'Farmácia: Remédios e Xaropes', x: 645, y: 126, w: 226, h: 112, color: '#0ea5e9', delivered: false },
+        { id: 'ecoponto', name: 'ECOPONTO MUNICIPAL', icon: '🟢', label: 'Caçambas: Móveis, Pneus e Entulho', x: 155, y: 151, w: 226, h: 112, color: '#10b981', delivered: false },
+        { id: 'farmacia', name: 'FARMÁCIA', icon: '🏥', label: 'Farmácia: Remédios e Xaropes', x: 645, y: 151, w: 226, h: 112, color: '#0ea5e9', delivered: false },
         { id: 'supermercado', name: 'SUPERMERCADO', icon: '🏬', label: 'Mercado: Pilhas e Eletrônicos', x: 155, y: 494, w: 226, h: 112, color: '#f59e0b', delivered: false },
         { id: 'oleo', name: 'ECO-POSTO DE ÓLEO', icon: '🛢️', label: 'Tambores: Óleo de Cozinha PET', x: 645, y: 494, w: 226, h: 112, color: '#8b5cf6', delivered: false }
       ],
       missionsPool: {
         ecoponto: [
-          { name: "Sofá Velho Rasgado", shortName: "SOFÁ VELHO", icon: "🛋️", target: "ecoponto", color: "#10b981", tip: "Móveis velhos, sofás e madeiras vão nas caçambas do Ecoponto Municipal!" },
-          { name: "Pneu de Carro Usado", shortName: "PNEU USADO", icon: "🛞", target: "ecoponto", color: "#10b981", tip: "Evite a dengue! Pneus velhos são recebidos gratuitamente no Ecoponto." }
+          {
+            name: "Sofá Velho Rasgado",
+            shortName: "SOFÁ VELHO",
+            icon: "🛋️",
+            target: "ecoponto",
+            color: "#10b981",
+            caller: "Tia Cida (Mudança da Sala)",
+            title: "O Sofá Antigo da Tia Cida! 🛋️",
+            story: "Oh não! Minha tia trocou os móveis da sala e ia deixar este sofá velho rasgado na calçada da rua! Jogar sofás na rua atrai escorpiões e entope os bueiros quando chove forte. Vamos resgatar o sofá na Eco-Bike e levar até o Ecoponto Municipal?",
+            tip: "Móveis volumosos nunca vão no caminhão de lixo comum! Leve sempre ao Ecoponto."
+          },
+          {
+            name: "Pneu de Carro Usado",
+            shortName: "PNEU USADO",
+            icon: "🛞",
+            target: "ecoponto",
+            color: "#10b981",
+            caller: "Seu Marcos (Oficina do Bairro)",
+            title: "Alerta de Dengue: Pneu no Quintal! 🛞",
+            story: "Atenção máxima! No quintal do Seu Marcos trocaram os pneus do carro e deixaram um pneu jogado no tempo, acumulando água da chuva! Isso é um perigo de foco do mosquito da Dengue para o bairro todo. Vamos resgatar esse pneu na bike e entregar no Ecoponto!",
+            tip: "Pneus velhos são triturados no Ecoponto e viram asfalto ecológico e solas de sapato!"
+          },
+          {
+            name: "Restos de Madeira de Reforma",
+            shortName: "TÁBUAS DE MADEIRA",
+            icon: "🪵",
+            target: "ecoponto",
+            color: "#10b981",
+            caller: "Seu Zé (Reforma da Cozinha)",
+            title: "Sobras de Madeira da Reforma! 🪵",
+            story: "O vizinho fez uma pequena reforma na cozinha e sobraram tábuas de madeira e restos de forro que o caminhão de lixo comum não recolhe. Vamos ajudar o Seu Zé carregando as madeiras para as caçambas próprias do Ecoponto!",
+            tip: "Madeiras e entulhos de pequenas reformas residenciais são recebidos gratuitamente no Ecoponto."
+          }
         ],
         farmacia: [
-          { name: "Remédios e Xaropes Vencidos", shortName: "REMÉDIOS VENCIDOS", icon: "💊", target: "farmacia", color: "#0ea5e9", tip: "Remédios nunca vão na pia ou privada! Entregue na Farmácia (coletor LOGMED)." }
+          {
+            name: "Xaropes e Antibióticos Vencidos",
+            shortName: "REMÉDIOS VENCIDOS",
+            icon: "💊",
+            target: "farmacia",
+            color: "#0ea5e9",
+            caller: "Vovó Helena (Faxina no Armário)",
+            title: "Remédios Vencidos da Vovó! 💊",
+            story: "A Vovó Helena fez uma faxina no armário do banheiro e encontrou xaropes e antibióticos vencidos há meses! Ela quase jogou no vaso sanitário, mas isso contamina as redes de água e os peixes. Vamos colocar na Eco-Bike e levar até o totem Papa-Remédio da Farmácia!",
+            tip: "Remédios nunca devem ser jogados na pia ou privada! Entregue sempre no Papa-Remédio da Farmácia."
+          },
+          {
+            name: "Pomadas e Cartelas Esquecidas",
+            shortName: "POMADAS E BLÍSTERS",
+            icon: "🩹",
+            target: "farmacia",
+            color: "#0ea5e9",
+            caller: "Dona Lúcia (Remédios da Gaveta)",
+            title: "Cartelas Esquecidas na Gaveta! 🩹",
+            story: "Dona Lúcia encontrou cartelas de comprimidos e pomadas esquecidas no fundo da gaveta que perderam a validade. Se forem para o lixo comum, animais e crianças podem se intoxicar. Vamos pedalar até a Farmácia e descartar com segurança!",
+            tip: "As farmácias possuem coletores certificados que destinam os medicamentos para incineração limpa."
+          }
         ],
         supermercado: [
-          { name: "Pilhas e Baterias Usadas", shortName: "PILHAS E BATERIAS", icon: "🔋", target: "supermercado", color: "#f59e0b", tip: "Pilhas e baterias têm metais pesados! Entregue no totem do Supermercado." }
+          {
+            name: "Pilhas do Controle e Brinquedos",
+            shortName: "PILHAS E BATERIAS",
+            icon: "🔋",
+            target: "supermercado",
+            color: "#f59e0b",
+            caller: "Pedrinho (Controle do Videogame)",
+            title: "As Pilhas do Videogame Gastaram! 🔋",
+            story: "O Pedrinho estava jogando videogame com os amigos e as pilhas do controle descarregaram totalmente! Pilhas e baterias contêm chumbo, mercúrio e cádmio que vazam no solo se forem para o lixo normal. Vamos levar até o totem de coleta de pilhas do Supermercado!",
+            tip: "Pilhas e baterias são recicladas por logística reversa para reaproveitar os metais nobres."
+          },
+          {
+            name: "Baterias Velhas e Cabos Quebrados",
+            shortName: "BATERIAS E CABOS",
+            icon: "🔌",
+            target: "supermercado",
+            color: "#f59e0b",
+            caller: "Família Silva (Eletrônicos Quebrados)",
+            title: "Baterias e Fios da Gaveta da Sala! 🔌",
+            story: "A família fez uma limpeza na gaveta da sala e separou baterias velhas de brinquedos e celulares quebrados. Metais pesados contaminam o solo por séculos! Vamos colocar tudo no trailer da Eco-Bike e entregar no ponto de coleta do Supermercado!",
+            tip: "Supermercados e lojas de eletrônicos têm totens gratuitos para recolher resíduos eletroeletrônicos."
+          }
         ],
         oleo: [
-          { name: "Óleo de Cozinha em PET", shortName: "ÓLEO DE COZINHA", icon: "🛢️", target: "oleo", color: "#8b5cf6", tip: "1 litro de óleo contamina 25 mil litros de água! Entregue nos tambores do Eco-Posto." }
+          {
+            name: "Garrafa PET com Óleo Usado",
+            shortName: "ÓLEO DE COZINHA",
+            icon: "🛢️",
+            target: "oleo",
+            color: "#8b5cf6",
+            caller: "Dona Maria (Pastéis de Domingo)",
+            title: "O Óleo da Fritura de Domingo! 🛢️",
+            story: "Dona Maria fritou deliciosos pastéis no almoço de domingo e guardou o óleo de cozinha usado dentro de uma garrafa PET. Ela sabe que 1 litro de óleo despejado na pia contamina até 25 mil litros de água! Vamos recolher essa garrafa e entregar nos tambores do Eco-Posto!",
+            tip: "O óleo de cozinha reciclado vira sabão biodegradável e combustível limpo (biodiesel)!"
+          },
+          {
+            name: "Óleo Vegetal da Cantina",
+            shortName: "ÓLEO DE PASTEL",
+            icon: "🍳",
+            target: "oleo",
+            color: "#8b5cf6",
+            caller: "Cantina da Escola (Óleo Usado)",
+            title: "Óleo Vegetal da Cantina Escolar! 🍳",
+            story: "A cantina da escola trocou o óleo vegetal da fritadeira e guardou em recipientes fechados para não entupir os encanamentos da escola. Vamos ajudar transportando essa carga na Eco-Bike até o tambor ecológico do Eco-Posto de Combustíveis!",
+            tip: "Nunca jogue óleo no ralo da pia! Além de entupir o encanamento, ele impermeabiliza o solo."
+          }
         ]
       },
       missions: []
     };
 
+    function getP2StationBayY(st) {
+      if (!st) return 310;
+      // Estabelecimentos superiores (Ecoponto e Farmácia): vaga na calçada frontal voltada para a avenida
+      if (st.y < (P2.h || 620) / 2) {
+        return st.y + st.h / 2 + 15;
+      }
+      // Estabelecimentos inferiores (Supermercado e Eco-Posto): vaga na calçada frontal ao norte
+      return st.y - st.h / 2 - 25;
+    }
+
     function buildUniqueP2Missions() {
-      // Seleciona exatamente 1 missão para cada um dos 4 estabelecimentos (ZERO repetição de local!)
+      // Sorteia aleatoriamente 1 historinha de cada uma das 4 categorias (1 para cada estabelecimento)
       const ecoOptions = P2.missionsPool.ecoponto;
+      const farmOptions = P2.missionsPool.farmacia;
+      const superOptions = P2.missionsPool.supermercado;
+      const oleoOptions = P2.missionsPool.oleo;
+
       const chosenEco = ecoOptions[Math.floor(Math.random() * ecoOptions.length)];
+      const chosenFarm = farmOptions[Math.floor(Math.random() * farmOptions.length)];
+      const chosenSuper = superOptions[Math.floor(Math.random() * superOptions.length)];
+      const chosenOleo = oleoOptions[Math.floor(Math.random() * oleoOptions.length)];
+
       const list = [
         { ...chosenEco },
-        { ...P2.missionsPool.farmacia[0] },
-        { ...P2.missionsPool.supermercado[0] },
-        { ...P2.missionsPool.oleo[0] }
+        { ...chosenFarm },
+        { ...chosenSuper },
+        { ...chosenOleo }
       ];
-      // Embaralha a ordem dos 4 estabelecimentos (Fisher-Yates)
+
+      // Embaralha a ordem dos 4 estabelecimentos aleatoriamente (Fisher-Yates)
       for (let i = list.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         const temp = list[i];
@@ -2934,6 +3612,61 @@
         list[j] = temp;
       }
       return list;
+    }
+
+    function openP2StoryModal() {
+      if (P2.missionIndex >= P2.missions.length) {
+        openPhaseVictoryModal(2);
+        return;
+      }
+      const mission = P2.missions[P2.missionIndex];
+      const targetSt = P2.stations.find(s => s.id === mission.target);
+      const stName = targetSt ? targetSt.name : 'o estabelecimento correto';
+
+      const modal = document.getElementById('p2StoryModal');
+      const badge = document.getElementById('p2StoryMissionBadge');
+      const avatarEl = document.getElementById('p2StoryKidAvatar');
+      const callerEl = document.getElementById('p2StoryCallerTag');
+      const titleEl = document.getElementById('p2StoryTitle');
+      const textEl = document.getElementById('p2StoryText');
+      const iconEl = document.getElementById('p2StoryItemIcon');
+      const nameEl = document.getElementById('p2StoryItemName');
+      const targetEl = document.getElementById('p2StoryTargetBadge');
+      const tipEl = document.getElementById('p2StoryTip');
+
+      if (badge) badge.innerText = `Missão ${P2.missionIndex + 1} de 4`;
+      if (avatarEl) avatarEl.innerText = AVATARS[STATE.avatar]?.icon || '👧';
+      if (callerEl) callerEl.innerText = mission.caller || 'Chamado da Vizinhança';
+      if (titleEl) titleEl.innerText = mission.title || mission.name;
+      if (textEl) textEl.innerText = mission.story || mission.tip;
+      if (iconEl) iconEl.innerText = mission.icon;
+      if (nameEl) nameEl.innerText = mission.name;
+      if (targetEl) {
+        targetEl.innerText = `📍 Destino: ${stName}`;
+        targetEl.style.backgroundColor = `${mission.color}15`;
+        targetEl.style.color = mission.color;
+        targetEl.style.borderColor = mission.color;
+      }
+      if (tipEl) tipEl.innerText = mission.tip;
+
+      const scrollable = modal.querySelector('.overflow-y-auto');
+      if (scrollable) scrollable.scrollTop = 0;
+
+      modal.classList.remove('hidden');
+      playSound('pickup');
+    }
+
+    function startP2MissionFromStory() {
+      const modal = document.getElementById('p2StoryModal');
+      if (modal) modal.classList.add('hidden');
+      playSound('bell');
+
+      P2.currentMission = P2.missions[P2.missionIndex];
+      document.getElementById('p2ItemCount').innerText = P2.missionIndex;
+      document.getElementById('p2CargoName').innerText = `${P2.currentMission.icon} ${P2.currentMission.shortName}`;
+      const targetSt = P2.stations.find(s => s.id === P2.currentMission.target);
+      document.getElementById('p2TipText').innerText = `🚲 Carga no trailer! Siga o GPS ecológico até ${targetSt?.name || 'o destino'}!`;
+      updateP2VsSidebar();
     }
 
     function updateP2VsSidebar() {
@@ -2955,8 +3688,8 @@
       const st = P2.stations.find(s => s.id === stationId);
       if (!st) return;
       P2.player.targetX = st.x;
-      P2.player.targetY = st.y < (P2.h || 620) / 2 ? st.y + st.h / 2 + 18 : st.y - st.h / 2 - 18;
-      document.getElementById('p2TipText').innerText = `🚲 Indo até ${st.name}! Pressione Espaço ou clique em "Entregar Carga" quando chegar.`;
+      P2.player.targetY = getP2StationBayY(st);
+      document.getElementById('p2TipText').innerText = `🚲 Indo até ${st.name}! Estacione na vaga e entregue a carga.`;
     }
 
     function initPhase2() {
@@ -2974,9 +3707,16 @@
       P2.player.targetY = null;
       P2.stations.forEach(st => { st.delivered = false; });
       P2.missions = buildUniqueP2Missions();
-      spawnP2Mission();
+      P2.currentMission = null;
+
+      document.getElementById('p2ItemCount').innerText = "0";
+      document.getElementById('p2CargoName').innerText = "Recebendo chamado...";
+      document.getElementById('p2TipText').innerText = "📞 Recebendo chamado dos moradores do bairro...";
 
       P2.canvas.onpointerdown = (e) => {
+        const storyModal = document.getElementById('p2StoryModal');
+        if (storyModal && !storyModal.classList.contains('hidden')) return;
+
         const rect = P2.canvas.getBoundingClientRect();
         const scaleX = (P2.w || 800) / rect.width;
         const scaleY = (P2.h || 620) / rect.height;
@@ -2984,9 +3724,9 @@
         const clickY = (e.clientY - rect.top) * scaleY;
 
         const clickedSt = P2.stations.find(st => {
-          const bayY = st.y < (P2.h || 620) / 2 ? st.y + st.h / 2 + 5 : st.y - st.h / 2 - 22;
+          const bayY = getP2StationBayY(st);
           const inBuilding = Math.abs(clickX - st.x) <= st.w / 2 + 8 && Math.abs(clickY - st.y) <= st.h / 2 + 8;
-          const inBay = Math.abs(clickX - st.x) <= 56 && clickY >= bayY - 4 && clickY <= bayY + 21;
+          const inBay = Math.abs(clickX - st.x) <= 58 && Math.abs(clickY - bayY) <= 18;
           return inBuilding || inBay;
         });
 
@@ -3001,25 +3741,11 @@
       if (P2.animId) cancelAnimationFrame(P2.animId);
       loopPhase2();
       requestAnimationFrame(() => syncGameCardHeight(true));
-    }
 
-    function spawnP2Mission() {
-      document.getElementById('p2ItemCount').innerText = P2.missionIndex;
-      if (P2.missionIndex >= P2.missions.length) {
-        P2.currentMission = null;
-        updateP2VsSidebar();
-        playSound('fanfare');
-        scheduleGameTimeout(() => {
-          if (STATE.phase === 2) setPhase(3);
-        }, 1200);
-        return;
-      }
-      P2.currentMission = P2.missions[P2.missionIndex];
-      const st = P2.stations.find(s => s.id === P2.currentMission.target);
-      const stName = st ? st.name : 'destino correto';
-      document.getElementById('p2CargoName').innerText = `${P2.currentMission.icon} ${P2.currentMission.shortName}`;
-      document.getElementById('p2TipText').innerText = `Carregando ${P2.currentMission.icon} ${P2.currentMission.name}! Leve até: ${stName}.`;
-      updateP2VsSidebar();
+      // Abre imediatamente o quadrinho com a historinha do primeiro chamado!
+      scheduleGameTimeout(() => {
+        if (STATE.phase === 2) openP2StoryModal();
+      }, 350);
     }
 
     function triggerP2Action() {
@@ -3028,9 +3754,10 @@
       const mission = P2.currentMission;
       let inStation = null;
       P2.stations.forEach(st => {
+        const bayY = getP2StationBayY(st);
         const dx = Math.abs(P2.player.x - st.x);
-        const dy = Math.abs(P2.player.y - st.y);
-        if (dx < st.w / 2 + 42 && dy < st.h / 2 + 42) {
+        const dy = Math.abs(P2.player.y - bayY);
+        if (dx < st.w / 2 + 30 && (dy < 48 || Math.abs(P2.player.y - st.y) < st.h / 2 + 25)) {
           inStation = st;
         }
       });
@@ -3040,26 +3767,52 @@
           // Trava entregas repetidas durante a comemoração
           P2.isDelivering = true;
           inStation.delivered = true;
+          P2.errorAlert = null;
+          hideGameError('p2');
           playSound('good');
           updateScore(125);
           createConfetti(inStation.x, inStation.y);
           P2.missionIndex++;
           document.getElementById('p2ItemCount').innerText = P2.missionIndex;
-          document.getElementById('p2TipText').innerText = `🎉 Entrega concluída! ${mission.tip} (+125 pts)`;
+          document.getElementById('p2TipText').innerText = `🎉 Entrega realizada! Carga deixada em ${inStation.name}! (+125 pts)`;
           updateP2VsSidebar();
           scheduleGameTimeout(() => {
             if (STATE.phase !== 2) return;
             P2.isDelivering = false;
-            spawnP2Mission();
-          }, 1150);
+            if (P2.missionIndex >= P2.missions.length) {
+              P2.currentMission = null;
+              openPhaseVictoryModal(2);
+            } else {
+              P2.currentMission = null;
+              openP2StoryModal();
+            }
+          }, 1200);
         } else {
           playSound('bad');
           const rightSt = P2.stations.find(s => s.id === mission.target);
-          document.getElementById('p2TipText').innerText = `❌ Aqui é ${inStation.name}! ${mission.name} deve ser entregue em: ${rightSt ? rightSt.name : 'outro ponto'}!`;
+          const rightName = rightSt ? rightSt.name : 'o estabelecimento correto';
+          P2.errorAlert = {
+            timer: 140,
+            stationId: inStation.id,
+            wrongName: inStation.name,
+            correctName: rightName,
+            itemName: mission.shortName
+          };
+          showGameError('p2', '❌ Estabelecimento Incorreto!', `Aqui é ${inStation.name}! ${mission.name} deve ser entregue em: ${rightName}!`);
+          document.getElementById('p2TipText').innerText = `❌ Aqui é ${inStation.name}! ${mission.name} deve ser entregue em: ${rightName}!`;
         }
       } else {
         const rightSt = P2.stations.find(s => s.id === mission.target);
-        document.getElementById('p2TipText').innerText = `🚲 Aproxime-se da vaga em frente a ${rightSt ? rightSt.name : 'um estabelecimento'} para entregar!`;
+        const rightName = rightSt ? rightSt.name : 'o estabelecimento correto';
+        P2.errorAlert = {
+          timer: 120,
+          stationId: null,
+          isAway: true,
+          wrongName: null,
+          correctName: rightName,
+          itemName: mission.shortName
+        };
+        document.getElementById('p2TipText').innerText = `🚲 Siga o GPS ecológico até a vaga em frente a ${rightName}!`;
       }
     }
 
@@ -3071,6 +3824,10 @@
     }
 
     function updatePhase2() {
+      const storyModal = document.getElementById('p2StoryModal');
+      if (storyModal && !storyModal.classList.contains('hidden')) {
+        return; // Pausa movimentação enquanto o jogador lê o chamado
+      }
       P2.tick = (P2.tick || 0) + 1;
       const p = P2.player;
       let dx = 0;
@@ -3093,9 +3850,10 @@
           p.targetY = null;
           // Se chegou exatamente na vaga de um estabelecimento por clique, realiza a entrega automaticamente
           if (P2.currentMission && !P2.isDelivering) {
-            const nearStation = P2.stations.find(st =>
-              Math.abs(p.x - st.x) < st.w / 2 + 42 && Math.abs(p.y - st.y) < st.h / 2 + 42
-            );
+            const nearStation = P2.stations.find(st => {
+              const bayY = getP2StationBayY(st);
+              return Math.abs(p.x - st.x) < 56 && Math.abs(p.y - bayY) < 32;
+            });
             if (nearStation) triggerP2Action();
           }
         }
@@ -3113,6 +3871,28 @@
 
       p.x = Math.max(65, Math.min((P2.w || 800) - 65, p.x));
       p.y = Math.max(65, Math.min((P2.h || 620) - 65, p.y));
+
+      // Atualiza o estado reativo do botão de ação da Fase 2
+      const targetSt = P2.currentMission ? P2.stations.find(s => s.id === P2.currentMission.target) : null;
+      const btn = document.getElementById('p2ActionBtn');
+      const btnIcon = document.getElementById('p2ActionBtnIcon');
+      const btnText = document.getElementById('p2ActionBtnText');
+      const btnSub = document.getElementById('p2ActionBtnSub');
+      if (targetSt && btn && btnText && !P2.isDelivering) {
+        const bayY = getP2StationBayY(targetSt);
+        const inBay = Math.abs(p.x - targetSt.x) < 58 && Math.abs(p.y - bayY) < 36;
+        if (inBay) {
+          btn.className = "arcade-btn flex-1 h-20 bg-emerald-500 hover:bg-emerald-400 text-white font-black rounded-2xl flex flex-row sm:flex-col items-center justify-center gap-2 sm:gap-0.5 shadow-lg border-2 border-emerald-300 px-3 animate-pulse cursor-pointer transition-all";
+          if (btnIcon) btnIcon.innerText = "✨";
+          btnText.innerText = "DESCARREGAR AGORA! ⭐";
+          if (btnSub) btnSub.innerText = "(Toque ou Pressione Espaço)";
+        } else {
+          btn.className = "arcade-btn flex-1 h-20 bg-amber-400 hover:bg-amber-300 text-amber-950 font-black rounded-2xl flex flex-row sm:flex-col items-center justify-center gap-2 sm:gap-0.5 shadow-md border-2 border-amber-500 px-3 cursor-pointer transition-all";
+          if (btnIcon) btnIcon.innerText = "🔔";
+          btnText.innerText = "ENTREGAR NA VAGA";
+          if (btnSub) btnSub.innerText = `(Siga o GPS até ${targetSt.name})`;
+        }
+      }
     }
 
     function drawP2CityBase(mainCtx, w, h) {
@@ -3158,6 +3938,16 @@
         fillPx(ctx, 0, roadY + roadH, w, 20, '#cbd5e1', P);
         fillPx(ctx, roadX - 20, 0, 20, h, '#cbd5e1', P);
         fillPx(ctx, roadX + roadW, 0, 20, h, '#cbd5e1', P);
+
+        // Praças de acesso pavimentadas para as vagas dos 4 Estabelecimentos
+        fillPx(ctx, 155 - 64, 207, 128, 33, '#cbd5e1', P);
+        fillPx(ctx, 155 - 62, 209, 124, 29, '#f1f5f9', P);
+        fillPx(ctx, 645 - 64, 207, 128, 33, '#cbd5e1', P);
+        fillPx(ctx, 645 - 62, 209, 124, 29, '#f1f5f9', P);
+        fillPx(ctx, 155 - 64, roadY + roadH + 20, 128, 38, '#cbd5e1', P);
+        fillPx(ctx, 155 - 62, roadY + roadH + 22, 124, 34, '#fef3c7', P);
+        fillPx(ctx, 645 - 64, roadY + roadH + 20, 128, 38, '#cbd5e1', P);
+        fillPx(ctx, 645 - 62, roadY + roadH + 22, 124, 34, '#f3e8ff', P);
 
         // Lajotas das calçadas com chanfro de luz em grade de 24px
         for (let x = 0; x < w; x += 24) {
@@ -3287,28 +4077,99 @@
         ctx.fillText('AV. FCO. JUNQUEIRA', 0, 0);
         ctx.restore();
 
-        // 7. ROTATÓRIA CENTRAL PAISAGÍSTICA COM CHAFARIZ EM HI-BIT PIXEL ART (BASE)
-        drawPixelCircle(ctx, cx, cy, 62, '#cbd5e1', '#0f172a', 1.5);
-        drawPixelCircle(ctx, cx, cy, 54, '#16a34a', '#14532d', 1.5);
-        drawPixelCircle(ctx, cx, cy, 48, '#22c55e', null, 1.5);
+        // 7. CRUZAMENTO ASFÁLTICO CENTRAL & ÁREA DE CONFLITO VEICULAR (BOX JUNCTION)
+        // Substitui a rotatória/chafariz por cruzamento direto com asfalto e sinalização horizontal brasileira (CONTRAN)
+        const boxX = roadX;
+        const boxY = roadY;
+        const boxW = roadW;
+        const boxH = roadH;
 
-        // Canteiro circular de florzinhas em Hi-Bit Pixel Art
-        const flowerColors = ['#ef4444', '#facc15', '#ffffff', '#f472b6'];
-        for (let i = 0; i < 12; i++) {
-          const ang = (i / 12) * Math.PI * 2;
-          const fx = Math.round(cx + Math.cos(ang) * 42);
-          const fy = Math.round(cy + Math.sin(ang) * 42);
-          drawPixelCircle(ctx, fx, fy, 3.5, flowerColors[i % flowerColors.length], '#14532d', 1);
+        // Asfalto contínuo no cruzamento
+        fillPx(ctx, boxX, boxY, boxW, boxH, '#334155', P);
+
+        // Moldura perimetral amarela da Área de Conflito Veicular (não feche o cruzamento)
+        drawPixelBox(ctx, boxX + 6, boxY + 6, boxW - 12, boxH - 12, null, '#facc15', 2.5, null, null);
+
+        // Malha amarela diagonal de cruzamento (linhas a 45° nítidas)
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(boxX + 7, boxY + 7, boxW - 14, boxH - 14);
+        ctx.clip();
+        for (let offset = -boxH; offset <= boxW + boxH; offset += 18) {
+          ctx.beginPath();
+          ctx.strokeStyle = '#facc15';
+          ctx.lineWidth = 2.5;
+          ctx.moveTo(boxX + offset, boxY);
+          ctx.lineTo(boxX + offset + boxH, boxY + boxH);
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.strokeStyle = '#facc15';
+          ctx.lineWidth = 2.5;
+          ctx.moveTo(boxX + offset + boxH, boxY);
+          ctx.lineTo(boxX + offset, boxY + boxH);
+          ctx.stroke();
         }
+        ctx.restore();
 
-        // Espelho d'água e chafariz central em Hi-Bit Pixel Art
-        drawPixelCircle(ctx, cx, cy, 33, '#0284c7', '#f8fafc', 1.5);
-        drawPixelCircle(ctx, cx, cy, 24, '#0ea5e9', null, 1.5);
+        // Travessia Cicloviária Segregada cruzando a avenida (Faixa Vermelha com pictogramas)
+        fillPx(ctx, boxX + 6, bikeY, boxW - 12, 19, 'rgba(220, 38, 38, 0.90)', P);
+        fillPx(ctx, boxX + 6, bikeY + 2, boxW - 12, 2.5, '#ef4444', P);
+        drawPixelCircle(ctx, cx - 6, bikeY + 12, 3, '#dc2626', '#ffffff', 1);
+        drawPixelCircle(ctx, cx + 6, bikeY + 12, 3, '#dc2626', '#ffffff', 1);
+        fillPx(ctx, cx - 4, bikeY + 7, 8, 2, '#ffffff', 1);
+        fillPx(ctx, cx + 2, bikeY + 5, 2, 5, '#ffffff', 1);
 
         ctx.restore();
       }
 
       mainCtx.drawImage(P2._bgCanvas, 0, 0, w, h);
+    }
+
+    // Traçado dinâmico do GPS Ecológico (guia a Eco-Bike pelas vias de Ribeirão até a vaga)
+    function drawP2EcoGps(ctx, p, targetSt, tick) {
+      if (!targetSt) return;
+      const bayY = getP2StationBayY(targetSt);
+      const startX = Math.round(p.x);
+      const startY = Math.round(p.y);
+      const endX = targetSt.x;
+      const endY = bayY;
+
+      // Monta rota pelas vias e ciclovia
+      const waypoints = [{ x: startX, y: startY }];
+      const midY = startY < 250 ? 230 : (startY > 370 ? 395 : 344);
+      const targetMidY = endY < 250 ? 230 : (endY > 370 ? 395 : 344);
+
+      if (Math.abs(startX - endX) > 20 || Math.abs(startY - endY) > 20) {
+        waypoints.push({ x: startX, y: midY });
+        waypoints.push({ x: 400, y: midY });
+        waypoints.push({ x: 400, y: targetMidY });
+        waypoints.push({ x: endX, y: targetMidY });
+      }
+      waypoints.push({ x: endX, y: endY });
+
+      // Desenha trilha pontilhada luminosa animada
+      ctx.save();
+      const pulsePhase = (tick * 0.08) % 1.0;
+      for (let i = 0; i < waypoints.length - 1; i++) {
+        const p1 = waypoints[i];
+        const p2 = waypoints[i + 1];
+        const dx = p2.x - p1.x;
+        const dy = p2.y - p1.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 4) continue;
+
+        const count = Math.max(1, Math.floor(dist / 16));
+        for (let j = 0; j < count; j++) {
+          const t = (j + pulsePhase) / count;
+          if (t < 0 || t > 1) continue;
+          const gx = p1.x + dx * t;
+          const gy = p1.y + dy * t;
+          drawPixelCircle(ctx, gx, gy, 3.2, 'rgba(16, 185, 129, 0.28)', null, 1);
+          drawPixelCircle(ctx, gx, gy, 1.8, '#facc15', '#059669', 0.8);
+        }
+      }
+      ctx.restore();
     }
 
     function renderPhase2() {
@@ -3329,16 +4190,11 @@
       // 1-7. MAPA URBANO BASE CACHEADO EM OFFSCREEN CANVAS
       drawP2CityBase(ctx, w, h);
 
-      // Ondulação concêntrica animada na água e jatos cristalinos do chafariz
-      const rippleR = 8 + Math.floor((tick % 36) / 4) * 2;
-      drawPixelCircle(ctx, cx, cy, rippleR, '#38bdf8', '#bae6fd', 1.5);
-      drawPixelCircle(ctx, cx, cy, 6, '#e0f2fe', '#0284c7', 1.5);
-      fillPx(ctx, cx - 2, cy - 2, 4, 4, '#ffffff', 1);
-
-      const jetStep = (Math.floor(tick / 6) % 4) * 2.5;
-      fillPx(ctx, cx - 8, cy - 9 - jetStep, 3, 3, '#e0f2fe', 1);
-      fillPx(ctx, cx + 5, cy - 11 + jetStep * 0.5, 3, 3, '#e0f2fe', 1);
-      fillPx(ctx, cx - 1, cy - 15 - jetStep * 0.5, 3, 3, '#ffffff', 1);
+      // Traçado do GPS Ecológico (desenhado sob os veículos e sobre o asfalto)
+      if (P2.currentMission && !P2.isDelivering) {
+        const targetSt = P2.stations.find(s => s.id === P2.currentMission.target);
+        drawP2EcoGps(ctx, P2.player, targetSt, tick);
+      }
 
       // 8. OS 4 ESTABELECIMENTOS COM ARQUITETURA DISTINTA EM HI-BIT PIXEL ART HD
       P2.stations.forEach(st => {
@@ -3347,26 +4203,43 @@
         const SP = 2;
         const left = st.x - st.w / 2;
         const top = st.y - st.h / 2;
+        const bayY = getP2StationBayY(st);
 
-        // Vaga de parada da Eco-Bike na calçada
-        const bayY = st.y < cy ? st.y + st.h / 2 + 5 : st.y - st.h / 2 - 22;
-        drawPixelBox(
-          ctx,
-          st.x - 54,
-          bayY,
-          108,
-          17,
-          st.delivered ? '#dcfce7' : (isTarget ? (blink ? '#fef08a' : '#fde047') : '#f1f5f9'),
-          st.delivered ? '#16a34a' : (isTarget ? '#ca8a04' : '#64748b'),
-          1.5,
-          '#ffffff',
-          null
-        );
-        ctx.fillStyle = st.delivered ? '#15803d' : (isTarget ? '#0f172a' : '#475569');
-        ctx.font = '800 9.5px "Fredoka", sans-serif';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(st.delivered ? '✓ ENTREGUE!' : (isTarget ? 'PARE AQUI!' : 'VAGA BIKE'), st.x, bayY + 8.5);
+        // Vaga de parada da Eco-Bike frontal na calçada
+        const bayW = 114;
+        const bayH = 20;
+        const bayX = st.x - bayW / 2;
+
+        if (st.delivered) {
+          drawPixelBox(ctx, bayX, bayY - bayH / 2, bayW, bayH, '#dcfce7', '#16a34a', 1.5, '#ffffff', null);
+          ctx.fillStyle = '#15803d';
+          ctx.font = '900 10px "Fredoka", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('✓ ENTREGUE!', st.x, bayY);
+        } else if (isTarget) {
+          // Halo de checkpoint pulsante no solo
+          const haloR = 24 + Math.round(Math.sin(tick * 0.15) * 4);
+          drawPixelCircle(ctx, st.x, bayY, haloR, 'rgba(250, 204, 21, 0.25)', '#facc15', 1.5);
+          drawPixelBox(ctx, bayX, bayY - bayH / 2, bayW, bayH, blink ? '#fef08a' : '#fde047', '#b45309', 2, '#ffffff', 'rgba(0,0,0,0.3)');
+          const bounce = Math.round(Math.sin(tick * 0.2) * 3);
+          const arrowY = (st.y < cy ? bayY - 17 : bayY + 17) + bounce;
+          ctx.fillStyle = '#f59e0b';
+          ctx.font = '900 13px "Fredoka", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(st.y < cy ? '⬇️' : '⬆️', st.x, arrowY);
+          ctx.fillStyle = '#0f172a';
+          ctx.font = '900 10px "Fredoka", sans-serif';
+          ctx.fillText('⭐ ESTACIONE AQUI ⭐', st.x, bayY);
+        } else {
+          drawPixelBox(ctx, bayX, bayY - bayH / 2, bayW, bayH, '#f8fafc', '#64748b', 1.5, '#ffffff', null);
+          ctx.fillStyle = '#475569';
+          ctx.font = '800 9.5px "Fredoka", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('🚲 VAGA BIKE', st.x, bayY);
+        }
 
         // Moldura Piscante Hi-Bit se for o destino da missão atual
         if (isTarget) {
@@ -3374,158 +4247,321 @@
           drawPixelBox(ctx, left - 6, top - 6, st.w + 12, st.h + 12, borderCol, '#0f172a', SP, '#fef08a', null);
         }
 
-        // Corpo base do estabelecimento
-        const wallBg = st.id === 'ecoponto' ? '#ecfdf5' : (st.id === 'farmacia' ? '#f8fafc' : (st.id === 'supermercado' ? '#fffbeb' : '#faf5ff'));
-        drawPixelBox(ctx, left, top, st.w, st.h, wallBg, '#0f172a', SP, '#ffffff', 'rgba(15, 23, 42, 0.22)');
+        // Sombra suave do edifício
+        fillPx(ctx, left + 4, top + 4, st.w, st.h, 'rgba(15, 23, 42, 0.18)', 2);
 
-        if (st.id === 'ecoponto') {
-          // === 1. ECOPONTO MUNICIPAL: PÁTIO DE RECICLAGEM COM CAÇAMBAS COLORIDAS E PNEUS ===
-          // Telhado ecológico verde esmeralda
-          fillPx(ctx, left + 2, top + 2, st.w - 4, 24, '#059669', 1.5);
-          for (let tx = left + 8; tx < left + st.w - 10; tx += 16) {
-            fillPx(ctx, tx, top + 2, 8, 24, '#10b981', 1.5);
+        if (st.id === 'farmacia') {
+          // =========================================================================
+          // === 1. FARMÁCIA: FACHADA CLÍNICA, CRUZ VERDE NEON 3D,                 ===
+          // ===    VITRINES DE REMÉDIOS, PORTA SLIDING E TOTEM PAPA-REMÉDIO       ===
+          // =========================================================================
+          // Corpo principal em azulejos clínicos brancos
+          drawPixelBox(ctx, left, top, st.w, st.h, '#ffffff', '#0f172a', SP, '#f8fafc', null);
+
+          // Grade sutil de azulejos hospitalares na parede
+          for (let tx = left + 14; tx < left + st.w - 10; tx += 20) {
+            fillPx(ctx, tx, top + 26, 1.5, st.h - 52, '#e2e8f0', 1);
           }
-          fillPx(ctx, left + 2, top + 26, st.w - 4, 2, '#0f172a', 1);
+          for (let ty = top + 36; ty < top + st.h - 26; ty += 14) {
+            fillPx(ctx, left + 2, ty, st.w - 4, 1.5, '#e2e8f0', 1);
+          }
 
-          // Frontão central superior com símbolo de Reciclagem
-          drawPixelCircle(ctx, st.x - 86, top + 14, 11, '#ffffff', '#0f172a', 1.5);
-          drawPixelSprite(ctx, 'recycle', st.x - 86, top + 14, 1.0);
+          // Frontão central superior escalonado (pedimento clínico)
+          drawPixelBox(ctx, st.x - 38, top - 14, 76, 16, '#ffffff', '#0f172a', 1.5, '#f8fafc', null);
 
-          // 3 Caçambas de Entulho/Reciclagem estacionadas no pátio (Azul, Amarela e Laranja)
-          const dumpsters = [
-            { dx: st.x - 88, col: '#2563eb', hi: '#60a5fa', label: 'MADEIRA' },
-            { dx: st.x - 22, col: '#eab308', hi: '#fef08a', label: 'ENTULHO' },
-            { dx: st.x + 44, col: '#ea580c', hi: '#fdba74', label: 'VOLUMOSO' }
-          ];
-          dumpsters.forEach(d => {
-            // Carga visível dentro da caçamba
-            fillPx(ctx, d.dx + 4, st.y - 12, 36, 8, '#78350f', 1.5);
-            fillPx(ctx, d.dx + 12, st.y - 15, 20, 6, '#d97706', 1.5);
-            // Corpo trapezoidal da caçamba metálica
-            drawPixelBox(ctx, d.dx, st.y - 7, 44, 26, d.col, '#0f172a', 1.5, d.hi, null);
-            // Reforços verticais da caçamba
-            fillPx(ctx, d.dx + 11, st.y - 3, 3, 18, 'rgba(15,23,42,0.28)', 1);
-            fillPx(ctx, d.dx + 22, st.y - 3, 3, 18, 'rgba(15,23,42,0.28)', 1);
-            fillPx(ctx, d.dx + 31, st.y - 3, 3, 18, 'rgba(15,23,42,0.28)', 1);
-          });
+          // GRANDE CRUZ VERDE NEON 3D ILUMINADA DE FARMÁCIA (pulsante)
+          const neonGlow = blink ? 'rgba(34, 197, 94, 0.60)' : 'rgba(34, 197, 94, 0.35)';
+          drawPixelCircle(ctx, st.x, top - 6, 13, neonGlow, null, 1.5);
+          drawPixelBox(ctx, st.x - 10, top - 15, 20, 18, '#14532d', '#0f172a', 1, null, null);
+          // Braços da Cruz Verde Neon
+          fillPx(ctx, st.x - 3, top - 14, 6, 16, blink ? '#86efac' : '#22c55e', 1);
+          fillPx(ctx, st.x - 8, top - 9, 16, 6, blink ? '#86efac' : '#22c55e', 1);
+          fillPx(ctx, st.x - 2, top - 13, 4, 14, '#ffffff', 1); // Brilho central
+          fillPx(ctx, st.x - 7, top - 8, 14, 4, '#ffffff', 1);
 
-          // Pilha de pneus no canto direito do Ecoponto
-          drawPixelSprite(ctx, 'pneu', st.x + 88, st.y + 4, 1.35);
+          // Faixa da Marquise Clínica em Azul-Celeste e Turquesa
+          drawPixelBox(ctx, left + 2, top + 2, st.w - 4, 24, '#0284c7', '#0f172a', 1.5, '#38bdf8', null);
+          fillPx(ctx, left + 4, top + 4, st.w - 8, 3, '#38bdf8', 1);
 
-        } else if (st.id === 'farmacia') {
-          // === 2. FARMÁCIA LOGMED: CRUZ VERMELHA DE DROGARIA NO TOPO, VITRINE DE REMÉDIOS E PORTA DUPLA ===
-          // Faixa superior azul-celeste clínica
-          fillPx(ctx, left + 2, top + 2, st.w - 4, 24, '#0284c7', 1.5);
-          fillPx(ctx, left + 2, top + 2, st.w - 4, 4, '#38bdf8', 1.5);
-          fillPx(ctx, left + 2, top + 26, st.w - 4, 2, '#0f172a', 1);
+          // Letreiro iluminado da Farmácia
+          ctx.fillStyle = '#ffffff';
+          ctx.font = '900 12px "Fredoka", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('✚ FARMÁCIA ✚', st.x, top + 14.5);
 
-          // Brasão branco com GRANDE CRUZ VERMELHA DE FARMÁCIA à esquerda do letreiro
-          drawPixelBox(ctx, left + 8, top + 3, 22, 22, '#ffffff', '#0f172a', 1.5, null, null);
-          fillPx(ctx, left + 16, top + 6, 6, 16, '#ef4444', 1);
-          fillPx(ctx, left + 11, top + 11, 16, 6, '#ef4444', 1);
+          // Vitrine Esquerda Iluminada (3 prateleiras repletas de remédios e xaropes)
+          drawPixelBox(ctx, left + 8, top + 30, 68, 52, '#e0f2fe', '#0284c7', 1.5, '#ffffff', null);
+          fillPx(ctx, left + 10, top + 46, 64, 2, '#64748b', 1); // Prateleira 1
+          fillPx(ctx, left + 10, top + 62, 64, 2, '#64748b', 1); // Prateleira 2
 
-          // Vitrine esquerda com prateleiras de caixinhas de remédios coloridas
-          drawPixelBox(ctx, left + 12, st.y - 16, 56, 34, '#e0f2fe', '#334155', 1.5, '#ffffff', null);
-          fillPx(ctx, left + 16, st.y - 5, 48, 2, '#64748b', 1); // Prateleira 1
-          fillPx(ctx, left + 16, st.y + 6, 48, 2, '#64748b', 1); // Prateleira 2
-          // Frascos e caixas nas prateleiras
-          fillPx(ctx, left + 19, st.y - 12, 8, 7, '#ef4444', 1);
-          fillPx(ctx, left + 30, st.y - 12, 8, 7, '#22c55e', 1);
-          fillPx(ctx, left + 41, st.y - 12, 8, 7, '#f59e0b', 1);
-          fillPx(ctx, left + 22, st.y - 1, 9, 7, '#3b82f6', 1);
-          fillPx(ctx, left + 36, st.y - 1, 9, 7, '#ec4899', 1);
+          // Prateleira 1: Frascos de xarope com tampas brancas
+          fillPx(ctx, left + 14, top + 34, 8, 11, '#ef4444', 1);
+          fillPx(ctx, left + 16, top + 32, 4, 2, '#ffffff', 1);
+          fillPx(ctx, left + 26, top + 35, 9, 10, '#22c55e', 1);
+          fillPx(ctx, left + 28, top + 33, 5, 2, '#ffffff', 1);
+          fillPx(ctx, left + 39, top + 34, 8, 11, '#f59e0b', 1);
+          fillPx(ctx, left + 41, top + 32, 4, 2, '#ffffff', 1);
+          fillPx(ctx, left + 51, top + 35, 9, 10, '#8b5cf6', 1);
+          fillPx(ctx, left + 53, top + 33, 5, 2, '#ffffff', 1);
 
-          // Porta dupla de vidro central da Farmácia com Cruz Vermelha
-          drawPixelBox(ctx, st.x - 24, st.y - 16, 48, 38, '#bae6fd', '#0f172a', 1.5, '#e0f2fe', null);
-          fillPx(ctx, st.x - 1, st.y - 14, 2, 34, '#0f172a', 1); // Divisão das portas
-          // Cruz vermelha estampada na porta
-          fillPx(ctx, st.x - 14, st.y - 6, 3, 9, '#ef4444', 1);
-          fillPx(ctx, st.x - 17, st.y - 3, 9, 3, '#ef4444', 1);
-          fillPx(ctx, st.x + 11, st.y - 6, 3, 9, '#ef4444', 1);
-          fillPx(ctx, st.x + 8, st.y - 3, 9, 3, '#ef4444', 1);
+          // Prateleira 2: Cartelas de comprimidos (blisters)
+          fillPx(ctx, left + 14, top + 50, 11, 10, '#cbd5e1', 1);
+          fillPx(ctx, left + 16, top + 52, 3, 3, '#ef4444', 1);
+          fillPx(ctx, left + 21, top + 52, 3, 3, '#3b82f6', 1);
+          fillPx(ctx, left + 16, top + 56, 3, 3, '#ef4444', 1);
+          fillPx(ctx, left + 21, top + 56, 3, 3, '#3b82f6', 1);
 
-          // Totem Coletor LOGMED à direita com ícone de Remédio
-          drawPixelBox(ctx, st.x + 36, st.y - 16, 62, 34, '#f0f9ff', '#0284c7', 1.5, '#ffffff', null);
-          drawPixelSprite(ctx, 'remedio', st.x + 67, st.y + 1, 1.55);
+          fillPx(ctx, left + 30, top + 51, 12, 9, '#ffffff', 1);
+          fillPx(ctx, left + 33, top + 53, 6, 2, '#ef4444', 1); // Caixinha com cruz
+          fillPx(ctx, left + 35, top + 51, 2, 6, '#ef4444', 1);
+
+          fillPx(ctx, left + 47, top + 50, 11, 10, '#cbd5e1', 1);
+          fillPx(ctx, left + 49, top + 52, 3, 3, '#10b981', 1);
+          fillPx(ctx, left + 54, top + 52, 3, 3, '#10b981', 1);
+          fillPx(ctx, left + 49, top + 56, 3, 3, '#10b981', 1);
+          fillPx(ctx, left + 54, top + 56, 3, 3, '#10b981', 1);
+
+          // Prateleira 3: Pomadas e frascos conta-gotas
+          fillPx(ctx, left + 16, top + 68, 14, 8, '#fef08a', 1);
+          fillPx(ctx, left + 35, top + 67, 10, 10, '#38bdf8', 1);
+          fillPx(ctx, left + 50, top + 68, 14, 8, '#f472b6', 1);
+
+          // Porta central automática dupla de vidro
+          drawPixelBox(ctx, st.x - 22, top + 30, 44, 52, '#bae6fd', '#0284c7', 1.5, '#e0f2fe', null);
+          fillPx(ctx, st.x - 1, top + 32, 2, 48, '#0369a1', 1); // Divisão das duas folhas de vidro
+          // Cruz verde e maçanetas nas portas
+          fillPx(ctx, st.x - 14, top + 48, 3, 9, '#16a34a', 1);
+          fillPx(ctx, st.x - 17, top + 51, 9, 3, '#16a34a', 1);
+          fillPx(ctx, st.x + 11, top + 48, 3, 9, '#16a34a', 1);
+          fillPx(ctx, st.x + 8, top + 51, 9, 3, '#16a34a', 1);
+          fillPx(ctx, st.x - 4, top + 54, 2, 8, '#334155', 1);
+          fillPx(ctx, st.x + 2, top + 54, 2, 8, '#334155', 1);
+
+          // Sensor de presença e lâmpada acima da porta
+          fillPx(ctx, st.x - 10, top + 28, 20, 2.5, '#0f172a', 1);
+          fillPx(ctx, st.x - 4, top + 28, 8, 2, '#22c55e', 1);
+
+          // Totem Coletor PAPA-REMÉDIO (Descarte Consciente) à direita
+          drawPixelBox(ctx, left + st.w - 76, top + 30, 68, 52, '#f0fdf4', '#15803d', 1.5, '#ffffff', null);
+          fillPx(ctx, left + st.w - 74, top + 32, 64, 12, '#16a34a', 1);
+          ctx.fillStyle = '#ffffff';
+          ctx.font = '900 8.5px "Fredoka", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText('PAPA-REMÉDIO', left + st.w - 42, top + 38);
+          drawPixelSprite(ctx, 'remedio', left + st.w - 42, top + 60, 1.6);
 
         } else if (st.id === 'supermercado') {
-          // === 3. SUPERMERCADO: TOLDO LISTRADO LARANJA/AMARELO, BANCA DE FRUTAS, CARRINHO E TOTEM DE PILHAS ===
-          // Toldo comercial listrado vermelho/laranja e amarelo
-          fillPx(ctx, left + 2, top + 2, st.w - 4, 24, '#ea580c', 1.5);
-          for (let tx = left + 6; tx < left + st.w - 10; tx += 16) {
-            fillPx(ctx, tx, top + 2, 8, 24, '#facc15', 1.5);
+          // =========================================================================
+          // === 2. SUPERMERCADO: OUTDOOR DE CARRINHO, TOLDO LISTRADO 3D ONDULADO,  ===
+          // ===    BANCA DE HORTIFRUTI (FRUTAS), CARRINHOS E PAPA-PILHAS          ===
+          // =========================================================================
+          // Corpo principal em alvenaria comercial aconchegante
+          drawPixelBox(ctx, left, top, st.w, st.h, '#fffbeb', '#0f172a', SP, '#fef3c7', null);
+
+          // OUTDOOR / LETREIRO CENTRAL NO TOPO DO TELHADO (destacado e elevado)
+          drawPixelBox(ctx, st.x - 74, top - 18, 148, 20, '#dc2626', '#0f172a', 1.5, '#f87171', 'rgba(0,0,0,0.25)');
+          fillPx(ctx, st.x - 72, top - 16, 144, 2, '#fca5a5', 1);
+          ctx.fillStyle = '#fef08a';
+          ctx.font = '900 11.5px "Fredoka", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('🛒 SUPERMERCADO 🛒', st.x, top - 8.5);
+
+          // TOLDO COMERCIAL LISTRADO 3D (Vermelho carmim e Amarelo vibrante com ondas)
+          const awningH = 22;
+          fillPx(ctx, left + 2, top + 2, st.w - 4, awningH, '#dc2626', 1.5);
+          for (let tx = left + 8; tx < left + st.w - 14; tx += 20) {
+            fillPx(ctx, tx, top + 2, 10, awningH, '#facc15', 1.5);
           }
-          fillPx(ctx, left + 2, top + 26, st.w - 4, 2, '#0f172a', 1);
-          // Faixa escura sob o texto do toldo para leitura imediata
-          drawPixelBox(ctx, st.x - 76, top + 4, 152, 20, '#b45309', '#0f172a', 1, null, null);
+          // Babado ondulado do toldo (scallops em pixel art)
+          for (let tx = left + 2; tx < left + st.w - 8; tx += 10) {
+            fillPx(ctx, tx, top + 2 + awningH, 10, 4, ((tx - left - 2) % 20 < 10) ? '#b91c1c' : '#ca8a04', 1);
+          }
+          // Sombra do toldo projetada na parede
+          fillPx(ctx, left + 2, top + 28, st.w - 4, 3, 'rgba(15, 23, 42, 0.22)', 1);
 
-          // Banca de Hortifruti / Frutas Coloridas à esquerda da fachada
-          drawPixelBox(ctx, left + 10, st.y - 12, 58, 30, '#fef3c7', '#b45309', 1.5, '#ffffff', null);
-          fillPx(ctx, left + 12, st.y - 14, 54, 5, '#16a34a', 1); // Teto da banca
-          // Frutas (maçãs vermelhas, laranjas, bananas amarelas e melancias verdes)
-          drawPixelCircle(ctx, left + 22, st.y, 4.5, '#ef4444', '#0f172a', 1);
-          drawPixelCircle(ctx, left + 33, st.y, 4.5, '#f97316', '#0f172a', 1);
-          drawPixelCircle(ctx, left + 44, st.y, 4.5, '#facc15', '#0f172a', 1);
-          drawPixelCircle(ctx, left + 55, st.y, 4.5, '#22c55e', '#0f172a', 1);
-          fillPx(ctx, left + 14, st.y + 7, 50, 8, '#92400e', 1); // Caixote de madeira
+          // BANCA DE HORTIFRUTI / FRUTAS DE MERCADO à esquerda
+          drawPixelBox(ctx, left + 8, top + 32, 68, 50, '#fef3c7', '#92400e', 1.5, '#ffffff', null);
+          // Cobertura verde da banca
+          fillPx(ctx, left + 8, top + 32, 68, 7, '#15803d', 1);
+          fillPx(ctx, left + 8, top + 39, 68, 2, '#166534', 1);
+          // 4 Caixotes de madeira com frutas coloridas
+          // Caixote 1: Maçãs vermelhas
+          fillPx(ctx, left + 12, top + 43, 28, 16, '#78350f', 1);
+          drawPixelCircle(ctx, left + 17, top + 49, 4, '#ef4444', '#7f1d1d', 1);
+          drawPixelCircle(ctx, left + 25, top + 48, 4, '#ef4444', '#7f1d1d', 1);
+          drawPixelCircle(ctx, left + 32, top + 51, 4, '#ef4444', '#7f1d1d', 1);
 
-          // Porta automática deslizante larga do Supermercado no centro
-          drawPixelBox(ctx, st.x - 24, st.y - 16, 48, 38, '#bae6fd', '#0f172a', 1.5, '#e0f2fe', null);
-          fillPx(ctx, st.x - 1, st.y - 14, 2, 34, '#0f172a', 1);
-          fillPx(ctx, st.x - 18, st.y - 13, 36, 5, '#dc2626', 1); // Letreiro "ENTRADA"
+          // Caixote 2: Bananas amarelas
+          fillPx(ctx, left + 43, top + 43, 28, 16, '#78350f', 1);
+          fillPx(ctx, left + 46, top + 47, 8, 5, '#facc15', 1);
+          fillPx(ctx, left + 56, top + 49, 10, 5, '#facc15', 1);
+          fillPx(ctx, left + 49, top + 53, 9, 4, '#eab308', 1);
 
-          // Totem Verde Green Eletron de Coleta de Pilhas e Baterias à direita
-          drawPixelBox(ctx, st.x + 34, st.y - 16, 66, 34, '#dcfce7', '#16a34a', 1.5, '#ffffff', null);
-          drawPixelSprite(ctx, 'pilha', st.x + 67, st.y + 1, 1.55);
+          // Caixote 3: Melancias (fatias verdes e vermelhas)
+          fillPx(ctx, left + 12, top + 62, 28, 17, '#78350f', 1);
+          fillPx(ctx, left + 15, top + 66, 10, 6, '#22c55e', 1);
+          fillPx(ctx, left + 16, top + 68, 8, 4, '#ef4444', 1);
+          fillPx(ctx, left + 27, top + 67, 10, 6, '#22c55e', 1);
+          fillPx(ctx, left + 28, top + 69, 8, 4, '#ef4444', 1);
+
+          // Caixote 4: Laranjas suculentas
+          fillPx(ctx, left + 43, top + 62, 28, 17, '#78350f', 1);
+          drawPixelCircle(ctx, left + 49, top + 68, 4, '#f97316', '#c2410c', 1);
+          drawPixelCircle(ctx, left + 58, top + 68, 4, '#f97316', '#c2410c', 1);
+          drawPixelCircle(ctx, left + 54, top + 74, 4, '#ea580c', '#c2410c', 1);
+
+          // Porta automática deslizante de vidro no centro
+          drawPixelBox(ctx, st.x - 22, top + 32, 44, 50, '#bae6fd', '#0284c7', 1.5, '#e0f2fe', null);
+          fillPx(ctx, st.x - 1, top + 34, 2, 46, '#0369a1', 1);
+          // Letreiro ENTRADA vermelho no vidro
+          drawPixelBox(ctx, st.x - 16, top + 35, 32, 7, '#dc2626', '#0f172a', 1, null, null);
+          ctx.fillStyle = '#ffffff';
+          ctx.font = '900 6.5px "Fredoka", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText('ENTRADA', st.x, top + 39);
+          // Tapete vermelho na soleira
+          fillPx(ctx, st.x - 18, top + 77, 36, 5, '#991b1b', 1);
+
+          // ÁREA DE CARRINHOS DE COMPRAS & TOTEM DE PILHAS à direita
+          drawPixelBox(ctx, left + st.w - 76, top + 32, 68, 50, '#f0fdf4', '#15803d', 1.5, '#ffffff', null);
+
+          // Estacionamento de 3 Carrinhos de compras cromados
+          const corralX = left + st.w - 72;
+          const corralY = top + 36;
+          // Corrimão cromado do corral
+          fillPx(ctx, corralX, corralY, 34, 2, '#94a3b8', 1);
+          fillPx(ctx, corralX, corralY + 18, 34, 2, '#94a3b8', 1);
+          fillPx(ctx, corralX + 32, corralY, 2, 20, '#94a3b8', 1);
+          // 3 Carrinhos encaixados (armação de metal e alça vermelha)
+          [0, 8, 16].forEach(offset => {
+            const cx = corralX + 3 + offset;
+            drawPixelBox(ctx, cx, corralY + 3, 14, 12, '#e2e8f0', '#475569', 1, '#ffffff', null);
+            fillPx(ctx, cx + 1, corralY + 2, 12, 2, '#dc2626', 1); // Alça vermelha do carrinho
+            drawPixelCircle(ctx, cx + 3, corralY + 16, 1.5, '#0f172a', null, 1); // Rodinha dianteira
+            drawPixelCircle(ctx, cx + 11, corralY + 16, 1.5, '#0f172a', null, 1); // Rodinha traseira
+          });
+
+          // Totem Papa-Pilhas Green Eletron à direita
+          fillPx(ctx, left + st.w - 32, top + 35, 26, 11, '#16a34a', 1);
+          ctx.fillStyle = '#ffffff';
+          ctx.font = '900 7px "Fredoka", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText('PAPA-PILHA', left + st.w - 19, top + 42);
+          drawPixelSprite(ctx, 'pilha', left + st.w - 19, top + 64, 1.45);
+
+        } else if (st.id === 'ecoponto') {
+          // =========================================================================
+          // === 3. ECOPONTO MUNICIPAL: PÁTIO DE CAÇAMBAS, GRADE INDUSTRIAL,       ===
+          // ===    PNEUS, GUARITA E PLACA MUNICIPAL                               ===
+          // =========================================================================
+          // Pátio industrial pavimentado
+          drawPixelBox(ctx, left, top, st.w, st.h, '#ecfdf5', '#0f172a', SP, '#d1fae5', null);
+
+          // Tela de alambrado metálico / grade industrial na parte superior
+          for (let fx = left + 4; fx < left + st.w - 8; fx += 8) {
+            fillPx(ctx, fx, top + 2, 1.5, 22, '#94a3b8', 1);
+            fillPx(ctx, fx, top + 6, 8, 1, '#cbd5e1', 1);
+            fillPx(ctx, fx, top + 14, 8, 1, '#cbd5e1', 1);
+          }
+          // Postes estruturais do alambrado
+          for (let px = left + 6; px < left + st.w; px += 44) {
+            fillPx(ctx, px, top + 2, 3, 24, '#475569', 1);
+          }
+
+          // Placa Oficial Verde do Ecoponto Municipal no topo
+          drawPixelBox(ctx, st.x - 84, top + 4, 168, 19, '#047857', '#0f172a', 1.5, '#10b981', null);
+          drawPixelSprite(ctx, 'recycle', st.x - 70, top + 13.5, 0.95);
+          ctx.fillStyle = '#ffffff';
+          ctx.font = '900 10.5px "Fredoka", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('ECOPONTO MUNICIPAL', st.x + 8, top + 13.5);
+
+          // 3 Grandes Caçambas Industriais Roll-Off (Azul: Madeira, Amarela: Entulho, Laranja: Volumoso)
+          const dumpsters = [
+            { dx: st.x - 88, col: '#2563eb', hi: '#60a5fa', label: 'MADEIRA' },
+            { dx: st.x - 24, col: '#eab308', hi: '#fef08a', label: 'ENTULHO' },
+            { dx: st.x + 40, col: '#ea580c', hi: '#fdba74', label: 'VOLUMOSO' }
+          ];
+          dumpsters.forEach(d => {
+            // Material transbordando da caçamba
+            fillPx(ctx, d.dx + 4, top + 34, 38, 9, '#78350f', 1.5);
+            fillPx(ctx, d.dx + 12, top + 31, 22, 6, '#d97706', 1.5);
+            // Corpo metálico trapezoidal da caçamba
+            drawPixelBox(ctx, d.dx, top + 40, 46, 32, d.col, '#0f172a', 1.5, d.hi, null);
+            // Nervuras de reforço vertical
+            fillPx(ctx, d.dx + 11, top + 43, 3, 24, 'rgba(15,23,42,0.32)', 1);
+            fillPx(ctx, d.dx + 22, top + 43, 3, 24, 'rgba(15,23,42,0.32)', 1);
+            fillPx(ctx, d.dx + 33, top + 43, 3, 24, 'rgba(15,23,42,0.32)', 1);
+            // Etiqueta lateral na caçamba
+            ctx.fillStyle = '#ffffff';
+            ctx.font = '900 6.5px "Fredoka", sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(d.label, d.dx + 23, top + 64);
+          });
+
+          // Pilha de pneus velhos no canto direito
+          drawPixelSprite(ctx, 'pneu', st.x + 94, top + 52, 1.4);
 
         } else {
-          // === 4. ECO-POSTO DE ÓLEO: DOIS GRANDES TANQUES CILÍNDRICOS AMARELOS DE BIODIESEL E GOTA DOURADA ===
-          // Cobertura roxa e dourada
-          fillPx(ctx, left + 2, top + 2, st.w - 4, 24, '#6b21a8', 1.5);
-          fillPx(ctx, left + 2, top + 2, st.w - 4, 4, '#a855f7', 1.5);
-          fillPx(ctx, left + 2, top + 26, st.w - 4, 2, '#0f172a', 1);
+          // =========================================================================
+          // === 4. ECO-POSTO DE ÓLEO: COBERTURA INDUSTRIAL, DOIS GRANDES TANQUES   ===
+          // ===    AMARELOS DE BIODIESEL COM VISOR DE NÍVEL E PLATAFORMA DE PET   ===
+          // =========================================================================
+          // Base industrial do posto
+          drawPixelBox(ctx, left, top, st.w, st.h, '#faf5ff', '#0f172a', SP, '#f3e8ff', null);
 
-          // Tanque Cilíndrico Amarelo de Óleo #1 (Esquerda) com tubulação metálica
-          fillPx(ctx, left + 44, st.y - 6, 28, 6, '#64748b', 1.5); // Tubo conector
-          drawPixelBox(ctx, left + 12, st.y - 17, 36, 36, '#facc15', '#0f172a', 1.5, '#fef08a', null);
-          fillPx(ctx, left + 14, st.y - 7, 32, 3, '#b45309', 1); // Cinta metálica 1
-          fillPx(ctx, left + 14, st.y + 5, 32, 3, '#b45309', 1); // Cinta metálica 2
-          drawPixelCircle(ctx, left + 30, st.y - 1, 5, '#ea580c', '#ffffff', 1); // Gota no tanque
+          // Cobertura estrutural metálica em roxo e azul
+          fillPx(ctx, left + 2, top + 2, st.w - 4, 22, '#581c87', 1.5);
+          fillPx(ctx, left + 2, top + 2, st.w - 4, 3.5, '#a855f7', 1.5);
+          // Pilares metálicos em "I"
+          fillPx(ctx, left + 16, top + 24, 6, 56, '#475569', 1.5);
+          fillPx(ctx, left + st.w - 22, top + 24, 6, 56, '#475569', 1.5);
 
-          // Tanque Cilíndrico Amarelo de Óleo #2 (Direita)
-          fillPx(ctx, st.x + 26, st.y - 6, 28, 6, '#64748b', 1.5); // Tubo conector
-          drawPixelBox(ctx, st.x + 50, st.y - 17, 36, 36, '#facc15', '#0f172a', 1.5, '#fef08a', null);
-          fillPx(ctx, st.x + 52, st.y - 7, 32, 3, '#b45309', 1);
-          fillPx(ctx, st.x + 52, st.y + 5, 32, 3, '#b45309', 1);
-          drawPixelCircle(ctx, st.x + 68, st.y - 1, 5, '#ea580c', '#ffffff', 1);
+          // Letreiro oficial do posto
+          ctx.fillStyle = '#fef08a';
+          ctx.font = '900 11px "Fredoka", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('🛢️ ECO-POSTO DE ÓLEO VEGETAL 🛢️', st.x, top + 13);
 
-          // Cabine central coletora de Garrafas PET de Óleo
-          drawPixelCircle(ctx, st.x, st.y + 1, 22, '#ffffff', '#8b5cf6', 1.5);
-          drawPixelSprite(ctx, 'oleo', st.x, st.y + 1, 1.75);
+          // Tanque Vertical 1 (Esquerda) com visor de nível e cinta metálica
+          const t1X = left + 26;
+          drawPixelBox(ctx, t1X, top + 30, 42, 48, '#facc15', '#0f172a', 1.5, '#fef08a', null);
+          fillPx(ctx, t1X + 2, top + 42, 38, 3, '#ca8a04', 1);
+          fillPx(ctx, t1X + 2, top + 62, 38, 3, '#ca8a04', 1);
+          // Tubo vertical de vidro indicador de nível de óleo
+          drawPixelBox(ctx, t1X + 32, top + 34, 6, 38, '#0f172a', '#64748b', 1, null, null);
+          fillPx(ctx, t1X + 33, top + 44, 4, 27, '#ea580c', 1); // Óleo âmbar visível no nível
+          drawPixelCircle(ctx, t1X + 16, top + 52, 6, '#ea580c', '#ffffff', 1); // Gota
+
+          // Tubulação conectando os tanques
+          fillPx(ctx, t1X + 42, top + 46, 32, 6, '#64748b', 1.5);
+          fillPx(ctx, st.x + 18, top + 46, 32, 6, '#64748b', 1.5);
+
+          // Tanque Vertical 2 (Direita)
+          const t2X = left + st.w - 68;
+          drawPixelBox(ctx, t2X, top + 30, 42, 48, '#facc15', '#0f172a', 1.5, '#fef08a', null);
+          fillPx(ctx, t2X + 2, top + 42, 38, 3, '#ca8a04', 1);
+          fillPx(ctx, t2X + 2, top + 62, 38, 3, '#ca8a04', 1);
+          drawPixelBox(ctx, t2X + 32, top + 34, 6, 38, '#0f172a', '#64748b', 1, null, null);
+          fillPx(ctx, t2X + 33, top + 40, 4, 31, '#ea580c', 1);
+          drawPixelCircle(ctx, t2X + 16, top + 52, 6, '#ea580c', '#ffffff', 1);
+
+          // Ponto Central de Coleta com Garrafa PET de Óleo
+          drawPixelCircle(ctx, st.x, top + 54, 22, '#ffffff', '#7c3aed', 1.5);
+          drawPixelSprite(ctx, 'oleo', st.x, top + 54, 1.85);
         }
 
-        // Nome do estabelecimento no topo
-        ctx.fillStyle = '#ffffff';
-        ctx.font = '800 11px "Fredoka", sans-serif';
+        // Plaqueta descritiva inferior em Hi-Bit Pixel Art com tipografia refinada
+        drawPixelBox(ctx, left + 8, top + st.h - 22, st.w - 16, 18, '#0f172a', '#38bdf8', 1.5, null, null);
+        ctx.fillStyle = '#e0f2fe';
+        ctx.font = '800 10px "Nunito", sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText(st.name, st.x, top + 14.5);
-
-        // Plaqueta descritiva inferior em Hi-Bit Pixel Art
-        drawPixelBox(ctx, left + 6, top + st.h - 22, st.w - 12, 18, '#f1f5f9', '#475569', 1.5, '#ffffff', null);
-        ctx.fillStyle = '#0f172a';
-        ctx.font = '800 10px "Nunito", sans-serif';
         ctx.fillText(st.label, st.x, top + st.h - 13);
-
-        // Placa saltitante "ENTREGUE AQUI!" em Hi-Bit Pixel Art se for o destino atual
-        if (isTarget) {
-          const bounce = Math.round(Math.sin(tick * 0.18) * 3);
-          const badgeY = st.y < cy ? (top - 26 + bounce) : (top + st.h + 6 + bounce);
-          drawPixelBox(ctx, st.x - 72, badgeY, 144, 21, '#facc15', '#0f172a', 1.5, '#fef08a', 'rgba(15, 23, 42, 0.28)');
-          ctx.fillStyle = '#0f172a';
-          ctx.font = '800 10.5px "Fredoka", sans-serif';
-          ctx.fillText('👉 ENTREGUE AQUI!', st.x, badgeY + 10.5);
-        }
       });
 
       // 9. ECO-BIKE, CARRETINHA DE CARGA E AVATAR SEMPRE EM PÉ (PERSPECTIVA 2.5D RPG HD)
@@ -3585,27 +4621,148 @@
         drawPixelSprite(ctx, getSpriteKeyForItem(P2.currentMission), trailerCenterX, -14, 2.05);
       }
 
-      // AVATAR SEMPRE EM PÉ PILOTANDO A ECO-BIKE
+      // AVATAR SEMPRE EM PÉ PILOTANDO A ECO-BIKE (VISÃO LIMPA E NÍTIDA)
       drawAvatar(ctx, 11 * facing, -3, P2.player.walkCycle || 0, false, null, STATE.avatar);
-
-      // ETIQUETA FLUTUANTE RPG DE ALTA VISIBILIDADE MOSTRANDO O QUE ESTÁ SENDO CARREGADO
-      if (P2.currentMission) {
-        const cargoLabel = `CARGA: ${P2.currentMission.shortName}`;
-        ctx.font = '800 10.5px "Fredoka", sans-serif';
-        const lw = Math.ceil(ctx.measureText(cargoLabel).width);
-        const boxW = lw + 20;
-        const boxY = -72;
-        drawPixelBox(ctx, -boxW / 2, boxY, boxW, 21, '#0f172a', P2.currentMission.color || '#facc15', 1.5, null, 'rgba(15, 23, 42, 0.28)');
-        ctx.fillStyle = '#fef08a';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(cargoLabel, 0, boxY + 10.5);
-      }
 
       ctx.restore();
 
       // Partículas Hi-Bit Pixel Art
       drawParticles(ctx);
+
+      // 10. Alerta de Erro Visual na Estação (quando entrega errado)
+      if (P2.errorAlert && P2.errorAlert.timer > 0) {
+        P2.errorAlert.timer--;
+        const wrongSt = P2.stations.find(s => s.id === P2.errorAlert.stationId);
+        if (wrongSt) {
+          const blink = Math.floor(P2.errorAlert.timer / 8) % 2 === 0;
+          // Moldura/contorno vermelho pulsante no estabelecimento errado (mantendo a fachada 100% visível)
+          const ox = wrongSt.x - wrongSt.w / 2 - 6;
+          const oy = wrongSt.y - wrongSt.h / 2 - 6;
+          const ow = wrongSt.w + 12;
+          const oh = wrongSt.h + 12;
+          const strokeCol = blink ? '#ef4444' : '#b91c1c';
+          ctx.save();
+          ctx.strokeStyle = strokeCol;
+          ctx.lineWidth = 4;
+          ctx.strokeRect(ox, oy, ow, oh);
+          // Cantoneiras de realce em pixel art nos 4 vértices
+          fillPx(ctx, ox - 2, oy - 2, 10, 4, strokeCol, 1);
+          fillPx(ctx, ox - 2, oy - 2, 4, 10, strokeCol, 1);
+          fillPx(ctx, ox + ow - 8, oy - 2, 10, 4, strokeCol, 1);
+          fillPx(ctx, ox + ow - 2, oy - 2, 4, 10, strokeCol, 1);
+          fillPx(ctx, ox - 2, oy + oh - 2, 10, 4, strokeCol, 1);
+          fillPx(ctx, ox - 2, oy + oh - 8, 4, 10, strokeCol, 1);
+          fillPx(ctx, ox + ow - 8, oy + oh - 2, 10, 4, strokeCol, 1);
+          fillPx(ctx, ox + ow - 2, oy + oh - 8, 4, 10, strokeCol, 1);
+          ctx.restore();
+
+          ctx.save();
+          ctx.translate(wrongSt.x, wrongSt.y - wrongSt.h / 2 - 16);
+          drawPixelCircle(ctx, 0, 0, 16, '#ef4444', '#ffffff', 2);
+          ctx.fillStyle = '#ffffff';
+          ctx.font = '900 18px "Fredoka", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('❌', 0, 1);
+          ctx.restore();
+        }
+
+        // Faixa de aviso pedagógico no centro
+        const bannerW = 560;
+        const bannerH = 48;
+        const bx = (w - bannerW) / 2;
+        const by = 286;
+        drawPixelBox(ctx, bx, by, bannerW, bannerH, 'rgba(153, 27, 27, 0.96)', '#f87171', 2, '#fca5a5', 'rgba(0,0,0,0.5)');
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '800 13px "Fredoka", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        if (P2.errorAlert.isAway) {
+          ctx.fillText(`🚲 ESTACIONE NA VAGA!`, w / 2, by + 16);
+          ctx.fillStyle = '#fef08a';
+          ctx.font = '800 12px "Fredoka", sans-serif';
+          ctx.fillText(`Aproxime-se da vaga em frente a ${P2.errorAlert.correctName} para descarregar!`, w / 2, by + 33);
+        } else {
+          ctx.fillText(`❌ AQUI É ${P2.errorAlert.wrongName ? P2.errorAlert.wrongName.toUpperCase() : 'OUTRO PONTO'}!`, w / 2, by + 16);
+          ctx.fillStyle = '#fef08a';
+          ctx.font = '800 12px "Fredoka", sans-serif';
+          ctx.fillText(`Leve ${P2.errorAlert.itemName} até: ${P2.errorAlert.correctName}!`, w / 2, by + 33);
+        }
+      }
+
+      // 11. QUADRO DE CARGA ESTILO TETRIS (CANTO SUPERIOR DIREITO - ELEGANTE E COMPACTO)
+      if (P2.currentMission) {
+        const hudW = 264;
+        const hudH = 54;
+        const hudX = w - hudW - 10;
+        const hudY = 8;
+        const mission = P2.currentMission;
+        const targetSt = P2.stations.find(s => s.id === mission.target);
+        const pulse = Math.floor(tick / 10) % 2 === 0;
+
+        // Sombra do painel arcade
+        fillPx(ctx, hudX + 3, hudY + 3, hudW, hudH, 'rgba(0, 0, 0, 0.45)', 2);
+
+        if (P2.isDelivering) {
+          // Animação comemorativa quando a entrega é concluída
+          drawPixelBox(ctx, hudX, hudY, hudW, hudH, 'rgba(5, 150, 105, 0.98)', '#fde047', 2, '#ffffff', null);
+          ctx.fillStyle = '#ffffff';
+          ctx.font = '900 12.5px "Fredoka", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('✓ CARGA ENTREGUE COM SUCESSO!', hudX + hudW / 2, hudY + 20);
+          ctx.fillStyle = '#fef08a';
+          ctx.font = '800 11px "Fredoka", sans-serif';
+          ctx.fillText('+125 PONTOS DE LOGÍSTICA REVERSA ⭐', hudX + hudW / 2, hudY + 37);
+        } else {
+          // Painel principal arcade (Dark glass com borda na cor da categoria)
+          drawPixelBox(ctx, hudX, hudY, hudW, hudH, 'rgba(8, 21, 43, 0.96)', mission.color || '#38bdf8', 2, '#ffffff', null);
+
+          // Janela de Exibição / Pedestal 3D (estilo "NEXT" do Tetris)
+          const previewX = hudX + 6;
+          const previewY = hudY + 6;
+          const previewS = 42;
+          drawPixelBox(ctx, previewX, previewY, previewS, previewS, '#0f172a', '#334155', 1.5, 'rgba(255,255,255,0.15)', null);
+
+          // Pedestal luminoso sob o item
+          const haloColor = mission.color || '#38bdf8';
+          drawPixelCircle(ctx, previewX + previewS / 2, previewY + previewS / 2 + 8, 12, 'rgba(255,255,255,0.08)', haloColor, 1);
+
+          // Sprite do resíduo com suave flutuação vertical arcade
+          const bounceY = Math.round(Math.sin(tick * 0.15) * 2.0);
+          drawPixelSprite(ctx, getSpriteKeyForItem(mission), previewX + previewS / 2, previewY + previewS / 2 - 2 + bounceY, 1.85);
+
+          // Informações Textuais da Entrega (Lado Direito)
+          const textLeft = previewX + previewS + 9;
+
+          // Linha 1: Tag "📦 CARGA ATUAL" + Contador "1/4"
+          ctx.fillStyle = '#7dd3fc';
+          ctx.font = '900 9.5px "Fredoka", sans-serif';
+          ctx.textAlign = 'left';
+          ctx.textBaseline = 'top';
+          ctx.fillText('📦 CARGA ATUAL', textLeft, hudY + 6);
+
+          ctx.fillStyle = '#fde047';
+          ctx.font = '900 9.5px "Fredoka", sans-serif';
+          ctx.textAlign = 'right';
+          ctx.fillText(`ENTREGA ${P2.missionIndex + 1}/4`, hudX + hudW - 8, hudY + 6);
+
+          // Linha 2: Nome do Item em destaque com brilho
+          ctx.fillStyle = '#ffffff';
+          ctx.font = '900 11.5px "Fredoka", sans-serif';
+          ctx.textAlign = 'left';
+          ctx.fillText(mission.shortName, textLeft, hudY + 20);
+
+          // Linha 3: Destino pedagógico com seta
+          const targetName = targetSt ? targetSt.name : 'PONTO DE COLETA';
+          drawPixelBox(ctx, textLeft, hudY + 34, hudW - previewS - 18, 15, pulse ? '#0284c7' : '#0369a1', '#38bdf8', 1, null, null);
+          ctx.fillStyle = '#ffffff';
+          ctx.font = '900 8.5px "Fredoka", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(`👉 LEVAR: ${targetName}`, textLeft + (hudW - previewS - 18) / 2, hudY + 41.5);
+        }
+      }
 
       ctx.restore();
     }
@@ -3621,6 +4778,9 @@
       h: 620,
       player: { x: 400, y: 490, speed: 7.0, w: 115, h: 26 },
       rescuedCount: 0,
+      missedCount: 0,
+      maxMisses: 3,
+      isRestarting: false,
       animId: null,
       fallingItems: [],
       spawnTimer: 0,
@@ -3631,7 +4791,7 @@
         { name: "Caixa de Papelão", icon: "📦", cat: "recicla" },
         { name: "Embalagem PET", icon: "🧴", cat: "recicla" },
         { name: "Revista e Jornal", icon: "🗞️", cat: "recicla" },
-        { name: "Pote de Conserva", icon: "🫙", cat: "recicla" }
+        { name: "Pote de Conserva", icon: "🍯", cat: "recicla" }
       ]
     };
 
@@ -3641,22 +4801,35 @@
       setupHiDPICanvas(P3.canvas, P3.w || 800, P3.h || 620);
 
       P3.rescuedCount = 0;
+      P3.missedCount = 0;
+      P3.isRestarting = false;
       P3.player.x = 340;
       P3.player.y = (P3.h || 620) - 130;
       P3.fallingItems = [];
-      P3.spawnTimer = 0;
+      P3.spawnTimer = 50;
+      P3.toast = null;
       document.getElementById('p3ItemCount').innerText = '0';
 
-      // Movimentação por toque ou arraste na tela do jogo (respeitando o galpão da Cooperativa à direita)
+      // Movimentação por toque ou arraste na tela do jogo (com suporte pleno a dispositivos móveis)
       const handlePointer = (e) => {
+        if (P3.isRestarting) return;
         const rect = P3.canvas.getBoundingClientRect();
         const scaleX = (P3.w || 800) / rect.width;
         const x = (e.clientX - rect.left) * scaleX;
         P3.player.x = Math.max(80, Math.min(575, x));
       };
-      P3.canvas.onpointerdown = handlePointer;
+      P3.canvas.onpointerdown = (e) => {
+        try { P3.canvas.setPointerCapture(e.pointerId); } catch(_) {}
+        handlePointer(e);
+      };
       P3.canvas.onpointermove = (e) => {
-        if (e.buttons > 0) handlePointer(e);
+        if (e.buttons > 0 || e.pointerType === 'touch') handlePointer(e);
+      };
+      P3.canvas.onpointerup = (e) => {
+        try { P3.canvas.releasePointerCapture(e.pointerId); } catch(_) {}
+      };
+      P3.canvas.onpointercancel = (e) => {
+        try { P3.canvas.releasePointerCapture(e.pointerId); } catch(_) {}
       };
 
       if (P3.animId) cancelAnimationFrame(P3.animId);
@@ -3674,11 +4847,13 @@
     function updatePhase3() {
       P3.tick = (P3.tick || 0) + 1;
       // Controles do jogador (esquerda / direita) com limites consistentes com o trilho subterrâneo
-      if (STATE.keys.left) P3.player.x -= P3.player.speed;
-      if (STATE.keys.right) P3.player.x += P3.player.speed;
-      P3.player.x = Math.max(80, Math.min(575, P3.player.x));
+      if (!P3.isRestarting) {
+        if (STATE.keys.left) P3.player.x -= P3.player.speed;
+        if (STATE.keys.right) P3.player.x += P3.player.speed;
+        P3.player.x = Math.max(80, Math.min(575, P3.player.x));
+      }
 
-      if (P3.rescuedCount >= 6) {
+      if (P3.rescuedCount >= 6 || P3.isRestarting) {
         P3.waterWaveOffset += 0.05;
         return;
       }
@@ -3710,13 +4885,20 @@
             P3.rescuedCount++;
             document.getElementById('p3ItemCount').innerText = P3.rescuedCount;
             P3.fallingItems.splice(i, 1);
+            P3.toast = {
+              text: `🎉 +1 Resgatado! (${P3.rescuedCount}/6)`,
+              timer: 70,
+              color: '#22c55e',
+              x: it.x,
+              y: Math.max(70, it.y - 30)
+            };
 
             if (P3.rescuedCount >= 6) {
               P3.fallingItems = [];
               playSound('fanfare');
               scheduleGameTimeout(() => {
-                if (STATE.phase === 3) setPhase(4);
-              }, 1400);
+                if (STATE.phase === 3) openPhaseVictoryModal(3);
+              }, 1200);
               break;
             }
             continue;
@@ -3726,9 +4908,28 @@
         // Se caiu na água do aquífero
         const waterLimit = (P3.h || 620) - 80;
         if (it.y > waterLimit) {
-          playSound('splash');
+          P3.missedCount++;
           createWaterSplash(it.x, waterLimit + 10);
           P3.fallingItems.splice(i, 1);
+
+          if (P3.missedCount >= P3.maxMisses) {
+            // Limite de 3 resíduos caídos atingido: contamina o aquífero e recomeça a tentativa!
+            P3.isRestarting = true;
+            playSound('bad');
+            P3.fallingItems = [];
+            scheduleGameTimeout(() => {
+              if (STATE.phase === 3) initPhase3();
+            }, 2600);
+          } else {
+            playSound('splash');
+            P3.toast = {
+              text: `⚠️ Caiu no Aquífero! Restam ${P3.maxMisses - P3.missedCount} pureza!`,
+              timer: 80,
+              color: '#ef4444',
+              x: Math.min(500, Math.max(220, it.x)),
+              y: waterLimit - 40
+            };
+          }
         }
       }
 
@@ -3754,42 +4955,52 @@
         const basaltoH = 76;
         const waterTop = px(h - 84, P);
 
-        // 1. CÉU NOTURNO E SKYLINE DE RIBEIRÃO PRETO EM HI-BIT PIXEL ART (0 a 76px)
-        fillPx(ctx, 0, 0, w, 28, '#09152b', P);
-        drawDitherBand(ctx, 0, 24, w, 16, '#09152b', '#1e293b', P);
-        fillPx(ctx, 0, 40, w, 36, '#1e293b', P);
+        // 1. CÉU DIURNO ENSOLARADO E SKYLINE DE RIBEIRÃO PRETO EM HI-BIT PIXEL ART (0 a 76px)
+        fillPx(ctx, 0, 0, w, 28, '#7dd3fc', P);
+        drawDitherBand(ctx, 0, 24, w, 16, '#7dd3fc', '#bae6fd', P);
+        fillPx(ctx, 0, 40, w, 36, '#e0f2fe', P);
 
-        // Silhueta Hi-Bit Pixel Art dos marcos arquitetônicos de Ribeirão Preto
-        // Theatro Pedro II
-        fillPx(ctx, 48, 32, 72, 32, '#0f172a', P);
-        fillPx(ctx, 54, 29, 60, 3, '#0f172a', P);
-        fillPx(ctx, 62, 26, 44, 3, '#0f172a', P);
-        fillPx(ctx, 70, 23, 28, 3, '#0f172a', P);
-        fillPx(ctx, 78, 20, 12, 3, '#0f172a', P);
+        // Nuvens brancas suaves no céu de Ribeirão
+        fillPx(ctx, 60, 10, 36, 8, '#ffffff', 1.5);
+        fillPx(ctx, 68, 6, 20, 6, '#ffffff', 1.5);
+        fillPx(ctx, 330, 12, 42, 8, '#ffffff', 1.5);
+        fillPx(ctx, 342, 7, 20, 6, '#ffffff', 1.5);
+        fillPx(ctx, 630, 10, 40, 8, '#ffffff', 1.5);
+        fillPx(ctx, 640, 6, 22, 6, '#ffffff', 1.5);
+
+        // Silhueta colorida e autêntica dos marcos de Ribeirão Preto
+        // Theatro Pedro II (Neoclássico terracota e ocre)
+        fillPx(ctx, 48, 32, 72, 32, '#d97706', P);
+        fillPx(ctx, 54, 29, 60, 3, '#b45309', P);
+        fillPx(ctx, 62, 26, 44, 3, '#b45309', P);
+        fillPx(ctx, 70, 23, 28, 3, '#78350f', P);
+        fillPx(ctx, 78, 20, 12, 3, '#78350f', P);
+        // Colunas de mármore branco do Pedro II
         for (let cx = 56; cx <= 104; cx += 12) {
-          fillPx(ctx, cx, 36, 4, 20, '#334155', 1.5);
-          fillPx(ctx, cx, 36, 1.5, 20, '#64748b', 1);
+          fillPx(ctx, cx, 36, 4, 20, '#ffffff', 1.5);
+          fillPx(ctx, cx, 36, 1.5, 20, '#e2e8f0', 1);
         }
 
-        // Edifícios do Centro Histórico
-        fillPx(ctx, 128, 20, 40, 44, '#0f172a', P);
-        fillPx(ctx, 172, 28, 36, 36, '#0f172a', P);
-        fillPx(ctx, 216, 32, 44, 32, '#0f172a', P);
+        // Edifícios Históricos do Calçadão Central (tons suaves de alvenaria)
+        fillPx(ctx, 128, 20, 40, 44, '#cbd5e1', P);
+        fillPx(ctx, 172, 28, 36, 36, '#94a3b8', P);
+        fillPx(ctx, 216, 32, 44, 32, '#e2e8f0', P);
 
-        // Caixa d'água / Torre DAE Saerp
-        fillPx(ctx, 288, 28, 28, 36, '#0f172a', P);
-        drawPixelCircle(ctx, 302, 26, 16, '#0f172a', '#334155', 1.5);
+        // Caixa d'água / Torre do Saerp
+        fillPx(ctx, 288, 28, 28, 36, '#38bdf8', P);
+        drawPixelCircle(ctx, 302, 26, 16, '#0284c7', '#38bdf8', 1.5);
 
-        // Mais prédios e árvores do Parque Curupira
-        fillPx(ctx, 340, 36, 36, 28, '#0f172a', P);
-        fillPx(ctx, 384, 24, 44, 40, '#0f172a', P);
-        fillPx(ctx, 440, 32, 32, 32, '#0f172a', P);
-        fillPx(ctx, 480, 20, 40, 44, '#0f172a', P);
-        fillPx(ctx, 528, 28, 44, 36, '#0f172a', P);
-        drawPixelCircle(ctx, 600, 48, 16, '#14532d', '#0f172a', 1.5);
-        drawPixelCircle(ctx, 632, 44, 20, '#166534', '#0f172a', 1.5);
+        // Prédios modernos e árvores vibrantes dos Parques Curupira e Raya
+        fillPx(ctx, 340, 36, 36, 28, '#94a3b8', P);
+        fillPx(ctx, 384, 24, 44, 40, '#cbd5e1', P);
+        fillPx(ctx, 440, 32, 32, 32, '#94a3b8', P);
+        fillPx(ctx, 480, 20, 40, 44, '#e2e8f0', P);
+        fillPx(ctx, 528, 28, 44, 36, '#cbd5e1', P);
+        // Ipês e copas verdes viçosas
+        drawPixelCircle(ctx, 600, 48, 16, '#15803d', '#16a34a', 1.5);
+        drawPixelCircle(ctx, 632, 44, 20, '#16a34a', '#22c55e', 1.5);
 
-        // Janelinhas acesas nos prédios
+        // Janelinhas dos prédios
         const windows = [
           [136, 28], [152, 28], [136, 40], [152, 40],
           [180, 36], [196, 36], [180, 48],
@@ -3797,23 +5008,23 @@
           [488, 28], [504, 28], [488, 40], [504, 40]
         ];
         windows.forEach(([wx, wy]) => {
-          fillPx(ctx, wx, wy, 5, 4, '#fef08a', 1);
+          fillPx(ctx, wx, wy, 5, 4, '#38bdf8', 1);
         });
 
         // Pista asfáltica da superfície com faixas amarelas
-        fillPx(ctx, 0, surfaceH - 12, w, 12, '#475569', P);
+        fillPx(ctx, 0, surfaceH - 12, w, 12, '#334155', P);
         fillPx(ctx, 0, surfaceH - 3, w, 3, '#0f172a', 1.5);
         for (let rx = 8; rx < w; rx += 24) {
           fillPx(ctx, rx, surfaceH - 8, 12, 3, '#facc15', 1.5);
         }
 
-        // Letreiro da Superfície
-        drawPixelBox(ctx, 12, 5, 360, 21, 'rgba(15, 23, 42, 0.90)', '#38bdf8', 1.5, null, null);
-        ctx.fillStyle = '#38bdf8';
-        ctx.font = '800 11px "Fredoka", sans-serif';
+        // Plaqueta da Superfície (estilo parque ecológico / museu)
+        drawPixelBox(ctx, 12, 6, 270, 20, 'rgba(255, 255, 255, 0.94)', '#0284c7', 1.5, '#bae6fd', 'rgba(0,0,0,0.15)');
+        ctx.fillStyle = '#0369a1';
+        ctx.font = '900 10px "Fredoka", sans-serif';
         ctx.textAlign = 'left';
         ctx.textBaseline = 'middle';
-        ctx.fillText('SUPERFÍCIE DE RIBEIRÃO PRETO • RIO PARDO', 22, 15.5);
+        ctx.fillText('🏛️ CIDADE DE RIBEIRÃO PRETO • SUPERFÍCIE', 20, 16.5);
 
         // 2. CAMADA 1: SOLO FÉRTIL (TERRA ROXA)
         fillPx(ctx, 0, surfaceH, w, 28, '#7c2d12', P);
@@ -3829,10 +5040,10 @@
           fillPx(ctx, rx + 6, surfaceH + 32, 3, 12, '#78350f', 1.5);
         });
 
-        drawPixelBox(ctx, 14, surfaceH + 8, 210, 21, '#0f172a', '#ea580c', 1.5, null, null);
-        ctx.fillStyle = '#fed7aa';
-        ctx.font = '800 10.5px "Fredoka", sans-serif';
-        ctx.fillText('SOLO FÉRTIL (TERRA ROXA)', 24, surfaceH + 18.5);
+        drawPixelBox(ctx, 14, surfaceH + 8, 216, 21, 'rgba(124, 45, 18, 0.92)', '#fdba74', 1.5, '#ea580c', 'rgba(0,0,0,0.25)');
+        ctx.fillStyle = '#fff7ed';
+        ctx.font = '900 10.5px "Fredoka", sans-serif';
+        ctx.fillText('🌱 SOLO FÉRTIL (TERRA ROXA)', 24, surfaceH + 18.5);
 
         // 3. CAMADA 2: BASALTO SERRA GERAL
         const basaltoY = surfaceH + terraRoxaH;
@@ -3848,10 +5059,10 @@
           fillPx(ctx, bx + 6, basaltoY + 26, 3, 18, '#64748b', 1.5);
         }
 
-        drawPixelBox(ctx, 14, basaltoY + 8, 246, 21, '#0f172a', '#64748b', 1.5, null, null);
-        ctx.fillStyle = '#cbd5e1';
-        ctx.font = '800 10.5px "Fredoka", sans-serif';
-        ctx.fillText('BASALTO SERRA GERAL (ROCHA)', 24, basaltoY + 18.5);
+        drawPixelBox(ctx, 14, basaltoY + 8, 236, 21, 'rgba(30, 41, 59, 0.92)', '#cbd5e1', 1.5, '#64748b', 'rgba(0,0,0,0.25)');
+        ctx.fillStyle = '#f8fafc';
+        ctx.font = '900 10.5px "Fredoka", sans-serif';
+        ctx.fillText('🪨 BASALTO SERRA GERAL (ROCHA)', 24, basaltoY + 18.5);
 
         // 4. CAMADA 3: ARENITO BOTUCATU
         const arenitoY = basaltoY + basaltoH;
@@ -3871,12 +5082,12 @@
           if (wave2 < waterTop - 8) fillPx(ctx, dx, wave2, 10, 3, 'rgba(254, 240, 138, 0.30)', 1.5);
         }
 
-        drawPixelBox(ctx, 14, arenitoY + 8, 256, 21, '#0f172a', '#facc15', 1.5, null, null);
+        drawPixelBox(ctx, 14, arenitoY + 8, 246, 21, 'rgba(180, 83, 9, 0.92)', '#fde047', 1.5, '#d97706', 'rgba(0,0,0,0.25)');
         ctx.fillStyle = '#fef08a';
-        ctx.font = '800 10.5px "Fredoka", sans-serif';
-        ctx.fillText('ARENITO BOTUCATU (FILTRO PURO)', 24, arenitoY + 18.5);
+        ctx.font = '900 10.5px "Fredoka", sans-serif';
+        ctx.fillText('⏳ ARENITO BOTUCATU (FILTRO PURO)', 24, arenitoY + 18.5);
 
-        // 5. COOPERATIVA MÃOS DADAS & CAMINHÃO
+        // 5. COOPERATIVA DE RECICLAGEM & CAMINHÃO
         const coopW = 156;
         const coopH = 108;
         const coopX = px(w - coopW - 12, P);
@@ -3890,8 +5101,8 @@
         ctx.font = '800 10.5px "Fredoka", sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText('COOPERATIVA', coopX + coopW / 2, coopY + 11);
-        ctx.fillText('MÃOS DADAS', coopX + coopW / 2, coopY + 22);
+        ctx.fillText('COOPERATIVA DE', coopX + coopW / 2, coopY + 11);
+        ctx.fillText('RECICLAGEM', coopX + coopW / 2, coopY + 22);
 
         drawPixelBox(ctx, coopX + 12, coopY + 40, 76, 40, '#166534', '#0f172a', 1.5, '#22c55e', null);
         drawPixelSprite(ctx, 'papel', coopX + 28, coopY + 56, 1.35);
@@ -3949,14 +5160,13 @@
       // 1-6. ESTRATOS GEOLÓGICOS E SKYLINE CACHEADOS EM OFFSCREEN CANVAS
       drawP3GeoBase(ctx, w, h);
 
-      // Estrelas cintilantes animadas
-      const stars = [
-        [40, 16], [112, 12], [220, 20], [312, 16],
-        [420, 12], [532, 20], [640, 12], [740, 16]
+      // Nuvens suaves e brilho de sol diurno em Pixel Art
+      const daylightGlints = [
+        [36, 12, 18, 6], [120, 16, 24, 7], [220, 10, 16, 5]
       ];
-      stars.forEach(([sx, sy], idx) => {
-        const twinkle = (Math.floor(tick / 15) + idx) % 2 === 0;
-        fillPx(ctx, sx, sy, 3, 3, twinkle ? '#fef08a' : '#ffffff', 1);
+      daylightGlints.forEach(([gx, gy, gw, gh]) => {
+        fillPx(ctx, gx, gy, gw, gh, 'rgba(255, 255, 255, 0.45)', 1);
+        fillPx(ctx, gx + 2, gy - 2, gw - 4, gh, 'rgba(255, 255, 255, 0.65)', 1);
       });
 
       // Gotas de água pura infiltrando pelos poros do arenito
@@ -3995,13 +5205,13 @@
         fillPx(ctx, bx - 1.5, by - 1.5, 2, 2, '#ffffff', 1);
       }
 
-      // Faixa de texto das Águas do Aquífero
-      drawPixelBox(ctx, (w - 480) / 2, h - 30, 480, 22, 'rgba(8, 47, 73, 0.90)', '#38bdf8', 1.5, null, null);
-      ctx.fillStyle = '#e0f2fe';
+      // Faixa de texto das Águas do Aquífero (Estilo Placa Cristalina)
+      drawPixelBox(ctx, (w - 490) / 2, h - 30, 490, 22, 'rgba(2, 132, 199, 0.94)', '#7dd3fc', 1.5, '#bae6fd', 'rgba(0, 50, 100, 0.25)');
+      ctx.fillStyle = '#ffffff';
       ctx.font = '800 11.5px "Fredoka", sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText('ÁGUAS CRISTALINAS DO AQUÍFERO GUARANI • 100% PURAS', w / 2, h - 19);
+      ctx.fillText('💧 ÁGUAS CRISTALINAS DO AQUÍFERO GUARANI • 100% PURAS', w / 2, h - 19);
 
       // 7. ITENS RECICLÁVEIS CAINDO EM CÁPSULAS HI-BIT PIXEL ART
       P3.fallingItems.forEach(it => {
@@ -4009,18 +5219,18 @@
         const iy = Math.round(it.y);
 
         // Sombra e cápsula esférica em Hi-Bit Pixel Art
-        drawPixelCircle(ctx, ix + 2, iy + 3, 26, 'rgba(15, 23, 42, 0.32)', null, 1.5);
+        drawPixelCircle(ctx, ix + 2, iy + 3, 26, 'rgba(15, 23, 42, 0.20)', null, 1.5);
         drawPixelCircle(ctx, ix, iy, 26, '#ffffff', '#0284c7', 1.5);
         drawPixelCircle(ctx, ix, iy, 21, '#f0f9ff', '#38bdf8', 1.5);
 
         // Sprite Hi-Bit 16x16 de alta definição do resíduo
         drawPixelSprite(ctx, getSpriteKeyForItem(it), ix, iy, 2.15);
 
-        // Etiqueta inferior em Hi-Bit Pixel Art
+        // Etiqueta inferior em Hi-Bit Pixel Art (Card Claro e Legível)
         const shortTag = it.name.split(' ')[0].toUpperCase();
-        drawPixelBox(ctx, ix - 40, iy + 23, 80, 17, '#0f172a', '#38bdf8', 1.5, null, null);
-        ctx.fillStyle = '#7dd3fc';
-        ctx.font = '800 10px "Fredoka", sans-serif';
+        drawPixelBox(ctx, ix - 40, iy + 23, 80, 17, 'rgba(255, 255, 255, 0.96)', '#0284c7', 1.5, '#bae6fd', 'rgba(0, 0, 0, 0.15)');
+        ctx.fillStyle = '#0369a1';
+        ctx.font = '900 10px "Fredoka", sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(shortTag, ix, iy + 31.5);
@@ -4036,24 +5246,24 @@
       fillPx(ctx, -P3.player.w / 2 - 16, -44, P3.player.w + 32, 12, 'rgba(250, 204, 21, 0.09)', 2);
 
       // Rodinhas de aço sobre o trilho
-      drawPixelCircle(ctx, -P3.player.w * 0.35, 14, 7.5, '#1e293b', '#0f172a', 1.5);
+      drawPixelCircle(ctx, -P3.player.w * 0.35, 14, 7.5, '#475569', '#334155', 1.5);
       drawPixelCircle(ctx, -P3.player.w * 0.35, 14, 3, '#cbd5e1', null, 1);
-      drawPixelCircle(ctx, P3.player.w * 0.35, 14, 7.5, '#1e293b', '#0f172a', 1.5);
+      drawPixelCircle(ctx, P3.player.w * 0.35, 14, 7.5, '#475569', '#334155', 1.5);
       drawPixelCircle(ctx, P3.player.w * 0.35, 14, 3, '#cbd5e1', null, 1);
 
       // Cesto Coletor / Vagonete em Hi-Bit Pixel Art com faixas zebradas de segurança
-      drawPixelBox(ctx, -P3.player.w / 2, -12, P3.player.w, 24, '#f59e0b', '#0f172a', 2, '#fde047', null);
+      drawPixelBox(ctx, -P3.player.w / 2, -12, P3.player.w, 24, '#f59e0b', '#b45309', 2, '#fde047', null);
       for (let hx = -P3.player.w / 2 + 8; hx < P3.player.w / 2 - 12; hx += 16) {
-        fillPx(ctx, hx, -9, 8, 18, '#b45309', 1.5);
+        fillPx(ctx, hx, -9, 8, 18, '#d97706', 1.5);
       }
 
-      // Placa central do vagonete com tipografia nítida
-      drawPixelBox(ctx, -53, -9, 106, 18, '#0f172a', '#facc15', 1.5, null, null);
-      ctx.fillStyle = '#fef08a';
-      ctx.font = '800 10px "Fredoka", sans-serif';
+      // Placa central do vagonete com tipografia nítida e clara
+      drawPixelBox(ctx, -53, -9, 106, 18, '#ffffff', '#d97706', 1.5, '#fef3c7', null);
+      ctx.fillStyle = '#78350f';
+      ctx.font = '900 10px "Fredoka", sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText('REDE DE RESGATE', 0, 0);
+      ctx.fillText('REDE DE RESGATE', 0, 0.5);
 
       // Avatar Hi-Bit Pixel Art operando o vagonete
       drawAvatar(ctx, 0, -24, 0, true, null, STATE.avatar);
@@ -4062,6 +5272,133 @@
 
       // Partículas Hi-Bit Pixel Art
       drawParticles(ctx);
+
+      // 9. HUD E CONTADOR VISÍVEL NA TELA EM HI-BIT PIXEL ART (Painel Claro & Compacto)
+      const hudW = 340;
+      const hudH = 64;
+      const hudX = w - hudW - 12;
+      const hudY = 6;
+      drawPixelBox(ctx, hudX, hudY, hudW, hudH, 'rgba(255, 255, 255, 0.95)', '#0284c7', 2, '#bae6fd', 'rgba(15, 23, 42, 0.16)');
+
+      // Coluna 1: Recicláveis Salvos (0 a 6)
+      ctx.fillStyle = '#0369a1';
+      ctx.font = '900 11px "Fredoka", sans-serif';
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'top';
+      ctx.fillText('🛡️ SALVOS', hudX + 12, hudY + 7);
+
+      ctx.fillStyle = '#0284c7';
+      ctx.font = '900 12.5px "Fredoka", sans-serif';
+      ctx.textAlign = 'right';
+      ctx.fillText(`${P3.rescuedCount}/6`, hudX + 172, hudY + 6);
+
+      // 6 Slots visuais de progresso
+      for (let s = 0; s < 6; s++) {
+        const slotX = hudX + 20 + s * 26;
+        const slotY = hudY + 28;
+        const isSaved = s < P3.rescuedCount;
+        drawPixelCircle(ctx, slotX, slotY, 10, isSaved ? '#16a34a' : '#f1f5f9', isSaved ? '#15803d' : '#94a3b8', 1.5);
+        if (isSaved) {
+          ctx.fillStyle = '#ffffff';
+          ctx.font = '900 10px "Fredoka", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('✓', slotX, slotY + 0.5);
+        } else {
+          ctx.fillStyle = '#64748b';
+          ctx.font = '800 9px "Fredoka", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(`${s + 1}`, slotX, slotY);
+        }
+      }
+
+      // Coluna 2: Pureza do Aquífero (3 Gotas de água / Vidas)
+      ctx.fillStyle = '#0369a1';
+      ctx.font = '900 11px "Fredoka", sans-serif';
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'top';
+      ctx.fillText('💧 PUREZA', hudX + 194, hudY + 7);
+
+      ctx.fillStyle = P3.missedCount >= 2 ? '#dc2626' : '#0284c7';
+      ctx.font = '900 12.5px "Fredoka", sans-serif';
+      ctx.textAlign = 'right';
+      ctx.fillText(`${P3.maxMisses - P3.missedCount}/${P3.maxMisses}`, hudX + hudW - 12, hudY + 6);
+
+      // 3 Gotas de pureza da água
+      for (let m = 0; m < P3.maxMisses; m++) {
+        const dropX = hudX + 218 + m * 38;
+        const dropY = hudY + 28;
+        const isPure = m < (P3.maxMisses - P3.missedCount);
+        drawPixelCircle(ctx, dropX, dropY, 11, isPure ? '#0284c7' : '#fee2e2', isPure ? '#0369a1' : '#dc2626', 1.5);
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '900 12px "Fredoka", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(isPure ? '💧' : '❌', dropX, dropY + (isPure ? -0.5 : 0.5));
+      }
+
+      // Linha de status inferior no HUD
+      ctx.fillStyle = P3.missedCount >= 2 ? '#b91c1c' : (P3.missedCount === 1 ? '#d97706' : '#047857');
+      ctx.font = '800 9.5px "Fredoka", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      const purezaMsg = P3.missedCount === 0 ? '✓ Aquífero protegido e 100% puro!' : (P3.missedCount === 1 ? '⚠️ 1 resíduo caiu! Cuidado com a água!' : '🚨 Alerta! Mais 1 resíduo contamina o aquífero!');
+      ctx.fillText(purezaMsg, hudX + hudW / 2, hudY + 51);
+
+      // Alerta de Contaminação e Reinício de Tentativa na Fase 3
+      if (P3.isRestarting) {
+        const failW = 580;
+        const failH = 92;
+        const fx = (w - failW) / 2;
+        const fy = 210;
+        drawPixelBox(ctx, fx, fy, failW, failH, 'rgba(153, 27, 27, 0.97)', '#f87171', 2.5, '#fca5a5', 'rgba(0,0,0,0.65)');
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '900 18px "Fredoka", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('❌ O AQUÍFERO FOI CONTAMINADO!', w / 2, fy + 26);
+        ctx.fillStyle = '#fef08a';
+        ctx.font = '800 13px "Fredoka", sans-serif';
+        ctx.fillText('Você deixou 3 resíduos caírem na água pura. A tentativa vai recomeçar!', w / 2, fy + 51);
+        ctx.fillStyle = '#fca5a5';
+        ctx.font = '700 11.5px "Fredoka", sans-serif';
+        ctx.fillText('🔄 Reiniciando tentativa em instantes...', w / 2, fy + 73);
+      }
+
+      // Toast / Notificação Flutuante na tela da Fase 3
+      if (P3.toast && P3.toast.timer > 0) {
+        P3.toast.timer--;
+        ctx.save();
+        ctx.font = '800 12.5px "Fredoka", sans-serif';
+        const tw = Math.ceil(ctx.measureText(P3.toast.text).width) + 24;
+        const th = 28;
+        const tx = Math.max(tw / 2 + 10, Math.min(w - tw / 2 - 10, P3.toast.x));
+        const ty = P3.toast.y;
+        drawPixelBox(ctx, tx - tw / 2, ty, tw, th, '#ffffff', P3.toast.color, 2, '#f8fafc', 'rgba(15, 23, 42, 0.2)');
+        ctx.fillStyle = '#0f172a';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(P3.toast.text, tx, ty + th / 2);
+        ctx.restore();
+      }
+
+      // Vitória / Celebração final na Fase 3
+      if (P3.rescuedCount >= 6) {
+        const winW = 560;
+        const winH = 70;
+        const wx = (w - winW) / 2;
+        const wy = 230;
+        drawPixelBox(ctx, wx, wy, winW, winH, 'rgba(16, 185, 129, 0.96)', '#fde047', 2, '#ffffff', 'rgba(0,0,0,0.6)');
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '900 18px "Fredoka", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('🎉 AQUÍFERO 100% PROTEGIDO! PARABÉNS!', w / 2, wy + 24);
+        ctx.fillStyle = '#fef08a';
+        ctx.font = '800 13px "Fredoka", sans-serif';
+        ctx.fillText('Todos os 6 recicláveis foram salvos para a Cooperativa de Reciclagem!', w / 2, wy + 48);
+      }
 
       ctx.restore();
     }
@@ -4121,6 +5458,327 @@
         ctx.fillRect(sx, sy, sz, sz);
         ctx.globalAlpha = 1.0;
       }
+    }
+
+
+    /* =======================================================
+       9. FASE 4: O ECO-QUIZ DOS MESTRES (ESTILO PERGUNTADOS)
+       ======================================================= */
+    const P4 = {
+      questionsPool: [
+        {
+          category: "🌿 Coleta Seletiva",
+          question: "Qual destes resíduos deve ser colocado na lixeira MARROM de resíduos orgânicos para virar adubo?",
+          options: [
+            "Cascas de frutas e restos de legumes",
+            "Garrafa PET de refrigerante",
+            "Lata de sardinha de metal",
+            "Copinho plástico de café"
+          ],
+          correct: 0,
+          explanation: "Excelente! Cascas de frutas, restos de vegetais e pó de café são resíduos orgânicos que viram adubo fértil!"
+        },
+        {
+          category: "🌿 Coleta Seletiva",
+          question: "Por que é importante passar uma rápida água nas embalagens de leite antes de colocá-las no cesto de recicláveis?",
+          options: [
+            "Para não atrair insetos e não estragar outros papéis limpos",
+            "Para deixá-las cheirosas para o caminhão",
+            "Para a embalagem ficar mais pesada",
+            "Não precisa lavar, pode jogar tudo com restos"
+          ],
+          correct: 0,
+          explanation: "Isso aí! Uma enxaguada rápida evita mau cheiro, moscas e não contamina os papéis limpos na cooperativa!"
+        },
+        {
+          category: "🌿 Coleta Seletiva",
+          question: "Em qual lixeira colorida da coleta seletiva devemos descartar potes e garrafas de VIDRO (com cuidado)?",
+          options: [
+            "Lixeira Verde",
+            "Lixeira Vermelha",
+            "Lixeira Azul",
+            "Lixeira Amarela"
+          ],
+          correct: 0,
+          explanation: "Muito bem! O Verde é a cor oficial do Vidro. Azul é Papel, Vermelho é Plástico e Amarelo é Metal!"
+        },
+        {
+          category: "🚲 Logística Reversa",
+          question: "Sua família trocou um pneu velho da bicicleta ou do carro. Onde devemos entregá-lo para evitar a Dengue?",
+          options: [
+            "No Ecoponto Municipal de Ribeirão Preto",
+            "No meio da calçada para alguém pegar",
+            "Jogar no terreno baldio da esquina",
+            "No bueiro mais próximo"
+          ],
+          correct: 0,
+          explanation: "Perfeito! Os Ecopontos recebem pneus velhos, entulho e sofás, impedindo focos do mosquito da Dengue!"
+        },
+        {
+          category: "🚲 Logística Reversa",
+          question: "Remédios, pomadas e xaropes vencidos NUNCA devem ser jogados na pia ou vaso sanitário. Qual o destino correto?",
+          options: [
+            "Postos de descarte especial em Farmácias",
+            "No lixo comum da cozinha",
+            "Enterrar na terra do quintal",
+            "Queimar em uma fogueira no quintal"
+          ],
+          correct: 0,
+          explanation: "Corretíssimo! As farmácias recolhem medicamentos vencidos para evitar que químicos poluam nossos rios e lençóis freáticos!"
+        },
+        {
+          category: "🚲 Logística Reversa",
+          question: "O que acontece se jogarmos 1 litro de óleo de fritura usado diretamente no ralo da pia?",
+          options: [
+            "Pode contaminar até 25.000 litros de água potável",
+            "Ajuda a desentupir o encanamento da casa",
+            "Deixa a água do rio mais limpa",
+            "Vira detergente ecológico nos canos"
+          ],
+          correct: 0,
+          explanation: "Impressionante! 1 litro de óleo polui 25 mil litros de água! O óleo deve ser guardado em garrafa PET e levado a um Eco-Posto!"
+        },
+        {
+          category: "🚲 Logística Reversa",
+          question: "Pilhas do videogame e baterias velhas contêm metais pesados tóxicos. Onde devemos descartá-las?",
+          options: [
+            "Em coletores de eletroeletrônicos em supermercados e lojas",
+            "No lixo comum do banheiro",
+            "Enterradas na terra do parque",
+            "Jogadas em córregos da cidade"
+          ],
+          correct: 0,
+          explanation: "Exatamente! Pilhas e baterias contêm chumbo e cádmio, e devem ir para os coletores de logística reversa de eletrônicos!"
+        },
+        {
+          category: "💧 Aquífero Guarani",
+          question: "Qual é o nome da imensa reserva subterrânea de água doce pura que abastece 100% de Ribeirão Preto?",
+          options: [
+            "Aquífero Guarani",
+            "Oceano Atlântico",
+            "Rio Amazonas",
+            "Lagoa Encantada"
+          ],
+          correct: 0,
+          explanation: "Sensacional! O Aquífero Guarani é um tesouro subterrâneo de água pura que nós temos o dever de proteger!"
+        },
+        {
+          category: "💧 Aquífero Guarani",
+          question: "Qual camada de rocha arenosa subterrânea de Ribeirão Preto age como um gigantesco filtro natural para as águas?",
+          options: [
+            "Arenito Botucatu",
+            "Asfalto da avenida",
+            "Cimento de construção",
+            "Plástico filme"
+          ],
+          correct: 0,
+          explanation: "Genial! O Arenito Botucatu é uma rocha porosa que filtra naturalmente a água das chuvas ao longo de séculos!"
+        },
+        {
+          category: "💧 Cooperativa de Reciclagem",
+          question: "Para onde vão os materiais recicláveis recolhidos pelos caminhões de coleta seletiva em Ribeirão Preto?",
+          options: [
+            "Para a Cooperativa de Reciclagem, gerando renda e dignidade aos catadores",
+            "Para o fundo do lago da cidade",
+            "São enterrados em praças públicas",
+            "São queimados para virar fumaça"
+          ],
+          correct: 0,
+          explanation: "Orgulho demais! A Cooperativa de Reciclagem transforma os resíduos em novos produtos e gera renda para dezenas de famílias!"
+        }
+      ],
+      score: 0,
+      targetScore: 3,
+      currentQIndex: 0,
+      shuffledPool: [],
+      currentQuestion: null,
+      currentShuffledOptions: [],
+      hasAnswered: false,
+      answeredCorrectly: false
+    };
+
+    function initPhase4() {
+      P4.score = 0;
+      P4.currentQIndex = 0;
+      P4.hasAnswered = false;
+      P4.answeredCorrectly = false;
+
+      // Fisher-Yates shuffle do banco de perguntas
+      P4.shuffledPool = [...P4.questionsPool];
+      for (let i = P4.shuffledPool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [P4.shuffledPool[i], P4.shuffledPool[j]] = [P4.shuffledPool[j], P4.shuffledPool[i]];
+      }
+
+      // Atualiza avatar companheiro no header do quiz
+      const a = AVATARS[STATE.avatar] || AVATARS.gabi;
+      const avatarBadge = document.getElementById('p4AvatarBadge');
+      const avatarName = document.getElementById('p4AvatarName');
+      if (avatarBadge) avatarBadge.innerText = a.icon;
+      if (avatarName) avatarName.innerText = `${a.name} pergunta:`;
+
+      updateP4ScoreUI();
+      renderP4Question();
+    }
+
+    function updateP4ScoreUI() {
+      const scoreCount = document.getElementById('p4ScoreCount');
+      if (scoreCount) scoreCount.innerText = P4.score;
+
+      for (let s = 1; s <= 3; s++) {
+        const star = document.getElementById(`p4Star${s}`);
+        if (!star) continue;
+        if (s <= P4.score) {
+          star.className = "text-2xl opacity-100 transition-all duration-300 transform scale-110 filter drop-shadow animate-bounce";
+        } else {
+          star.className = "text-2xl opacity-25 transition-all duration-300 transform scale-90";
+        }
+      }
+    }
+
+    function renderP4Question() {
+      P4.hasAnswered = false;
+      P4.answeredCorrectly = false;
+
+      const q = P4.shuffledPool[P4.currentQIndex % P4.shuffledPool.length];
+      P4.currentQuestion = q;
+
+      const numBadge = document.getElementById('p4QuestionNumberBadge');
+      if (numBadge) numBadge.innerText = `Desafio #${P4.currentQIndex + 1}`;
+
+      const catBadge = document.getElementById('p4CategoryBadge');
+      if (catBadge) catBadge.innerText = q.category;
+
+      const qText = document.getElementById('p4QuestionText');
+      if (qText) qText.innerText = q.question;
+
+      // Esconde o card de feedback
+      const feedbackCard = document.getElementById('p4FeedbackCard');
+      if (feedbackCard) feedbackCard.classList.add('hidden');
+
+      // Embaralha as 4 alternativas mantendo o índice da correta
+      const optionsWithIndices = q.options.map((text, idx) => ({ text, isCorrect: idx === q.correct }));
+      for (let i = optionsWithIndices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [optionsWithIndices[i], optionsWithIndices[j]] = [optionsWithIndices[j], optionsWithIndices[i]];
+      }
+      P4.currentShuffledOptions = optionsWithIndices;
+
+      const letters = ['A', 'B', 'C', 'D'];
+      const styles = [
+        { bg: 'bg-rose-50 hover:bg-rose-100/90 text-rose-950', border: 'border-rose-300', badge: 'bg-rose-500 text-white' },
+        { bg: 'bg-sky-50 hover:bg-sky-100/90 text-sky-950', border: 'border-sky-300', badge: 'bg-sky-500 text-white' },
+        { bg: 'bg-emerald-50 hover:bg-emerald-100/90 text-emerald-950', border: 'border-emerald-300', badge: 'bg-emerald-500 text-white' },
+        { bg: 'bg-amber-50 hover:bg-amber-100/90 text-amber-950', border: 'border-amber-300', badge: 'bg-amber-500 text-white' }
+      ];
+
+      const grid = document.getElementById('p4OptionsGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      optionsWithIndices.forEach((opt, idx) => {
+        const s = styles[idx];
+        const btn = document.createElement('button');
+        btn.id = `p4OptBtn_${idx}`;
+        btn.onclick = () => handleP4OptionClick(idx);
+        btn.className = `arcade-btn w-full p-3.5 sm:p-4 rounded-2xl border-2 flex items-center gap-3 text-left transition transform hover:scale-[1.01] active:scale-[0.99] cursor-pointer ${s.bg} ${s.border}`;
+        btn.innerHTML = `
+          <span class="w-8 h-8 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center shrink-0 shadow-sm ${s.badge}">${letters[idx]}</span>
+          <span class="text-xs sm:text-sm md:text-base font-extrabold leading-snug flex-1">${opt.text}</span>
+        `;
+        grid.appendChild(btn);
+      });
+    }
+
+    function handleP4OptionClick(chosenIndex) {
+      if (P4.hasAnswered) return;
+      P4.hasAnswered = true;
+
+      const chosen = P4.currentShuffledOptions[chosenIndex];
+      const isCorrect = chosen && chosen.isCorrect;
+      P4.answeredCorrectly = isCorrect;
+
+      // Desabilita todos os botões de opção
+      P4.currentShuffledOptions.forEach((_, idx) => {
+        const b = document.getElementById(`p4OptBtn_${idx}`);
+        if (b) b.disabled = true;
+      });
+
+      const chosenBtn = document.getElementById(`p4OptBtn_${chosenIndex}`);
+      const feedbackCard = document.getElementById('p4FeedbackCard');
+      const feedbackIcon = document.getElementById('p4FeedbackIcon');
+      const feedbackTitle = document.getElementById('p4FeedbackTitle');
+      const feedbackDesc = document.getElementById('p4FeedbackDesc');
+      const nextBtnText = document.getElementById('p4NextBtnText');
+
+      if (isCorrect) {
+        P4.score++;
+        updateScore(200);
+        updateP4ScoreUI();
+        playSound('pickup');
+
+        if (chosenBtn) {
+          chosenBtn.className = "arcade-btn w-full p-3.5 sm:p-4 rounded-2xl border-2 flex items-center gap-3 text-left transition bg-emerald-500 text-white border-emerald-600 shadow-md ring-4 ring-emerald-300";
+        }
+
+        if (feedbackCard) {
+          feedbackCard.className = "mt-4 p-4 md:p-5 rounded-2xl border-2 bg-emerald-50 border-emerald-400 text-emerald-950 pop-in";
+          feedbackCard.classList.remove('hidden');
+        }
+        if (feedbackIcon) feedbackIcon.innerText = "🎉";
+        if (feedbackTitle) feedbackTitle.innerText = "Resposta Certa! Mandou muito bem!";
+        if (feedbackDesc) feedbackDesc.innerText = P4.currentQuestion.explanation;
+
+        if (P4.score >= P4.targetScore) {
+          if (nextBtnText) nextBtnText.innerText = "Conquistar Diploma de Mestre! 🎓 ➔";
+        } else {
+          if (nextBtnText) nextBtnText.innerText = `Próxima Pergunta (${P4.score}/3 Acertos) ➔`;
+        }
+
+      } else {
+        playSound('bad');
+
+        if (chosenBtn) {
+          chosenBtn.className = "arcade-btn w-full p-3.5 sm:p-4 rounded-2xl border-2 flex items-center gap-3 text-left transition bg-rose-500 text-white border-rose-600 shadow-md ring-4 ring-rose-300";
+        }
+
+        // Destaca a correta suavemente em verde
+        const correctIdx = P4.currentShuffledOptions.findIndex(o => o.isCorrect);
+        const correctBtn = document.getElementById(`p4OptBtn_${correctIdx}`);
+        if (correctBtn) {
+          correctBtn.className = "arcade-btn w-full p-3.5 sm:p-4 rounded-2xl border-2 flex items-center gap-3 text-left transition bg-emerald-100 text-emerald-950 border-emerald-500 shadow-sm ring-2 ring-emerald-400";
+        }
+
+        if (feedbackCard) {
+          feedbackCard.className = "mt-4 p-4 md:p-5 rounded-2xl border-2 bg-amber-50 border-amber-400 text-amber-950 pop-in";
+          feedbackCard.classList.remove('hidden');
+        }
+        if (feedbackIcon) feedbackIcon.innerText = "💡";
+        if (feedbackTitle) feedbackTitle.innerText = "Quase lá! Essa passou perto!";
+        if (feedbackDesc) feedbackDesc.innerText = `${P4.currentQuestion.explanation} Fique tranquilo, você não perdeu pontos! Vamos tentar outra!`;
+
+        if (nextBtnText) nextBtnText.innerText = "Tentar Outra Pergunta ➔";
+      }
+
+      // Foca automaticamente no botão de ação da resposta
+      scheduleGameTimeout(() => {
+        document.getElementById('p4NextBtn')?.focus();
+      }, 100);
+    }
+
+    function nextP4Question() {
+      if (P4.score >= P4.targetScore) {
+        playSound('fanfare');
+        createConfetti(400, 250);
+        scheduleGameTimeout(() => {
+          if (STATE.phase === 4) openPhaseVictoryModal(4);
+        }, 800);
+        return;
+      }
+
+      P4.currentQIndex++;
+      playSound('pickup');
+      renderP4Question();
     }
 
 
